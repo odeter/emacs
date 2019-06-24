@@ -1,0 +1,411 @@
+;; Object workloads/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "workloads/"
+  :tables
+  (list
+
+    (semanticdb-table "ItemGenerator.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [1 50])
+            ("java.util.*" include nil nil [52 71])
+            ("com.acertainsupermarket.business.*" include nil nil [155 197])
+            ("ItemGenerator" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("ItemGenerator" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [385 454])
+                    ("sampleFromSetOfItemID" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("" variable (:type "Items") (reparse-symbol formal_parameters) [612 617])
+                            ("num" variable (:type "int") (reparse-symbol formal_parameters) [619 626]))                          )
+                        (reparse-symbol class_member_declaration) [577 1042])
+                    ("getRandomString" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("length" variable (:type "int") (reparse-symbol formal_parameters) [1185 1195]))                          
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1155 1475])
+                    ("nextSetOfStockBooks" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("num" variable (:type "int") (reparse-symbol formal_parameters) [1528 1535]))                          )
+                        (reparse-symbol class_member_declaration) [1508 1994]))                  
+                :type "class")
+                nil [354 1997]))          
+      :file "ItemGenerator.java"
+      :pointmax 1998
+      :fsize 1997
+      :lastmodtime '(23142 23167 766067 758000)
+      :unmatched-syntax nil)
+    (semanticdb-table "CertainWorkload.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [12 61])
+            ("java.util.ArrayList" include nil nil [63 90])
+            ("java.util.List" include nil nil [91 113])
+            ("java.util.Set" include nil nil [114 135])
+            ("java.util.HashSet" include nil nil [136 161])
+            ("java.util.concurrent.ExecutorService" include nil nil [162 206])
+            ("java.util.concurrent.Executors" include nil nil [207 245])
+            ("java.util.concurrent.Future" include nil nil [246 281])
+            ("java.io.File" include nil nil [282 302])
+            ("java.io.FileNotFoundException" include nil nil [303 340])
+            ("java.io.PrintWriter" include nil nil [341 368])
+            ("java.io.BufferedInputStream" include nil nil [369 404])
+            ("java.io.DataInputStream" include nil nil [405 436])
+            ("java.io.FileInputStream" include nil nil [437 468])
+            ("java.io.IOException" include nil nil [469 496])
+            ("com.acertainsupermarket.business.*" include nil nil [499 541])
+            ("com.acertainsupermarket.client.*" include nil nil [542 582])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [583 627])
+            ("com.acertainsupermarket.utils.*" include nil nil [628 667])
+            ("CertainWorkload" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("numConcurrentWT" variable
+                       (:typemodifiers ("public" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [976 1015])
+                    ("main" function
+                       (:throws ("Exception")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [1067 1080]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1043 3677])
+                    ("reportMetric" function
+                       (:throws ("FileNotFoundException")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("" variable (:type "workerRunResults") (reparse-symbol formal_parameters) [3817 3833]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3763 5100])
+                    ("initializeBookStoreData" function
+                       (:throws ("SupermarketException")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("stockManager" variable (:type "superTest") (reparse-symbol formal_parameters) [5289 5311]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5246 5655]))                  
+                :type "class")
+                nil [940 5657]))          
+      :file "CertainWorkload.java"
+      :pointmax 5658
+      :fsize 5657
+      :lastmodtime '(23142 23118 103139 345000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Worker.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [12 61])
+            ("java.util.Random" include nil nil [63 87])
+            ("java.util.concurrent.Callable" include nil nil [88 125])
+            ("java.util.ArrayList" include nil nil [126 153])
+            ("java.util.List" include nil nil [154 176])
+            ("java.util.Set" include nil nil [177 198])
+            ("java.util.HashSet" include nil nil [199 224])
+            ("java.util.Comparator" include nil nil [225 253])
+            ("java.util.PriorityQueue" include nil nil [254 285])
+            ("com.acertainsupermarket.business.*" include nil nil [287 329])
+            ("com.acertainsupermarket.utils.*" include nil nil [330 369]))          
+      :file "Worker.java"
+      :pointmax 6752
+      :fsize 6751
+      :lastmodtime '(23142 23532 568916 130000)
+      :unmatched-syntax '((BRACE_BLOCK 584 . 6751) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6670) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6619) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6526) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6525) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6512) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6511) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6521) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6517) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6513) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6510) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6509) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6511) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6507) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6503) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6498) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6499) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6495) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6492) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6491) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6497) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6496) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6492) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6494) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6499) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6493) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6497) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6497) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6492) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6491) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6495) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6493) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6493) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6489) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6486) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6490) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567)))
+    (semanticdb-table "WorkloadConfiguration.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [1 50])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [52 96])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [97 141])
+            ("WorkloadConfiguration" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("numBooksToBuy" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [317 347])
+                    ("numBookCopiesToBuy" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [349 384])
+                    ("numAddCopies" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [386 416])
+                    ("numBooksToAdd" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [418 448])
+                    ("numBooksWithLeastCopies" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [450 490])
+                    ("warmUpRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [492 521])
+                    ("numActualRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [523 555])
+                    ("percentRareStockManagerInteraction" variable
+                       (:typemodifiers ("private")
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [557 612])
+                    ("percentFrequentStockManagerInteraction" variable
+                       (:typemodifiers ("private")
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [614 673])
+                    ("ItemGenerator" variable
+                       (:typemodifiers ("private")
+                        :type "ItemGenerator")
+                        (reparse-symbol class_member_declaration) [675 718])
+                    ("stockManager" variable
+                       (:typemodifiers ("private")
+                        :type "superTest")
+                        (reparse-symbol class_member_declaration) [720 758])
+                    ("bookStore" variable
+                       (:typemodifiers ("private")
+                        :type "superCartTest")
+                        (reparse-symbol class_member_declaration) [760 799])
+                    ("WorkloadConfiguration" function
+                       (:constructor-flag t
+                        :throws ("Exception")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("bookStore" variable (:type "superCartTest") (reparse-symbol formal_parameters) [831 854])
+                            ("stockManager" variable (:type "superTest") (reparse-symbol formal_parameters) [856 878]))                          )
+                        (reparse-symbol class_member_declaration) [802 1053])
+                    ("getNumBooksToBuy" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1056 1114])
+                    ("setNumBooksToBuy" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numBooksToBuy" variable (:type "int") (reparse-symbol formal_parameters) [1146 1163]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1117 1207])
+                    ("getNumBookCopiesToBuy" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1210 1278])
+                    ("setNumBookCopiesToBuy" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numBookCopiesToBuy" variable (:type "int") (reparse-symbol formal_parameters) [1315 1337]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1281 1391])
+                    ("getNumBooksToAdd" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1394 1452])
+                    ("setNumBooksToAdd" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numBooksToAdd" variable (:type "int") (reparse-symbol formal_parameters) [1484 1501]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1455 1545])
+                    ("getNumBooksWithLeastCopies" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1548 1626])
+                    ("setNumBooksWithLeastCopies" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numBooksWithLeastCopies" variable (:type "int") (reparse-symbol formal_parameters) [1668 1695]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1629 1759])
+                    ("getStockManager" function
+                       (:typemodifiers ("public")
+                        :type "superTest")
+                        (reparse-symbol class_member_declaration) [1762 1824])
+                    ("getBookStore" function
+                       (:typemodifiers ("public")
+                        :type "superCartTest")
+                        (reparse-symbol class_member_declaration) [1827 1887])
+                    ("setStockManager" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("stockManager" variable (:type "superTest") (reparse-symbol formal_parameters) [1918 1940]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1890 1982])
+                    ("setBookStore" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("bookStore" variable (:type "superCartTest") (reparse-symbol formal_parameters) [2010 2033]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1985 2069])
+                    ("getPercentRareStockManagerInteraction" function
+                       (:typemodifiers ("public")
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [2072 2174])
+                    ("setPercentRareStockManagerInteraction" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("percentRareStockManagerInteraction" variable (:type "float") (reparse-symbol formal_parameters) [2231 2271]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2177 2357])
+                    ("getPercentFrequentStockManagerInteraction" function
+                       (:typemodifiers ("public")
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [2360 2470])
+                    ("setPercentFrequentStockManagerInteraction" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("percentFrequentStockManagerInteraction" variable (:type "float") (reparse-symbol formal_parameters) [2531 2575]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2473 2669])
+                    ("getWarmUpRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2672 2724])
+                    ("setWarmUpRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("warmUpRuns" variable (:type "int") (reparse-symbol formal_parameters) [2753 2767]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2727 2805])
+                    ("getNumActualRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2808 2866])
+                    ("setNumActualRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numActualRuns" variable (:type "int") (reparse-symbol formal_parameters) [2898 2915]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2869 2959])
+                    ("getNumAddCopies" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2966 3022])
+                    ("setNumAddCopies" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numAddCopies" variable (:type "int") (reparse-symbol formal_parameters) [3053 3069]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3025 3111])
+                    ("getBookSetGenerator" function
+                       (:typemodifiers ("public")
+                        :type "ItemGenerator")
+                        (reparse-symbol class_member_declaration) [3114 3185])
+                    ("setBookSetGenerator" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("ItemGenerator" variable (:type "ItemGenerator") (reparse-symbol formal_parameters) [3220 3247]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3188 3291]))                  
+                :type "class")
+                nil [279 3294]))          
+      :file "WorkloadConfiguration.java"
+      :pointmax 3295
+      :fsize 3294
+      :lastmodtime '(23142 23649 260397 489000)
+      :unmatched-syntax '(($EOI 3481 . 3481) ($EOI 3496 . 3496)))
+    (semanticdb-table "WorkerRunResult.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [1 50])
+            ("WorkerRunResult" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("successfulInteractions" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [215 250])
+                    ("totalRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [295 317])
+                    ("elapsedTimeInNanoSecs" variable
+                       (:typemodifiers ("private")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [355 390])
+                    ("successfulFrequentBookStoreInteractionRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [449 504])
+                    ("totalFrequentBookStoreInteractionRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [639 689])
+                    ("WorkerRunResult" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("successfulInteractions" variable (:type "int") (reparse-symbol formal_parameters) [795 821])
+                            ("elapsedTimeInNanoSecs" variable (:type "long") (reparse-symbol formal_parameters) [823 849])
+                            ("totalRuns" variable (:type "int") (reparse-symbol formal_parameters) [854 867])
+                            ("successfulFrequentBookStoreInteractionRuns" variable (:type "int") (reparse-symbol formal_parameters) [869 915])
+                            ("totalFrequentBookStoreInteractionRuns" variable (:type "int") (reparse-symbol formal_parameters) [920 961]))                          )
+                        (reparse-symbol class_member_declaration) [772 1299])
+                    ("getTotalRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1302 1352])
+                    ("setTotalRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("totalRuns" variable (:type "int") (reparse-symbol formal_parameters) [1380 1393]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1355 1429])
+                    ("getSuccessfulInteractions" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1432 1508])
+                    ("setSuccessfulInteractions" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("successfulInteractions" variable (:type "int") (reparse-symbol formal_parameters) [1549 1575]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1511 1637])
+                    ("getElapsedTimeInNanoSecs" function
+                       (:typemodifiers ("public")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [1640 1715])
+                    ("setElapsedTimeInNanoSecs" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("elapsedTimeInNanoSecs" variable (:type "long") (reparse-symbol formal_parameters) [1755 1781]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1718 1841])
+                    ("getSuccessfulFrequentBookStoreInteractionRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1844 1960])
+                    ("setSuccessfulFrequentBookStoreInteractionRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("successfulFrequentBookStoreInteractionRuns" variable (:type "int") (reparse-symbol formal_parameters) [2025 2071]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1963 2173])
+                    ("getTotalFrequentBookStoreInteractionRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2176 2282])
+                    ("setTotalFrequentBookStoreInteractionRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("totalFrequentBookStoreInteractionRuns" variable (:type "int") (reparse-symbol formal_parameters) [2342 2383]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2285 2475]))                  
+                :type "class")
+                nil [183 2478]))          
+      :file "WorkerRunResult.java"
+      :pointmax 2479
+      :fsize 2478
+      :lastmodtime '(23142 21969 552690 251000)
+      :unmatched-syntax nil))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!exam!acertainsupermarket!acertainsupermarket!src!com!acertainsupermarket!client!workloads!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

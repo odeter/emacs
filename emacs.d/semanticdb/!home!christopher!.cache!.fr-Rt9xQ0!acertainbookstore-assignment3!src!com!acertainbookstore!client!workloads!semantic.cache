@@ -1,0 +1,30 @@
+;; Object workloads/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "workloads/"
+  :tables
+  (list
+    (semanticdb-table "Worker.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.client.workloads" package nil nil [12 59])
+            ("java.util.Random" include nil nil [61 85])
+            ("java.util.concurrent.Callable" include nil nil [86 123])
+            ("java.util.ArrayList" include nil nil [124 151])
+            ("java.util.List" include nil nil [152 174])
+            ("java.util.Set" include nil nil [175 196])
+            ("java.util.HashSet" include nil nil [197 222])
+            ("java.util.Comparator" include nil nil [223 251])
+            ("java.util.PriorityQueue" include nil nil [252 283])
+            ("com.acertainbookstore.business.StockBook" include nil nil [285 333])
+            ("com.acertainbookstore.business.BookCopy" include nil nil [334 381])
+            ("com.acertainbookstore.business.Book" include nil nil [382 425])
+            ("com.acertainbookstore.utils.BookStoreConstants" include nil nil [426 480])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [481 535]))          
+      :file "Worker.java"
+      :pointmax 6658
+      :fsize 6657
+      :lastmodtime '(23086 45528 0 0)
+      :unmatched-syntax '((BRACE_BLOCK 750 . 6657) (GT 748 . 749) (IDENTIFIER 733 . 748) (PUBLIC 693 . 699) (LT 732 . 733))))
+  :file "!home!christopher!.cache!.fr-Rt9xQ0!acertainbookstore-assignment3!src!com!acertainbookstore!client!workloads!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

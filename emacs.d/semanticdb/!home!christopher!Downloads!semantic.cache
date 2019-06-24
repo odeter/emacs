@@ -1,0 +1,29 @@
+;; Object Downloads/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Downloads/"
+  :tables
+  (list
+    (semanticdb-table "Hest.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("Hest" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("fest" variable
+                       (:typemodifiers ("private")
+                        :type "Fest")
+                        (reparse-symbol class_member_declaration) [35 53])
+                    ("Hest" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [56 95]))                  
+                :type "class")
+                nil [14 97]))          
+      :file "Hest.java"
+      :pointmax 98
+      :fsize 97
+      :lastmodtime '(23237 729 718101 663000)
+      :unmatched-syntax nil))
+  :file "!home!christopher!Downloads!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

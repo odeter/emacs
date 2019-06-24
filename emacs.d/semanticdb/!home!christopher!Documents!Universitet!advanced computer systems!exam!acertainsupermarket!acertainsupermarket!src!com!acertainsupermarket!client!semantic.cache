@@ -1,0 +1,201 @@
+;; Object client/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "client/"
+  :tables
+  (list
+    (semanticdb-table "SuperMarketClientConstants.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client" package nil nil [1 40])
+            ("SuperMarketClientConstants" type
+               (:typemodifiers ("public" "final")
+                :members 
+                  ( ("CLIENT_MAX_CONNECTION_ADDRESS" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [303 363])
+                    ("CLIENT_MAX_THREADSPOOL_THREADS" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [419 480])
+                    ("CLIENT_MAX_TIMEOUT_MILLISECS" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [534 595])
+                    ("STR_ERR_CLIENT_REQUEST_SENDING" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [650 739])
+                    ("STR_ERR_CLIENT_REQUEST_EXCEPTION" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [796 889])
+                    ("STR_ERR_CLIENT_REQUEST_TIMEOUT" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [944 1029])
+                    ("STR_ERR_CLIENT_RESPONSE_DECODING" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1086 1175])
+                    ("STR_ERR_CLIENT_UNKNOWN" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1222 1291])
+                    ("STR_ERR_CLIENT_ENCODING" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1339 1410])
+                    ("SuperMarketClientConstants" function
+                       (:constructor-flag t
+                        :typemodifiers ("private"))
+                        (reparse-symbol class_member_declaration) [1497 1596]))                  
+                :type "class")
+                nil [201 1598]))          
+      :file "SuperMarketClientConstants.java"
+      :pointmax 1599
+      :fsize 1598
+      :lastmodtime '(23140 40609 617450 519000)
+      :unmatched-syntax nil)
+    (semanticdb-table "SuperMarketHTTPProxy.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client" package nil nil [1 40])
+            ("java.io.UnsupportedEncodingException" include nil nil [42 86])
+            ("java.net.URLEncoder" include nil nil [87 114])
+            ("java.util.List" include nil nil [115 137])
+            ("java.util.Set" include nil nil [138 159])
+            ("org.eclipse.jetty.client.HttpClient" include nil nil [160 203])
+            ("org.eclipse.jetty.util.thread.QueuedThreadPool" include nil nil [204 258])
+            ("com.acertainsupermarket.business.*" include nil nil [260 302])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [303 347])
+            ("com.acertainsupermarket.utils.*" include nil nil [348 387])
+            ("SuperMarketHTTPProxy" type
+               (:typemodifiers ("public")
+                :interfaces ("Supermarket")
+                :members 
+                  ( ("client" variable
+                       (:typemodifiers ("protected")
+                        :type "HttpClient")
+                        (reparse-symbol class_member_declaration) [667 695])
+                    ("serverAddress" variable
+                       (:typemodifiers ("protected")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [726 757])
+                    ("SuperMarketHTTPProxy" function
+                       (:constructor-flag t
+                        :throws ("Exception")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("serverAddress" variable (:type "String") (reparse-symbol formal_parameters) [1051 1071]))                          )
+                        (reparse-symbol class_member_declaration) [1023 1860])
+                    ("getServerAddress" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1937 1998])
+                    ("setServerAddress" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("serverAddress" variable (:type "String") (reparse-symbol formal_parameters) [2136 2156]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2107 2200])
+                    ("updateStocks" function
+                       (:throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "itemDeltas") (reparse-symbol formal_parameters) [2351 2361]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2310 2716])
+                    ("getItems" function
+                       (:constructor-flag t
+                        :throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :arguments 
+                          ( ("" variable (:type "itemIds") (reparse-symbol formal_parameters) [2898 2905]))                          )
+                        (reparse-symbol class_member_declaration) [2876 3351])
+                    ("stop" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4305 4428]))                  
+                :type "class")
+                nil [586 4430]))          
+      :file "SuperMarketHTTPProxy.java"
+      :pointmax 4431
+      :fsize 4430
+      :lastmodtime '(23141 1703 617014 109000)
+      :unmatched-syntax nil)
+    (semanticdb-table "SuperTestHTTPProxy.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client" package nil nil [1 40])
+            ("java.io.UnsupportedEncodingException" include nil nil [42 86])
+            ("java.net.URLEncoder" include nil nil [87 114])
+            ("java.util.List" include nil nil [115 137])
+            ("java.util.Set" include nil nil [138 159])
+            ("org.eclipse.jetty.client.HttpClient" include nil nil [160 203])
+            ("org.eclipse.jetty.util.thread.QueuedThreadPool" include nil nil [204 258])
+            ("com.acertainsupermarket.business.*" include nil nil [260 302])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [303 347])
+            ("com.acertainsupermarket.utils.*" include nil nil [348 387])
+            ("SuperTestHTTPProxy" type
+               (:typemodifiers ("public")
+                :interfaces ("superTest")
+                :members 
+                  ( ("client" variable
+                       (:typemodifiers ("protected")
+                        :type "HttpClient")
+                        (reparse-symbol class_member_declaration) [663 691])
+                    ("serverAddress" variable
+                       (:typemodifiers ("protected")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [722 753])
+                    ("SuperTestHTTPProxy" function
+                       (:constructor-flag t
+                        :throws ("Exception")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("serverAddress" variable (:type "String") (reparse-symbol formal_parameters) [1045 1065]))                          )
+                        (reparse-symbol class_member_declaration) [1019 1854])
+                    ("getServerAddress" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1931 1992])
+                    ("setServerAddress" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("serverAddress" variable (:type "String") (reparse-symbol formal_parameters) [2130 2150]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2101 2194])
+                    ("updateStocks" function
+                       (:throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "itemDeltas") (reparse-symbol formal_parameters) [2345 2355]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2304 2710])
+                    ("getItems" function
+                       (:constructor-flag t
+                        :throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :arguments 
+                          ( ("" variable (:type "itemIds") (reparse-symbol formal_parameters) [2892 2899]))                          )
+                        (reparse-symbol class_member_declaration) [2870 3346])
+                    ("addItems" function
+                       (:throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "items") (reparse-symbol formal_parameters) [3390 3395]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3349 3750])
+                    ("stop" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3784 3907]))                  
+                :type "class")
+                nil [586 3909]))          
+      :file "SuperTestHTTPProxy.java"
+      :pointmax 3910
+      :fsize 3909
+      :lastmodtime '(23141 1722 493023 255000)
+      :unmatched-syntax nil))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!exam!acertainsupermarket!acertainsupermarket!src!com!acertainsupermarket!client!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

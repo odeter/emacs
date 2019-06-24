@@ -1,0 +1,278 @@
+;; Object tests/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tests/"
+  :tables
+  (list
+    (semanticdb-table "BookStoreTest.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.client.tests" package nil nil [1 44])
+            ("java.util.HashSet" include nil nil [81 106])
+            ("java.util.List" include nil nil [107 129])
+            ("java.util.Set" include nil nil [130 151])
+            ("org.junit.After" include nil nil [153 176])
+            ("org.junit.AfterClass" include nil nil [177 205])
+            ("org.junit.Before" include nil nil [206 230])
+            ("org.junit.BeforeClass" include nil nil [231 260])
+            ("org.junit.Test" include nil nil [261 283])
+            ("com.acertainbookstore.business.Book" include nil nil [285 328])
+            ("com.acertainbookstore.business.BookCopy" include nil nil [329 376])
+            ("com.acertainbookstore.business.CertainBookStore" include nil nil [377 432])
+            ("com.acertainbookstore.business.ImmutableStockBook" include nil nil [433 490])
+            ("com.acertainbookstore.business.StockBook" include nil nil [491 539])
+            ("com.acertainbookstore.client.ReplicationAwareBookStoreHTTPProxy" include nil nil [540 611])
+            ("com.acertainbookstore.client.ReplicationAwareStockManagerHTTPProxy" include nil nil [612 686])
+            ("com.acertainbookstore.interfaces.BookStore" include nil nil [687 737])
+            ("com.acertainbookstore.interfaces.StockManager" include nil nil [738 791])
+            ("com.acertainbookstore.utils.BookStoreConstants" include nil nil [792 846])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [847 901])
+            ("BookStoreTest" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("TEST_ISBN" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1060 1105])
+                    ("NUM_COPIES" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1141 1181])
+                    ("localTest" variable
+                       (:typemodifiers ("private" "static")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1208 1248])
+                    ("storeManager" variable
+                       (:typemodifiers ("private" "static")
+                        :type "StockManager")
+                        (reparse-symbol class_member_declaration) [1278 1319])
+                    ("client" variable
+                       (:typemodifiers ("private" "static")
+                        :type "BookStore")
+                        (reparse-symbol class_member_declaration) [1342 1374])
+                    ("setUpBeforeClass" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1431 2018])
+                    ("addBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("isbn" variable (:type "int") (reparse-symbol formal_parameters) [2249 2257])
+                            ("copies" variable (:type "int") (reparse-symbol formal_parameters) [2259 2269]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2228 2547])
+                    ("getDefaultBook" function
+                       (:typemodifiers ("public")
+                        :type "StockBook")
+                        (reparse-symbol class_member_declaration) [2660 2823])
+                    ("initializeBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2987 3176])
+                    ("cleanupBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3350 3440])
+                    ("testBuyAllCopiesDefaultBook" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3577 4571])
+                    ("testBuyInvalidISBN" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4725 5425])
+                    ("testBuyNonExistingISBN" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5592 6314])
+                    ("testBuyTooManyBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6473 7071])
+                    ("testBuyNegativeNumberOfBookCopies" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [7224 7816])
+                    ("testGetBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [7955 8771])
+                    ("testGetCertainBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [8939 9777])
+                    ("testGetInvalidIsbn" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [9934 10613])
+                    ("tearDownAfterClass" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [10742 10993]))                  
+                :type "class")
+                nil [997 10995]))          
+      :file "BookStoreTest.java"
+      :pointmax 10996
+      :fsize 10995
+      :lastmodtime '(23050 56104 0 0)
+      :unmatched-syntax '((MULT 77 . 78) (DOT 76 . 77) (IDENTIFIER 70 . 76) (DOT 69 . 70) (IDENTIFIER 64 . 69) (DOT 63 . 64) (IMPORT 46 . 52) (STATIC 53 . 59) (IDENTIFIER 60 . 63)))
+    (semanticdb-table "StockManagerTest.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.client.tests" package nil nil [1 44])
+            ("java.util.ArrayList" include nil nil [81 108])
+            ("java.util.HashSet" include nil nil [109 134])
+            ("java.util.List" include nil nil [135 157])
+            ("java.util.Set" include nil nil [158 179])
+            ("org.junit.After" include nil nil [181 204])
+            ("org.junit.AfterClass" include nil nil [205 233])
+            ("org.junit.Before" include nil nil [234 258])
+            ("org.junit.BeforeClass" include nil nil [259 288])
+            ("org.junit.Test" include nil nil [289 311])
+            ("com.acertainbookstore.business.Book" include nil nil [313 356])
+            ("com.acertainbookstore.business.BookCopy" include nil nil [357 404])
+            ("com.acertainbookstore.business.BookEditorPick" include nil nil [405 458])
+            ("com.acertainbookstore.business.CertainBookStore" include nil nil [459 514])
+            ("com.acertainbookstore.business.ImmutableStockBook" include nil nil [515 572])
+            ("com.acertainbookstore.business.StockBook" include nil nil [573 621])
+            ("com.acertainbookstore.client.ReplicationAwareBookStoreHTTPProxy" include nil nil [622 693])
+            ("com.acertainbookstore.client.ReplicationAwareStockManagerHTTPProxy" include nil nil [694 768])
+            ("com.acertainbookstore.interfaces.BookStore" include nil nil [769 819])
+            ("com.acertainbookstore.interfaces.StockManager" include nil nil [820 873])
+            ("com.acertainbookstore.utils.BookStoreConstants" include nil nil [874 928])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [929 983])
+            ("StockManagerTest" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("TEST_ISBN" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "Integer")
+                        (reparse-symbol class_member_declaration) [1149 1199])
+                    ("NUM_COPIES" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "Integer")
+                        (reparse-symbol class_member_declaration) [1235 1279])
+                    ("localTest" variable
+                       (:typemodifiers ("private" "static")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1306 1346])
+                    ("storeManager" variable
+                       (:typemodifiers ("private" "static")
+                        :type "StockManager")
+                        (reparse-symbol class_member_declaration) [1376 1417])
+                    ("client" variable
+                       (:typemodifiers ("private" "static")
+                        :type "BookStore")
+                        (reparse-symbol class_member_declaration) [1440 1472])
+                    ("setUpBeforeClass" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1531 2121])
+                    ("getDefaultBook" function
+                       (:typemodifiers ("public")
+                        :type "StockBook")
+                        (reparse-symbol class_member_declaration) [2234 2397])
+                    ("initializeBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2561 2751])
+                    ("cleanupBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2925 3015])
+                    ("testInitializeBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3185 3511])
+                    ("testaddBookInvalidISBN" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3684 4532])
+                    ("testAddBookInvalidCopies" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4721 5558])
+                    ("testAddBookInvalidPrice" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5714 6549])
+                    ("testAddCopiesCorrectBook" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6704 8036])
+                    ("testAddCopiesInvalidNumCopies" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [8256 8852])
+                    ("testAddCopiesInvalidISBN" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [9083 9675])
+                    ("testAddCopiesNonExistingISBN" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [9902 10567])
+                    ("addEditorPick" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("isbn" variable (:type "int") (reparse-symbol formal_parameters) [10806 10814])
+                            ("pick" variable (:type "boolean") (reparse-symbol formal_parameters) [10816 10828]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [10780 11079])
+                    ("testDefaultBookForEditorsPick" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [11222 11775])
+                    ("testRemoveBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [11910 13245])
+                    ("testGetBooksByISBN" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [13393 14141])
+                    ("testRemoveAllBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [14283 14994])
+                    ("tearDownAfterClass" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [15123 15375]))                  
+                :type "class")
+                nil [1083 15377]))          
+      :file "StockManagerTest.java"
+      :pointmax 15378
+      :fsize 15377
+      :lastmodtime '(23050 56104 0 0)
+      :unmatched-syntax '((MULT 77 . 78) (DOT 76 . 77) (IDENTIFIER 70 . 76) (DOT 69 . 70) (IDENTIFIER 64 . 69) (DOT 63 . 64) (IMPORT 46 . 52) (STATIC 53 . 59) (IDENTIFIER 60 . 63))))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!Assignment 4!acertainbookstore-assignment4!src!com!acertainbookstore!client!tests!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

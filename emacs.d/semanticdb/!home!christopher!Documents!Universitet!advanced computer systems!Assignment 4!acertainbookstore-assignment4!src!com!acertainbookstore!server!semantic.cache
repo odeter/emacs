@@ -1,0 +1,406 @@
+;; Object server/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "server/"
+  :tables
+  (list
+    (semanticdb-table "SlaveBookStoreHTTPMessageHandler.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.server" package nil nil [1 38])
+            ("java.io.IOException" include nil nil [40 67])
+            ("java.net.URLDecoder" include nil nil [68 95])
+            ("java.util.Set" include nil nil [96 117])
+            ("javax.servlet.ServletException" include nil nil [119 157])
+            ("javax.servlet.http.HttpServletRequest" include nil nil [158 203])
+            ("javax.servlet.http.HttpServletResponse" include nil nil [204 250])
+            ("org.eclipse.jetty.server.Request" include nil nil [252 292])
+            ("org.eclipse.jetty.server.handler.AbstractHandler" include nil nil [293 349])
+            ("com.acertainbookstore.business.SlaveCertainBookStore" include nil nil [351 411])
+            ("com.acertainbookstore.interfaces.BookStoreSerializer" include nil nil [412 472])
+            ("com.acertainbookstore.utils.BookStoreConstants" include nil nil [473 527])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [528 582])
+            ("com.acertainbookstore.utils.BookStoreKryoSerializer" include nil nil [583 642])
+            ("com.acertainbookstore.utils.BookStoreMessageTag" include nil nil [643 698])
+            ("com.acertainbookstore.utils.BookStoreResponse" include nil nil [699 752])
+            ("com.acertainbookstore.utils.BookStoreResult" include nil nil [753 804])
+            ("com.acertainbookstore.utils.BookStoreUtility" include nil nil [805 857])
+            ("com.acertainbookstore.utils.BookStoreXStreamSerializer" include nil nil [858 920])
+            ("com.esotericsoftware.kryo.io.Input" include nil nil [921 963])
+            ("SlaveBookStoreHTTPMessageHandler" type
+               (:typemodifiers ("public")
+                :superclasses "AbstractHandler"
+                :members 
+                  ( ("myBookStore" variable
+                       (:typemodifiers ("private")
+                        :type "SlaveCertainBookStore")
+                        (reparse-symbol class_member_declaration) [1321 1370])
+                    ("SlaveBookStoreHTTPMessageHandler" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("bookStore" variable (:type "SlaveCertainBookStore") (reparse-symbol formal_parameters) [1626 1657]))                          )
+                        (reparse-symbol class_member_declaration) [1586 1935])
+                    ("handle" function
+                       (:throws ("IOException" "ServletException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("target" variable (:type "String") (reparse-symbol formal_parameters) [2177 2190])
+                            ("baseRequest" variable (:type "Request") (reparse-symbol formal_parameters) [2192 2211])
+                            ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [2213 2239])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [2241 2269]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2158 3484])
+                    ("getStockBooksByISBN" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [3814 3840])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [3842 3870]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3781 4490])
+                    ("getEditorPicks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [4769 4795])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [4797 4825]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4741 5457])
+                    ("getBooks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [5748 5774])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [5776 5804]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5726 6418])
+                    ("listBooks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [6611 6639]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6588 7073])
+                    ("getSerializedRequestContent" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [7347 7373]))                          
+                        :type "byte[]")
+                        (reparse-symbol class_member_declaration) [7304 7575]))                  
+                :type "class")
+                nil [1223 7577]))          
+      :file "SlaveBookStoreHTTPMessageHandler.java"
+      :pointmax 7578
+      :fsize 7577
+      :lastmodtime '(23050 56104 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ReplicationAwareServerHTTPProxy.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.server" package nil nil [1 38])
+            ("com.acertainbookstore.business.ReplicationRequest" include nil nil [40 97])
+            ("com.acertainbookstore.business.ReplicationResult" include nil nil [98 154])
+            ("com.acertainbookstore.interfaces.Replication" include nil nil [155 207])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [208 262])
+            ("ReplicationAwareServerHTTPProxy" type
+               (:typemodifiers ("public")
+                :interfaces ("Replication")
+                :members 
+                  ( ("desti" variable (:type "String") (reparse-symbol class_member_declaration) [739 759])
+                    ("ReplicationAwareServerHTTPProxy" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("destinationServerAddress" variable (:type "String") (reparse-symbol formal_parameters) [804 835]))                          )
+                        (reparse-symbol class_member_declaration) [765 930])
+                    ("replicate" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("req" variable (:type "ReplicationRequest") (reparse-symbol formal_parameters) [1155 1177]))                          
+                        :type "ReplicationResult")
+                        (reparse-symbol class_member_declaration) [1120 1335])
+                    ("stop" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1370 1420]))                  
+                :type "class")
+                nil [490 1422]))          
+      :file "ReplicationAwareServerHTTPProxy.java"
+      :pointmax 1423
+      :fsize 1422
+      :lastmodtime '(23096 15147 593777 144000)
+      :unmatched-syntax nil)
+    (semanticdb-table "SlaveBookStoreHTTPServer.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.server" package nil nil [1 38])
+            ("org.eclipse.jetty.util.thread.QueuedThreadPool" include nil nil [40 94])
+            ("com.acertainbookstore.business.SlaveCertainBookStore" include nil nil [96 156])
+            ("com.acertainbookstore.utils.BookStoreConstants" include nil nil [157 211])
+            ("SlaveBookStoreHTTPServer" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("DEFAULT_PORT" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [353 398])
+                    ("MIN_THREADPOOL_SIZE" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [400 450])
+                    ("MAX_THREADPOOL_SIZE" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [452 503])
+                    ("SlaveBookStoreHTTPServer" function
+                       (:constructor-flag t
+                        :typemodifiers ("private"))
+                        (reparse-symbol class_member_declaration) [585 667])
+                    ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [754 767]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [730 1412]))                  
+                :type "class")
+                nil [269 1414]))          
+      :file "SlaveBookStoreHTTPServer.java"
+      :pointmax 1415
+      :fsize 1414
+      :lastmodtime '(23050 56104 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "MasterBookStoreHTTPMessageHandler.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.server" package nil nil [1 38])
+            ("java.io.IOException" include nil nil [40 67])
+            ("java.net.URLDecoder" include nil nil [68 95])
+            ("java.util.Set" include nil nil [96 117])
+            ("javax.servlet.ServletException" include nil nil [119 157])
+            ("javax.servlet.http.HttpServletRequest" include nil nil [158 203])
+            ("javax.servlet.http.HttpServletResponse" include nil nil [204 250])
+            ("org.eclipse.jetty.server.Request" include nil nil [252 292])
+            ("org.eclipse.jetty.server.handler.AbstractHandler" include nil nil [293 349])
+            ("com.acertainbookstore.business.BookCopy" include nil nil [351 398])
+            ("com.acertainbookstore.business.BookEditorPick" include nil nil [399 452])
+            ("com.acertainbookstore.business.MasterCertainBookStore" include nil nil [453 514])
+            ("com.acertainbookstore.business.StockBook" include nil nil [515 563])
+            ("com.acertainbookstore.utils.BookStoreKryoSerializer" include nil nil [564 623])
+            ("com.acertainbookstore.interfaces.BookStoreSerializer" include nil nil [624 684])
+            ("com.acertainbookstore.utils.BookStoreXStreamSerializer" include nil nil [685 747])
+            ("com.acertainbookstore.utils.BookStoreConstants" include nil nil [748 802])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [803 857])
+            ("com.acertainbookstore.utils.BookStoreMessageTag" include nil nil [858 913])
+            ("com.acertainbookstore.utils.BookStoreResponse" include nil nil [914 967])
+            ("com.acertainbookstore.utils.BookStoreResult" include nil nil [968 1019])
+            ("com.acertainbookstore.utils.BookStoreUtility" include nil nil [1020 1072])
+            ("com.esotericsoftware.kryo.io.Input" include nil nil [1073 1115])
+            ("MasterBookStoreHTTPMessageHandler" type
+               (:typemodifiers ("public")
+                :superclasses "AbstractHandler"
+                :members 
+                  ( ("myBookStore" variable
+                       (:typemodifiers ("private")
+                        :type "MasterCertainBookStore")
+                        (reparse-symbol class_member_declaration) [1584 1634])
+                    ("MasterBookStoreHTTPMessageHandler" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("bookStore" variable (:type "MasterCertainBookStore") (reparse-symbol formal_parameters) [1889 1921]))                          )
+                        (reparse-symbol class_member_declaration) [1848 2199])
+                    ("handle" function
+                       (:throws ("IOException" "ServletException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("target" variable (:type "String") (reparse-symbol formal_parameters) [2441 2454])
+                            ("baseRequest" variable (:type "Request") (reparse-symbol formal_parameters) [2456 2475])
+                            ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [2477 2503])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [2505 2533]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2422 4154])
+                    ("getStockBooksByISBN" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [4448 4474])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [4476 4504]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4415 5124])
+                    ("getEditorPicks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [5374 5400])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [5402 5430]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5346 6062])
+                    ("getBooks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [6331 6357])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [6359 6387]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6309 7001])
+                    ("buyBooks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [7266 7292])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [7294 7322]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [7244 7954])
+                    ("updateEditorPicks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [8238 8264])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [8266 8294]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [8207 8962])
+                    ("listBooks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [9155 9183]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [9132 9617])
+                    ("addCopies" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [9888 9914])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [9916 9944]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [9865 10575])
+                    ("addBooks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [10844 10870])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [10872 10900]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [10822 11520])
+                    ("removeAllBooks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [11720 11748]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [11692 12190])
+                    ("removeBooks" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [12465 12491])
+                            ("response" variable (:type "HttpServletResponse") (reparse-symbol formal_parameters) [12493 12521]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [12440 13138])
+                    ("getSerializedRequestContent" function
+                       (:throws ("IOException")
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("request" variable (:type "HttpServletRequest") (reparse-symbol formal_parameters) [13412 13438]))                          
+                        :type "byte[]")
+                        (reparse-symbol class_member_declaration) [13369 13640]))                  
+                :type "class")
+                nil [1485 13642]))          
+      :file "MasterBookStoreHTTPMessageHandler.java"
+      :pointmax 13643
+      :fsize 13642
+      :lastmodtime '(23050 56104 0 0)
+      :unmatched-syntax '((STRING_LITERAL 12426 . 12437) (STRING_LITERAL 10808 . 10819) (STRING_LITERAL 9851 . 9862) (STRING_LITERAL 8193 . 8204) (STRING_LITERAL 7230 . 7241) (STRING_LITERAL 6295 . 6306) (STRING_LITERAL 4401 . 4412) (SEMICOLON 1719 . 1720) (GT 1707 . 1708) (PRIVATE 1661 . 1668) (LT 1687 . 1688)))
+    (semanticdb-table "MasterBookStoreHTTPServer.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.server" package nil nil [1 38])
+            ("org.eclipse.jetty.util.thread.QueuedThreadPool" include nil nil [40 94])
+            ("com.acertainbookstore.business.MasterCertainBookStore" include nil nil [96 157])
+            ("com.acertainbookstore.utils.BookStoreConstants" include nil nil [158 212])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [213 267])
+            ("MasterBookStoreHTTPServer" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("DEFAULT_PORT" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [411 456])
+                    ("MIN_THREADPOOL_SIZE" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [501 551])
+                    ("MAX_THREADPOOL_SIZE" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [596 647])
+                    ("MasterBookStoreHTTPServer" function
+                       (:constructor-flag t
+                        :typemodifiers ("private"))
+                        (reparse-symbol class_member_declaration) [735 818])
+                    ("main" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [997 1010]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [973 1685]))                  
+                :type "class")
+                nil [326 1687]))          
+      :file "MasterBookStoreHTTPServer.java"
+      :pointmax 1688
+      :fsize 1687
+      :lastmodtime '(23050 56104 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "BookStoreHTTPServerUtility.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.server" package nil nil [1 38])
+            ("java.net.InetAddress" include nil nil [40 68])
+            ("java.net.InetSocketAddress" include nil nil [69 103])
+            ("java.net.UnknownHostException" include nil nil [104 141])
+            ("org.eclipse.jetty.server.Server" include nil nil [143 182])
+            ("org.eclipse.jetty.server.ServerConnector" include nil nil [183 231])
+            ("org.eclipse.jetty.server.handler.AbstractHandler" include nil nil [232 288])
+            ("org.eclipse.jetty.util.thread.QueuedThreadPool" include nil nil [289 343])
+            ("BookStoreHTTPServerUtility" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("BookStoreHTTPServerUtility" function
+                       (:constructor-flag t
+                        :typemodifiers ("private"))
+                        (reparse-symbol class_member_declaration) [553 637])
+                    ("createServer" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("port" variable (:type "int") (reparse-symbol formal_parameters) [868 876])
+                            ("handler" variable (:type "AbstractHandler") (reparse-symbol formal_parameters) [878 901])
+                            ("threadpool" variable (:type "QueuedThreadPool") (reparse-symbol formal_parameters) [903 930]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [836 1380])
+                    ("createServer" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("ipAddress" variable (:type "String") (reparse-symbol formal_parameters) [1672 1688])
+                            ("port" variable (:type "int") (reparse-symbol formal_parameters) [1690 1698])
+                            ("handler" variable (:type "AbstractHandler") (reparse-symbol formal_parameters) [1700 1723]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1637 2304]))                  
+                :type "class")
+                nil [423 2306]))          
+      :file "BookStoreHTTPServerUtility.java"
+      :pointmax 2307
+      :fsize 2306
+      :lastmodtime '(23050 56104 0 0)
+      :unmatched-syntax nil))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!Assignment 4!acertainbookstore-assignment4!src!com!acertainbookstore!server!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

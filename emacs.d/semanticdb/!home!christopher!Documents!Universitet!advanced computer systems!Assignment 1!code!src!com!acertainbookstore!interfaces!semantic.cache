@@ -1,0 +1,95 @@
+;; Object interfaces/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "interfaces/"
+  :tables
+  (list
+    (semanticdb-table "StockManager.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.interfaces" package nil nil [1 42])
+            ("java.util.List" include nil nil [44 66])
+            ("java.util.Set" include nil nil [67 88])
+            ("com.acertainbookstore.business.BookCopy" include nil nil [90 137])
+            ("com.acertainbookstore.business.BookEditorPick" include nil nil [138 191])
+            ("com.acertainbookstore.business.StockBook" include nil nil [192 240])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [241 295])
+            ("StockManager" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("addBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "bookSet") (reparse-symbol formal_parameters) [671 678]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [635 706])
+                    ("addCopies" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "bookCopiesSet") (reparse-symbol formal_parameters) [947 960]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [911 988])
+                    ("updateEditorPicks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "editorPicks") (reparse-symbol formal_parameters) [2087 2098]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [2037 2126])
+                    ("removeAllBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [2291 2346])
+                    ("removeBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "isbnSet") (reparse-symbol formal_parameters) [2591 2598]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [2554 2626]))                  
+                :type "interface")
+                nil [424 2628]))          
+      :file "StockManager.java"
+      :pointmax 2628
+      :fsize 2627
+      :lastmodtime '(23049 30892 0 0)
+      :unmatched-syntax '((GT 2589 . 2590) (IDENTIFIER 2578 . 2581) (LT 2581 . 2582) (GT 2085 . 2086) (IDENTIFIER 2067 . 2070) (LT 2070 . 2071) (SEMICOLON 1834 . 1835) (THROWS 1809 . 1815) (PAREN_BLOCK 1806 . 1808) (GT 1788 . 1789) (LT 1778 . 1779) (SEMICOLON 1597 . 1598) (THROWS 1572 . 1578) (PAREN_BLOCK 1551 . 1571) (GT 1535 . 1536) (LT 1525 . 1526) (SEMICOLON 1203 . 1204) (THROWS 1178 . 1184) (PAREN_BLOCK 1175 . 1177) (GT 1165 . 1166) (PUBLIC 1144 . 1150) (LT 1155 . 1156) (GT 945 . 946) (IDENTIFIER 933 . 936) (LT 936 . 937) (GT 669 . 670) (IDENTIFIER 656 . 659) (LT 659 . 660)))
+    (semanticdb-table "BookStore.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.interfaces" package nil nil [1 42])
+            ("java.util.List" include nil nil [44 66])
+            ("java.util.Set" include nil nil [67 88])
+            ("com.acertainbookstore.business.Book" include nil nil [90 133])
+            ("com.acertainbookstore.business.BookCopy" include nil nil [134 181])
+            ("com.acertainbookstore.business.BookRating" include nil nil [182 231])
+            ("com.acertainbookstore.utils.BookStoreException" include nil nil [232 286])
+            ("BookStore" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("buyBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "booksToBuy") (reparse-symbol formal_parameters) [695 705]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [660 733])
+                    ("rateBooks" function
+                       (:throws ("BookStoreException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "bookRating") (reparse-symbol formal_parameters) [1008 1018]))                          
+                        :type "void")
+                        (reparse-symbol interface_member_declaration) [970 1046]))                  
+                :type "interface")
+                nil [451 1949]))          
+      :file "BookStore.java"
+      :pointmax 1950
+      :fsize 1949
+      :lastmodtime '(23049 30892 0 0)
+      :unmatched-syntax '((SEMICOLON 1946 . 1947) (THROWS 1921 . 1927) (PAREN_BLOCK 1906 . 1920) (GT 1890 . 1891) (LT 1885 . 1886) (SEMICOLON 1639 . 1640) (THROWS 1614 . 1620) (PAREN_BLOCK 1599 . 1613) (GT 1581 . 1582) (LT 1576 . 1577) (SEMICOLON 1343 . 1344) (THROWS 1318 . 1324) (PAREN_BLOCK 1294 . 1317) (GT 1284 . 1285) (PUBLIC 1268 . 1274) (LT 1279 . 1280) (GT 1006 . 1007) (IDENTIFIER 992 . 995) (LT 995 . 996) (GT 693 . 694) (IDENTIFIER 681 . 684) (LT 684 . 685))))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!Assignment 1!code!src!com!acertainbookstore!interfaces!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

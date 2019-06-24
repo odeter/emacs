@@ -1,0 +1,195 @@
+;; Object tests/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tests/"
+  :tables
+  (list
+    (semanticdb-table "SuperMarketTest.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.tests" package nil nil [1 46])
+            ("java.util.HashSet" include nil nil [83 108])
+            ("java.util.List" include nil nil [109 131])
+            ("java.util.ArrayList" include nil nil [132 159])
+            ("java.util.Set" include nil nil [160 181])
+            ("java.util.Arrays" include nil nil [182 206])
+            ("org.junit.After" include nil nil [208 231])
+            ("org.junit.AfterClass" include nil nil [232 260])
+            ("org.junit.Before" include nil nil [261 285])
+            ("org.junit.BeforeClass" include nil nil [286 315])
+            ("org.junit.Test" include nil nil [316 338])
+            ("com.acertainsupermarket.business.*" include nil nil [340 382])
+            ("com.acertainsupermarket.client.*" include nil nil [383 423])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [424 468])
+            ("com.acertainsupermarket.utils.*" include nil nil [469 508])
+            ("SuperMarketTest" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("localTest" variable
+                       (:typemodifiers ("private" "static")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [666 706])
+                    ("testInterface" variable
+                       (:typemodifiers ("private" "static")
+                        :type "superTest")
+                        (reparse-symbol class_member_declaration) [742 781])
+                    ("setUpBeforeClass" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [902 1397])
+                    ("initializeItems" function
+                       (:throws ("SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1414 2246])
+                    ("testUpdateStockExceptions" function
+                       (:throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2262 3884])
+                    ("testUpdateStockBasic" function
+                       (:throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3900 4407])
+                    ("testUpdateStockConcurrency" function
+                       (:throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4438 6213])
+                    ("testUpdateStockConcurrencyInterupt" function
+                       (:throws ("NegativeIdentifierException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6245 7637])
+                    ("tearDownAfterClass" function
+                       (:throws ("SupermarketException")
+                        :typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [7790 8073]))                  
+                :type "class")
+                nil [603 8075]))          
+      :file "SuperMarketTest.java"
+      :pointmax 8076
+      :fsize 8075
+      :lastmodtime '(23142 18809 271114 0)
+      :unmatched-syntax '((NUMBER_LITERAL 6235 . 6239) (IDENTIFIER 6225 . 6232) (EQ 6233 . 6234) (NUMBER_LITERAL 4429 . 4432) (IDENTIFIER 4419 . 4426) (EQ 4427 . 4428) (MULT 79 . 80) (DOT 78 . 79) (IDENTIFIER 72 . 78) (DOT 71 . 72) (IDENTIFIER 66 . 71) (DOT 65 . 66) (IMPORT 48 . 54) (STATIC 55 . 61) (IDENTIFIER 62 . 65)))
+    (semanticdb-table "CartTest.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.tests" package nil nil [1 46])
+            ("java.util.HashSet" include nil nil [83 108])
+            ("java.util.List" include nil nil [109 131])
+            ("java.util.ArrayList" include nil nil [132 159])
+            ("java.util.Set" include nil nil [160 181])
+            ("java.util.Arrays" include nil nil [182 206])
+            ("org.junit.After" include nil nil [208 231])
+            ("org.junit.AfterClass" include nil nil [232 260])
+            ("org.junit.Before" include nil nil [261 285])
+            ("org.junit.BeforeClass" include nil nil [286 315])
+            ("org.junit.Test" include nil nil [316 338])
+            ("com.acertainsupermarket.business.*" include nil nil [340 382])
+            ("com.acertainsupermarket.client.*" include nil nil [383 423])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [424 468])
+            ("com.acertainsupermarket.utils.*" include nil nil [469 508])
+            ("CartTest" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("localTest" variable
+                       (:typemodifiers ("private" "static")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [659 699])
+                    ("testSuperInterface" variable
+                       (:typemodifiers ("private" "static")
+                        :type "superTest")
+                        (reparse-symbol class_member_declaration) [735 779])
+                    ("testCartInterface1" variable
+                       (:typemodifiers ("private" "static")
+                        :type "superCartTest")
+                        (reparse-symbol class_member_declaration) [784 832])
+                    ("testCartInterface2" variable
+                       (:typemodifiers ("private" "static")
+                        :type "superCartTest")
+                        (reparse-symbol class_member_declaration) [837 885])
+                    ("superInterface" variable
+                       (:typemodifiers ("private" "static")
+                        :type "Supermarket")
+                        (reparse-symbol class_member_declaration) [890 932])
+                    ("setUpBeforeClass" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1045 1888])
+                    ("initializeItems" function
+                       (:throws ("SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1905 2870])
+                    ("testgetCartItemsException" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2886 3317])
+                    ("testAddExceptions" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3334 4066])
+                    ("testAddBasic" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4082 4622])
+                    ("testAddConcurrency" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4653 5994])
+                    ("testAddConcurrency2" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [6026 7496])
+                    ("testRemoveExceptions" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [7512 8259])
+                    ("testRemoveBasic" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [8275 9003])
+                    ("testRemoveConcurrency" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [9038 10339])
+                    ("testCheckoutExceptions" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [10355 10824])
+                    ("testCheckOutBasic" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [10840 11346])
+                    ("testCheckoutConcurrency" function
+                       (:throws ("NegativeIdentifierException" "InexistentCartException" "InexistentItemException" "SupermarketException")
+                        :typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [11377 12973])
+                    ("tearDownAfterClass" function
+                       (:throws ("SupermarketException")
+                        :typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [13126 13387]))                  
+                :type "class")
+                nil [603 13389]))          
+      :file "CartTest.java"
+      :pointmax 13390
+      :fsize 13498
+      :lastmodtime '(23237 18777 17239 27000)
+      :unmatched-syntax nil))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!re-exam!acertainsupermarket!acertainsupermarket!src!com!acertainsupermarket!client!tests!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

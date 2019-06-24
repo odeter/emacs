@@ -1,0 +1,579 @@
+;; Object utils/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "utils/"
+  :tables
+  (list
+    (semanticdb-table "SupermarketException.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("SupermarketException" type
+               (:typemodifiers ("public")
+                :superclasses "Exception"
+                :members 
+                  ( ("serialVersionUID" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [393 460])
+                    ("SupermarketException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [522 556])
+                    ("SupermarketException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [697 711]))                          )
+                        (reparse-symbol class_member_declaration) [669 735])
+                    ("SupermarketException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [871 886]))                          )
+                        (reparse-symbol class_member_declaration) [843 908])
+                    ("SupermarketException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [1085 1099])
+                            ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [1101 1116]))                          )
+                        (reparse-symbol class_member_declaration) [1057 1147])
+                    ("SupermarketException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [1437 1451])
+                            ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [1453 1468])
+                            ("enableSuppression" variable (:type "boolean") (reparse-symbol formal_parameters) [1470 1495])
+                            ("writableStackTrace" variable (:type "boolean") (reparse-symbol formal_parameters) [1500 1526]))                          )
+                        (reparse-symbol class_member_declaration) [1409 1596]))                  
+                :type "class")
+                nil [299 1599]))          
+      :file "SupermarketException.java"
+      :pointmax 1600
+      :fsize 1599
+      :lastmodtime '(23106 57696 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "NegativeIdentifierException.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("NegativeIdentifierException" type
+               (:typemodifiers ("public")
+                :superclasses "SupermarketException"
+                :members 
+                  ( ("serialVersionUID" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [384 450])
+                    ("NegativeIdentifierException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [518 559])
+                    ("NegativeIdentifierException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [717 731]))                          )
+                        (reparse-symbol class_member_declaration) [682 755])
+                    ("NegativeIdentifierException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [908 923]))                          )
+                        (reparse-symbol class_member_declaration) [873 945])
+                    ("NegativeIdentifierException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [1135 1149])
+                            ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [1151 1166]))                          )
+                        (reparse-symbol class_member_declaration) [1100 1197])
+                    ("NegativeIdentifierException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [1504 1518])
+                            ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [1520 1535])
+                            ("enableSuppression" variable (:type "boolean") (reparse-symbol formal_parameters) [1537 1562])
+                            ("writableStackTrace" variable (:type "boolean") (reparse-symbol formal_parameters) [1567 1593]))                          )
+                        (reparse-symbol class_member_declaration) [1469 1663]))                  
+                :type "class")
+                nil [272 1666]))          
+      :file "NegativeIdentifierException.java"
+      :pointmax 1667
+      :fsize 1666
+      :lastmodtime '(23106 56460 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "InexistentItemException.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("InexistentItemException" type
+               (:typemodifiers ("public")
+                :superclasses "SupermarketException"
+                :members 
+                  ( ("serialVersionUID" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [400 466])
+                    ("InexistentItemException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [531 610])
+                    ("InexistentItemException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [761 775]))                          )
+                        (reparse-symbol class_member_declaration) [730 841])
+                    ("InexistentItemException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [983 998]))                          )
+                        (reparse-symbol class_member_declaration) [952 1062])
+                    ("InexistentItemException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [1245 1259])
+                            ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [1261 1276]))                          )
+                        (reparse-symbol class_member_declaration) [1214 1349])
+                    ("InexistentItemException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [1649 1663])
+                            ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [1665 1680])
+                            ("enableSuppression" variable (:type "boolean") (reparse-symbol formal_parameters) [1682 1707])
+                            ("writableStackTrace" variable (:type "boolean") (reparse-symbol formal_parameters) [1712 1738]))                          )
+                        (reparse-symbol class_member_declaration) [1618 1850]))                  
+                :type "class")
+                nil [292 1853]))          
+      :file "InexistentItemException.java"
+      :pointmax 1854
+      :fsize 1853
+      :lastmodtime '(23106 57171 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "InexistentCartException.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("InexistentCartException" type
+               (:typemodifiers ("public")
+                :superclasses "SupermarketException"
+                :members 
+                  ( ("serialVersionUID" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [399 465])
+                    ("InexistentCartException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [530 609])
+                    ("InexistentCartException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [760 774]))                          )
+                        (reparse-symbol class_member_declaration) [729 798])
+                    ("InexistentCartException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [944 959]))                          )
+                        (reparse-symbol class_member_declaration) [913 981])
+                    ("InexistentCartException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [1164 1178])
+                            ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [1180 1195]))                          )
+                        (reparse-symbol class_member_declaration) [1133 1226])
+                    ("InexistentCartException" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("message" variable (:type "String") (reparse-symbol formal_parameters) [1526 1540])
+                            ("cause" variable (:type "Throwable") (reparse-symbol formal_parameters) [1542 1557])
+                            ("enableSuppression" variable (:type "boolean") (reparse-symbol formal_parameters) [1559 1584])
+                            ("writableStackTrace" variable (:type "boolean") (reparse-symbol formal_parameters) [1589 1615]))                          )
+                        (reparse-symbol class_member_declaration) [1495 1685]))                  
+                :type "class")
+                nil [291 1688]))          
+      :file "InexistentCartException.java"
+      :pointmax 1689
+      :fsize 1688
+      :lastmodtime '(23106 57024 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "SuperMarketConstant.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("SuperMarketConstant" type
+               (:typemodifiers ("public" "final")
+                :members 
+                  ( ("BINARY_SERIALIZATION" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [205 262])
+                    ("BOOKISBN_PARAM" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [351 402])
+                    ("BOOK_NUM_PARAM" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [448 510])
+                    ("XMLSTRINGLEN_PARAM" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [560 614])
+                    ("PROPERTY_KEY_LOCAL_TEST" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [669 734])
+                    ("PROPERTY_KEY_SERVER_PORT" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [790 851])
+                    ("INVALID_PARAMS" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [971 1015])
+                    ("INVALID" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1144 1195])
+                    ("QUANTITY" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1235 1285])
+                    ("NEGATIVEQ" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1370 1427])
+                    ("DUPLICATED" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1469 1526])
+                    ("ITEMID" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1572 1618])
+                    ("CARTID" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1664 1710])
+                    ("NOT_AVAILABLE" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1796 1859])
+                    ("NULL_INPUT" variable
+                       (:typemodifiers ("public" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1901 1965])
+                    ("SuperMarketConstant" function
+                       (:constructor-flag t
+                        :typemodifiers ("private"))
+                        (reparse-symbol class_member_declaration) [2058 2122]))                  
+                :type "class")
+                nil [157 2124]))          
+      :file "SuperMarketConstant.java"
+      :pointmax 2125
+      :fsize 2122
+      :lastmodtime '(23141 2724 105597 656000)
+      :unmatched-syntax nil)
+    (semanticdb-table "SuperMarketKryoSerializer.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("java.io.ByteArrayInputStream" include nil nil [41 77])
+            ("java.io.ByteArrayOutputStream" include nil nil [78 115])
+            ("java.io.IOException" include nil nil [116 143])
+            ("java.io.InputStream" include nil nil [144 171])
+            ("java.io.OutputStream" include nil nil [172 200])
+            ("com.acertainsupermarket.business.*" include nil nil [201 243])
+            ("com.acertainsupermarket.interfaces.SuperMarketSerializer" include nil nil [244 308])
+            ("com.esotericsoftware.kryo.Kryo" include nil nil [309 347])
+            ("com.esotericsoftware.kryo.io.Input" include nil nil [348 390])
+            ("com.esotericsoftware.kryo.io.Output" include nil nil [391 434])
+            ("org.objenesis.strategy.StdInstantiatorStrategy" include nil nil [435 489])
+            ("SuperMarketKryoSerializer" type
+               (:typemodifiers ("public" "final")
+                :interfaces ("SuperMarketSerializer")
+                :members 
+                  ( ("binaryStream" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Kryo")
+                        (reparse-symbol class_member_declaration) [760 792])
+                    ("SuperMarketKryoSerializer" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [861 1084])
+                    ("serialize" function
+                       (:throws ("IOException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("object" variable (:type "Object") (reparse-symbol formal_parameters) [1252 1265]))                          
+                        :type "byte[]")
+                        (reparse-symbol class_member_declaration) [1228 1503])
+                    ("deserialize" function
+                       (:throws ("IOException")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("bytes" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [1656 1668]))                          
+                        :type "Object")
+                        (reparse-symbol class_member_declaration) [1630 1841]))                  
+                :type "class")
+                nil [651 1843]))          
+      :file "SuperMarketKryoSerializer.java"
+      :pointmax 1844
+      :fsize 1843
+      :lastmodtime '(23140 45584 528822 317000)
+      :unmatched-syntax nil)
+    (semanticdb-table "SuperMarketXStreamSerializer.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("com.acertainsupermarket.interfaces.SuperMarketSerializer" include nil nil [41 105])
+            ("com.thoughtworks.xstream.XStream" include nil nil [106 146])
+            ("com.thoughtworks.xstream.io.xml.StaxDriver" include nil nil [147 197])
+            ("SuperMarketXStreamSerializer" type
+               (:typemodifiers ("public" "final")
+                :interfaces ("SuperMarketSerializer")
+                :members 
+                  ( ("xmlStream" variable
+                       (:typemodifiers ("private" "final")
+                        :type "XStream")
+                        (reparse-symbol class_member_declaration) [476 540])
+                    ("serialize" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("object" variable (:type "Object") (reparse-symbol formal_parameters) [708 721]))                          
+                        :type "byte[]")
+                        (reparse-symbol class_member_declaration) [684 792])
+                    ("deserialize" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("bytes" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [949 961]))                          
+                        :type "Object")
+                        (reparse-symbol class_member_declaration) [923 1034]))                  
+                :type "class")
+                nil [367 1036]))          
+      :file "SuperMarketXStreamSerializer.java"
+      :pointmax 1037
+      :fsize 1036
+      :lastmodtime '(23140 39039 42015 859000)
+      :unmatched-syntax nil)
+    (semanticdb-table "SuperMarketMessageTag.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39]))          
+      :file "SuperMarketMessageTag.java"
+      :pointmax 223
+      :fsize 222
+      :lastmodtime '(23140 65325 783965 141000)
+      :unmatched-syntax '((BRACE_BLOCK 169 . 222) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 223) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 222) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 231) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 226) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 224) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 223) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 214) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 213) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 169 . 207) (IDENTIFIER 147 . 168) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 170 . 208) (IDENTIFIER 147 . 169) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 164 . 202) (IDENTIFIER 147 . 163) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 163 . 201) (IDENTIFIER 147 . 162) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146) (BRACE_BLOCK 158 . 196) (IDENTIFIER 147 . 157) (PUBLIC 135 . 141) (IDENTIFIER 142 . 146)))
+    (semanticdb-table "SuperMarketUtility.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("java.io.IOException" include nil nil [41 68])
+            ("java.util.concurrent.ExecutionException" include nil nil [69 116])
+            ("java.util.concurrent.TimeoutException" include nil nil [117 162])
+            ("org.eclipse.jetty.client.HttpClient" include nil nil [164 207])
+            ("org.eclipse.jetty.client.api.ContentProvider" include nil nil [208 260])
+            ("org.eclipse.jetty.client.api.ContentResponse" include nil nil [261 313])
+            ("org.eclipse.jetty.client.api.Request" include nil nil [314 358])
+            ("org.eclipse.jetty.client.util.BytesContentProvider" include nil nil [359 417])
+            ("org.eclipse.jetty.http.HttpMethod" include nil nil [418 459])
+            ("com.acertainsupermarket.client.SuperMarketClientConstants" include nil nil [461 526])
+            ("com.acertainsupermarket.interfaces.SuperMarketSerializer" include nil nil [527 591])
+            ("com.thoughtworks.xstream.XStream" include nil nil [592 632])
+            ("com.thoughtworks.xstream.io.xml.StaxDriver" include nil nil [633 683])
+            ("SuperMarketUtility" type
+               (:typemodifiers ("public" "final")
+                :members 
+                  ( ("SuperMarketUtility" function
+                       (:constructor-flag t
+                        :typemodifiers ("private"))
+                        (reparse-symbol class_member_declaration) [1196 1257])
+                    ("isInvalidISBN" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("isbn" variable (:type "int") (reparse-symbol formal_parameters) [1418 1426]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1382 1451])
+                    ("isInvalidRating" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("rating" variable (:type "int") (reparse-symbol formal_parameters) [1622 1632]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1584 1673])
+                    ("isInvalidNoCopies" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("copies" variable (:type "int") (reparse-symbol formal_parameters) [1852 1862]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1812 1889])
+                    ("isEmpty" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("str" variable (:type "String") (reparse-symbol formal_parameters) [2048 2058]))                          
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [2018 2103])
+                    ("convertStringToFloat" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("str" variable (:type "String") (reparse-symbol formal_parameters) [2398 2408])
+                            ("failureSignal" variable (:type "float") (reparse-symbol formal_parameters) [2410 2429]))                          
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [2357 2654])
+                    ("convertStringToInt" function
+                       (:throws ("SupermarketException")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("str" variable (:type "String") (reparse-symbol formal_parameters) [2963 2973]))                          
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2926 3172])
+                    ("convertURItoMessageTag" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("requestURI" variable (:type "String") (reparse-symbol formal_parameters) [3417 3434]))                          
+                        :type "SuperMarketMessageTag")
+                        (reparse-symbol class_member_declaration) [3358 3757])
+                    ("performHttpExchange" function
+                       (:throws ("SupermarketException")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("client" variable (:type "HttpClient") (reparse-symbol formal_parameters) [4125 4142])
+                            ("bookStoreRequest" variable (:type "SuperMarketRequest") (reparse-symbol formal_parameters) [4144 4179])
+                            ("serializer" variable (:type "SuperMarketSerializer") (reparse-symbol formal_parameters) [4184 4216]))                          
+                        :type "SuperMarketResponse")
+                        (reparse-symbol class_member_declaration) [4071 5757]))                  
+                :type "class")
+                nil [792 5759]))          
+      :file "SuperMarketUtility.java"
+      :pointmax 5760
+      :fsize 5759
+      :lastmodtime '(23140 45818 948987 214000)
+      :unmatched-syntax nil)
+    (semanticdb-table "SuperMarketRequest.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("org.eclipse.jetty.http.HttpMethod" include nil nil [41 82])
+            ("SuperMarketRequest" type
+               (:typemodifiers ("public" "final")
+                :members 
+                  ( ("method" variable
+                       (:typemodifiers ("private" "final")
+                        :type "HttpMethod")
+                        (reparse-symbol class_member_declaration) [281 313])
+                    ("urlString" variable
+                       (:typemodifiers ("private" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [340 371])
+                    ("inputValue" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Object")
+                        (reparse-symbol class_member_declaration) [399 431])
+                    ("SuperMarketRequest" function
+                       (:constructor-flag t
+                        :typemodifiers ("private")
+                        :arguments 
+                          ( ("method" variable (:type "HttpMethod") (reparse-symbol formal_parameters) [672 689])
+                            ("urlString" variable (:type "String") (reparse-symbol formal_parameters) [691 707])
+                            ("inputValue" variable (:type "Object") (reparse-symbol formal_parameters) [709 726]))                          )
+                        (reparse-symbol class_member_declaration) [645 818])
+                    ("getMethod" function
+                       (:typemodifiers ("public")
+                        :type "HttpMethod")
+                        (reparse-symbol class_member_declaration) [879 930])
+                    ("getURLString" function
+                       (:typemodifiers ("public")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [999 1052])
+                    ("getInputValue" function
+                       (:typemodifiers ("public")
+                        :type "Object")
+                        (reparse-symbol class_member_declaration) [1123 1178])
+                    ("newGetRequest" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("urlString" variable (:type "String") (reparse-symbol formal_parameters) [1356 1372]))                          
+                        :type "SuperMarketRequest")
+                        (reparse-symbol class_member_declaration) [1309 1444])
+                    ("newPostRequest" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("urlString" variable (:type "String") (reparse-symbol formal_parameters) [1677 1693])
+                            ("inputValue" variable (:type "Object") (reparse-symbol formal_parameters) [1695 1712]))                          
+                        :type "SuperMarketRequest")
+                        (reparse-symbol class_member_declaration) [1629 1791]))                  
+                :type "class")
+                nil [219 1793]))          
+      :file "SuperMarketRequest.java"
+      :pointmax 1794
+      :fsize 1793
+      :lastmodtime '(23140 41019 373886 288000)
+      :unmatched-syntax nil)
+    (semanticdb-table "SuperMarketResponse.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.utils" package nil nil [1 39])
+            ("java.util.List" include nil nil [41 63])
+            ("com.acertainsupermarket.business.*" include nil nil [65 107])
+            ("SuperMarketResponse" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("exception" variable
+                       (:typemodifiers ("private")
+                        :type "SupermarketException")
+                        (reparse-symbol class_member_declaration) [390 429])
+                    ("SuperMarketResponse" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("exception" variable (:type "SupermarketException") (reparse-symbol formal_parameters) [655 685])
+                            ("" variable (:type "list") (reparse-symbol formal_parameters) [707 711]))                          )
+                        (reparse-symbol class_member_declaration) [628 771])
+                    ("SuperMarketResponse" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [828 910])
+                    ("getList" function (:constructor-flag t) (reparse-symbol class_member_declaration) [982 1011])
+                    ("setList" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("" variable (:type "list") (reparse-symbol formal_parameters) [1119 1123]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1091 1149])
+                    ("getException" function
+                       (:typemodifiers ("public")
+                        :type "SupermarketException")
+                        (reparse-symbol class_member_declaration) [1216 1283])
+                    ("setException" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("exception" variable (:type "SupermarketException") (reparse-symbol formal_parameters) [1403 1433]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1378 1469]))                  
+                :type "class")
+                nil [330 1471]))          
+      :file "SuperMarketResponse.java"
+      :pointmax 1472
+      :fsize 1471
+      :lastmodtime '(23140 41427 902621 492000)
+      :unmatched-syntax nil))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!exam!acertainsupermarket!acertainsupermarket!src!com!acertainsupermarket!utils!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

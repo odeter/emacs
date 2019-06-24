@@ -1,0 +1,17 @@
+;; Object utils/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "utils/"
+  :tables
+  (list
+    (semanticdb-table "BookStoreMessageTag.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainbookstore.utils" package nil nil [1 37]))          
+      :file "BookStoreMessageTag.java"
+      :pointmax 794
+      :fsize 793
+      :lastmodtime '(23050 56104 0 0)
+      :unmatched-syntax '((BRACE_BLOCK 165 . 793) (IDENTIFIER 145 . 164) (PUBLIC 133 . 139) (IDENTIFIER 140 . 144) (BRACE_BLOCK 165 . 794) (IDENTIFIER 145 . 164) (PUBLIC 133 . 139) (IDENTIFIER 140 . 144) (BRACE_BLOCK 165 . 793) (IDENTIFIER 145 . 164) (PUBLIC 133 . 139) (IDENTIFIER 140 . 144) (BRACE_BLOCK 165 . 794) (IDENTIFIER 145 . 164) (PUBLIC 133 . 139) (IDENTIFIER 140 . 144) (BRACE_BLOCK 165 . 793) (IDENTIFIER 145 . 164) (PUBLIC 133 . 139) (IDENTIFIER 140 . 144))))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!Assignment 4!acertainbookstore-assignment4!src!com!acertainbookstore!utils!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

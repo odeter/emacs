@@ -1,0 +1,383 @@
+;; Object workloads/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "workloads/"
+  :tables
+  (list
+    (semanticdb-table "CertainWorkload.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [12 61])
+            ("java.util.ArrayList" include nil nil [63 90])
+            ("java.util.List" include nil nil [91 113])
+            ("java.util.Set" include nil nil [114 135])
+            ("java.util.HashSet" include nil nil [136 161])
+            ("java.util.concurrent.ExecutorService" include nil nil [162 206])
+            ("java.util.concurrent.Executors" include nil nil [207 245])
+            ("java.util.concurrent.Future" include nil nil [246 281])
+            ("java.io.File" include nil nil [282 302])
+            ("java.io.FileNotFoundException" include nil nil [303 340])
+            ("java.io.PrintWriter" include nil nil [341 368])
+            ("java.io.BufferedInputStream" include nil nil [369 404])
+            ("java.io.DataInputStream" include nil nil [405 436])
+            ("java.io.FileInputStream" include nil nil [437 468])
+            ("java.io.IOException" include nil nil [469 496])
+            ("com.acertainsupermarket.business.*" include nil nil [499 541])
+            ("com.acertainsupermarket.client.*" include nil nil [542 582])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [583 627])
+            ("com.acertainsupermarket.utils.*" include nil nil [628 667])
+            ("com.acertainsupermarket.server.*" include nil nil [668 708])
+            ("CertainWorkload" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("numConcurrentWT" variable
+                       (:typemodifiers ("public" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1017 1055])
+                    ("main" function
+                       (:throws ("Exception")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [1107 1120]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1083 3085])
+                    ("reportMetric" function
+                       (:throws ("FileNotFoundException")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("" variable (:type "workerRunResults") (reparse-symbol formal_parameters) [3225 3241]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3171 4508])
+                    ("initializeSupermarket" function
+                       (:constructor-flag t
+                        :throws ("SupermarketException")
+                        :arguments 
+                          ( ("stockManager" variable (:type "superTest") (reparse-symbol formal_parameters) [4703 4725]))                          )
+                        (reparse-symbol class_member_declaration) [4681 5216]))                  
+                :type "class")
+                nil [981 5218]))          
+      :file "CertainWorkload.java"
+      :pointmax 5219
+      :fsize 5218
+      :lastmodtime '(23237 43176 300885 9000)
+      :unmatched-syntax nil)
+    (semanticdb-table "WorkloadConfiguration.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [1 50])
+            ("java.util.*" include nil nil [52 71])
+            ("com.acertainsupermarket.interfaces.*" include nil nil [72 116])
+            ("com.acertainsupermarket.business.*" include nil nil [117 159])
+            ("WorkloadConfiguration" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("numBooksToBuy" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [335 365])
+                    ("numBookCopiesToBuy" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [367 402])
+                    ("numAddCopies" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [404 434])
+                    ("numBooksToAdd" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [436 466])
+                    ("warmUpRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [468 497])
+                    ("numActualRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [499 531])
+                    ("percentRareStockManagerInteraction" variable
+                       (:typemodifiers ("private")
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [533 588])
+                    ("percentFrequentStockManagerInteraction" variable
+                       (:typemodifiers ("private")
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [590 649])
+                    ("ItemGenerator" variable
+                       (:typemodifiers ("private")
+                        :type "ItemGenerator")
+                        (reparse-symbol class_member_declaration) [651 694])
+                    ("stockManager" variable
+                       (:typemodifiers ("private")
+                        :type "superTest")
+                        (reparse-symbol class_member_declaration) [696 734])
+                    ("WorkloadConfiguration" function
+                       (:constructor-flag t
+                        :throws ("Exception")
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("stockManager" variable (:type "superTest") (reparse-symbol formal_parameters) [820 842]))                          )
+                        (reparse-symbol class_member_declaration) [791 987])
+                    ("getNumBooksToBuy" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [990 1048])
+                    ("setNumBooksToBuy" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numBooksToBuy" variable (:type "int") (reparse-symbol formal_parameters) [1080 1097]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1051 1141])
+                    ("getNumBookCopiesToBuy" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1144 1212])
+                    ("setNumBookCopiesToBuy" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numBookCopiesToBuy" variable (:type "int") (reparse-symbol formal_parameters) [1249 1271]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1215 1325])
+                    ("getNumBooksToAdd" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1328 1386])
+                    ("setNumBooksToAdd" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numBooksToAdd" variable (:type "int") (reparse-symbol formal_parameters) [1418 1435]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1389 1479])
+                    ("getStockManager" function
+                       (:typemodifiers ("public")
+                        :type "superTest")
+                        (reparse-symbol class_member_declaration) [1482 1544])
+                    ("setStockManager" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("stockManager" variable (:type "superTest") (reparse-symbol formal_parameters) [1575 1597]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1547 1639])
+                    ("getPercentRareStockManagerInteraction" function
+                       (:typemodifiers ("public")
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [1642 1744])
+                    ("setPercentRareStockManagerInteraction" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("percentRareStockManagerInteraction" variable (:type "float") (reparse-symbol formal_parameters) [1801 1841]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1747 1927])
+                    ("getPercentFrequentStockManagerInteraction" function
+                       (:typemodifiers ("public")
+                        :type "float")
+                        (reparse-symbol class_member_declaration) [1930 2040])
+                    ("setPercentFrequentStockManagerInteraction" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("percentFrequentStockManagerInteraction" variable (:type "float") (reparse-symbol formal_parameters) [2101 2145]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2043 2239])
+                    ("getWarmUpRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2242 2294])
+                    ("setWarmUpRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("warmUpRuns" variable (:type "int") (reparse-symbol formal_parameters) [2323 2337]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2297 2375])
+                    ("getNumActualRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2378 2436])
+                    ("setNumActualRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numActualRuns" variable (:type "int") (reparse-symbol formal_parameters) [2468 2485]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2439 2529])
+                    ("getNumAddCopies" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2536 2592])
+                    ("setNumAddCopies" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("numAddCopies" variable (:type "int") (reparse-symbol formal_parameters) [2623 2639]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2595 2681])
+                    ("getBookSetGenerator" function
+                       (:typemodifiers ("public")
+                        :type "ItemGenerator")
+                        (reparse-symbol class_member_declaration) [2684 2755])
+                    ("setBookSetGenerator" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("ItemGenerator" variable (:type "ItemGenerator") (reparse-symbol formal_parameters) [2790 2817]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2758 2861]))                  
+                :type "class")
+                nil [297 2864]))          
+      :file "WorkloadConfiguration.java"
+      :pointmax 2865
+      :fsize 2864
+      :lastmodtime '(23237 39665 645348 123000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ItemGenerator.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [1 50])
+            ("java.util.*" include nil nil [52 71])
+            ("com.acertainsupermarket.business.*" include nil nil [155 197])
+            ("com.acertainsupermarket.client.*" include nil nil [198 238])
+            ("ItemGenerator" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("ItemGenerator" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [364 391])
+                    ("sampleFromSetOfItemID" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("" variable (:type "Items") (reparse-symbol formal_parameters) [549 554])
+                            ("num" variable (:type "int") (reparse-symbol formal_parameters) [556 563]))                          )
+                        (reparse-symbol class_member_declaration) [514 979])
+                    ("getRandomString" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("length" variable (:type "int") (reparse-symbol formal_parameters) [1122 1132]))                          
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1092 1412])
+                    ("nextSetOfStockBooks" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("num" variable (:type "int") (reparse-symbol formal_parameters) [1465 1472]))                          )
+                        (reparse-symbol class_member_declaration) [1445 1932]))                  
+                :type "class")
+                nil [333 1935]))          
+      :file "ItemGenerator.java"
+      :pointmax 1936
+      :fsize 1935
+      :lastmodtime '(23237 39512 96776 636000)
+      :unmatched-syntax nil)
+    (semanticdb-table "Worker.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [12 61])
+            ("java.util.Random" include nil nil [63 87])
+            ("java.util.concurrent.Callable" include nil nil [88 125])
+            ("java.util.ArrayList" include nil nil [126 153])
+            ("java.util.List" include nil nil [154 176])
+            ("java.util.Set" include nil nil [177 198])
+            ("java.util.HashSet" include nil nil [199 224])
+            ("java.util.Comparator" include nil nil [225 253])
+            ("java.util.PriorityQueue" include nil nil [254 285])
+            ("com.acertainsupermarket.business.*" include nil nil [287 329])
+            ("com.acertainsupermarket.utils.*" include nil nil [330 369]))          
+      :file "Worker.java"
+      :pointmax 5081
+      :fsize 5080
+      :lastmodtime '(23237 39591 609069 414000)
+      :unmatched-syntax '((BRACE_BLOCK 584 . 5080) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5081) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5076) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5076) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5071) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5066) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5065) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5073) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5074) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5073) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5081) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5082) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5082) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5089) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5090) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5088) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5087) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5086) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5084) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5083) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5079) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5078) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5080) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5081) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5079) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5078) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5067) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5068) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5063) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5059) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5074) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5075) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5059) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5057) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5053) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5040) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5040) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5039) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5038) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5035) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5038) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5033) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5029) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5028) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5029) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5028) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5027) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5026) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5025) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5018) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5017) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5016) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5014) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5013) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5017) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5005) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5000) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5011) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5022) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5024) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5023) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5033) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5028) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5039) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5040) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5045) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5046) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 4824) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 4825) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 4826) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5347) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5048) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5047) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5045) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5042) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5048) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5047) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5046) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5048) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5043) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5051) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5052) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5053) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5111) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5212) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5266) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5771) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5774) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5773) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5772) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5755) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5755) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5737) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5755) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5756) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5778) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5828) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5778) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5776) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5774) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5769) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5770) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5772) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6482) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6480) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6479) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6523) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6584) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6583) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6584) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6564) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6582) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6583) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6583) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6576) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6575) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6574) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6568) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6567) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6566) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6566) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6567) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6566) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6571) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6575) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6576) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6570) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6569) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6568) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6566) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6565) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6571) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6563) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6562) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6569) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6570) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6571) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6572) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6579) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6578) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6580) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6583) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6609) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6563) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6564) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6560) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6559) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6558) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6556) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6553) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6554) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6563) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6564) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6559) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6558) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6553) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6552) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6558) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6559) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6545) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6546) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6547) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6549) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6551) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6555) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6556) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6557) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6551) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6548) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6547) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6549) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6550) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6553) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6552) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6551) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6550) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6549) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6553) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6553) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6555) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6556) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6553) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6550) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6555) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6554) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6553) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6552) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6549) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6555) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6554) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6794) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6804) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6791) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6809) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6809) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6810) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6807) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6806) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6804) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6801) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6803) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6811) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6812) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6810) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6807) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6805) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6804) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6810) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6767) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6771) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6767) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6768) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6771) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6765) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6767) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6766) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6761) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6757) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6755) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6748) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6747) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6744) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6742) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6737) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6734) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6733) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6730) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6729) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6728) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6727) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6724) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6720) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6719) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6715) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6712) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6684) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6684) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6680) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6686) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6687) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6738) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6657) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5520) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 5519) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6657) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6657) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6659) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6656) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6659) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6658) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6657) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6661) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6662) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6669) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6670) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6671) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6669) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6665) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6670) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567) (BRACE_BLOCK 584 . 6751) (GT 582 . 583) (IDENTIFIER 567 . 582) (PUBLIC 527 . 533) (LT 566 . 567)))
+    (semanticdb-table "WorkerRunResult.java"
+      :major-mode 'jdee-mode
+      :tags 
+        '( ("com.acertainsupermarket.client.workloads" package nil nil [1 50])
+            ("WorkerRunResult" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("successfulInteractions" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [215 250])
+                    ("totalRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [295 317])
+                    ("elapsedTimeInNanoSecs" variable
+                       (:typemodifiers ("private")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [355 390])
+                    ("successfulFrequentBookStoreInteractionRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [449 504])
+                    ("totalFrequentBookStoreInteractionRuns" variable
+                       (:typemodifiers ("private")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [639 689])
+                    ("WorkerRunResult" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("successfulInteractions" variable (:type "int") (reparse-symbol formal_parameters) [795 821])
+                            ("elapsedTimeInNanoSecs" variable (:type "long") (reparse-symbol formal_parameters) [823 849])
+                            ("totalRuns" variable (:type "int") (reparse-symbol formal_parameters) [854 867])
+                            ("successfulFrequentBookStoreInteractionRuns" variable (:type "int") (reparse-symbol formal_parameters) [869 915])
+                            ("totalFrequentBookStoreInteractionRuns" variable (:type "int") (reparse-symbol formal_parameters) [920 961]))                          )
+                        (reparse-symbol class_member_declaration) [772 1299])
+                    ("getTotalRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1302 1352])
+                    ("setTotalRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("totalRuns" variable (:type "int") (reparse-symbol formal_parameters) [1380 1393]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1355 1429])
+                    ("getSuccessfulInteractions" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1432 1508])
+                    ("setSuccessfulInteractions" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("successfulInteractions" variable (:type "int") (reparse-symbol formal_parameters) [1549 1575]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1511 1637])
+                    ("getElapsedTimeInNanoSecs" function
+                       (:typemodifiers ("public")
+                        :type "long")
+                        (reparse-symbol class_member_declaration) [1640 1715])
+                    ("setElapsedTimeInNanoSecs" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("elapsedTimeInNanoSecs" variable (:type "long") (reparse-symbol formal_parameters) [1755 1781]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1718 1841])
+                    ("getSuccessfulFrequentBookStoreInteractionRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1844 1960])
+                    ("setSuccessfulFrequentBookStoreInteractionRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("successfulFrequentBookStoreInteractionRuns" variable (:type "int") (reparse-symbol formal_parameters) [2025 2071]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [1963 2173])
+                    ("getTotalFrequentBookStoreInteractionRuns" function
+                       (:typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2176 2282])
+                    ("setTotalFrequentBookStoreInteractionRuns" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("totalFrequentBookStoreInteractionRuns" variable (:type "int") (reparse-symbol formal_parameters) [2342 2383]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2285 2475]))                  
+                :type "class")
+                nil [183 2478]))          
+      :file "WorkerRunResult.java"
+      :pointmax 2479
+      :fsize 2478
+      :lastmodtime '(23142 21969 552690 0)
+      :unmatched-syntax nil))
+  :file "!home!christopher!Documents!Universitet!advanced computer systems!re-exam!acertainsupermarket!acertainsupermarket!src!com!acertainsupermarket!client!workloads!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
