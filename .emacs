@@ -85,24 +85,20 @@
 (use-package c-mode
   :mode (("\\.hms\\'" . c-mode)))
 
-;; Web-mode
-(use-package web-mode
-  :load-path "~/.emacs.d/web-mode/"
-  :mode (("\\.phtml\\'" . web-mode)
-	 ("\\.tpl\\.php\\'" . web-mode)
-	 ("\\.php\\'" . web-mode)
-	 ("\\.[agj]sp\\'" . web-mode)
-	 ("\\.as[cp]x\\'" . web-mode)
-	 ("\\.erb\\'" . web-mode)
-	 ("\\.mustache\\'" . web-mode)
-	 ("\\.djhtml\\'" . web-mode)
-	 ("\\.html?\\'" . web-mode))
-  :interpreter "web-mode")
+;; smex M-x autocomplete
+(use-package smex
+  :config
+  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+  (global-set-key (kbd "M-x") 'smex))
 
-;; Beacon mode
-(use-package beacon
-  :load-path "~/.emacs.d/beacon/"
-  :config (beacon-mode 1))
+;; flx-ido
+(use-package flx-ido
+  :config
+  (ido-mode 1)
+  (ido-everywhere 1)
+  (flx-ido-mode 1)
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil))
 
 ;; whitespace mode
 (use-package whitespace
@@ -123,54 +119,6 @@
   (setq cua-keep-region-after-copy t)	;; Standard Windows behaviour
   (transient-mark-mode 1) ;; No region when it is not highlighted
   )
-
-;; undo-tree
-(use-package undo-tree
-  :load-path "~/.emacs.d/undo-tree/"
-  :config
-  (global-undo-tree-mode 1)
-  (progn
-    (define-key undo-tree-map (kbd "C-/") nil)
-    (define-key undo-tree-map (kbd "C-_") nil)
-    (define-key undo-tree-map (kbd "C-?") nil)
-    (define-key undo-tree-map (kbd "M-_") nil)
-    (define-key undo-tree-map (kbd "C-z") 'undo-tree-undo)
-    (define-key undo-tree-map (kbd "C-S-z") 'undo-tree-redo)))
-
-;; smex M-x autocomplete
-(use-package smex
-  :config
-  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-  (global-set-key (kbd "M-x") 'smex))
-
-;; mode-icon
-(use-package mode-icons
-  :load-path "~/.emacs.d/icon-mode/"
-  :config (mode-icons-mode))
-
-;; prolog mode
-(use-package prolog-mode
-  :load-path "~/.emacs.d/prolog/"
-  :mode (("\\.pl\\'" . prolog-mode )
-	 ("\\.plt\\'" . prolog-mode))
-  :config
-  (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t))
-
-;; flx-ido
-(use-package flx-ido
-  :config
-  (ido-mode 1)
-  (ido-everywhere 1)
-  (flx-ido-mode 1)
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-faces nil))
-
-;; nyan-cat
-(use-package nyan-mode
-  :load-path "~/.emacs.d/nyan-mode-master/"
-  :config
-  (nyan-mode)
-  (nyan-start-animation))
 
 (use-package linum
   :config
@@ -201,3 +149,56 @@
   (setq x-underline-at-descent-line t)
   (moody-replace-mode-line-buffer-identification)
   (moody-replace-vc-mode))
+
+
+;; Web-mode
+(use-package web-mode
+  :load-path "~/.emacs.d/web-mode/"
+  :mode (("\\.phtml\\'" . web-mode)
+	 ("\\.tpl\\.php\\'" . web-mode)
+	 ("\\.php\\'" . web-mode)
+	 ("\\.[agj]sp\\'" . web-mode)
+	 ("\\.as[cp]x\\'" . web-mode)
+	 ("\\.erb\\'" . web-mode)
+	 ("\\.mustache\\'" . web-mode)
+	 ("\\.djhtml\\'" . web-mode)
+	 ("\\.html?\\'" . web-mode))
+  :interpreter "web-mode")
+
+;; Beacon mode
+(use-package beacon
+  :load-path "~/.emacs.d/beacon/"
+  :config (beacon-mode 1))
+
+;; undo-tree
+(use-package undo-tree
+  :load-path "~/.emacs.d/undo-tree/"
+  :config
+  (global-undo-tree-mode 1)
+  (progn
+    (define-key undo-tree-map (kbd "C-/") nil)
+    (define-key undo-tree-map (kbd "C-_") nil)
+    (define-key undo-tree-map (kbd "C-?") nil)
+    (define-key undo-tree-map (kbd "M-_") nil)
+    (define-key undo-tree-map (kbd "C-z") 'undo-tree-undo)
+    (define-key undo-tree-map (kbd "C-S-z") 'undo-tree-redo)))
+
+;; mode-icon
+(use-package mode-icons
+  :load-path "~/.emacs.d/icon-mode/"
+  :config (mode-icons-mode))
+
+;; prolog mode
+(use-package prolog-mode
+  :load-path "~/.emacs.d/prolog/"
+  :mode (("\\.pl\\'" . prolog-mode )
+	 ("\\.plt\\'" . prolog-mode))
+  :config
+  (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t))
+
+;; nyan-cat
+(use-package nyan-mode
+  :load-path "~/.emacs.d/nyan-mode-master/"
+  :config
+  (nyan-mode)
+  (nyan-start-animation))
