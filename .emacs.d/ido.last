@@ -2,12 +2,23 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/christopher/Documents/" . "git/")
+ ("/home/christopher/Documents/work_derant/pnfvue/src/" . "services/")
+ ("/home/christopher/Documents/work_derant/pnfvue/" . "src/")
+ ("/home/christopher/Documents/work_derant/" . "pnfback/")
+ ("/home/christopher/Documents/Website/" . "videoSite/")
+ ("/home/christopher/Documents/Website/videoSite/app/admin/" . "templates/")
+ ("/home/christopher/Documents/Website/videoSite/app/user/" . "templates/")
+ ("/home/christopher/Documents/Website/videoSite/app/error_pages/static/" . "css/")
+ ("/home/christopher/Documents/Website/videoSite/app/error_pages/" . "templates/")
+ ("/home/christopher/Documents/Website/videoSite/app/login/" . "templates/")
+ ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/Hermes_christopher/" . "src/")
  ("/home/christopher/Documents/git/emacs/" . ".emacs.d/")
  ("/home/christopher/Documents/git/video_site/site/" . "app/")
  ("/home/christopher/Documents/git/video_site/" . "site/")
- ("/home/christopher/Documents/git/" . "emacs/")
+ ("/home/christopher/Documents/git/" . "video_site/")
  ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/hermes_current/" . "src/")
- ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/" . "hermes_current/")
+ ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/" . "Hermes_christopher/")
  ("/home/christopher/Documents/University/Master_thesis/Hermes_new/" . "programs/")
  ("/home/christopher/Documents/Website/videoSite/app/admin_static/assets/" . "js/")
  ("/home/christopher/Documents/Website/videoSite/app/admin_static/" . "assets/")
@@ -17,7 +28,7 @@
  ("/home/christopher/Documents/Website/videoSite/app/static/" . "css/")
  ("/home/christopher/Documents/University/Master_thesis/Thesis_git/code/" . "salsa20/")
  ("/home/christopher/Documents/University/Master_thesis/" . "Hermes_extended/")
- ("/home/christopher/Documents/Website/videoSite/app/" . "templates/")
+ ("/home/christopher/Documents/Website/videoSite/app/" . "user/")
 )
 
 ;; ----- ido-work-directory-list -----
@@ -32,15 +43,77 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/christopher/" (23824 11999 10148 197000) ".dbus/" ".gitconfig" "Downloads/" ".mozilla/" "./" ".bashrc" ".mysql_history" ".xinputrc" "Videos/" ".local/" ".swipl-dir-history/" ".bash_history" "snap/" ".ssh/" "Pictures/" ".sudo_as_admin_successful" ".texlive2017/" ".smex-items" ".pki/" "../" ".gnome/" ".jupyter/" ".config/" ".emacs.d/" ".emacs" ".recently-used" ".emacs~" "Public/" ".themes/" ".cache/" ".bash_logout" "Desktop/" ".icons/" ".cinnamon-gnome/" "bin/" ".profile" ".ICEauthority" ".gconf/" "Music/" "Templates/" "Documents/" ".ipython/" ".gnupg/")
+ ("/home/christopher/" (23866 57774 830295 269000) ".dbus/" ".gitconfig" "Downloads/" ".mozilla/" "./" ".bashrc" ".mysql_history" ".xinputrc" "Videos/" ".local/" ".npm/" ".swipl-dir-history/" ".bash_history" "snap/" ".ssh/" "Pictures/" ".sudo_as_admin_successful" ".texlive2017/" ".smex-items" ".pki/" "../" ".gnome/" ".httpie/" ".jupyter/" ".config/" ".emacs.d/" ".emacs" ".recently-used" ".emacs~" "Public/" ".themes/" ".cache/" ".bash_logout" "Desktop/" ".icons/" ".cinnamon-gnome/" "bin/" ".profile" ".ICEauthority" "nodesource_setup.sh" ".gconf/" "Music/" "Templates/" "Documents/" ".ipython/" ".gnupg/")
 
- ("/home/christopher/Documents/" (23824 8176 386790 116000) "Work/" "./" "whyinever/" "git/" "Retro_Games/" "../" "tickets.pdf" "Website/" "University/" "Bestyrelse/" "cv/" "dictionary/")
+ ("/home/christopher/Documents/work_derant/pnfvue/" (23864 11572 395562 653000) "src/" "./" ".browserslistrc" "postcss.config.js" "public/" ".gitignore" "node_modules/" "../" "README.md" ".git/" ".eslintrc.js" "package-lock.json" ".prettierrc.js" "package.json" "babel.config.js")
+
+ ("/home/christopher/Documents/work_derant/pnfvue/src/views/" (23864 14388 725921 329000) "AnalysisGSM.vue" "./" "Login.vue" "About.vue" "FilesList.vue" "../" "AnalysisNetwork.vue" "Home.vue" "AnalysisGPS.vue" "AnalysisHost.vue")
+
+ ("/home/" (23659 11565 297439 851000) "./" "christopher/" "../")
+
+ ("/home/christopher/Documents/work_derant/pnfvue/src/" (23864 9358 697999 330000) "./" "main.js" "assets/" "store.js" "services/" "views/" "router.js" "../" "components/" "App.vue")
+
+ ("/home/christopher/Documents/work_derant/pnfvue/src/components/" (23864 1856 366260 659000) "./" "HelloWorld.vue" "AnalysisNavBar.vue" "../")
+
+ ("/home/christopher/Documents/work_derant/pnfvue/src/assets/" (23864 1856 366260 659000) "logo.png" "./" "../")
+
+ ("/home/christopher/Documents/work_derant/pnfvue/public/" (23864 1856 366260 659000) "favicon.ico" "./" "../" "index.html")
+
+ ("/home/christopher/Documents/git/video_site/site/" (23824 9730 220048 356000) "./" "config.py" "__pycache__/" "lasha.py" "app/" "../" "requirements.txt" "instance/" ".env" "main.sh" "migrations/" ".flaskenv")
+
+ ("/home/christopher/Documents/git/" (23851 49414 555112 736000) "./" "Blockchain-Workshop/" "video_site/" "../" "stories/" "emacs/" "blockchain_project/" "blockchain_fagpakke/")
+
+ ("/home/christopher/Documents/Website/videoSite/" (23855 29744 968631 605000) "./" "config.py" "__pycache__/" "config.pyc" "lasha.py" "app/" "../" "requirements.txt" "instance/" ".env" "main.sh" "migrations/" ".flaskenv")
+
+ ("/home/christopher/Documents/" (23864 1780 335808 747000) "Work/" "./" "whyinever/" "git/" "Retro_Games/" "../" "tickets.pdf" "Website/" "University/" "Bestyrelse/" "cv/" "dictionary/" "work_derant/")
+
+ ("/home/christopher/Documents/work_derant/pnfvue/src/services/" (23864 1856 366260 659000) "./" "../" "BackendService.js")
+
+ ("/home/christopher/Documents/work_derant/pnfback/" (23864 2408 337105 746000) "filter.py" "./" "TODO" "app.db" "libpnffilter.py" "views.py" "process-pcaps.sh" "__pycache__/" ".gitignore" "../" "README.md" "requirements.txt" "filterset5.filt" "brologs/" "brologs-to-json.py" "models.py" ".git/" "venv/" "resources.py" "derant.com-dns-http.pcap" "sample_data.json" "test.pcap" "run.py" "filtertest/" "filterset2.filt" "filterset4.filt" "derant.com-dns-http.json" "filterset0.filt" "extract-data-with-bro.sh" "filterset1.filt")
+
+ ("/home/christopher/Documents/work_derant/" (23864 1955 392023 127000) "./" "pnfvue/" "../" "pnfback/")
+
+ ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/hermes_formal_typesystem/unitTest_2.0/" (23861 38996 520938 190000) "run_tests.sh" "./" "test_programs/" "../" "list_comp.csv")
+
+ ("/home/christopher/Documents/Website/videoSite/app/" (23855 29808 920709 603000) "api/" "login/" "./" "main_static(outdated)/" "__pycache__/" "flask_rbac/" "thumbnail.py" "__init__.py" "admin/" "../" "templates/" "forms.py" "static/" "models.py" "db_main_data.py" "custom_functions.py" "error_handler.py" "user/" "error_pages/" "content/" "cus_error.py")
+
+ ("/home/christopher/Documents/Website/videoSite/app/api/" (23855 29172 572173 316000) "./" "views.py" "__pycache__/" "__init__.py" "../")
+
+ ("/home/christopher/Documents/Website/videoSite/app/user/" (23855 28843 984284 198000) "./" "views.py" "__pycache__/" "__init__.py" "../" "templates/" "static/")
+
+ ("/home/christopher/Documents/Website/videoSite/app/error_pages/templates/" (23855 26709 567226 918000) "./" "../" "msg_page.html" "error.html")
+
+ ("/home/christopher/Documents/Website/videoSite/app/error_pages/" (23855 27386 552329 596000) "./" "views.py" "__pycache__/" "__init__.py" "../" "templates/" "static/")
+
+ ("/home/christopher/Documents/Website/videoSite/app/admin/templates/" (23855 26585 339453 254000) "./" "account.html" "role_ad.html" "role_register.html" "register.html" "../" "edit_user.html" "user_list.html")
+
+ ("/home/christopher/Documents/Website/videoSite/app/admin/" (23855 26566 923505 100000) "./" "views.py" "__pycache__/" "__init__.py" "../" "templates/" "forms.py" "static/")
+
+ ("/home/christopher/Documents/Website/videoSite/app/user/templates/" (23855 25850 736310 813000) "base.html" "./" "play.html" "upload.html" "home.html" "../" "gallery.html" "u_settings.html" "video_edit.html")
+
+ ("/home/christopher/Documents/Website/videoSite/app/user_main/" (23830 32814 774324 439000) "./" "views.py" "__pycache__/" "__init__.py" "../" "templates/" "static/")
+
+ ("/home/christopher/Documents/Website/videoSite/app/login/" (23830 29697 189026 320000) "./" "views.py" "__pycache__/" "__init__.py" "../" "templates/" "static/")
+
+ ("/home/christopher/Documents/Website/videoSite/app/login/templates/" (23827 51129 270932 229000) "./" "login.html" "../")
+
+ ("/home/christopher/Documents/Website/videoSite/app/error_pages/static/css/" (23827 50668 532865 815000) "./" "ep_style.css" "../")
+
+ ("/home/christopher/Documents/Website/videoSite/app/error_pages/static/" (23827 50668 532865 815000) "./" "css/" "../")
+
+ ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/hermes_formal_typesystem/src/" (23827 13369 965388 273000) "Makefile" "SymTab.ui" "./" "HermesStaticAnalysis.ui" "HermesLexer.lex" "HermesLexer.ui" "hc.ui" "HermesParser.uo" "hc.sml" "SymTab.sml" "Hermes.ui" "HermesCompiler.ui" "Hermes.sml" "../" "HermesParser.output" "HermesStaticAnalysis.uo" "HermesLexer.uo" "SymTab.uo" "HermesCompiler.uo" "hc.uo" "HermesStaticAnalysis.sig" "HermesStaticAnalysis.sml" "HermesParser.grm" "HermesParser.sig" "HermesParser.sml" "HermesParser.ui" "HermesStaticAnalysisOld.sml" "SymTab.sig" "HermesCompiler.sig" "Hermes.uo" "HermesLexer.sml" "HermesCompiler.sml")
+
+ ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/Hermes_christopher/src/" (23825 65192 317726 935000) "HermesParser.grm~" "Makefile" "SymTab.ui" "./" "HermesStaticAnalysis.ui" "HermesLexer.lex" "HermesLexer.ui" "hc.ui" "HermesLexer.lex~" "HermesParser.uo" "hc.sml" "#HermesLexer.sml#" "SymTab.sml" "Hermes.ui" "HermesCompiler.ui" "HermesLexer.sml~" "Hermes.sml~" "Hermes.sml" "../" "HermesParser.output" "HermesStaticAnalysis.uo" "HermesLexer.uo" "SymTab.uo" "HermesCompiler.uo" "hc.uo" "HermesStaticAnalysis.sig" "HermesStaticAnalysis.sml" "HermesParser.grm" "HermesParser.sig" "HermesParser.sml" "HermesParser.ui" "HermesCompiler.sml~" "HermesStaticAnalysis.sml~" "HermesParser.sml~" "SymTab.sig" "HermesCompiler.sig" "Hermes.uo" "HermesLexer.sml" "HermesCompiler.sml")
+
+ ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/" (23825 63449 538398 61000) "Hermes_current/" "./" "hermes_simon/" "../" "Hermes_christopher/" "Hermes_prelib/")
+
+ ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/hermes_simon/" (23825 63449 542398 142000) "Makefile" "src/" "./" "tests/" "../" "bin/")
+
+ ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/hermes_simon/src/" (23825 63449 542398 142000) "Makefile" "SymTab.ui" "./" "HermesStaticAnalysis.ui" "HermesLexer.lex" "HermesLexer.ui" "hc.ui" "HermesParser.uo" "hc.sml" "SymTab.sml" "Hermes.ui" "HermesCompiler.ui" "Hermes.sml" "../" "HermesParser.output" "HermesStaticAnalysis.uo" "HermesLexer.uo" "SymTab.uo" "HermesCompiler.uo" "hc.uo" "HermesStaticAnalysis.sig" "HermesStaticAnalysis.sml" "HermesParser.grm" "HermesParser.sig" "HermesParser.sml" "HermesParser.ui" "HermesStaticAnalysisOld.sml" "SymTab.sig" "HermesCompiler.sig" "Hermes.uo" "HermesLexer.sml" "HermesCompiler.sml")
+
+ ("/home/christopher/Documents/git/emacs/" (23824 12434 326553 722000) "./" "../" "README.md" ".emacs.d/" ".emacs" ".git/")
 
  ("/home/christopher/Documents/git/emacs/.emacs.d/" (23824 11829 561989 765000) "lisp/" "./" "ido.last" "ac-comphist.dat" "beacon/" "elpa/" "prolog/" "seq/" "ido.last~" "init.el RET" "web-mode/" ".python-environments/" "snippets/" "network-security.data" "ede-projects.el" "semanticdb/" "../" "package.el" "jdee/" "cedet-1.1/" "el-get/" "nyan-mode-master/" "undo-tree/" "auto-save-list/" "whitespace/" "backup/" "icon-mode/" "color-theme/" "abbrev_defs")
-
- ("/home/christopher/Documents/git/emacs/" (23824 11630 797803 159000) "./" "../" "README.md" ".emacs.d/" ".emacs" ".git/")
-
- ("/home/christopher/Documents/git/" (23824 11480 881661 674000) "./" "Blockchain-Workshop/" "video_site/" "../" "emacs/")
 
  ("/home/christopher/Documents/git/Blockchain-Workshop/" (23824 11386 213571 898000) "./" "code/" "images/" ".ipynb_checkpoints/" "../" "README.md" "articles/" ".git/" "slides/")
 
@@ -48,19 +121,7 @@
 
  ("/home/christopher/Documents/git/video_site/site/app/" (23824 6178 524838 0) "login/" "./" "pub_static/" "__pycache__/" "flask_rbac/" "thumbnail.py" "__init__.py" "admin/" "../" "templates/" "admin_main/" "forms.py" "static/" "models.py" "db_main_data.py" "custom_functions.py" "main_static/" "error_handler.py" "error_pages/" "content/" "Dropped Text.txt" "user_main/" "cus_error.py")
 
- ("/home/christopher/Documents/git/video_site/site/" (23824 8411 507017 418000) "./" "config.py" "__pycache__/" "config.pyc" "lasha.py" "app/" "../" "requirements.txt" "instance/" ".env" "main.sh" "migrations/" ".flaskenv")
-
- ("/home/christopher/Documents/Website/videoSite/" (23824 6165 744825 996000) "./" "config.py" "__pycache__/" "config.pyc" "lasha.py" "app/" "../" "requirements.txt" "instance/" ".env" "main.sh" "migrations/" ".flaskenv")
-
  ("/home/christopher/Documents/Website/videoSite/app/templates/" (23824 6679 425323 39000) "base.html" "./" "account.html" "play.html" "role_ad.html" "upload.html" "role_register.html" "login.html" "security/" "register.html" "#base.html#" "home.html" "../" "msg_page.html" "gallery.html" "edit_user.html" "u_settings.html" "error.html" "video_edit.html" "user_list.html")
-
- ("/home/christopher/Documents/Website/videoSite/app/" (23824 6178 524838 451000) "login/" "./" "pub_static/" "__pycache__/" "flask_rbac/" "thumbnail.py" "__init__.py" "admin/" "../" "templates/" "admin_main/" "forms.py" "static/" "models.py" "db_main_data.py" "custom_functions.py" "main_static/" "error_handler.py" "error_pages/" "content/" "Dropped Text.txt" "user_main/" "cus_error.py")
-
- ("/home/christopher/Documents/Website/videoSite/app/login/" (23824 6143 740804 532000) "./" "views.py" "__init__.py" "../" "templates/" "l_static/")
-
- ("/home/christopher/Documents/Website/videoSite/app/error_pages/" (23822 33589 145760 160000) "./" "views.py" "__pycache__/" "__init__.py" "../")
-
- ("/home/christopher/Documents/Website/videoSite/app/admin/" (23822 33705 45051 236000) "./" "views.py" "__pycache__/" "__init__.py" "../" "forms.py")
 
  ("/home/christopher/Documents/Website/videoSite/instance/" (23658 60982 0 0) "./" "config.py~" "config.py" "../")
 
@@ -68,11 +129,7 @@
 
  ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/hermes_current/" (23816 64372 509989 0) "Makefile" "src/" "./" "tests/" "../" "bin/")
 
- ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/" (23816 64472 474203 477000) "./" "hermes_simon/" "hermes_current/" "../" "Hermes_christopher/" "Hermes_prelib/")
-
  ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/Hermes_christopher/" (23816 64513 594287 782000) "Makefile" "src/" "./" ".gitignore" "../" "README.md" "test/" "programs/" "Makefile~" "bin/")
-
- ("/home/christopher/Documents/University/Master_thesis/Thesis_git/hermes/Hermes_christopher/src/" (23816 64947 15087 448000) "HermesParser.grm~" "Makefile" "SymTab.ui" "./" "HermesStaticAnalysis.ui" "HermesLexer.lex" "HermesLexer.ui" "hc.ui" "HermesLexer.lex~" "HermesParser.uo" "hc.sml" "#HermesLexer.sml#" "SymTab.sml" "Hermes.ui" "HermesCompiler.ui" "HermesLexer.sml~" "Hermes.sml~" "Hermes.sml" "../" "HermesParser.output" "HermesStaticAnalysis.uo" "HermesLexer.uo" "SymTab.uo" "HermesCompiler.uo" "hc.uo" "HermesStaticAnalysis.sig" "HermesStaticAnalysis.sml" "HermesParser.grm" "HermesParser.sig" "HermesParser.sml" "HermesParser.ui" "HermesCompiler.sml~" "HermesStaticAnalysis.sml~" "HermesParser.sml~" "SymTab.sig" "HermesCompiler.sig" "Hermes.uo" "HermesLexer.sml" "HermesCompiler.sml")
 
  ("/home/christopher/Documents/University/Master_thesis/Hermes_new/src/" (23816 48539 71675 223000) "HermesParser.grm~" "Makefile" "SymTab.ui" "./" "HermesStaticAnalysis.ui" "HermesLexer.lex" "HermesLexer.ui" "hc.ui" "HermesLexer.lex~" "HermesParser.uo" "hc.sml" "#HermesLexer.sml#" "SymTab.sml" "Hermes.ui" "HermesCompiler.ui" "HermesLexer.sml~" "Hermes.sml~" "Hermes.sml" "../" "HermesParser.output" "HermesStaticAnalysis.uo" "HermesLexer.uo" "SymTab.uo" "HermesCompiler.uo" "hc.uo" "HermesStaticAnalysis.sig" "HermesStaticAnalysis.sml" "HermesParser.grm" "HermesParser.sig" "HermesParser.sml" "HermesParser.ui" "HermesCompiler.sml~" "HermesStaticAnalysis.sml~" "HermesParser.sml~" "SymTab.sig" "HermesCompiler.sig" "Hermes.uo" "HermesLexer.sml" "HermesCompiler.sml")
 
