@@ -21,9 +21,9 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/christopher/Documents/git/video_site/site/app/user/templates/" (23867 37267 4316 77000) "base.html" "./" "play.html" "upload.html" "home.html" "../" "gallery.html" "u_settings.html" "video_edit.html")
+ ("/home/christopher/" (23867 36494 48609 253000) ".dbus/" ".gitconfig" "Downloads/" ".mozilla/" "./" ".bashrc" ".mysql_history" ".xinputrc" "Videos/" ".local/" ".npm/" ".swipl-dir-history/" ".bash_history" "snap/" ".ssh/" "Pictures/" ".sudo_as_admin_successful" ".texlive2017/" ".smex-items" ".pki/" "../" ".gnome/" ".httpie/" ".jupyter/" ".config/" ".emacs.d/" ".emacs" ".recently-used" ".emacs~" "Public/" ".themes/" ".cache/" ".bash_logout" "Desktop/" ".icons/" ".cinnamon-gnome/" "bin/" ".profile" ".ICEauthority" "nodesource_setup.sh" ".gconf/" "Music/" "Templates/" "Documents/" ".ipython/" ".gnupg/")
 
- ("/home/christopher/" (23867 36438 632639 312000) ".dbus/" ".gitconfig" "Downloads/" ".mozilla/" "./" ".bashrc" ".mysql_history" ".xinputrc" "Videos/" ".local/" ".npm/" ".swipl-dir-history/" ".bash_history" "snap/" ".ssh/" "Pictures/" ".sudo_as_admin_successful" ".texlive2017/" ".smex-items" ".pki/" "../" ".gnome/" ".httpie/" ".jupyter/" ".config/" ".emacs.d/" ".emacs" ".recently-used" ".emacs~" "Public/" ".themes/" ".cache/" ".bash_logout" "Desktop/" ".icons/" ".cinnamon-gnome/" "bin/" ".profile" ".ICEauthority" "nodesource_setup.sh" ".gconf/" "Music/" "Templates/" "Documents/" ".ipython/" ".gnupg/")
+ ("/home/christopher/Documents/git/video_site/site/app/user/templates/" (23867 36884 816439 330000) "base.html" "./" "play.html" "upload.html" "home.html" "../" "gallery.html" "u_settings.html" "video_edit.html")
 
  ("/home/christopher/Documents/git/video_site/site/app/templates/" (23824 6679 425323 0) "base.html" "./" "account.html" "play.html" "role_ad.html" "upload.html" "role_register.html" "login.html" "security/" "register.html" "#base.html#" "home.html" "../" "msg_page.html" "gallery.html" "edit_user.html" "u_settings.html" "error.html" "video_edit.html" "user_list.html")
 

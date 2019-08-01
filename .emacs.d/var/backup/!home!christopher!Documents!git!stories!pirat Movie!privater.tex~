@@ -1,0 +1,468 @@
+\documentclass[12pt,]{article}
+
+% Conditionals
+\usepackage{etoolbox}
+\newtoggle{contactalignright}
+\newtoggle{doublespacesceneheadings}
+\newtoggle{underlinesceneheadings}
+\newtoggle{boldsceneheadings}
+\newtoggle{includescenenumbers}
+\newtoggle{numberfirstpage}
+
+\settoggle{contactalignright}{false}
+\settoggle{doublespacesceneheadings}{true}
+\settoggle{underlinesceneheadings}{false}
+\settoggle{boldsceneheadings}{false}
+\settoggle{includescenenumbers}{false}
+\settoggle{numberfirstpage}{false}
+
+% Page Layout Settings
+\usepackage[left=1.5in,right=1in,top=1in,bottom=0.75in]{geometry}
+
+% Font Settings
+\usepackage{fontspec}
+\setmonofont{Courier}
+\renewcommand{\familydefault}{\ttdefault}
+
+% Text Settings
+\setlength{\baselineskip}{12pt plus 0pt minus 0pt}
+\setlength{\parskip}{12pt plus 0pt minus 0pt}
+\setlength{\topskip}{0pt plus 0pt minus 0pt}
+\setlength{\headheight}{\baselineskip}
+\setlength{\headsep}{\baselineskip}
+\linespread{0.85}
+\hyphenpenalty=10000
+\widowpenalty=10000
+\clubpenalty=10000
+\frenchspacing
+\raggedright
+
+% Underlining
+\usepackage[normalem]{ulem}
+\renewcommand{\ULthickness}{1pt}
+
+% Header & Footer Settings
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage.}
+\renewcommand{\headrulewidth}{0pt}
+
+% Margin Settings
+\usepackage{marginnote}
+\renewcommand*{\raggedleftmarginnote}{\hspace{0.2in}}
+
+% Section Headings
+\newcommand{\sectionheading}[1]{%
+  \begin{center}
+    \uline{#1}
+  \end{center}
+}
+
+% Scene Headings
+\newcommand*{\sceneheading}[2][]{%
+  \def\thesceneheading{#2}
+  \iftoggle{doublespacesceneheadings}{%
+    \vspace{\parskip}
+  }{}
+  \iftoggle{boldsceneheadings}{%
+    \let\BFtmp\thesceneheading
+    \renewcommand{\thesceneheading}{\textbf{\BFtmp}}
+  }{}
+  \iftoggle{underlinesceneheadings}{%
+    \let\ULtmp\thesceneheading
+    \renewcommand{\thesceneheading}{\uline{\ULtmp}}
+  }{}
+  \thesceneheading\nopagebreak[4]%
+  \iftoggle{includescenenumbers}{%
+    \normalmarginpar\marginnote{#1}\reversemarginpar\marginnote{#1}%
+  }{}
+}
+
+% Dialogue
+\usepackage{xstring}
+\newcommand{\contd}{}
+\newcommand{\more}{}
+\newlength{\characterindent}
+\newlength{\characterwidth}
+\newlength{\dialogindent}
+\newlength{\dialogwidth}
+\setlength{\characterindent}{1in}
+\setlength{\characterwidth}{4in}
+\setlength{\dialogindent}{1in}
+\setlength{\dialogwidth}{3.5in}
+\newcommand*{\character}[1]{%
+  \hspace*{\characterindent}\parbox[t]{\characterwidth}{#1}%
+}
+\newenvironment{dialog}[1]{%
+  \setlength{\parskip}{0pt}
+  \begin{list}{}{%
+      \setlength{\topsep}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\leftmargin}{\dialogindent}
+      \setlength{\rightmargin}{\dimexpr\linewidth-\leftmargin-\dialogwidth}
+    }%
+  \item\character{#1}\mark{#1}\nopagebreak[4]%
+  }{%
+    \mark{\empty}\end{list}%
+}
+\newcommand*{\paren}[1]{%
+  \par%
+  \hspace*{0.5in}\parbox[t]{2in}{%
+    \hangindent=0.1in\hangafter=1#1}\par\nopagebreak[4]
+  \vspace{2pt}%
+}
+
+% Transitions
+\newlength{\transindent}
+\newlength{\transwidth}
+\setlength{\transindent}{4in}
+\setlength{\transwidth}{2in}
+\newcommand*{\trans}[1]{%
+  \nopagebreak[4]\hspace*{\transindent}\parbox[t]{\transwidth}{#1}
+}
+
+% Center Text
+\newcommand{\centertext}[1]{%
+  \setlength{\topsep}{0pt}
+  \begin{center}#1\end{center}
+}
+
+% Page Breaking Settings
+\usepackage{atbegshi}
+\AtBeginShipout{%
+  \if\botmark\empty
+  \else
+  \hspace*{\dialogindent}\character{\StrDel[1]{\botmark}{\contd}\space\contd}%
+  \fi%
+}
+
+% Title Page
+\usepackage{titling}
+
+% Document
+\begin{document}
+
+\title{Privateer}
+\author{Christopher Mulvad Groot}
+\date{}
+\newcommand{\credit}{written by}
+\newcommand{\contact}{}
+
+\thispagestyle{empty}
+\vspace*{3in}
+
+\begin{center}
+  \uline{\begin{MakeUppercase}\thetitle\end{MakeUppercase}}\par
+  \credit\par
+  \theauthor\par
+\end{center}
+
+\vspace{3in}
+\iftoggle{contactalignright}{%
+  \begin{flushright}
+    \contact
+  \end{flushright}
+}{%
+  \contact
+}
+\clearpage
+
+\setcounter{page}{1}
+\iftoggle{numberfirstpage}{}{\thispagestyle{empty}}
+ The script takes place around 1760-1780 and follows the journey of Liam from growing up poor in the streets of Dublin to him becoming a battle-hardened sailor and privateer.
+
+The period we find us in is a world full of opportunities and the crave for adventure, but also a world populated by poor miserable people trying to survive from day to day. A world where true freedom is a wanted and rare thing, where most men own nothing but their lives, if they are lucky enough.
+
+ Men are giving the opportunity to turn their lives around by privateering, but where does the lines go between this and piracy. Are there still a place for honor, mercy and a good heart, or do you have to turn your heart cold to protect it against the cruelty of the world.
+
+\clearpage
+
+\textbf{FADE IN:}
+
+A black night at the open sea not even lit up by the moon, nothing but a soothing sound of waves out on the open sea can be heard. With this a stern sea-hardend voice out of frame can be heard.
+
+\begin{dialog}{LIAM (V.O.)}
+Men are not born cruel
+\end{dialog}
+
+A deep pause as the words get lost to the sound of the ocean.
+
+\begin{dialog}{LIAM (V.O.)}
+they learn it.
+\end{dialog}
+
+\sceneheading{EXT. OPEN SEA - NIGHT}
+
+An English merchant ship sails into frame, with its lanterns lit that make it stand out in an otherwise pitch black night. Lying deep in the water heavily loaded.
+
+The watch is seen patrolling the deck, he is freezing tucking his jacket tight while he walks. His clothes are worn and he is not much more than a sailor with a rapier. On the deck are seen and heard sleeping men, some clutching a bottle of rum as their only warmth against the cold weather.
+
+\begin{dialog}{LIAM (V.O.)}
+A cold world begets cold men
+\end{dialog}
+
+Laughter is heard from the captains cabin. The watch looks with jealousy at the light coming from the captains courters, which shines out of the windows.
+
+\begin{dialog}{LIAM (V.O.)}
+Held as a prisoner of fate, molded by injustice.
+\end{dialog}
+
+The watch sees the captain together with his second in command, laughing and drinking. The merchant captain is fat and old, with gray hair and sideburns. The Second-in-command is younger and well trained, clean shaved and orderly, battle hardened as a former soldier.
+
+\begin{dialog}{LIAM (V.O.)}
+They become bitter, angry, lustful.
+\end{dialog}
+
+The watch tightens his grip around his rapier and he gets an angry look in his eyes. Before he can act further upon it something gives a faint light drawing his attention towards the open sea.
+
+\begin{dialog}{LIAM (V.O.)}
+When no opportunity is given
+\end{dialog}
+
+The watch goes to the railing and a short glimpse of light out on the ocean not too far from the ship draws the watch attention towards a spot in the utter darkness.
+
+\begin{dialog}{LIAM (V.O.)}
+Then it is taken
+\end{dialog}
+
+The watch pinch his eyes to spot after the position of the light.
+
+\begin{dialog}{LIAM (V.O.)}
+When freedom is a not a right, it is a fighting course
+\end{dialog}
+
+Slowly the edges of a pirate ship can be made out of the dark night, with its guns out and ready to fire, the glimpse of the light was the cannons fuse.
+
+\begin{dialog}{LIAM (V.O.)}
+When riches cannot be earned
+\end{dialog}
+
+The watches eyes widen as the realization hits him that they are targeted
+
+\begin{dialog}{LIAM (V.O.)}
+They must be stolen
+\end{dialog}
+
+\begin{dialog}{MERCHANT WATCH}
+\paren{(yells)}
+We're under atta...
+\end{dialog}
+
+The watchers voice is drowned by the sound of the cannons fire coming from the pirate ship, raining chaos over the merchant ship. Large wooden splinters from the railing and main mast flies through the air as they are penetrated by the cannon balls.
+
+\begin{dialog}{LIAM (V.O.)}
+They call us honerless thieves
+\end{dialog}
+
+The merchant crew are caught off guard, with panic spreading through the ship we see pirates swinging themselves by ropes from their ship to the merchant ship. From the canon smoke they appear with war painted faces. They are not all well trained soldiers, far from it, they come from the slum, poor sailors, desperate, without moral. The hard life can be seen on their underfed and unwashed bodies, with teeth as rotten as their soul. Battle with the merchant sailors follows, though the sailors are taken by surprise and doesn't put up much of a fight, it is a slaughter.
+
+A Pirate are seen slicing the throat of a sailor.
+
+\begin{dialog}{LIAM (V.O.)}
+cold-blooded murderers
+\end{dialog}
+
+ Merchant second-in-command (MSC) storms out of the captains cabin with pistol and sword in hand.
+
+\begin{dialog}{MSC}
+\paren{(yells)}
+Pirates!
+\end{dialog}
+
+MSC fires his pistol at a nearby pirate, killing him with a headshot at close range, and storms into battle.
+
+\begin{dialog}{LIAM (V.O.)}
+Pirates, as if the name should bring us shame.
+\end{dialog}
+
+Battle evovles around MSC as he inspires the nearby crew.
+
+\sceneheading{INT. MERCHANT CAPTAINS CABIN, NIGHT}
+
+The captains cabin has a very exquisite interior design, with souvenirs from around the world and wealth on display. The captain is seen clinching his little chest with coins as he hides behind his well carved wooden desk with a pistol at hand.
+
+\begin{dialog}{LIAM (V.O.)}
+Them and their golden towers
+\end{dialog}
+
+The sound of battle slowly comes to an end and we see the captain sitting silently listening. The cabin door are heard opened carefully and footstep are heard going towards his hiding spot
+
+\begin{dialog}{LIAM (V.O)}
+We weren’t born as pirates...
+\end{dialog}
+
+The captain slowly raises his head up to find the pirate captain standing in front of his desk, covered in battle scratches and blood. He wears a thick wool coat and sturdy boot, with a bloody rapier in his right hand, dripping on the floor, and a loaded flint pistol in his left. The pirate captains face is hidden in a well placed shadow below his hat. The pirate slowly raises his pistol to the head of the merchant, the merchant puts the coin chest on desk in front of him while he slowly raises his hands
+
+\begin{dialog}{MERCHANT CAPTAIN}
+Spare me...
+\end{dialog}
+
+\begin{dialog}{LIAM (V.O) (CONT'D)}
+They made us pirates
+\end{dialog}
+
+Only the gun is seen fired and with it the screen goes black...
+
+\begin{dialog}{LIAM (V.O)}
+We are not cruel... The world is
+\end{dialog}
+
+\sceneheading{EXT. BACK ALLEY DUBLIN, DAY}
+
+We find ourselves in an dirty alley leading out to a busy street in the poor part of town, the houses surrounding it bears wear and tear. In the alley we see a bunch of kids forming a circle around two children fighting, they yell and cheer for the combatants. The first combatant is a strong meaty kid, Jonathan, he is a head taller than the second combatant and looks far bigger than his opponent. The second combatant, Liam, is a slender smaller kid nowhere near the same fight weight. We see them dancing around each other with their fists near their chins trying to look as mean as possible. We hear one kid, a choir boy, screaming a little clearer than the rest of the crowd
+
+\begin{dialog}{CHILD 1}
+\paren{(yells in latin)}
+DOLOR! DOLOR!
+\end{dialog}
+
+The two combatants pay the crowd no mind and is highly focused on each other, Jonathan lashes out after his opponent but misses with each punch. Jonathan is uncordinated but full of rage which can be seen every time he strikes.
+
+Liam dances around Jonathan, getting more and more cocky, after another missed punch from Jonathan he sets two fast strikes in and hits Jonathan in the face.
+
+Liam’s strikes are not powerful enough to knock Jonathan out nor seriously hurt him, it does staggers Jonathans a bit but mostly it just fuel his rage. Jonathan tries to grap Liam but he is too fast, he tries again and again, but Liam wiggles his way out each time, showing good footwork aswell as fast reflexes. After several tries Jonathan has to stop to catch his breath, Liam turns around to the crowd and gets cheered on. With a big smile he carters to the crowd to both his and theirs amusement.
+
+However distracted by his temporary fame Liam doesn’t see Jonathan's next hit and Liam turns around only to be met with a fist to the face, throwning him to the ground. Jonathan, seeing his chance, rushes over Liam, placing himself on top of him and begins to rain down upon him with well placed punches, Liam is seen trying to protect his face. The kids scream for blood and cheers Jonathan on with each hit.
+
+LIAM POV - His view masked by his hands/arms trying to shield himself against the attack. Still the punches keeps flying in, he hears the crowd roar of excitement, and see glimpses of Jonathans punches as he tries to cover his face. Then a hit goes clean in dropping his hands to the ground giving a clear view, the surroundings quiets down together with the time slowing down. Liam own heart beat can be heard more and more clearly together with his breathing, his vision switches between clear and unclear as he tries to focus on Jonathan. Liam can see Jonathan pull his arm back for the final blow, all in a slow motion, but Liam has no strength left in him. As soon as Jonathans arm has been drawn all the way back, the time goes back to a normal pace and the punch flies through the air straight into Liams vision knocking him out and the screen turn black.
+
+\sceneheading{EXT. DUBLIN STREET, DAY}
+
+We see two boys going down a somewhat quit street, Liam and his friend George. George is dressed in patched clothes, the patches are amatuer work showing George lack of expertice as well as guardians, George also lack proper hygine shown on both his clothes and face.
+
+Liam is badly hurt after the fight with a heavily swollen right eye and a split lip, he is also humping a bit on his right leg, George walks slowly beside him while occasionally glancing at his friend with a concerned look.
+
+\begin{dialog}{GEORGE}
+Are you sure you're not hurt?
+\end{dialog}
+
+\begin{dialog}{LIAM}
+What me? No no i can barely feel it..
+\end{dialog}
+
+Liam tries to stand straight and show a smile but succumb to the pain halfway through, he tries to hide as best as he can.
+
+\begin{dialog}{GEORGE}
+Why did you have to insult the butchers boy, you know he is much stronger than you... and bigger than you...
+\end{dialog}
+
+George shakes his head
+
+\begin{dialog}{LIAM}
+And slower than me, you saw how slow those punches were George, i could had’ gone home to me ma’ for supper and returned before his next one..
+\end{dialog}
+
+Liam presents a painfilled smile, revealing a missing tooth and bloodied teeth.
+
+\begin{dialog}{GEORGE}
+\paren{(Scoffs)}
+well ya could have tired him out if you weren’t such a fame whore
+\end{dialog}
+
+\begin{dialog}{LIAM}
+Well you got to give them a show don’t ya..
+\end{dialog}
+
+\begin{dialog}{GEORGE}
+That you did, you stupid bastard... you also gave them one of your teeths
+\end{dialog}
+
+Liam’s eyes widen as he feels his missing tooth out with his left finger...
+
+\begin{dialog}{LIAM}
+Oh no, now me moms gonna kill me..
+\end{dialog}
+
+\begin{dialog}{GEORGE}
+Like she woulnd’t notice your swollen eye you stupid arse
+\end{dialog}
+
+George laughs at Liam situation, Liam looks gloomy at George for a moment but soon his laugh catches on and Liam find himself laughing too..
+
+\begin{dialog}{GEORGE}
+But why Jonathan? you could piss off any other bloke on the street, but you had to choose the biggest, meanest fucker.. He’s got even bigger muscles now after he started working for his da, chopping pork chops and what not..
+\end{dialog}
+
+\begin{dialog}{LIAM}
+aye a mean fucker...
+\end{dialog}
+
+Liam reaches into his pockets and throw a coin sack into Georges arms.
+
+\begin{dialog}{LIAM}
+But also a rich fucker...
+\end{dialog}
+
+George eyes widen as he tries the weight of the purse, he then looks puzzled at Liam.
+
+\begin{dialog}{GEORGE}
+But how..
+\end{dialog}
+
+\begin{dialog}{LIAM}
+Snatched it from his belt when the bastard was on top of me.. though his weight almost crushed me.. Fat fucker
+\end{dialog}
+
+Liam puts a hand on his pressured ribs
+
+\begin{dialog}{GEORGE}
+Liam if he finds out.. you know he’s gonna..
+\end{dialog}
+
+\begin{dialog}{LIAM}
+Cut me throat.. ye ye.. he won’t know it was me.. he beat me remember, he'll just think he lost it during the fight
+\end{dialog}
+
+George throws the coin purse back to Liam
+
+\begin{dialog}{GEORGE}
+I’m just saying Liam.. if he comes for you with a meat cleaver i’m leaving your toothless arse behind..
+\end{dialog}
+
+\begin{dialog}{LIAM}
+arhh fuck off George, you would run even if the bastard came with flowers..
+\end{dialog}
+
+They look teasing at each other for a moment before giving each other a brotherly smile.
+
+Liam looks at Georges patched clothes down to his missing shoes, Liams smile slowly fade at the realizaition of Georges hard living condition. Liam takes the purse in his hands and throws it up and down a bit.
+
+\begin{dialog}{LIAM}
+We can split it if you want..
+\end{dialog}
+
+George looks at him with a surprised look, then looks at the purse full of temptation. For a bit he considers it but then shakes his head.
+
+\begin{dialog}{GEORGE}
+It'd just be taken at the orphange by that bloody nun, she checks me pockets every day to see if i've a tribute for God. devil woman...
+\end{dialog}
+
+Liam looks with pity on George, looking at the used and teared clothes down to his missing shoes, but quickly looks away before George notices. Soon the two kids reach a crossroad and George starts walking down the right parth.
+
+\begin{dialog}{GEORGE}
+Well i'll see ya tomorrow ya thieving bastard, try not to caught i would hate to miss it.
+\end{dialog}
+
+George waves and so does Liam as he starts to go down the right path, however suddenly Liam starts walking slower and slower coming to a complete stop while he looks down at his somewhat nice working class shoes. Liam then takes off his shoes and runs back to the cross road from where he just came yelling out for George
+
+\begin{dialog}{LIAM}
+George! George! Wait up you daft ophan!
+\end{dialog}
+
+GEORGE TURNS AROUND A BIT SURPISED AND WHEN NOTICING IT'S MERLY LIAM HE SMILES TO HIS FRIEND
+
+\begin{dialog}{GEORGE}
+What is it rich boy?
+\end{dialog}
+
+Liam throws George his pair of shoes.
+
+\begin{dialog}{LIAM}
+Here take these you shoeless hobo, now that i got enough moula i've gonna buy meself a pair of gentlemen boots, so i would just save you a trip to my dumpster.
+\end{dialog}
+
+George looks at the shoes and then Liam in disbelief, he then nods to Liam with a big smile on his face. Liam then runs back the way he came, towards his home.
+
+\end{document}

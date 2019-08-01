@@ -193,7 +193,6 @@
 	)
   (setq web-mode-markup-indent-offset 4)
   (setq web-mode-css-indent-offset 4)
-  (setq web-mode-jinja-offset 4)
   (setq web-mode-html-offset 4)
   (setq web-mode-code-indent-offset 4)
   (setq web-mode-enable-html-entities-fontification t
