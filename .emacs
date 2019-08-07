@@ -33,7 +33,7 @@
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa-stable" . "http://stable.melpa.org/packages/")
      ("melpa" . "http://melpa.org/packages/")
-     ("marmalade" . "http://marmalade-repo.org/packages/")
+     ;;("marmalade" . "http://marmalade-repo.org/packages/")
      ("Elpa" . "http://tromey.com/elpa/"))))
  '(package-selected-packages
    (quote
