@@ -123,11 +123,14 @@
 
 ;; whitespace mode
 (use-package whitespace
+  :hook ((prog-mode . whitespace-mode)
+	 (before-save . whitespace-cleanup)
+	 (text-mode . whitespace-mode))
   :init
-  (dolist (hook '(prog-mode-hook text-mode-hook))
-    (add-hook hook #'whitespace-mode))
-  (add-hook 'before-save-hook #'whitespace-cleanup)
-  (add-hook 'prog-mode-hook 'whitespace-mode)
+  ;; (dolist (hook '(prog-mode-hook text-mode-hook))
+  ;;   (add-hook hook #'whitespace-mode))
+  ;; (add-hook 'before-save-hook #'whitespace-cleanup)
+  ;; (add-hook 'prog-mode-hook 'whitespace-mode)
   :config
   (setq whitespace-line-column 80)
   (setq whitespace-style '(face tabs empty trailing lines-tail)))
@@ -141,12 +144,15 @@
   (transient-mark-mode 1) ;; No region when it is not highlighted
   )
 
-(use-package linum
+(use-package nlinum
+    :config
+    ;; something else you want
+    (setq nlinum-highlight-current-line 1)
+    (add-hook 'prog-mode-hook 'nlinum-mode))
+
+(use-package hl-line
   :config
-  (column-number-mode t)
-  (global-linum-mode t)
-  (setq global-mode-string
-	'(:eval (format "%d chars" (- (line-end-position) (line-beginning-position))))))
+  (global-hl-line-mode +1))
 
 ;; setup neotree to use icons
 (use-package neotree
@@ -181,35 +187,48 @@
 	 ("\\.[agj]sp\\'" . web-mode)
 	 ("\\.as[cp]x\\'" . web-mode)
 	 ("\\.erb\\'" . web-mode)
+	 ("\\.vue\\'" . web-mode)
 	 ("\\.mustache\\'" . web-mode)
 	 ("\\.djhtml\\'" . web-mode)
 	 ("\\.html\\.flask\\'" . web-mode)
-	 ("\\.html?\\'" . web-mode))
+	 ("\\.html?\\'" . web-mode)
+	 ("\\.js[x]?\\'" . web-mode))
   :config
+  (setq web-mode-script-padding 2)
+  (setq web-mode-style-padding 2)
+  (setq web-mode-block-padding 2)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-jinja-offset 2)
+  (setq web-mode-vue-indent-offset 2)
+  (setq web-mode-html-offset 2)
+  (setq web-mode-js-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-enable-html-entities-fontification t
+        web-mode-auto-close-style 2)
   (setq web-mode-engines-alist
 	'(("jinja"    . "\\.html\\.flask\\'")
 	  ("jinja"    . "\\.html?\\'")
-	  ("php" . "\\.phtml\\'"))
+	  ("vue"      . "\\.vue\\'")
+	  ;; ("js"       . "\\.js\\'")
+	  ("php"      . "\\.phtml\\'"))
 	)
-  (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-css-indent-offset 4)
-  (setq web-mode-jinja-offset 4)
-  (setq web-mode-html-offset 4)
-  (setq web-mode-code-indent-offset 4)
-  (setq web-mode-enable-html-entities-fontification t
-        web-mode-auto-close-style 4)
   :interpreter "web-mode")
 
+
+;; Prettier mode
+;; (use-package prettier-js-mode
+;;   :hook web-mode-hook)
 
 ;; ssass-mode - required for vue-mode
 (use-package ssass-mode
   :load-path "~/.emacs.d/ssass-mode/")
 
 ;; vue-mode
-(use-package vue-mode
-  :load-path "~/.emacs.d/vue-mode/"
-  :mode (("\\.vue\\'" . web-mode))
-  :interpreter "vuel-mode")
+;; (use-package vue-mode
+;;   :load-path "~/.emacs.d/vue-mode/"
+;;   :mode (("\\.vue\\'" . web-mode))
+;;   :interpreter "vuel-mode")
 
 ;; Beacon mode
 (use-package beacon
