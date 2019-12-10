@@ -8,10 +8,9 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(beacon-blink-delay 2.3)
- '(custom-enabled-themes (quote (wheatgrass)))
  '(custom-safe-themes
    (quote
-    ("274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" default)))
+    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" default)))
  '(inhibit-startup-screen t)
  '(jdee-ant-buildfile
    "/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml")
@@ -33,11 +32,10 @@
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa-stable" . "http://stable.melpa.org/packages/")
      ("melpa" . "http://melpa.org/packages/")
-     ("marmalade" . "http://marmalade-repo.org/packages/")
      ("Elpa" . "http://tromey.com/elpa/"))))
  '(package-selected-packages
    (quote
-    (jinja2-mode highlight-indent-guides no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff company-jedi)))
+    (doom-modeline winum highlight-indent-guides no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff company-jedi)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -45,4 +43,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-preview ((t (:foreground "light steel blue"))))
- '(py-variable-name-face ((t (:inherit default)))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background "#8be9fd" :foreground "#3E3D31" :inherit (quote mode-line))))))

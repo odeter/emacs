@@ -1,69 +1,17 @@
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(beacon-blink-delay 2.3)
- '(custom-enabled-themes (quote (wheatgrass)))
- '(custom-safe-themes
-   (quote
-    ("274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" default)))
- '(inhibit-startup-screen t)
- '(jdee-ant-buildfile
-   "/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml")
- '(jdee-build-function (quote jdee-ant-build))
- '(jdee-built-class-path
-   (quote
-    ("/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/" "/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*")))
- '(jdee-compile-option-classpath
-   (quote
-    ("/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*")))
- '(jdee-global-classpath nil)
- '(jdee-junit-working-directory
-   "/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/")
- '(jdee-server-dir "~/myJars")
- '(minimap-minimum-width 20)
- '(minimap-mode t)
- '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa-stable" . "http://stable.melpa.org/packages/")
-     ("melpa" . "http://melpa.org/packages/")
-     ;;("marmalade" . "http://marmalade-repo.org/packages/")
-     ("Elpa" . "http://tromey.com/elpa/"))))
- '(package-selected-packages
-   (quote
-    (highlight-indent-guides no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff company-jedi)))
- '(paradox-github-token t))
-(package-initialize)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-preview ((t (:foreground "light steel blue"))))
- '(py-variable-name-face ((t (:inherit default)))))
-
-
 ;; -- setup custom config -- ;;
+(load "~/.emacs.d/etc/custom.el")
+(package-initialize)
 
-;; no-littering setup
-(require 'no-littering)
-(setq auto-save-file-name-transforms
-      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-(setq custom-file (no-littering-expand-etc-file-name "custom.el"))
+;; faster scrolling through larger files
+(setq auto-window-vscroll nil)
+(setq jit-lock-defer-time 0.05)
+(setq fast-but-imprecise-scrolling t)
 
+;; Don't use tabs as indent
+(setq-default indent-tabs-mode nil)
 
 ;; remove kill emacs command, accident happend too many times
 (global-unset-key (kbd "C-x C-c"))
-
-;; initialize custom theme
-(package-initialize)
-(load-theme 'dracula)
 
 ;; disable top tool-bar
 (tool-bar-mode -1)
@@ -80,18 +28,37 @@
 ;; Remove Sounds from Emacs
 (setq visible-bell 1)
 
-;; backup in one place. flat, no tree structure
-;(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
-
-
 (eval-when-compile
   (require 'use-package)
   (require 'diminish)
   (require 'bind-key)
   (require 'iso-transl)
   (require 'paradox)
+  (require 'vlf-setup)
   (paradox-enable))
 
+;; Keep .emacs.d clean
+(use-package no-littering
+  :ensure t
+  :config
+  (setq auto-save-file-name-transforms
+	`((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+  (setq custom-file (no-littering-expand-etc-file-name "custom.el"))
+  (require 'recentf)
+  (add-to-list 'recentf-exclude no-littering-var-directory)
+  (add-to-list 'recentf-exclude no-littering-etc-directory))
+
+(use-package dracula-theme
+  :ensure t
+  :config
+  (load-theme 'dracula t)
+  (let ((line (face-attribute 'mode-line :underline)))
+    (set-face-attribute 'mode-line          nil :overline   line)
+    (set-face-attribute 'mode-line-inactive nil :overline   line)
+    (set-face-attribute 'mode-line-inactive nil :underline  line)
+    (set-face-attribute 'mode-line          nil :box        nil)
+    (set-face-attribute 'mode-line-inactive nil :box        nil)
+    (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
 
 ;; hightlight mode setup
 (use-package highlight-indent-guides
@@ -127,10 +94,6 @@
 	 (before-save . whitespace-cleanup)
 	 (text-mode . whitespace-mode))
   :init
-  ;; (dolist (hook '(prog-mode-hook text-mode-hook))
-  ;;   (add-hook hook #'whitespace-mode))
-  ;; (add-hook 'before-save-hook #'whitespace-cleanup)
-  ;; (add-hook 'prog-mode-hook 'whitespace-mode)
   :config
   (setq whitespace-line-column 80)
   (setq whitespace-style '(face tabs empty trailing lines-tail)))
@@ -144,39 +107,49 @@
   (transient-mark-mode 1) ;; No region when it is not highlighted
   )
 
+;; use flycheck, syntax check
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+;; faster than linum
 (use-package nlinum
     :config
-    ;; something else you want
     (setq nlinum-highlight-current-line 1)
     (add-hook 'prog-mode-hook 'nlinum-mode))
 
+;; highlight current line
 (use-package hl-line
   :config
   (global-hl-line-mode +1))
 
 ;; setup neotree to use icons
 (use-package neotree
+  :ensure t
+  :ensure all-the-icons
   :config
   (global-set-key (kbd "C-<") 'neotree-toggle)
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+  ;; Use icons
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  )
 
-;; mode-line setup
-(use-package minions
+(use-package magit
   :ensure t
-  :init (minions-mode)
+  :bind (("C-x g" . magit-status))
   :config
+  (add-hook 'git-commit-mode-hook (lambda () (setq fill-column 72)))
   (setq
-   minions-mode-line-lighter "#"
-   minions-direct '(flycheck-mode
-		    cider-mode)))
+   magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256"))
+   magit-tag-arguments (quote ("--annotate"))
+   )
+  )
 
-(use-package moody
-  :ensure t
+;; nyan-cat
+(use-package nyan-mode
+  :load-path "~/.emacs.d/nyan-mode-master/"
   :config
-  (setq x-underline-at-descent-line t)
-  (moody-replace-mode-line-buffer-identification)
-  (moody-replace-vc-mode))
-
+  (nyan-mode)
+  (nyan-start-animation))
 
 ;; Web-mode
 (use-package web-mode
@@ -215,26 +188,6 @@
 	)
   :interpreter "web-mode")
 
-
-;; Prettier mode
-;; (use-package prettier-js-mode
-;;   :hook web-mode-hook)
-
-;; ssass-mode - required for vue-mode
-(use-package ssass-mode
-  :load-path "~/.emacs.d/ssass-mode/")
-
-;; vue-mode
-;; (use-package vue-mode
-;;   :load-path "~/.emacs.d/vue-mode/"
-;;   :mode (("\\.vue\\'" . web-mode))
-;;   :interpreter "vuel-mode")
-
-;; Beacon mode
-(use-package beacon
-  :load-path "~/.emacs.d/beacon/"
-  :config (beacon-mode 1))
-
 ;; undo-tree
 (use-package undo-tree
   :load-path "~/.emacs.d/undo-tree/"
@@ -248,11 +201,6 @@
     (define-key undo-tree-map (kbd "C-z") 'undo-tree-undo)
     (define-key undo-tree-map (kbd "C-S-z") 'undo-tree-redo)))
 
-;; mode-icon
-(use-package mode-icons
-  :load-path "~/.emacs.d/icon-mode/"
-  :config (mode-icons-mode))
-
 ;; prolog mode
 (use-package prolog-mode
   :load-path "~/.emacs.d/prolog/"
@@ -261,9 +209,30 @@
   :config
   (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t))
 
-;; nyan-cat
-(use-package nyan-mode
-  :load-path "~/.emacs.d/nyan-mode-master/"
+(use-package winum
+  :ensure t)
+
+;; mode-line setup
+
+(use-package minions
+  :ensure t
+  :init (minions-mode 1)
   :config
-  (nyan-mode)
-  (nyan-start-animation))
+  (validate-setq
+   minions-mode-line-lighter "#"
+   minions-direct '(flycheck-mode
+                    cider-mode)))
+
+(use-package moody
+  :ensure t
+  :config
+  (setq-default x-underline-at-descent-line t
+                column-number-mode t
+		winum-mode t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode))
+
+;;mode-icon
+(use-package mode-icons
+  :load-path "~/.emacs.d/icon-mode/"
+  :config (mode-icons-mode))
