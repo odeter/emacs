@@ -218,7 +218,7 @@
   :ensure t
   :init (minions-mode 1)
   :config
-  (validate-setq
+  (setq
    minions-mode-line-lighter "#"
    minions-direct '(flycheck-mode
                     cider-mode)))
