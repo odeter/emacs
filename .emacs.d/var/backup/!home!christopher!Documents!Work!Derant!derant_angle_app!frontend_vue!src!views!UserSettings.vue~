@@ -1,0 +1,196 @@
+<template>
+  <v-container ma-0 pa-3 bg grid-list-xs text-xs-center fluid>
+    <v-layout wrap align-center fluid pb-5>
+        <v-flex>
+          <v-subheader>Register new user:</v-subheader>
+          <v-divider></v-divider>
+        </v-flex>
+    </v-layout>
+    <v-form ref="rform">
+      <v-layout wrap fluid>
+        <v-flex md6>
+          <v-text-field
+              v-model="username"
+              label="User Email"
+              placeholder="Email of new user"
+              :counter="120"
+              :rules="nameRules"
+              prepend-icon="mdi-account-plus"
+              :error-messages="user_error"
+              :success="form_succ"
+              :success-messages ="form_sucT"
+              outlined
+              required
+          ></v-text-field>
+          <v-text-field
+              v-model="password"
+              :type="'password'"
+              placeholder="Password for new user"
+              label="Password"
+              :counter="120"
+              :rules="passRules"
+              prepend-icon="mdi-key-plus"
+              :error-messages="p_error"
+              :success="form_succ"
+              outlined
+              required
+          ></v-text-field>
+          <v-text-field
+              v-model="password2"
+              :type="'password'"
+              placeholder="Repeat password"
+              label="Password Validation"
+              :counter="120"
+              :rules="passRules2"
+              prepend-icon="mdi-key-plus"
+              :error-messages="p_error"
+              :success="form_succ"
+              outlined
+              required
+          ></v-text-field>
+        </v-flex>
+        <v-flex md6>
+          <v-container v-if="!is_fetching" ma-0 pa-5>
+            <v-layout row wrap>
+              <v-flex v-for="role in roles" :key="role[1]" xs6>
+                <v-checkbox :value="role[1]"
+                            class="mx-2"
+                            multiple
+                            :key="role[1]"
+                            :label="role[0]"
+                            :hint="role[2]"
+                            persistent-hint
+                            :success="form_succ"
+                            :error-messages="role_error"
+                            :rules="check_rules"
+                            v-model="sel_roles">
+                </v-checkbox>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-flex>
+      </v-layout>
+      <v-layout wrap align-center fluid>
+        <v-flex md6>
+          <v-btn block :disabled="roles.length <= 0" class="mr-4" @click="registerUser">Register User</v-btn>
+        </v-flex>
+        <v-flex md6>
+          <v-btn block :disabled="roles.length <= 0" class="mr-4" @click="clear">clear</v-btn>
+        </v-flex>
+      </v-layout>
+    </v-form>
+  </v-container>
+</template>
+
+<script>
+  import authservice from '@/services/BackendService.js'
+
+  export default {
+    data() {
+      return {
+        roles: [],
+        form_succ: false,
+        form_sucT: '',
+        is_fetching: true,
+        sel_roles: [],
+        username: '',
+        password: '',
+        password2: '',
+        p_error: '',
+        user_error: '',
+        role_error: '',
+        register_re: null,
+        passRules2: [
+          v => !!v || 'Please Repeat Password',
+          v => (v && v.length <= 120) || 'Password must be less than 120 characters',
+          v => (v == this.password) || 'The two passwords have to match'
+        ],
+        passRules: [
+          v => !!v || 'Password is required',
+          v => (v && v.length <= 120) || 'Password must be less than 120 characters'
+        ],
+        nameRules: [
+          v => !!v || 'User Email is required',
+          v => (v && v.length <= 120) || 'E-mail must be less than 120 characters',
+          v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+        ]
+      }
+    },
+    computed: {
+      check_rules() {
+        return [
+          this.sel_roles.length > 0 || 'At least one item should be selected'
+        ]
+      }
+    },
+    methods: {
+      registerUser() {
+        console.log(this.sel_roles)
+        if (this.$refs.rform.validate() && this.roles > 0) {
+          authservice
+               .register(this.username, this.password, this.sel_roles)
+               .then(result => {
+                 this.clear_msg()
+                 this.form_succ = true
+                 this.form_sucT = 'User registrered'
+               })
+               .catch(error => {
+                 this.clear_msg()
+                 var feedback = error.response.data
+                 if ('userN' in feedback) {
+                   this.user_error = error.response.data['userN']
+                 }
+                 else if ('role' in feedback) {
+                   this.role_error = error.response.data['role']
+                 }
+                 else {
+                   var errmsg = 'Something went wrong'
+                   this.user_error = errmsg
+                   this.role_error = errmsg
+                   this.p_error = errmsg
+                 }
+               })
+        }
+      },
+      clear_msg() {
+        this.user_error = ''
+        this.role_error = ''
+        this.p_error = ''
+        this.form_sucT = ''
+        this.form_succ = false
+      },
+      clear() {
+        this.$refs.rform.reset()
+        this.password = ''
+        this.username = ''
+        this.password2 = ''
+        this.clear_msg()
+      }
+    },
+    mounted() {
+      authservice
+               .getRoles()
+               .then(result => {
+                 console.log('Success')
+                 console.log(result)
+                 this.roles = result.data['roles']
+                 console.log(this.roles)
+                 this.is_fetching = false
+               })
+               .catch(error => {
+                 var role_msg = 'Roles could not be found'
+                 if (error.response) {
+                   var feedback = error.response.data
+                   if ('roles' in feedback) {
+                     role_msg = error.response.data['roles']
+                   }
+                 }
+                 this.user_error = role_msg
+                 this.role_error = role_msg
+                 this.p_error = role_msg
+               })
+    }
+  }
+</script>
+
+<style></style>

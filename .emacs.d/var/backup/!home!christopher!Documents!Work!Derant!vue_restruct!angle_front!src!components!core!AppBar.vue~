@@ -1,0 +1,77 @@
+<template>
+  <v-app-bar fixed app light clipped-left color="#727272" class="elevation-2">
+    <v-app-bar-nav-icon @click="onDraw"  class="white--text"></v-app-bar-nav-icon>
+    <v-toolbar-title class="white--text">Derant Angle</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items>
+      <v-flex
+	  align-center
+	  layout
+	  py-2
+      >
+	<div v-if="logged_in">
+	  <v-btn color="white" text>{{ logged_name }}</v-btn>
+	  <v-btn to :event="''" @click.native="onLogout">
+	    Log out
+	  </v-btn>
+	</div>
+	<div v-else>
+	  <v-btn :to="items[0].path">
+	    {{ items[0].name }}
+	  </v-btn>
+	</div>
+      </v-flex>
+    </v-toolbar-items>
+  </v-app-bar>
+</template>
+
+<script>
+  import { EventBus } from '@/services/user_status.js'
+  //import router from './router'
+
+  export default {
+    data() {
+      return {
+	logged_in: false,
+	logged_name: null,
+	items: []
+      }
+    },
+    created() {
+      this.$router.options.logins.forEach(route => {
+	this.items.push({
+          name: route.name,
+          path: route.path
+	})
+      })
+    },
+    mounted() {
+      if (localStorage) {
+	this.onLogin()
+      }
+      EventBus.$on('user_logged_in', is_logged => {
+	if (is_logged) {
+	  this.onLogin()
+	  console.log('user: '+localStorage.getItem('user_name')+' logged in')
+	}
+      })
+    },
+    methods: {
+      onDraw() {
+	EventBus.$emit('draw')
+      },
+      onLogout() {
+	localStorage.clear()
+	this.logged_in = false
+	this.logged_name = null
+        if (router.currentRoute['name'] != "home"){
+          router.push('/')
+        }
+      },
+      onLogin() {
+	this.logged_in = localStorage && localStorage.getItem('authtoken')
+	this.logged_name = localStorage.getItem('user_name')
+      }
+    }
+  }
+</script>

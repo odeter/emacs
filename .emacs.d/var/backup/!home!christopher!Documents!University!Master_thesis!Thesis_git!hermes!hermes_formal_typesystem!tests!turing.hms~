@@ -1,0 +1,32 @@
+main()
+{
+  const u8 c = 0;                                  // Const decl
+  const u8 d = 1;
+  u32 x, y, a[2], b[2];                            // Arr and var decls
+  x++; x--; a[0]++; a[0]--;                        // Increment decrement
+  for (i = 5; c){                                  // For loop
+    call f(a, y, x);
+    i -= d;
+  }
+  assert(a[0] + 1);                                // Assert
+  a[0] += y + x; x -= y; x ^= y; x <<= y; x >>= y; // Update
+  a[0] -= a[1];                                    // Relaxed update
+  if (x + 1) a[0] += a[1];                         // Conditional update
+  a[1] <-> a[0];                                   // Swap
+  if (1) b[x] <-> a[1];                            // Conditional swap
+  call f(y, x, a);                                 // Call
+  //scanf("%u32", a[0]);                           // Scan
+  uncall f(a[c], y, b);                            // Uncall
+  printf("%u32 Done statements test\n", x);        // Print
+}
+
+
+f(u32 arg, u32 arg1, u32 arg2){
+  const u8 d= 8;
+  arg += 5;
+  const u8 c = 9;// Function decl
+  arg += 5;
+}
+
+g(u32 arg){
+}

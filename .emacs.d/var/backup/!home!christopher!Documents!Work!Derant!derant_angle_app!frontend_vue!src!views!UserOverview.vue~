@@ -1,0 +1,269 @@
+<template>
+  <v-container ma-0 pa-3 bg grid-list-xs text-xs-center fluid>
+    <v-layout wrap align-center fluid pb-5>
+      <v-flex>
+        <v-subheader>{{ $t("UserOverview.subtitle") }}</v-subheader>
+        <v-divider></v-divider>
+      </v-flex>
+    </v-layout>
+    <v-container ma-0 bg grid-list-md text-xs-center fluid>
+      <v-text-field
+          v-model="user_search"
+          append-icon="mdi-magnify"
+          v-bind:label="$t('General.search')"
+          single-line
+          hide-details
+      ></v-text-field>
+      <v-data-table
+          hide-default-footer
+          v-bind:no-results-text="$t('General.noSearchMatch')"
+          :no-data-text="user_lm"
+          :items-per-page="20"
+          :headers="headers"
+          :items="user_list"
+          :search="user_search"
+      >
+        <template v-slot:item="row">
+          <tr>
+            <td>
+              <v-layout justify-left>
+                {{ row.item['Username'] }}
+              </v-layout>
+            </td>
+            <td>
+              <v-layout justify-left>
+                {{ row.item['Name'] }}
+              </v-layout>
+            </td>
+            <td>
+              <v-layout justify-left>
+                {{ row.item['Mobile'] }}
+              </v-layout>
+            </td>
+            <td>
+              <v-layout justify-left>
+                {{ row.item['Zip code'] }}
+              </v-layout>
+            </td>
+            <td>
+              <v-layout justify-left>
+                {{ row.item['address'] }}
+              </v-layout>
+            </td>
+            <td>
+              <v-layout justify-left>
+                {{ row.item['toc'] }}
+              </v-layout>
+            </td>
+            <td>
+              <v-layout justify-left>
+                {{ row.item['Roles'] }}
+              </v-layout>
+            </td>
+            <td>
+              <v-layout justify-left>
+                <v-checkbox
+                    v-model="user_active[row.item['Edit User']]"
+                    readonly>
+                </v-checkbox>
+              </v-layout>
+            </td>
+
+            <td>
+              <v-dialog v-model="dialogNote[row.item['Edit User']]" persistent max-width="600px" :key="row.item['Edit User']">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-layout justify-left>
+                    <v-btn
+                        dark
+                        color="blue"
+                        v-bind="attrs"
+                        v-on="on">
+                      <v-icon dark>mdi-border-color</v-icon>
+                    </v-btn>
+                  </v-layout>
+                </template>
+                <v-card>
+                  <v-card-title>
+                    <span class="headline">{{ $t("Register.editAlarmStatus") }}</span>
+                  </v-card-title>
+                  <v-card-text>
+                    <v-container>
+
+                      <v-form :ref="'form_' + row.item['Edit User']">
+                        <v-layout wrap fluid>
+                          <v-flex>
+                            <v-checkbox
+                                v-model="user_active[row.item['Edit User']]"
+                                persistent-hint
+                                v-bind:hint="$t('Register.userActiveHint')"
+                                v-bind:label="$t('Register.userActive')"
+                                :success="c_form_succ"
+                                :success-messages ="c_form_sucT">
+                            </v-checkbox>
+                          </v-flex>
+                        </v-layout>
+                      </v-form>
+                    </v-container>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue darken-1" text @click="$set(dialogNote, row.item['Edit User'], false); clearDF(row.item['Active'], row.item['Edit User'])">Close</v-btn>
+                    <v-btn color="blue darken-1" text @click="editUser(row.item['Edit User'])">{{ $t("General.save") }}</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </td>
+          </tr>
+        </template>
+      </v-data-table>
+      <template slot="items" slot-scope="myprops">
+        <td v-for="header in items" v-bind:key="header.value">
+          {{ myprops.item[header.value] }}
+        </td>
+      </template>
+    </v-container>
+  </v-container>
+</template>
+
+<script>
+  import authservice from '@/services/BackendService.js'
+  import buttonMixin from '@/mixins/buttonMix'
+
+  export default {
+    mixins: [buttonMixin],
+    data() {
+      return {
+        user_list: [],
+        user_head: [],
+        user_lm: '',
+        user_search: '',
+        user_active: {},
+        dialogNote: {},
+        c_form_succ: false,
+        c_form_sucT: '',
+        c_server_error: '',
+
+        form_succ: false,
+        form_sucT: '',
+        is_fetching: true,
+        mobile: '',
+        username: '',
+        password: '',
+        password2: '',
+        p_error: '',
+        user_error: '',
+        role_error: '',
+        mobile_error: '',
+        register_re: null,
+        mobileRules: [
+          v => !!v || this.$t('Register.mobileRulesRequired'),
+          v => (v && v.length <= 20) || this.$t('Register.mobileRulesChars')
+        ],
+        passRules2: [
+          v => !!v || this.$t('Register.passwordRulesRepeat'),
+          v => (v && v.length <= 120) || this.$t('Register.passwordRulesChars'),
+          v => (v == this.password) || this.$t('Register.passwordRulesMatch')
+        ],
+        passRules: [
+          v => !!v || this.$t('Register.passwordRulesRequired'),
+          v => (v && v.length <= 120) || this.$t('Register.passwordRulesChars')
+        ],
+        nameRules: [
+          v => !!v || this.$t('Register.nameRulesRequired'),
+          v => (v && v.length <= 120) || this.$t('Register.nameRulesChars'),
+          v => /.+@.+\..+/.test(v) || this.$t('Register.nameRulesValid')
+        ]
+      }
+    },
+    computed: {
+      headers() {
+        return [
+          {text: this.$t('Register.TableHeaders.username'), value: 'Username'},
+          {text: this.$t('Register.TableHeaders.name'), value: 'Name'},
+          {text: this.$t('Register.TableHeaders.mobile'), value: 'Mobile'},
+          {text: this.$t('Register.TableHeaders.zipCode'), value: 'Zip code'},
+          {text: this.$t('Register.TableHeaders.address'), value: 'address'},
+          {text: this.$t('Register.TableHeaders.toc'), value: 'toc'},
+          {text: this.$t('Register.TableHeaders.active'), value: 'Roles'},
+          {text: this.$t('Register.TableHeaders.active'), value: 'Active'},
+          {text: this.$t('Register.TableHeaders.editUser'), value: 'Edit User'}
+        ]
+      }
+    },
+    methods: {
+      saveToL(data) {
+        for (var key in data) {
+          var item = data[key]
+          var id = item['Edit User']
+          console.log(id)
+          this.$set(this.user_active, id, item['Active'])
+        }
+      },
+      getUserList() {
+        authservice
+               .sysGetUsers()
+               .then(result => {
+                 if (result.status == 200) {
+                   console.log(result.status)
+                   var heads = ['Username', 'Name', 'Mobile', 'Zip code', 'address', 'toc', 'Roles', 'Active', 'Edit User']
+                   var data = result.data['users']
+                   var d = this.dataToTable([heads].concat(data))
+                   this.saveToL(d[1])
+
+                   // this.user_head = d[0]
+                   this.user_list = d[1]
+                   console.log(this.user_list)
+                 }
+                 else {
+                   this.user_list = []
+                   this.user_lm = this.$t('Register.noUsers')
+                 }
+               })
+               .catch(error => {
+                 console.log(error)
+                 this.user_lm = error.response.data['message']
+               })
+      },
+      editUser(id) {
+        var check = this.$refs['form_' + id].validate()
+        var u_active = this.user_active[id]
+        if (check) {
+          authservice
+               .sysEditUser(u_active, id)
+               .then(result => {
+                 this.c_form_succ = true
+                 this.c_form_sucT = 'User changed'
+                 this.getUserList()
+               })
+               .catch(error => {
+                 this.server_error = error.response.data['message']
+               })
+        }
+      },
+      clear_msg() {
+        this.user_error = ''
+        this.role_error = ''
+        this.p_error = ''
+        this.mobile_error = ''
+        this.form_sucT = ''
+        this.form_succ = false
+      },
+      clear() {
+        this.$refs.rform.reset()
+        this.clear_msg()
+      },
+      clearDF(orig_active, id) {
+        this.$refs['form_' + id].resetValidation()
+        this.$set(this.user_active, id, orig_active)
+        this.c_form_succ = false
+        this.c_form_sucT = ''
+        this.c_server_error = ''
+      }
+    },
+    mounted() {
+      this.getUserList()
+    }
+  }
+</script>
+
+<style></style>

@@ -1,0 +1,13 @@
+<|> public-net <|>
+<|> private-net <|>
+<|> blacklist <|>
+<|> service-off <|>
+<|> service-used <|>
+<|> service-used-ip <|>
+<|> http-exe <|>
+<|> https-cert <|>
+<|> https-sign <|>
+
+R <-> 04/05/2019-16:59:50.902898 [**] [1:2021101:2] ET 14 TROJAN Generic Dropper Installing PUP 1 [**] [Classifica-tion: A Network Trojan was detected] [Priority: 1] {TCP} 172.16.192.165:58990 -> 45.56.90.99:80
+
+Download of the software from ohso.net, screen recorder software.

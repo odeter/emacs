@@ -35,7 +35,7 @@
      ("Elpa" . "http://tromey.com/elpa/"))))
  '(package-selected-packages
    (quote
-    (doom-modeline winum highlight-indent-guides no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff company-jedi)))
+    (smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum highlight-indent-guides no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

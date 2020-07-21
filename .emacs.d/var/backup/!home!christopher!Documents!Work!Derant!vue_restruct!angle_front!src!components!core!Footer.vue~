@@ -1,0 +1,17 @@
+<template>
+  <v-footer
+      dark
+      padless
+      absolute
+      app>
+    <v-layout row wrap align-center>
+      <v-flex xs12>
+	<v-card>
+	<v-card-text class="py-2 white--text text-center">
+          {{ new Date().getFullYear() }} — <strong>www.derant.com</strong>
+        </v-card-text>
+	</v-card>
+      </v-flex>
+    </v-layout>
+  </v-footer>
+</template>

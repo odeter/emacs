@@ -1,0 +1,129 @@
+<template>
+  <v-container ma-0 pa-5 bg grid-list-md text-xs-center fluid>
+    <v-layout row wrap align-center>
+      <v-flex>
+	<v-form>
+          <v-row>
+
+	    <v-file-input name="fileup" id="fileup" v-model="fileup"
+			  label="File input" required></v-file-input>
+          </v-row>
+          <v-row>
+	    <v-col>
+	      <v-btn class="mr-4" @click="submitFile()">Submit File</v-btn>
+	    </v-col>
+	    <v-col>
+	      <p>{{ upload_re }}</p>
+	    </v-col>
+	  </v-row>
+	</v-form>
+	<v-row>
+	  <v-col >
+	    <v-row>
+	      <v-col>
+		<p>Files waiting to be processed:</p>
+	      </v-col>
+	      <v-col>
+		<v-btn class="mr-4" @click="getWaitFiles()">Refresh</v-btn>
+	      </v-col>
+	    </v-row>
+	    <v-simple-table>
+	      <thead>
+		<tr>
+		  <th class="text-left">Name</th>
+		</tr>
+	      </thead>
+	      <tbody>
+		<tr v-for="f in fileWaitList" :key="f">
+		  <td>{{ f }}</td>
+		</tr>
+	      </tbody>
+	    </v-simple-table>
+	  </v-col>
+	  <v-col>
+	    <v-row>
+	      <v-col>
+		<p>Current files uploaded to the analysis server:</p>
+	      </v-col>
+	      <v-col>
+		<p>Selected file: {{ selectedFile }}</p>
+	      </v-col>
+	    </v-row>
+	    <v-simple-table>
+	      <thead>
+		<tr>
+		  <th class="text-left">Name</th>
+		</tr>
+	      </thead>
+	      <tbody>
+		<tr v-for="f in filelist" :key="f">
+		  <td><a href="#" @click.prevent="setSelectedFile(f)">{{ f }}</a></td>
+		</tr>
+	      </tbody>
+	    </v-simple-table>
+	  </v-col>
+	</v-row>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+import authservice from '@/services/BackendService.js'
+
+export default {
+  data() {
+    return {
+      filelist: [],
+      fileWaitList: [],
+      selectedFile: null,
+      fileup: null,
+      upload_re: null
+    }
+  },
+  mounted() {
+    console.log('mounted')
+    this.selectedFile = authservice.getSelectedFile()
+    authservice.getBrologs().then(result => {
+      this.filelist = result.data.brologs
+    })
+    this.getWaitFiles()
+  },
+  methods: {
+    submitFile() {
+      let formData = new FormData()
+      formData.append('file', this.fileup)
+      authservice
+        .fileUpload(formData)
+        .then(result => {
+          this.upload_re = 'Fileupload Success'
+          console.log(result.data)
+          console.log('Success!')
+        })
+        .catch(function(error) {
+          this.upload_re =
+            'Fileupload failed, status code:' + error.response.status
+          console.log('Fail!!')
+        })
+      console.log('file tried uploaded')
+    },
+    getWaitFiles() {
+      authservice.getPcapWait().then(result => {
+	this.fileWaitList = result.data.pcap_wait
+      })
+      console.log('Got files waiting')
+    },
+    setSelectedFile(sf) {
+      console.log(sf)
+      this.selectedFile = sf
+      authservice.setSelectedFile(sf)
+    }
+  }
+}
+</script>
+
+<style>
+#filelistcontent {
+  text-align: left;
+}
+</style>

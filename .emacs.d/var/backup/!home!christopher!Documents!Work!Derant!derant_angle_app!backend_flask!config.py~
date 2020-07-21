@@ -1,0 +1,28 @@
+PROPAGATE_EXCEPTIONS = True
+SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SECRET_KEY = 'some-secret-string'
+JWT_SECRET_KEY =  'kowmcuitr8s2c97'
+JWT_ACCESS_TOKEN_EXPIRES = False
+JWT_BLACKLIST_ENABLED = True
+JWT_BLACKLIST_TOKEN_CHECKS = ['access', 'refresh']
+CORS_HEADERS = 'Content-Type'
+CORS_ENABLED = True
+UPLOAD_FOLDER = 'uploads/'
+CSV_FOLDER = 'csv/'
+CORS_ORIGIN_WHITELIST = [
+    'https://bull.derant.com',
+    'http://0.0.0.0:4100',
+    'http://localhost:4100',
+    'http://0.0.0.0:8000',
+    'http://localhost:8000',
+    'http://0.0.0.0:4200',
+    'http://localhost:4200',
+    'http://0.0.0.0:4000',
+    'http://localhost:4000',
+    'http://localhost:8080',
+    'http://0.0.0.0:8080',
+    'http://127.0.0.1:8080',
+    'http://192.168.100.6:8080',
+    'localhost'
+    ]

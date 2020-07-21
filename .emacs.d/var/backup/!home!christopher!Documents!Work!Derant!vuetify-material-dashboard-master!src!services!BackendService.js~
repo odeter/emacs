@@ -1,0 +1,119 @@
+/* eslint-disable */
+import axios from 'axios'
+import router from '@/router.js'
+
+const authclient = axios.create({
+  baseURL: `http://localhost:5000`,
+  withCredentials: false, // This is the default
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  }
+})
+authclient.interceptors.request.use(
+  config => {
+    let token = localStorage.getItem('authtoken')
+
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`
+    }
+
+    return config
+  },
+
+  error => {
+    return Promise.reject(error)
+  }
+)
+authclient.interceptors.response.use(
+  function(response) {
+    return response
+  },
+  function(error) {
+    console.log('Possible 401')
+    console.log(error.response)
+    if (error.response.status === 401) {
+      //store.dispatch('logout')
+      console.log('Redirecting to /login')
+      router.push('/login')
+    }
+    return Promise.reject(error)
+  }
+)
+
+/* auth client selected file */
+var acsf = null
+
+/* saved divsize */
+var divsize = null
+
+/* saved cursor */
+var cursorX = 0
+var cursorY = 0
+
+export default {
+  brologdataraw: {},
+  login(username, password) {
+    return authclient.post('/login', { username: username, password: password })
+  },
+  register(username, password) {
+    return authclient.post('/registration', {
+      username: username,
+      password: password
+    })
+  },
+  fileUpload(formData) {
+    return authclient.post('/uploadpcap', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
+  },
+  getPcapWait() {
+    return authclient.get('/pcapunpro')
+  },
+  getBrologs() {
+    return authclient.get('/brologs')
+  },
+  getBrolog(filename) {
+    return authclient.get('/brolog/' + filename)
+  },
+  getBrologWithFilter(filename, activefilter) {
+    console.log(activefilter)
+    return authclient.post('/brolog/' + filename, {
+      filter: JSON.stringify(activefilter)
+    })
+  },
+  setSelectedFile(sf) {
+    //acsf = sf.slice(0, -5)
+    //acsf = sf
+    localStorage.setItem('selected_file', sf)
+  },
+  clearSelectedFile() {
+    //acsf = null
+    localStorage.setItem('selected_file', null)
+  },
+  getSelectedFile() {
+    //return acsf
+    return localStorage.getItem('selected_file')
+  },
+  saveDivsize(ds) {
+    divsize = ds
+    //console.log('Saved divsize')
+  },
+  getDivsize() {
+    //console.log('Returning saved divsize')
+    //console.log(divsize)
+    return divsize
+  },
+  setCursorX(a) {
+    cursorX = a
+  },
+  getCursorX() {
+    return cursorX
+  },
+  setCursorY(a) {
+    cursorY = a
+  },
+  getCursorY() {
+    return cursorY
+  }
+}

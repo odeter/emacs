@@ -1,0 +1,89 @@
+<template>
+    <v-app id="login">
+	<v-container bg grid-list-md text-xs-center>
+          <v-layout row wrap align-center>
+	    <v-flex>
+	      <v-subheader>Login</v-subheader>
+	    <form>
+	      <v-text-field
+		  v-model="username"
+		  label="Username"
+		  required
+	      ></v-text-field>
+	      <v-text-field
+		  v-model="password"
+		  :type="'password'"
+		  label="Password"
+		  required
+	      ></v-text-field>
+	      <v-btn class="mr-4" @click="onSubmit">Login</v-btn>
+	      <v-btn @click="clear">clear</v-btn>
+	    </form>
+	    <p>{{ login_re }}</p>
+	    </v-flex>
+	  </v-layout>
+	</v-container>
+    </v-app>
+</template>
+
+<script>
+import authservice from '@/services/BackendService.js'
+import router from '@/router'
+import { EventBus } from '@/services/user_status.js'
+
+export default {
+  name: 'Login',
+  data() {
+    return {
+      username: '',
+      password: '',
+      access_token: null,
+      refresh_token: null,
+      authusername: null,
+      user_n: null,
+      loggedin: false,
+      login_re: null
+    }
+  },
+    methods: {
+      clear () {
+	this.username = ''
+        this.password = ''
+      },
+      onSubmit() {
+	console.log('In onSubmit.')
+      authservice
+        .login(this.username, this.password)
+        .then(result => {
+          console.log('Success')
+          console.log(result)
+          this.access_token = result.data.access_token
+          this.user_n = result.data.user_name
+          localStorage.setItem('authtoken', this.access_token)
+          localStorage.setItem('user_name', this.user_n)
+          this.refresh_token = result.data.refresh_token
+          this.authusername = result.data.authusername
+          this.loggedin = true
+          this.username = ''
+          this.password = ''
+          EventBus.$emit('user_logged_in', true)
+          router.push('/')
+        })
+        .catch(error => {
+          console.log('Error')
+          console.log(error)
+          this.login_re =
+            'Login failed, status code: ' +
+            error.response.status +
+            ', Message: ' +
+            error.response.data['message']
+          this.username = ''
+          this.password = ''
+        })
+      console.log('Exiting onSubmit.')
+    }
+  }
+}
+</script>
+
+<style></style>

@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import requests as rq
+import json
+
+def dbQuery(query, debug=False):
+    print("Getting query...")
+    if debug == False:
+        call = ["impala-shell", "--quiet", "-B", "-q", query]
+        try:
+            out = subprocess.check_output(call, stderr=subprocess.DEVNULL).decode('utf-8')
+        except subprocess.CalledProcessError as e:
+            print(e.output)
+    else:
+        call = ["impala-shell", "-B", "-q", query]
+        try:
+            out = subprocess.check_output(call).decode('utf-8')
+        except subprocess.CalledProcessError as e:
+            print(e.output)
+    print("Query Done")
+    return out
+
+def createQuery(startdate, enddate, baseFileN):
+
+    content = None
+    with open('baseline/'+baseFileN, 'r') as content_file:
+        content = content_file.read()
+
+
+    dates = (r"""
+    SET VAR:START_DATE_SQL='%s';
+    SET VAR:END_DATE_SQL='%s';
+
+    """ % (startdate, enddate))
+
+    return (dates+content)
+
+
+def main():
+    if len(sys.argv) != 8:
+        print("""Invalid amount of arguments!
+        Time period:\t`./get_data.py 2020 1 23 2020 2 14 baseline`""")
+        exit(1)
+
+    if len(sys.argv) == 8:
+
+        sY = (sys.argv[1])
+        sM = (sys.argv[2])
+        sD = (sys.argv[3])
+        eY = (sys.argv[4])
+        eM = (sys.argv[5])
+        eD = (sys.argv[6])
+        baselineF = sys.argv[7]
+
+        api_key = "31dc144e480d80a1c7d2bfbc2d9addb8267572e49db9a2ba33dac8b1d73c30d83a71412110a5ac94"
+
+        if (not (sY.isdecimal() and sM.isdecimal() and
+                 sD.isdecimal() and eY.isdecimal() and
+                 eM.isdecimal() and eD.isdecimal() and
+                 int(eM) <= 12 and int(sM) <= 12 and
+                 int(eD) <= 31 and int(sD) <= 31)):
+            print("argument dates have to be numbers and adhere to normal dates")
+            exit(1)
+        start_date = sY+"-"+sM.zfill(2)+"-"+sD.zfill(2)
+        end_date = eY+"-"+eM.zfill(2)+"-"+eD.zfill(2)
+        data_l ={'ipAddress':'118.25.6.39', 'maxAgeInDays': '90', 'verbose' : True}
+        header_l = {'Key':api_key, 'Accept': 'application/json'}
+        r = rq.get('https://api.abuseipdb.com/api/v2/check',
+                   params = data_l, headers=header_l)
+        status = r.status_code
+        r_data = r.json()
+
+        # ip important features
+        score = r_data["data"]["abuseConfidenceScore"]
+        white_list = r_data["data"]["isWhitelisted"]
+        CN = r_data["data"]["countryName"]
+        print(r_data["data"]["abuseConfidenceScore"])
+
+        #print(createQuery(start_date,end_date,baselineF))
+
+if __name__ == "__main__":
+    main()

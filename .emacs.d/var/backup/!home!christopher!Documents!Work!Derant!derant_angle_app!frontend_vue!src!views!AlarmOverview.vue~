@@ -1,0 +1,475 @@
+<template>
+  <v-container ma-0 pa-5 bg grid-list-md text-xs-center fluid>
+    <v-tabs
+        background-color="red"
+        dark
+    >
+      <v-tab ripple>
+        Alarms Newly Raised
+      </v-tab>
+      <v-tab ripple>
+        Alarms Being Handled
+      </v-tab>
+      <v-tab ripple>
+        Alarms Closed
+      </v-tab>
+      <v-tab-item>
+        <v-container ma-0 bg grid-list-md text-xs-center fluid>
+          <v-text-field
+              v-model="active_search"
+              append-icon="mdi-magnify"
+              label="Search"
+              single-line
+              hide-details
+          ></v-text-field>
+          <v-data-table
+              hide-default-footer
+              :no-data-text="active_lm"
+              :items-per-page="20"
+              :headers="active_header"
+              :items="active_list"
+              :search="active_search"
+          >
+            <template v-slot:item="row">
+              <tr>
+                <td v-for="i in 6">
+                  <v-layout justify-left>
+                    {{ row.item[i-1] }}
+                  </v-layout>
+                </td>
+                <td>
+                  <v-layout justify-left>
+                    {{ status_list[row.item[6]] }}
+                  </v-layout>
+                </td>
+                <td>
+                  <v-layout justify-left>
+                    <v-btn
+                        dark
+                        color="blue"
+                        @click="goToData(row.item[7], row.item[10], row.item[11], row.item[5])">
+                      <v-icon dark>mdi-file</v-icon>
+                    </v-btn>
+                  </v-layout>
+                </td>
+
+                <td>
+                  <v-dialog v-model="dialogNote[row.item[9]]" persistent max-width="600px" :key="row.item[9]">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-layout justify-left>
+                        <v-btn
+                            dark
+                            color="blue"
+                            v-bind="attrs"
+                            v-on="on">
+                          <v-icon dark>mdi-border-color</v-icon>
+                        </v-btn>
+                      </v-layout>
+                    </template>
+                    <v-card>
+                      <v-card-title>
+                        <span class="headline">Edit Alarm Status</span>
+                      </v-card-title>
+                      <v-card-text>
+                        <v-container>
+
+                          <v-form :ref="'form_' + row.item[9]">
+                            <v-layout wrap fluid>
+                              <v-flex>
+                                <v-select
+                                    :items="status_obj"
+                                    v-model="c_status[row.item[9]]"
+                                    outlined
+                                    prepend-icon="mdi-fire"
+                                    label="Alarm Status"
+                                    :error-messages="c_server_error"
+                                    :success="c_form_succ"
+                                    :success-messages ="c_form_sucT"
+                                ></v-select>
+                              </v-flex>
+                            </v-layout>
+                          </v-form>
+                        </v-container>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="blue darken-1" text @click="$set(dialogNote, row.item[9], false); clearDF(row.item[6], row.item[9])">Close</v-btn>
+                        <v-btn color="blue darken-1" text @click="setAlarmStatus(row.item[9])">Save</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </td>
+              </tr>
+            </template>
+          </v-data-table>
+          <template slot="items" slot-scope="myprops">
+            <td v-for="header in items" v-bind:key="header.value">
+              {{ myprops.item[header.value] }}
+            </td>
+          </template>
+        </v-container>
+      </v-tab-item>
+
+      <v-tab-item>
+        <v-container ma-0 bg grid-list-md text-xs-center fluid>
+          <v-text-field
+              v-model="ack_search"
+              append-icon="mdi-magnify"
+              label="Search"
+              single-line
+              hide-details
+          ></v-text-field>
+          <v-data-table
+              hide-default-footer
+              :no-data-text="ack_lm"
+              :items-per-page="20"
+              :headers="ack_header"
+              :items="ack_list"
+              :search="ack_search"
+          >
+            <template v-slot:item="row">
+              <tr>
+                <td v-for="i in 6">
+                  <v-layout justify-left>
+                    {{ row.item[i-1] }}
+                  </v-layout>
+                </td>
+                <td>
+                  <v-layout justify-left>
+                    {{ status_list[row.item[6]] }}
+                  </v-layout>
+                </td>
+                <td>
+                  <v-layout justify-left>
+                    <v-btn
+                        dark
+                        color="blue"
+                        @click="goToData(row.item[5], row.item[6])">
+                      <v-icon dark>mdi-file</v-icon>
+                    </v-btn>
+                  </v-layout>
+                </td>
+
+                <td>
+                  <v-dialog v-model="dialogNote[row.item[9]]" persistent max-width="600px" :key="row.item[9]">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-layout justify-left>
+                        <v-btn
+                            dark
+                            color="blue"
+                            v-bind="attrs"
+                            v-on="on">
+                          <v-icon dark>mdi-border-color</v-icon>
+                        </v-btn>
+                      </v-layout>
+                    </template>
+                    <v-card>
+                      <v-card-title>
+                        <span class="headline">Edit Alarm Status</span>
+                      </v-card-title>
+                      <v-card-text>
+                        <v-container>
+
+                          <v-form :ref="'form_' + row.item[9]">
+                            <v-layout wrap fluid>
+                              <v-flex>
+                                <v-select
+                                    :items="status_obj"
+                                    v-model="c_status[row.item[9]]"
+                                    outlined
+                                    prepend-icon="mdi-fire"
+                                    label="Alarm Status"
+                                    :error-messages="c_server_error"
+                                    :success="c_form_succ"
+                                    :success-messages ="c_form_sucT"
+                                ></v-select>
+                              </v-flex>
+                            </v-layout>
+                          </v-form>
+                        </v-container>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="blue darken-1" text @click="$set(dialogNote, row.item[9], false); clearDF(row.item[6], row.item[9])">Close</v-btn>
+                        <v-btn color="blue darken-1" text @click="setAlarmStatus(row.item[9])">Save</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </td>
+              </tr>
+            </template>
+          </v-data-table>
+          <template slot="items" slot-scope="myprops">
+            <td v-for="header in items" v-bind:key="header.value">
+              {{ myprops.item[header.value] }}
+            </td>
+          </template>
+        </v-container>
+      </v-tab-item>
+
+      <v-tab-item>
+        <v-container ma-0 bg grid-list-md text-xs-center fluid>
+          <v-text-field
+              v-model="closed_search"
+              append-icon="mdi-magnify"
+              label="Search"
+              single-line
+              hide-details
+          ></v-text-field>
+          <v-data-table
+              hide-default-footer
+              :no-data-text="closed_lm"
+              :items-per-page="20"
+              :headers="closed_header"
+              :items="closed_list"
+              :search="closed_search"
+          >
+            <template v-slot:item="row">
+              <tr>
+                <td v-for="i in 6">
+                  <v-layout justify-left>
+                    {{ row.item[i-1] }}
+                  </v-layout>
+                </td>
+                <td>
+                  <v-layout justify-left>
+                    {{ status_list[row.item[6]] }}
+                  </v-layout>
+                </td>
+                <td>
+                  <v-layout justify-left>
+                    <v-btn
+                        dark
+                        color="blue"
+                        @click="goToData(row.item[9], row.item[10])">
+                      <v-icon dark>mdi-file</v-icon>
+                    </v-btn>
+                  </v-layout>
+                </td>
+
+                <td>
+                  <v-dialog v-model="dialogNote[row.item[9]]" persistent max-width="600px" :key="row.item[9]">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-layout justify-left>
+                        <v-btn
+                            dark
+                            color="blue"
+                            v-bind="attrs"
+                            v-on="on">
+                          <v-icon dark>mdi-border-color</v-icon>
+                        </v-btn>
+                      </v-layout>
+                    </template>
+                    <v-card>
+                      <v-card-title>
+                        <span class="headline">Edit Alarm Status</span>
+                      </v-card-title>
+                      <v-card-text>
+                        <v-container>
+
+                          <v-form :ref="'form_' + row.item[9]">
+                            <v-layout wrap fluid>
+                              <v-flex>
+                                <v-select
+                                    :items="status_obj"
+                                    v-model="c_status[row.item[9]]"
+                                    outlined
+                                    prepend-icon="mdi-fire"
+                                    label="Alarm Status"
+                                    :error-messages="c_server_error"
+                                    :success="c_form_succ"
+                                    :success-messages ="c_form_sucT"
+                                ></v-select>
+                              </v-flex>
+                            </v-layout>
+                          </v-form>
+                        </v-container>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="blue darken-1" text @click="$set(dialogNote, row.item[9], false); clearDF(row.item[6], row.item[9])">Close</v-btn>
+                        <v-btn color="blue darken-1" text @click="setAlarmStatus(row.item[9])">Save</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </td>
+              </tr>
+            </template>
+          </v-data-table>
+          <template slot="items" slot-scope="myprops">
+            <td v-for="header in items" v-bind:key="header.value">
+              {{ myprops.item[header.value] }}
+            </td>
+          </template>
+        </v-container>
+      </v-tab-item>
+    </v-tabs>
+  </v-container>
+</template>
+
+<script>
+  import authservice from '@/services/BackendService.js'
+  import buttonMixin from '@/mixins/buttonMix'
+
+  export default {
+    mixins: [buttonMixin],
+
+    data() {
+      return {
+        c_status: {},
+        c_form_succ: false,
+        c_form_sucT: '',
+        c_server_error: '',
+
+        status_list: null,
+        status_obj: null,
+        dialogNote: {},
+
+        // For the new alarms
+        active_search: '',
+        active_list: [],
+        active_header: [],
+        active_lm: '',
+
+        // for the alarms being handled
+        ack_search: '',
+        ack_list: [],
+        ack_header: [],
+        ack_lm: '',
+
+        // for closed alarms
+        closed_search: '',
+        closed_list: [],
+        closed_header: [],
+        closed_lm: '',
+      }
+    },
+    mounted() {
+      this.getAlarms()
+      var ss = this.alarmStatusList()
+      this.status_obj = ss[1]
+      this.status_list = ss[0]
+    },
+    methods: {
+      goToData(table_id, data_serial, sensor, data_timestamp) {
+        console.log(table_id)
+        console.log(data_serial)
+        console.log(sensor)
+        console.log(typeof data_timestamp)
+      },
+      editrow(r_id) {
+        console.log(r_id)
+      },
+      saveToL(data) {
+        var i
+        for (i = 0; i < data.length; i++) {
+          var id = data[i][9]
+          this.$set(this.c_status, id, data[i][6])
+        }
+      },
+      getAlarms(){
+        var heads = ['Alarm Name', 'Alarm description', 'Alarm Type', 'Alarm Level',
+          'Alarm Raised By', 'Time Raised', 'Alarm Status', 'Go To Data', 'Edit Alarm']
+        this.c_status = {}
+        this.getActiveAlarms(heads)
+        this.getAckAlarms(heads)
+        this.getClosedAlarms(heads)
+      },
+      getActiveAlarms(heads) {
+        authservice
+               .getAlarms([0])
+               .then(result => {
+                 console.log('Success')
+                 if (result.status == 200) {
+                   console.log(result.status)
+                   var data = result.data['alarms']
+                   var d = this.dataToTable([heads, []])
+                   this.saveToL(data)
+                   this.active_header = d[0]
+                   this.active_list = data
+                   console.log(this.active_list)
+                 }
+                 else {
+                   this.active_list = []
+                   this.active_lm = 'No new raised alarms'
+                 }
+               })
+               .catch(error => {
+                 this.active_lm = error.response.data['message']
+               })
+      },
+      getAckAlarms(heads) {
+        authservice
+               .getAlarms([1])
+               .then(result => {
+                 console.log('Success')
+                 if (result.status == 200) {
+                   var data = result.data['alarms']
+                   var d = this.dataToTable([heads, []])
+                   this.saveToL(data)
+                   this.ack_header = d[0]
+                   this.ack_list = data
+                   console.log(this.ack_list)
+                 }
+                 else {
+                   this.ack_list = []
+                   this.ack_lm = 'No alarms being handled'
+                 }
+               })
+               .catch(error => {
+                 this.ack_lm = error.response.data['message']
+               })
+      },
+      getClosedAlarms(heads) {
+        authservice
+               .getAlarms([2])
+               .then(result => {
+                 console.log('Success')
+                 if (result.status == 200) {
+                   var data = result.data['alarms']
+                   var d = this.dataToTable([heads, []])
+                   this.saveToL(data)
+                   this.closed_header = d[0]
+                   this.closed_list= data
+                   console.log(this.closed_list)
+                 }
+                 else {
+                   this.closed_list = []
+                   this.closed_lm = 'No Alarms Raised'
+                 }
+               })
+               .catch(error => {
+                 this.closed_lm = error.response.data['message']
+               })
+      },
+      setAlarmStatus(id) {
+        console.log(id)
+        console.log(this.$refs)
+
+        var check = this.$refs['form_' + id].validate()
+        var c_status = this.c_status[id]
+        if (check) {
+          authservice
+               .changeAlarm(id, c_status)
+               .then(result => {
+                 this.c_form_succ = true
+                 this.c_form_sucT = 'Alarm Status Changed'
+                 this.getAlarms()
+               })
+               .catch(error => {
+                 this.server_error = error.response.data['message']
+               })
+        }
+      },
+      clearDF(orig_status, id) {
+        this.$refs['form_' + id].resetValidation()
+        this.$set(this.c_status, id, orig_status)
+        this.c_form_succ = false
+        this.c_form_sucT = ''
+        this.c_server_error = ''
+      }
+    }
+  }
+</script>
+
+<style></style>

@@ -1,0 +1,33 @@
+type Pos = (Int, Int)
+data Direction = North | South | East | West
+
+move :: Direction -> Pos -> Pos
+move North (x,y) = (x, y+1)
+move West  (x,y) = (x-1, y)
+move South (x,y) = (x, y-1)
+move East  (x,y) = (x+1, y)
+
+moves :: [Direction] -> Pos -> Pos
+moves [] (_,_) = error "List can't be empty"
+moves [d] (x,y) = move d (x,y)
+moves (d:ds) (x,y) = moves ds (move d (x,y))
+
+
+data Nat = Zero | Succ Nat
+  deriving (Eq, Show, Read, Ord)
+
+add_one :: Nat -> Nat
+add_one Zero = Succ Zero
+add_one v = Succ v
+
+remove_one :: Nat -> Nat
+remove_one Zero = error "Can't go into negative"
+remove_one (Succ v) = v
+
+nat2int :: Nat -> Int
+nat2int Zero = 1
+nat2int (Succ n) = 1 + (nat2int n)
+
+int2nat :: Int -> Nat
+int2nat 1 = Zero
+int2nat n = Succ (int2nat (n-1))

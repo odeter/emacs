@@ -1,0 +1,21 @@
+<template>
+  <v-container class="mt-10">
+    <v-layout align-center justify-center class="mb-10">
+      <v-img max-width="600" :src="require('@/assets/dlogo.png')"></v-img>
+    </v-layout>
+    <v-layout align-center justify-center>
+      <br/>
+      <br/>
+        <h1>Welcome to Derant Angle</h1>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+
+  // @ is an alias to /src
+
+  export default {
+    name: 'home'
+  }
+</script>

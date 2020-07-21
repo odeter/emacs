@@ -1,0 +1,180 @@
+import platform    # For getting the operating system name
+# import subprocess  # For executing a shell command
+from subprocess import Popen, PIPE
+import itertools
+import sys
+import time
+from threading import Thread
+import textwrap
+import re
+import pprint
+import os
+import requests
+import json
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+website = 'http://localhost:5000/'
+password = 'ez6457ErEcNpT97CCgv'
+
+ip_res = {}
+
+done = False
+def animate():
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        if done:
+            break
+        sys.stdout.write('\rWaiting ' + c)
+        sys.stdout.flush()
+        time.sleep(0.1)
+    sys.stdout.write('\rWaiting - Done\n')
+
+def startWait():
+    global done
+    done = False
+    t = Thread(target=animate)
+    t.start()
+    return t
+
+def stopWait(t):
+    global done
+    done = True
+    t.join()
+
+
+file_res = {}
+
+def filePost(file_name):
+    global website
+    with open(file_name, 'rb') as f:
+        try:
+            r = requests.post(website+'testfilereceive',
+                              files={'file': f}, data={'password' : password})
+            res = json.loads(r.text)
+            file_res[file_name] = [str(r.status_code) + " - "+ res['message'], True, file_name]
+        except requests.exceptions.RequestException as e:
+            file_res[file_name] = [str(e.status_code) + " - "+ e, False, file_name]
+
+def ping(host, index):
+
+    # Option for the number of packets as a function of
+    param = '-n' if platform.system().lower()=='windows' else '-c'
+
+    # Building the command. Ex: "ping -c 1 google.com"
+    command = ['ping', param, '1', host]
+
+    #ss = subprocess.call(command) == 0
+    p = Popen(command, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+    output, err = p.communicate(b"input data that is passed to subprocess' stdin")
+    rc = p.returncode
+    if rc == 0:
+        dd = (output.decode("utf-8"))[:-1]
+        message = (re.sub('\n---[^>]+---\n', '', dd)).replace('\n', ' | ')
+        ip_res[index] = [message, True, host]
+    else:
+        dd = (err.decode("utf-8"))[:-1]
+        message = (re.sub('\n---[^>]+---\n', '', dd)).replace('\n', ' | ')
+        ip_res[index] = [message, False, host]
+
+def prettyPrint(item, max_len):
+    user = item[2]
+    prefix = user +" "*(max_len - len(user)) + " : "
+    preferredWidth = 90
+    wrapper = textwrap.TextWrapper(initial_indent=prefix, width=preferredWidth,
+                                   subsequent_indent=' '*len(prefix))
+    if item[0]:
+        message = item[0]
+    else:
+        message = "No response"
+
+    if item[1]:
+        print(bcolors.OKGREEN + wrapper.fill(message) + bcolors.ENDC)
+    else:
+        print(bcolors.FAIL + wrapper.fill(message) + bcolors.ENDC)
+
+
+def main():
+    global done
+    pp = pprint.PrettyPrinter(indent=4, compact=True)
+    ip_list = ["188.165.169.238", "1.10.141.248", "186.46.185.186", "198.108.67.85",
+               "1.9.78.242", "1.9.46.177", "36.110.78.62", "37.49.226.12", "1.6.181.79"]
+    print("Do you want to use the default ip ping set?")
+    pp.pprint(ip_list)
+    c_text = input("y \ n: ")
+    while c_text not in ['y', 'n']:
+        print("please input either 'y' (yes) or 'n' (no)")
+        c_text = input("y \ n: ")
+
+    if c_text == 'n':
+        print("please give a set of ip's or hostnames to ping, e.g. '8.8.8.8, facebook.com, ...'")
+        ip_list = []
+        while not ip_list or '' in ip_list:
+            new_ip = input("Ip list: ")
+            ip_list = (new_ip.replace(" ", "")).split(",")
+            print("Ip list to ping: "),
+            pp.pprint(ip_list)
+            if not ip_list or '' in ip_list:
+                print("Ip list cannot be empty or contain empty strings. (check for trailing comma)")
+
+    max_len =  len(max(ip_list, key=len))
+    threads = []
+    print(" -- ping test -- ")
+    print("Getting Ping results...")
+    tt = startWait()
+
+    for i in range(len(ip_list)):
+        process = Thread(target=ping, args=[ip_list[i], i])
+        process.start()
+        threads.append(process)
+
+    for process in threads:
+        process.join()
+
+    stopWait(tt)
+
+    print("Ping Results:\n")
+    for i in ip_res.values():
+        prettyPrint(i, max_len)
+    print(" -- File Transfer test -- ")
+
+    files = [['file_1mb', 1048576], ['file_10mb', 10485760], ['file_100mb', 104857600]]
+    max_len =  len(max([t[0] for t in files], key=len))
+
+    print("Writing Files...")
+
+    tt = startWait()
+
+    for i in files:
+        with open(i[0], 'wb') as fout:
+            fout.write(os.urandom(i[1]))
+
+
+    stopWait(tt)
+
+    print("Sending Files...")
+
+    tt = startWait()
+
+    for i in files:
+        process = Thread(target=filePost, args=[i[0]])
+        process.start()
+        threads.append(process)
+
+    for process in threads:
+        process.join()
+
+    stopWait(tt)
+    print("File Results:")
+    for i in file_res.values():
+        prettyPrint(i, max_len)
+
+if __name__ == "__main__":
+    main()

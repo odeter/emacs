@@ -1,0 +1,118 @@
+# angle_back
+
+Derant back-end
+
+
+## Prerequisite
+
+Docker must be installed to run bro.
+
+Install a bro docker container:
+
+``` bash
+# clone docker repo
+git clone https://github.com/bro/bro-docker.git
+
+# go into docker
+cd bro-docker/
+
+# build docker
+docker build -t bro -f 2.6.Dockerfile .
+
+```
+
+## Installation
+
+Follow the guide to setup an python environment
+
+``` bash
+# Create python environment
+python3 -m venv venv
+
+# Activate the environment
+source venv/bin/activate
+
+# Install requirements
+pip install -r requirements.txt
+
+```
+
+Then to setup a sqlite database do the following from inside the activated environment:
+
+``` bash
+# Init database
+flask db init
+
+```
+
+## Setup postgres database
+
+``` bash
+# Install postgres
+sudo apt-get install postgresql
+
+# Set password for postgres default user
+sudo passwd postgres
+
+# login to user
+su postgres
+
+# open psql
+psql
+
+# create new user
+CREATE ROLE your_username WITH LOGIN CREATEDB ENCRYPTED PASSWORD 'your_password';
+\q
+
+# login to new user
+su - your_username
+
+# create database
+createdb my_db
+```
+
+Then set the variable `DATABASE_URL`in `.flaskenv` to the correct database and user login 'postgresql://username:password@localhost/database'. for example: 'postgresql://bob:1234@localhost/angle_db'
+
+
+## Register Users - first time
+
+To register new users use the key regristration page on vue '/key\_register', together with the key specified inside the 'config.py' file name 'REG_KEY' this key can be changed to whatever registration key should be used.
+
+
+## Run Flask
+
+Run the Flask app:
+
+``` bash
+flask run
+```
+
+## Filter test
+
+Test the filters on the command line:
+
+``` bash
+python filter.py filtertest/filtertest.compositefilters.and.filt derant.com-dns-http.json
+
+```
+
+## Api Overview
+
+- '**_/registration_**', parameters: 'username', 'password' - </br> Used by existing users to create new users
+- '**_/keyregistration_**', parameters: 'username', 'password', 'key' - </br> Used to create new users when provided the correct key, defined in config as 'REG_KEY'.
+- '**_/login_**', parameters: 'username', 'password' - </br> Used to login and creates an access and refresh token.
+- '**_/logout/access_**', takes no parameters - </br> Revokes the access token
+- '**_/logout/refresh_**', takes no paramters - </br> Revokes refresh token
+- '**_/token/refresh_**', takes no paramters - </br> Gets current refresh token and create new access token
+- '**_/uploadpcap_**', parameters: 'file' - </br> Takes a file and saves it in 'pcaps' directory under the user name, taken from the access token.
+- '**_/pcapunpro_**', takes no parameters - </br> Returns the pcap files waiting to be processed for the requesting user.
+- '**_/brologs_**', takes no paramters - </br> Returns the brolog files connected to the requsting user.
+- '**_/brolog/<string:brologuuid>_**', parameters: 'filter', 'hideC', 'startP', 'dataSer' - </br> Takes a possible filter, can be 'None', together with the hidden rows 'hideC' and starting point 'startP' in the running data flow. data served 'dataSer' is the amount of rows send to the frontend.
+- '**_/getHelp_**', takes no parameters - </br> Return the help page content.
+- '**_/setapikey_**', parameters: 'apikey' - </br> Creates new api key, or overwrite exisiting, for the requesting user. User has to be logged in.
+- '**_/checkapikey_**', parameters: 'username', 'apikey' - </br> Check if the given api key works together with the user name provided.
+- '**_/datastream_**', parameters: 'username', 'apikey', 'file' - </br> Saves given file if user and api key is correct. Saves file to 'uploads/datastream'.
+
+## References
+
+For setting up JWT the following tutorial was used: https://codeburst.io/jwt-authorization-in-flask-c63c1acf4eeb

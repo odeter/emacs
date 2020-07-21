@@ -1,0 +1,161 @@
+<template>
+  <v-container ma-0 pa-5 bg grid-list-md text-xs-center fluid>
+    <v-layout wrap align-center fluid pb-5>
+      <v-flex>
+        <v-subheader>Create Sensor:</v-subheader>
+        <v-divider></v-divider>
+      </v-flex>
+    </v-layout>
+    <v-form ref="sform">
+      <v-layout wrap fluid>
+        <v-flex md6>
+          <v-text-field
+              v-model="sensorN"
+              outlined
+              label="Sensor Name"
+              prepend-icon="mdi-server-plus"
+              :counter="50"
+              :rules="nameRules"
+              placeholder="Name of new sensor"
+              required
+              :error-messages="server_error"
+              :success="form_succ"
+              :success-messages ="form_sucT"
+          ></v-text-field>
+        </v-flex>
+        <v-flex md6>
+          <v-text-field
+              v-model="sensorD"
+              outlined
+              prepend-icon="mdi-server-plus"
+              label="Sensor Description"
+              placeholder="Description of new sensor"
+              :error-messages="server_error"
+              :success="form_succ"
+              :success-messages ="form_sucT"
+          ></v-text-field>
+        </v-flex>
+      </v-layout>
+      <v-layout wrap fluid>
+        <v-flex md6>
+          <v-btn block class="mr-4" @click="setSensor">Create Sensor</v-btn>
+        </v-flex>
+        <v-flex md6>
+          <v-btn block class="mr-4" @click="clear">clear</v-btn>
+        </v-flex>
+      </v-layout>
+    </v-form>
+    <v-layout wrap align-center fluid>
+      <v-flex>
+        <v-subheader>Current Sensors:</v-subheader>
+        <v-divider></v-divider>
+      </v-flex>
+    </v-layout>
+    <v-container ma-0 bg grid-list-md text-xs-center fluid v-if="keyList">
+        <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+            hide-details
+        ></v-text-field>
+        <v-data-table
+            hide-default-footer
+            :items-per-page="20"
+            :headers="keyHeader"
+            :items="keyList"
+            :search="search"
+        ></v-data-table>
+        <template slot="items" slot-scope="myprops">
+          <td v-for="header in headers" v-bind:key="header.value">
+            {{ myprops.item[header.value] }}
+          </td>
+        </template>
+    </v-container>
+    <v-container v-else>
+      <p> {{ keyLM }}</p>
+    </v-container>
+  </v-container>
+</template>
+
+<script>
+  import authservice from '@/services/BackendService.js'
+  import buttonMixin from '@/mixins/buttonMix'
+
+  export default {
+    mixins: [buttonMixin],
+
+    data() {
+      return {
+        form_succ: false,
+        form_sucT: '',
+        server_error: '',
+        search: '',
+        sensorN: '',
+        sensorD: '',
+        keyList: null,
+        keyHeader: null,
+        keyLM: '',
+        nameRules: [
+          v => !!v || 'Name is required',
+          v => (v && v.length <= 50) || 'Name must be less than 50 characters'
+        ]
+      }
+    },
+    mounted() {
+      this.getSensors()
+    },
+    methods: {
+      getSensors() {
+        console.log('getting api keys.')
+        authservice
+               .getSensorsApi()
+               .then(result => {
+                 console.log('Success')
+                 if (result.status == 200) {
+                   console.log(result.status)
+                   var data = result.data['api_keys']
+                   var d = this.dataToTable(data)
+                   console.log(d)
+                   this.keyHeader = d[0]
+                   this.keyList = d[1]
+                   this.keyLM = result.data['message']
+                 }
+                 else {
+                   this.keyLM = 'No Sensors created'
+                 }
+               })
+               .catch(error => {
+                 console.log('Error')
+                 console.log(error)
+                 this.keyLM = error.response.data['message']
+               })
+      },
+      setSensor() {
+        if (this.$refs.sform.validate()) {
+          authservice
+               .setSensorApi(this.sensorN, this.sensorD)
+               .then(result => {
+                 console.log('Success')
+                 console.log(result)
+                 this.form_succ = true
+                 this.form_sucT = 'Api key created'
+                 this.getSensors()
+               })
+               .catch(error => {
+                 console.log('Error')
+                 console.log(error)
+                 this.server_error = error.response.data['message']
+               })
+        }
+      },
+      clear() {
+        this.$refs.sform.reset()
+        this.sensorN = ''
+        this.sensorD = ''
+      }
+    }
+  }
+</script>
+
+<style></style>

@@ -1,0 +1,211 @@
+-module(optimistic).
+-behaviour(gen_server).
+-export([start/1, stop/1, reset/2, delete/2, operation/3, commit/1, abort/1]).
+-export([init/1, handle_call/3, handle_info/2, handle_cast/2]).
+
+
+%% AwaitOp -> {Op_handlerid -> {Dependencies, Change, Result_msg}}
+%% OngOp -> {Op_handlerid -> {Ref_from_server, Reads, List_of_waiting_commits}}
+
+%%%% gen_server core functions %%%%
+
+%% Starts up the server containig, User State, Ongoing computations,
+init(_Args) -> {ok, {_Args, #{}, #{}, #{}, active}}.
+
+%%
+handle_call(shutdown, _From, {State, OngOp, AwaitOp, ComOp, active}) ->
+     Ong_up = shutdown_all(OngOp),
+    {reply, {ok, State}, {State, Ong_up, AwaitOp, ComOp, stop}};
+handle_call({abort_op, OPid}, _From, {State, OngOp, AwaitOp, ComOp, active}) ->
+    case {maps:is_key(OPid, OngOp),
+	  maps:is_key(OPid, AwaitOp),
+	  maps:is_key(OPid, ComOp)} of
+	{false, false, true} ->
+	    {reply, too_late, {State, OngOp, AwaitOp, ComOp, active}};
+	{true, false, false} ->
+	    {Ref, Reads, WaitL, _} = maps:get(OPid, OngOp),
+	    io:format("*-- aborting op: ~p, with Ref: ~p \n", [OPid, Ref]),
+	    OPid ! {Ref, abort},
+	    N_OngOp = maps:put(OPid, {Ref, Reads, WaitL, compro}, OngOp),
+	    {reply, aborted, {State, N_OngOp, AwaitOp, ComOp, active}};
+	{false, true, false} ->
+	    N_await =  maps:remove(OPid, AwaitOp),
+	    {reply, aborted, {State, OngOp, N_await, ComOp, active}};
+	_ -> {reply, aborted, {State, OngOp, AwaitOp, ComOp, active}}
+    end;
+handle_call({op_Call, Reads, OFun}, _From, {State, OngOp, AwaitOp, ComOp, active}) ->
+    K_Subset = maps:with(Reads, State),
+    Ref = make_ref(),
+    {OPid, _} = spawn_monitor(fun() -> op_Handler(K_Subset, Reads, OFun, Ref) end),
+    N_OngOp = maps:put(OPid, {Ref, Reads, [], active}, OngOp),
+    {reply, {began, {self(), OPid}}, {State, N_OngOp, AwaitOp, ComOp, active}};
+handle_call({op_Commit, OPid}, _From, {State, OngOp, AwaitOp, ComOp, active}) ->
+    case {maps:is_key(OPid, OngOp),
+	  maps:is_key(OPid, AwaitOp),
+	  maps:is_key(OPid, ComOp)} of
+	{false, false, false} ->
+	     io:format("*-- Operation ~p, not found\n", [OPid]),
+	    {reply, aborted, {State, OngOp, AwaitOp, ComOp, active}};
+	{true, false, false} ->
+	    {Ref, Reads, WaitL, S} = maps:get(OPid, OngOp),
+	    N_OngOp = maps:put(OPid, {Ref, Reads, [_From | WaitL], S}, OngOp),
+	    {noreply, {State, N_OngOp, AwaitOp, ComOp, active}};
+	{false, false, true} ->
+	    Res = maps:get(OPid, ComOp),
+	    {reply, {ok, Res}, {State, OngOp, AwaitOp, ComOp, active}};
+	{false, true, false} ->
+	    {_, Change, Res} = maps:get(OPid, AwaitOp),
+	    {N_ong, N_wait} = update_dirt(OngOp, maps:remove(OPid, AwaitOp),
+					  maps:keys(Change)),
+	    io:format("*-- Await OP: ~p - State Merge with ~p\n", [OPid, Change]),
+	    N_state = maps:merge(State, Change),
+	    N_Comp = maps:put(OPid, Res, ComOp),
+	    %io:format("State Merge with ~p\n", [Change]),
+	    {reply, {ok, Res}, {N_state, N_ong, N_wait, N_Comp, active}}
+end.
+
+%% handles delete keys
+handle_cast({delete_K, Keys} ,{State, OngOp, AwaitOp, ComOp, active}) ->
+    NewS = maps:without(Keys, State),
+    {N_ong, N_Await} = update_dirt(OngOp, AwaitOp,
+				   Keys),
+    {noreply, {NewS, N_ong, N_Await, ComOp, active}};
+handle_cast({reset, NState} ,{_, OngOp, _, _, _}) ->
+    Ong_up = shutdown_all(OngOp),
+    {noreply, {NState, Ong_up, #{}, #{}, active}}.
+
+handle_info({'DOWN', _, process, Pid2, Reason}, {State, OngOp, AwaitOp, ComOp, Status}) ->
+    %io:format("Op ~p Done\n", [Pid2]),
+    case {maps:is_key(Pid2, OngOp), Reason} of
+	{true, {success, {Res, Change}}} ->
+	    case maps:get(Pid2, OngOp) of
+		{_, Reads, [], active} ->
+		    %io:format("Process Await ~p\n", [Pid2]),
+		    N_OngOp = maps:remove(Pid2, OngOp),
+		    N_AwaitOp = maps:put(Pid2, {Reads, Change, Res}, AwaitOp),
+		    %io:format("*-- Operation ~p, added to wait\n", [Pid2]),
+		    {noreply, {State, N_OngOp, N_AwaitOp, ComOp, Status}};
+		{_, _, WaitL, active} ->
+		    reply_all(WaitL, {ok, Res}),
+		    io:format("*-- OP: ~p - State Merge with ~p\n", [Pid2, Change]),
+		    {N_ong, N_wait} = update_dirt(OngOp, AwaitOp,
+						  maps:keys(Change)),
+		    N_state = maps:merge(State, Change),
+		    N_Comp = maps:put(Pid2, Res, ComOp),
+		    N_OngOp = maps:remove(Pid2, N_ong),
+		    {noreply, {N_state, N_OngOp, N_wait,  N_Comp, Status}};
+		{_, _, WaitL, compro} ->
+		    io:format("*-- Operation ~p, compromised\n", [Pid2]),
+		    reply_all(WaitL, aborted),
+		    N_OngOp = maps:remove(Pid2, OngOp),
+		    {noreply, {State, N_OngOp, AwaitOp, ComOp, Status}}
+		end;
+	{true, _} -> io:format("*-- Operation Handler ~p, died with reason ~p\n", [Pid2, Reason]),
+		     {_, _, WaitL, _} = maps:get(Pid2, OngOp),
+		     reply_all(WaitL, aborted),
+		     N_OngOp = maps:remove(Pid2, OngOp),
+		     {noreply, {State, N_OngOp, AwaitOp, ComOp, Status}};
+	{false, _} -> {noreply, {State, OngOp, AwaitOp, ComOp, Status}}
+    end.
+
+
+
+%% Helper Functions %%
+
+reply_all(From_List, Msg) ->
+    lists:foreach(fun(X) -> gen_server:reply(X, Msg) end, From_List).
+
+shutdown_all(OngOp) ->
+    On_list = maps:to_list(OngOp),
+    lists:foreach(fun({X, {Ref, _, _, _}}) -> X ! {Ref, abort} end, On_list),
+    Ong_up = lists:map(fun({Oid, {Ref, Reads, WaitL, _}})
+			  -> {Oid, {Ref, Reads, WaitL, compro}}
+		       end, On_list),
+    maps:from_list(Ong_up).
+
+
+update_dirt(OngOp, AwaitOP, Change) ->
+    On_list = maps:to_list(OngOp),
+    Await_l = maps:to_list(AwaitOP),
+    lists:foreach(fun({X, {Ref, _, _, _}}) -> X ! {Ref, dirtyUp, Change} end, On_list),
+    {_, Await_dirt} = lists:partition(fun({_Oid, {Reads, _, _}})
+					 -> check_match(Reads, Change) end, Await_l),
+    Await_clean = lists:map(fun({Oid, _}) ->
+				    Oid end, Await_dirt),
+    N_await = maps:with(Await_clean, AwaitOP),
+    io:format("----- Await Updates with  ~p, Await_clean: ~p\n", [N_await, Await_clean]),
+    Ong_dirt = lists:map(fun({Oid, {Ref, Reads, WaitL, S}})
+			    -> case check_match(Reads, Change) of
+				   true -> {Oid, {Ref, Reads, WaitL, compro}};
+				   false -> {Oid, {Ref, Reads, WaitL, S}}
+			       end
+			 end, On_list),
+    maps:from_list(Ong_dirt),
+    N_ong = maps:from_list(Ong_dirt),
+    {N_ong, N_await}.
+
+
+check_match([], _) -> false;
+check_match([X | Xl], Dirty) ->
+    case lists:member(X, Dirty) of
+	false -> check_match(Xl, Dirty);
+	true -> true
+    end.
+
+op_Handler(K_Subset, Reads, OFun, MRef) ->
+    {FunId, _} = spawn_monitor(fun() -> op_Exec(K_Subset, OFun) end),
+    op_Handler(K_Subset, Reads, OFun, MRef, FunId).
+op_Handler(K_Subset, Reads, OFun, MRef, FunId) ->
+    receive
+	{MRef, dirtyUp, DirSet} ->
+	    %io:format("Dirset update, ~p and reads: ~p\n", [DirSet, Reads]),
+	    case check_match(Reads, DirSet) of
+		true -> exit({aborted, dirty_set});
+		false -> op_Handler(K_Subset, Reads, OFun, MRef, FunId)
+	    end;
+	{MRef, abort} -> io:format("*-- abort op: ~p with ref: ~p\n", [self(), MRef]),
+			 exit({aborted, server_demand});
+	{'DOWN', _, process, FunId, {success, {Res, Change}}} ->
+	    exit({success, {Res, Change}});
+	{'DOWN', _, process, FunId, Reason} ->
+	    exit({error, Reason})
+    after 2000 ->
+	    exit("Timout exit")
+    end.
+
+op_Exec(Reads, OFun) ->
+try  OFun(Reads) of
+     {Res, Change} -> exit({success, {Res, Change}});
+     Wrong -> exit({wrong_answer_format, Wrong})
+catch
+    error:EP -> exit({exception, EP});
+    exit:EP -> exit({exit, EP});
+    throw:EP -> exit({thrown, EP})
+end.
+
+
+
+%% Assignment Functions %%
+
+start(_State) -> case is_map(_State) of
+		     true -> gen_server:start_link(?MODULE, _State, []);
+		     false -> {error, not_map}
+		 end.
+
+stop(S) -> gen_server:call(S, shutdown).
+
+reset(S,NState) -> gen_server:cast(S, {reset, NState}),
+		   ok.
+
+delete(S, Keys) -> gen_server:cast(S, {delete_K, Keys}),
+		   ok.
+
+operation(S, Reads, OFun) ->
+    R = gen_server:call(S, {op_Call, Reads, OFun}),
+    case R of
+	{began, OR} -> {ok, OR}
+    end.
+
+commit({S, OPid}) -> gen_server:call(S, {op_Commit, OPid}).
+
+abort({S, OPid}) -> gen_server:call(S, {abort_op, OPid}).

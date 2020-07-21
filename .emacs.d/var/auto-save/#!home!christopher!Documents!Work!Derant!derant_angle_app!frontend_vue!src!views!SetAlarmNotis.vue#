@@ -1,0 +1,333 @@
+<template>
+  <v-container ma-0 pa-5 bg grid-list-md text-xs-center fluid>
+    <v-layout wrap align-center fluid pb-5>
+      <v-flex v-if="sel_user_name">
+        <v-subheader>{{$t('SetAlarmNotis.createAlarmNotify')}} - {{sel_user_name}}</v-subheader>
+        <v-divider></v-divider>
+      </v-flex>
+      <v-flex v-else>
+        <v-subheader>{{$t('SetAlarmNotis.createAlarmNotify')}}</v-subheader>
+        <v-divider></v-divider>
+      </v-flex>
+    </v-layout>
+    <v-form ref="sform">
+      <v-layout wrap fluid>
+        <v-flex md6>
+          <v-text-field
+              v-model="alarm_notisN"
+              outlined
+              label="Notify Name"
+              prepend-icon="mdi-alert-box"
+              :counter="50"
+              :rules="nameRules"
+              placeholder="Name of new Alarm Notits"
+              required
+              :error-messages="server_error"
+              :success="form_succ"
+              :success-messages ="form_sucT"
+          ></v-text-field>
+        </v-flex>
+        <v-flex md6>
+          <v-text-field
+              v-model="alarm_notisU"
+              outlined
+              prepend-icon="mdi-alert-box"
+              :rules="urlRules"
+              label="Notify URL"
+              placeholder="URL for new Alarm Notify"
+              :error-messages="server_error"
+              :success="form_succ"
+              :success-messages ="form_sucT"
+          ></v-text-field>
+        </v-flex>
+      </v-layout>
+      <v-layout wrap fluid>
+        <v-flex md6>
+          <v-btn block class="mr-4" @click="setAlarmNotis(sel_user_id)">{{$t('SetAlarmNotis.createNotifyBtn')}}</v-btn>
+        </v-flex>
+        <v-flex md6>
+          <v-btn block class="mr-4" @click="clear()">clear</v-btn>
+        </v-flex>
+      </v-layout>
+    </v-form>
+    <v-layout wrap align-center fluid>
+      <v-flex>
+        <v-subheader>Current Alarm Notifiers:</v-subheader>
+        <v-divider></v-divider>
+      </v-flex>
+    </v-layout>
+    <v-container ma-0 bg grid-list-md text-xs-center fluid>
+      <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+          hide-details
+      ></v-text-field>
+      <v-data-table
+          hide-default-footer
+          :items-per-page="20"
+          :headers="aHeader"
+          :items="aList"
+          :search="search"
+<<<<<<< Updated upstream
+=======
+          v-bind:no-results-text="$t('General.noSearchMatch')"
+          v-bind:no-data-text="$t('SetAlarmNotis.noNoti')"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+      >
+        <template v-slot:item="row">
+          <tr>
+            <!-- <td v-for="(val, name, index) in filterA(row).item" v-bind:key="index">
+                 <v-layout justify-left>
+                 {{val }}
+                 </v-layout>
+                 </td> -->
+            <td>
+              <v-layout justify-left>
+                {{ row.item['Alarm Name'] }}
+              </v-layout>
+            </td>
+            <td>
+              <v-layout justify-left>
+                {{ row.item['Alarm URL'] }}
+              </v-layout>
+            </td>
+
+            <td>
+              <v-dialog v-model="dialogNote[row.item['Edit Alarm']]" persistent max-width="600px" :key="row.item['Edit Alarm']">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-layout justify-left>
+                  <v-btn
+                      fab
+                      dark
+                      small
+                      color="blue"
+                      v-bind="attrs"
+                      v-on="on">
+                    <v-icon dark>mdi-border-color</v-icon>
+                  </v-btn>
+                  </v-layout>
+                </template>
+                <v-card>
+                  <v-card-title>
+                    <span class="headline">Edit Alarm Notifier</span>
+                  </v-card-title>
+                  <v-card-text>
+                    <v-container>
+
+                      <v-form :ref="'form_' + row.item['Edit Alarm']">
+                      <v-layout wrap fluid>
+                        <v-flex>
+                          <v-text-field
+                              v-model="c_an[row.item['Edit Alarm']]"
+                              outlined
+                              label="Notify Name*"
+                              prepend-icon="mdi-alert-box"
+                              :counter="50"
+                              :rules="nameRules"
+                              placeholder="Name of new Alarm Notits"
+                              required
+                              :error-messages="c_server_error"
+                              :success="c_form_succ"
+                              :success-messages ="c_form_sucT"
+                          ></v-text-field>
+                        </v-flex>
+                      </v-layout>
+                        <v-layout wrap fluid>
+                        <v-flex>
+                          <v-text-field
+                              v-model="c_au[row.item['Edit Alarm']]"
+                              outlined
+                              prepend-icon="mdi-alert-box"
+                              :rules="urlRules"
+                              label="Notify URL*"
+                              placeholder="URL for new Alarm Notify"
+                              :error-messages="c_server_error"
+                              :success="c_form_succ"
+                              :success-messages ="c_form_sucT"
+                          ></v-text-field>
+                        </v-flex>
+                        </v-layout>
+                      </v-form>
+                    </v-container>
+                    <small>*indicates required field</small>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+<<<<<<< Updated upstream
+                    <v-btn color="blue darken-1" text @click="$set(dialogNote, row.item['Edit Alarm'], false); clearDF(row.item['Alarm Name'], row.item['Alarm URL'], row.item['Edit Alarm'])">Close</v-btn>
+                    <v-btn color="blue darken-1" text @click="setAlarmNotis(true, row.item['Edit Alarm'])">Save</v-btn>
+=======
+                    <v-btn color="blue darken-1" text @click="$set(dialogNote, row.item['Edit Alarm'], false); clearDF(row.item['Alarm Name'], row.item['Alarm URL'], row.item['Edit Alarm'])">{{$t('General.close')}}</v-btn>
+                    <v-btn color="blue darken-1" text @click="setAlarmNotis(sel_user_id, true, row.item['Edit Alarm'])">{{$t('General.save')}}</v-btn>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </td>
+
+          </tr>
+        </template>
+      </v-data-table>
+      <template slot="items" slot-scope="myprops">
+        <td v-for="header in items" v-bind:key="header.value">
+          {{ myprops.item[header.value] }}
+        </td>
+      </template>
+    </v-container>
+  </v-container>
+</template>
+
+<script>
+  import authservice from '@/services/BackendService.js'
+  import buttonMixin from '@/mixins/buttonMix'
+
+  export default {
+    mixins: [buttonMixin],
+
+    data() {
+      return {
+        c_an: {},
+        c_au: {},
+        c_form_succ: false,
+        c_form_sucT: '',
+        c_server_error: '',
+
+        sel_user_id: null,
+        sel_user_name : null,
+
+        dialogNote: {},
+        form_succ: false,
+        form_sucT: '',
+        server_error: '',
+        search: '',
+        alarm_notisN: '',
+        alarm_notisU: '',
+        aList: [],
+        aHeader: null,
+        aLM: '',
+        nameRules: [
+          v => !!v || 'Name is required',
+          v => (v && v.length <= 50) || 'Name must be less than 50 characters'
+        ],
+        urlRules: [
+          v => !!v || 'URL is required',
+          v => this.friendlyUrl(v)
+        ]
+      }
+    },
+    mounted() {
+      var user_sel = authservice.getUserid()
+      console.log(user_sel)
+      this.sel_user_id = user_sel[0]
+      this.sel_user_name = user_sel[1]
+      console.log(this.sel_user_id)
+      console.log(this.sel_user_name)
+      this.getAlarmNotes(this.sel_user_id)
+    },
+    methods: {
+      friendlyUrl(value) {
+        var check = /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(value)
+        console.log(check)
+        return check || 'String given is not a valid URL'
+      },
+      editrow(r_id) {
+        console.log(r_id)
+      },
+      saveToL(data) {
+        this.c_an = {}
+        this.c_au = {}
+        var i
+        for (i = 0; i < data.length; i++) {
+          var id = data[i][2]
+          this.$set(this.c_an, id, data[i][0])
+          this.$set(this.c_au, id, data[i][1])
+        }
+      },
+      getAlarmNotes(user_id) {
+        console.log('getting an')
+        authservice
+               .getAlarmNoti(user_id)
+               .then(result => {
+                 console.log('Success')
+                 if (result.status == 200) {
+                   console.log(result.status)
+                   var data = result.data['alarms_notify']
+                   var heads = [['Alarm Name', 'Alarm URL', 'Edit Alarm']]
+                   console.log(heads.concat(data))
+                   var d = this.dataToTable(heads.concat(data))
+                   this.saveToL(data)
+                   console.log(this.c_an)
+                   this.aHeader = d[0]
+                   this.aList = d[1]
+                   this.aLM = result.data['message']
+                 }
+                 else {
+                   this.aLM = 'No Sensors created'
+                 }
+               })
+               .catch(error => {
+                 console.log('Error')
+                 console.log(error)
+                 this.aLM = error.response.data['message']
+               })
+      },
+      setAlarmNotis(userid, edit = false, id = null) {
+        console.log(id)
+        console.log(edit)
+        console.log(this.$refs)
+
+        var check = edit ? this.$refs['form_' + id].validate() : this.$refs.sform.validate()
+        var anN = edit ? this.c_an[id] : this.alarm_notisN
+        var anU = edit ? this.c_au[id] : this.alarm_notisU
+        if (check) {
+          authservice
+               .setAN(anN, anU, id, userid)
+               .then(result => {
+                 if (edit) {
+                   this.c_form_succ = true
+                   this.c_form_sucT = 'Alarm Notifier created'
+                 }
+                 else {
+                   this.form_succ = true
+                   this.form_sucT = 'Alarm Notifier created'
+                 }
+                 this.getAlarmNotes(this.sel_user_id)
+               })
+               .catch(error => {
+                 console.log(error.response.data['message'])
+                 if (edit) {
+                   this.c_server_error = error.response.data['message']
+                 }
+                 else {
+                   this.server_error = error.response.data['message']
+                 }
+               })
+        }
+      },
+      clearDF(orig_n, orig_url, id) {
+        this.$refs['form_' + id].resetValidation()
+        this.$set(this.c_an, id, orig_n)
+        this.$set(this.c_au, id, orig_url)
+        this.c_form_succ = false
+        this.c_form_sucT = ''
+        this.c_server_error = ''
+      },
+      clear() {
+        this.$refs.sform.reset()
+        this.form_succ = false
+        this.form_sucT = ''
+        this.server_error = ''
+      }
+    }
+  }
+</script>
+
+<style></style>

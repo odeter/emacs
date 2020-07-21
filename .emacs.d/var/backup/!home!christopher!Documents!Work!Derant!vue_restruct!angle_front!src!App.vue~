@@ -1,0 +1,69 @@
+<template>
+  <v-app light>
+    <core-app-bar />
+    <core-drawer />
+    <core-view />
+    <core-footer />
+  </v-app>
+</template>
+
+<script>
+  //import router from '@/router.js'
+  import { EventBus } from './services/user_status.js'
+
+  export default {
+
+    components: {
+      CoreAppBar: () => import('./components/core/AppBar'),
+      CoreFooter: () => import('./components/core/Footer'),
+      CoreDrawer: () => import('./components/core/Drawer'),
+      CoreView: () => import('./components/core/View')
+    },
+    data() {
+      return {
+	logged_in: false,
+	logged_name: null
+      }
+    },
+    mounted() {
+      if (localStorage) {
+	this.onLogin()
+      }
+      EventBus.$on('user_logged_in', is_logged => {
+	if (is_logged) {
+	  this.onLogin()
+	  console.log('user: '+localStorage.getItem('user_name')+' logged in')
+	}
+      })
+    },
+    methods: {
+      onLogout() {
+	localStorage.clear()
+	this.logged_in = false
+	this.logged_name = null
+	router.push('/')
+      },
+      onLogin() {
+	this.logged_in = localStorage && localStorage.getItem('authtoken')
+	this.logged_name = localStorage.getItem('user_name')
+      }
+    }
+  }
+</script>
+
+<!-- <script>
+     export default {
+     name: 'App'
+     }
+     </script> -->
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>

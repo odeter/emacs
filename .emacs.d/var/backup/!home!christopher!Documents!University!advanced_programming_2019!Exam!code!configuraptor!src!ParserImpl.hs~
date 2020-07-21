@@ -1,0 +1,212 @@
+module ParserImpl where
+
+import Absyn
+-- other imports
+import Text.ParserCombinators.ReadP
+import Control.Applicative ((<|>))
+import Data.Char (isDigit, isAlpha, isAlphaNum)
+import Data.List (intercalate)
+import Data.Either
+
+-- core mini helpers --
+
+-- char checkers
+
+isSpace :: Char -> Bool
+isSpace s = s == ' '
+
+isNl :: Char -> Bool
+isNl s = s == '\n'
+
+notbracket :: Char -> Bool
+notbracket s = s /= '}' && s /= '{'
+
+leftbracket :: Char -> Bool
+leftbracket s = s == '{'
+
+rightbracket :: Char -> Bool
+rightbracket s = s == '}'
+
+-- satisfy
+
+checkB :: ReadP Char
+checkB = satisfy notbracket
+
+space :: ReadP Char
+space = (do satisfy isSpace)
+  <|> (do satisfy isNl)
+
+getNum :: ReadP Char
+getNum = satisfy isDigit
+
+getLetter :: ReadP Char
+getLetter = satisfy isAlpha
+
+getNL :: ReadP Char
+getNL = satisfy isAlphaNum
+
+-- eat functions
+
+eatIn :: ReadP ()
+eatIn = (do skipMany checkB)
+  <|> (do skipMany checkB
+          eatComments
+          skipMany checkB)
+
+eatComments :: ReadP String
+eatComments = (do munch1 $ leftbracket
+                  eatIn
+                  munch1 $ rightbracket)
+
+spaces :: ReadP ()
+spaces = skipMany space
+
+rmC :: ReadP ()
+rmC = skipMany eatComments
+
+clearing :: ReadP ()
+clearing = (do spaces
+               many eatComments
+               spaces)
+
+reqC :: ReadP ()
+reqC = (do spaces
+           skipMany1 eatComments
+           spaces)
+  <|> (do skipMany1 space
+          skipMany eatComments
+          spaces)
+
+
+-- get specific string functions --
+
+tokenC :: ReadP a -> ReadP a
+tokenC p = spaces >> rmC >> spaces >> p
+
+symbolC :: String -> ReadP String
+symbolC s = tokenC $ string s
+
+scharC :: Char -> ReadP Char
+scharC c = tokenC $ char c
+
+getWord :: ReadP String
+getWord = (do r1 <- many getNum
+              r2 <- many1 getLetter
+              r3 <- many getNL
+              return $ r1 ++ r2 ++ r3)
+
+-- main function --
+
+parseString :: String -> Either String IDB
+parseString input = case readP_to_S properForm input of
+                      [] ->Left ("Parsing error, nothing was parsed")
+                      x ->  case (last x) of
+                        (e, "") -> Right e
+                        (_, l) -> Left ("Parsing error, string left: (" ++ l ++ ")")
+
+ -- helper functions --
+
+
+properForm :: ReadP IDB
+properForm = (do r1 <- (endBy1 getData (char '.'))
+                 return $ (concat $ lefts r1, rights r1))
+
+getData :: ReadP (Either [String] IComp)
+getData = (do rname <- getRName
+              return $ Left rname)
+  <|> (do ic <- getIC
+          return $ Right ic)
+
+getRName :: ReadP [String]
+getRName = (do --clearing
+               symbolC "resource"
+               reqC
+               r1 <- (sepBy1 extractN (char ','))
+               return $ r1)
+  <|> (do --clearing
+          symbolC "resource"
+          reqC
+          name <- extractN
+          return $ [name])
+
+-- get name, check it is no longer than 32
+
+extractN :: ReadP String
+extractN = (do clearing
+               r1 <- (sepBy1 getWord (char '-'))
+               let res = intercalate "-" r1
+                 in case (length res <= 32) of
+                      True -> return $ res
+                      False -> pfail)
+  <|> (do clearing
+          r1 <- getWord
+          case (length r1 <= 32)of
+            True -> return $ r1
+            False -> pfail)
+
+
+getIC :: ReadP IComp
+getIC = (do symbolC "component"
+            reqC
+            name <- extractN
+            symbolC ":"
+            clist <- (sepBy1 getClause (char ';'))
+            return $ IC name clist)
+  <|> (do symbolC "component"
+          reqC
+          name <- extractN
+          symbolC ":"
+          clist <- getClause
+          return $ IC name [clist])
+
+getClause :: ReadP Clause
+getClause = (do reqC
+                nkind <- getCKind
+                reqC
+                rl <- splitRSpec
+                return (nkind, rl))
+
+getCKind :: ReadP CKind
+getCKind = (do string "provides"
+               return CKProvides)
+  <|> (do string "uses"
+          return CKUses)
+  <|> (do string "requires"
+          return CKRequires)
+
+splitRSpec :: ReadP RSpec
+splitRSpec = (do rspec <- getRSpec
+                 getRSpecOP rspec)
+
+getRSpecOP :: RSpec -> ReadP RSpec
+getRSpecOP r = (do clearing
+                   char '|'
+                   rspec <- getRSpec
+                   end <- getAND rspec
+                   return $ (RSOr r end))
+  <|> (do getAND r)
+  <|> (do getOR r)
+  <|> (return r)
+
+
+getOR :: RSpec -> ReadP RSpec
+getOR r = (do scharC '|'
+              end <- getRSpec
+              getOR (RSOr r end))
+  <|> (do scharC '|'
+          end <- getRSpec
+          return $ (RSOr r end))
+
+getAND :: RSpec -> ReadP RSpec
+getAND r = (do scharC ','
+               end <- getRSpec
+               getRSpecOP (RSAnd r end))
+
+getRSpec :: ReadP RSpec
+getRSpec = (do clearing
+               num <- many1 getNum
+               reqC
+               res <- getRSpec
+               return $ RSNum (read num) res)
+  <|> (do name <- extractN
+          return $ RSRes name)

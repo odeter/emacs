@@ -1,0 +1,84 @@
+import sys
+import os
+
+# third-party imports
+from flask import Flask, render_template, send_file, send_from_directory, safe_join, abort
+from flask_migrate import Migrate
+from flask_mail import Mail
+
+# local imports
+from config import app_config
+from dateutil.relativedelta import relativedelta
+from datetime import date
+import jinja2
+import csv
+
+
+mail_manager = Mail()
+
+def get_txt(t):
+    text_r = t.split("<nl>")
+    res = map(lambda x: "<p>" + x + "</p>", text_r)
+    return " ".join(res)
+
+def get_exp(filename):
+    f= open(filename,"r")
+    text_r = ((f.read()).replace('\n',' ')).rstrip()
+    ex_list = text_r.split("<e_split>")
+    res = map(lambda x: x.split("<n_field>", 4), ex_list)
+    return list(res)
+
+def get_cont(fileName):
+    f= open(fileName,"r")
+    tt = ((f.read()).replace('\n',' ')).rstrip()
+    return get_txt(tt)
+
+def divide_chunks(l, n):
+    # looping till length l
+    for i in range(0, len(l), n):
+        yield l[i:i + n]
+
+def get_skills(fileName):
+    res = []
+    with open(fileName) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        next(csv_reader, None)
+        count = 0
+        for row in csv_reader:
+            res.append(row)
+        csv_file.close()
+    return list(divide_chunks(res, 2))
+
+def create_app(config_name, st_path):
+
+
+    app = Flask(__name__)
+    app.config.from_object(app_config[config_name])
+
+    about_con = get_cont(os.path.join(app.config['CONTENT_FOLDER'], 'about.txt'))
+    skills = get_skills(os.path.join(app.config['CONTENT_FOLDER'], 'skills.csv'))
+    exp = get_exp(os.path.join(app.config['CONTENT_FOLDER'], 'exp.txt'))
+    edu = get_exp(os.path.join(app.config['CONTENT_FOLDER'], 'education.txt'))
+
+    age = relativedelta(date.today(), date(1993, 4, 8)).years
+    # a simple page that says hello
+    custom_content = {'title' : "Online CV", 'pro_pic' : 'images/profile.jpg', 'bg_pic' : 'images/bg_pic.jpg',
+                      'name' : 'Christopher Mulvad Groot', 'age' : age,
+                      'email' : 'Chrismulvad@gmail.com', 'address' : '2000, Frederiksberg, Denmark',
+                      'language' : 'Danish, English', 'about' : about_con,
+                      'exp' : exp, 'education' : edu,
+                      'facebook' : 'https://www.facebook.com/christopher.groot',
+                      'linkedin' : 'https://www.linkedin.com/in/cm-groot/'}
+
+    @app.route('/')
+    def home():
+        return render_template('home.html', custom_content=custom_content, prog_list=skills)
+
+    @app.route("/get-cv")
+    def get_cv():
+        try:
+            return send_from_directory(app.static_folder, filename="files/cv.pdf", as_attachment=True)
+        except FileNotFoundError:
+            abort(404)
+
+    return app

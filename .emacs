@@ -1,6 +1,24 @@
-;; -- setup custom config -- ;;
+;;; -- setup custom config -- ;;
+;; disable top tool-bar
+(tool-bar-mode -1)
+;; disable menu bar
+(menu-bar-mode -1)
+
 (load "~/.emacs.d/etc/custom.el")
 (package-initialize)
+
+;; aggresive indent
+(global-aggressive-indent-mode)
+
+;; kill scratch buffer form
+;; Makes *scratch* empty.
+(setq initial-scratch-message "")
+
+;; Removes *scratch* from buffer after the mode has been set.
+(defun remove-scratch-buffer ()
+  (if (get-buffer "*scratch*")
+      (kill-buffer "*scratch*")))
+(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
 
 ;; faster scrolling through larger files
 (setq auto-window-vscroll nil)
@@ -12,9 +30,6 @@
 
 ;; remove kill emacs command, accident happend too many times
 (global-unset-key (kbd "C-x C-c"))
-
-;; disable top tool-bar
-(tool-bar-mode -1)
 
 ;; Don't show *Buffer list* when opening multiple files at the same time.
 (setq inhibit-startup-buffer-menu t)
@@ -36,6 +51,9 @@
   (require 'paradox)
   (require 'vlf-setup)
   (paradox-enable))
+
+;; all the icons
+(use-package all-the-icons)
 
 ;; Keep .emacs.d clean
 (use-package no-littering
@@ -212,6 +230,40 @@
 (use-package winum
   :ensure t)
 
+;; page-break mode setup
+(use-package page-break-lines
+  :ensure t
+  :hook
+  (compilation-mode . page-break-lines-mode)
+  (help-mode . page-break-lines-mode)
+  (prog-mode . page-break-lines-mode))
+
+;; smart comment setup
+(use-package smart-comment
+  :ensure t
+  :bind ("M-;" . smart-comment))
+
+;; smartparens setup
+(use-package smartparens
+  :init
+  (bind-key "C-M-f" #'sp-forward-sexp smartparens-mode-map)
+  (bind-key "C-M-b" #'sp-backward-sexp smartparens-mode-map)
+  (bind-key "C-)" #'sp-forward-slurp-sexp smartparens-mode-map)
+  (bind-key "C-(" #'sp-backward-slurp-sexp smartparens-mode-map)
+  (bind-key "M-)" #'sp-forward-barf-sexp smartparens-mode-map)
+  (bind-key "M-(" #'sp-backward-barf-sexp smartparens-mode-map)
+  (bind-key "C-S-s" #'sp-splice-sexp)
+  (bind-key "C-M-<backspace>" #'backward-kill-sexp)
+  (bind-key "C-M-S-<SPC>" (lambda () (interactive) (mark-sexp -1)))
+
+  :config
+  (smartparens-global-mode t)
+
+  (sp-pair "'" nil :actions :rem)
+  (sp-pair "`" nil :actions :rem)
+  (setq sp-highlight-pair-overlay nil))
+
+
 ;; mode-line setup
 
 (use-package minions
@@ -234,5 +286,31 @@
 
 ;;mode-icon
 (use-package mode-icons
+  :ensure t
   :load-path "~/.emacs.d/icon-mode/"
-  :config (mode-icons-mode))
+  :config (mode-icons-mode)
+  )
+
+;; setup company mode
+(use-package company
+  :defer 2
+  :diminish
+  :custom
+  (company-begin-commands '(self-insert-command))
+  (company-idle-delay .1)
+  (company-minimum-prefix-length 2)
+  (company-show-numbers t)
+  (company-tooltip-align-annotations 't)
+  (global-company-mode t)
+  )
+
+(use-package company-box
+  :after company
+  :diminish
+  :hook (company-mode . company-box-mode)
+  )
+
+(use-package company-anaconda
+  :after (anaconda-mode company)
+  :config (add-to-list 'company-backends 'company-anaconda)
+  )

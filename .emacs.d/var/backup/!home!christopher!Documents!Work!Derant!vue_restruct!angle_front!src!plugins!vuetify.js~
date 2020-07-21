@@ -1,0 +1,43 @@
+import '@fortawesome/fontawesome-free/css/all.css'
+import vue from 'vue'
+import vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+/* import { library, dom } from '@fortawesome/fontawesome-svg-core'
+   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+   import { fas, faCheck } from '@fortawesome/free-solid-svg-icons' */
+
+
+//vue.component('font-awesome-icon', FontAwesomeIcon) // Register component globally
+//library.add(fas)
+//library.add(faCheck);
+//dom.watch();
+
+vue.use(vuetify)
+
+/* const opts = {}
+
+   export default new vuetify(opts) */
+
+export default new vuetify({
+  theme: {
+    themes: {
+      light: {
+        primary: '#1976D2',
+        secondary: '#424242',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107',
+        /*
+	   primary: '#b71c1c',
+	   secondary: '#b0bec5',
+	   accent: '#8c9eff',
+	   error: '#b71c1c' */
+      }
+    }
+  },
+  icons: {
+    iconfont: 'fa'
+  }
+})

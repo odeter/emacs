@@ -1,26 +1,74 @@
 
 ;; ----- smex-history -----
 (
- find-file
- jinja2-mode
- highlight-indentation-mode
- web-mode-set-engine
- fountain-mode
- comment-box
  package-delete
+ package-install
+ comment-region
+ package-list-packages
+ mode-icons-mode
+ find-file
+ company-mode
 )
 
 ;; ----- smex-data -----
 (
  (find-tag . 1)
- (find-file . 39)
- (package-install . 2)
+ (find-file . 1619)
+ (package-install . 42)
  (comment-box . 2)
- (package-delete . 2)
- (uncomment-region . 1)
- (highlight-indentation-mode . 19)
- (highlight-indent-guides-mode . 6)
+ (package-delete . 3)
+ (uncomment-region . 156)
+ (highlight-indentation-mode . 21)
+ (highlight-indent-guides-mode . 8)
  (fountain-mode . 3)
  (jinja2-mode . 4)
- (web-mode-set-engine . 1)
+ (web-mode-set-engine . 2)
+ (package-refresh-contents . 16)
+ (comment-region . 498)
+ (package-list-packages . 5)
+ (prettier-js-mode . 9)
+ (prettier-js . 2)
+ (web-mode . 15)
+ (replace-string . 24)
+ (eww-mode . 1)
+ (eww-open-file . 1)
+ (python-mode . 1)
+ (ftp . 1)
+ (comment-set-column . 1)
+ (profiler-start . 4)
+ (profiler-report . 9)
+ (linum-mode . 11)
+ (font-lock-mode . 2)
+ (package-menu-mode . 2)
+ (emacs-version . 3)
+ (nlinum-mode . 6)
+ (nlinum-relative-off . 3)
+ (hl-line-mode . 4)
+ (vlf . 1)
+ (flycheck-mode . 12)
+ (all-the-icons-install-fonts . 1)
+ (minions-mode . 3)
+ (column-number-mode . 1)
+ (spaceline-install . 1)
+ (moody-replace-vc-mode . 2)
+ (flycheck-verify-setup . 1)
+ (untabify . 1)
+ (company-elisp . 1)
+ (centaur-tabs-mode . 7)
+ (tool-bar-mode . 1)
+ (compile . 1)
+ (fountain-export-buffer-to-fountain . 1)
+ (fountain-export-buffer . 1)
+ (fountain-mode-menu . 1)
+ (fountain-export-default . 1)
+ (web-mode-disable . 3)
+ (Info-index . 1)
+ (flx-ido-mode . 1)
+ (vue-mode . 1)
+ (aggressive-indent-mode . 2)
+ (web-mode-buffer-indent . 1)
+ (indent-sexp . 1)
+ (electric-indent-mode . 1)
+ (company-mode . 3)
+ (mode-icons-mode . 2)
 )

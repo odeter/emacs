@@ -1,0 +1,365 @@
+-module(test_optimistic_unit).
+-export([test_all/0]).
+
+%% Maybe you want to use eunit
+-include_lib("eunit/include/eunit.hrl").
+
+test_all() ->
+    eunit:test(
+      [
+       start_op_server(),
+       stop_server_simple(),
+       operation_commit(),
+       operation_abort(),
+       key_deletion(),
+       reset()
+      ], [verbose]).
+
+%% EUnit Test Functions %%
+
+start_op_server() ->
+    [{"Start a optimistic server with empty state",
+      fun() ->
+	      ?assertMatch({ok, _}, optimistic:start(#{}))
+      end},
+     {"Start a optimistic server with state",
+      fun() ->
+	      State = #{a => 3, b => 9, c => 0},
+	      ?assertMatch({ok, _}, optimistic:start(State))
+      end},
+     {"Start a optimistic server with no map",
+      fun() ->
+	      ?assertMatch({error, not_map}, optimistic:start([]))
+      end}].
+
+stop_server_simple() ->
+    [{"Start and stop optimistic server with empty state",
+      fun() ->
+	      {ok, S} = optimistic:start(#{}),
+	      ?assertMatch({ok, #{}}, optimistic:stop(S))
+      end},
+     {"Start and stop optimistic server with ",
+      fun() ->
+	      State = #{a => 3, b => 9, c => 0},
+	      {ok, S} = optimistic:start(State),
+	      ?assertMatch({ok, State}, optimistic:stop(S))
+      end}].
+
+operation_commit() ->
+    [{"Start single noncrashing operations",
+      fun() ->
+	      K1 = a,
+	      K2 = b,
+	      Start_State = #{a => 0, b => 0},
+	      End_state = [{a, 400},{b, 400}],
+	      F1 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		   end,
+	      F2 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		   end,
+	      ?assertMatch({End_state, 400, 400}, update_single(K1, K2, 400, F1, F2, Start_State))
+      end},
+     {"Start single crashing operation",
+      fun() ->
+	      K1 = a,
+	      K2 = a,
+	      Start_State = #{a => 0},
+	      End_state = [{a, 1}],
+	      F1 = fun (S, C) ->
+			   incr_fun(S, C, 1000)
+		   end,
+	      F2 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		   end,
+	      ?assertMatch({End_state, 0, 1}, update_single(K1, K2, 1, F1, F2, Start_State))
+      end},
+     {"Start multiple noncrashing operations",
+      fun() ->
+	      K1 = a,
+	      K2 = b,
+	      Start_State = #{a => 0, b => 0},
+	      End_state = [{a, 100},{b, 100}],
+	      F1 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		   end,
+	      F2 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		   end,
+	      ?assertMatch({End_state, 100, 100}, update_Mul(K1, K2, 100, F1, F2, Start_State))
+      end},
+     {"Start multiple crashing operations",
+      fun() ->
+	      K1 = a,
+	      K2 = a,
+	      State = #{a => 0},
+	      End_state = [{a, 100}],
+	      F1 = fun (S, C) ->
+			   incr_fun(S, C, 1000)
+		  end,
+	      F2 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		   end,
+	      ?assertMatch({End_state, 0, 100}, update_Mul(K1, K2, 100, F1, F2, State))
+      end},
+     {"Start multiple crashing operations - Timeout",
+      fun() ->
+	      K1 = a,
+	      K2 = b,
+	      State = #{a => 0, b => 0},
+	      End_state = [{a, 0}, {b, 100}],
+	      F1 = fun (S, C) ->
+			   incr_fun(S, C, 10000)
+		  end,
+	      F2 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		  end,
+	      ?assertMatch({End_state, 0, 100}, update_Mul(K1, K2, 100, F1, F2, State))
+      end}].
+
+operation_abort() ->
+    [{"abort single operation",
+      fun() ->
+	      K1 = a,
+	      K2 = b,
+	      State = #{a => 0, b => 0},
+	      End_state = [{a, 0}, {b, 10}],
+	      F1 = fun (S, C) ->
+			   abort_fun(S, C, 10)
+		  end,
+	      F2 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		  end,
+	      ?assertMatch({End_state, 0, 10}, update_single(K1, K2, 10, F1, F2, State))
+      end},
+     {"abort multiple operation",
+      fun() ->
+	      K1 = a,
+	      K2 = b,
+	      State = #{a => 0, b => 0},
+	      End_state = [{a, 0}, {b, 10}],
+	      F1 = fun (S, C) ->
+			   abort_fun(S, C, 10)
+		  end,
+	      F2 = fun (S, C) ->
+			   incr_fun(S, C, 0)
+		  end,
+	      ?assertMatch({End_state, 0, 10}, update_Mul(K1, K2, 10, F1, F2, State))
+      end}].
+
+key_deletion() ->
+     [{"delete single key in use",
+      fun() ->
+	      K1 = a,
+	      K2 = a,
+	      State = #{a => 0, b => 2},
+	      End_state = [{b, 2}],
+	      F1 = fun (S, C) ->
+			   delete_fun(S, [C], 60)
+		  end,
+	      F2 = fun (S, C) ->
+			   incr_list(S, [C], 10)
+		  end,
+	      ?assertMatch({End_state, 10, 5}, update_single(K1, K2, 10, F1, F2, State))
+      end},
+      {"delete single key not in use",
+       fun() ->
+	       K1 = a,
+	       K2 = b,
+	       State = #{a => 0, b => 0},
+	       End_state = [{b, 10}],
+	       F1 = fun (S, C) ->
+			    delete_fun(S, [C], 60)
+		    end,
+	       F2 = fun (S, C) ->
+			    incr_list(S, [C], 10)
+		    end,
+	       ?assertMatch({End_state, 10, 10}, update_single(K1, K2, 10, F1, F2, State))
+       end},
+      {"delete multiple key in use",
+       fun() ->
+	       K1 = [a, b],
+	       K2 = [b, c],
+	       State = #{a => 0, b => 0, c => 0},
+	       End_state = [{c, 5}],
+	       F1 = fun (S, C) ->
+			    delete_fun(S, C, 60)
+		    end,
+	       F2 = fun (S, C) ->
+			    incr_list(S, C, 10)
+		    end,
+	       ?assertMatch({End_state, 10, 5}, update_single(K1, K2, 10, F1, F2, State))
+       end}].
+
+reset() ->
+ [{"delete single key in use",
+      fun() ->
+	      K1 = [a, b],
+	      K2 = [a, b],
+	      State = #{a => 0, b => 2},
+	      New_state = #{q => 9, z => 4},
+	      End_state = [{q, 9}, {z, 4}],
+	      F1 = fun (S, _) ->
+			   reset_fun(S, New_state, 60)
+		  end,
+	      F2 = fun (S, C) ->
+			   incr_list(S, C, 10)
+		  end,
+	      ?assertMatch({End_state, 10, 5}, update_single(K1, K2, 10, F1, F2, State))
+      end}].
+
+
+%% Helper functions %%
+
+reset_fun(S, New_state, Wait) ->
+    timer:sleep(Wait),
+    optimistic:reset(S, New_state),
+    {ok, done}.
+
+incr_fun(S, C, Wait) ->
+    {ok, {S, RI}} = optimistic:operation(S, [C],
+                              fun (View) ->
+                                      V = maps:get(C, View),
+				      timer:sleep(Wait),
+                                      {success, #{C => V+1}}
+                              end),
+    io:format("incr fun ID: ~p Of ~p\n", [RI, self()]),
+    optimistic:commit({S, RI}).
+
+abort_fun(S, C, Wait) ->
+    {ok, {S, RI}} = optimistic:operation(S, [C],
+                              fun (View) ->
+                                      V = maps:get(C, View),
+				      timer:sleep(Wait),
+                                      {success, #{C => V+1}}
+                              end),
+    io:format("abort fun ID: ~p\n", [RI]),
+    optimistic:abort({S, RI}),
+    optimistic:commit({S, RI}).
+
+
+incr_list(S, C, Wait) ->
+    {ok, {S, RI}} = optimistic:operation(S, C,
+                              fun (View) ->
+				      Dl = lists:map(fun(X) -> V = maps:get(X, View),
+							       {X, V+1} end, C),
+				      timer:sleep(Wait),
+				      io:format("fun ID: ~p found keys!\n", [self()]),
+				      {success, maps:from_list(Dl)}
+                              end),
+    optimistic:commit({S, RI}).
+
+delete_fun(S, C, Wait) ->
+    timer:sleep(Wait),
+    optimistic:delete(S, C),
+    {ok, done}.
+
+
+%% fun_make(S, C, Fun) ->
+%%     {ok, OR} = optimistic:operation(S, C, Fun),
+%%     optimistic:commit(OR).
+
+%% Core Tester helpers %%
+
+start_op(S, K, ColID, Ref, Fun) ->
+    spawn(fun() -> ColID ! {Ref, Fun(S, K)} end).
+
+update_Mul(K1, K2, N, Fun1, Fun2, State) ->
+    {ok, S} = optimistic:start(State),
+    P1_ref = make_ref(),
+    P2_ref = make_ref(),
+    Me = self(),
+    P1_c = spawn(fun() -> upd_collect(P1_ref, [], N, Me) end),
+    P2_c = spawn(fun() -> upd_collect(P2_ref, [], N, Me) end),
+    lists:map(fun(_) -> timer:sleep(3),
+			start_op(S, K1, P1_c, P1_ref, Fun1) end, lists:seq(1, N)),
+    lists:map(fun(_) -> timer:sleep(3),
+			start_op(S, K2, P2_c, P2_ref, Fun2)
+	      end, lists:seq(1, N)),
+    L2 = receive {P2_c, Res2} -> Res2 end,
+    L1 = receive {P1_c, Res1} -> Res1 end,
+    {ok, Res_state} = optimistic:stop(S),
+    State_l = lists:keysort(1,maps:to_list(Res_state)),
+    {State_l, length([ R || {ok, R} <- L1]), length([ R || {ok, R} <- L2])}.
+
+upd_collect(P_ref, L1, N, Mid) ->
+    receive
+	{P_ref, Res} when N > 1 -> upd_collect(P_ref, [Res | L1], N-1, Mid);
+	{P_ref, Res} when N == 1 -> Mid ! {self(), [Res | L1]}
+    end.
+
+
+update_single(K1, K2, N, Fun1, Fun2, State) ->
+    {ok, S} = optimistic:start(State),
+    Me = self(),
+    P1 = spawn(fun() -> Me ! {self(), lists:map(fun(Num)
+						   -> io:format("Number ~p by ~p\n", [Num,self()]),
+						      Fun1(S, K1) end,
+						lists:seq(1, N))} end),
+    P2 = spawn(fun() -> Me ! {self(), lists:map(fun(Num)
+						   -> io:format("Number ~p by ~p\n", [Num,self()]),
+						      Fun2(S, K2) end,
+						lists:seq(1, N))} end),
+    L2 = receive {P2, Res2} -> Res2 end,
+    L1 = receive {P1, Res1} -> Res1 end,
+    io:format("L1: ~p & L2: ~p\n", [L1,L2]),
+    {ok, Res_state} = optimistic:stop(S),
+    State_l = lists:keysort(1,maps:to_list(Res_state)),
+    {State_l, length([ R || {ok, R} <- L1]), length([ R || {ok, R} <- L2])}.
+
+
+
+
+
+%% incr_fun(S, C, Wait) ->
+%%     {ok, OR} = optimistic:operation(S, [C],
+%%                               fun (View) ->
+%%                                       V = maps:get(C, View),
+%% 				      timer:sleep(Wait),
+%%                                       {success, #{C => V+1}}
+%%                               end),
+%%     optimistic:commit(OR).
+
+%% update_single(K1, K2, N, {P1_wait, P2_wait}) ->
+%%     {ok, S} = optimistic:start(#{K1 => 0, K2 => 0}),
+%%     Me = self(),
+%%     P1 = spawn(fun() -> Me ! {self(),
+%%                               lists:map(fun(_) -> incr_fun(S, K1, P1_wait) end,
+%%                                         lists:seq(1, N))}
+%%                end),
+%%     P2 = spawn(fun() -> Me ! {self(),
+%%                               lists:map(fun(_) -> incr_fun(S, K2, P2_wait) end,
+%%                                         lists:seq(1, N))}
+%%                end),
+%%     L2 = receive {P2, Res2} -> Res2 end,
+%%     L1 = receive {P1, Res1} -> Res1 end,
+%%     {ok, #{K1 := C1, K2 := C2}} = optimistic:stop(S),
+%%     {C1, length([ R || {ok, R} <- L1]),
+%%      C2, length([ R || {ok, R} <- L2])}.
+
+%% start_op(S, K, Wait, ColID, Ref) ->
+%%     spawn(fun() -> ColID ! {Ref, incr_fun(S, K, Wait)} end).
+
+%% update_Mul(K1, K2, N, {W1, W2}) ->
+%%     {ok, S} = optimistic:start(#{K1 => 0, K2 => 0}),
+%%     P1_ref = make_ref(),
+%%     P2_ref = make_ref(),
+%%     Me = self(),
+%%     P1_c = spawn(fun() -> upd_collect(P1_ref, [], N, Me) end),
+%%     P2_c = spawn(fun() -> upd_collect(P2_ref, [], N, Me) end),
+%%     lists:map(fun(_) -> timer:sleep(3),
+%% 			start_op(S, K1, W1, P1_c, P1_ref) end, lists:seq(1, N)),
+%%     lists:map(fun(_) -> timer:sleep(3),
+%% 			start_op(S, K2, W2, P2_c, P2_ref)
+%% 	      end, lists:seq(1, N)),
+%%     L2 = receive {P2_c, Res2} -> Res2 end,
+%%     L1 = receive {P1_c, Res1} -> Res1 end,
+%%     {ok, #{K1 := C1, K2 := C2}} = optimistic:stop(S),
+%%     {C1, length([ R || {ok, R} <- L1]),
+%%      C2, length([ R || {ok, R} <- L2])}.
+
+%% upd_collect(P_ref, L1, N, Mid) ->
+%%     receive
+%% 	{P_ref, Res} when N > 1 -> upd_collect(P_ref, [Res | L1], N-1, Mid);
+%% 	{P_ref, Res} when N == 1 -> Mid ! {self(), [Res | L1]}
+%%     end.

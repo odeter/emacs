@@ -1,0 +1,146 @@
+% AP2019 Assignment 3
+% Skeleton for main part. Predicates to implement:
+
+%% Helper Functions %%
+
+inL(Y, [Y|_]).
+inL(Y, [_|T]) :- inL(Y,T).
+
+
+% allExist([],Y).
+% allExist([person(X,_) | L], Y) :-
+% 	inL(X,Y),
+% 	allExist(L,Y).
+
+
+% sameL(Y, []).
+% sameL(Y, [N|T]) :-
+% 	inL(N,Y),
+% 	sameL(Y,T).
+
+findM([person(X, L) | _], X, L).
+findM([_ | Xs], X, L) :-
+	findM(Xs, X, L).
+
+exists([person(X, _) | _], X).
+exists([person(_, _) | Xl], X) :-
+	exists(Xl, X).
+
+
+allF(_, [], _).
+allF(G, [El | Ls], Y) :-
+	follows(G, El, Y),
+	allF(G, Ls, Y).
+
+allI(_, [], _).
+allI(G, [El | Ls], Y) :-
+	ignores(G, El, Y),
+	allI(G, Ls, Y).
+
+different([person(X, _) | XL], X, Y) :- inL(person(Y,_), XL).
+different([person(Y, _) | XL], X, Y) :- inL(person(X,_), XL).
+different([_ | XL], X, Y) :-
+	different(XL, X, Y).
+
+notIn(_, _, []).
+notIn(G, Y, [X | L]) :-
+	different(G, Y, X),
+	notIn(G, Y, L).
+
+notFollows(G, [person(X, L) | _], X, Y) :-
+	notIn(G, Y, L).
+notFollows(G, [_ | XS], X, Y) :-
+	notFollows(G, XS, X, Y).
+
+%%% level 0 %%%
+
+%follows(G, X, Y).
+follows([person(X, L) | _], X, Y) :-
+	inL(Y, L).
+follows([person(_, _) | XS], X, Y) :-
+	follows(XS, X, Y).
+
+
+ignores(G, X, Y) :-
+	follows(G, Y, X),
+	notFollows(G, G, X, Y).
+
+%%% level 1 %%%
+popular(G, X) :-
+	findM(G, X, L),
+	allF(G, L, X).
+
+outcast(G, X) :-
+	findM(G, X, L),
+	allI(G, L, X).
+
+friendly([person(P,PL) | HS], X) :-
+	exists([person(P,PL) | HS], X),
+	f([person(P,PL) | HS],[person(P,PL) | HS],X).
+
+f(_, [], _).
+f(G, [person(Y, _) | Xl], X) :-
+	follows(G, Y, X),
+	follows(G, X, Y),
+	f(G, Xl, X).
+f(G, [person(Y, _) | Xl], X) :-
+	notFollows(G, G, Y, X),
+	f(G, Xl, X).
+
+hostile([person(P,PL) | HS], X) :-
+	exists([person(P,PL) | HS], X),
+	h([person(P,PL) | HS],[person(P,PL) | HS],X).
+
+h(_, [], _).
+h(G, [person(Y, _) | Xl], X) :-
+	follows(G, Y, X),
+	ignores(G, X, Y),
+	h(G, Xl, X).
+h(G, [person(Y, _) | Xl], X) :-
+	notFollows(G, G, Y, X),
+	h(G, Xl, X).
+
+%%% level 2 %%%
+
+aware(G, X, Y) :-
+	different(G, X, Y),
+	aAux(G,X,Y,[],[]).
+
+aAux(G,X,Y,_,AC) :-
+	notIn(G,X,AC),
+	follows(G,X,Y).
+aAux(G,X,Y,_,AC) :-
+	notIn(G,X,AC),
+	notFollows(G,G,X,Y),
+	findM(G, X, [H |L1]),
+	aAux(G,H,Y,L1, [X | AC]).
+aAux(G,_,Y,[B | NC],AC) :-
+	aAux(G,B,Y, NC, AC).
+
+% concat_lists([], List, List).
+% concat_lists([Elem | List1], List2, [Elem | List3]) :-
+% 	concat_lists(List1, List2, List3).
+
+ignorant(G, X, Y) :-
+	different(G, X, Y),
+	findM(G,X,XL),
+	notIn(G,Y,XL),
+	ig_Aux(G,XL,Y,[X]).
+
+ig_Aux(_,[],_,_).
+ig_Aux(G,[H|T],Y,N) :-
+	notIn(G,H,N),
+	findM(G,H,HL),
+	notIn(G,Y,HL),
+	ig_Aux(G,HL,Y,[H|N]),
+	ig_Aux(G,T,Y,[H|N]).
+ig_Aux(G,[H|XL],Y,N) :-
+	inL(H,N),
+	ig_Aux(G,XL,Y,N).
+
+%%% level 3 %%%
+
+% same_world(G, H, K)
+
+% optional!
+% different_world(G, H)

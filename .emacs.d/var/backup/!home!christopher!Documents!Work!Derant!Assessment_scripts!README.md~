@@ -1,0 +1,32 @@
+# angle_back
+
+Simple flask application for receiving test files
+
+## Installation
+
+Follow the guide to setup an python environment
+
+``` bash
+# Create python environment
+python3 -m venv venv
+
+# Activate the environment
+source venv/bin/activate
+
+# Install requirements
+pip install -r requirements.txt
+
+```
+
+
+## Run Flask
+
+Run the Flask app:
+
+``` bash
+flask run
+```
+
+## Api Overview
+
+- '**_/testfilereceive_**', parameters: 'file', 'password' - </br> Used by the malware test script to receiving test data files

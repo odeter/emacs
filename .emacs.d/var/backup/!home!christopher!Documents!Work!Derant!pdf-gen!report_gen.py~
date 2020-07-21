@@ -1,0 +1,815 @@
+from matplotlib import rc
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import figure
+from matplotlib.ticker import MaxNLocator
+import datetime as dt
+import pandas as pd
+import calendar
+import numpy as np
+import os
+import sys
+import warnings
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+pylatex_path = os.path.join(dir_path, 'PyLaTeX_custom_1.0')
+sys.path.append(pylatex_path)
+from pylatex import Document, Section, Subsection, Tabular, Math, TikZ, Axis, \
+    Plot, Figure, Matrix, Alignat, PageStyle, Head, MiniPage, Foot, LargeText, \
+    MediumText, LineBreak, NewLine, simple_page_number, SmallText, FootnoteText, \
+    TinyText, StandAloneGraphic, Center, VerticalSpace, Command, LongTable, \
+    MultiColumn, NewPage, ClearPage, HugeText, SetCounter, HFill, TextColor, \
+    Package, LongTabularx, Itemize, AdjustBox, AdjustTab
+from pylatex.utils import italic, bold, NoEscape
+
+# path definitions
+dir_path = os.path.dirname(os.path.realpath(__file__))
+img_path = os.path.join(dir_path, "img/")
+data_path = os.path.join(dir_path, "data/")
+font_path = os.path.join(dir_path, "fonts/")
+result_path = os.path.join(data_path, "results/")
+stats_path = os.path.join(data_path, "stats/")
+annex_path = os.path.join(data_path, "annexes/")
+global_path = os.path.join(data_path, "global_val.txt")
+#plot_path = os.path.join(dir_path, "gen_data/plots/")
+
+## ----- Helper functions ----- ##
+
+def get_global(global_file):
+    glo = {}
+    with open(global_file) as f:
+        for line in f:
+            (key, val) = line.split(":")
+            glo[key.strip()] = val.strip()
+    return glo
+
+def txt_to_risks(raw_data):
+    sec_split = (raw_data.split("<|>"))[1:]
+    sec_struct = zip(*[iter(sec_split)]*2)
+    res_dict = {}
+    for i in sec_struct:
+        name = (i[0]).strip()
+        raw_R = (i[1]).split("<->")
+        r_tab = [['Risk rating', 'Risk description']] \
+            + list(map(lambda x : [x[0].strip(), x[1].strip()], zip(*[iter(raw_R)]*2)))
+        res_dict[name] = r_tab
+    return res_dict
+
+def txt_to_comment(raw_data):
+    sec_split = (raw_data.split("<|>"))[1:]
+    sec_struct = zip(*[iter(sec_split)]*2)
+    res_dict = {}
+    for i in sec_struct:
+        name = (i[0]).strip()
+        raw_comm = (i[1]).split("<->")
+        comm_d = []
+        for i in raw_comm:
+            n = i.strip()
+            if n:
+                comm_d.append(n)
+        # if raw_comm:
+        #     comm_d = list(map(lambda x : x.strip() if x.strip() else , raw_comm))
+        res_dict[name] = comm_d
+    return res_dict
+
+def txt_to_risks_Tab(raw_data, week):
+    sec_split = (raw_data.split("<|>"))[1:]
+    sec_struct = zip(*[iter(sec_split)]*2)
+    coll = []
+    for i in sec_struct:
+        raw_R = (i[1]).split("<->")
+        r_tab = list(map(lambda x : [x[0].strip(), x[1].strip(), week], zip(*[iter(raw_R)]*2)))
+        coll.extend(r_tab)
+    return coll
+
+
+def panda_toL(dataF):
+    return [list(dataF)] + dataF.values.tolist()
+
+def create_MonthL(weeks, year):
+    monthL = {}
+    for i in weeks:
+        d = str(year)+'-W'+str(i)
+        r = dt.datetime.strptime(d + '-1', "%Y-W%W-%w").month
+        if r not in monthL:
+            monthL[r] = [i]
+        else:
+            monthL[r].append(i)
+    return monthL
+
+def bar_Dia(data, year):
+    ml = create_MonthL((data[0])['week'], year)
+    ordered_data = []
+    for j in data:
+        tm = []
+        for i in ml.keys():
+            nn = (j[(j['week'].isin(ml[i]))])["number"].sum()
+            tm.append([i, nn])
+        ordered_data.append(sorted(tm, key=lambda x: x[0]))
+    rs = [list(ml.keys()), ordered_data]
+    return rs
+
+def bar_Black(data, year):
+    ml = create_MonthL((data[0])['week'], year)
+    ordered_data = []
+    for j in data:
+        tm = []
+        for i in ml.keys():
+            nn = (j[(j['week'].isin(ml[i]))])
+            print(nn)
+
+            tm.append([i, len(nn.index)])
+        ordered_data.append(sorted(tm, key=lambda x: x[0]))
+    rs = [list(ml.keys()), ordered_data]
+    return rs
+
+def ready_conn(dns, http, ssl, other):
+    set_L = [["DNS", dns['week'], dns['number']],
+             ["HTTP", http['week'], http['number']],
+             ["SSL", ssl['week'], ssl['number']],
+             ["Other", other['week'], other['number']]]
+    return set_L
+
+def getrange(data, start_W, end_W):
+    return data[(data['week'].isin(range(start_W, end_W)))]
+
+# def known_attacks(r,r_h,r_vh, year):
+#     ml = create_MonthL(risks['week'], year)
+#     vv = []
+#     for i in ml.keys():
+#         risk_S = (r[(r['week'].isin(ml[i]))])["number"].sum()
+#         riskH_S = (r_h[(r_h['week'].isin(ml[i]))])["number"].sum()
+#         riskVH_S = (r_vh[(r_vh['week'].isin(ml[i]))])["number"].sum()
+#         vv.append([i, [risk_S, riskH_S,  riskVH_S]])
+#     rs = sorted(vv, key=lambda x: x[0])
+#     return rs
+
+
+# def gen_Bars_Simple(data, bar_width, x_l, y_l, p_title):
+#     fig = plt.figure(num=None, figsize=(15, 6), dpi=80, facecolor='w', edgecolor='k')
+
+#     vx = plt.axes()
+#     # Setting the background color
+#     vx.set_facecolor("#e6e6e6")
+#     ax = fig.gca()
+#     ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+
+#     bdata = data[0]
+#     names = data[1]
+
+#     sub = plt.subplot()
+#     sub.grid(axis='y', zorder=0)
+#     # bar
+#     sub.bar(r, bdata, color='#FFE633', edgecolor='black',
+#             width=bar_width, zorder=3)
+
+#     # Custom X axis
+#     #plt.xticks(r, names, fontWeight="bold")
+#     sub.set_xlabel(x_l)
+#     sub.set_ylabel(y_l)
+#     sub.set_title(p_title, fontsize=20, pad=20)
+
+#     #adjust the y limit
+#     ymin, ymax = sub.get_ylim()
+#     sub.set_ylim(ymax=(ymax+1))
+
+def gen_Bars_V(data, bar_width, x_l, y_l, p_title):
+    fig = plt.figure(num=None, figsize=(15, 6), dpi=80, facecolor='w', edgecolor='k')
+
+    vx = plt.axes()
+    # Setting the background color
+    vx.set_facecolor("#e6e6e6")
+    ax = fig.gca()
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+
+    bdata = data[1]
+    names = data[0]
+    r = np.arange(len(names))
+
+
+    sub = plt.gca()
+    sub.grid(axis='x', zorder=0)
+    # bar
+    sub.barh(r, bdata, color='#10ABF3', edgecolor='black', zorder=3, height=bar_width)
+
+    # Custom X axis
+    plt.yticks(r, names)
+    sub.set_xlabel(x_l)
+    sub.set_ylabel(y_l)
+    sub.set_title(p_title, fontsize=20, pad=20)
+
+    #adjust the y limit
+    #xmin, xmax = sub.get_xlim()
+    #sub.set_xlim(xmax=(xmax+1))
+
+
+def gen_plot(data, x_l, y_l, p_title):
+    fig = plt.figure(num=None, figsize=(15, 6), dpi=80, facecolor='w', edgecolor='k')
+
+    vx = plt.axes()
+    # Setting the background color
+    vx.set_facecolor("#e6e6e6")
+    ax = fig.gca()
+    ax.ticklabel_format(useOffset=False, style='plain')
+    #ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+
+    sub = plt.gca()
+    sub.grid(axis='y', zorder=0)
+    # bar
+    for i in data:
+        n_label = i[0]
+        x_data = i[1]
+        y_data = i[2]
+        sub.plot(x_data, y_data, label = n_label)
+
+    box = sub.get_position()
+    sub.set_position([box.x0, box.y0 + box.height * 0.1,
+                      box.width, box.height * 0.9])
+
+    # Put a legend below current axis
+    sub.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1),
+               fancybox=True, shadow=True, ncol=5)
+
+    # Custom X axis
+    #plt.xticks(r, names, fontWeight="bold")
+    plt.ticklabel_format(useOffset=False)
+    sub.set_xlabel(x_l)
+    sub.set_ylabel(y_l)
+    sub.set_title(p_title, fontsize=20, pad=20)
+
+
+def gen_Bars(risk_D, bar_Settings, bar_width, x_l, y_l, p_title):
+    fig = plt.figure(num=None, figsize=(15, 6), dpi=80, facecolor='w', edgecolor='k')
+
+    vx = plt.axes()
+    # Setting the background color
+    vx.set_facecolor("#e6e6e6")
+    ax = fig.gca()
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+
+    # labels
+    labels = bar_Settings[0]
+    colors = bar_Settings[1]
+
+    names = list(map(lambda x: calendar.month_name[x], risk_D[0]))
+    rData = np.array(risk_D[1])
+    r = range(0,len(names))
+
+    bar_height = []
+
+    sub = plt.gca()
+    sub.grid(axis='y', zorder=0)
+
+    for i in range(0, len(rData)):
+        dd = rData[i]
+        bars = (dd[:,1]).tolist()
+        if i == 0:
+            sub.bar(r, bars, color=colors[i], edgecolor='black',
+                    width=bar_width, label=labels[i], zorder=3)
+            bar_height = bars
+        else:
+            sub.bar(r, bars, bottom=bar_height, color=colors[i], edgecolor='black',
+                    width=bar_width, label=labels[i], zorder=3)
+            bar_height = np.add(bar_height, bars).tolist()
+
+    box = sub.get_position()
+    sub.set_position([box.x0, box.y0 + box.height * 0.1,
+                      box.width, box.height * 0.9])
+
+    # Put a legend below current axis
+    sub.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1),
+               fancybox=True, shadow=True, ncol=5)
+
+    # Custom X axis
+    plt.xticks(r, names, fontWeight="bold")
+    sub.set_xlabel(x_l)
+    sub.set_ylabel(y_l)
+    sub.set_title(p_title, fontsize=20, pad=20)
+
+    #adjust the y limit
+    ymin, ymax = sub.get_ylim()
+    sub.set_ylim(ymax=(ymax+1))
+
+## ----- Latex functions ----- ##
+
+def gen_longtable(doc, data, elT):
+    headers = data[0]
+    rdata = data[1:]
+    if rdata:
+        tt = len(headers)*"l "
+        with doc.create(LongTable(tt)) as data_table:
+            data_table.add_hline()
+            data_table.add_row(headers)
+            data_table.add_hline()
+            data_table.end_table_header()
+            for i in rdata:
+                data_table.add_row(i)
+            data_table.add_hline()
+    else:
+        doc.append(elT)
+
+def gen_longtable_total(doc, data):
+    headers = data[0]
+    rdata = data[1:]
+    tt = len(headers)*"l "
+    with doc.create(LongTable(tt)) as data_table:
+            data_table.add_hline()
+            data_table.add_row(headers)
+            data_table.add_hline()
+            data_table.end_table_header()
+            data_table.add_hline()
+            data_table.add_row(rdata[-1])
+            data_table.add_hline()
+            data_table.end_table_last_footer()
+            for i in rdata[:-1]:
+                data_table.add_row(i)
+
+
+def print_table_risk(datam, alignment, risk_T):
+    if(len(datam) > 1):
+        table1 = LongTabularx(alignment)
+        table1.add_hline()
+        for x in range(0,len(datam)):
+            row = datam[x]
+            if(x == 0):
+                table1.add_row(row)
+                table1.add_hline()
+            else:
+                get_tt = risk_T[row[0]]
+                table1.add_row([TextColor(get_tt[1], get_tt[0])] + row[1:])
+                table1.add_hline()
+        return table1
+    else:
+        return ""
+
+def print_table(datam, alignment):
+    table1 = Tabular(alignment)
+    table1.add_hline()
+    for x in range(0,len(datam)):
+        row = datam[x]
+        if(x == 0):
+            table1.add_row(row)
+            table1.add_hline()
+        else:
+            table1.add_row(row)
+    table1.add_hline()
+    return table1
+
+def print_table_titlepage(datam, alignment):
+    table1 = Tabular(alignment, row_height=1.8)
+    table1.add_hline()
+    for x in range(0,len(datam)):
+        row = datam[x]
+        table1.add_row(row)
+    table1.add_hline()
+    return table1
+
+def plot_pdf(width, caption,doc, *args, **kwargs):
+    with doc.create(Figure(position='h')) as plot:
+        plot.add_plot(width=NoEscape(width), *args, **kwargs)
+        plot.add_caption(caption)
+
+def get_list(doc, data):
+    if(len(data) >= 1):
+        with doc.create(Itemize()) as itemize:
+            for i in data:
+                itemize.add_item(i)
+
+def get_blacklist_stats(bdata):
+    return None
+
+def get_blacklist_hits():
+    hit_list = []
+    for subdir in next(os.walk(annex_path))[1]:
+        date = subdir.split('-')
+        risk_path = os.path.join(annex_path, subdir + "/risks.txt")
+        year = date[0]
+        week = date[1]
+        hits = pd.read_csv(os.path.join(annex_path, subdir + "/data/blacklist.csv"))
+
+        week_d = [week]*len(hits.index) if len(hits.index) > 0 else []
+        w_col = pd.DataFrame({'week': week_d})
+        print(hits)
+        black_final = w_col.join(hits)
+        hit_list.append(black_final)
+    res = pd.concat(hit_list, axis=0)
+    return res
+
+def get_risk_table():
+    risk_list = []
+    for subdir in next(os.walk(annex_path))[1]:
+        date = subdir.split('-')
+        risk_path = os.path.join(annex_path, subdir + "/risks.txt")
+        year = date[0]
+        week = date[1]
+        with open(risk_path, 'r') as file:
+             risk_raw = file.read()
+        risk_n = txt_to_risks_Tab(risk_raw, week)
+        risk_list.extend(risk_n)
+    res = [["Risk Rating" , "Risk Description", "Week"]] + risk_list
+    return res
+
+def gen_header(doc, date_n, logo, global_dict, weekNum):
+    header = PageStyle(name="header",footer_thickness=1, header_thickness=1)
+    # Create left header
+    with header.create(Head("L")):
+        header.append("Risk & Network Overview Week "+weekNum)
+    # Create center header
+    # with header.create(Head("C")):
+    #     header.append("Company")
+    # # Create right header
+    # with header.create(Head("R")):
+    #     header.append(simple_page_number())
+    # Create left footer
+    with header.create(Foot("L")):
+        header.append(TinyText("Overview of findings Week "+weekNum+", "+global_dict['version']))
+        header.append(LineBreak())
+        header.append(TinyText(date_n + "\n Prep.: " +global_dict['prep']
+                               + " Approver:" + global_dict['approver']))
+    # Create center footer
+    with header.create(Foot("C")):
+        header.append(TinyText(global_dict['hlink']))
+        header.append(LineBreak())
+        header.append(TinyText(simple_page_number()))
+    # Create right footer
+    with header.create(Foot("R")) as foot_right:
+        with foot_right.create(MiniPage(width=NoEscape(r"0.16\textwidth"),
+                                        pos='r')) as logo_wrapper:
+            logo_file = logo
+            logo_wrapper.append(StandAloneGraphic(image_options="width=90px",
+                                filename=logo_file))
+
+    doc.preamble.append(header)
+    doc.change_document_style("header")
+    return doc
+
+def gen_doc():
+    geometry_options = {"bmargin": "1in", 'tmargin': "0.7in", "lmargin": "0.9in",
+                        "rmargin": "0.9in"}
+    doc = Document(geometry_options=geometry_options)
+    doc.packages.append(Package('xcolor', 'dvipsnames'))
+    doc.packages.append(Package('titling'))
+    doc.packages.append(Package('tocloft', 'titles'))
+    #doc.packages.append(Package('adjustbox'))
+    #doc.packages.append(Package('titletoc'))
+    #doc.packages.append(Package('draftwatermark', 'firstpage'))
+    # doc.preamble.append(Command('usepackage', 'fontspec'))
+    # doc.preamble.append(Command('setmainfont', 'Calibri.ttf',
+    #                             [NoEscape(r"Path="+font_path+"/calibri/"),
+    #                              NoEscape("BoldItalicFont=Calibri-BI.ttf"),
+    #                              NoEscape("BoldFont      =Calibri-Bold.ttf"),
+    #                              NoEscape("ItalicFont    =Calibri-italic.ttf")]))
+    return doc
+
+def gen_main(doc, risk_T, global_dict, weekNum):
+    start_W = int(global_dict['start_W'])
+    end_W = int(global_dict['end_W'])
+    year = int(global_dict['year'])
+    ## risks csv files loaded
+    risks = pd.read_csv(os.path.join(result_path, "risks.csv"))
+    risks_H = pd.read_csv(os.path.join(result_path, "high_risks.csv"))
+    risks_VH = pd.read_csv(os.path.join(result_path, "very_high_risks.csv"))
+
+    risks_P = getrange(risks, start_W, end_W)
+    risks_PH = getrange(risks_H, start_W, end_W)
+    risks_PVH = getrange(risks_VH, start_W, end_W)
+
+    ## Connections csv file loaded
+    conn_weeks = pd.read_csv( os.path.join(stats_path, "conn_weeks.csv"))
+    dns_weeks = pd.read_csv( os.path.join(stats_path, "dns_weeks.csv"))
+    ssl_weeks = pd.read_csv( os.path.join(stats_path, "ssl_weeks.csv"))
+    http_weeks = pd.read_csv( os.path.join(stats_path, "http_weeks.csv"))
+
+    conn_p = getrange(conn_weeks, start_W, end_W)
+    dns_p  = getrange(dns_weeks, start_W, end_W)
+    ssl_p  = getrange(ssl_weeks, start_W, end_W)
+    http_p = getrange(http_weeks, start_W, end_W)
+
+    total = pd.concat([conn_weeks, dns_weeks, ssl_weeks, http_weeks])
+    total_p = pd.concat([conn_p, dns_p, ssl_p, http_p])
+
+    ## Alteration csv file loaded
+    subnets_weeks = pd.read_csv(os.path.join(result_path, "new_subnets.csv"))
+    subnets_p = getrange(subnets_weeks, start_W, end_W)
+
+    ## services csv file loaded
+    soff_weeks = pd.read_csv(os.path.join(result_path, "new_services_offered.csv"))
+    sused_weeks = pd.read_csv(os.path.join(result_path, "new_services_used.csv"))
+
+    soff_p = getrange(soff_weeks, start_W, end_W)
+    sused_p = getrange(sused_weeks, start_W, end_W)
+
+    ## services table:
+    service_tab = [['Period','New Services used', 'New services offered'],
+                   ['Week '+weekNum , sused_p["number"].sum(), soff_p["number"].sum()],
+                   ['To date', sused_weeks["number"].sum(), soff_weeks["number"].sum()]]
+
+    ## subnets table
+    subnet_tab = [['Period','New Subnets'],
+                  ['Week '+weekNum ,subnets_weeks["number"].sum()],
+                  ['To date', subnets_p["number"].sum()]]
+
+    ## connections table
+    conn_tab = [['Connections Checked', "This Period", "Year to Date"],
+                ['DNS',  format(dns_p['number'].sum(), ','),
+                 format(dns_weeks['number'].sum(), ',')],
+                ['HTTP',  format(http_p['number'].sum(), ','),
+                 format(http_weeks['number'].sum(), ',')],
+                ['SSL',  format(ssl_p['number'].sum(), ','),
+                 format(ssl_weeks['number'].sum(), ',')],
+                ['Other',  format(conn_p['number'].sum(), ','),
+                 format(conn_weeks['number'].sum(), ',')],
+                ['Total',  format(total_p['number'].sum(), ','),
+                 format(total['number'].sum(), ',')]]
+
+    ## risk calculations table
+
+    risk_tab = [["Period", "Risk", "High Risk", "Very High Risk"],
+                ['Week '+weekNum, risks_P["number"].sum(),
+                 risks_PH["number"].sum(), risks_PVH["number"].sum()],
+                ["Year to Date", risks["number"].sum(),
+                 risks_H["number"].sum(), risks_VH["number"].sum()]]
+
+    d_sum = pd.concat([risks_VH, risks_H, risks])
+    p_sum = pd.concat([risks_PVH, risks_PH, risks_P])
+
+    ## risk diagram, data ready
+    risk_data = bar_Dia([risks_VH, risks_H, risks], year)
+
+    print(risk_data)
+
+    risk_Sett = [['Very high risk', 'high risk', 'Risk'],
+                 ['#D12B0A', '#FF9933', '#FFE633']]
+
+    ## connections plot, data ready
+    c_data = ready_conn(dns_weeks, http_weeks, ssl_weeks, conn_weeks)
+
+    ## subnets plot, data ready
+    sub_data = [subnets_weeks['week'], subnets_weeks['number']]
+
+    ## services diagram, data ready
+    service_data = bar_Dia([soff_weeks, sused_weeks], year)
+    service_Sett = [['New Services offered','New Services Used from server'],
+                    ['#2CEAA2', '#2C77EA']]
+
+    ## Get risk table
+    risk_Tab = get_risk_table()
+
+    ## Get blacklist
+    blacklist_data = get_blacklist_hits()
+
+    b_bdata = bar_Black([blacklist_data], year)
+
+    b_sett = [['Blacklist Hits'], ['#2C77EA']]
+
+    print(b_bdata)
+
+    blacklist_tab = [['Period','Number Of Hits'],
+                     ['Week '+weekNum , len(blacklist_data.index)],
+                     ['To date', len(blacklist_data.index)]]
+
+    doc.append(NoEscape(r'\addcontentsline{toc}{part}{Main data}'))
+
+    with doc.create(Section('Risks detected inside network')):
+        doc.append(VerticalSpace("20pt"))
+        with doc.create(Center()):
+            doc.append(print_table(risk_tab, "|l|c|c|c|"))
+            gen_Bars(risk_data, risk_Sett, 0.3, "Risk Type per month",
+                     "Number of risks", "Risks inside network to date")
+        # insert plot
+        plot_pdf(r'1\textwidth',"Bar diagram of detected risks", doc, dpi=300)
+    with doc.create(Section("Risk overview this period")):
+        doc.append(print_table_risk(risk_Tab, "|p{2.5cm}|p{12cm}|p{2cm}|",risk_T))
+    with doc.create(Section("Blacklist Hits")):
+        with doc.create(Center()):
+            doc.append(print_table(blacklist_tab, "|l|c|"))
+            gen_Bars(b_bdata, b_sett, 0.3, "wwuuuph",
+                     "test", "vvvvv")
+    with doc.create(Section("Connections")):
+        gen_longtable_total(doc, conn_tab)
+        # create plot
+        gen_plot(c_data, "Week no.", "Connections no.", "Connections checked to date")
+        # insert plot
+        plot_pdf(r'1\textwidth',"Line graph over connections per week", doc, dpi=300)
+    with doc.create(Section("New Subnets")):
+        with doc.create(Center()):
+            doc.append(print_table(subnet_tab, "|l|c|"))
+        gen_Bars_V(sub_data, 0.9, "Number of new subnets.", "Week no.", "New subnets to date")
+        plot_pdf(r'1\textwidth',"Vertical bar graph over new subnets", doc, dpi=300)
+    with doc.create(Section("New Services")):
+        with doc.create(Center()):
+            doc.append(print_table(service_tab, "|l|c|c|"))
+        # Create plot
+        gen_Bars(service_data, service_Sett, 0.3,
+                 "Number of Services", "Service type per month",
+                 "New Services to Date")
+        # insert plot
+        plot_pdf(r'1\textwidth',"Bar diagram of new services", doc, dpi=300)
+    doc.append(ClearPage())
+
+def gen_titlepage(doc, logo_file, title_img, date_n, global_dict):
+    # doc.preamble.append(Command('title', NoEscape(r'\includegraphics[width=0.4\textwidth]{'+logo_file+'}~\\[1cm]'+
+    # 'Risk and Network Security Findings')))
+    infom = [['Author:', global_dict['prep']], ['Approver:', global_dict['approver']],
+             ['Date:', date_n], ['Version:', global_dict['version']], ["Doc. Ref:", global_dict['dref']]]
+
+    #doc.preamble.append(Command('SetWatermarkText', 'CONFIDENTIAL'))
+    #doc.preamble.append(Command('SetWatermarkScale', '0.7'))
+    doc.preamble.append(Command('pretitle', NoEscape(r'\begin{center} \LARGE \includegraphics[width=0.4\textwidth]{'+logo_file+'}')))
+    doc.preamble.append(Command('posttitle', NoEscape(r'\end{center}')))
+    doc.preamble.append(Command('title', NoEscape(r'\noindent \\[20px] Risk and Network Security Findings')))
+    doc.preamble.append(Command('author', ''))
+    doc.preamble.append(Command('date', ''))
+    doc.preamble.append(Command('thispagestyle', 'empty'))
+    doc.append(NoEscape(r'\maketitle'))
+    # with doc.create(Center()):
+    #     doc.append(StandAloneGraphic(image_options="width=200px",
+    #                                  filename=title_img))
+    doc.append(VerticalSpace("300pt"))
+    with doc.create(Center()):
+        doc.append(bold("To be kept restricted"))
+        doc.append(VerticalSpace("60pt"))
+    doc.append(print_table_titlepage(infom, "|p{3cm} p{13cm}|"))
+
+    doc.append(Command('pagenumbering', 'gobble'))
+    doc.append(ClearPage())
+    doc.append(Command('pagenumbering', 'arabic'))
+
+def gen_tableofcontents(doc):
+    doc.append(NoEscape(r'\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}'))
+    doc.append(NoEscape(r'\setcounter{secnumdepth}{0}'))
+    doc.append(NoEscape(r'\renewcommand{\contentsname}{\hfill\bfseries\Large Contents\hfill}'))
+    doc.append(NoEscape(r'\tableofcontents'))
+    doc.append(ClearPage())
+
+def gen_annex(doc, risk_T):
+    with doc.create(Center()):
+        doc.append(VerticalSpace("260pt"))
+        doc.append(HugeText("Annexes"))
+        doc.append(NoEscape(r'\addcontentsline{toc}{part}{Annexes}'))
+        doc.append(LineBreak())
+        doc.append(NewLine())
+        doc.append("Data and details")
+    doc.append(ClearPage())
+    doc.append(NoEscape(r'\setcounter{secnumdepth}{4}'))
+    for subdir in next(os.walk(annex_path))[1]:
+        date = subdir.split('-')
+        year = date[0]
+        week = date[1]
+        dateT = dt.datetime.strptime(year+"-W"+week+ '-1', "%Y-W%W-%w")
+        title = "Network monitoring - Week: "+week+", Year: "+year
+        toc_title = "Week "+week+", "+year
+        path = os.path.join(annex_path, subdir + "/data/")
+        com_path = os.path.join(annex_path, subdir + "/comments.txt")
+        risk_path = os.path.join(annex_path, subdir + "/risks.txt")
+
+        # get risks:
+        with open(risk_path, 'r') as file:
+             risk_raw = file.read()
+        risk_dict = txt_to_risks(risk_raw)
+
+        # get comments:
+        with open(com_path, 'r') as file:
+             com_raw = file.read()
+        com_dict = txt_to_comment(com_raw)
+        #print(list(com_dict))
+
+        # public internal network
+        pub_current  = pd.read_csv(path+"pub-current.csv")
+        pub_new      = pd.read_csv(path+"pub-new.csv")
+        pub_obsolete = pd.read_csv(path+"pub-obsolete.csv")
+
+        # private internal network
+        pri_current  = pd.read_csv(path+"pri-current.csv")
+        pri_new      = pd.read_csv(path+"pri-new.csv")
+        pri_obsolete = pd.read_csv(path+"pri-obsolete.csv")
+
+        # blacklist
+        blacklist = pd.read_csv(path+"blacklist.csv")
+
+        # services
+        ser_used    = pd.read_csv(path+"ser-used.csv")
+        ser_off     = pd.read_csv(path+"ser-off.csv")
+        ser_used_ip = pd.read_csv(path+"ser-used-ip.csv")
+
+        # protocol
+        http_d = pd.read_csv(path+"pro-http.csv")
+        https_s = pd.read_csv(path+"pro-https-sign.csv")
+        https_h = pd.read_csv(path+"pro-https-cert.csv")
+
+        doc.append(NoEscape(r'\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}'))
+        doc.append(NoEscape(r'\addcontentsline{toc}{section}{'+toc_title+'}'))
+        doc.append(NoEscape(r'\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}'))
+        doc.append(SetCounter(arguments=["section", 0]))
+        with doc.create(Center()):
+            doc.append(LargeText(bold(title)))
+            doc.append(LineBreak())
+            doc.append("Period: "+(dateT - dt.timedelta(days=7)).strftime('%Y-%m-%d')+
+                       " - "+dateT.strftime('%Y-%m-%d'))
+        with doc.create(Section("Networks and Hosts")):
+            with doc.create(Subsection("Public internal networks")):
+                doc.append(bold("Current Public Subnets:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(pub_current), "No unusual internal public subnets\n")
+                doc.append(HFill())
+                doc.append(NewLine())
+                doc.append(bold("New Public Subnets:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(pub_new), "No new internal public subnets\n")
+                doc.append(HFill())
+                doc.append(NewLine())
+                doc.append(bold("Obsolete Subnets:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(pub_obsolete), "No obsolete internal public subnets\n")
+
+                # print comments
+                get_list(doc, com_dict['public-net'])
+                # print risk
+                doc.append(print_table_risk(risk_dict['public-net'], "|p{2.5cm}|p{14cm}|", risk_T))
+            with doc.create(Subsection("Private internal networks")):
+                doc.append(bold("Current Private Subnets:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(pri_current), "No unusual internal private subnets\n")
+                doc.append(HFill())
+                doc.append(NewLine())
+                doc.append(bold("New Private Subnets:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(pri_new), "No new internal private subnets\n")
+                doc.append(HFill())
+                doc.append(NewLine())
+                doc.append(bold("Obsolete Private Subnets:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(pri_obsolete), "No obsolete internal private subnets\n")
+
+                # print comments
+                get_list(doc, com_dict['private-net'])
+                doc.append(print_table_risk(risk_dict['private-net'], "|p{2.5cm}|p{14cm}|", risk_T))
+            with doc.create(Subsection("Blacklist hits")):
+                gen_longtable(doc, panda_toL(blacklist), "")
+
+                # print comments
+                get_list(doc, com_dict['blacklist'])
+                doc.append(print_table_risk(risk_dict['blacklist'], "|p{2.5cm}|p{14cm}|", risk_T))
+        with doc.create(Section("Services")):
+            with doc.create(Subsection("Services offered")):
+                gen_longtable(doc, panda_toL(ser_off), "No new services were offered publicly")
+
+                # print comments
+                get_list(doc, com_dict['service-off'])
+                doc.append(print_table_risk(risk_dict['service-off'], "|p{2.5cm}|p{14cm}|", risk_T))
+            with doc.create(Subsection("Services used")):
+                gen_longtable(doc, panda_toL(ser_used), "No unusual services used")
+
+                # print comments
+                get_list(doc, com_dict['service-used'])
+                doc.append(print_table_risk(risk_dict['service-used'], "|p{2.5cm}|p{14cm}|", risk_T))
+            with doc.create(Subsection("Services used from server IP's")):
+                gen_longtable(doc, panda_toL(ser_used_ip), "No unusual services used from server IP's")
+
+                # print comments
+                get_list(doc, com_dict['service-used-ip'])
+                doc.append(print_table_risk(risk_dict['service-used-ip'], "|p{2.5cm}|p{14cm}|", risk_T))
+        with doc.create(Section("Protocol specific modelling")):
+            with doc.create(Subsection("HTTP")):
+                doc.append(bold("Exe downloads:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(http_d), "No malicious executable downloads were detected\n")
+
+                # print comments
+                get_list(doc, com_dict['http-exe'])
+                doc.append(print_table_risk(risk_dict['http-exe'], "|p{2.5cm}|p{14cm}|", risk_T))
+            with doc.create(Subsection("HTTPS")):
+                doc.append(bold("Bad certificate signs:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(https_s), "No bad certificates has shown sign of malicious traffic\n")
+
+                # print comments
+                get_list(doc, com_dict['https-cert'])
+                doc.append(print_table_risk(risk_dict['https-cert'], "|p{2.5cm}|p{14cm}|", risk_T))
+                doc.append(HFill())
+                doc.append(NewLine())
+                doc.append(bold("Signature based hits:"))
+                doc.append(NewLine())
+                gen_longtable(doc, panda_toL(https_h), 'No signature based alarms\n')
+
+                # print comments
+                get_list(doc, com_dict['https-sign'])
+                doc.append(print_table_risk(risk_dict['https-sign'], "|p{2.5cm}|p{14cm}|", risk_T))
+        doc.append(ClearPage())
+
+if __name__ == '__main__':
+    global_dict = get_global(global_path)
+    logo = os.path.join(img_path, "Derant_logo.png")
+    date_n =  dt.date.today().strftime("%B %d, %Y")
+    risk_T = {'R': ['Risk', 'Dandelion'],
+              'HR': ['High Risk', 'Orange'],
+              'VHR': ['Very High Risk', 'red']}
+    weekNum = str(global_dict['start_W'])+'-'+str(global_dict['end_W'])
+    title_img = os.path.join(img_path, global_dict['title_img'])
+
+    doc = gen_doc()
+    gen_titlepage(doc, logo, title_img, date_n, global_dict)
+    gen_header(doc, date_n, logo, global_dict, weekNum)
+    gen_tableofcontents(doc)
+    gen_main(doc, risk_T, global_dict, weekNum)
+    gen_annex(doc, risk_T)
+    doc.generate_pdf('full', clean_tex=False)

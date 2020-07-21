@@ -1,0 +1,64 @@
+<template>
+  <v-container bg grid-list-md text-xs-center>
+    <v-layout row wrap align-center>
+      <v-flex>
+	<v-subheader>Register new user:</v-subheader>
+	<form>
+	  <v-text-field
+	      v-model="username"
+	      label="Username"
+	      required
+	  ></v-text-field>
+	  <v-text-field
+	      v-model="password"
+	      :type="'password'"
+	      label="Password"
+	      required
+	  ></v-text-field>
+	  <v-btn class="mr-4" @click="registerUser">Register User</v-btn>
+	  <v-btn @click="clear">clear</v-btn>
+	</form>
+	<p>{{ register_re }}</p>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+  import authservice from '@/services/BackendService.js'
+
+  export default {
+    data() {
+      return {
+	username: '',
+	password: '',
+	register_re: null
+      }
+    },
+    methods: {
+      registerUser() {
+	console.log('In Register.')
+	authservice
+	       .register(this.username, this.password)
+	       .then(result => {
+		 console.log('Success')
+		 console.log(result)
+		 this.register_re = 'New user Registered:' + result.statusText
+	       })
+	       .catch(error => {
+		 console.log('Error')
+		 console.log(error)
+		 this.register_re =
+		 'Registration failed, status code: ' + error.response.status + ', Message: ' + error.response.data["message"]
+	       })
+	console.log('Exiting Register.')
+      },
+      clear() {
+	this.password = ''
+	this.username = ''
+      }
+    }
+  }
+</script>
+
+<style></style>

@@ -1,0 +1,1057 @@
+<template>
+  <v-container ma-0 pa-5 bg grid-list-md text-xs-center fluid>
+    <v-layout row wrap align-center>
+      <v-flex>
+        <v-row no-gutters>
+          <!-- <AnalysisNavBar /> -->
+          <v-col>
+            <v-select
+                outlined
+                :items="filelist"
+                @change="setSelectedFile"
+                ref="fileselectref"
+                label="Files"
+                v-model="defsel"
+            ></v-select>
+          </v-col>
+          <v-col>
+            <v-card>
+              <v-card-text style="max-height: 100px; overflow-y: scroll">
+                <v-row v-if="filtertoplist.length != 0">
+                  <div v-for="(f, ftopindex) in filtertoplist" :key="f">
+                    <v-col class="ma-0 py-0 pl-1">
+                      <div
+                          v-if="filtercursortop == ftopindex"
+                          class="green--text"
+                      >
+                        {{ f }}
+                      </div>
+                      <div v-else>{{ f }}</div>
+                    </v-col>
+                  </div>
+                </v-row>
+                <v-row v-else>No filters defined</v-row>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col>
+            <v-text-field
+                outlined
+                clearable
+                label="Search"
+                v-model="searchvalue"
+                v-on:keyup.enter="onSearchEnter"
+                placeholder="search"
+                id="searchfield"
+                ref="searchfieldref"
+                :error-messages="searchfailed ? ['Search failed'] : []"
+            ></v-text-field>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="justify-center">
+            <v-card>
+              <v-card-text style="max-height: 100px; overflow-y: scroll">
+                <v-row v-if="filtertoplist.length != 0">
+                  <div v-for="(fi, i) in filtercurrentlist" :key="i">
+                    <v-col class="ma-0 py-0 pl-1">
+                      <div
+                          v-if="filtercursordetail == fi.index"
+                          class="green--text"
+                      >
+                        {{ fi.value }}
+                      </div>
+                      <div v-else>{{ fi.value }}</div>
+                    </v-col>
+                  </div>
+                </v-row>
+                <v-row v-else>No filters defined</v-row>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col>
+            <div v-show="currentsubfilter && 'operator' in currentsubfilter">
+              <v-row>
+                <v-col :cols="5">
+                  <v-text-field
+                      outlined
+                      hide-details
+                      v-model="currentsubfilter.field"
+                      placeholder="field"
+                      id="fieldfield"
+                      ref="fieldfieldref"
+                  ></v-text-field>
+                </v-col>
+                <v-col :cols="2">
+                  <v-text-field
+                      outlined
+                      hide-details
+                      v-model="currentsubfilter.operator"
+                      placeholder="operator"
+                      id="operatorfield"
+                      ref="operatorfieldref"
+                      size="4"
+                  ></v-text-field>
+                </v-col>
+                <v-col :cols="5">
+                  <v-text-field
+                      outlined
+                      hide-details
+                      v-model="currentsubfilter.value"
+                      placeholder="value"
+                      id="valuefield"
+                      ref="valuefieldref"
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </div>
+            <div v-show="currentsubfilter && 'condition' in currentsubfilter">
+              <v-row>
+                <v-col :cols="5">
+                  <v-text-field
+                      outlined
+                      hide-details
+                      v-model="currentsubfilter.condition"
+                      placeholder="condition"
+                      id="conditionfield"
+                      ref="conditionfieldref"
+                  ></v-text-field>
+                </v-col>
+                <v-col :cols="2">
+                  <v-text-field
+                      outlined
+                      hide-details
+                      v-model="currentsubfilter.subcount"
+                      placeholder="subcount"
+                      id="subcountfield"
+                      ref="subcountfieldref"
+                      size="4"
+                  ></v-text-field>
+                </v-col>
+                <v-col :cols="5">
+                  <v-text-field
+                      outlined
+                      hide-details
+                      v-model="currentsubfilter.subtype"
+                      placeholder="subtype"
+                      id="subtypefield"
+                      ref="subtypefieldref"
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </div>
+          </v-col>
+          <v-col>
+            <div v-show="currentsubfilter && 'active' in currentsubfilter">
+              <v-checkbox
+                  label="Active"
+                  hide-details
+                  v-model="currentsubfilter.active"
+              ></v-checkbox>
+            </div>
+          </v-col>
+        </v-row>
+        <v-row id="window_C" style="overflow: auto">
+          <table v-for="(header, index) in mheader" :key="`header-${index}`">
+            <tr v-show="currentindex == index">
+              <td v-for="(hcell, hindex) in header" :key="`hcell-${hindex}`">
+                <div
+                    :id="'H' + index + 'C' + hindex"
+                    v-bind:style="{
+                                  width: divsizeTC[filesidlist[header[0]]][hindex] + 'px'
+                                  }"
+                    style="overflow: hidden;"
+                >
+                  {{ hcell }}
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <table v-for="(row, index) in swmdata" :key="`row-${index}`">
+            <tr>
+              <div
+                  v-bind:style="{
+                                'background-color': rowcolor[filesidlist[row[0]]]
+                                }"
+              >
+                <td v-for="(cell, rindex) in row" :key="`cell-${rindex}`">
+                  <div
+                      v-bind:id="
+                                 swcursorY == index && cursorX == rindex
+                                 ? 'activeEL'
+                                 : ''
+                                 "
+                      v-bind:style="{
+                                    width: divsizeTC[filesidlist[row[0]]][rindex] + 'px',
+                                    'background-color':
+                                    swcursorY == index && cursorX == rindex ? 'Aqua' : ''
+                                    }"
+                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                  >
+                    {{ cell }}
+                  </div>
+                </td>
+              </div>
+            </tr>
+          </table>
+        </v-row>
+
+        <v-row class="d-flex flex-row">
+          <v-col :cols="4" class="ma-1 pa-1">
+            <p class="font-weight-light" v-if="selectedFile">
+              From file: {{ selectedFile }}
+            </p>
+            <p class="font-weight-light" v-if="!selectedFile">
+              No file selected.
+            </p>
+          </v-col>
+          <v-col :cols="3" class="ma-1 pa-1">
+            <p class="font-weight-light">Cursor value: {{ cursorvalue }}</p>
+          </v-col>
+          <v-col :cols="1" class="ma-1 pa-1">
+            <p class="font-weight-light">MData size: {{ mdatasize }}</p>
+          </v-col>
+          <v-col :cols="1" class="ma-1 pa-1">
+            <p class="font-weight-light">Y: {{ cursorY }}/X: {{ cursorX }}</p>
+          </v-col>
+          <v-col :cols="1" class="ma-1 pa-1">
+            <div style="display: flex;">
+              <div>
+                <!--Link to edit data table layout...-->
+                <v-btn v-bind:to="anEdit_P">Edit Layout</v-btn>
+                <!-- <router-link :to="{ name: 'analysis-network-edit-layout' }"
+                     >Edit Layout</router-link
+                     >-->
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <v-textarea
+                outlined
+                rows="10"
+                cols="80"
+                readonly
+                v-model="filterstext"
+                label="Filter Text"
+            ></v-textarea>
+          </v-col>
+          <v-col>
+            <v-textarea
+                outlined
+                rows="10"
+                cols="80"
+                v-model="filterstextinput"
+                label="Filter Text Input"
+            ></v-textarea>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-btn class="mr-4" @click="updatefilters">Update filters</v-btn>
+        </v-row>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+  /* import AnalysisNavBar from '@/components/AnalysisNavBar.vue' */
+  import authservice from '@/services/BackendService.js'
+  import resize from 'vue-resize-directive'
+
+  export default {
+    /* components: {
+       AnalysisNavBar
+       }, */
+    directives: {
+      resize
+    },
+    data() {
+      return {
+        filelist: [],
+        anEdit_P: null,
+        selectedFile: null,
+        searchvalue: '',
+        searchfailed: false,
+        // cursorX and cursorY are pointers into mdata
+        cursorX: 0,
+        cursorY: 0,
+        swsize: 10,
+
+        defsel: null,
+        // data request variables
+        brologdata: null,
+        maxHL: null,
+        hide_c: {},
+        //filters: [],
+        // filters is filled out with dummy data to test the interface until we implement functions to manipulate them
+        filters: [
+          {
+            name: 'X0',
+            operator: '!=',
+            field: 'dummy',
+            value: 'dummy',
+            active: 'true'
+          }
+          //,
+          //{
+          //  condition: 'not',
+          //  rule: { operator: '=', field: 'x', value: 'y' },
+          //  types: ['*'],
+          //  active: 'true'
+          //}
+        ],
+        filterstextinput: '',
+        // filtercursor{top,detail} are pointers into the filters variable
+        filtercursortop: 0,
+        filtercursordetail: 0,
+        currentsubfilter: '',
+        mdata: [], //merged data
+        mheader: [], //merged headers
+        rowcolor: [
+          'LightSalmon',
+          'green',
+          'LightCyan',
+          'Thistle',
+          'AliceBlue',
+          'Beige',
+          'HoneyDew',
+          'Thistle'
+        ],
+        divsize: 100,
+        divsizeTC: [],
+        filesidlist: {},
+        currentindex: 5,
+        ds: null,
+        forceRecomputeCounter: 0
+      }
+    },
+    created() {
+      this.anEdit_P = this.$router.options.mainRoutes[2].path
+      this.divsizeTC = Array.from({ length: 14 }, () => Array(40).fill(100))
+      this.gethideC()
+    },
+    computed: {
+      // mdatasize is the number of lines in mdata
+      mdatasize: function() {
+        if (this.mdata) {
+          return this.mdata.length
+        }
+        return 0
+      },
+      // swmdata is a sliding window through mdata
+      swmdata: function() {
+        if (this.mdata.length == 0) {
+          return []
+        }
+        var startindex =
+        this.cursorY - this.swsize < 0 ? 0 : this.cursorY - this.swsize
+        var endindex = startindex + 2 * this.swsize + 1
+        return this.mdata.slice(startindex, endindex)
+      },
+      // swcursorY is a sliding window pointer into swmdata
+      swcursorY: function() {
+        return Math.min(this.cursorY, this.swsize)
+      },
+      filtertoplist: function() {
+        // Function to compute a short list with names of the filters to display to the user
+        var ftl = []
+        for (var index = 0; index < this.filters.length; index++) {
+          if ('name' in this.filters[index]) {
+            ftl.push(this.filters[index]['name'])
+          } else {
+            ftl.push('F' + index)
+          }
+        }
+        return ftl
+      },
+      filtercurrentlist: function() {
+        this.forceRecomputeCounter
+        if (this.filters.length == 0) {
+          return []
+        }
+        var currentfilter = this.filters[this.filtercursortop]
+        // filter to text - called recursively internally
+        var idxobj = { i: 0 }
+        return this.filtertotextlist(currentfilter, idxobj)
+      },
+      filterstext: function() {
+        this.forceRecomputeCounter
+        return JSON.stringify(this.filters)
+      },
+      cursorvalue: function() {
+        if (this.swmdata.length != 0) {
+          return this.swmdata[this.swcursorY][this.cursorX]
+        } else {
+          return 'Undefined'
+        }
+      }
+    },
+    methods: {
+      gethideC(){
+        var ff = authservice.gethiddenC()
+        this.hide_c = {}
+        if(ff != null){
+          var val_A = Object.keys(ff)
+          for (var i = 0; i < val_A.length; i++) {
+            var item = val_A[i]
+            this.hide_c[item] = ff[item]
+          }
+        }
+      },
+      scrollHorizontal: function() {
+        // Used to center horizontal on active element in data window
+        var element = this.$el.querySelector('#activeEL')
+        element.scrollIntoView({ inline: 'center', block: 'nearest' })
+      },
+      addtoplevelfilterlast() {
+        this.addtoplevelfilter(this.filters.length)
+      },
+      addtoplevelfilter(pos) {
+        this.filters.splice(pos + 1, 0, {})
+      },
+      addfiltertofilterlist(replacecurrentfilter, filtertype = 'simple') {
+        //var currentfilter = this.filters[this.filtercursortop]
+        var currentfilter = this.currentsubfilter
+        if (Object.keys(currentfilter).length == 0 || replacecurrentfilter) {
+          delete currentfilter.condition
+          delete currentfilter.rules
+          delete currentfilter.rule
+          delete currentfilter.field
+          delete currentfilter.operator
+          delete currentfilter.value
+          delete currentfilter.passthrough
+          delete currentfilter.types
+          delete currentfilter.subtype
+          delete currentfilter.subcount
+          delete currentfilter.matchfield
+          delete currentfilter.submatchfield
+          // Add new filter instead of currentfilter
+          if (filtertype == 'simple') {
+            currentfilter['field'] = this.mheader[this.currentindex][this.cursorX]
+            currentfilter['operator'] = '='
+            currentfilter['value'] = this.cursorvalue
+            currentfilter['active'] = 'true'
+          } else if (filtertype == 'and' || filtertype == 'or') {
+            // TODO: (1) if currentfilter was a simplefilter then make it the first of the rules in the composite filter
+            // TODO: (2) set filtercursor to the second
+            currentfilter['condition'] = filtertype
+            currentfilter['rules'] = [{}, {}]
+            currentfilter['active'] = 'true'
+            currentfilter['types'] = ['*']
+          } else if (filtertype == 'subcountmin' || filtertype == 'subcountmax') {
+            currentfilter['condition'] = filtertype
+            currentfilter['active'] = 'true'
+            currentfilter['subtype'] = 'dns.log'
+            currentfilter['subcount'] = '2'
+            currentfilter['matchfield'] = 'uid'
+            currentfilter['submatchfield'] = 'uid'
+            currentfilter['types'] = ['*']
+          }
+          this.$forceUpdate()
+        } else if ('condition' in currentfilter) {
+          //
+          currentfilter.rules.push({})
+        }
+        this.forceRecomputeCounter++
+      },
+      toggleNotFilter() {
+        var currentfilter = this.currentsubfilter
+        //console.log('toggleNotFilter()')
+        //console.log(JSON.stringify(currentfilter))
+        var attlist = [
+          'field',
+          'operator',
+          'value',
+          'active',
+          'condition',
+          'rules',
+          'types'
+        ]
+        if ('condition' in currentfilter && currentfilter.condition == 'not') {
+          // replace 'not' filter with the 'rule' subfilter
+          for (var i = 0; i < attlist.length; i++) {
+            if (attlist[i] in currentfilter['rule']) {
+              currentfilter[attlist[i]] = currentfilter['rule'][attlist[i]]
+            } else {
+              delete currentfilter[attlist[i]]
+            }
+          }
+          if ('rule' in currentfilter['rule']) {
+            currentfilter['rule'] = currentfilter['rule']['rule']
+          } else {
+            currentfilter.rule = ''
+            delete currentfilter.rule
+          }
+        } else {
+          // insert not and push down currentfilter to the 'rule' subfilter (copy attributes down)
+          currentfilter['rule'] = {}
+          for (var j = 0; j < attlist.length; j++) {
+            if (attlist[j] in currentfilter) {
+              currentfilter['rule'][attlist[j]] = currentfilter[attlist[j]]
+              delete currentfilter[attlist[j]]
+            }
+          }
+          currentfilter['condition'] = 'not'
+          currentfilter['active'] = 'true'
+          currentfilter['types'] = ['*']
+        }
+        //console.log(JSON.stringify(currentfilter))
+        this.forceRecomputeCounter++
+      },
+      calculatecurrentfilterlength() {
+        var currentfilter = this.filters[this.filtercursortop]
+        var idxobj = { i: 0 }
+        this.filtertotextlist(currentfilter, idxobj)
+        return idxobj.i
+      },
+      filtertotextlist(filt, idxobj) {
+        //console.log('filter to text list')
+        //console.log(filt)
+
+        if (this.filtercursordetail == idxobj['i']) {
+          this.currentsubfilter = filt
+        }
+
+        var result = []
+        if (Object.keys(filt).length == 0) {
+          result.push({ value: 'empty', index: idxobj['i'] })
+          idxobj['i'] = idxobj['i'] + 1
+        }
+        if (
+          'condition' in filt &&
+          (filt['condition'] == 'and' || filt['condition'] == 'or')
+        ) {
+          var andidx = idxobj['i']
+          idxobj['i'] = idxobj['i'] + 1
+          result.push({ value: '(', index: andidx })
+          var firstand = true
+          for (var index = 0; index < filt['rules'].length; index++) {
+            if (firstand) {
+              firstand = false
+            } else {
+              if (filt['condition'] == 'or') {
+                result.push({ value: 'OR', index: andidx })
+              } else {
+                result.push({ value: 'AND', index: andidx })
+              }
+            }
+            result = result.concat(
+              this.filtertotextlist(filt['rules'][index], idxobj)
+            )
+          }
+          result.push({ value: ')', index: andidx })
+        }
+        if ('condition' in filt && filt['condition'] == 'not') {
+          var notidx = idxobj['i']
+          idxobj['i'] = idxobj['i'] + 1
+          result.push({ value: 'NOT(', index: notidx })
+          result = result.concat(this.filtertotextlist(filt['rule'], idxobj))
+          result.push({ value: ')', index: notidx })
+        }
+        if (
+          'condition' in filt &&
+          (filt['condition'] == 'subcountmin' ||
+           filt['condition'] == 'subcountmax')
+        ) {
+          var subcountidx = idxobj['i']
+          var sctype = 'MIN'
+          if (filt['condition'] == 'subcountmax') {
+            sctype = 'MAX'
+          }
+          idxobj['i'] = idxobj['i'] + 1
+          result.push({
+            value:
+            'SUBCOUNT' +
+            sctype +
+            '(' +
+            filt['subtype'] +
+            ',' +
+            filt['subcount'] +
+            ')',
+            index: subcountidx
+          })
+        }
+        if ('operator' in filt) {
+          // switch over operators
+          if (filt['operator'] == '=' || filt['operator'] == '!=' || 1 == 1) {
+            result.push({
+              value: filt['field'] + filt['operator'] + filt['value'],
+              index: idxobj['i']
+            })
+            idxobj['i'] = idxobj['i'] + 1
+          }
+        }
+        //console.log(result)
+        return result
+      },
+      updatefilters() {
+        //console.log('Boop')
+        //console.log(this.filters)
+        //console.log(this.filterstextinput)
+        this.filters = JSON.parse(this.filterstextinput)
+        //console.log(this.filters)
+        this.forceRecomputeCounter++
+      },
+      clear_values() {
+        this.selectedFile = null
+        this.defsel = null
+        this.brologdata = null
+        this.maxHL = null
+        this.mheader = []
+        this.mdata = []
+        authservice.clearSelectedFile()
+      },
+      setSelectedFile(file_name) {
+        //console.log('selected called!!!')
+        if (file_name == 'no-file') {
+          this.clear_values()
+        } else {
+          this.selectedFile = file_name
+          this.defsel = { text: this.selectedFile, value: this.selectedFile }
+          authservice.setSelectedFile(file_name)
+          this.getdata(false)
+          //this.loadDataWithoutFilter() // -- New files are always loaded without filter, fix?
+        }
+        this.$refs.fileselectref.blur()
+      },
+      mergedata() {
+        //console.log('mergedata:')
+        //console.log(this.brologdata.files['conn.log'])
+        var filenumber = 0
+        this.mheader = []
+        for (var filen in this.brologdata.files) {
+          // Add headers to the merged header (mheader) variable
+          var filH = this.brologdata.files[filen].header
+          //console.log(filH)
+          //console.log(this.maxHL)
+          var new_mheader =
+          filH.length == this.maxHL
+        ? filH
+        : filH.concat(Array(this.maxHL - filH.length).fill('-'))
+          this.mheader.push([filen].concat(new_mheader))
+          //this.mheader.push([filen].concat(this.brologdata.files[filen].header))
+          // Add filename to filesidlist and give it a consequitive number
+          this.filesidlist[filen] = filenumber
+          filenumber++
+        }
+        //console.log(this.mheader)
+        //console.log(this.filesidlist)
+        this.mdata = []
+        var connlen = this.brologdata.files['conn.log'].rows.length
+        var connrows = this.brologdata.files['conn.log'].rows
+        //console.log(connlen)
+
+        // Search for orphans
+        var connuids = {}
+        var orphanmergelist = {}
+        for (var ci = 0; ci < connlen; ci++) {
+          connuids[connrows[ci][1]] = ''
+        }
+        for (var osubfile in this.brologdata.files) {
+          //console.log(subfile)
+          if (osubfile == 'conn.log') {
+            continue
+          }
+          // Go through rows and check each uid
+          var osublen = this.brologdata.files[osubfile].rows.length
+          var osubrows = this.brologdata.files[osubfile].rows
+          var lastnonorphanuid = ''
+          for (var oj = 0; oj < osublen; oj++) {
+            if (osubrows[oj][1] in connuids) {
+              // Row is a non-orphan
+              lastnonorphanuid = osubrows[oj][1]
+            } else {
+              //console.log('Found orphan')
+              //console.log(osubrows[oj])
+              if (lastnonorphanuid in orphanmergelist) {
+                orphanmergelist[lastnonorphanuid].push(
+                  [osubfile].concat(osubrows[oj])
+                )
+              } else {
+                orphanmergelist[lastnonorphanuid] = [
+                  [osubfile].concat(osubrows[oj])
+                ]
+              }
+            }
+          }
+        }
+        //console.log("here is the ophan merge list:")
+        //console.log(orphanmergelist)
+        // Start orphans, seen before any conn-log entries has been seen
+        if ('' in orphanmergelist) {
+          for (
+            var startorphanindex = 0;
+            startorphanindex < orphanmergelist[''].length;
+            startorphanindex++
+          ) {
+            var orp = orphanmergelist[''][startorphanindex]
+
+            //console.log("Orphan Data!")
+            var orpMD =
+            orp.length == this.maxHL + 1
+          ? orp
+          : orp.concat(Array(this.maxHL + 1 - orp.length).fill('-'))
+            //console.log(orpMD)
+            this.mdata.push(orpMD)
+          }
+        }
+
+        for (var i = 0; i < connlen; i++) {
+          var conMD =
+          connrows[i].length == this.maxHL
+        ? connrows[i]
+        : connrows[i].concat(
+          Array(this.maxHL - connrows[i].length).fill('-')
+        )
+          this.mdata.push(['conn.log'].concat(conMD))
+          var connuid = connrows[i][1] //Hardcoded uid position, can be calculated from header
+          // Find sub rows in all files
+          for (var subfile in this.brologdata.files) {
+            //console.log(subfile)
+            if (subfile == 'conn.log') {
+              continue
+            }
+            // Go through rows and add the ones needed
+            var sublen = this.brologdata.files[subfile].rows.length
+            var subrows = this.brologdata.files[subfile].rows
+            for (var j = 0; j < sublen; j++) {
+              if (subrows[j][1] == connuid) {
+                var subMD =
+                subrows[j].length == this.maxHL
+              ? subrows[j]
+              : subrows[j].concat(
+                Array(this.maxHL - subrows[j].length).fill('-')
+              )
+                //Hardcoded uid position, can be calculated from subheader
+                this.mdata.push([subfile].concat(subMD))
+                //this.mdata.push([subfile].concat(subrows[j]))
+              }
+            }
+          }
+          // Merge orphans in if any exists under this conn uid
+          if (connuid in orphanmergelist) {
+            for (
+              var orphanindex = 0;
+              orphanindex < orphanmergelist[connuid].length;
+              orphanindex++
+            ) {
+              //console.log(orphanmergelist[connuid][orphanindex])
+              this.mdata.push(orphanmergelist[connuid][orphanindex])
+            }
+          }
+        }
+        if (this.mdata.length > 0 && this.cursorY > this.mdata.length - 1) {
+          this.cursorY = this.mdata.length - 1
+        }
+        //console.log(this.mdata)
+        this.updateActiveHeader()
+      },
+      onHeaderResize(event) {
+        this.divsize = event.clientWidth
+        var H = event.id.substr(1, event.id.indexOf('C') - 1)
+        var C = event.id.substr(event.id.indexOf('C') + 1)
+        /*       console.log(H)
+           console.log(C)
+         */
+        //this.divsizeTC[H][C] = event.clientWidth
+        this.divsizeTC[H].splice(C, 1, event.clientWidth)
+        /*       console.log(this.divsizeTC)
+         */
+        //console.log('Saving divsize...')
+        authservice.saveDivsize(this.divsizeTC)
+      },
+      updateActiveHeader() {
+        //console.log('updating active header')
+        if (this.mdata && this.mdata.length - 1 > this.cursorY) {
+          this.currentindex = this.filesidlist[this.mdata[this.cursorY][0]]
+        }
+        //console.log(this.currentindex)
+      },
+      onSearchEnter() {
+        //console.log('Search field enter')
+        this.search(1)
+        this.$refs.searchfieldref.blur()
+      },
+      search(searchdirection) {
+        // search from cursorY, cursorX in searchdirection for searchvalue
+        //console.log('Search()...')
+        var nextX = this.cursorX + searchdirection
+        var nextY = this.cursorY
+        var found = false
+        while (nextY < this.mdata.length && nextY >= 0 && !found) {
+          while (nextX < this.mdata[nextY].length && nextX >= 0 && !found) {
+            if (this.mdata[nextY][nextX] == this.searchvalue) {
+              found = true
+            }
+            if (!found) nextX = nextX + searchdirection
+          }
+          if (!found) {
+            nextY = nextY + searchdirection
+            if (searchdirection == 1) {
+              nextX = 0
+            } else {
+              if (nextY < this.mdata.length && nextY >= 0) {
+                nextX = this.mdata[nextY].length - 1
+              } else {
+                nextX = 0
+              }
+            }
+          }
+        }
+        if (found) {
+          //console.log('found true!')
+          authservice.setCursorX(nextX)
+          authservice.setCursorY(nextY)
+          this.cursorX = authservice.getCursorX()
+          this.cursorY = authservice.getCursorY()
+          this.updateActiveHeader()
+        }
+        if (!found) {
+          //console.log('found false...')
+          this.searchfailed = true
+        }
+      },
+      getdata(apply_filter) {
+        if (this.selectedFile) {
+          var filters = null
+          if(apply_filter){
+            filters = this.filters
+            //console.log("filter's is being applied!")
+          }
+          authservice.getBrologWithFilter(this.selectedFile, filters, this.hide_c).then(result => {
+            //console.log('AnNet mounted:')
+            //console.log(result)
+	    var bdata = result.data["bdata"]
+	    var maxH = result.data["maxHL"]
+            //var hh = result.data["headers"]
+            authservice.brologdataraw = bdata /* result.data */
+            this.brologdata = bdata /* result.data */
+	    this.maxHL = maxH
+            this.mergedata()
+          })
+        }
+      },
+      /* applyFilter() {
+         if (this.selectedFile) {
+         authservice
+         .getBrologWithFilter(this.selectedFile, this.filters)
+         .then(result => {
+         //console.log('AnNet applyFilter:')
+         //console.log(result)
+         var bdata = result.data['bdata']
+         var maxH = result.data['maxHL']
+         authservice.brologdataraw = bdata
+         this.brologdata = bdata
+         this.maxHL = maxH
+         this.mergedata()
+         })
+         }
+         },
+         loadDataWithoutFilter() {
+         if (this.selectedFile) {
+         authservice.getBrolog(this.selectedFile).then(result => {
+         //console.log('AnNet mounted:')
+         //console.log(result)
+         var bdata = result.data['bdata']
+         var maxH = result.data['maxHL']
+         authservice.brologdataraw = bdata
+         this.brologdata = bdata
+         this.maxHL = maxH
+         this.mergedata()
+         })
+         }
+         }, */
+      keyDown: function(e) {
+        this.searchfailed = false
+
+        if (e.target.id == 'searchfield') {
+          //console.log('keydown in searchfield - ignoring')
+          //console.log(e)
+          return
+        }
+
+        if (
+          e.target.id == 'fieldfield' ||
+          e.target.id == 'operatorfield' ||
+          e.target.id == 'valuefield' ||
+          e.target.id == 'conditionfield' ||
+          e.target.id == 'subtypefield' ||
+          e.target.id == 'subcountfield'
+        ) {
+          //console.log('keydown in Xfield - ignoring')
+          //console.log(e)
+
+          // if return then applyfilter and unfocus
+
+          return
+        }
+
+        // Key a: apply filter
+        if (e.key == 'a') {
+          //this.applyFilter()
+          this.getdata(true)
+        }
+        // Key A: unapply filter (load data without filter)
+        if (e.key == 'A') {
+          this.getdata(false)
+          //this.loadDataWithoutFilter()
+        }
+
+        // Key t: toggle filter / not filter
+        if (e.key == 't') {
+          this.toggleNotFilter()
+        }
+
+        // Key i: insert simple filter
+        if (e.key == 'i') {
+          this.addfiltertofilterlist(false)
+        }
+        // Key I: overwrite with simple filter
+        if (e.key == 'I') {
+          this.addfiltertofilterlist(true)
+        }
+        // Key u: overwrite with and filter
+        if (e.key == 'u') {
+          this.addfiltertofilterlist(true, 'and')
+        }
+        // Key U: overwrite with or filter
+        if (e.key == 'U') {
+          this.addfiltertofilterlist(true, 'or')
+        }
+        // TODO: only allow subcount on toplevel
+        // Key y: overwrite with subcountmin filter
+        if (e.key == 'y') {
+          this.addfiltertofilterlist(true, 'subcountmin')
+        }
+        // Key y: overwrite with subcountmin filter
+        if (e.key == 'Y') {
+          this.addfiltertofilterlist(true, 'subcountmax')
+        }
+
+        // Keys o and p: navigate right and left in the filterlist
+        if (e.key == 'o') {
+          if (this.filtercursordetail > 0) {
+            this.filtercursordetail = this.filtercursordetail - 1
+          } else if (this.filtercursortop > 0) {
+            this.filtercursortop = this.filtercursortop - 1
+            this.filtercursordetail = this.calculatecurrentfilterlength() - 1
+          }
+        }
+        if (e.key == 'p') {
+          if (this.filtercursordetail < this.calculatecurrentfilterlength() - 1) {
+            this.filtercursordetail = this.filtercursordetail + 1
+          } else if (this.filtercursortop < this.filters.length - 1) {
+            this.filtercursortop = this.filtercursortop + 1
+            this.filtercursordetail = 0
+          }
+        }
+
+        // Filter keys
+        if (e.key == 'F') {
+          e.preventDefault()
+          this.addtoplevelfilter(this.filtercursortop)
+        }
+
+        // Search keys
+        if (e.key == 'n') {
+          if (this.searchvalue == '') {
+            e.preventDefault()
+            this.$refs.searchfieldref.focus()
+          } else {
+            this.search(1)
+          }
+        }
+        if (e.key == 'N') {
+          if (this.searchvalue == '') {
+            e.preventDefault()
+            this.$refs.searchfieldref.focus()
+          } else {
+            this.search(-1)
+          }
+        }
+
+        if (
+          e.key == 'ArrowDown' ||
+          e.key == 'ArrowUp' ||
+          e.key == 'ArrowLeft' ||
+          e.key == 'ArrowRight' ||
+          e.key == 'PageDown' ||
+          e.key == 'PageUp'
+        ) {
+          if (e.key == 'PageDown') {
+            this.cursorY < this.mdata.length - this.swsize * 2
+          ? (this.cursorY = this.cursorY + this.swsize * 2)
+          : (this.cursorY = this.mdata.length - 1)
+          }
+          if (e.key == 'PageUp') {
+            this.cursorY = this.cursorY - this.swsize * 2
+            if (this.cursorY < 0) this.cursorY = 0
+          }
+          if (e.key == 'ArrowDown') {
+            this.cursorY < this.mdata.length - 1
+          ? (this.cursorY = this.cursorY + 1)
+          : true
+          }
+          if (e.key == 'ArrowUp') {
+            if (this.cursorY > 0) this.cursorY = this.cursorY - 1
+          }
+          if (e.key == 'ArrowRight') {
+            this.cursorX < this.maxHL ? this.cursorX++ : true
+          }
+          if (e.key == 'ArrowLeft') {
+            //console.log(this.cursorX)
+            if (this.cursorX > 0) this.cursorX = this.cursorX - 1
+          }
+          authservice.setCursorX(this.cursorX)
+          authservice.setCursorY(this.cursorY)
+          e.preventDefault()
+          if (
+            e.key == 'ArrowDown' ||
+            e.key == 'ArrowUp' ||
+            e.key == 'PageDown' ||
+            e.key == 'PageUp'
+          ) {
+            this.updateActiveHeader()
+          }
+          if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
+            this.scrollHorizontal()
+          }
+        }
+      }
+    },
+    mounted() {
+      this.selectedFile = authservice.getSelectedFile()
+      this.defsel = { text: this.selectedFile, value: this.selectedFile }
+      authservice.getBrologs().then(result => {
+        var ff = [{ text: '-- No File --', value: 'no-file' }]
+        result.data.brologs.forEach(element => {
+          ff.push({ text: element, value: element })
+        })
+        this.filelist = ff
+
+        /* this.filelist = ['-- No file --'].concat(result.data.brologs),
+           ff = ['-- No file --'].concat(result.data.brologs), */
+        /* //console.log(ff) */
+      })
+      this.cursorX = authservice.getCursorX()
+      this.cursorY = authservice.getCursorY()
+      /*this.selectedFile = authservice.getSelectedFile()*/
+      this.getdata(false)
+      //this.loadDataWithoutFilter()
+      window.addEventListener('keydown', this.keyDown)
+      this.updateActiveHeader()
+      this.ds = authservice.getDivsize()
+      if (this.ds) {
+        this.divsizeTC = this.ds
+      }
+    },
+    destroyed() {
+      window.removeEventListener('keydown', this.keyDown)
+    }
+  }
+</script>
+
+<style></style>

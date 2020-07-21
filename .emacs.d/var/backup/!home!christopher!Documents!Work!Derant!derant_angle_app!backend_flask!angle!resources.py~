@@ -1,0 +1,353 @@
+from flask_restful import Resource, reqparse
+from angle.models import UserModel, RevokedTokenModel
+from flask_jwt_extended import (create_access_token, create_refresh_token, jwt_required, jwt_refresh_token_required, get_jwt_identity, get_raw_jwt)
+from flask import request
+import json
+import werkzeug
+import uuid
+import os
+import re
+import time
+import csv
+import numpy as np
+from angle.libpnffilter import Pnffilter
+from angle import app
+
+storage = app.config['UPLOAD_FOLDER']
+csv_folder = app.config['CSV_FOLDER']
+
+## for loading helper page information
+def get_tips(fileName):
+    res = []
+    with open(fileName, 'r') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter='|')
+        count = 0
+        for row in csv_reader:
+            res.append(row)
+        csv_file.close()
+    return res
+
+def getMaxL(objs):
+    vl = [len(v["header"]) for v in objs.values()]
+    return max(vl)
+
+def hideCol(objs, hideC):
+    cut_version = objs['files']
+    hdL = []
+    for key, val in objs['files'].items():
+        fc = []
+        hds = val['header']
+        print("current key:", key)
+        print("the header:", hds)
+        if key in hideC :
+            cut_h = val["header"].copy()
+            cut_t = val["types"].copy()
+            cut_r = val["rows"].copy()
+            for idx, item in enumerate(hds):
+                active_b = False
+                print("cutted_h", cut_h)
+                print("current head:", hds)
+                print("item:", item)
+                print("idx:", idx)
+                if item in hideC[key]:
+                    active_b = True
+                    i = cut_h.index(item)
+                    print("index of item:", i)
+                    cut_h.pop(i)
+                    cut_t.pop(i)
+                    cut_r = (np.delete(cut_r, i ,1)).tolist()
+                fc.append({'file_h': key, 'head_n': item, 'index': idx,'is_set': active_b})
+            cut_version[key] = {'header': cut_h, "types": cut_t, "rows": cut_r}
+        else:
+            for idx, item in enumerate(hds):
+                active_b = False
+                fc.append({'file_h': key, 'head_n': item, 'index': idx,'is_set': active_b})
+        hdL.extend(fc)
+    objs['files'] = cut_version
+    #print("this is the cut_verison:", cut_version)
+    return objs, hdL
+        #print("this is the value:", val)
+
+parser = reqparse.RequestParser()
+parser.add_argument('username', help = 'This field cannot be blank', required = True)
+parser.add_argument('password', help = 'This field cannot be blank', required = True)
+
+filterparser = reqparse.RequestParser()
+filterparser.add_argument('filter', help = 'This field cannot be blank', required = True)
+
+filterclassparser = reqparse.RequestParser()
+filterclassparser.add_argument('filter', help = 'This field cannot be blank', required = True)
+
+class UserRegistration(Resource):
+    def post(self):
+        data = parser.parse_args()
+
+        if UserModel.find_by_username(data['username']):
+            return {'message': 'User {} already exists'.format(data['username'])}, 500
+
+        new_user = UserModel(
+            username = data['username'],
+            password = UserModel.generate_hash(data['password'])
+        )
+
+        try:
+            new_user.save_to_db()
+            access_token = create_access_token(identity = data['username'])
+            refresh_token = create_refresh_token(identity = data['username'])
+            return {
+                'message': 'User {} was created'.format(data['username']),
+                'access_token': access_token,
+                'refresh_token': refresh_token
+            }
+        except:
+            return {'message': 'Something went wrong'}, 500
+
+
+class UserLogin(Resource):
+    def post(self):
+        data = parser.parse_args()
+        current_user = UserModel.find_by_username(data['username'])
+
+        # TODO: Check for XSS
+        # if not current_user:
+        #     return {'message': 'User {} doesn\'t exist'.format(data['username'])}, 500
+
+        if current_user and UserModel.verify_hash(data['password'], current_user.password):
+            access_token = create_access_token(identity = data['username'])
+            refresh_token = create_refresh_token(identity = data['username'])
+            return {
+                'message': 'Logged in as {}'.format(current_user.username),
+                'user_name': format(current_user.username),
+                'access_token': access_token,
+                'refresh_token': refresh_token
+            }
+        else:
+            return {'message': 'Wrong credentials'}, 500
+
+
+class UserLogoutAccess(Resource):
+    @jwt_required
+    def post(self):
+        jti = get_raw_jwt()['jti']
+        try:
+            revoked_token = RevokedTokenModel(jti = jti)
+            revoked_token.add()
+            return {'message': 'Access token has been revoked'}
+        except:
+            return {'message': 'Something went wrong'}, 500
+
+
+class UserLogoutRefresh(Resource):
+    @jwt_refresh_token_required
+    def post(self):
+        jti = get_raw_jwt()['jti']
+        try:
+            revoked_token = RevokedTokenModel(jti = jti)
+            revoked_token.add()
+            return {'message': 'Refresh token has been revoked'}
+        except:
+            return {'message': 'Something went wrong'}, 500
+
+
+class TokenRefresh(Resource):
+    @jwt_refresh_token_required
+    def post(self):
+        current_user = get_jwt_identity()
+        access_token = create_access_token(identity = current_user)
+        return {'access_token': access_token}
+
+
+class AllUsers(Resource):
+    def get(self):
+        return UserModel.return_all()
+
+    def delete(self):
+        return UserModel.delete_all()
+
+
+class SecretResource(Resource):
+    @jwt_required
+    def get(self):
+        return {
+            'answer': 42
+        }
+
+class JWTTestResource(Resource):
+    @jwt_required
+    def get(self):
+        return {
+            'answer': 42,
+            'ts': time.time()
+        }
+
+class ConnLog(Resource):
+    def __init__(self):
+        print("initializing connlog")
+        with open("sample_data.json", "r") as f:
+            self.data=json.loads(f.read())['files']['conn.log']
+
+    def applyfilter(self, filter, data):
+        # The filter is a composite filter
+        if 'condition' in filter:
+            cond = filter['condition']
+            if cond == 'and':
+                result = True
+                for subfilt in filter['rules']:
+                    result = result and self.applyfilter(subfilt, data)
+                return result
+            elif cond == 'or':
+                result = False
+                for subfilt in filter['rules']:
+                    result = result or self.applyfilter(subfilt, data)
+                return result
+            else:
+                print("Warning: unimplemented condition.")
+                return False
+        # The filter is a simple filter
+        elif 'field' in filter:
+            if filter['operator'] == '=':
+                return (data[filter['field']] == filter['value'])
+            elif filter['operator'] == '!=':
+                return (data[filter['field']] != filter['value'])
+            else:
+                print("Warning: unimplemented operator.")
+                return False
+        # Unknown filter
+        else:
+            print("Warning: unknown filter type.")
+            return False
+
+    @jwt_required
+    def post(self):
+        fp = filterparser.parse_args()
+        filter = json.loads(fp['filter'])
+
+        # Debug
+        print(filter)
+
+        d = dict(self.data)
+
+        res = []
+        for r in d['rows']:
+            z = dict(zip(d['header'],r))
+            if self.applyfilter(filter, z):
+                res.append(r)
+        d['rows'] = res
+
+        return d
+
+    @jwt_required
+    def get(self):
+        return self.data
+
+
+class UploadPcap(Resource):
+    @jwt_required
+    def post(self):
+        parse = reqparse.RequestParser()
+        parse.add_argument('file', type=werkzeug.datastructures.FileStorage, location='files')
+        args = parse.parse_args()
+        pcapFile = args['file']
+        current_user = get_jwt_identity()
+        fileuuid = uuid.uuid4()
+        # TODO: Check current_user var for bad chars. Perhaps have a uuid per user instead.
+        if not os.path.isdir(storage+"pcaps/" + current_user):
+            os.makedirs(storage+"pcaps/" + current_user)
+        pcapFile.save(storage+"pcaps/" + current_user + "/" + str(fileuuid) + ".pcap")
+
+class Pcap_unpro(Resource):
+    @jwt_required
+    def get(self):
+        current_user = get_jwt_identity()
+        pcap_path = storage+"pcaps/"+current_user
+        logs = []
+        if (os.path.exists(pcap_path)):
+            logs = os.listdir(pcap_path)
+        return { "pcap_wait": logs }
+
+class BroLogs(Resource):
+    @jwt_required
+    def get(self):
+        current_user = get_jwt_identity()
+        brolog_path = storage+"brologs/"+current_user
+        logs = []
+        if (os.path.exists(brolog_path)):
+            logs = os.listdir(brolog_path)
+        # Check for only pcaps
+        return { "brologs": logs }
+
+
+class BroLog(Resource):
+    @jwt_required
+    def get(self, brologuuid):
+        current_user = get_jwt_identity()
+        if brologuuid.endswith(".json") and brologuuid!=".json":
+            brologuuid = brologuuid[:-5]
+        if not bool(re.fullmatch(r'[a-zA-Z0-9-]+', brologuuid)):
+            return {"Error":"Bad brologuuid"}
+        with open(storage+"brologs/" + current_user + "/" + brologuuid + ".json", "r") as f:
+            j = json.loads(f.read())
+        #return j
+        maxHL = getMaxL(j["files"])
+        #hideCol(j["files"])
+        all_args = request.args.get("hideC")
+        print("this is the aargs:",all_args)
+        #print("this is maxL:", maxHL)
+        #print("this is the files:", j["files"])
+        return {"bdata":j, "maxHL": maxHL}
+
+    @jwt_required
+    def post(self, brologuuid):
+        current_user = get_jwt_identity()
+
+        getPars = request.get_json()
+        fp    = json.loads(getPars["filter"])
+        hideC = json.loads(getPars["hideC"])
+
+
+        print("this is the filter:", fp)
+        print("this is the type:", type(fp))
+        print("this is the hide C:", hideC)
+        print("this is the type:", type(hideC))
+        #jfilter = json.loads(fp)
+        # fp = filterclassparser.parse_args()
+        # print(fp)
+        # #filter = json.loads(fp['filter'])
+        # filter = fp['filter']
+        # print(filter)
+        # print(type(filter))
+        # jfilter = json.loads(filter)
+
+        # Read data
+        if brologuuid.endswith(".json") and brologuuid!=".json":
+            brologuuid = brologuuid[:-5]
+        if not bool(re.fullmatch(r'[a-zA-Z0-9-]+', brologuuid)):
+            return {"Error":"Bad brologuuid"}
+        j=''
+        with open(storage+"brologs/" + current_user + "/" + brologuuid + ".json", "r") as f:
+            j = json.loads(f.read())
+
+        resdata = j
+        # Apply filter to data
+
+        if(fp is not None ):
+            if brologuuid.endswith(".json") and brologuuid!=".json":
+                brologuuid = brologuuid[:-5]
+            if not bool(re.fullmatch(r'[a-zA-Z0-9-]+', brologuuid)):
+                return {"Error":"Bad brologuuid"}
+
+            pnffilter = Pnffilter()
+            beforefiltering = time.time()
+            resdata = pnffilter.filterlistdata(fp, j)
+            afterfiltering = time.time()
+            print("Filter time: ", str(afterfiltering - beforefiltering))
+
+        altData, heads = hideCol(resdata, hideC)
+        maxHL = getMaxL(resdata["files"])
+        return {"bdata":altData, "maxHL": maxHL, "headers": heads}
+
+class GetHelp(Resource):
+    @jwt_required
+    def get(self):
+        tips = get_tips("csv/helpPage.csv")
+        return { "tips": tips }

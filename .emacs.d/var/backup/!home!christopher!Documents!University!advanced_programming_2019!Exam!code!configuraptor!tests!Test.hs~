@@ -1,0 +1,142 @@
+-- Rudimentary test suite. Feel free to replace anything.
+
+import Absyn
+import Parser
+import Elaborator
+import Solver
+
+import Test.Tasty
+import Test.Tasty.HUnit
+import qualified Data.Text.Lazy.IO as Txt
+
+main :: IO ()
+main = defaultMain $ localOption (mkTimeout 1000000) tests
+
+toN a = (RSRes a)
+toI i a = (RSNum i a)
+toA x y = (RSAnd x y)
+toR x y = (RSOr x y)
+toP x = (CKProvides, x)
+toReq x = (CKRequires, x)
+toUse x = (CKUses, x)
+
+tests = testGroup "Unit tests" [parserTest, elaboratorTest]
+
+parserTest = testGroup "Parser tests"
+  [testCase "Simple Without Comments" $ parseString dbt1 @?= dbi1,
+   testCase "Simple With Comments" $ parseString dbt2 @?= dbi2,
+   testCase "Simple Left associative (,)" $ parseString dbt3 @?= dbi3,
+   testCase "Simple Left associative (|)" $ parseString dbt4 @?= dbi4,
+   testCase "Simple Precedence" $ parseString dbt5 @?= dbi5,
+   testCase "Multiple resources" $ parseString dbt6 @?= dbi6,
+   testCase "Multiple components" $ parseString dbt7 @?= dbi7,
+   testCase "Multiple clauses" $ parseString dbt8 @?= dbi8,
+   testCase "Mixed component/resource order" $ parseString dbt9 @?= dbi9,
+   testCase "Complex Without Comments" $ parseString dbt10 @?= dbi10,
+   testCase "Get error on name > 32 char" $ parseString dbt11 @?= dbi11
+  ]
+  where
+    dbt1 = "resource r. component c: provides r."
+    dbi1 = Right (["r"], [IC "c" [(CKProvides, RSRes "r")]])
+    dbt2 = "resource r.{heyosdfs} component{sdfsf}c: provides{fsdfd{df}sf} r."
+    dbi2 = Right (["r"], [IC "c" [(CKProvides, RSRes "r")]])
+    dbt3 = "resource r. component c: provides a, 3 b, 4 5 c."
+    dbi3 = Right (["r"], [IC "c" [toP (toA (toA (toN "a") (toI 3 (toN "b")))
+                                 (toI 4 (toI 5 (toN "c")))) ]])
+    dbt4 = "resource r. component c: provides a| 3 b| 4 5 c."
+    dbi4 = Right (["r"], [IC "c" [toP (toR (toR (toN "a") (toI 3 (toN "b")))
+                                 (toI 4 (toI 5 (toN "c")))) ]])
+    dbt5 = "resource r. component c: provides a | 4 b, c."
+    dbi5 = Right (["r"], [IC "c" [toP (toR (toN "a") (toA (toI 4 (toN "b")) (toN "c")))]])
+    dbt6 = "resource r. resource 3d-d, sdf2-3d."
+    dbi6 = Right (["r", "3d-d", "sdf2-3d"], [])
+    dbt7 = "component a: provides 9 a. component b: provides b."
+    dbi7 = Right ([], [IC "a" [toP (toI 9 (toN "a"))],
+                       IC "b" [toP (toN "b")]])
+    dbt8 = "component a: requires 9 d; uses v; provides d."
+    dbi8 = Right ([], [IC "a" [toReq (toI 9 (toN "d")),
+                         toUse (toN "v"),
+                         toP (toN "d")]])
+    dbt9 = "component a: requires 9 d. resource 34d-f. resource d4. component d: requires d."
+    dbi9 = Right (["34d-f", "d4"], [IC "a" [toReq (toI 9 (toN "d"))],
+                              IC "d" [toReq (toN "d")]])
+    dbt10 = "component a: requires 9 d; uses v. resource r, d. component c: provides a; uses 9 b | c."
+    dbi10 = Right (["r", "d"], [IC "a" [toReq (toI 9 (toN "d")),
+                                  toUse (toN "v")],
+                         IC "c" [toP (toN "a"),
+                                 toUse (toR (toI 9 (toN "b")) (toN "c"))]])
+    dbt11 = "resource 123456789aaaaaaaaaaaaaaaaaaaaaaaa. component c: provides r."
+    dbi11 = Left ("Parsing error, nothing was parsed")
+
+toRP rn i = ((R rn), i)
+
+
+elaboratorTest = testGroup "Elaborator tests"
+  [testCase "Simple" $ elaborate dbt1 @?= dbi1,
+   testCase "Simple 2" $ elaborate dbt2 @?= dbi2,
+   testCase "Usb-hub example" $ elaborate dbt3 @?= dbi3,
+   testCase "Component same name as resource - err" $ elaborate dbt4 @?= dbi4,
+   testCase "resource not existing - err" $ elaborate dbt5 @?= dbi5,
+   testCase "resource different capitalization" $ elaborate dbt6 @?= dbi6,
+   testCase "resource declared twice - err" $ elaborate dbt7 @?= dbi7,
+   testCase "resource declared twice dif cap - err" $ elaborate dbt8 @?= dbi8,
+   testCase "check |" $ elaborate dbt9 @?= dbi9,
+   testCase "check double |" $ elaborate dbt10 @?= dbi10,
+   testCase "check component name not exact match - err" $ elaborate dbt11 @?= dbi11
+  ]
+  where
+    dbt1 = (["r"], [IC "c" [(CKProvides, RSRes "r")]])
+    dbi1 = Right ([R "r"], [("c", [(R "r", (1,0))])])
+    dbt2 = (["r1", "r2", "r3"], [IC "c" [toP (toA (toN "r2") (toA (toI 5 (toN "r1")) (toN "r3"))),
+                                         toUse (toI 2 (toN "r1")),
+                                         toReq (toA (toI 4 (toN "r3")) (toI 7 (toN "r1"))),
+                                         toUse (toI 1 (toN "r2"))]])
+    dbi2 = Right ([(R "r1"), (R "r2"), (R "r3")], [("c",  [toRP "r1" (3,7),
+                                         toRP "r3" (1,4)])])
+    dbt3 = (["usb-H"], [IC "c" [toP (toI 4 (toN "usb-H")),
+                                toUse (toN "usb-H")]])
+    dbi3 = Right ([(R "usb-H")], [("c",  [toRP "usb-H" (4,1)])])
+    dbt4 = (["r"], [IC "r" [(CKProvides, RSRes "r")]])
+    dbi4 = Left ("Component has same name as resource")
+    dbt5 = (["r"], [IC "c" [(CKProvides, RSRes "rd")]])
+    dbi5 = Left ("Resource not found:rd")
+    dbt6 = (["usb-Hub4"], [IC "c" [(CKProvides, RSRes "uSb-hUb4")]])
+    dbi6 = Right ([R "usb-Hub4"], [("c", [(R "usb-Hub4", (1,0))])])
+    dbt7 = (["r1", "r1"], [IC "c" [(CKProvides, RSRes "uSb-hUb4")]])
+    dbi7 = Left ("Resource declard twice: r1")
+    dbt8 = (["r1", "R1"], [IC "c" [(CKProvides, RSRes "uSb-hUb4")]])
+    dbi8 = Left ("Resource declard twice: r1")
+    dbt9 = (["r", "c"], [IC "com" [toP (toR (toN "r") (toN "c"))]])
+    dbi9 = Right ([R "#1", R "c",R "r"], [("#2", [(R "#1", (-1,0)),
+                                            (R "r", (1,0))]),
+                                    ("#3", [(R "#1", (-1,0)),
+                                            (R "c", (1,0))]),
+                                    ("com", [(R "#1", (1,0))])])
+    dbt10 = (["r", "c", "q"], [IC "com" [toP (toR (toR (toN "r") (toN "c") ) (toN "q"))]])
+    dbi10 = Right ([R "#1", R "#4", R "c",R "q", R "r"], [("#2", [(R "#1", (-1,0)),
+                                                                  (R "r", (1,0))]),
+                                                          ("#3", [(R "#1", (-1,0)),
+                                                                  (R "c", (1,0))]),
+                                                          ("#5", [(R "#1", (1,0)),
+                                                                  (R "#4", (-1,0))]),
+                                                          ("#6", [(R "#4", (-1,0)),
+                                                                  (R "q", (1,0))]),
+                                                          ("com", [(R "#4", (1,0))])])
+    dbt11 = (["r"], [IC "Foo" [(CKProvides, RSRes "r")],
+                    IC "foo" [(CKProvides, RSRes "r")]])
+    dbi11 = Left $ "component not matching exactly with: Foo"
+
+-- tests = testGroup "Minimal tests" [
+--   testCase "parser" $
+--     parseString dbt @?= Right dbi,
+--   testCase "elaborator" $
+--     elaborate dbi @?= Right dbf,
+--   testCase "solver" $
+--     solve dbf goal 3 @?= Right sol
+--   ]
+--   where
+--     dbt = "resource r. component c: provides r."
+--     dbi = (["r"], [IC "c" [(CKProvides, RSRes "r")]])
+--     dbf = ([R "r"], [("c", [(R "r", (1,0))])])
+--     goal = [(R "r", (0,1))]
+--     sol = [("c", 1)]

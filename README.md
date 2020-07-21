@@ -7,6 +7,12 @@ Just my *.emacs* lisp file and the *.emacs.d* folder.
 Uses the following packages:
 
 - flycheck-package
+- company
+- company-anaconda
+- page-break-lines
+- smart-comment
+- smartparens
+- all-the-icons
 - cider
 - minions
 - moody
@@ -33,7 +39,6 @@ Uses the following packages:
 - eclim
 - ecb
 - drag-stuff
-- company-jedi
 - c-mode
 - web-mode
 - beacon
@@ -42,3 +47,4 @@ Uses the following packages:
 - prolog-mode
 - nyan-mode
 - linum
+- Markdown-mode

@@ -1,0 +1,90 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from '@/views/Home'
+import Login from '@/views/Login.vue'
+import FilesList from '@/views/FilesList.vue'
+import Register from '@/views/Register.vue'
+import AnalysisNetwork from '@/views/AnalysisNetwork.vue'
+import AnalysisNetworkEditLayout from '@/views/AnalysisNetworkEditLayout.vue'
+// import AnalysisHost from '@/views/AnalysisHost.vue'
+// import AnalysisGSM from '@/views/AnalysisGSM.vue'
+// ximport AnalysisGPS from '@/views/AnalysisGPS.vue'
+import HelpPage from '@/views/HelpPage.vue'
+
+Vue.use(Router)
+
+const logins =
+[
+  {
+    path: '/login',
+    name: 'login',
+    icon: 'mdi-house',
+    component: Login
+  }
+]
+
+const mainRoutes =
+[
+  {
+    path: '/',
+    name: 'Home',
+    icon: 'fas fa-home',
+    component: Home
+  },
+  {
+    path: '/analysis-network',
+    name: 'Analyse Network',
+    icon: 'mdi-house',
+    component: AnalysisNetwork
+  },
+  {
+    path: '/analysis-network-edit-layout',
+    name: 'Edit network layout',
+    icon: 'mdi-house',
+    component: AnalysisNetworkEditLayout
+  },
+  /* {
+     path: '/analysis-host',
+     name: 'analysis-host',
+     icon: 'mdi-house',
+     component: AnalysisHost
+     },
+     {
+     path: '/analysis-gsm',
+     name: 'analysis-gsm',
+     icon: 'mdi-house',
+     component: AnalysisGSM
+     },
+     {
+     path: '/analysis-gps',
+     name: 'analysis-gps',
+     icon: 'mdi-house',
+     component: AnalysisGPS
+     }, */
+  {
+    path: '/files',
+    name: 'Files',
+    icon: 'mdi-house',
+    component: FilesList
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    icon: 'mdi-house',
+    component: Register
+  },
+  {
+    path: '/help',
+    name: 'Help page',
+    icon: 'mdi-house',
+    component: HelpPage
+  }
+]
+
+const routes = mainRoutes.concat(logins);
+
+export default new Router({
+  mainRoutes,
+  logins,
+  routes,
+})
