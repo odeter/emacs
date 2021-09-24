@@ -1,0 +1,123 @@
+from .dbi_creator import create_user
+from flask_restful import Resource, reqparse
+from flask_jwt_extended import get_jwt_identity
+from angle import role_required
+from flask import current_app as app
+from angle.models import UserModel, FirmModel, MailPusherModel, DatePatternModel
+import json
+from datetime import datetime as dt
+
+def sublist(lst1, lst2):
+    return set(lst1) <= set(lst2)
+
+class DatePatterns(Resource):
+    @role_required(["admin"])
+    def get(self):
+        #patterns = app.config['PATTERNS']
+        patterns = DatePatternModel.get_all()
+        return  {'patterns': patterns}, 200
+
+## delete currently only works for one user at a time, weird sqlalchemy error when trying to delete multiple
+
+class DeleteSetting(Resource):
+    @role_required(["admin"])
+    def post(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('users', help = 'This field cannot be blank', required = True)
+        data = parser.parse_args()
+
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+        if not current_user:
+            app.logger.error('user with ID: {0} tried deleting a report setting, without permissions'.format(userID))
+            return {'message': 'User not logged in properly'}, 500
+
+        firm = current_user.firm
+
+        ## check user list
+        users = [int(i) for i in json.loads(data["users"])]
+        user_list = firm.get_user_list()
+
+        if not sublist(user_list, users):
+            app.logger.error('user with ID: {0} tried deleting a report settings for users not part of their firm'.format(userID))
+            return {'message': 'users not part of firm'}, 500
+
+        MailPusherModel.delete_users(users)
+        return {'message': 'Settings were deleted'}, 200
+
+class ReportSettings(Resource):
+    @role_required(["admin"])
+    def post(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('users', help = 'This field cannot be blank', required = True)
+        parser.add_argument('startdate', help = 'This field cannot be blank', required = True)
+        parser.add_argument('repeat', help = 'This field cannot be blank', required = True)
+        data = parser.parse_args()
+
+        userID = get_jwt_identity()
+        users = json.loads(data["users"])
+        start_date = dt.strptime(data["startdate"], "%Y-%m-%d")
+
+        current_user = UserModel.find_by_id(userID)
+        if not current_user:
+            app.logger.error('user with ID: {0} tried creating a report setting, without permissions'.format(userID))
+            return {'message': 'User not logged in properly'}, 500
+
+        firm = current_user.firm
+
+        ## check user list
+
+        user_list = firm.get_user_list()
+
+        if not sublist(users, user_list):
+            app.logger.error('user with ID: {0} tried creating report settings for users not part of their firm'.format(userID))
+            return {'message': 'users not part of firm'}, 500
+
+        ## check repeat value
+        #patterns = list(app.config['PATTERNS'].values())
+        repeat = data["repeat"]
+        #try:
+        #    if not int(repeat) in patterns:
+        #        return {'message': 'Pattern provided not accepted'}, 500
+        #except ValueError:
+        #            return {'message': 'Pattern provided not accepted'}, 500
+
+        for i in users:
+            mail_setting = MailPusherModel.find_by_id(i)
+            if mail_setting:
+                mail_setting.start_date = start_date
+                mail_setting.repeat_id = repeat
+                mail_setting.add_to_db()
+            else:
+                new_setting = MailPusherModel(
+                    start_date = start_date,
+                    user_id = i,
+                    repeat_id = repeat
+                )
+                new_setting.add_to_db()
+
+        try:
+            MailPusherModel.save_to_db()
+            app.logger.info('user: {0} - {1} created new report settings for users: {2}'.format(current_user.name, current_user.id, ','.join([str(i) for i in users])))
+            return {'message': 'report settings was saved'}, 200
+        except:
+            app.logger.error('user: {0} - {1} tried creating new report settings, but could not save to db'.format(current_user.name, current_user.id))
+            return {'message': 'Something went wrong internally'}, 500
+
+    @role_required(["admin"])
+    def get(self):
+
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+
+        settings = MailPusherModel.find_by_firm_id(current_user.firm_id)
+
+        print(settings)
+
+        if settings:
+            setting_list = [[i.id, (i.start_date).strftime("%d/%m/%Y - %H:%M"), (i.last_run).strftime("%d/%m/%Y - %H:%M") if i.last_run else None, i.repeat.name, (i.user.username), i.user_id] for i in settings]
+            print(setting_list)
+            return {'settings': setting_list}, 200
+        else:
+            return {'message': 'No settings found'}, 500

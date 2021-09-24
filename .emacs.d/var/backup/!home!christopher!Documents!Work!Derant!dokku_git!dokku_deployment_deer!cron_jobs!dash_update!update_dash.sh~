@@ -1,0 +1,39 @@
+#!/bin/bash
+# A simple script
+
+source venv/bin/activate
+## get port and login from dokku
+#export EXPORT=`dokku postgres:info angle_db --exposed-ports | sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+#export DATABASE_URL=`dokku postgres:info angle_db --dsn | sed "s/@[a-z -]*:['0-9']*/@localhost:$EXPORT/g"`
+
+#var1=$(tac dash.log | grep -m1 INFO | sed -e 's/\(^.*|\ \)\(.*\)\(\ |.*$\)/\2/')
+#python3 dash_check.py "$var1"
+
+
+
+if [ "$1" == "--local" ];
+then
+    if [ -f "dash.log" ]; then
+        var1=$(tac dash.log | grep -m1 INFO | sed -e 's/\(^.*|\)\(.*\)\(|.*$\)/\2/')
+        python3 dash_check.py "$var1"
+    else
+        echo "does not exists"
+        python3 dash_check.py
+    fi
+else
+    ## get port and login from dokku
+    #export EXPORT=`dokku postgres:info angle_db --exposed-ports | sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+    #export DATABASE_URL=`dokku postgres:info angle_db --dsn | sed "s/@[a-z -]*:['0-9']*/@localhost:$EXPORT/g"`
+
+    while :
+    do
+        if [ -f "dash.log" ]; then
+            var1=$(tac dash.log | grep -m1 INFO | sed -e 's/\(^.*|\)\(.*\)\(|.*$\)/\2/')
+            python3 dash_check.py "$var1"
+        else
+            echo "does not exists"
+            python3 dash_check.py
+        fi
+        sleep 24h
+    done
+fi

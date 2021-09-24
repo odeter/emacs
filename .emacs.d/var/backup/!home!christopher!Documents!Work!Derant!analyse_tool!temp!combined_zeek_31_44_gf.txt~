@@ -1,0 +1,49 @@
+uge 31 - used:
+156.154.130.100 has a bad rep on abuseipdb (Risk)
+14	10.152.50.100	14	50216	64368	udp	3	192.175.48.6	156.154.130.100	53	dns	606	107	10.in-addr.arpa	-Reserved AS-, ZZ	arin	ROOTSERV	156.154.130.100 has a bad rep on abuseipdb (Risk)
+14	10.152.50.100	14	50216	64368	udp	3	192.175.48.6	156.154.130.100	53	dns	606	107	prisoner.iana.org	-Reserved AS-, ZZ	arin	ROOTSERV	156.154.130.100 has a bad rep on abuseipdb (Risk)
+
+uge 37 - off:
+28	185.58.61.165	21	tcp	1	50.31.233.227	2000	64994	50.31.233.227	ftp	9652	369	ShAdDfFa								SERVERCENTRAL, US	arin	SCN-3				ftp to the netherlands?
+
+
+uge 37 - used:
+
+1240	10.151.50.106	1240	55657	61147	tcp	136	65.52.108.90	104.214.150.122	443	ssl	12923193	272491	fe3.delivery.mp.microsoft.com	MICROSOFT-CORP-MSN-AS-BLOCK, US	arin	MICROSOFT-1BLK				Add this and other likely windows update ip to whitelist?
+590	10.151.50.113	590	123	123	udp	1	51.105.208.173	51.105.208.173	123	ntp	28320	48		MICROSOFT-CORP-MSN-AS-BLOCK, US	ripencc	MICROSOFT				has a 24% bad rep on abuseipdb, risk?
+447	10.151.50.120	447	53595	59667	tcp	41	95.166.126.90	104.95.184.15	80	http	299208	33484	au.download.windowsupdate.com	TDC TDC A/S, DK	ripencc	DK-TELEDANMARK-20090115				is this only through the http and not through https? According to windows 10 doc image should be downloaded through this address but with https
+
+uge 38 - used:
+
+1	10.151.50.165	1	49188	49188	tcp	1	37.252.255.206	37.252.255.206	5938	-	790961	790961		AS-ANEXIA ANEXIA Internetdienstleistungs GmbH, AT	ripencc	ANX-NET-3725225519227	Data send to russia? Suspicious
+
+uge 39 - off:
+1	185.58.60.86	63281	tcp	1	40.68.93.145	5671	5671	40.68.93.145	-	2958	2958	HadDAr								MICROSOFT-CORP-MSN-AS-BLOCK, US	arin	MSFT				what service is this?
+
+
+uge 40 - Off:
+lot of data to 194.255.209.132, ok?
+1	185.58.61.164	24788	udp	1	194.255.209.132	53400	53400	194.255.209.132	-	320320	320320	Dd								TELIANET-DENMARK, DK	ripencc	SE-TELIADK-960319
+
+uge 40 - used:
+1	10.151.50.56	1	20	20	tcp	1	104.248.82.118	104.248.82.118	38349	ftp-data	31	31		DIGITALOCEAN-ASN, US	arin	DIGITALOCEAN-104-248-0-0	lot of data to 104.248.82.118? alright?
+
+uge 41 - off:
+95	185.58.60.75	1720	tcp	12	103.145.13.43	14057	63470	92.246.76.251	-	7808713116	1791699503	ShaADG								INFORMTECH-AS, RU	ripencc	RU-INFOTECH-20181015				Lot of data send?!
+
+uge 41 - used:
+2036	10.151.50.230	2036	32778	60980	tcp	7	54.173.64.180	13.33.152.11	443	ssl	1156487	738	us.fluentnetworking.com	AMAZON-AES, US	arin	AMAZON-2011L	What is this service?
+1	10.151.50.56	1	20	20	tcp	1	104.248.82.118	104.248.82.118	64453	ftp-data	1242428	1242428		DIGITALOCEAN-ASN, US	arin	DIGITALOCEAN-104-248-0-0	ftp transfer ok?
+
+uge 42 - used:
+1	10.151.50.206	1	58469	58469	udp	1	81.158.146.121	81.158.146.121	60969	-	5501966	5501966		BT-UK-AS BTnet UK Regional network, GB	ripencc	BT-CENTRAL-PLUS	What is this?
+1	185.58.61.165	1	20	20	tcp	1	94.237.109.202	94.237.109.202	15567	ftp-data	31	31		UPCLOUD, FI	ripencc	UPCLOUD-NL-AMS1-NET	New service? Ftp upload
+
+uge 43 - used:
+1	10.151.50.165	1	49840	49840	tcp	1	37.252.254.179	37.252.254.179	5938	-	422535	422535		AS-ANEXIA ANEXIA Internetdienstleistungs GmbH, AT	ripencc	ANX-NET-3725225416027				Teamviewer connection to russia?
+1145	10.151.50.61	1145	49189	65467	udp	76	8.241.34.250	104.20.21.239	443	ssl	4513962	182019	businessportal-download.al-enterprise.com	LEVEL3, US	arin	LVLT-ORG-8-8			new service?
+17041	10.152.60.101	17041	49152	65533	udp	2063	99.86.249.192	100.24.155.160	443	ssl	282659564	118297524	dw7nrwnn2bkh1.cloudfront.net	AMAZON-02, US	arin	AMAZO-CF			new service? What use
+2	10.152.60.101	2	55823	58271	udp	1	69.26.162.148	69.26.162.148	9000	-	6636416	6632400		13445, US	arin	CS-1711			What service is this?
+
+uge 44 - used:
+14	10.151.50.75	14	51579	65351	tcp	1	217.61.236.123	217.61.236.123	22	ssh	557256	72612		ZITCOM, DK	ripencc	ACL-11909			should ssh ip 217.61.236.123 be whitelisted?

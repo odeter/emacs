@@ -1,0 +1,12 @@
+BEGIN;
+CREATE EXTENSION pg_partman;
+
+-- 
+UPDATE part_config SET infinite_time_partitions = true;
+
+UPDATE partman.part_config
+   SET retention_keep_table = false,
+       retention = '1 month'
+ WHERE parent_table = 'github.events';
+
+COMMIT;

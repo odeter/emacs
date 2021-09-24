@@ -1,0 +1,163 @@
+import os
+import datetime
+from os import environ, path
+from dotenv import load_dotenv
+
+basedir = path.abspath(path.dirname(__file__))
+load_dotenv(path.join(basedir, '.env'))
+
+class Config(object):
+    PROPAGATE_EXCEPTIONS = True
+    #SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    #SQLALCHEMY_DATABASE_URI = 'postgresql://db_master:1234@localhost/angle_db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = 'jA8ufD565zsXZFU6Rs9'
+    #JWT_SECRET_KEY =  'kowmcuitr8s2c97'
+    #JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(seconds=3600) #False # change before deployment
+    JWT_BLACKLIST_ENABLED = True
+    JWT_BLACKLIST_TOKEN_CHECKS = ['access', 'refresh']
+    JWT_COOKIE_CSRF_PROTECT = True
+
+    DISABLE_LOGGING = False
+
+    # keys
+    MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+    DBI_AUTH_U = os.getenv('DBI_AUTH_U')
+    DBI_AUTH_C = os.getenv('DBI_AUTH_C')
+
+
+    APIKEY = os.getenv('APIKEY')
+    API_PATH = '/apicall'
+    CORS_HEADERS = 'Content-Type'
+    CORS_ENABLED = True
+    #REG_KEY = 'PgMboo8HDyV3juygPk44sVjCEZgy4a%5'
+    UPLOAD_FOLDER = 'uploads/'
+    STREAM_FOLDER = 'datastream/'
+    IMAGE_FOLDER = 'static/images'
+    SENSOR_SCRIPT_FOLDER = 'static/sensorInstallScripts'
+    LOG_FILE = 'app.log'
+    SENSOR_TIMELAPS = 120
+    CSV_FOLDER = 'csv/'
+    CORS_ORIGIN_WHITELIST = [
+        'https://bull.derant.com',
+        'http://0.0.0.0:4100',
+        'http://localhost:4100',
+        'http://0.0.0.0:8000',
+        'http://localhost:8000',
+        'http://0.0.0.0:4200',
+        'http://localhost:4200',
+        'http://0.0.0.0:4000',
+        'http://localhost:4000',
+        'http://localhost:8080',
+        'http://0.0.0.0:8080',
+        'http://127.0.0.1:8080',
+        'http://192.168.100.6:8080',
+        'localhost'
+    ]
+
+    #URL_TOKEN_EXPIRES = how long url token lasts in days
+    URL_TOKEN_EXPIRES = 1
+
+    ACCPETED_LOGS = ['conn', 'dns', 'ssl', 'http', 'suricata']
+    PERMISSION_HEAD = ['analyse_tool', 'dashboard', 'register', 'alarm',
+                       'alarm_overview', 'sensor_settings', 'user_overview']
+    PERMISSION_LIST = {'admin':
+                       {'analyse_tool': True, 'dashboard': True,
+                        'register': True, 'alarm': True, 'alarm_overview': True,
+                        'sensor_settings': True, 'user_overview': True},
+                       'op_man':
+                       {'analyse_tool': True, 'dashboard': True,
+                        'register': False, 'alarm': True, 'alarm_overview': True,
+                        'sensor_settings': False, 'user_overview': False},
+                       'it_man':
+                       {'analyse_tool': True, 'dashboard': True,
+                        'register': False, 'alarm': True, 'alarm_overview': True,
+                        'sensor_settings': False, 'user_overview': False},
+                       'it_sec':
+                       {'analyse_tool': True, 'dashboard': True,
+                        'register': False, 'alarm': True, 'alarm_overview': True,
+                        'sensor_settings': False, 'user_overview': False},
+                       'management':
+                       {'analyse_tool': False, 'dashboard': True,
+                        'register': False, 'alarm': False, 'alarm_overview': True,
+                        'sensor_settings': False, 'user_overview': False},
+                        'group_moderator':
+                        {'analyse_tool': False, 'dashboard': False,
+                        'register': False, 'alarm': False, 'alarm_overview': False,
+                        'sensor_settings': False, 'user_overview': False}}
+    SMS_ACTIVE = True
+
+    MAIL_ACTIVE = True
+    #MAIL_SERVER= 'smtp.gmail.com'
+    MAIL_SERVER = 'musk.derant.com'
+    MAIL_PORT = 587
+    MAIL_USERNAME = 'noreply@angle.derant.com'
+    MAIL_DEFAULT_SENDER = MAIL_USERNAME
+    #MAIL_PASSWORD = see sensitive.cfg
+    MAIL_USE_TLS = True
+    MAIL_USE_SSL = False
+    MAIL_SUPPRESS_SEND = False
+    MAIL_DEBUG = False
+
+    SQL_VALID_OPERATORS = ["=", "!=", "<>", ">", "<", ">=", "<=", "LIKE", "SIMILAR TO"]
+    SQL_VALID_CONDITIONS_UNARY =  ["NOT", "MIN", "MAX"]
+    SQL_VALID_CONDITIONS_BINARY =  ["AND", "OR"]
+    SQL_VALID_CONDITIONS =  ["AND", "NOT", "OR", "MIN", "MAX", "COUNT"]
+
+    ### Future conditions:
+    # SQL_VALID = ['IN', 'ANY']
+
+    ## date pattern to be used in report settings
+
+    #PATTERNS = {'Weekly': 1, 'Monthly': 2, 'Quarterly': 3, 'Bianually': 4, 'Yearly': 5}
+
+    ## create and update users in dbi systems
+
+    USE_DBI = True
+    DBI_TEST_ID = 131
+
+    ## Date format strings for frontend
+    DATEFORMAT = "%Y-%m-%d"
+    DATETIMEFORMAT = "%d/%m/%Y - %H:%M:%S"
+
+class ProdConfig(Config):
+    FLASK_ENV = 'production'
+    DEBUG = False
+    TESTING = False
+    JWT_COOKIE_SECURE = True
+    JWT_TOKEN_LOCATION = 'cookies'
+    JWT_CSRF_CHECK_FORM = True
+    JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(seconds=3600)
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    CURRENT_SITE = os.getenv('WEB_URL')
+    CURRENT_IMAGE_SITE = os.getenv('WEB_URL')
+    NOTIFY_USERS = False
+
+
+class DevConfig(Config):
+    FLASK_ENV = 'development'
+    DEBUG = True
+    TESTING = True
+    JWT_COOKIE_SECURE = False
+    JWT_TOKEN_LOCATION = 'cookies'
+    JWT_ACCESS_TOKEN_EXPIRES = False
+    JWT_CSRF_CHECK_FORM = True
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    CURRENT_SITE = 'http://localhost:8080'
+    CURRENT_IMAGE_SITE = 'http://localhost:5000'
+    NOTIFY_USERS = False
+
+class TestConfig(Config):
+    FLASK_ENV = 'development'
+    DEBUG = True
+    TESTING = True
+    JWT_ACCESS_TOKEN_EXPIRES = False
+    JWT_COOKIE_SECURE = False
+    JWT_TOKEN_LOCATION = 'cookies'
+    JWT_ACCESS_TOKEN_EXPIRES = False
+    JWT_CSRF_CHECK_FORM = False
+    JWT_COOKIE_CSRF_PROTECT = False
+    CURRENT_SITE = 'http://localhost:8080'
+    CURRENT_IMAGE_SITE = 'http://localhost:5000'
+    NOTIFY_USERS = False
+    #SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']

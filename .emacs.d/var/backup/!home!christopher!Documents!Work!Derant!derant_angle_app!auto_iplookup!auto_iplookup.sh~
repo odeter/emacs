@@ -1,0 +1,17 @@
+#!/bin/bash
+# A simple script
+
+args=("$@")
+
+if [ "$1" == "-h" ]; then
+    echo "$package - Search for alarms to raise"
+    echo " "
+    echo "$package date_start date_end"
+    exit 1
+elif [ "$1" == '--local' ]; then
+    python3 auto_report.py
+else
+    export EXPORT=`dokku postgres:info angle_db --exposed-ports | sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+    export DATABASE_URL=`dokku postgres:info angle_db --dsn | sed "s/@[a-z -]*:['0-9']*/@localhost:$EXPORT/g"`
+    python3 auto_report.py
+fi

@@ -1,0 +1,30 @@
+from flask_jwt_extended import get_jwt_identity
+from angle.models import db, UserModel
+from flask_restful import Resource, reqparse
+from angle import role_required
+
+class SaveLangToDB(Resource):
+    @jwt_required
+    def post(self):
+        langParser = reqparse.RequestParser()
+        langParser.add_argument('lang')
+        lang = langParser.parse_args()
+
+        # Hardcode possible langs to sanitize user input
+        langs = ["da", "en"]
+
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+        if current_user:
+            if lang['lang'] in langs:
+                current_user.lang = lang['lang']
+                try:
+                    current_user.save_to_db()
+                    return {'message': 'Saved Language'}, 200
+                except:
+                    return {'message': 'Something went wrong'}, 500
+            else:
+                return {'message': 'Language not found'}, 403
+        else:
+            return {'message': 'User not properly set'}, 403

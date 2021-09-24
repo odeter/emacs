@@ -1,0 +1,25 @@
+def test_valid_login_logout(test_client, init_database):
+    """
+    GIVEN a Flask application
+    WHEN the '/login' page is posted to (POST)
+    THEN check the response is valid
+    """
+    response = test_client.post('/login',
+                                data=dict(username='testuser1@gmail.com', password='testPass'),
+                                follow_redirects=True)
+    assert response.status_code == 200
+
+def test_help_page(test_client, init_database):
+    """
+    GIVEN a Flask application
+    WHEN the pages with get is requested (GET)
+    THEN check the response is valid, status 200
+    """
+    response = test_client.get('/getHelp')
+    assert response.status_code == 401
+    response = test_client.post('/login',
+                                data=dict(username='testuser1@gmail.com', password='testPass'),
+                                follow_redirects=True)
+    assert response.status_code == 200
+    response = test_client.get('/getHelp')
+    assert response.status_code == 200

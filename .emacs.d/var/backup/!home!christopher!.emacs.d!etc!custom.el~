@@ -27,16 +27,17 @@
  '(jdee-server-dir "~/myJars")
  '(minimap-minimum-width 20)
  '(minimap-mode t)
+ '(org-agenda-files nil)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa-stable" . "http://stable.melpa.org/packages/")
-     ("melpa" . "http://melpa.org/packages/")
-     ("Elpa" . "http://tromey.com/elpa/"))))
+     ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum highlight-indent-guides no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff company-jedi)))
- '(paradox-github-token t))
+    (dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff)))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

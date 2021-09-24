@@ -1,0 +1,66 @@
+ id |         username          |                                        password                                         | active |          name           |  mobile  | zipcode |          address          | latitude  | longitude | country | base32_hash | last_token |
+    url_token                  | url_token_toc | active_2fa | group_id |            toc             | parent_id | sensor_id | user_id |            api_key             |         name         |      description       |         last_entry         |            toc
+----+---------------------------+-----------------------------------------------------------------------------------------+--------+-------------------------+----------+---------+---------------------------+-----------+-----------+---------+-------------+------------+--------------
+-------------------------------+---------------+------------+----------+----------------------------+-----------+-----------+---------+--------------------------------+----------------------+------------------------+----------------------------+----------------------------
+  3 | hhj@vandcenterdjurs.dk    | $pbkdf2-sha256$29000$Okeodc4Z47z3vjeGsHYuhQ$d/3EMQhk.4v2KvzBwVLKwcjd33tQKv.kbhxzZ60JmYc | t      | Henrik H Jordalen       | 40582870 | 8500    | Teknologivej 2            | 56.419903 | 10.903477 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-06 17:16:24.081729 |           |         1 |       3 | c18fac7e2b62034ed24a839672ef67 | Dualcomm             | Zyxel adm./ SRO server |                            | 2020-07-01 11:13:50.317448
+ 17 | vandvaerk@maarsletvand.dk | $pbkdf2-sha256$29000$hPD.v1cKoVRqTeldqxXCOA$UMD3HHvtoeuZUt4NJbZxkHp8nKR5De9knN62mS.krEU | t      | Willy Tang              | 23499799 | 8320    | Gammel Bedervej 11        |  56.06483 | 10.163433 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-28 00:21:45.211295 |           |        12 |      17 | 6aa233596fe21b12b14638131e75b4 | SamCyber sensor 01   | SamCyber Maarslet      | 2020-11-08 01:32:01.859984 | 2020-09-28 00:22:51.476685
+ 16 | APN@brandogsikring.dk     | $pbkdf2-sha256$29000$UIqxFsJYq1VKqRUixDiHMA$5YtgMJKnrca3fPQRs38FXcoD0TzFqICCxOqtz727Afo | t      | Andreas P. Norstedt     | 50807833 | 2650    | Jernholmen 12             | 55.610797 | 12.489197 | DK      |             |            |
+                               |               | f          |        3 | 2020-09-23 22:44:10.197274 |           |        11 |      16 | 0dfe4859caf159d6d5bb82f0445319 | DBI IOT lab          | Sensor til IOT lab     | 2020-11-08 01:32:02.42605  | 2020-09-23 22:45:38.194825
+  4 | formand@ulstrupvand.dk    | $pbkdf2-sha256$29000$3zuHMAZgrJWydk7pvTcGoA$Xxv6ZBBc49D7kaIcww5AE1YVXexlsUmvCr8YnC6gmuw | t      | Tom Eklundh Larsen      | 23311674 | 8860    | Kærsangervej 15           | 56.387935 |  9.779872 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-06 17:18:43.623683 |           |         6 |       4 | 352b746f2c55eabc9b7ec08dad052f | Datasensor1          | Sensor-kontor          |                            | 2020-07-01 21:21:15.1737
+ 13 | test@test.dk              | $pbkdf2-sha256$29000$UIqxFsJYq1VKqRUixDiHMA$5YtgMJKnrca3fPQRs38FXcoD0TzFqICCxOqtz727Afo | t      | test user               | 123456   | 4572    | Forhåbningsholms Alle 41a |           |           | DK      |             |            |
+                               |               | f          |        2 | 2020-09-10 11:02:41.085009 |           |         9 |      13 | 76055876cf15fdd3a05fd7f7146fcc | test sensor          |                        | 2020-09-10 11:10:41.936614 | 2020-09-10 11:02:58.075503
+  9 | jek@biv.dk                | $pbkdf2-sha256$29000$L6W0VoqRMqb0XovRurf2Hg$7nfGeVCfbiGKTPi3GKNvK0wBTodE8ojq2FdqeIMaJjs | t      | Jens Ejnar Kristensen   | 45902485 | 3460    | Biskop Svanes Vej 16      | 55.846442 | 12.443606 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-06 17:25:06.254025 |           |         8 |       9 | 7aea99156b77c200a699168766dcba | Data sikkerhed       |                        | 2020-11-08 01:32:02.169162 | 2020-09-10 09:17:29.038809
+  7 | hl@grevevand.dk           | $pbkdf2-sha256$29000$Pce4l7IWovTe.39PqZUyRg$MtNYq0ppG0A8YQc/6dJzHlJS34jQbwbnjtV/31goRU0 | t      | Henrik Lydersen         | 25662572 | 2670    | Håndværkerbyen 1          |   55.5889 | 12.292155 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-06 17:23:00.44147  |           |         2 |       7 | 375b23f1710f899fa85134f157ce4a | SRO                  |                        | 2020-11-08 01:30:02.408676 | 2020-07-06 11:32:42.402201
+  6 | ph@aarsvand.dk            | $pbkdf2-sha256$29000$TImxNua8N6aU8l4L4VxrzQ$UGjhhqBuX4lAm17c1pf6hrubBahkuPLK8oE7aYN/35E | t      | Per Havbro              | 20122733 | 9600    | industrivej 44            | 56.810862 |   9.50068 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-06 17:21:51.751914 |           |         3 |       6 | 1bd7b04c181e2858d81d5ab6d890f9 | SRO station industri | SRO Overvaag           | 2020-11-02 19:00:04.132212 | 2020-07-06 13:53:48.728917
+  5 | greve.maugstrup@gmail.com | $pbkdf2-sha256$29000$hDCmlBLivNf6H4NQirG21g$cPGEqg4FZQTWsDLX4UNMKCiuhMSLDP/3U75IkcNXSu4 | t      | Christian Greve Hansen  | 20236630 | 6500    | Haderslevvej 7            | 55.286041 |  9.343724 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-06 17:20:11.62104  |           |         5 |       5 | 0c0f5a126bd3a00ef57683d51b10ee | SRO sensor Maugstrup | SRO sensor Maugstrup   | 2020-11-08 01:10:03.851105 | 2020-07-03 08:40:21.479785
+  3 | hhj@vandcenterdjurs.dk    | $pbkdf2-sha256$29000$Okeodc4Z47z3vjeGsHYuhQ$d/3EMQhk.4v2KvzBwVLKwcjd33tQKv.kbhxzZ60JmYc | t      | Henrik H Jordalen       | 40582870 | 8500    | Teknologivej 2            | 56.419903 | 10.903477 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-06 17:16:24.081729 |           |         4 |       3 | bf06627b9ed6fd94199724ea91461f | TAP                  | SRO MPLS               | 2020-11-08 01:00:23.823037 | 2020-07-01 11:14:29.398138
+ 15 | sparre@wisemind.dk        | $pbkdf2-sha256$29000$q/V.z1mLsVbqXSuFEOI8Zw$Na4FvJssQYY2cJDtAuqfQxc/rrk4EOay27XHF.ke2RI | t      | Mogens Sparre           | 40131826 | 9492    | Aalborgvej 33             | 57.251239 |  9.590418 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-22 22:54:01.274914 |           |        10 |      15 | dbf1122b2bc0e6a093f0ee203ce4b5 | SamCyber sensor 1    | Blokhus sensor 1       | 2020-11-08 01:32:01.833513 | 2020-09-22 22:55:03.618363
+  8 | fm@brobyvand.dk           | $pbkdf2-sha256$29000$s/Z.T0mpNUbovffeO4dQyg$fo6IZ7N7nkZ9mPXr4pCCe.Dp7cNOhzCP3ZYK6JD.pIc | t      | Bent Lollesgaard        | 51795898 | 5672    | Søndervej 19              | 55.227932 | 10.259293 | DK      |             |            |
+                               |               | f          |        1 | 2020-09-06 17:23:59.192229 |           |         7 |       8 | 9f64bb88a1e6cdd919c4ce4d1cad25 | SamCyber sensor 1    | Sensoren fra SamCyber  | 2020-11-08 01:32:02.144766 | 2020-09-04 11:01:02.284264
+ 19 | mna@danskevv.dk           | $pbkdf2-sha256$29000$0Pq/t3aOMUaotRYiZIzx3g$z5aLE1H5gIcLFHUVizxpzhGQQdDPE.9WE7x9zhvm54o | t      | Martin N. Andersen      | 21415794 | 7700    | Nystrupvej 50             |           |           | DK      |             |            |
+                               |               | f          |        1 | 2020-09-29 21:42:43.094041 |           |        13 |      19 | 573a0fabb9fe52ffa5ad70fe201f30 | SamCyber sensor 01   | SamCyber KlitVand      | 2020-11-08 01:32:05.480654 | 2020-09-29 21:43:32.767848
+ 20 | mla@derant.com            | $pbkdf2-sha256$29000$4LwXYswZgxDivNfaO8eYsw$l59yIsJeWtjyCcwMiLWgzSQxBA10mQy40m9UmskZV7c | t      | Michael Lentge Andersen |          |         |                           |           |           | DK      |             |            |
+                               |               | f          |          |                            |           |           |         |                                |                      |                        |                            |
+ 11 | knud@biv.dk               | $pbkdf2-sha256$29000$zPmfcw5BSOldSyklxJhT6g$qKS4AwQ7Mq3L2Cz9foExf2L0TXW2bF2B8/8jliryI2A | t      |                         | 23409491 |         |                           |           |           | DK      |             |            |
+                               |               | f          |        1 | 2020-09-10 09:44:33.102754 |         9 |           |         |                                |                      |                        |                            |
+ 12 | thomas@cv-service.dk      | $pbkdf2-sha256$29000$pxSCEGKsVUrpnbOW8l4LYQ$dtfiAbBGeSUjBGLyQOOGY1/aNHeSklMaS474VHx269c | t      |                         | 28118661 |         |                           |           |           | DK      |             |            |
+                               |               | f          |        1 | 2020-09-10 09:46:11.777031 |         9 |           |         |                                |                      |                        |                            |
+ 10 | post@brobyvand.dk         | $pbkdf2-sha256$29000$iDFGKMV4z5mTkjJmTKnV.g$gWWPoxtxef9u0EDM8s0VA8dj1SfA.HRKxBOLEdOP1eo | t      |                         | 20233935 |         |                           |           |           | DK      |             |            |
+                               |               | f          |        1 | 2020-09-07 13:49:49.500294 |         8 |           |         |                                |                      |                        |                            |
+ 18 | group@test.dk             | $pbkdf2-sha256$29000$7r035jxH6D0HAKAUwljLWQ$F0LouCAffdYyxmDa.2jUtNRE.2nyXVOyZIoDtf8U2OQ | t      | group                   | 12345    | 22      | 22                        | 55.155765 | 11.818448 | DK      |             |            |
+                               |               | f          |        2 | 2020-09-28 14:34:03.526649 |           |           |         |                                |                      |                        |                            |
+  2 | rjh@derant.com            | $pbkdf2-sha256$29000$YozRupcSojSmdI7ROgegVA$elrYqXDLf8zGxMwlgarklYEGwBJpuK.44JicOn4buUU | t      | Rasmus                  |          |         |                           |           |           | DK      |             |            |
+                               |               | f          |          | 2020-09-06 17:04:27.892209 |           |           |         |                                |                      |                        |                            |
+  1 | cmg@derant.com            | $pbkdf2-sha256$29000$J0SIsdb6n7M25vwfA0ColQ$A6nZJzPfYWF4LeilSu0hiz/6wUeaKygONKLUvJlF.kI | t      | Christopher             |          |         |                           |           |           | DK      |             |            | yiRrtqLDMeq3a
+nZkfbTguqZzRuT2M-QXBikUT4YYeIw |    1604053623 | f          |          | 2020-09-06 17:04:27.857709 |           |           |         |                                |                      |                        |                            |
+ 14 | test2@test.dk             | $pbkdf2-sha256$29000$4LwXYswZgxDivNfaO8eYsw$l59yIsJeWtjyCcwMiLWgzSQxBA10mQy40m9UmskZV7c | t      |                         | 11223344 |         |                           |           |           | DK      |             |            |
+                               |               | f          |        2 | 2020-09-10 13:02:17.320512 |        13 |           |         |                                |                      |                        |                            |
+
+
+
+INSERT INTO table_name (name , zipcode , address , latitude , longitude , country , size , group_id)
+VALUES
+    ('Vandcenter Djurs', 8500, ),
+    (value_list_2),
+    ...
+    (value_list_n);
+
+# update firms;
+
+INSERT INTO firms (zipcode, address, latitude, longitude, country, group_id) SELECT zipcode, address, latitude, longitude, country, group_id FROM users left join rolehelper on users.id=rolehelper.user_id where role_id=3;
+
+# update sensor:
+
+UPDATE sensor SET sensor.firm_id = users.firm_id FROM users WHERE sensor.user_id = users.firm_id;
+
+# add new columns for connections:
+ALTER TABLE conn_1300524940364263cd9a ADD COLUMN insert_ts TIMESTAMP DEFAULT NOW();

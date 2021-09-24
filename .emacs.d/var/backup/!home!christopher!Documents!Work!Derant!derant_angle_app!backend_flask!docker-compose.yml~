@@ -1,0 +1,9 @@
+service:
+  angle_db_test:
+    image: derant/angle_db:latest
+    name: angle_db_test
+    environment:
+      - POSTGRES_PASSWORD: testing
+      - POSTGRES_USER: testing
+    ports:
+      - "5434:5432"

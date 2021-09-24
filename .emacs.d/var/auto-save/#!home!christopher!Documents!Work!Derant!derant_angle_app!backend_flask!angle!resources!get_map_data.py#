@@ -1,0 +1,33 @@
+from flask_jwt_extended import get_jwt_identity
+from angle.models import db, UserModel, GroupModel
+from flask_restful import Resource
+from flask import current_app as app
+from angle import role_required
+import json
+
+class GetMapData(Resource):
+    @role_required(["group_moderator"])
+    def get(self):
+        current_ID = get_jwt_identity()
+        current_user = UserModel.find_by_id(current_ID)
+
+        if current_user:
+            firm = current_user.firm
+            group = GroupModel.find_by_id(firm.group_id)
+            firms = group.firms
+            firmNameList = []
+            for i in firms:
+                firmNameList.append(i.name)
+            markers = [([i.latitude, i.longitude], i.name, [j for j in i.get_map_groupings()],
+                        len([j for j in i.get_alarms([0,1,2])]),
+                        [j.status for j in i.get_alarms([0,1,2])]) for i in firms]
+
+            markers_cleaned = [i for i in markers if i[0][0] is not None and i[0][1] is not None]
+            print(markers_cleaned)
+
+            app.logger.info('{0} - {1} retrieved map data'.format(current_user.name, current_user.id))
+            return {'message': 'Markers found', 'group': firmNameList, 'markers': markers_cleaned}, 200
+        else:
+
+            app.logger.error('user with ID: {0} tried retrieving map data, without permissions'.format(current_ID))
+            return {'message': "User not logged in"}, 403

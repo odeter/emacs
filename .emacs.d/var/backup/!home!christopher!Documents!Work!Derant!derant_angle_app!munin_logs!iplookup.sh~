@@ -1,0 +1,19 @@
+#!/bin/bash
+
+case $1 in
+   config)
+        cat <<'EOM'
+graph_title IP Lookup Errors
+graph_vlabel errors
+load.label errors
+EOM
+        exit 0;;
+esac
+
+#LOGFILE="backend_proc_logs/insert.log"
+
+LOGFILE="/home/dokku/p_storage/derant_angle/backend_proc_logs/iplookup.log"
+
+DATE=$(date -d '1 hour ago' "+%Y-%m-%d %H:%M:%S")
+
+printf "errors.value "; awk -F " - " -v date="$DATE" '$2 > date' $LOGFILE | grep -c "ERROR"

@@ -1,0 +1,23 @@
+ id |       username       |                                        password                             
+            | active |    name     |    mobile     | zipcode | address | base32_hash | last_token | url_t
+oken | url_token_toc | active_2fa | group_id |            toc             | parent_id | latitude | longit
+ude | country 
+----+----------------------+-----------------------------------------------------------------------------
+
+  4 | glennor@it-serve.com | $pbkdf2-sha256$29000$F0JISUkJQaiV0vrf2/vfmw$4NCInhT.NdAXvTEp04RvskH/7dGgMV0IxldsYwVpEgo | t      | holder      | holder        | holder  | holder  |             |            |      
+     |               | f          |        5 | 2020-08-30 18:16:59.599054 |           |          |       
+    | 
+  5 | ishaq@it-serve.com   | $pbkdf2-sha256$29000$3bsXYsyZE8L4fy8F4Nz7nw$5hY/87GlsXNN1ImUGt./Ph9UWcY89EKiNYGwciPH83s | t      |             | +971544922040 |         |         |             |            |      
+     |               | f          |        5 | 2020-09-21 12:57:26.342618 |         4 |          |       
+    | 
+
+
+isag@it-serve.com is op_man
+
+
+sensor:
+
+ sensor_id | user_id |            api_key             |   name   |       description       |         last_entry         |            toc             
+-----------+---------+--------------------------------+----------+-------------------------
+ 2 |       4 | 124d2390c64a852a655b088a1179e3 | IT-Serve | Rasberry PI in IT-Serve | 2020-09-21 07:39:25.986575 | 2020-08-30 18:17:35.169911
+

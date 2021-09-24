@@ -1,0 +1,11 @@
+from flask_jwt_extended import jwt_required
+from flask_restful import Resource
+import csv
+
+## for loading helper page information
+
+class GetHelp(Resource):
+    @jwt_required
+    def get(self):
+        tips = get_tips("csv/helpPage.csv")
+        return { "tips": tips }

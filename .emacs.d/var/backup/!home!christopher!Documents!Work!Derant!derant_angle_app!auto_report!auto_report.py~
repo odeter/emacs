@@ -1,0 +1,68 @@
+import json
+import numpy as np
+import os
+import io
+import sys
+import psycopg2
+import requests
+import json
+import logging
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy import create_engine
+from datetime import datetime as dt, date
+from dateutil import relativedelta
+
+logging.basicConfig(filename='auto_report.log', filemode='a', format='%(levelname)s - %(asctime)s - %(message)s', level=logging.INFO)
+
+if __name__== "__main__":
+    args = sys.argv
+    db_url = os.environ['DATABASE_URL']
+    engine = create_engine(db_url)
+    cursor = engine.connect()
+
+
+def to_date(months, days,  today, last_run):
+    ## checks if the report mail is due by calculating the next send date
+    if last_run > today:
+        return None
+
+    nextdate = last_run + relativedelta.relativedelta(months=months, days=days)
+    if nextdate <= today:
+        return nextdate
+    else:
+        return None
+
+def send_mail():
+    return None
+
+
+def gen_report(send_list):
+    firm_id = send_list[0]
+    run_date = send_list[2]
+
+
+
+
+
+
+def report_automail(cursor):
+    # get alle report settings, together with their date parameters
+    query = "SELECT id, start_date, last_run, repeat, user_id, firm_id, username, month, days FROM mail_pusher"\
+        +" LEFT JOIN users ON mail_pusher.user_id = users.id LEFT JOIN date_patterns on mail_pusher.repeat = date_patterns.id"
+    matches = (cursor.execute(query)).fetchall()
+    mail_dict = {}
+    today = date.today()
+    for i in matches:
+        start_date = i['start_date'].strftime("%Y-%m-%d")
+        run_date = to_date(i['month'], i['days'], today, i['last_run'] if i['last_run'] else i['start_date'])
+        if run_date:
+            key = i['firm_id'] + '-' + i['repeat'] + '-' + start_date
+            if key in mail_dict:
+                mail_dict[key][3].append(i['username'])
+            else:
+                data = [i['firm_id'], i['start_date'], run_date, [i['username']]]
+                mail_dict[key] = data
+
+    if mail_dict:
+        for i in mail_dict.keys():
+            gen_report(mail_dict[i])

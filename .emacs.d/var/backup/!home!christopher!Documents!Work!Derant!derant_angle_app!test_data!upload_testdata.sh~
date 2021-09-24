@@ -1,0 +1,13 @@
+#!/bin/bash
+
+args=("$@")
+echo "First->"  ${args[0]}
+echo "Second->" ${args[1]}
+
+cd testdata/
+
+for f in *.gz; do
+    echo ${f}
+    curl -F "username=${args[0]} " -F "apikey=${args[1]}" -F "file=@${f}" https://bull.derant.com:5000/datastream
+    # curl -F "username=${args[0]} " -F "apikey=${args[1]}" -F "file=@${f}" localhost:5000/datastream
+done

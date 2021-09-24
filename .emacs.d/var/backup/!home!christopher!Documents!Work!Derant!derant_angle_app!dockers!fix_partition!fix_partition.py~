@@ -1,0 +1,101 @@
+import os
+import re
+import sys
+import logging
+from sqlalchemy import create_engine
+from datetime import datetime
+from sqlalchemy.exc import SQLAlchemyError
+
+def create_index(cursor, tables):
+    for i in tables:
+        index_ints_q = "CREATE INDEX {table_name}_insertts_index ON {table_name} (insert_ts)".format(table_name=i.table_name)
+        index_sensor_q = "CREATE INDEX {table_name}_sensor_index ON {table_name} (sensor_id)".format(table_name=i.table_name)
+        try:
+            print('Creating insert_ts index:', i.table_name)
+            logging.info('Creating insert_ts index:: {}'.format(i.table_name))
+            cursor.execute(index_ints_q)
+            print('Creating sensor index:', i.table_name)
+            logging.info('Creating insert_ts index:: {}'.format(i.table_name))
+            cursor.execute(index_sensor_q)
+        except SQLAlchemyError as e:
+            error = str(e.__dict__['orig']).replace('\n', ' ')
+            logging.error('SQL error at insert: {}'.format(error))
+            exit('SQL error')
+
+def fix_partition(cursor):
+    tables_q = "SELECT id, table_name FROM dto"
+    tables = (cursor.execute(tables_q)).fetchall()
+    old_tables = []
+
+    print('Creating new tables...')
+
+    for i in tables:
+        # renaming old table
+        rename_q = "alter table {table_name} rename to {table_name}_old".format(table_name=i.table_name)
+        # createing new table
+        copy_q = "create table {table_name} (like {table_name}_old) PARTITION BY RANGE (ts)".format(table_name=i.table_name)
+        # enable auto partition
+        create_pg_q = "SELECT public.create_parent(p_parent_table := 'public.{table_name}', p_control := 'ts', p_type := 'native', p_interval := 'daily', p_start_partition := '2021-02-01')".format(table_name=i.table_name)
+        old_tables.append(i.table_name + '_old')
+
+        try:
+            print('Renaming table:', i.table_name)
+            logging.info('Renaming table: {}'.format(i.table_name))
+            cursor.execute(rename_q)
+            print('Copy table:', i.table_name)
+            logging.info('Copy table: {}'.format(i.table_name))
+            cursor.execute(copy_q)
+            print('Creating pg settings:', i.table_name)
+            logging.info('Creating pg settings: {}'.format(i.table_name))
+            cursor.execute(create_pg_q)
+        except SQLAlchemyError as e:
+            error = str(e.__dict__['orig']).replace('\n', ' ')
+            logging.error('SQL error at insert: {}'.format(error))
+            exit('SQL error')
+
+    # delete old tables
+    delete_q = "drop table {tables}".format(tables=(','.join(old_tables)))
+
+    print('Dropping old tables:', ','.join(old_tables))
+    logging.info('Dropping old tables:: {}'.format(','.join(old_tables)))
+    try:
+        cursor.execute(delete_q)
+    except SQLAlchemyError as e:
+        error = str(e.__dict__['orig']).replace('\n', ' ')
+        logging.error('SQL error at insert: {}'.format(error))
+        exit('SQL error')
+
+    # create index:
+    print('Creating indexes...')
+    create_index(cursor, tables)
+
+# Setup
+#load_dotenv("/app/.env")
+log_path = os.path.join(os.environ.get("BACKEND_PROC_LOG_DIR"), "fix.log")
+os.makedirs(os.path.dirname(log_path), exist_ok=True)
+logging.basicConfig(filename=log_path, filemode='a', format='%(levelname)s - %(asctime)s - %(message)s', level=logging.INFO)
+
+
+if __name__== "__main__":
+    logging.info('STARTED {}'.format(os.path.basename(__file__)))
+
+    # Get database url
+    try:
+        db_url = os.environ.get("DATABASE_URL")
+    except Exception as e:
+        logging.error('Could not get env variables: {}'.format(e))
+
+    # Connect to DB
+    try:
+        engine = create_engine(db_url)
+        cursor = engine.connect()
+    except Exception as e:
+        logging.error('Could not connect to db: {}'.format(e))
+
+    # Get stats and insert into DB
+    try:
+        fix_partition(cursor)
+    except Exception as e:
+        logging.error("Error while getting and inserting stats: {}".format(e))
+
+    logging.info('FINISHED')

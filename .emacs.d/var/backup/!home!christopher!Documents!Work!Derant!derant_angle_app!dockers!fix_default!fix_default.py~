@@ -1,0 +1,72 @@
+import os
+import re
+import sys
+import logging
+from sqlalchemy import create_engine
+from datetime import datetime
+from sqlalchemy.exc import SQLAlchemyError
+
+def fix_default(cursor):
+    tables_q = "SELECT id, table_name FROM dto"
+    tables = (cursor.execute(tables_q)).fetchall()
+    old_tables = []
+
+    print('fixing default tables...')
+
+    for i in tables:
+        # enable auto partition
+        port_defaults = "SELECT public.partition_data_time(p_parent_table := 'public.{table_name}')".format(table_name=i.table_name)
+        # copy data into the new table
+        copy_q = "INSERT INTO {table_name} SELECT * FROM {table_name}_old".format(table_name=i.table_name)
+
+        old_tables.append(i.table_name + '_old')
+
+        try:
+            print('Porting default table:', i.table_name)
+            logging.info('Porting default table: {}'.format(i.table_name))
+            cursor.execute(port_defaults)
+
+            print('Creating new table:', i.table_name)
+            logging.info('Creating new table: {}'.format(i.table_name))
+            cursor.execute(new_table_q)
+            print('Creating pg settings:', i.table_name)
+            logging.info('Creating pg settings: {}'.format(i.table_name))
+            cursor.execute(create_pg_q)
+            print('Copy table:', i.table_name)
+            logging.info('Copy table: {}'.format(i.table_name))
+            cursor.execute(copy_q)
+        except SQLAlchemyError as e:
+            error = str(e.__dict__['orig']).replace('\n', ' ')
+            logging.error('SQL error at insert: {}'.format(error))
+            exit('SQL error')
+
+# Setup
+#load_dotenv("/app/.env")
+log_path = os.path.join(os.environ.get("BACKEND_PROC_LOG_DIR"), "fix.log")
+os.makedirs(os.path.dirname(log_path), exist_ok=True)
+logging.basicConfig(filename=log_path, filemode='a', format='%(levelname)s - %(asctime)s - %(message)s', level=logging.INFO)
+
+
+if __name__== "__main__":
+    logging.info('STARTED {}'.format(os.path.basename(__file__)))
+
+    # Get database url
+    try:
+        db_url = os.environ.get("DATABASE_URL")
+    except Exception as e:
+        logging.error('Could not get env variables: {}'.format(e))
+
+    # Connect to DB
+    try:
+        engine = create_engine(db_url)
+        cursor = engine.connect()
+    except Exception as e:
+        logging.error('Could not connect to db: {}'.format(e))
+
+    # Get stats and insert into DB
+    try:
+        fix_default(cursor)
+    except Exception as e:
+        logging.error("Error while getting and inserting stats: {}".format(e))
+
+    logging.info('FINISHED')

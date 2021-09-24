@@ -1,0 +1,15 @@
+#!/bin/bash
+
+case $1 in
+   config)
+        cat <<'EOM'
+graph_title Insert Errors
+graph_vlabel errors
+load.label errors
+EOM
+        exit 0;;
+esac
+
+DATE=$(date -d '10 hour ago' "+%Y-%m-%d %H:%M:%S")
+
+printf "errors.value "; awk -F " - " -v date="$DATE" '$2 > date' backend_proc_logs/insert.log | grep -c "ERROR"

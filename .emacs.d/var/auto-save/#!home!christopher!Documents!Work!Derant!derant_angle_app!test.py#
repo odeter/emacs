@@ -1,0 +1,33 @@
+ 29 | ssl_1bbb057ea0a2d087586b |          21 | text,text,text,text,text,text,text,boolean,text,int,text,int,text,text,text,boolean,text,text
+,timestamp,text,text       | ts,uid,id_orig_h,id_orig_p,id_resp_h,id_resp_p,esc_version,cipher,curve,server_name,resumed,last_alert,next_pro
+tocol,established,cert_chain_fuids,client_cert_chain_fuids,subject,issuer,client_subject,client_issuer,validation_status | cert_chain_fuids,
+cipher,client_cert_chain_fuids,client_issuer,client_subject,curve,esc_version,established,id_orig_h,id_orig_p,id_resp_h,id_resp_p,issuer,las
+t_alert,next_protocol,resumed,server_name,subject,ts,uid,validation_status | ssl      | 2021-03-25 15:35:54.79041
+ 61 | ssl_b97b7c6d928461eeff2b |          21 | text,text,text,text,text,text,text,boolean,text,bigint,text,bigint,text,text,text,boolean,tex
+t,text,timestamp,text,text | ts,uid,id_orig_h,id_orig_p,id_resp_h,id_resp_p,esc_version,cipher,curve,server_name,resumed,last_alert,next_pro
+tocol,established,cert_chain_fuids,client_cert_chain_fuids,subject,issuer,client_subject,client_issuer,validation_status | cert_chain_fuids,
+cipher,client_cert_chain_fuids,client_issuer,client_subject,curve,esc_version,established,id_orig_h,id_orig_p,id_resp_h,id_resp_p,issuer,las
+t_alert,next_protocol,resumed,server_name,subject,ts,uid,validation_status | ssl      | 2021-06-07 00:10:12.514467
+ 82 | ssl_1728c9a2d282c117b79d |          19 | text,text,text,text,text,boolean,text,bigint,text,bigint,text,text,boolean,text,boolean,text,
+timestamp,text,text        | ts,uid,id_orig_h,id_orig_p,id_resp_h,id_resp_p,esc_version,cipher,curve,server_name,resumed,last_alert,next_pro
+tocol,established,ssl_history,cert_chain_fps,client_cert_chain_fps,sni_matches_cert,validation_status                    | cert_chain_fps,ci
+pher,client_cert_chain_fps,curve,esc_version,established,id_orig_h,id_orig_p,id_resp_h,id_resp_p,last_alert,next_protocol,resumed,server_nam
+e,sni_matches_cert,ssl_history,ts,uid,validation_status                    | ssl      | 2021-08-18 14:10:45.205285
+
+
+
+log_tables = [{log_type:'ssl'}]
+logs_all = {}
+
+
+for i in log_tables:
+        fields = (i.column_order).split(',')
+        nn = [i.table_name, fields, i.log_type, i.id]
+        if i.log_type in logs_all:
+            logs_all[i.log_type]['logs'].append(nn)
+            current_un = logs_all[i.log_type]['unqFields']
+            logs_all[i.log_type]['unqFields'].extend(x for x in fields if x not in current_un)
+        else:
+            logs_all[i.log_type] = {'logs': [], 'unqFields': []}
+            logs_all[i.log_type]['logs'].append(nn)
+            logs_all[i.log_type]['unqFields'] = fields

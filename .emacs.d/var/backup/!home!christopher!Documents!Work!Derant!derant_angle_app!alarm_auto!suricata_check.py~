@@ -1,0 +1,233 @@
+import gzip
+import json
+import pandas as pd
+import numpy as np
+from pandas import json_normalize
+import os
+import io
+import sys
+import psycopg2
+import secrets
+import re
+from sqlalchemy import create_engine
+from collections import OrderedDict
+from datetime import datetime
+
+def sanitize(u_input, keywords_frame):
+    used_headers = ['Log_Type', 'row_serial', 'dto_id', 'leftovers', 'ts_index']
+    key_words_total = keywords_frame + used_headers
+    lower_c = u_input.lower()
+    r_dot = re.sub(r"[.]", "_", lower_c)
+    no_special = re.sub(r"[^a-zA-Z0-9_]", "", r_dot)
+    if no_special in ["timestamp"]:
+        no_special = "ts"
+    if no_special in key_words_total:
+        no_special = "esc_" + no_special #exit("error :: table name contains keyword: '%s'" % no_special)
+    return no_special
+
+def find_ft(input_type):
+    if input_type in ["port", "count", 'Int32']:
+        return "int"
+    elif input_type in ['int64', 'Int64']:
+        return "bigint"
+    elif input_type in ["bool"]:
+        return "boolean"
+    elif input_type in ['ts', 'timestamp', 'flow_start']:
+        return "timestamp"
+    elif "datetime64" in input_type:
+        return "timestamp"
+    else:
+        return "text"
+
+def insert_db(dt_frame, firm_id, table_type, updated_ft, cursor, keywords_frame, sensor_id):
+    field_list = list(updated_ft.keys())
+    field_text = ','.join(field_list)
+    field_sorted = list(updated_ft.keys())
+    field_sorted.sort()
+    fields_ordered_text = ','.join(field_sorted)
+
+    if updated_ft:
+        field_types = ','.join([updated_ft[i] for i in field_sorted])
+        getDT = "SELECT table_name, id FROM dto WHERE column_names=%s AND cols_number=%s AND field_types=%s"
+        result = cursor.execute(getDT, (fields_ordered_text, len(field_list), field_types))
+        row = result.first()
+        if row:
+            commit_table = row[0]
+            table_id = row[1]
+            getDT = "SELECT * FROM dthelper WHERE dt_id=%s AND sensor_id=%s"
+            result = cursor.execute(getDT, (table_id, sensor_id))
+            dt_help = result.first()
+            if not dt_help:
+                cursor.execute("INSERT INTO dthelper (sensor_id, dt_id) VALUES (%s, %s)", (sensor_id, table_id))
+        else:
+            ex_f = True
+            while ex_f:
+                table_name = sanitize(table_type, keywords_frame)+"_"+secrets.token_hex(10)
+                res = cursor.execute("select exists(select * from information_schema.tables where table_name=%s)", (table_name,))
+                ex_f = res.first()[0]
+
+            c_D = ""
+            for i in field_list:
+                c_D = c_D + ", " + i + " " + updated_ft[i]
+
+
+
+            # prepare sql statements
+            columns = "(id SERIAL PRIMARY KEY, sensor_id INTEGER REFERENCES sensor(sensor_id)%s)" % c_D
+            c_table = "CREATE TABLE %s %s" % (table_name, columns)
+            dto_up = "INSERT INTO dto (table_name, cols_number, field_types, column_order, column_names, log_type, toc) VALUES(%s, %s, %s, %s, %s, %s, %s)"
+            #sensor_up = "UPDATE sensor SET last_entry = %s WHERE sensor_id= %s"
+            create_index_ts = "CREATE INDEX %s_ts_index ON %s (ts);" % (table_name, table_name)
+            create_index_sensor = "CREATE INDEX %s_sensor_index ON %s (sensor_id);" % (table_name, table_name)
+
+            #print(create_index)
+            try:
+                dt = datetime.now()
+                cursor.execute(c_table)
+                cursor.execute(create_index_ts)
+                cursor.execute(create_index_sensor)
+                cursor.execute(dto_up, (table_name, len(field_list), field_types, field_text, fields_ordered_text, table_type, dt))
+                #cursor.execute(sensor_up, (dt, sensor_id))
+                table_id = cursor.execute("SELECT id FROM dto WHERE table_name=%s", (table_name, )).fetchone()[0]
+                cursor.execute("INSERT INTO dthelper (sensor_id, dt_id) VALUES (%s, %s)", (sensor_id, table_id))
+                commit_table = table_name
+            except Exception as err:
+                cursor.close()
+                print(err)
+                exit("sql statement failed")
+        try:
+            dt_frame = dt_frame.replace('-', np.NaN)
+            dt_frame = dt_frame[dt_frame['ts'].notna()]
+            dt_frame.to_sql(commit_table, con=cursor, if_exists='append', index=False)
+        except Exception as err:
+            exit("insert from dataframe failed:" + err)
+    else:
+        exit("field list can't be empty")
+
+def get_dtframe(file_path, firm_id, cursor, keywords_frame, sensor_id):
+
+    dt_frame = pd.DataFrame()
+    error = [False, ""]
+    f_type = ""
+    fields_dict = OrderedDict()
+
+    with gzip.open(file_path, 'rb') as f_in:
+        content = (f_in.read())
+        if len(content) > 0:
+            #test if json
+            try:
+                # splits json file by new line and filter empty lines out, e.g trailing newline
+                jsplit = list(filter(lambda x: x != b'', content.split(b'\n')))
+                json_read = list(map(json.loads, jsplit))
+                json_f = True
+            except ValueError as e:
+                json_f = False
+
+            # if file is json
+            if json_f:
+                fields_static = {'ts': 'datetime64[ns]', 'flow_id': 'Int64',
+                                 'in_iface': str, 'event_type' : str,
+                                 'vlan' : str, 'src_ip' : str,'src_port' : 'Int32',
+                                 'dest_ip': str, 'dest_port' : 'Int32', 'proto': str,
+                                 'tx_id': str, 'app_proto' : str,
+                                 'alert_action' : str, 'alert_gid' : 'Int32',
+                                 'alert_signature_id' : 'Int32', 'alert_rev' : 'Int32',
+                                 'alert_signature' : str, 'alert_category' : str,
+                                 'alert_severity' : 'Int32', 'alert_metadata_updated_at' : str,
+                                 'alert_metadata_created_at' : str,
+                                 'alert_metadata_signature_severity' : str,
+                                 'alert_metadata_deployment' : str,
+                                 'alert_metadata_attack_target' : str,
+                                 'alert_metadata_affected_product' : str,
+                                 'alert_metadata_former_category' : str,
+                                 'flow_pkts_toserver' : 'Int32', 'flow_pkts_toclient' : 'Int32',
+                                 'flow_bytes_toserver' : 'Int64', 'flow_bytes_toclient' : 'Int64',
+                                 'flow_start' : 'datetime64[ns]',
+                                 'alert_metadata_performance_impact' : str,
+                                 'metadata_flowbits' : str, 'alert_metadata_tag' : str,
+                                 'icmp_type' : str, 'icmp_code' : str,
+                                 'tls_sni' : str, 'tls_version' : str,
+                                 'tls_ja3_hash' : str, 'tls_ja3_string' : str,
+                                 'tls_subject' : str, 'tls_issuerdn' : str,
+                                 'tls_serial' : str, 'tls_fingerprint' : str,
+                                 'tls_notbefore' : str, 'tls_notafter' : str,
+                                 'tls_ja3s_hash' : str, 'tls_ja3s_string' : str,
+                                 'tls_session_resumed' : str}
+                raw_frame = json_normalize(json_read)
+                f_type = "suricata"
+                fields_san = list(map(lambda x: sanitize(x, keywords_frame), raw_frame.columns))
+                raw_frame.columns = fields_san
+
+                static_keys = list(fields_static.keys())
+                diff = np.setdiff1d(static_keys, raw_frame.columns)
+                rest = np.setdiff1d(raw_frame.columns, static_keys)
+                for i in diff:
+                    raw_frame[i] = np.nan
+
+                dt_frame = raw_frame[static_keys]
+                dt_frame.loc[:, ('ts')] = pd.to_datetime(raw_frame['ts'], utc=True)
+                dt_frame.loc[:, ('flow_start')] = pd.to_datetime(raw_frame['flow_start'], utc=True)
+                dt_frame = dt_frame.astype(fields_static)
+                if list(rest):
+                    res_col = raw_frame[list(rest)]
+                    dt_frame.loc[:, ('leftovers')] = res_col.to_dict(orient='records')
+                else:
+                    dt_frame.loc[:, ('leftovers')] = np.nan
+                dt_frame.loc[:, ('leftovers')] = dt_frame['leftovers'].astype(str)
+
+                fields_dict = {k: find_ft(v.name) for k, v in dict(dt_frame.dtypes).items()}
+
+            # if not, prob zeek logs
+            else:
+                csv_con = content.decode('unicode_escape')
+                sett_list = csv_con.splitlines()
+                comments = list(filter(lambda x: x.startswith('#'), sett_list))
+                find_sep = (list(filter(lambda x: x.startswith('#separator'),
+                                          comments)))
+                if find_sep:
+                    seperator = find_sep[0].replace('#separator','').strip(" ")
+                    settings = {x[0]:x[1:] for x in
+                                [x.replace('#','').split(seperator) for x in comments]}
+                    if "ts" in settings['fields']:
+                        f_type = settings['path'][0]
+                        fields_san = list(map(lambda x: sanitize(x, keywords_frame), settings['fields']))
+                        fields_dict = {k: find_ft(v) for k, v in dict(zip(fields_san, settings['types'])).items()}
+                        fields_dict['ts'] = 'timestamp' # just to ensure timestamp is ALWAYS of datetime type
+                        dt_frame = pd.read_csv(io.StringIO(csv_con), sep=seperator, comment='#', names=fields_san)
+                        dt_frame['ts'] = pd.to_datetime(dt_frame['ts'], unit='s')
+                        #fields_dict = {k: find_ft(v.name) for k, v in dict(dt_frame.dtypes).items()}
+                    else:
+                        error = [True, "does not contain a 'ts' column"]
+                else:
+                    error = [True, "wrong filetype"]
+        else:
+            error = [True, "empty file"]
+        f_in.close()
+
+        if error[0]:
+            exit(error[1])
+        else:
+            #dt_frame['user_id'] = user_id
+            dt_frame['sensor_id'] = sensor_id
+            insert_db(dt_frame, firm_id, f_type, fields_dict, cursor, keywords_frame, sensor_id)
+            return dt_frame
+
+if __name__== "__main__":
+    args = sys.argv
+    if not len(args) == 4:
+        exit("number of arguments not right")
+    file_path = args[1]
+    #user_id = int(args[2])
+    firm_id = int(args[2])
+    sensor_id = int(args[3])
+    if os.path.exists(file_path):
+        db_url = os.environ['DATABASE_URL']
+        engine = create_engine(db_url)
+        cursor = engine.connect()
+        cn_reserved = ['id', 'sensor_id']
+        sql_reserved = pd.read_sql("select word from pg_get_keywords()", cursor).values
+        keywords_frame = cn_reserved + [item for sublist in sql_reserved for item in sublist]
+        file_DT = get_dtframe(file_path, firm_id, cursor, keywords_frame, sensor_id)
+        print("file done")
+    else:
+        exit("path does not exists")

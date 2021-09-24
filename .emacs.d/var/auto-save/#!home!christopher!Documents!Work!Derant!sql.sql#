@@ -1,0 +1,23 @@
+select sensor_id,host,sum(c) as c from
+
+(select sensor_id,id_orig_h as host,count(*) as c from conn_1300524940364263cd9a where ts>='2021-01-10'
+and ts<'2021-01-17' and
+
+(id_orig_h like '192.168.%' or id_orig_h like '10.%' or
+id_orig_h like '172.16.%' or id_orig_h like '172.17.%' or id_orig_h like '172.18.%'
+or id_orig_h like '172.19.%' or id_orig_h like '172.2?.%' or id_orig_h like '172.30.%'
+or id_orig_h like '172.31.%')
+
+group by sensor_id,id_orig_h
+union
+select sensor_id,id_resp_h as host,count(*) as c from conn_1300524940364263cd9a where ts>='2021-01-10'
+and ts<'2021-01-17' and
+
+(id_resp_h like '192.168.%' or id_resp_h like '10.%' or
+id_resp_h like '172.16.%' or id_orig_h like '172.17.%' or id_orig_h like '172.18.%'
+or id_orig_h like '172.19.%' or id_orig_h like '172.2?.%' or id_orig_h like '172.30.%'
+or id_orig_h like '172.31.%')
+
+and id_resp_h not like '%.255' group by sensor_id,id_resp_h)
+
+as subt group by sensor_id,host order by sensor_id,host limit 1000;

@@ -4,11 +4,48 @@
 ;; disable menu bar
 (menu-bar-mode -1)
 
+;; setup buffer change keybind
+(global-set-key [M-right] 'next-buffer)
+(global-set-key [M-left] 'previous-buffer)
+
+;; text zoom
+(global-set-key [C-mouse-4] 'text-scale-increase)
+(global-set-key [C-mouse-5] 'text-scale-decrease)
+
+;; Speed up startup
+(defvar default-file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
+(setq gc-cons-threshold 80000000)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            "Restore defalut values after init."
+            (setq file-name-handler-alist default-file-name-handler-alist)
+            (setq gc-cons-threshold 800000)
+            (if (boundp 'after-focus-change-function)
+                (add-function :after after-focus-change-function
+                              (lambda ()
+                                (unless (frame-focus-state)
+                                  (garbage-collect))))
+              (add-hook 'focus-out-hook 'garbage-collect))))
+
+
 (load "~/.emacs.d/etc/custom.el")
 (package-initialize)
 
+;; insert and delete selection window
+(delete-selection-mode 1)
+
+;; Setup line numbering
+(setq-default display-line-numbers-current-absolute t
+              display-line-numbers-width 4
+              display-line-numbers-widen t)
+(add-hook 'web-mode-hook 'display-line-numbers-mode)
+(add-hook 'python-mode-hook 'display-line-numbers-mode)
+(add-hook 'lisp-mode-hook 'display-line-numbers-mode)
+(add-hook 'eldoc-mode-hook 'display-line-numbers-mode)
+
 ;; aggresive indent
-(global-aggressive-indent-mode)
+;; (global-aggressive-indent-mode)
 
 ;; kill scratch buffer form
 ;; Makes *scratch* empty.
@@ -40,6 +77,7 @@
 ;; No more typing the whole yes or no. Just y or n will do.
 (fset 'yes-or-no-p 'y-or-n-p)
 
+
 ;; Remove Sounds from Emacs
 (setq visible-bell 1)
 
@@ -54,6 +92,13 @@
 
 ;; all the icons
 (use-package all-the-icons)
+
+;; color parenthesses and so on
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  )
 
 ;; Keep .emacs.d clean
 (use-package no-littering
@@ -79,13 +124,13 @@
     (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
 
 ;; hightlight mode setup
-(use-package highlight-indent-guides
-  :config
-  (setq highlight-indent-guides-method 'column)
-  (setq highlight-indent-guides-responsive 'stack)
-  ;;(setq highlight-indent-guides-character ?\|)
-  ;; Indent character samples: | ┆ ┊
-  :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+;; (use-package highlight-indent-guides
+;;   :config
+;;   (setq highlight-indent-guides-method 'column)
+;;   (setq highlight-indent-guides-responsive 'stack)
+;;   ;;(setq highlight-indent-guides-character ?\|)
+;;   ;; Indent character samples: | ┆ ┊
+;;   :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
 
 ;; C-mode when editing hermes files
 (use-package c-mode
@@ -113,7 +158,7 @@
 	 (text-mode . whitespace-mode))
   :init
   :config
-  (setq whitespace-line-column 80)
+  (setq whitespace-line-column 150)
   (setq whitespace-style '(face tabs empty trailing lines-tail)))
 
 ;; make emacs use the clipboard - windows style
@@ -128,18 +173,19 @@
 ;; use flycheck, syntax check
 (use-package flycheck
   :ensure t
-  :init (global-flycheck-mode))
-
-;; faster than linum
-(use-package nlinum
-    :config
-    (setq nlinum-highlight-current-line 1)
-    (add-hook 'prog-mode-hook 'nlinum-mode))
+  :init (global-flycheck-mode)
+  :config
+  (add-hook 'js2-mode-hook
+            (defun my-js2-mode-setup ()
+              (flycheck-mode t)
+              (when (executable-find "eslint")
+                (flycheck-select-checker 'javascript-eslint))))
+  )
 
 ;; highlight current line
 (use-package hl-line
   :config
-  (global-hl-line-mode +1))
+  (global-hl-line-mode 1))
 
 ;; setup neotree to use icons
 (use-package neotree
@@ -164,14 +210,14 @@
 
 ;; nyan-cat
 (use-package nyan-mode
-  :load-path "~/.emacs.d/nyan-mode-master/"
+  ;;:load-path "~/.emacs.d/nyan-mode-master/"
   :config
   (nyan-mode)
   (nyan-start-animation))
 
 ;; Web-mode
 (use-package web-mode
-  :load-path "~/.emacs.d/web-mode/"
+  ;;:load-path "~/.emacs.d/web-mode/"
   :mode (("\\.phtml\\'" . web-mode)
 	 ("\\.tpl\\.php\\'" . web-mode)
 	 ("\\.php\\'" . web-mode)
@@ -201,14 +247,23 @@
 	'(("jinja"    . "\\.html\\.flask\\'")
 	  ("jinja"    . "\\.html?\\'")
 	  ("vue"      . "\\.vue\\'")
-	  ;; ("js"       . "\\.js\\'")
+	  ("js"       . "\\.js\\'")
 	  ("php"      . "\\.phtml\\'"))
 	)
   :interpreter "web-mode")
 
+;; package auto-update
+(use-package auto-package-update
+   :ensure t
+   :config
+   (setq auto-package-update-delete-old-versions t
+         auto-package-update-interval 4)
+   (auto-package-update-maybe))
+
+
 ;; undo-tree
 (use-package undo-tree
-  :load-path "~/.emacs.d/undo-tree/"
+  ;;:load-path "~/.emacs.d/undo-tree/"
   :config
   (global-undo-tree-mode 1)
   (progn
@@ -229,6 +284,18 @@
 
 (use-package winum
   :ensure t)
+
+;; move-text package setup
+(use-package move-text
+  :ensure t
+  :config
+  (move-text-default-bindings))
+
+;; setup dashboard
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
 
 ;; page-break mode setup
 (use-package page-break-lines
@@ -263,9 +330,66 @@
   (sp-pair "`" nil :actions :rem)
   (setq sp-highlight-pair-overlay nil))
 
+;; Org setup
+(use-package org
+  :ensure t
+  :mode ("\\.org\\'" . org-mode)
+  :bind (("C-c l" . org-store-link)
+         ("C-c c" . org-capture)
+         ("C-c a" . org-agenda)
+         ("C-c b" . org-iswitchb)
+         ("C-c C-w" . org-refile)
+         ("C-c j" . org-clock-goto)
+         ("C-c C-x C-o" . org-clock-out)
+         ([M-left] . previous-buffer)
+         ([M-right] . next-buffer))
+  :config
+  (progn
+    ;; The GTD part of this config is heavily inspired by
+    ;; https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
+    (setq org-directory "~/org")
+    (setq org-agenda-files
+          (mapcar (lambda (path) (concat org-directory path))
+                  '("/org.org"
+                    "/gtd/gtd.org"
+                    "/gtd/inbox.org"
+                    "/gtd/tickler.org")))
+    (setq org-log-done 'time)
+    (setq org-src-fontify-natively t)
+    (setq org-use-speed-commands t)
+    (setq org-capture-templates
+          '(("t" "Todo [inbox]" entry
+             (file+headline "~/org/gtd/inbox.org" "Tasks")
+             "* TODO %i%?")
+            ("T" "Tickler" entry
+             (file+headline "~/org/gtd/tickler.org" "Tickler")
+             "* %i%? \n %^t")))
+    (setq org-refile-targets
+          '(("~/org/gtd/gtd.org" :maxlevel . 3)
+            ("~/org/gtd/someday.org" :level . 1)
+            ("~/org/gtd/tickler.org" :maxlevel . 2)))
+    (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+    (setq org-agenda-custom-commands
+          '(("@" "Contexts"
+             ((tags-todo "@email"
+                         ((org-agenda-overriding-header "Emails")))
+              (tags-todo "@phone"
+                         ((org-agenda-overriding-header "Phone")))))))
+    (setq org-clock-persist t)
+    (org-clock-persistence-insinuate)
+    (setq org-time-clocksum-format '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))))
+(use-package org-inlinetask
+  :bind (:map org-mode-map
+              ("C-c C-x t" . org-inlinetask-insert-task))
+  :after (org)
+  :commands (org-inlinetask-insert-task))
+(use-package org-bullets
+  :ensure t
+  :commands (org-bullets-mode)
+  :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
 
 ;; mode-line setup
-
 (use-package minions
   :ensure t
   :init (minions-mode 1)

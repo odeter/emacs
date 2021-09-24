@@ -1,0 +1,24 @@
+from flask_restful import Resource, reqparse
+from flask import request, jsonify
+import json
+import werkzeug
+import os, stat, sys
+import re
+import time
+from angle import app
+
+class ReceiveFile(Resource):
+    def post(self):
+        parse = reqparse.RequestParser()
+        parse.add_argument('file', type=werkzeug.datastructures.FileStorage, location='files',
+                           help = 'This field cannot be blank', required = True)
+        parse.add_argument('password', help = 'This field cannot be blank', required = True)
+        args = parse.parse_args()
+
+        filePack  = args["file"]
+        passw = args["password"]
+
+        if passw != app.config['FILE_KEY']:
+            return {'message': 'No Access'}, 403
+        else:
+            return {'message': 'file Received'}, 200

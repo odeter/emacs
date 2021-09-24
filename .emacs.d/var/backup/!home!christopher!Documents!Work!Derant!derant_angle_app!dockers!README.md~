@@ -1,0 +1,8 @@
+# Custom database image
+
+The dockerfile is used to create a citus image with the extension we currently use
+
+## DB and exntensions:
+
+- Citusdata
+- pg_partman

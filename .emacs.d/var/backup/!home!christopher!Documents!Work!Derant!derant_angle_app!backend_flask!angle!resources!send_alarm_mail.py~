@@ -1,0 +1,47 @@
+from flask_jwt_extended import get_jwt_identity
+from angle.models import db, UserModel, RoleModel
+from flask_restful import Resource, reqparse
+from angle import role_required
+from flask_mail import Message, Mail
+import json
+
+def sendMail(subject, recipients, body, mail):
+    msg = Message(subject, recipients = recipients)
+    msg.body = body
+    mail.send(msg)
+    return True
+
+class SendAlarmMail(Resource):
+    @role_required(["group_moderator"])
+    def post(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('subject', help = 'This field cannot be blank', required = True)
+        parser.add_argument('text', help = 'This field cannot be blank', required = True)
+        parser.add_argument('recipients', help = 'This field cannot be blank', required = True)
+
+        data = parser.parse_args()
+
+        current_ID = get_jwt_identity()
+        current_user = UserModel.find_by_id(current_ID)
+
+        if not current_user:
+            return {'message': "User not logged in"}, 403
+
+        emailText = data['text']
+        emailSubject = data['subject']
+        emailRecipients = json.loads(data['recipients'])
+
+        roles = []
+
+        for i in emailRecipients:
+            if i not in [i.un for i in RoleModel.get_all_roles([])]:
+                return {'message': 'Nonexisting Recipients/Roles Given'}, 500
+            roles.append([i for i in (RoleModel.find_by_rolename(i)).users])
+
+        recipients = list(dict.fromkeys([recipient.username for recipients in roles for recipient in recipients]))
+
+        if app.config['MAIL_ACTIVE']:
+            mail = Mail(app)
+            sendMail(emailSubject, recipients, emailText, mail)
+
+        return {'message': 'succes'}, 200

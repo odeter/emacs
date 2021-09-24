@@ -1,0 +1,43 @@
+from flask_jwt_extended import get_jwt_identity
+from angle.models import UserModel, FirmModel
+from flask_restful import Resource, reqparse
+from angle import role_required
+from flask import current_app as app
+from flask import jsonify, make_response
+import json
+
+class GetAlarmData(Resource):
+    @role_required(["admin", "it_sec", "it_man", "op_man", "sys_admin"])
+    def post(self):
+        alarmParser = reqparse.RequestParser()
+        alarmParser.add_argument('alarmID', help = 'This field cannot be blank', required = True)
+        alarmParser.add_argument('userID')
+        data = alarmParser.parse_args()
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+        if current_user:
+            if not data['userID']:
+                firm = current_user.firm
+            elif current_user.check_role('sys_admin') and data['userID']:
+                firm = FirmModel.find_by_id(data['userID'])
+            else:
+                app.logger.error('{0} - {1} tried retrieving alarms but they do not have permission'.format(current_user.name, current_user.id))
+                return {'message': 'You do not have the permission to access this'}, 403
+            if firm:
+                alarm = firm.get_alarm(data['alarmID'])
+                if alarm:
+
+                    data = alarm.alarm_data
+                    data_list = [[d.id, d.data_ts.strftime("%d/%m/%Y, %H:%M:%S"), d.data_serial] for d in data]
+
+                    app.logger.info('{0} - {1} retrieved alarms'.format(current_user.name, current_user.id))
+                    return make_response(jsonify({'message': 'Alarms returned', 'alarm_data': data_list }), 200)
+                else:
+                    app.logger.error('{0} - {1} tried getting alarm data, but no alarm was found'.format(current_user.name, current_user.id))
+                    return {'message': 'No alarm are set'}, 204
+            else:
+                app.logger.error('{0} - {1} tried retrieving alarms, but no firm was found'.format(current_user.name, current_user.id))
+                return {'message': 'User is orphan'}, 403
+        else:
+            app.logger.error('user with ID: {0} tried getting alarm data, without permissions'.format(userID))
+            return {'message': 'User not set properly'}, 403

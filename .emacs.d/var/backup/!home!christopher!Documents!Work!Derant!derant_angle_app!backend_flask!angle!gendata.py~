@@ -1,0 +1,117 @@
+from faker import Faker
+
+def create_test_users(app, db, users_count):
+
+    if not models.DynamicOverview.find_by_name('test_table'):
+        dto = models.DynamicOverview.create_dto('test_table', 1, 'text', 'hold', 'hold', 'test')
+    else:
+        dto = models.DynamicOverview.find_by_name('test_table')
+
+    fake = Faker('dk_DK')
+
+    users = []
+
+    for i in range(users_count):
+        test_user = {'email': fake.company_email(), 'password': '123', 'name': fake.name(),
+                     'zipcode': fake.postcode(), 'address': fake.street_address(),
+                     'firmname': fake.bs(), 'country': 'DK', 'mobile': fake.phone_number()}
+        users.append(test_user)
+
+    print(users)
+
+
+    csv_folder = app.config['CSV_FOLDER']
+    ziplist = np.genfromtxt(csv_folder+'dk_zipcodes.csv', delimiter=',', skip_header=1)
+    print(ziplist)
+    geolocator = Nominatim(user_agent="derant")
+
+    for user in users:
+        print(user)
+        new_user = models.UserModel(
+            username = user['email'],
+            password = models.UserModel.generate_hash(user['password']),
+            mobile = user['mobile'],
+            name = user['name']
+        )
+
+        print("hey1")
+
+        reg_key_role = models.RoleModel.find_by_rolename("admin")
+        new_user.roles.append(reg_key_role)
+
+        #location = resources.geocoder(user.firmaddress, user.zipcode, user.country)
+        #location = fake.local_latlng(country_code='DK', coords_only=True)
+
+        latitude = None
+        longitude = None
+        postalcode = int(ziplist[random.randint(0, len(ziplist))][0])
+        print(postalcode)
+        try:
+            location = geolocator.geocode(query={'postalcode': postalcode}, country_codes='dk')
+            latitude = location.latitude
+            longitude = location.longitude
+        except GeocoderTimedOut:
+            print("Error: geocode failed, TimedOut")
+        except GeocoderUnavailable:
+            print("Error: geocode failed, GeoCoder Unavailable")
+
+        firm = models.FirmModel(
+            name = user['firmname'],
+            zipcode = user['zipcode'],
+            address = user['address'],
+            country = user['country'],
+            latitude = latitude,
+            longitude = longitude
+        )
+        firm.add_user(new_user)
+        group = models.GroupModel.find_by_name('Vandværk')
+        group.add_firm(firm)
+
+        api_K = secrets.token_hex(15)
+        sensor = models.SensorModel(api_key = api_K, name = 'test_sensor')
+        firm.add_sensor(sensor)
+        dto.add_sensor(sensor)
+
+        print('heyo bobby')
+
+        try:
+            new_user.save_to_db()
+        except:
+            exit('create test users failed')
+
+    create_test_data(db, users, fake, dto)
+
+def create_test_data(db, test_users, fake, dto):
+
+    alarms = [['malware', 100], ['TCP SYN flood attack', 100],
+              ['Teardrop attack', 100], ['Smurf attack', 100],
+              ['Ping of death attack', 100], ['Missing SSL Cert', 100],
+              ['Banking Phish', 100]]
+
+    alarm_types = {'malware': 'riskUrgent',
+                   'TCP SYN flood attack': 'riskPotential',
+                   'Teardrop attack' : 'riskUrgent',
+                   'Smurf attack' : 'riskUrgent',
+                   'Ping of death attack' : 'riskUrgent',
+                   'Missing SSL Cert': 'riskPotential',
+                   'Banking Phish' : 'riskCritical'}
+
+    for i in test_users:
+        test_user = models.UserModel.find_by_username(i['email'])
+
+        firm = test_user.firm
+        sensor = firm.sensors.first()
+        dataTable = dto
+        for j in alarms:
+            alarm_count = random.randint(1, 10)
+            for i in range(alarm_count):
+                time = fake.date_between(start_date='-1y', end_date='today')#random_date("1/1/2020 1:30", "9/29/2020 22:50", random.random())
+                a_level = models.AlarmLevelModel.find_by_name(alarm_types[j[0]])
+                gen_status = int(np.random.choice([0,1,2], p=[0.1, 0.2, 0.7]))
+                new_alarm = models.AlarmModel(alarm_name='test_alarm', description='test_alarm',
+                                              alarm_type=j[0], status=gen_status, toc=time)
+                sensor.add_alarm(new_alarm)
+                a_level.add_alarm(new_alarm)
+                dataTable.add_alarm(new_alarm)
+                test_user.add_alarm(new_alarm)
+                new_alarm.save_to_db()

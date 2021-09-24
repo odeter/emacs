@@ -1,0 +1,93 @@
+import os
+import re
+import sys
+import logging
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from datetime import datetime
+from sqlalchemy.exc import SQLAlchemyError
+from file_read_backwards import FileReadBackwards
+
+def get_last_run_date(log_path):
+    with FileReadBackwards(log_path, encoding="utf-8") as BigFile:
+        for line in BigFile:
+            match = re.search('INFO - \d*-\d*-\d* \d*:\d*:\d*,\d* - Data Checked and inserted: \|(.*)\|', line)
+            date = match.group(1) if match else None
+            if date:
+                return datetime.strptime(date, '%Y-%m-%d, %H:%M:%S')
+    return None
+
+def get_logs(cursor, last_check_date):
+    log_types = ['dns', 'conn', 'ssl', 'http']
+    format_strings = ','.join(['%s'] * len(log_types))
+    tables_q = "SELECT id, table_name FROM dto WHERE log_type in (%s)" % format_strings
+    tables = (cursor.execute(tables_q, tuple(log_types))).fetchall()
+    log_call = []
+    params = []
+    current_ts = datetime.now()
+    time_constraint = ''
+    for i in tables:
+        if last_check_date:
+            params.extend([last_check_date])
+            time_constraint = ' WHERE '+i.table_name+'.insert_ts > %s'
+        log_stats = "SELECT "+i.table_name+".sensor_id as sensor_id, '"+str(i.id)+"' as dto_id,"\
+            +" TO_CHAR("+i.table_name+".ts, 'YYYY-MM-DD') as date, count("+i.table_name+".sensor_id) as conn_count"\
+            +" FROM "+i.table_name+time_constraint\
+            +" GROUP BY date, "+i.table_name+".sensor_id "
+        log_call.append(log_stats)
+    sql_query = ' UNION '.join(log_call)
+    try:
+        stats_q = (cursor.execute(sql_query, params)).fetchall()
+    except SQLAlchemyError as e:
+        error = str(e.__dict__['orig']).replace('\n', ' ')
+        logging.error('SQL error at update: {}'.format(error))
+    if stats_q:
+        new_log_stats = []
+        for i in stats_q:
+            new_log_stats.append((i.sensor_id, i.dto_id, i.conn_count, i.date, current_ts, i.conn_count))
+        try:
+            cursor.execute("INSERT INTO stats (sensor_id, dto_id, count, date, insert_date) "+
+                           "VALUES (%s, %s, %s, %s, %s) ON CONFLICT ON CONSTRAINT _unique_count_ DO UPDATE SET count=stats.count+%s", new_log_stats)
+            # Dont change this log entry. Regex searches for this!
+            logging.info('Data Checked and inserted: |{}|'.format(current_ts.strftime("%Y-%m-%d, %H:%M:%S")))
+        except SQLAlchemyError as e:
+            error = str(e.__dict__['orig']).replace('\n', ' ')
+            logging.error('SQL error at insert: {}'.format(error))
+
+# Setup
+load_dotenv("/app/.env")
+log_path = os.path.join(os.environ.get("BACKEND_PROC_LOG_DIR"), "dash.log")
+os.makedirs(os.path.dirname(log_path), exist_ok=True)
+logging.basicConfig(filename=log_path, filemode='a', format='%(levelname)s - %(asctime)s - %(message)s', level=logging.INFO)
+
+
+if __name__== "__main__":
+    logging.info('STARTED {}'.format(os.path.basename(__file__)))
+
+    # Get date for last time run succesfully from log file
+    try:
+        last_check_date = get_last_run_date(log_path)
+    except Exception as e:
+        logging.error("Could not get last date run: {}".format(e))
+        last_check_date = None
+
+    # Get database url from .env file
+    try:
+        db_url = os.environ.get("DATABASE_URL")
+    except Exception as e:
+        logging.error('Could not get env variables: {}'.format(e))
+
+    # Connect to DB
+    try:
+        engine = create_engine(db_url)
+        cursor = engine.connect()
+    except Exception as e:
+        logging.error('Could not connect to db: {}'.format(e))
+
+    # Get stats and insert into DB
+    try:
+        get_logs(cursor, last_check_date)
+    except Exception as e:
+        logging.error("Error while getting and inserting stats: {}".format(e))
+
+    logging.info('FINISHED')

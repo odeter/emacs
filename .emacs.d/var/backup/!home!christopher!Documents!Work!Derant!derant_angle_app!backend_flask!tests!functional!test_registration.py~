@@ -1,0 +1,37 @@
+import json
+
+## Checks the given pages for access without a jwt token
+
+def test_wihtout_Token(test_client):
+    response = test_client.get('/getHelp')
+    assert response.status_code == 401
+
+def test_admin_access(test_client, role_database, login_wrap):
+    headers = login_wrap(test_client, "admin@test.dk", "123test")
+    response = test_client.get('/getHelp', headers=headers, follow_redirects=True)
+    assert response.status_code == 200
+
+def test_sysadmin_access(test_client, role_database, login_wrap):
+    headers = login_wrap(test_client, "sysadmin@test.dk", "123test")
+    response = test_client.get('/getHelp', headers=headers, follow_redirects=True)
+    assert response.status_code == 200
+
+def test_opman_access(test_client, role_database, login_wrap):
+    headers = login_wrap(test_client, "opman@test.dk", "123test")
+    response = test_client.get('/getHelp', headers=headers, follow_redirects=True)
+    assert response.status_code == 200
+
+def test_itman_access(test_client, role_database, login_wrap):
+    headers = login_wrap(test_client, "itman@test.dk", "123test")
+    response = test_client.get('/getHelp', headers=headers, follow_redirects=True)
+    assert response.status_code == 200
+
+def test_itsec_access(test_client, role_database, login_wrap):
+    headers = login_wrap(test_client, "itsec@test.dk", "123test")
+    response = test_client.get('/getHelp', headers=headers, follow_redirects=True)
+    assert response.status_code == 200
+
+def test_itsec_access(test_client, role_database, login_wrap):
+    headers = login_wrap(test_client, "upman@test.dk", "123test")
+    response = test_client.get('/getHelp', headers=headers, follow_redirects=True)
+    assert response.status_code == 200

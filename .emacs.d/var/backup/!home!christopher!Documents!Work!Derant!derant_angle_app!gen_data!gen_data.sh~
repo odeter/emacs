@@ -1,0 +1,11 @@
+#!/bin/bash
+# A simple script
+
+export DATABASE_URL=postgresql://db_master:1234@localhost/angle_db
+#source bin/activate
+## get port and login from dokku
+#export EXPORT=`dokku postgres:info angle_db --exposed-ports | sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+#export DATABASE_URL=`dokku postgres:info angle_db --dsn | sed "s/@[a-z -]*:['0-9']*/@localhost:$EXPORT/g"`
+
+
+python3 generate_data.py "$1"

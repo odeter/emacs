@@ -1,0 +1,856 @@
+\documentclass[12pt]{book}
+
+\usepackage{verse}
+\PassOptionsToPackage{bookmarks, colorlinks=false, hidelinks}{hyperref}
+% Use PoetryTeX; http://www.ctan.org/pkg/poetrytex
+\usepackage[numberpoems, clearpageafterpoem, useincipits]{poetrytex}
+
+% Use the PA5 paper size
+\usepackage[paperwidth=140mm,paperheight=210mm]{geometry}
+
+\renewcommand{\pttitle}{A Collection of Poetry}
+\renewcommand{\ptsubtitle}{Mostly by people.}
+\renewcommand{\ptauthor}{Someone}
+\renewcommand{\ptdate}{2014/12/10}
+\renewcommand{\ptdedication}{Frontmatter haiku:\\*This is dedicated to,\\*Someone else, not you.}
+
+
+\begin{document}
+
+\maketitle
+\makededication
+
+% Number pages with small roman numerals (i, ii, iii, iv...)
+\frontmatter
+
+% TOC %
+\maketoc
+
+% TOP %
+\renewcommand*{\topname}{Poems} % Name for the table of poems
+\maketop
+
+\section{Preface}
+This is a prose preface.
+
+\newpage
+\thispagestyle{empty}
+
+% Start numbering pages with normal arabic numerals.
+\mainmatter
+
+%----------------------------------------------------------------------------------------
+%	Poem Part
+%----------------------------------------------------------------------------------------
+
+\section{The world we live in}
+
+\begin{verso}
+	Tis the end of times, haven't you heard, the world as we know it is ending\\
+	it didn't end with a bang as one could have hoped, instead it ended with a cough\\
+	A worldwide sensation, hot from eastern tides the news around the world was trending\\
+	Poor people far away, lots of prayers we did send them, but after that we shook it off
+\end{verso}
+\begin{verso}
+	Zombies, apocalypse, soon people in high places were screaming bloody murder\\
+	with Rome falling once again, it filled us all with freight, as ferrymen came in trucks\\
+	Numbers up and down, reported dutifully at all times,
+
+\end{verso}
+
+\newpage
+
+\section{Just living}
+
+\begin{verso}
+	listening, glistening, lonely midnight star.\\
+	shining down upon us fools, living life so sparse\\
+	without glamour, without a certain 'je ne sais quoi'\\
+	holding back, holding in, as is life merely a farce
+
+	for should we live without remorse, just a wicked soul\\
+	hoping for an early death just to skip the toll\\
+	no abstinence, no diligence, nor any law to uphold\\
+	diving into pure animal delight, without any self control
+
+	feast upon fleshly desire and feed until you faint\\
+	break any rule of god or man, made only to restraint\\
+	would it bring unhinged joy, so short but concentrated\\
+	favored over long proper life, so long but sadly stagnated
+
+
+\end{verso}
+\newpage
+
+\section{Trivial}
+\begin{verso}
+	Walk the righteous path my son, it's trivial oh so trivial\\
+	you just keep going, you just fight on, it's trivial oh so trivial\\
+	for if he fights, you know he wins, it's trivial oh so trivial\\
+	for on such a path, you'll find no sins, it's trivial oh so trivial
+
+	but father my path lies on uneven ground, it's dreadful oh so dreadful\\
+	with holes so deep placed all around, it's dreadful oh so dreadful\\
+	my bare feet bleeds going miles and miles, it's dreadful oh so dreadful\\
+	through mud and stones, my personal trials, it's dreadful oh so dreadful
+
+	my back it is wicked, just as my soul, it's horrible oh os horrible\\
+	sins fill the road, as black as coal, it's horrible oh so horrible\\
+	i evade and i run, staying the course, it's horrible oh so horrible\\
+	each step filled, to the brim with remorse, it's horrible oh so horrible
+
+	oh farther, oh lord, i can't finish my route, it's futile oh so futile\\
+	the faith i once had, got lost in pursuit, it's futile oh so futile\\
+	i am undeserving, too lost to be found, it's futile oh so futile\\
+	the way 'tis lost, the music dull sounds, it's futile oh so futile
+
+	take a turn, take a right, towards the path you go, it's trivial oh so trivial\\
+	you may think yourself astray, as you search high and low, it's trivial oh so trivial\\
+	for the journey may be crocked, doubt will be a heavy burden, it's trivial oh so trivial\\
+	but walk with ease my child, the path go through his garden, it's trivial oh so trivial
+
+
+\end{verso}
+
+\newpage
+
+\section{Talk of Reason}
+\begin{verso}
+
+
+	talk of politic, talk of nonsense, no need for logic, proof or certainty\\
+	all you need is a popular opinion, so cast aside your morality
+
+	but what of repercussions of popular choices, on the back of the public so feeble\\
+	such talk of politics, must be talk of clarification, for the good of the people
+
+	such talk is an ideal, such talk has been forgotten, it holds no place in this society\\
+	today politic is debating which belief is most favored, each a paragon of piety.
+
+	so should we just accept this popularity contest, is this really the democratic way\\
+	That to sway the majority, is the highest priority, so you leave your ideals to decay
+
+
+\end{verso}
+
+\newpage
+
+\section{Fewer Feathers}
+\begin{verso}
+	where have all the birds flown, to the trees or wilderness unknown\\
+	high in the sky, above petty jealousy found in creatures far below\\
+	their eyes on a trace just to catch a glimpse, yet only pretty feathers are shown\\
+	they flew so far, far away, they would not endure our human woe
+
+	Alas to greener pastures they went, and weren't missed, at least for a month or so\\
+	but soon people started to notice the lack of pretty feathers, the song of sudden silence\\
+	first they prayed pretty wishes , then they looked places to and fro, high and low\\
+	in the end they payed sums beyond reason, hoping to rely on the wisdom of science
+
+	but they found naught but forgotten nests and egg shell, pretty feathers left in hurry\\
+	this harsh realization led to question human kinds negligence of responsibility\\
+	which made the many believe the few, who for many years did naught but worry\\
+	still the birds had left, bashed their wings for ever, left us in our own captivity
+\end{verso}
+
+\newpage
+
+\section{Howls in the night}
+
+\begin{verso}
+	do you hear the wolves brother, they howls as night draws near\\
+	as darkness sets upon our land, as it brings despair, grief and fear\\
+	it tears us apart brother, splits us from our compassionate nature\\
+	soon good will be forgotten, left in your mind a fleeting glimpse of rapture
+
+	still hollow howls gouge out an old primal urge and traps us with its native hand\\
+	blood thirsty animal awoken from a dark and ageless sleep beyond your command\\
+	hold it brother, don't listen to its rosen words, else your soul it will breach\\
+	fight it hard and fight it still, let not your mortal soul ever be within its reach
+
+	at first unbreachable, then soon unreasonable, its empty lies turns your head brother\\
+	you who once was incorruptible has cast your heavy principles aside\\
+	oh brother, dear brother, my friend in you is gone, we've cast shame upon each other\\
+	you've stared too long into the beast yellow eyes, seen things that tore apart your\\ mortal hide
+
+	do you hear them talk brother, their pointy eyes starring at your back\\
+	holds their stolen treasure close brother, behind their golden gates\\
+	they weight their time carefully brother, waiting for the time to attack\\
+	sharp your blade, strike first my wolf, wealth and glory awaits.
+\end{verso}
+
+\newpage
+
+\section{Child of Sorrow}
+\begin{verso}
+	child of sorrow, weeping in the dark\\
+	the sobs, the grief, it know no bounds\\
+	through the hollow night, it sets it's mark\\
+	the horror it brings, an ungodly sound.
+
+	is it for your mother you weep child\\
+	the love she brought but could not give\\
+	its nature harsh, unpredictable and wild\\
+	leaving horrid pain, scars you cant forgive
+
+	or do you mourn your absent father\\
+	who left a mark on your soul instead\\
+	for the fact remain, he did not bother\\
+	which hurt you more than the love you fled
+
+	or is it merely your fate you dread\\
+	so harsh and cruel it seem a curse\\
+	no love, no warmth and then you're dead\\
+	i guess at least it cant get worse
+
+
+\end{verso}
+
+\newpage
+
+\section{Next Page}
+\begin{verso}
+
+	tittered tattered wonder, just sitting there in front of me\\
+	magical colors shine so pretty fills me with childish glee
+
+	it keeps my mind from pain and woe, with pictures holds it occupied\\
+	i gift my focus and my thoughts, just take the loneliness inside
+
+	i dare not face my own reality, lurking down below a shell of distractions\\
+	so keep me fed with wordy side trails, let me be in a state of inaction
+
+
+\end{verso}
+
+\newpage
+
+\section{A Sharp Remark}
+\begin{verso}
+
+	a long and flashy dagger waiting in the dark\\
+	keep it steady, keep it cold, ready near the heart
+
+	when you see a spot to cut, thrust without delay\\
+	through flesh and blood, let no bone be in the way
+
+	be it lungs, heart or bloody terror, be it only lethal\\
+	let it long for something vital, be it only fatal
+
+	so hold it cold, hold it steady, clear of all remorse\\
+	just a minute, just a breath, before it flies with force
+
+
+\end{verso}
+
+\newpage
+
+\section{A Hopefull Dream}
+\begin{verso}
+
+	Get me love unconditionally, get me smiles and winking eyes\\
+	give me a touch, by fingers slide, let it be warm if only brief\\
+	send me a whisper, from tongue to ear, let my excitement rise\\
+	say my name, with passion, unrestrained, each vocal a glimpse of relief
+
+	name your price, your ungodly demands, tis no ordinary commodity\\
+	since i know such love is only found in people young at heart\\
+	i traded my own for wealth and position, a poor trade in all honesty\\
+	so know i'm bound to live without knowing, cold to the day i depart
+
+
+\end{verso}
+
+\newpage
+
+\section{Deep waters}
+\begin{verso}
+
+Don't go near the water child, you don't know its hunger\\
+the flesh it craves for those below, be it man, grown or younger
+
+for in the depths where darkness lies, without hope, glow or light\\
+there monsters reign, at the black held bottom, by fear and endless might
+
+for the men who take to the sea, leave family and home behind\\
+only to chase golden dreams, eagerly with a cross they signed
+
+seldom do they return, be it by the choice of others or their own\\
+those who do have seen the beast, their soul corrupted to the bone
+
+so mark my words and steer clear my child, don't even dip your toe\\
+it ate your father whole the fool, i wont have you added to my woe
+
+
+\end{verso}
+
+\newpage
+
+\section{A geezers tale}
+
+\begin{verso}
+	 Wondrous slowly talking creature, with both teeth and marbles falling.\\
+	 how you talk of times and places, with such inconsistency one can only stare.\\
+	 Still the stream continues unhinged, did you truly hear god calling?\\
+	 it sometimes seems a bit far fetched, but it all happens so the creature swear.
+
+	 it was at the Somme, it was at Leningrad, wait did you just say Waterloo?\\
+	 how it once met Chaplin, or was it Hitler, oh the years erase petty detail\\
+	 yet strongly it holds that it met the King, yes of course the president too.\\
+	 still the stories told, the stories given, they leave behind a trail.
+
+	 for do we not fear a boring story, so painfully mundane it feels a waste\\
+	 it lived a mortal life with advice to give, still no one lives a fairy tale\\
+	 so as the tales are told, once or twice, a little sugar is added for the taste\\
+	 A wide-eyed child might eat it all up, just make sure it doesn't go stale.
+
+
+\end{verso}
+
+
+\newpage
+\section{A walk in the park}
+
+\begin{verso}
+	Come walk with me, through ice and sand, through pain and sheer of wonder.\\
+	And tell me tales, of love and hate, of life with sun and thunder.
+
+	Keep up the pace, by will and might, by hope and signs of glee.\\
+	and though you struggle, with doubt and sorrow, with grit you will be free.
+
+	The path is long, it is so hard, it is forever changing.\\
+	The pace is fast, so unforgiving, so grim with no one waiting.
+
+	Go on my child, come closer still, come forth and forth forever.\\
+	And near the end, you’ll lose the pace, you’ll lose it altogether.
+
+	Then once you fall, too hard and far, too low to keep on walking.\\
+	I’ll take your hand, to guide you on, to see another morning.
+
+	It may be sad, as tears will fall, as child of children weep.\\
+	But don’t despair, my grip is tight, my word I always keep.
+
+	My touch is cold, my person scary, my name brings grief and fear.\\
+	But as we walk, from path astray, from pain and joy severe.
+
+	We’ll stand by the lake, the tower or mountain, a marvelous and breathtaking sight.\\
+	There bliss will fill you, as fear take flight, as we walk into the night.
+\end{verso}
+\newpage
+
+
+\section{Goodnight Story}
+
+\begin{verso}
+
+	bashful voices speaking to me in the night\\
+	as i hear a story slowly filling me with fright\\
+	For it seem i am the hero, he sets upon a mission\\
+	to free himself from a tiresome and horrible position
+
+	He learns by sorrow that happiness have passed him by\\
+	all those years filled with naught but an empty, filthy lie\\
+	to cure this dreadful condition he finds a mighty wizard\\
+	which points him in the direction of a horrible lizard
+
+	he picks up his chain and off to find the beast he go\\
+	Through dark misty swamps he walks looking for his foe\\
+	The highest mountain peak he climbs without rest\\
+	until he find the cave, finally an end to his quest
+
+	Deep into the earth he goes, from frozen to melting hot\\
+	He drops his armor, his shield, till only a sharp sword he got\\
+	He finds the beast heavy asleep atop many golden dreams\\
+	the mighty green deep in slumber for many years, or so it seems
+
+	He takes one step towards the evil bringer of his pain\\
+	the sweat from his head glistening, dripping onto his chain\\
+	he aims for the neck with his sword so far above his head\\
+	for a brief moment he looks down and there a gaze was met
+
+	He looked deep and hard, hoping to see this devilish causation\\
+	yet as he stared he saw nothing, nothing beside his own reflection\\
+	a sad chained fool hoping to fight his pain away was all he could see\\
+	so he swung his sword down, with might and tears, to cut himself free
+
+\end{verso}
+
+\newpage
+
+\section{Fighters of Justice}
+
+\begin{verso}
+	For those who fight against evil\\
+	spiteful it is to see them fall
+
+	Never tire, never faltor, they fought\\
+	for you, for me, for all.
+
+	We let them judge, swear by us\\
+	Each person himself a jury
+
+	Soon good became bad, lines erased\\
+	As clear outlines became too blurry
+
+	Then good fighters turned killers\\
+	Power was naught but blood spilled
+
+	So people fought killers upheld by an oath\\
+	To who fighting evil was too unfulfilled.
+
+	The tables turned as hunters became hunted.\\
+	By the people, by you, by me, by all
+
+	Killed as the evil they once swore to fight\\
+	Still, spiteful it was to see them fall
+
+\end{verso}
+
+\newpage
+
+\section{Plastic heart}
+
+\begin{verso}
+
+	Two toys standing out alone in the barren street\\
+	Foregiveness shan't among them find a single seat
+
+	With metal spear and plastic boot they fight\\
+	To see who shall size the power, by blood, by might
+
+	Shiny eyes glistening with hatred or is it merely fear\\
+	For it shrouds mercy and makes aggression clear
+
+	Spears are thrown as wood and plastic collide\\
+	While People are drawn to the spectacle outside
+
+	Though they saw plastic and wood move beyond comprehension\\
+	The action was so human it quickly caught their attention
+
+	For by magic or miracles they fought seemed unimportant\\
+	That they first thought to kill made the moral so mordant
+
+\end{verso}
+
+\newpage
+
+\section{For a time}
+
+\begin{verso}
+
+	Neither given nor taken, to us lent only briefly\\
+	To enjoy without strings and to hate only mildly
+
+	One to waste, one to use, though some are given two\\
+	For us to make mistakes, just us, just me, just you
+
+	Some born with spoons, though most have sticks\\
+	Some grow throughout it, some just remains pricks
+
+	Lucky those who dance, with a partner or alone\\
+	to the sound of music, drums, guitar or saxophone
+
+	yet for some without tunes, the dance is soon forgotten\\
+	no smiles nor joy, their dreams hid away, black and rotten
+
+	Though all walk to the edge, be it slow or troublesome\\
+	Precious few walk with grace, thousand find it cumbersome
+
+	For we hold it so tightly, through our boney fingers it slips\\
+	leaking on to unwritten pages, with ink it neatly drips
+
+	Just eat your meal, your slice of life, dry or simply perfect\\
+	And keep your soda empty, when the waiter come to collect
+
+\end{verso}
+
+\newpage
+
+\section{Four leaves on a tree}
+
+\begin{verso}
+	Four leaves on a tree,\\
+	four leaves you could see,\\
+	they sat there all by themselves.
+
+	They danced in the wind,\\
+	even though they where pinned,\\
+	they danced more lovely than yourselves.
+
+	They could dance all day,\\
+	pretty amazing i would say,\\
+	for a leaf to express such joy.
+
+	But nobody gives a shit,\\
+	they're leaves and that's it,\\
+	and a leaf is so easy to destroy.
+\end{verso}
+
+\newpage
+
+\section{A light in the abyss}
+
+\begin{verso}
+	Towards the stars aboard the super starship\\
+	Through the skies it braces without delay\\
+	With darkness between the light and its tip\\
+	It flies with hope from fear and dismay
+
+	It lies quietly between the fabric of time\\
+	Far from doubt, sorrow and dishearten thoughts\\
+	Between a new heaven, between war and crime\\
+	Only barring ideas, love and unfeeling robots
+
+	Carrying dreams from a fully fletched mind\\
+	As it strikes through the galaxy, glowing\\
+	sending glimpse of light down for us to find\\
+	The trail of light be the only thing showing\\
+\end{verso}
+
+
+
+\newpage
+
+\section{A bit of sunlight}
+
+\begin{verso}
+As light and warmth brings song and life\\
+as nature wakes me from my sweet slumber\\
+I feel myself brimmed with vigor\\
+as i leave my cave, dark and umber
+
+I wash away years of winter, cold and merciless\\
+for though i am forgotten, i never will forget\\
+the pain and hatred through life's arduousness\\
+only i can tip the scales, without sorrow or regret
+
+With heavy steps through the woods i walk\\
+no woman or child might find forgiveness\\
+as i move silently, around guards and livestock\\
+the blood is pumping as my desire i do repress
+
+I find the heart, the center booming with pride\\
+Their nose up high and chins jiggling with fat\\
+A glimpse of shadow, in their eyes only freight\\
+As death set upon them, in the form of a cat
+
+I rip and bite through skin, muscle and bone\\
+from sinner to sinner, my thirst unsatisfied\\
+No scream is heard, no remorse is shown\\
+As i leave carnage behind, a pure genocide
+
+Soon mother, father and soldier lies still\\
+beside their weapons, blood and canine\\
+only crying children are ones left to kill\\
+no mercy is given, as none were to mine\\
+
+\end{verso}
+
+\newpage
+
+\section{Heartfelt Lies}
+
+\begin{verso}
+	Her eyes glisten, competing with the sun.\\
+	it seems a tie, though both shines on and on.
+
+	The dearest smile, she do also possess.\\
+	The kind that spreads, heals woe and stress.
+
+	The tiny wrinkles, tell tales of glee.\\
+	And they always appear, at the sight of me.
+
+	She hugs me so tightly,  despite her tenuous arms.\\
+	As she kiss me tender, and bind me with charm.
+
+	She look up at me, with trustworthy eyes.\\
+	Waiting to hear me spin, a new set of lies.
+
+	It’s so easy to pretend, that all is fine and well.\\
+	As my hearts breaks into pieces, as my soul I slowly sell.
+
+	Her eyes they shiver, and her smile goes down.\\
+	At the lack of my lie, at the sight of my frown.
+
+	She already know, even before I speak.\\
+	What I'm going to say, so her knees turn weak.
+
+	She sits and I beside her, as tears starts to flow.\\
+	I hold her as one do, as one wanting to go.
+
+	Then I spin a little lie, just enough to stop her sorrow.\\
+	A tale of devious hope, of a bright and new tomorrow.
+
+	In my tale I don’t appear, I won’t and never will.\\
+	For hold it might another one, with greater liars skill.
+
+	She takes the lie without question, she leaves my home, my heart.\\
+	And as I sit and counts the pieces, i find she took a part.
+\end{verso}
+
+\newpage
+
+\section{Morning come}
+
+\begin{verso}
+	As I lie in bed, eyes planted on the ceiling\\
+	I hear the angry clock, screaming for my reaction\\
+	my body seems numb, it pleads for any kind of feeling\\
+	but there is no energy, joy or anger, there is only inaction
+
+	I need to stand, I need to go, I need to make a living\\
+	stand up, take charge and make the deed, if only to be brisk\\
+	but the world is cold, god too strict and both so unforgiving\\
+	yet I see the sin, my fault and flaws, still I take the risk
+
+	My eyes flicker swiftly, while looking for a savior\\
+	to free me from my prison, this dull and boring day\\
+	filled with chores befitting slaves, it changes my behavior\\
+	for I used to enjoy the vibrant world, now all I see is grey
+\end{verso}
+
+
+\newpage
+\section{The mind of everyman}
+
+\begin{verso}
+	The rain it hits, then it split, on my screen, in between.\\
+	my thoughts and my concentration, no relation, no sensation.
+
+	They run so fast, but do not last, more than five, then they dive.\\
+	Through my head into the ground, without sound, thoughts inbound.
+
+	They ran away, could not stay, in my head, so they said.\\
+	Inside my skull a bolt is loose, there is no use, no excuse.
+
+	They tied me up, with a strop, it will be tightened, don't be frightened.\\
+	I feel the knife cut through the line, through my mind, so unkind.
+
+	So much pain, can't explain, through my dreams, how they scream.\\
+	From the bottom to the top, they never stop, chop chop chop.
+
+	Near the spot, all for naught, no bolt is there, much despair.\\
+	They fill the hole with moderation, limitation, obligation.
+
+	Now all I see, in front of me, is lots of spots, poker dots.\\
+	My mind is kept down to the ground, dreams they drown, ill homebound.
+
+	Bolts by bolts down in the pit, for now I fit, behind the grid.\\
+	Welcome to the void of grey, normal they say, to the end of day.
+\end{verso}
+
+\newpage
+
+\begin{verso}
+	To live is to feel pain, day and night, night and day.\\
+	it lifts your saint less soul far above its mortal glow.\\
+	holds it fast, holds it steady, washing ungodly thoughts away.\\
+	thus remembering your earthly present, your own personal sleepy hollow.
+
+	savor it, honor it, fresh from the wound never to be relinquished.\\
+	for your god demands you see it through, to pay your debt in full.\\
+	might you find some sun, some joy, so utterly distinguished.\\
+	as sweet as sugar it raise your spirit, but eat it not by the spoonful.
+
+	hardships is the bread of life, its mere existence makes those fleeting moments so much sweeter.\\
+	be by its hand stronger, wiser and let the glimpse of relief be your guiding star leading you forever on.\\
+	let go of your ideas of comfort, cling only to your raw ideals and throw aside your inner dreamer.\\
+	Tis life rewards only relentless work so grab your shovel and keep on digging, all from dusk till dawn.
+
+	as you hustle, you puzzle, on the great scheme of things\\
+	just to explain, to entertain, the idea that you folks were wrong\\
+	to learn, to discern, that pain did not sprout you wings\\
+	it led you, to a venue, where dreams are killed to a marching song.
+
+	before too long, you hear the song\\
+	a tune so strong, you're dragged along
+
+	inside the venue, a shovel is passed to\\
+	a tall hollowed man who, sternly address you
+
+	you ponder the meaning, of work so depleting\\
+	that pain isn't ceasing, which keep your soul leaking
+
+	the man then explain, the source to your pain\\
+	is lack of restrain, and declares you insane.
+
+	before judgments is passed you set yourself free,\\
+	as you run from the shovel from your parents decree\\
+	from pain and expectations, from work and moral slope\\
+	 you run towards the bad advice the fleeting glimpse of hope.
+
+	outside the town, you'll finally sit down, under a great maple tree you'll be sleeping.
+	with the wind in your hair,  people's judging glare, and a soul that's finally dreaming.
+\end{verso}
+
+\newpage
+
+\section{Three Words}
+
+
+\begin{verso}
+	Three words i want,\\
+	three words so small,\\
+	to hear and to embrace.
+
+	Three words to taunt,\\
+	three words is all,\\
+	these words i have to chase.
+
+
+	I know it's hard,\\
+	that it takes time,\\
+	but the fear is just too great.
+
+	The fear of losing,\\
+	the fear of pain,\\
+	and the fear of being too late.
+
+
+	So three words i seek,\\
+	that will make a promise,\\
+	of joy and better days.
+
+	It's not that hard,\\
+	if you want I'll start,\\
+	but there will be no more delays.
+
+
+	The words i seek,\\
+	i hope you know,\\
+	is nothing else but "i love you".
+
+	But they seem to stay,\\
+	within your lips,\\
+	the words just can't get through you.
+
+	I can see you try,\\
+	you try so hard,\\
+	to say the words above.
+
+	However i fear,\\
+	you pronounced them wrong?\\
+	It sounded like "goodbye my love"
+
+\end{verso}
+
+\newpage
+
+\section{Joyfully Unhappy}
+
+\begin{verso}
+	Oh my, how wonderful it is to be sad\\
+	To embrace the sheer joy of self hate\\
+	And to neglect your success, just a tad\\
+	To collect all your failures, what a weight!
+
+	Oh yes, come close let me draw you a bath\\
+	Full of sorrows, broken dreams and self pity\\
+	Feel the pain as you're pushed down a path\\
+	On the road to destruction, how witty!
+
+	My my, your tears they glimpse and glitter\\
+	As they fall from your chin to your toaster\\
+	Turn it on feel the power don't be bitter\\
+	let it fly past your head, past your shoulder!
+
+	Tally ho, see the light of storm and thunder\\
+	The old bathtub is like the great middle sea\\
+	With the smoke creating clouds, what a wonder\\
+	As the hate slowly vanish, you are free...
+
+\end{verso}
+
+\newpage
+
+\section{A burden of knowlegde}
+
+\begin{verso}
+	The wind so cold and harsh\\
+	Through bone and marrow it goes\\
+	cold street, cold feet, cold meat
+
+	Down the street I go on my march\\
+	with my lips as red as my nose\\
+	blue eye, blue lie, blue sky
+
+	As I lift my sign up high\\
+	To exclaim the truth, my burden\\
+	My say, my way, my day
+
+	I yell, I shout and I try\\
+	without praise, cheer or guerdon\\
+	in pain, in chain, in rain
+
+	As it hits my head and my hands\\
+	as it tries to strip me of sin\\
+	with light, with spite, with might
+
+	Too late, I will be where I stand\\
+	despite the cold and the doubt within\\
+	unchanged, deranged, estranged
+
+	As the snow and cold embrace me\\
+	a wall between me and the world\\
+	Isolated, dissipated, degraded.
+
+	Here i see the truth, the reality\\
+	as everything around me is twirled\\
+	To solidify, to dissatisfy, to die.
+
+
+
+\end{verso}
+
+\newpage
+
+\section{Nought but fight}
+
+\begin{verso}
+	I'll kick and punch you,\\
+	Oh believe me i will\\
+	till your color turns blue,\\
+	oh you'll cash your bill
+
+	See i saw you with my half sister\\
+	Oh boy you can't run from that\\
+	So I'll punch you in the head mister\\
+	Oh you'll see you little twat
+
+	I've seen you with the other gals\\
+	Oh boy you can't fool me\\
+	Joking about it with your little pals\\
+	Oh man i'll smash your knee
+
+	Keeping my li'l sis on the line\\
+	Jeepers you make me mad\\
+	With yer' dough and yer' fancy wine\\
+	Oh i'm gonna punch you real bad
+
+	So let her go you high roll high hat\\
+	Then we'll have no beef\\
+	else you'll deal with this old ally cat\\
+	and i promise I'll make it brief
+
+\end{verso}
+
+\newpage
+
+\section{Born for Mediocrity}
+
+Welcome my son or daughter, to this world of wonder that is to be your home. From your mothers womb to your parents arms, oh how wonderful, how special. The joy of parenthood heeds no equal, as your parents hold you tight with a tear near the eye.\\
+
+A little angle to be exact, what wonders might you make, what titles might your take. A little genius on two feet, an artist, an scientist, a star. Oh yes you will take the world with storm, ruffle their feathers, amaze and enchant them.\\
+
+Off you go out on the playground, out in the world my dear. Here you see the other stars, with parents as proud as yours, running around on the same type of shoes. The difference between you, the similarity too, as you start comparing, start competing.\\
+
+For it's hard to be special, especially if all are so, you need to shine you need to climb. To be the best, to match your parents ambitions and lift their legacy. So reach for the top my child, though it is hard to reach, much harder than you'd expect.\\
+
+Yes mommy's buttercup might find the work exhausting, the climb too steep, their abilities failing. With so many special people the competitions is intense, you see them climbing, some with tools some without. All reaching for the top without delay.\\
+
+You climb and climb the best you can, with might and grit you carry on. The prince or princess do proceed, as you reach new highs you'll find it steeper, you find yourself without breath. The energy is no more, the top so out of reach, left is only anger. \\
+
+The wonder child, the special guy, stuck at a hill towards the top. Sitting with other ambitious children, you'll find the climb overwhelming. Not all are born for greatness, to be special are reserved for the few. So you find yourself among others, whom to their parents were special too...\\
+
+
+\end{document}

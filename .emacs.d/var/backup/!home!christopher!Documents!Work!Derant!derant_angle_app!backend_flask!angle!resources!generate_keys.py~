@@ -1,0 +1,35 @@
+from flask_jwt_extended import get_jwt_identity
+from angle.models import db, UserModel
+from flask_restful import Resource
+import pyotp
+
+crypt_key = Fernet(app.config['BASE32_ENCRYPTION_KEY'])
+
+class GenerateKeys(Resource):
+    @jwt_required
+    def get(self):
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+        if current_user:
+            current_user.del_recovery_keys()
+            recovery_keys = []
+            for i in range(6):
+                recovery_key = pyotp.random_base32()[:10]
+                recovery_key = recovery_key[:5] + '-' + recovery_key[5:]
+
+                recovery_key_encrypted = (crypt_key.encrypt(recovery_key.encode())).decode()
+
+                temp_key = OtpRecoveryKeyModel(key = recovery_key_encrypted)
+                temp_key.save_to_db()
+
+                current_user.append_recovery_keys(temp_key)
+
+                recovery_keys.append(recovery_key)
+            try:
+                current_user.save_to_db()
+                return {'message': 'Keys Generated', 'recovery_keys': recovery_keys}, 200
+            except:
+                return {'message': 'Something went wrong internally'}, 500
+        else:
+            return {'message': 'User could not be found'}, 403

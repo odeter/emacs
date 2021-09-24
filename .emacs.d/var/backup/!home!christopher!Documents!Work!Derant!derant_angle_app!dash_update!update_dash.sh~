@@ -1,0 +1,19 @@
+#!/bin/bash
+# A simple script
+
+args=("$@")
+
+if [ $# -eq 0 ]; then
+    echo "$package - Search for alarms to raise"
+    echo " "
+    echo "$package date_start date_end"
+    exit 1
+else
+
+    export DATABASE_URL=postgresql://db_master:1234@localhost/angle_db
+    #source bin/activate
+    ## get port and login from dokku
+    #export EXPORT=`dokku postgres:info angle_db --exposed-ports | sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+    #export DATABASE_URL=`dokku postgres:info angle_db --dsn | sed "s/@[a-z -]*:['0-9']*/@localhost:$EXPORT/g"`
+    python3 suricata_check.py "${args[0]}" "${args[1]}"
+fi

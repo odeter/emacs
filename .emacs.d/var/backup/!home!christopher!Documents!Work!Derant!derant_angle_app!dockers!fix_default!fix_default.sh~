@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source venv/bin/activate
+
+if [ "$1" == "--local" ];
+then
+    export DATABASE_URL=postgresql://postgres:123test@localhost:5123/postgres
+    python3 fix_default.py
+else
+    export BACKEND_PROC_LOG_DIR='logs/'
+
+    export EXPORT=`dokku postgres:info angle_db --exposed-ports | sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+    export DATABASE_URL=`dokku postgres:info angle_db --dsn | sed "s/@[a-z -]*:['0-9']*/@localhost:$EXPORT/g"`
+    python3 fix_default.py
+
+fi

@@ -1,0 +1,40 @@
+import os
+import re
+import sys
+import logging
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from sqlalchemy.exc import SQLAlchemyError
+
+# Setup
+load_dotenv("/app/.env")
+log_path = os.path.join(os.environ.get("BACKEND_PROC_LOG_DIR"), "pg_maintenance.log")
+os.makedirs(os.path.dirname(log_path), exist_ok=True)
+logging.basicConfig(filename=log_path, filemode='a', format='%(levelname)s - %(asctime)s - %(message)s', level=logging.INFO)
+
+
+if __name__== "__main__":
+    logging.info('STARTED {}'.format(os.path.basename(__file__)))
+
+    # Get date for last time run succesfully from log file
+
+    # Get database url from .env file
+    try:
+        db_url = os.environ.get("DATABASE_URL")
+    except Exception as e:
+        logging.error('Could not get env variables: {}'.format(e))
+
+    # Connect to DB
+    try:
+        engine = create_engine(db_url)
+        cursor = engine.connect()
+    except Exception as e:
+        logging.error('Could not connect to db: {}'.format(e))
+
+    # Get stats and insert into DB
+    try:
+         cursor.execute("CALL run_maintenance_proc();")
+    except Exception as e:
+        logging.error("Error while getting and inserting stats: {}".format(e))
+
+    logging.info('FINISHED')

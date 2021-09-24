@@ -1,0 +1,42 @@
+ id |         username          |                                        password
+                 | active |          name          |   mobile    |    zipcode    |       address        |
+ group_id |            toc             | parent_id
+----+---------------------------+------------------------------------------------------------------------
+-----------------+--------+------------------------+-------------+---------------+----------------------+
+----------+----------------------------+-----------
+  2 | rjh@derant.com            | $pbkdf2-sha256$29000$sFZqTYmREuLce6.1tpaS0g$c2hAXDwFMs14kB0KNpfocMIeTMG
+X23elr.7G5xM6/NY | t      | Rasmus                 |             |               |                      |
+          | 2020-06-30 21:48:16.445485 |
+  3 | test@test.dk              | $pbkdf2-sha256$29000$hDCGsJaydu6dc04JoTTmXA$F1DsLZMyrMpzL6.cR67lvEzaJ4A
+tzyupVWLu1XLuTG4 | t      | test person 1          | 12345678    | 123456        | test street          |
+        1 | 2020-06-30 22:15:40.734144 |
+  1 | cmg@derant.com            | $pbkdf2-sha256$29000$ZYxRyrl3bq31ntPae6917g$7dt0hS0Ch7fyp06kDomFVKsJtIK
+.j.XB.iTouQM.rWE | t      | Christopher            |             |               |                      |
+          | 2020-06-30 21:48:16.380665 |
+  4 | mantest@test.dk           | $pbkdf2-sha256$29000$xBgDoJTyXouxVkoJgTCGMA$I1NFPl5MD0.scolRXSXgmbpsmZa
+VmS4jqXjWSyDWobY | t      |                        | 12345678    |               |                      |
+        1 | 2020-07-01 09:04:08.664508 |         3
+  5 | hhj@vandcenterdjurs.dk    | $pbkdf2-sha256$29000$Okeodc4Z47z3vjeGsHYuhQ$d/3EMQhk.4v2KvzBwVLKwcjd33t
+QKv.kbhxzZ60JmYc | t      | Henrik H Jordalen      | 40582870    | 8500          | Teknologivej 2       |
+        1 | 2020-07-01 11:08:52.051156 |
+  6 | rh@derant.com             | $pbkdf2-sha256$29000$HeMcQ4jRGkMoJWSMsRbi3A$DETuMHHKL4WqNFSDhmUo0SsDf5l
+2HxpIWfuAHS2LNio | t      | Rasmus Have            | 21294444    | 8680          | Frigsvej 5A          |
+        1 | 2020-07-01 11:29:12.78562  |
+  7 | formand@ulstrupvand.dk    | $pbkdf2-sha256$29000$3zuHMAZgrJWydk7pvTcGoA$Xxv6ZBBc49D7kaIcww5AE1YVXex
+lsUmvCr8YnC6gmuw | t      | Tom Eklundh Larsen     | 23311674    | 8860          | Kærsangervej 15      |
+        1 | 2020-07-01 21:18:58.822424 |
+  8 | greve.maugstrup@gmail.com | $pbkdf2-sha256$29000$hDCmlBLivNf6H4NQirG21g$cPGEqg4FZQTWsDLX4UNMKCiuhMS
+LDP/3U75IkcNXSu4 | t      | Christian Greve Hansen | 20236630    | 6500          | Haderslevvej 7       |
+        1 | 2020-07-03 08:34:44.173157 |
+ 10 | ph@aarsvand.dk            | $pbkdf2-sha256$29000$TImxNua8N6aU8l4L4VxrzQ$UGjhhqBuX4lAm17c1pf6hrubBah
+kuPLK8oE7aYN/35E | t      | Per Havbro             | 20122733    | 9600          | industrivej 44       |
+        1 | 2020-07-06 13:45:55.544817 |
+  9 | hl@grevevand.dk           | $pbkdf2-sha256$29000$Pce4l7IWovTe.39PqZUyRg$MtNYq0ppG0A8YQc/6dJzHlJS34j
+QbwbnjtV/31goRU0 | t      | Henrik Lydersen        | 25662572    | 2670          | Håndværkerbyen 1     |
+        1 | 2020-07-06 11:30:22.867232 |
+ 11 | fm@brobyvand.dk           | $pbkdf2-sha256$29000$s/Z.T0mpNUbovffeO4dQyg$fo6IZ7N7nkZ9mPXr4pCCe.Dp7cN
+OhzCP3ZYK6JD.pIc | t      | Bent Lollesgaard       | 51795898    | 5672 Broby    | Søndervej 19         |
+        1 | 2020-09-03 10:31:27.948557 |
+ 12 | jek@biv.dk                | $pbkdf2-sha256$29000$CAGgVEpJyVmr9V4rhfB.zw$DjNcw6A.QWE09XDPBIz7AtWWZuZ
+LzRuV4oHxVJLeDig | t      | Jens Ejnar Kristensen  | 45 90 24 85 | 3460 Birkerød | Biskop Svanes Vej 16 |
+        1 | 2020-09-04 09:59:35.326118 |

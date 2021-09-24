@@ -1,0 +1,573 @@
+export default{
+  $vuetify: {
+    badge: 'Badge',
+    close: 'Close',
+    dataIterator: {
+      noResultsText: 'No matching records found',
+      loadingText: 'Loading items...'
+    },
+    dataTable: {
+      itemsPerPageText: 'Rows per page:',
+      ariaLabel: {
+        sortDescending: 'Sorted descending.',
+        sortAscending: 'Sorted ascending.',
+        sortNone: 'Not sorted.',
+        activateNone: 'Activate to remove sorting.',
+        activateDescending: 'Activate to sort descending.',
+        activateAscending: 'Activate to sort ascending.'
+      },
+      sortBy: 'Sort by'
+    },
+    dataFooter: {
+      itemsPerPageText: 'Items per page:',
+      itemsPerPageAll: 'All',
+      nextPage: 'Next page',
+      prevPage: 'Previous page',
+      firstPage: 'First page',
+      lastPage: 'Last page',
+      pageText: '{0}-{1} of {2}'
+    },
+    datePicker: {
+      itemsSelected: '{0} selected',
+      nextMonthAriaLabel: 'Next month',
+      nextYearAriaLabel: 'Next year',
+      prevMonthAriaLabel: 'Previous month',
+      prevYearAriaLabel: 'Previous year'
+    },
+    noDataText: 'No data available',
+    carousel: {
+      prev: 'Previous visual',
+      next: 'Next visual',
+      ariaLabel: {
+        delimiter: 'Carousel slide {0} of {1}'
+      }
+    },
+    calendar: {
+      moreEvents: '{0} more'
+    },
+    fileInput: {
+      counter: '{0} files',
+      counterSize: '{0} files ({1} in total)'
+    },
+    timePicker: {
+      am: 'AM',
+      pm: 'PM'
+    },
+    pagination: {
+      ariaLabel: {
+        wrapper: 'Pagination Navigation',
+        next: 'Next page',
+        previous: 'Previous page',
+        page: 'Goto Page {0}',
+        currentPage: 'Current Page, Page {0}'
+      }
+    }
+  },
+  Routes:
+  {
+    Dashboard: 'Dashboard',
+    'Shortcut page': 'Shortcut page',
+    'Edit network layout': 'Edit network layout',
+    'Analyse Network': 'Analyse Network',
+    Register: 'Register',
+    'Api Key Settings': 'Api Key Settings',
+    'Alarm Settings': 'Alarm Settings',
+    'Create Registration Key': 'Create Registration Key',
+    'Set Alarm Level': 'Set Alarm Level',
+    'Key Register': 'Key Register',
+    Home: 'Home',
+    'User Overview': 'User Overview',
+    'Create Groups': 'Create Groups'
+  },
+  Drawer:
+  {
+    keyRegister: 'Key Register'
+  },
+  General:
+  {
+    close: 'Close',
+    save: 'Save',
+    search: 'Search',
+    failedSearch: 'Search Failed',
+    alpha: 'Currently in closed Alpha...',
+    beta: 'Currently in closed Beta...',
+    active: 'Active',
+    and: 'and',
+    or: 'or',
+    field: 'Field',
+    operator: 'Operator',
+    value: 'Value',
+    condition: 'Condition',
+    subCount: 'Subcount',
+    subType: 'Subtype',
+    IP: 'IP',
+    month: 'month',
+    dataTransfered: 'Data Overført (bytes)',
+    latestConnection: 'Seneste Forbindelse',
+    averageConnectionType: 'Gennemsnitlig Forbindelses Type',
+    averageDataTransfer: 'Avg. Data Transfer (bytes)',
+    averageConnType: 'Avg. Conn Type',
+    userEmail: 'User E-mail',
+    password: 'Password',
+    clear: 'Clear',
+    errMsg: 'Something went wrong',
+    rowsPerPage: 'Rows per page:',
+    noSearchMatch: 'Nothing matches your search',
+    cancel: 'Cancel',
+    somethingWrong: 'Something went wrong'
+  },
+404:
+  {
+      error: '404 - Page not found'
+  },
+AlarmOverview:
+  {
+    newlyRaisedAlarm: 'Alarms Newly Raised',
+    handlingAlarm: 'Alarms Being Handled',
+    closedAlarm: 'Alarms Closed',
+    editAlarmStatus: 'Edit Alarm Status',
+    alarmStatus: 'Alarm Status',
+    noNewRaisedAlarms: 'No new raised alarms',
+    noAlarmsBeingHandled: 'No alarms being handled',
+    noAlarmsRaised: 'No Alarms Raised',
+    notHandled: 'Not Handled',
+    beingHandled: 'Being Handled',
+    closed: 'Closed',
+    TableHeaders: {
+      alarmName:'Alarm Name',
+      alarmDesc: 'Alarm description',
+      alarmType: 'Alarm Type',
+      alarmLevel: 'Alarm Level',
+      alarmRaisedBy: 'Alarm Raised By',
+      timeRaised: 'Time Raised',
+      alarmStatus: 'Alarm Status',
+      goToData: 'Go To Data',
+      editAlarm: 'Edit Alarm'
+    }
+    },
+AnalysisGPS:{
+
+    },
+AnalysisNetwork:{
+      probe: 'Probe',
+      logType: 'Log Type',
+      dataRange: 'Data Range',
+      noData: 'No date(s) selected',
+      getData: 'Get Data',
+      clearFields: 'Clear Fields',
+      noFilters: 'No filters defined',
+      cursorValue: 'Cursor value: {value}',
+      mDataSize: 'MData Size: {value}',
+      currentSubset: 'Current Subset: {value}',
+      yx: 'Y: {valueY}/X: {valueX}',
+      filterText: 'Filter Text Input',
+      updateFilters: 'Update filters',
+      editLayout: 'Edit Layout',
+      probeSelected: 'A Probe has to be selected',
+      logSelected: 'A Log has to be selected',
+      dateSelected: 'A Date has to be selected through the \'DatePicker\'',
+      raiseAlarm: 'Raise Alarm',
+      noProbeSelected: 'No probe selected',
+      noLogSelected: 'No log selected',
+      selected: '{0} Selected',
+      blueDot: ' - Means that the date has available data for the chosen log type',
+      adminUsers: 'Admin Users'
+    },
+AnalysisNetworkLayout:
+    {
+      headerTitle: 'Column Names',
+      backToNetwork: 'Back to Network Analysis',
+      hideColumns: 'Hide Columns:',
+      loadingText: 'Loading... Please wait',
+      saveChanges: 'Save Changes',
+      clearAll: 'Clear all',
+      noData: 'No data available',
+      saveChangesSnackbar: 'Changes has been saved.',
+      clearAllSnackbar: 'All hidden rows has been cleared.'
+    },
+Dashboard:
+    {
+      unhandledAlarms: 'Unhandled Alarms',
+      handlingAlarms: 'Alarm is being handled',
+      handledAlarms: 'Handled Alarms',
+      localAlarms: 'Local Alarms',
+      globalAlarms: 'Global Alarms',
+      connections: 'Connections',
+      noLocaleAlarms: 'No local alarms raised at the moment',
+      noGlobalAlarms: 'No global alarms raised at the moment',
+      noConnections: 'There are no connections of type "conn" logged at the moment',
+      firstConnection: 'First Connection',
+      timeFound: 'Time Found',
+      Level: 'Level',
+      Type: 'Type',
+      Status: 'Status',
+      riskCritical: 'Critical',
+      riskUrgent: 'Pressing',
+      riskPotential: 'Potential',
+      alarmCritical: 'Critical Alarm',
+      alarmPotential: 'Potential Alarm',
+      alarmUrgent: 'Pressing Alarm',
+      attackNumbers: 'Number of Attacks',
+      serverPlacement: 'Server Location',
+      totalConnections: 'Total Number of Connections',
+      totalAlarms: 'Total Number of Alarms',
+      traficInNetwork: 'Distribution of traffic on the network',
+      alarmsInOwnNetwork: 'Number of alarms in the network',
+      numbersAlarms: 'Number of Alarms',
+      numbersOfConnection: 'Number of Connections',
+      numbersOfAlarmsTotal: 'Number of alarms at all waterworks',
+      numbersOfAttacks: 'Attack Attempts',
+      numberOfAttempts: 'Amount of tries',
+      numberOfInvestigations: 'Amount of connections investigated',
+      splitOfRisk: 'Distribution of alarm risk groups'
+    },
+Devices:
+    {
+      notImplemented: 'This page is not fully implemented and is merely inteded to show a possible layout',
+      networkDevices: 'Network Devices',
+      devicesOnNetwork: 'Devices Currently on Network',
+      newDevices: 'New Devices on Netowrk',
+      approvedDevices: 'Approved Devices on Network',
+      lastConnection: 'Last Connection',
+      serverName: 'Server Name',
+      websiteServer: 'Website Server',
+      mailServer: 'Mail Server Office',
+      localDNSServer: 'Local DNS Server'
+    },
+HelpPage:
+    {
+      search: 'Search',
+      name: 'Name',
+      'hot-key': 'Hot-key',
+      description: 'Description',
+      gettingTipsFailed: 'Getting tips failed, status code: ',
+      NameItems: {
+        applyFilter: 'Apply Filter',
+        unapplyFilter: 'Unapply Filter',
+        toggleFilter: 'Toggle Filter',
+        simpleFilter: 'Simple Filter',
+        overwriteSimpleFilter: 'Overwrite - Simple Filter',
+        overwriteAnd: 'Overwrite - "and" Filter',
+        overwriteOr: 'Overwrite - "or" Filter',
+        overwriteSubCountMin: 'Overwrite - subcountmin',
+        overwriteSubCountMax: 'Overwrite - subcountmax',
+        filterlistRight: 'Filterlist - Right',
+        filterlistLeft: 'Filterlist - Left',
+        filterlistNew: 'Filterlist - New Filter',
+        searchfieldNext: 'Searchfield - Next Match',
+        searchfieldPrev: 'Searchfield - Previous Match',
+          windowNav: 'Window Navigation',
+          raiseAlarm: 'Raise Alarm'
+      },
+      DescItems: {
+        applyFilter: 'Press "a", lowercase, to apply the filter',
+        unapplyFilter: 'Press "A", uppercase, to unapply filter, E.g load data without filter',
+        toggleFilter: 'Press "t", lowercase, to toggle filter on and off',
+        simpleFilter: 'Press "i", lowercase, to insert the simple filter',
+        overwriteSimpleFilter: 'Press "I", uppercase, to ovewrite with the simple filter',
+        overwriteAnd: 'Press "u", lowercase, to overwrite with an "and" filter',
+        overwriteOr: 'Press "U", uppercase, to overwrite with an "or" filter',
+        overwriteSubCountMin: 'Press "y", lowercase, to overwrite with a subcountmin filter',
+        overwriteSubCountMax: 'Press "Y", uppercase, to overwrite with a subcountmax filter',
+        filterlistRight: 'Press "o", lowercase, to navigate right in the filterlist',
+        filterlistLeft: 'Press "p", lowercase, to navigate left in the filterlist',
+        filterlistNew: 'Press "F", uppercase, to add a new empty filter to the filterlist',
+        searchfieldNext: 'Press "n", lowercase, to jump forward to the next search match',
+        searchfieldPrev: 'Press "N", uppercase, to jump backwards to the previous search match',
+        windowNav: 'Use the arrow keys to navigate around the data window',
+        raiseAlarm: 'Press "R", uppercase, to raise an alarm based on your current highlighted line'
+      }
+    },
+Home:
+    {
+      welcome: 'Welcome to Derant Angle'
+    },
+KeyRegister:
+    {
+      registerNewUser: 'Register new user:',
+      userEmail: 'User Email',
+      userEmailPlaceholder: 'Email of new user',
+      registrationKey: 'Registration Key',
+      registrationKeyPlaceholder: 'Key provided by Derant for new registrations',
+      password: 'Password',
+      passwordPlaceholder: 'Password for new user',
+      passwordValidation: 'Password Validation',
+      passwordValidationPlaceholder: 'Repeat password',
+      name: 'Name',
+      namePlaceholder: 'Name of user',
+      mobileNumber: 'Mobile Number',
+      mobileNumberPlaceholder: 'Mobile Number of new user',
+      zipCode: 'Zip Code',
+      zipCodePlaceholder: 'Firm zip code',
+      firmAddress: 'Firm Address',
+      firmAddressPlaceholder: 'Firm Address',
+      registerUserBtn: 'Register User',
+      clearBtn: 'clear',
+      nameRequired: 'Name is required',
+      nameLength: 'Name must be less than 120 characters',
+      mobileRequired: 'Mobile Number is required',
+      mobileLength: 'Mobile number must be less than 20 characters',
+      addressRequired: 'Address is required',
+      addressLength: 'Address must be less than',
+      zipRequired: 'Zip code is required',
+      zipLength: 'Zip code must be less than 20 characters',
+      passwordRepeat: 'Please Repeat Password',
+      passwordLength: 'Password must be less than 120 characters',
+      passwordMatch: 'The two passwords have to match',
+      passwordRequired: 'Password is required',
+      emailRequired: 'User Email is required',
+      emailLength: 'E-mail must be less than 120 characters',
+      emailValid: 'E-mail must be valid',
+      registrationKeyRequired: 'Registration key is required',
+      registrationKeyLength: 'Registration key must be less than or equal to 30 characters',
+      userRegistrered: 'User registrered',
+      errMsg: 'Something went wrong'
+    },
+Login:
+    {
+      password: 'Password',
+      passwordPlaceholder: 'Type in your user password',
+      userEmail: 'User Email',
+      userEmailPlaceholder: 'Type in your user email',
+      login: 'Login',
+      passwordRulesRequired: 'Password is required',
+      passwordRulesChar: 'Password must be less than 120 characters',
+      emailRulesRequired: 'User Email is required',
+      emailRulesChar: 'E-mail must be less than 120 characters',
+      emailRulesValid: 'E-mail must be valid',
+      tokenLength: 'Token must have a length of 6',
+      token: '2FA Token',
+      forgotPassword: 'Forgot Password?',
+      forgotPasswordInfo: 'Write the email that you have used on your account',
+      sendEmail: 'Send Password Reset Email',
+      emailSent: 'Password Reset Email Sent',
+      wrongLink: 'Invalid Password Reset Link. Try Writing Account Email Again'
+    },
+RegiKey:
+    {
+      regiNewUser: 'Register new user',
+      createKey: 'Create Registration Key',
+      regiKeyName: 'Registration Key Name',
+      keyHolder: 'Name of the key recipient',
+      userGroup: 'User Group',
+      userGroupHint: 'Choose which group the user should be apart of',
+      newKey: 'Create New Key',
+      currentRegiKey: 'Current Registration Keys:',
+      keyRulesNameRequired: 'keyName is required',
+      keyRulesChars: 'Name must be less than 50 characters',
+      groupRulesChoose: 'You have to choose a group',
+      emailRulesRequired: 'User Email is required',
+      emailRulesChars: 'User Email must be less than 120 characters',
+      noKeyGen: 'No keys generated',
+      keyGen: 'Registration key created'
+    },
+Register:
+    {
+      regiNewUser: 'Register new user',
+      emailNewUser: 'Email of new user',
+      passwordNewUser: 'Password of new user',
+      repeatPassword: 'Repeat Password',
+      passwordValidation: 'Password Validation',
+      mobileNumber: 'Mobile Number',
+      mobileNumberNewUser: 'Mobile number of new user',
+      registerUser: 'Register User',
+      userOverview: 'User Overview:',
+      editAlarmStatus: 'Edit Alarm Status',
+      userRoles: 'User Roles',
+      userActive: 'User is Active',
+      userActiveHint: 'Togle off to deactivate user, or on to active user',
+      mobileRulesRequired: 'Mobile Number is required',
+      mobileRulesChars: 'Mobile Number must be less than 20 characters',
+      passwordRulesRepeat: 'Please Repeat Password',
+      passwordRulesChars: 'Password must be less than 120 characters',
+      passwordRulesMatch: 'The two passwords have to match',
+      passwordRulesRequired: 'Password is required',
+      nameRulesRequired: 'User Email is required',
+      nameRulesChars: 'E-mail must be less than 120 characters',
+      nameRulesValid: 'E-mail must be valid',
+      selectLeastOne: 'At least one item should be selected',
+      rolesNotFound: 'Roles could not be found',
+      noUsers: 'No users created',
+      TableHeaders: {
+        username: 'Username',
+        name: 'Name',
+        mobile: 'Mobile',
+        zipCode: 'Zip Code',
+        address: 'Address',
+        toc: 'toc',
+          active: 'Active',
+          alarmnote: 'Alarm Notification',
+          editUser: 'Edit User'
+      }
+    },
+SetAlarm:
+    {
+      raiseAlarmTitle: 'Raise Alarm:',
+      notifyName: 'Notify Name',
+      notifyNamePlaceholder: 'Name of the new Alarm Notice',
+      alarmType: 'Alarm Type',
+      alarmTypePlaceholder: 'Type of the alarm',
+      alarmDescript: 'Alarm Description',
+      alarmDescriptPlaceholder: 'Description of the alarm',
+      alarmNotify: 'Alarm Notify',
+      alarmNotifyHint: 'Choose "Do not notify" to avoid using an alarm notifier',
+      alarmLevel: 'Alarm Level',
+      raiseAlarm: 'Raise Alarm',
+      alarmRulesRequired: 'Alarm Level is required',
+      notifyRulesRequired: 'Alarm Notifier have to be chosen',
+      alarmRulesNameRequired: 'Alarm name is required',
+      alarmRulesNameChar: 'The alarm name must be less than 50 characters',
+      alarmRulesTypeRequired: 'Alarm type is required',
+      alarmRulesTypeChar: 'The alarm type must be less than 120 characters',
+      noAlarmLevel: 'No levels created',
+      noNotifier: 'No Notifiers created',
+      alarmCreated: 'Alarm Created'
+    },
+SetAlarmLevel:
+    {
+      createAlarmLevelTitle: 'Create Alarm Level:',
+      createAlarmLevel: 'Create Alarm Level',
+      levelName: 'Level Name',
+      levelNamePlaceholder: 'Name of the Alarm Level',
+      levelDescription: 'Level Description',
+      levelDescriptionPlaceholder: 'Description of the new Alarm Level',
+      createNewLevel: 'Create New Level',
+      currentAlarmLevel: 'Current Alarm Level:',
+      editAlarmNotifier: 'Edit Alarm Notifier',
+      notifyName: 'Notify Name*',
+      notifyNamePlaceholder: 'Name of the new Alarm Notice',
+      notifyURL: 'Notify URL*',
+      notifyURLPlaceholder: 'URL for new Alarm Notify',
+      dot_Explainer: '*indicates required field',
+      nameRulesRequired: 'Name is required',
+      nameRulesChar: 'Name must be less than 50 characters',
+      noSensors: 'No sensors created',
+      alarmLModified: 'Alarm Level modified',
+      alarmLCreated: 'Alarm Level create',
+      alarmEdit: 'Edit Alarm'
+  },
+SetAlarmNotis:
+    {
+      createAlarmNotify: 'Create Alarm Notify:',
+      notifyName: 'Notify Name',
+      notifyNamePlaceholder: 'Name of new Alarm Notice',
+      notifyURL: 'Notify URL',
+      notifyURLPlaceholder: 'URL for new Alarm Notify',
+      createNotifyBtn: 'Create New Notify',
+      currentNotifiers: 'Current Alarm Notifiers:',
+      editAlarmNotifier: 'Edit Alarm Notifier',
+      dot_notifyName: 'Notify Name*',
+      dot_notifyURL: 'Notify URL*',
+      requiredFields: '* indicates required field',
+      nameRequired: 'Name is required',
+      nameLength:'Name must be less than 50 characters',
+      urlRequired: 'URL is required',
+        urlInvalid: 'String given is not a valid URL',
+        noNoti: 'No Alarm Notifications created',
+        noSensors: 'No Sensors created',
+        alarmNotifierCreated: 'Alarm Notifier created',
+      TableHeaders: {
+        alarmName: 'Alarm Name',
+          alarmURL: 'Alarm URL',
+          editAlarm: 'Edit Alarm'
+        }
+    },
+SetApiKey:
+    {
+      createSensor: 'Create Sensor:',
+      sensorName: 'Sensor Name',
+      sensorNamePlaceholder: 'Name of new sensor',
+      sensorDescription: 'Sensor Description',
+      sensorDescriptionPlaceholder: 'Description of new sensor',
+      createSensorBtn: 'Create Sensor',
+      currentSensors: 'Current Sensors:',
+      nameRequired: 'Name is required',
+      nameLength: 'Name must be less than 50 characters',
+      noSensors: 'No Sensors created',
+      apiKey: 'Api key created',
+      TableHeaders: {
+        sensorName: 'Sensor Name',
+        apiKey: 'Api Key',
+        sensorDescription:'Sensor Description'
+    }
+    },
+UserSettings:
+      {
+        informationSettings: 'Information Settings',
+        passwordSettings: 'Password Settings',
+        name: 'Name',
+        namePlaceholder: 'Name of user',
+        mobileNumber: 'Mobile Number',
+      mobileNumberPlaceholder: 'Mobile Number of new user',
+      zipCode: 'Zip Code',
+      zipCodePlaceholder: 'Firm zip code',
+      firmAddress: 'Firm Address',
+      firmAddressPlaceholder: 'Firm Address',
+      save: 'Save Changes',
+      newPassword: 'New Password',
+      newPasswordPlaceholder: 'New Password',
+      repeatNewPassword: 'New Password Validation',
+      repeatNewPasswordPlaceholder: 'Repeat new password',
+      nameLength: 'Name must be less than 120 characters',
+      mobileLength: 'Mobile number must be less than 20 characters',
+      addressLength: 'Address must be less than',
+      zipLength: 'Zip code must be less than 20 characters',
+      passwordRepeat: 'Please Repeat Password',
+      passwordLength: 'Password must be less than 120 characters',
+      passwordMatch: 'The two passwords have to match',
+      passwordRequired: 'Password is required',
+      userInfoChanged: 'User information changed',
+      userPasswordChanged: 'User password changed',
+      activate2FA: 'Activate 2FA',
+      deactivate2FA: 'Deactivate 2FA',
+      activate: 'Activate',
+      info2FA: 'To enable 2FA, scan the following QR code on your preffered app. When succesfully scanned, you need to enter a token into the field below the QR code and hit Activate.',
+      succDeactivate: 'Succesfully deactivated 2FA',
+      succActivate: 'Succesfully activated 2FA',
+      wrongToken: 'Wrong Token given',
+      currentPassword: 'Current Password'
+    },
+UserOverview:
+  {
+    subtitle: 'User Overview:'
+  },
+CreateGroups:
+  {
+    createGroups: 'Create User Groups',
+    groupName: 'Group Name',
+    groupNamePlaceholder: 'Name of the new Group',
+    groupDescription: 'Group Description',
+    groupDescriptionPlaceholder: 'Description of the new Group',
+    newGroupBtn: 'Create New Group',
+    currentGroups: 'Current Groups',
+    editGroup: 'Edit Group',
+    noGroups: 'No Groups Created',
+    groupCreated: 'Group Succesfully Created',
+    groupModified: 'Group Succesfully Modified'
+    },
+ForgotPassword:
+    {
+      newPassword: 'New Password',
+      repeatNewPassword: 'Repeat New Password',
+      changePassword: 'Change Password',
+    backToLogin: 'Back to Login',
+    passwordChangeSucc: 'Succesfully change password',
+    resetMailSent: 'Password Reset Email Sent'
+  },
+    ErrorMessages:
+    {
+    error_1: 'Wrong Login Credentials',
+    error_2: 'Wrong token',
+    error_3: 'Email must be valid',
+    error_4: 'Reset Password Token Expired',
+    error_5: 'The Password Reset Token has already been used',
+    error_6: 'The Current Password entered does not match',
+    error_7: 'Wrong Password Given',
+    error_8: 'No users have been created',
+    error_9: 'User not set properly',
+    error_10: 'User already exists',
+    error_11: 'Username have to be an email',
+    error_12: 'You do not have permission to grant this role',
+    error_500: 'Something went wrong'
+  }
+}
