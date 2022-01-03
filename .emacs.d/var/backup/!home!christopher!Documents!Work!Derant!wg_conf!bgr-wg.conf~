@@ -1,0 +1,11 @@
+[Interface]
+Address = 10.143.1.28
+ListenPort = 51820
+PrivateKey = eDAwm47bs+TgJ9n/HpzIzwUo3z4QUac5rGD+r6qX/lQ=
+
+[Peer]
+Endpoint = 86.58.156.15:51820
+PublicKey = ARqFPI+dyDXlMRt7v/SwVnrz0YQzav+AEC0ffIqAYGs=
+#AllowedIPs = 0.0.0.0/0
+AllowedIPs = 10.0.0.0/8,86.58.156.23/32
+PersistentKeepalive = 25

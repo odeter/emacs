@@ -1,0 +1,27 @@
+#!/bin/bash
+# A simple script
+
+args=("$@")
+
+if [ "$1" == "-h" ]; then
+    echo "$package - Run maintenance command in db"
+    echo " "
+    echo "$package"
+    exit 1
+elif [ "$1" == '--local' ]; then
+    source venv/bin/activate
+    flock -n -x backup.py -c "python3 backup.py"
+    #python3 pg_maintenance.py
+else
+
+    #export LOCKS="/app/uploads/locks/"
+
+    mkdir -p $LOCKS
+
+    # get lock
+    exec 100>/app/uploads/locks/backup.lock || exit 1
+    flock -n -x 100 || exit 1
+
+    #flock -n -x cron_jobs/pg_maintenance/pg_maintenance.py -c "python3 cron_jobs/pg_maintenance/pg_maintenance.py"
+    python3 cron_jobs/backup/backup.py
+fi

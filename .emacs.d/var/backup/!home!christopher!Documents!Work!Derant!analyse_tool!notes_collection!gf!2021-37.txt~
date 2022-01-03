@@ -1,0 +1,11 @@
+2021-09-25 offered:
+
+Should http be blocked? 185.58.60.78
+
+2021-09-16 used:
+
+this has a high score on abuseipdb, new service and a lot of data transferred
+
+1	10.151.50.130	1	443	443	tcp	1	79.79.114.249	79.79.114.249	53	-	187177442	187177442		TISCALI-UK TalkTalk Communications Limited, GB	ripencc	AS9105
+
+1	185.58.61.163	1	443	443	tcp	1	79.79.114.249	79.79.114.249	53	-	187177442	187177442		TISCALI-UK TalkTalk Communications Limited, GB	ripencc	AS9105

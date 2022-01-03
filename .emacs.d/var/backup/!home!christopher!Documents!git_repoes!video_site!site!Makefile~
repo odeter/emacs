@@ -50,6 +50,9 @@ help:
 # 	@gnome-terminal --geometry ${POSFD} --hide-menubar -- bash -c 'cd frontend_vue; npm run dev; bash' 2>/dev/null
 # endif
 
+# start lasha
+start_lasha: backend_start
+
 # Start flask backend in a seperate terminal
 backend_start:
 	@gnome-terminal --geometry ${POSBD} --hide-menubar -- bash -c '$(VENV_ACTIVATE) && cd backend; flask run; bash' 2>/dev/null
@@ -73,8 +76,7 @@ drop_db:
 	@echo ${DATABASE_URL}
 	@psql ${DATABASE_URL} -c "DROP SCHEMA public CASCADE;"
 	@psql ${DATABASE_URL} -c "CREATE SCHEMA public;"
-	@${VENV_ACTIVATE} && cd backend_flask && rm -rf migrations/ && flask db init && flask db migrate && flask db upgrade
-	@psql ${DATABASE_URL} -f "dockers/init.sql"
+	@${VENV_ACTIVATE} && cd backend && rm -rf migrations/ && flask db init && flask db migrate && flask db upgrade
 
 show_db:
 	@echo ${DATABASE_URL}

@@ -1,0 +1,63 @@
+from angle.models import UserModel, AlarmModel, SensorModel, FirmModel, AlarmLevelModel, AlarmDataModel, AlarmDataNotes
+from flask import current_app as app
+from datetime import datetime as dt
+from flask_mail import Message, Mail
+from flask import render_template
+from .send_sms import send_sms
+import os
+import phonenumbers as pn
+
+image_url = os.path.join(app.config['CURRENT_IMAGE_SITE'], app.config['IMAGE_FOLDER'])
+
+def sendMail(subject, recipients, message_body, mail):
+    msg = Message(subject, recipients = recipients)
+    msg.html = render_template('email_template.html', icon=os.path.join(image_url, "alert-plus.png"), head="New Alarm", message=message_body, color="red")
+    mail.send(msg)
+    return True
+
+def send_alarm_msg(firm, alarm, a_level, raised_by):
+    mail_list = []
+    sms_list = []
+    recp = []
+    # send mail/sms to mssp
+    if firm.mssp:
+        smsText = "New alarm named '{0}' raised for client '{1}', log into angle for more informaiton".format(alarm.alarm_name, firm.name)
+        emailSubject = "New Client Alarm Raised"
+        emailText = "An alarm called '{alarmname}' was raised by '{raiser}' at '{time}' for client '{client}', log into Angle for more information".format(alarmname=alarm.alarm_name, raiser=raised_by, time=alarm.toc, client=firm.name)
+        mssp_firm = FirmModel.find_by_id(firm.mssp)
+        recp = mssp_firm.get_ah_user()
+    # send to derant
+    elif firm.payment_plan == 1:
+        smsText = "New alarm named '{0}' raised for client '{1}', log into angle for more informaiton".format(alarm.alarm_name, firm.name)
+        emailSubject = "New Client Alarm Raised"
+        emailText = "An alarm called '{alarmname}' was raised by '{raiser}' at '{time}' for client '{client}', log into Angle for more information".format(alarmname=alarm.alarm_name, raiser=raised_by, time=alarm.toc, client=firm.name)
+        recp = UserModel.find_users_with_role("sys_admin")
+    # send mail/sms to firm
+    elif a_level.name != "riskCritical" or not app.config['USE_DBI']:
+        smsText = "New alarm named '{0}' raised, log into angle for more informaiton".format(alarm.alarm_name)
+        emailSubject = "New Alarm Raised"
+        emailText = "An alarm called '{alarmname}' was raised by '{raiser}' at '{time}', log into Angle for more information".format(alarmname=alarm.alarm_name, raiser=raised_by, time=alarm.toc)
+        recp = firm.get_ah_user()
+
+    for i in recp:
+        mail_list.append(i.username)
+        if i.mobile:
+            number = pn.parse(i.mobile, i.country_code)
+            if pn.is_valid_number(number):
+                sms_list.append(str(number.country_code) + str(number.national_number))
+
+    # send mail
+    if app.config['NOTIFY_USERS']:
+        if app.config['MAIL_ACTIVE']:
+            mail = Mail(app)
+            try:
+                sendMail(emailSubject, mail_list, emailText, mail)
+                app.logger.info("Mail about alarm id - {0} - successfully sent".format(alarm.id))
+            except Exception as err:
+                app.logger.error("Mail about alarm id - {0} - failed with error: {1}".format(alarm.id, str(err)))
+        if app.config['SMS_ACTIVE']:
+            try:
+                send_sms(smsText, sms_list)
+                app.logger.info("SMS about alarm id - {0} - successfully sent".format(alarm.id))
+            except Exception as err:
+                app.logger.error("SMS about alarm id - {0} - failed with error: {1}".format(alarm.id, str(err)))

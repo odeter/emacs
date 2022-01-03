@@ -2,34 +2,34 @@
 ;; ----- smex-history -----
 (
  find-file
+ comment-box
  replace-string
- comment-region
  uncomment-region
+ comment-region
+ linum-mode
  python-mode
- common-lisp-mode
- kill-line
 )
 
 ;; ----- smex-data -----
 (
  (find-tag . 1)
- (find-file . 4039)
+ (find-file . 4461)
  (package-install . 56)
- (comment-box . 6)
+ (comment-box . 7)
  (package-delete . 9)
- (uncomment-region . 231)
+ (uncomment-region . 243)
  (highlight-indentation-mode . 27)
  (highlight-indent-guides-mode . 10)
  (fountain-mode . 3)
  (jinja2-mode . 4)
  (web-mode-set-engine . 2)
  (package-refresh-contents . 19)
- (comment-region . 823)
+ (comment-region . 850)
  (package-list-packages . 7)
  (prettier-js-mode . 9)
  (prettier-js . 2)
  (web-mode . 21)
- (replace-string . 69)
+ (replace-string . 98)
  (eww-mode . 1)
  (eww-open-file . 1)
  (python-mode . 2)
@@ -37,7 +37,7 @@
  (comment-set-column . 1)
  (profiler-start . 9)
  (profiler-report . 14)
- (linum-mode . 21)
+ (linum-mode . 25)
  (font-lock-mode . 3)
  (package-menu-mode . 4)
  (emacs-version . 3)
@@ -95,7 +95,7 @@
  (next-buffer . 2)
  (comint-delchar-or-maybe-eof . 2)
  (indent-region . 1)
- (python-indent-shift-left . 6)
+ (python-indent-shift-left . 7)
  (python-indent-shift-right . 6)
  (grep-find . 5)
  (grep . 7)

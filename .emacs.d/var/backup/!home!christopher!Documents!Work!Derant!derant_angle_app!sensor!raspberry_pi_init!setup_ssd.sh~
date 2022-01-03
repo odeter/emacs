@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo "-- Partition and mount ssd drive --"
+
+echo "Check for existing drive..."
+
+check_d=$(blkid -o value -s UUID /dev/sda1)
+
+if [ -z "$check_d" ]
+then
+    # partition drive
+    echo "Partition drive..."
+    parted -a optimal /dev/sda mklabel gpt mkpart primary 0% 100%
+
+    # format drvie
+    echo "Format drive..."
+    mkfs -F -t ext4 /dev/sda1
+    # make and mount drive at data folder
+    echo "Mount drive..."
+    mkdir -p /data
+    mount /dev/sda1 /data/
+
+    # add to automount
+    fs_uuid=$(blkid -o value -s UUID /dev/sda1)
+    APPEND="# ssd-drive\nUUID=${fs_uuid}  /data  ext4  defaults  0  0\n"
+    grep -q 'ssd-drive' /etc/fstab || printf "$APPEND" >> /etc/fstab
+else
+      echo "Drive exist"
+fi
+echo "-- Done --"

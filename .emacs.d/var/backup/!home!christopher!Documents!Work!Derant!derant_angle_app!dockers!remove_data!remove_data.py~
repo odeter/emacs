@@ -1,0 +1,61 @@
+import os
+import re
+import sys
+import logging
+from sqlalchemy import create_engine
+from datetime import datetime
+from sqlalchemy.exc import SQLAlchemyError
+
+def remove_data(cursor, sensor_id):
+    # Find tables connected to sensor
+    get_tables = ("select table_name from dto join dthelper on dt_id=id where dthelper.sensor_id=%s")
+
+    tables = cursor.execute(get_tables, (sensor_id))
+
+    print(tables)
+    for table in tables:
+
+        print(table)
+        # delete data
+        sql = "delete from "+table[0]+" where sensor_id=%s"
+
+        try:
+            cursor.execute(sql, sensor_id)
+        except SQLAlchemyError as e:
+            error = str(e.__dict__['orig']).replace('\n', ' ')
+            logging.error('SQL error at insert field_types: {}'.format(error))
+            exit('SQL error')
+
+# Setup
+#load_dotenv("/app/.env")
+log_path = os.path.join(os.environ.get("BACKEND_PROC_LOG_DIR"), "remove_data.log")
+os.makedirs(os.path.dirname(log_path), exist_ok=True)
+logging.basicConfig(filename=log_path, filemode='a', format='%(levelname)s - %(asctime)s - %(message)s', level=logging.INFO)
+
+
+if __name__== "__main__":
+    logging.info('STARTED {}'.format(os.path.basename(__file__)))
+
+    sensor_id = int(sys.argv[1])
+
+    # Get database url
+    try:
+        db_url = os.environ.get("DATABASE_URL")
+    except Exception as e:
+        logging.error('Could not get env variables: {}'.format(e))
+
+    # Connect to DB
+    try:
+        engine = create_engine(db_url)
+        cursor = engine.connect()
+    except Exception as e:
+        logging.error('Could not connect to db: {}'.format(e))
+
+    # Fix inet types
+    #try:
+    remove_data(cursor, sensor_id)
+    #except Exception as e:
+    #    logging.error("Error while altering types: {}".format(e))
+
+
+    logging.info('FINISHED')

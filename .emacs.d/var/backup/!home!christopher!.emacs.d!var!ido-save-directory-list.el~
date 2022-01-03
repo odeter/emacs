@@ -2,22 +2,31 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose_(srv)/cron_jobs/" . "alarm_auto/")
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose_(srv)/" . "cron_jobs/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/sensor/versions/" . "v1.0.2/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/sensor/" . "versions/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/update_geo_ip/" . "logs/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/network_conn/" . "logs/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/dash_update/" . "logs/")
+ ("/home/christopher/Documents/git_repoes/personal_cv/app/" . "templates/")
+ ("/home/christopher/Documents/git_repoes/personal_cv/" . "app/")
  ("/home/christopher/Documents/Work/" . "Derant/")
  ("/home/christopher/Documents/" . "Work/")
  ("/home/christopher/" . "Documents/")
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/static/" . "reportTemplates/")
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/" . "log_data/")
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/" . "fixtures/")
- ("/home/christopher/Documents/git_repoes/video_site/site/backend/app/" . "api/")
+ ("/home/christopher/Documents/git_repoes/video_site/site/backend/app/" . "admin/")
  ("/home/christopher/Documents/git_repoes/video_site/" . "site/")
  ("/home/christopher/Documents/git_repoes/video_site/site/backend/" . "app/")
  ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_tysker/cron_jobs/" . "auto_report/")
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/dockers/" . "fix_partition/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/dockers/" . "fix_inet/")
  ("/home/christopher/Documents/Work/Derant/it_security_testing/receive_server/angle/static/" . "js/")
  ("/home/christopher/Documents/Work/Derant/it_security_testing/receive_server/angle/" . "static/")
  ("/home/christopher/Documents/Work/Derant/it_security_testing/receive_server/" . "angle/")
  ("/home/christopher/Documents/Work/Derant/it_security_testing/" . "receive_server/")
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/" . "dash_update/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/" . "data_insert/")
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/node_modules/vue-simple-context-menu/" . "docs/")
  ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_tysker/" . "angle/")
  ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_tysker/angle/" . "resources/")
@@ -25,10 +34,10 @@
  ("/home/christopher/Documents/Work/Derant/halfspace/halfspace-pkg/" . "halfspaceod/")
  ("/home/christopher/Documents/Work/Derant/" . "derant_angle_app/")
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/" . "resources/")
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/" . "angle/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/" . "generators/")
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/" . "core/")
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/" . "src/")
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/" . "router/")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/" . "views/")
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/" . "backend_flask/")
 )
 
@@ -44,27 +53,147 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/resources/" (24908 37081 753833 640000) "save_filter_selection.py" "get_messages_last_3.py" "delete_autofilter.py" "get_standard_column_data.py" "get_user_DVV.py" "create_sensor.py" "user_login.py" "get_column_color.py" "get_alarm_count.py" "get_filter_selection.py" "toggle_autofilter.py" "get_groups.py" "get_log_data.py" "get_all_sensors.py" "image_serve.py" "send_sms.py" "get_user_list.py" "get_alarm_types.py" "validate_2FA.py" "delete_filter_selection.py" "get_2FA_status.py" "edit_sensor.py" "get_roles.py" "edit_alarm_note.py" "check_url_token.py" "set_column_data.py" "generate_keys.py" "get_map_data.py" "generate_report.py" "get_firms.py" "get_admin_alarm_data.py" "get_sensors.py" "get_new_logs.py" "get_alarm_connections.py" "get_alarm_note.py" "set_login_time.py" "get_alarms.py" "edit_alarm.py" "activate_2FA.py" "pose_as_admin.py" "get_sub_roles.py" "get_new_alarms.py" "user_registration.py" "get_filter.py" "get_alarm_noti.py" "get_alarm_level.py" "__init__.py" "get_dash_data.py" "get_global_data.py" "user_logout_access.py" "upload_logo.py" "delete_alarm_note.py" "refresh_cookie.py" "get_resource_documents.py" "create_regi_key.py" "get_reg_keys.py" "get_logs.py" "user_logout_refresh.py" "parse_json_filter.py" "report_settings.py" "user_settings.py" "dbi_creator.py" "get_versions.py" "get_recovery_keys.py" "sys_get_user_list.py" "save_lang_to_db.py" "create_alarm_noti.py" "create_auto_filter.py" "./" "save_filter.py" "key_user_registration.py" "get_filter_tree.py" "edit_map_grouping.py" "delete_filter.py" "get_messages.py" "get_current_lang.py" "get_new_alarmsOld.py" "send_alarm_mail.py" "get_dash_sensor_data.py" "create_map_grouping.py" "get_auto_filter.py" "get_map_grouping.py" "get_sensor_install.py" "ip_lookup.py" "reg_helper.py" "firm_settings.py" "check_api_key.py" "forgot_password.py" "get_column_data.py" "get_alarm_data.py" "deactivate_2FA.py" "get_new_suricata.py" "sensorStatus.py" "get_possible_dates.py" "create_alarm_level.py" "change_password.py" "receive_data.py" "sys_registration.py" "token_refresh.py" "get_possible_logs.py" "create_alarm.py" "set_tokens.py" "delete_map_grouping.py" "create_group.py" "get_single_filter_selection.py" "upload_user_data.py" "get_network_graph.py" "get_help.py" "__pycache__/" "../" "edit_data_table.py" "forgot_password_sms.py" "get_trend_data.py")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/generators/" (25027 10633 410400 462000) "gen_data.sh" "dk_zipcodes.csv" "generate_data.py" "venv/" "generate_users.py" "./" "requirements.txt" "gen_iplookup.py" "README.md" "__pycache__/" "../")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/" (24908 35306 902455 602000) "templates/" "views.py" "__init__.py" "gendata.py" "models.py" "./" "report_fun/" "filter.py" "protected/" "static/" "brologs-to-json.py" "resources/" "__pycache__/" "../" "libpnffilter.py")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/data_insert/" (25028 24786 615561 65000) "package_probs/" "logs/" "./" "requirements.txt" ".#format_data.py" "README.md" "format_data.py" "check_data.sh" "../")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/" (24908 35323 899224 611000) "app.json" "generators/" "filter_test/" "uploads/" "derant_angle.py" "filter_set/" ".flaskenv" "tests/" ".env" "bro-docker/" "csv/" "venv/" ".pytest_cache/" "./" "requirements.txt" "angle/" "bash_scripts/" "instance/" "docker-compose.yml" "migrations/" "config.py" "__pycache__/" "../")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/" (25027 4372 444525 539000) "templates/" "views.py" "__init__.py" "gendata.py" "models.py" "./" "report_fun/" "filter.py" "protected/" "static/" "brologs-to-json.py" "resources/" "__pycache__/" "../" "libpnffilter.py")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/" (24908 31029 971700 9000) "production_build/" "package-lock.json" "cron_jobs/" "Procfile" "getComp.py" "builds/" "test_data/" ".gitignore" "munin_logs/" "sensor/" ".pytest_cache/" "backend_flask/" "./" "Makefile" "nginx.conf.sigil" "frontend_vue/" "database_diagram/" "dockers/" ".gitlab-ci.yml" "README.md" "../" ".git/" "DOCKER_OPTIONS_BUILD")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/" (25028 24529 656669 554000) "production_build/" "zabbix/" "cron_jobs/" "Procfile" "getComp.py" "builds/" "test_data/" ".gitignore" "munin_logs/" "sensor/" ".pytest_cache/" "backend_flask/" "./" "Makefile" "nginx.conf.sigil" "frontend_vue/" "database_diagram/" "dockers/" ".gitlab-ci.yml" "backup/" "README.md" "../" ".git/" "DOCKER_OPTIONS_BUILD")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/views/" (24908 35921 510282 627000) "SensorInstall.vue" "SysadminGlobalTriggers.vue" "GroupModDashboard.vue" "ForgotPassword.vue" "AlarmMailing.vue" "SensorOverview.vue" "KeyRegister.vue" "AnalysisGSM.vue" "ReportSettings.vue" "CreateGroups.vue" "404.vue" "RegiKey.vue" "SetAlarm.vue" "SetAlarmLevel.vue" "Register.vue" "FilesList.vue" "AnalysisHost.vue" "UploadUserData.vue" "MessageBoard.vue" "SetApiKey.vue" "Login.vue" "SysAdminFirmsOverview.vue" "NetworkOverview.vue" "AnalysisNetworkEditLayout.vue" "ReportGen.vue" "AnalysisGPS.vue" "UserOverview.vue" "./" "AnalysisNetwork.vue" "AlarmTriggers.vue" "UserSettings.vue" "HelpPage.vue" "SetAlarmNotis.vue" "Dashboard.vue" "MSSPRegister.vue" "Version.vue" "Resources.vue" "Devices.vue" "Home.vue" "AlarmOverview.vue" "About.vue" "../" "SysRegister.vue")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/" (25027 4533 186412 129000) "app.json" ".env.public" "generators/" "filter_test/" "uploads/" "derant_angle.py" "filter_set/" ".flaskenv" "tests/" ".env" "bro-docker/" "csv/" "venv/" ".pytest_cache/" "./" "requirements.txt" "angle/" "bash_scripts/" "instance/" "docker-compose.yml" "migrations/" "config.py" "__pycache__/" "../")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/dash_update/" (24908 25786 581261 164000) "logs/" "dash_check.py" "venv/" "./" "requirements.txt" "update_dash.sh" "../")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/auto_iplookup/" (25020 29213 136779 23000) "auto_iplookup.sh" "logs/" "venv/" "./" "requirements.txt" "auto_iplookup.py" "../")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/router/" (24908 19044 614017 3000) "./" "index.js" "../")
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose_(srv)/" (25020 29827 254561 630000) "app.json" "cron_jobs/" "Procfile" ".env" "csv/" "./" "derant-angle.py" "requirements.txt" "angle/" "instance/" "config.py" "../" ".git/" "DOCKER_OPTIONS_BUILD")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/generators/" (24908 20316 950118 222000) "gen_data.sh" "dk_zipcodes.csv" "generate_data.py" "venv/" "generate_users.py" "./" "requirements.txt" "gen_iplookup.py" "README.md" "__pycache__/" "../")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/update_geo_ip/" (25017 47255 476545 184000) "setup_simple_geo_ip.py" "logs/" "./" "update_geo_ip.sh" "requirements.txt" "README.md" "../")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/core/" (24908 19122 443172 145000) "Footer.vue" "TranslatedPopup.vue" "Drawer.vue" "View.vue" "./" "AppBar.vue" "../")
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/network_conn/" (25017 47255 476545 184000) "network_conn.py" "logs/" "./" "network_conn.sh" "requirements.txt" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/resources/" (25017 47759 568213 877000) "save_filter_selection.py" "get_messages_last_3.py" "delete_autofilter.py" "get_standard_column_data.py" "get_user_DVV.py" "create_sensor.py" "user_login.py" "get_column_color.py" "get_alarm_count.py" "sensor_delivery_status.py" "get_filter_selection.py" "toggle_autofilter.py" "get_groups.py" "get_log_data.py" "get_all_sensors.py" "image_serve.py" "send_sms.py" "get_user_list.py" "get_alarm_types.py" "validate_2FA.py" "delete_filter_selection.py" "sensor_notes.py" "get_2FA_status.py" "edit_sensor.py" "get_roles.py" "edit_alarm_note.py" "check_url_token.py" "set_column_data.py" "generate_keys.py" "get_map_data.py" "generate_report.py" "get_firms.py" "send_alarm_message.py" "get_map_ip_location.py" "get_admin_alarm_data.py" "get_sensors.py" "get_new_logs.py" "get_alarm_connections.py" "get_alarm_note.py" "set_login_time.py" "get_alarms.py" "edit_alarm.py" "activate_2FA.py" "pose_as_admin.py" "get_sub_roles.py" "get_new_alarms.py" "user_registration.py" "get_filter.py" "get_alarm_noti.py" "get_alarm_level.py" "__init__.py" "get_dash_data.py" "get_global_data.py" "user_logout_access.py" "upload_logo.py" "delete_alarm_note.py" "refresh_cookie.py" "get_resource_documents.py" "create_regi_key.py" "get_reg_keys.py" "get_logs.py" "user_logout_refresh.py" "parse_json_filter.py" "report_settings.py" "user_settings.py" "dbi_creator.py" "get_versions.py" "get_recovery_keys.py" "sys_get_user_list.py" "save_lang_to_db.py" "create_alarm_noti.py" "create_auto_filter.py" "./" "save_filter.py" "key_user_registration.py" "get_filter_tree.py" "edit_map_grouping.py" "delete_filter.py" "get_messages.py" "get_current_lang.py" "get_new_alarmsOld.py" "send_alarm_mail.py" "get_dash_sensor_data.py" "create_map_grouping.py" "get_auto_filter.py" "get_map_grouping.py" "get_sensor_install.py" "get_firm_location.py" "ip_lookup.py" "reg_helper.py" "firm_settings.py" "check_api_key.py" "sensor_upgrade.py" "forgot_password.py" "get_column_data.py" "get_alarm_data.py" "deactivate_2FA.py" "get_new_suricata.py" "sensorStatus.py" "get_possible_dates.py" "create_alarm_level.py" "change_password.py" "receive_data.py" "sys_registration.py" "token_refresh.py" "get_possible_logs.py" "create_alarm.py" "set_tokens.py" "delete_map_grouping.py" "create_group.py" "get_single_filter_selection.py" "upload_user_data.py" "get_network_graph.py" "get_help.py" "__pycache__/" "../" "edit_data_table.py" "forgot_password_sms.py" "get_trend_data.py")
+
+ ("/home/christopher/Documents/Work/Derant/dvv_questionnaire/" (25015 22806 436332 310000) "SamCyberVurderingV00.05.html" "./" "style.css" "Assets/" "README.md" "../" ".git/")
+
+ ("/home/christopher/Documents/git_repoes/video_site/site/backend/app/" (25005 10805 160208 924000) "forms.py" "error_handler.py" "flask_rbac/" "main_static/" "error_pages/" "admin/" "db_main_data.py" "pub_static/" "content/" "thumbnail.py" "__init__.py" "api/" "cus_error.py" "models.py" "./" "user/" "static/" "custom_functions.py" "login/" "__pycache__/" "../")
+
+ ("/home/christopher/Documents/git_repoes/video_site/site/" (24849 40918 829422 256000) "test_data/" "./" "Makefile" "backend/" "__pycache__/" "../")
+
+ ("/home/christopher/Documents/git_repoes/video_site/site/backend/" (24849 41727 580441 359000) ".flaskenv" ".env" "app/" "venv/" "lasha.py" "./" "requirements.txt" "migrations/" "config.py" "__pycache__/" "../")
+
+ ("/home/christopher/Documents/git_repoes/video_site/site/backend/app/content/" (23880 29443 733507 19000) "profile_pics/" "uploads/" "./" "../" "thumbnails/")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/dockers/" (24992 43988 241002 307000) "clickhousefdw/" "clickhouse_fdw_docker/" "./" "fix_inet/" "citus_docker/" "fix_partition/" "fix_default/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/dockers/clickhouse_fdw_docker/" (24992 55556 429196 538000) "init.sql" "./" "Dockerfile" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/views/" (24988 61755 981067 887000) "SensorInstall.vue" "SysadminGlobalTriggers.vue" "GroupModDashboard.vue" "ForgotPassword.vue" "AlarmMailing.vue" "SensorOverview.vue" "KeyRegister.vue" "AnalysisGSM.vue" "ReportSettings.vue" "CreateGroups.vue" "404.vue" "RegiKey.vue" "SetAlarm.vue" "SetAlarmLevel.vue" "Register.vue" "FilesList.vue" "AnalysisHost.vue" "UploadUserData.vue" "MessageBoard.vue" "SetApiKey.vue" "Login.vue" "SysAdminFirmsOverview.vue" "NetworkOverview.vue" "AnalysisNetworkEditLayout.vue" "ReportGen.vue" "AnalysisGPS.vue" "UserOverview.vue" "./" "AnalysisNetwork.vue" "AlarmTriggers.vue" "UserSettings.vue" "HelpPage.vue" "SetAlarmNotis.vue" "Dashboard.vue" "MSSPRegister.vue" "Version.vue" "Resources.vue" "DashboardMonitor.vue" "Devices.vue" "Home.vue" "AlarmOverview.vue" "About.vue" "../" "SysRegister.vue")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/" (24987 21012 525018 800000) "views/" "services/" "store/" "assets/" "languages/" "router/" "./" "plugins/" "App.vue" "main.js" "mixins/" "components/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/build/" (24988 59323 638726 724000) "webpack.base.conf.js" "utils.js" "check-versions.js" "./" "webpack.dev.conf.js" "build.js" "logo.png" "webpack.prod.conf.js" "../" "vue-loader.conf.js")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/geoip_db_refresh/" (24983 31897 640688 352000) "geoip_db_refresh.py" "geoip_db_refresh.sh" "logs/" "./" "requirements.txt" "../")
+
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_angle-public/" (24983 55596 175674 831000) "app.json" "cron_jobs/" "derant_angle.py" "Procfile" ".env" "csv/" "./" "requirements.txt" "angle/" "instance/" "config.py" "../" ".git/" "DOCKER_OPTIONS_BUILD")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/languages/" (24983 34154 230402 239000) "en.js" "en_itserve.js" "./" "en_water.js" "../" "da.js")
+
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose_(srv)/cron_jobs/alarm_auto/" (24983 29235 377115 237000) "./" "requirements.txt" "suricata_check.py" "sid_autoalert.csv" "sid-autoalert.txt" "../" "find_alarms.sh")
+
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose_(srv)/angle/" (24982 4939 477945 0) "templates/" "views.py" "__init__.py" "gendata.py" "models.py" "./" "report_fun/" "filter.py" "protected/" "static/" "brologs-to-json.py" "resources/" "../" "libpnffilter.py")
+
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose_(srv)/cron_jobs/" (24978 23631 960671 0) "dash_update/" "data_insert/" "update_geo_ip/" "sensor_status/" "network_conn/" "./" "auto_report/" "alarm_auto/" "auto_iplookup/" "backup/" "geoip_db_refresh/" "pg_maintenance/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose_(srv)/cron_jobs/update_geo_ip/" (24978 23631 960671 0) "setup_simple_geo_ip.py" "./" "update_geo_ip.sh" "requirements.txt" "README.md" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/alarm_auto/" (24982 6866 357994 902000) "./" "requirements.txt" "suricata_check.py" "sid_autoalert.csv" "sid-autoalert.txt" "../" "find_alarms.sh")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/dash_update/" (24978 23631 956671 342000) "logs/" "dash_check.py" "./" "requirements.txt" "update_dash.sh" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/sensor/" (24978 23632 52672 753000) "versions/" "os_ubuntu1804.sh" "os_raspbian10.sh" "os_ubuntu2004.sh" "vpn-script/" "./" "greve_b1.txt" "setup_ssd.sh" "sensor_script_install.sh" "README.md" "sensor_script_install_generic.sh" "generate_sensor_install.sh" "../" "vpn-install-8.sh")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/router/" (24980 58342 789120 839000) "./" "index.js" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/services/" (24979 49492 984040 100000) "BackendService.js" "user_status.js" "./" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/core/" (24980 54250 814201 291000) "Footer.vue" "TranslatedPopup.vue" "Drawer.vue" "View.vue" "./" "AppBar.vue" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/" (24978 23631 960671 402000) "dash_update/" "data_insert/" "update_geo_ip/" "sensor_status/" "network_conn/" "./" "auto_report/" "alarm_auto/" "auto_iplookup/" "backup/" "geoip_db_refresh/" "pg_maintenance/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/templates/" (24978 23631 936671 48000) ".gitkeep" "./" "email_template.html" "index.html" "../")
+
+ ("/home/christopher/Documents/Work/Derant/" (24979 33074 227047 887000) "sensor_v1.0.2_raspbian10.sh" "Activities and components V00.12.xlsx" "studenter_mus/" "2020-04-15 Jobopslag V00.02.docx" "Activities and components V00.09.xlsx" "backup_command.txt" "pnfvue/" "2020-02-24 2. IDA Workshop Generate Data V00.01.pdf" "udviklings_opgaver" "pnfback/" "it_security_testing/" "database_diagram.png" "notes/" "mandag-opgaver" "pi@10.94.1.218" "derant.config" "2020-04 Angle data fieds V00.02.xlsx" "Derant Network Sensor installation - Raspberry Pi V00.06.docx" "hacker_box_result/" "tysker_db/" "tunnel_conf/" "hacker_box_result.tar.xz" "nextcloud_sslupdate.txt" "dokku_git/" "test.sql" "simon_files/" "./" "Data_analyse_notes/" "reports/" "icon_comp/" "wg_conf/" "analyse_tool/" "2020-02-24 3. IDAWS normalbilledeopbygning.pdf" "err_html.html" "Projektlan V01.04.xlsx" "column_names" "studie_job" "simple_backup" ".~lock.Tidsregistrering.xlsx#" "report-generator/" "MSSP-angle-notes.txt" "sql.sql" "nessus_reports.zip" "derant_angle_app/" "DB changes" "backup/" "studie_job_noter.txt" "halfspace/" "nessus_reports/" "digitaltberedskab_diagram.pdf" "data/" "2020-02-24 1. IDA Workshop V00.01.pdf" "vandværk_alarmer.txt" "../" "løn/" "samcyber_web/" "roles" "dvv_questionnaire/" "pilot_info/" "guides/" "planning/")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/" (24978 23632 20672 283000) "InfoCards/" "AnalysisNetworkComponents/" "DashboardComponents/" "MapsComponents/" "./" "core/" "AlarmOverview/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/" (24978 23632 12672 165000) ".eslintignore" "build/" "package-lock.json" "dist/" ".postcssrc.js" ".eslintrc.js" "node_modules/" "./" ".editorconfig" ".npmrc" "package.json" "static/" "src/" "config/" "index.html" "README.md" "../")
+
+ ("/home/christopher/Documents/Work/Derant/wg_conf/" (24979 33343 139878 461000) "svend_pub" "./" "wg_copy.conf" "svend_private" "svend-wg.conf" "../")
+
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_advokat(srv07)/" (24978 23468 342269 528000) "app.json" "cron_jobs/" "Procfile" ".env" "csv/" "./" "derant-angle.py" ".env_old" "requirements.txt" "angle/" "instance/" "config.py" "../" ".git/" "DOCKER_OPTIONS_BUILD")
+
+ ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_deer/" (24978 22843 497177 3000) "app.json" "cron_jobs/" "Procfile" ".env" "csv/" "./" ".env_old" "requirements.txt" "angle/" "testapp.py" "instance/" "config.py" "../" ".git/" "DOCKER_OPTIONS_BUILD")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/dockers/fix_inet/" (24963 59990 671137 866000) "fix_inet.sh" "./" "fix_inet.py" "requirements.txt" "../")
+
+ ("/home/christopher/Documents/Work/Derant/dokku_git/" (24978 13792 431871 454000) "dokku_backup_minio/" "samcyber_dokku/" "dokku_deployment_bull/" ".env_old_moose" "./" "dokku_deployment_tysker/" "dokku_deployment_advokat(srv07)/" "moose.txt" "dokku_deployment_deer/" "dokku_deployment_moose_(srv)/" "dokku_deployment_moose_OLD/" "dokku_deployment_hare/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/mixins/" (24970 37334 79256 549000) "LogColors.json" "buttonMix.js" "filterformatting.js" "Countries.json" "dateSorting.js" "StandardFormat.js" "graphs.js" "./" "decideTextColor.js" "datepicker.js" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/AnalysisNetworkComponents/" (24970 37290 550826 483000) "TreeView.vue" "LoadingData.vue" "HideColumn.vue" "DataRow.vue" "DataColumn.vue" "./" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/InfoCards/" (24971 51079 673135 715000) "LastMessageCards.vue" "NewAlarms.vue" "CardAlarms.vue" "./" "NewSuricata.vue" "NewConnections.vue" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/DashboardComponents/" (24963 39734 406698 733000) "AlarmResume.vue" "./" "OverviewAlarms.vue" "DataOverview.vue" "LeafletMapAlarms.vue" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/AlarmOverview/" (24963 39734 406698 733000) "simpleTableInfo.vue" "infoPopup.vue" "AlarmTabItem.vue" "./" "dataPopup.vue" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/sensor/versions/v1.0.2/" (24963 59990 683137 892000) "sensor_v1.0.2_raspbian10.sh" "sensor_v1.0.2_ubuntu1804.sh" "sensor_v1.0.2_ubuntu2004.sh" "./" "sensor_v1.0.2_ubuntu2004.sig" "sensor_v1.0.2_raspbian10.sig" "sensor_v1.0.2_ubuntu1804.sig" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/sensor/versions/" (24963 59990 683137 892000) "v1.0.0/" "./" "v1.0.1/" "version.log" "v1.0.2/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/database_diagram/" (24954 29899 577184 744000) "database_diagram.png" "venv/" "./" "database.drawio" "requirements.txt" "generate_db.sh" "database.er" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/test_data/" (24952 4754 637162 828000) "upload_testdata.sh" "testdata/" "./" "suricata_ids/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/pg_maintenance/" (24951 63983 971728 599000) "pg_maintenance.sh" "./" "requirements.txt" "pg_maintenance.py" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/backup/" (24951 63552 747154 487000) "./" "requirements.txt" "backup.py" "backup.sh" "../" "public.pgp")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/auto_report/" (24941 34581 350768 472000) "auto_report.log" "auto_report.py" "./" "requirements.txt" "auto_reports.sh" "../")
+
+ ("/home/christopher/Documents/git_repoes/personal_cv/app/" (24925 41788 80811 906000) "get_content.py" "forms.py" "templates/" "content/" "__init__.py" "./" "static/" "__pycache__/" "../")
+
+ ("/home/christopher/Documents/git_repoes/personal_cv/app/templates/" (24949 57289 375347 657000) "base.html" "./" "err.html" "home.html" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/geoip_update/" (24943 52942 677498 194000) "geoip_update.py" "./" "requirements.txt" "geoip_update.sh" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/update_geo_ip/logs/" (24942 56216 640616 673000) "simpleGeoIP_log.log" "./" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/network_conn/logs/" (24942 49524 222647 808000) "network_conn.log" "./" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/dash_update/logs/" (24942 49520 342476 333000) "dash.log" "./" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/sensor_status/" (24925 37425 377725 919000) "./" "auto_sendsms/" "sensor_status.sh" "../")
+
+ ("/home/christopher/Documents/Work/Derant/dvv_spørgeskema/" (24933 35216 641104 926000) "SamCyberVurderingV00.05.html" "./" "iframe_test.html" "style.css" "Assets/" "README.md" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backup/" (24925 37425 373725 875000) "./" "nginx.conf.sigil" "header.png" "Dockerfile" "README.md" "../" "private_key_gpg.key")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/log_data/" (24898 13911 27101 110000) "test_get_log_data.py" "test_get_logs.py" "test_get_new_logs.py" "test_get_global_data.py" "test_get_trend_data.py" "test_get_possible_logs.py" "test_get_new_suricata.py" "test_get_dash_data.py" "./" "test_get_possible_dates.py" "test_receive_data.py" "__pycache__/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/" (24898 13911 27101 110000) "filter/" "report/" "login_logout/" "messaging/" "log_data/" "language/" "authentification/" "data_table/" "served_content/" "autofilter/" "map/" "sensor/" "user_firm_group/" "filter_selection/" "./" "alarm/" "test_ip_lookup.py" "role/" "__pycache__/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/fixtures/" (24898 13911 23101 69000) "login_wrap.py" "new_user.py" "docker_setup.py" "database.py" "./" "user_2fa.py" "filter.py" "populate.py" "test_client.py" "log_data.py" "__pycache__/" "../")
+
+ ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/" (24898 13911 31101 150000) "conftest.py" "pytest.ini" "fixtures/" "unit_tests/" "functional/" ".pytest_cache/" "./" "unit_test/" "README.md" "test_template" "__pycache__/" "../")
+
+ ("/home/christopher/Documents/git_repoes/personal_cv/" (24915 38616 536825 965000) "Procfile" ".flaskenv" ".env" ".gitignore" "app/" "venv/" "./" "requirements.txt" "main.sh" "cmgroot.py" "config.py" "__pycache__/" "../" ".git/")
+
+ ("/home/christopher/Documents/git_repoes/personal_cv/app/content/" (24048 2990 158794 949000) "skills.csv" "education.txt" "about.txt" "exp.txt" "./" "../")
 
  ("/home/christopher/org/gtd/" (24519 45033 30677 421000) "gtd.org" "./" "tickler.org" "inbox.org" "../")
-
- ("/home/christopher/Documents/Work/Derant/" (24887 55831 332772 349000) "Activities and components V00.12.xlsx" "studenter_mus/" "2020-04-15 Jobopslag V00.02.docx" "Activities and components V00.09.xlsx" "pnfvue/" "2020-02-24 2. IDA Workshop Generate Data V00.01.pdf" "udviklings_opgaver" "pnfback/" "it_security_testing/" "database_diagram.png" "notes/" "mandag-opgaver" "2020-04 Angle data fieds V00.02.xlsx" "Derant Network Sensor installation - Raspberry Pi V00.06.docx" "tunnel_conf/" "nextcloud_sslupdate.txt" "dokku_git/" "test.sql" "simon_files/" "./" "Data_analyse_notes/" "reports/" "icon_comp/" "analyse_tool/" "2020-02-24 3. IDAWS normalbilledeopbygning.pdf" "err_html.html" "Projektlan V01.04.xlsx" "column_names" "studie_job" "simple_backup" ".~lock.Tidsregistrering.xlsx#" "report-generator/" "sql.sql" "nessus_reports.zip" "derant_angle_app/" "studie_job_noter.txt" "halfspace/" "nessus_reports/" "digitaltberedskab_diagram.pdf" "data/" "2020-02-24 1. IDA Workshop V00.01.pdf" "vandværk_alarmer.txt" "vpn/" "../" "løn/" "samcyber_web/" "roles" "pilot_info/" "guides/" "planning/")
 
  ("/home/christopher/Documents/Work/" (24693 41636 665992 346000) "dats/" "gymnasie-tjenesten/" "gave-ideer" "report_fix.txt" "template_cyberprogram Samarbejdende Cybersikkerhed V01.10.pdf" "./" "sensor_pass.txt" "5d22836c-a8ce-4b0d-83ce-e29554a9e4a3" "simp2.txt" "Derant/" "simp.py" "Mentor/" "Det Sociale Oplæg (Dat Øko) (1).pdf" "mm.conf" "../" "resources.py")
 
@@ -72,25 +201,7 @@
 
  ("/home/christopher/" (24907 11099 305600 568000) "Oracle_VM_VirtualBox_Extension_Pack-5.2.0-118431.vbox-extpack" ".psql_history" "skypeforlinux-64.deb" ".mplayer/" ".psql_history-04806.tmp" "Videos/" "OBOAOBOAOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBOBqaqqq" ".psql_history-29111.tmp" ".npm/" "Desktop/" ".psql_history-09052.tmp" "emacs package" ".sudo_as_admin_successful" ".cache/" "VirtualBox VMs/" "snap/" ".docker/" ".emacs~" "PowerPointViewer.exe" ".emacs.d/" ".yarn/" ".condarc" ".psql_history-05139.tmp" ".wget-hsts" ".python_history-28183.tmp" ".mozilla/" ".stack/" "exit" ".emacs" ".ssh/" ".ipython/" ".gconf/" ".ghc/" "electq" ".swipl-dir-history/" ".pki/" "Pictures/" ".bash_history" ".psql_history-18140.tmp" "elecq" ".gitconfig" ".dbus/" ".bash_aliases" ".httpie/" ".keras/" "./" ".gnome/" ".npmrc" ".fonts/" "org/" ".vue-templates/" ".cinnamon-gnome/" ".bashrc" "anaconda3/" ".gnupg/" ".ICEauthority" "qq" ".macromedia/" ".thunderbird/" "Templates/" ".yarnrc" ".python_history" ".local/" ".gitlab-runner/" "Documents/" ".psql_history-24128.tmp" "Public/" ".lastpass/" ".texlive2017/" ".bash_logout" ".vuerc" ".python_history-25778.tmp" "Untitled Document 1" "mail.txt" ".mysql_history" "privatekey" "Downloads/" ".profile" "Music/" "vpn-install-92F68C1F2E1FC3BD.sh" "../" ".conda/" ".config/")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/services/" (24905 39907 454910 308000) "BackendService.js" "user_status.js" "./" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/DashboardComponents/" (24898 13911 39101 230000) "AlarmResume.vue" "./" "OverviewAlarms.vue" "DataOverview.vue" "LeafletMapAlarms.vue" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/languages/" (24904 18332 399256 23000) "en.js" "en_itserve.js" "./" "en_water.js" "../" "da.js")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/AnalysisNetworkComponents/" (24898 13911 39101 230000) "TreeView.vue" "LoadingData.vue" "HideColumn.vue" "DataRow.vue" "DataColumn.vue" "./" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/mixins/" (24900 27719 433585 597000) "LogColors.json" "buttonMix.js" "filterformatting.js" "Countries.json" "dateSorting.js" "StandardFormat.js" "graphs.js" "./" "decideTextColor.js" "datepicker.js" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/" (24898 13911 11100 948000) "InfoCards/" "AnalysisNetworkComponents/" "DashboardComponents/" "./" "core/" "AlarmOverview/" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/" (24898 13911 39101 230000) "views/" "services/" "store/" "assets/" "languages/" "router/" "./" "plugins/" "App.vue" "main.js" "mixins/" "components/" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/" (24898 13911 35101 190000) ".eslintignore" "build/" "package-lock.json" "dist/" ".postcssrc.js" ".eslintrc.js" "node_modules/" "./" ".editorconfig" ".npmrc" "package.json" "static/" "src/" "config/" "index.html" "../")
-
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/MapsComponents/" (24898 12799 539945 462000) "ipMap.vue" "./" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/auto_iplookup/" (24897 61402 809915 212000) "auto_iplookup.sh" "./" "requirements.txt" "auto_iplookup.py" "../")
 
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/bash_scripts/" (24120 8595 872111 461000) "./" "extract-data-with-bro.sh" "process-pcaps.sh" "../")
 
@@ -104,37 +215,15 @@
 
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/protected/" (24895 12389 185115 589000) "logos/" "sensorInstallScripts/" "./" "Documents/" "../")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/pg_maintenance/" (24786 1681 668639 432000) "pg_maintenance.sh" "logs/" "venv/" "./" "requirements.txt" "pg_maintenance.py" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/InfoCards/" (24891 9077 961218 258000) "LastMessageCards.vue" "NewAlarms.vue" "CardAlarms.vue" "./" "NewSuricata.vue" "NewConnections.vue" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/alarm_auto/" (24888 27498 168672 786000) "logs/" "venv/" "./" "requirements.txt" "suricata_check.py" "sid_autoalert.csv" "sid-autoalert.txt" "../" "find_alarms.sh")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/components/AlarmOverview/" (24862 21369 619060 800000) "simpleTableInfo.vue" "infoPopup.vue" "AlarmTabItem.vue" "./" "dataPopup.vue" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/fixtures/" (24862 14976 328053 183000) "login_wrap.py" "new_user.py" "docker_setup.py" "database.py" "./" "user_2fa.py" "filter.py" "populate.py" "test_client.py" "log_data.py" "__pycache__/" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/log_data/" (24853 3453 332083 852000) "test_get_log_data.py" "test_get_logs.py" "test_get_new_logs.py" "test_get_global_data.py" "test_get_trend_data.py" "test_get_possible_logs.py" "test_get_new_suricata.py" "test_get_dash_data.py" "./" "test_get_possible_dates.py" "test_receive_data.py" "__pycache__/" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/" (24862 15033 197133 336000) "conftest.py" "pytest.ini" "fixtures/" "unit_tests/" "functional/" "pytest22.ini" ".pytest_cache/" "./" "unit_test/" "README.md" "test_template" "__pycache__/" "../")
-
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/authentification/" (24860 49202 764384 162000) "test_generate_keys.py" "test_forgot_password_sms.py" "test_refresh_cookie.py" "test_create_regi_key.py" "test_get_recovery_keys.py" "test_pose_as_admin.py" "test_get_2FA_status.py" "test_key_user_registration.py" "./" "test_check_api_key.py" "test_forgot_password.py" "test_reg_helper.py" "test_set_tokens.py" "test_token_refresh.py" "test_deactivate_2FA.py" "test_validate_2FA.py" "test_change_password.py" "test_get_reg_keys.py" "test_activate_2FA.py" "test_check_url_token.py" "__pycache__/" "../")
 
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/autofilter/" (24853 3453 328083 816000) "test_toggle_autofilter.py" "test_delete_autofilter.py" "./" "test_get_auto_filter.py" "test_create_auto_filter.py" "__pycache__/" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/dockers/" (24860 51627 173418 697000) "init.sql" "./" "Dockerfile" "fix_partition/" "fix_default/" "../")
 
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/served_content/" (24853 3453 332083 852000) "test_get_versions.py" "test_image_serve.py" "./" "test_get_help.py" "__pycache__/" "../" "test_get_sensor_install.py")
 
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/data_table/" (24853 3453 328083 816000) "test_edit_data_table.py" "test_get_standard_column_data.py" "./" "test_get_column_data.py" "test_set_column_data.py" "test_get_column_color.py" "__pycache__/" "../")
 
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/functional/" (24853 3453 332083 852000) "filter/" "report/" "login_logout/" "messaging/" "log_data/" "language/" "authentification/" "data_table/" "served_content/" "autofilter/" "map/" "sensor/" "user_firm_group/" "filter_selection/" "./" "alarm/" "test_ip_lookup.py" "role/" "__pycache__/" "../")
-
  ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/tests/unit_tests/" (24853 3453 320083 745000) "./" "__pycache__/" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/build/" (24842 23055 459095 24000) "webpack.base.conf.js" "utils.js" "check-versions.js" "./" "webpack.dev.conf.js" "build.js" "logo.png" "webpack.prod.conf.js" "../" "vue-loader.conf.js")
-
- ("/home/christopher/Documents/git_repoes/video_site/site/backend/app/" (24849 41734 384518 898000) "forms.py" "error_handler.py" "flask_rbac/" "main_static/" "error_pages/" "admin/" "db_main_data.py" "pub_static/" "content/" "thumbnail.py" "__init__.py" "api/" "cus_error.py" "models.py" "./" "user/" "static/" "custom_functions.py" "login/" "__pycache__/" "../")
 
  ("/home/christopher/Documents/git_repoes/video_site/site/backend/app/login/" (24849 40041 582124 228000) "l_static/" "templates/" "views.py" "__init__.py" "./" "static/" "__pycache__/" "../")
 
@@ -146,11 +235,7 @@
 
  ("/home/christopher/Documents/git_repoes/video_site/site/backend/app/error_pages/" (23880 29443 968777 137000) "templates/" "views.py" "__init__.py" "./" "static/" "__pycache__/" "../")
 
- ("/home/christopher/Documents/git_repoes/video_site/site/backend/" (24849 38440 959916 362000) ".flaskenv" ".env" "app/" "venv/" "lasha.py" "./" "requirements.txt" "config.py" "__pycache__/" "../")
-
  ("/home/christopher/Documents/git_repoes/video_site/" (23883 7893 578468 346000) "test_data/" "site/" "./" "README.md" "../" ".git/")
-
- ("/home/christopher/Documents/git_repoes/video_site/site/" (24849 37738 747272 90000) "./" "Makefile" "backend/" "__pycache__/" "../")
 
  ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_tysker/cron_jobs/auto_report/" (24834 44796 14080 365000) "auto_report.log" "auto_report.py" "./" "requirements.txt" "auto_reports.sh" "../")
 
@@ -167,78 +252,6 @@
  ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_tysker/cron_jobs/" (24793 48408 175796 804000) "dash_update/" "data_insert/" "sensor_status/" "./" "auto_report/" "alarm_auto/" "auto_iplookup/" "pg_maintenance/" "../")
 
  ("/home/christopher/Documents/Work/Derant/analyse_tool/" (24807 481 131369 963000) "tysker_suricata" "analyse_data.py" "temp/" "result_data/" "query_data/" "find_anomalies.py" ".gitignore" "queries/" "./" "requirements.txt" "notes_collection/" "risk_desc/" "report-generator/" "README.md" "../" ".git/")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/sensor_status/" (24771 24568 913025 121000) "./" "auto_sendsms/" "sensor_status.sh" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/auto_report/" (24786 1809 705422 9000) "logs/" "auto_report.log" "venv/" "auto_report.py" "./" "requirements.txt" "auto_reports.sh" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/data_insert/" (24786 701 363607 383000) "package_probs/" "testlock.lock" "logs/" "lock.lock" "./" "requirements.txt" "README.md" "format_data.py" "check_data.sh" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/dockers/fix_partition/" (24762 4725 105533 758000) "fix_partition.sh" "fix_partition.py" "./" "requirements.txt" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/dockers/fix_default/" (24785 39600 190127 349000) ".#fix_default.py" "./" "requirements.txt" "fix_default.sh" "fix_default.py" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/" (24771 24458 135984 608000) "dash_update/" "data_insert/" "cleanup_script/" "sensor_status/" "./" "auto_report/" "alarm_auto/" "auto_iplookup/" "pg_maintenance/" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/generators/" (24767 22897 604099 577000) "gen_data.sh" "dk_zipcodes.csv" "generate_data.py" "venv/" "generate_users.py" "./" "requirements.txt" "gen_iplookup.py" "README.md" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/src/store/" (24498 31840 231135 964000) "./" "index.js" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/config/" (24756 56161 862092 440000) "prod.env.js" "dev.env.js" "./" "index.js" "../")
-
- ("/home/christopher/Documents/Work/Derant/it_security_testing/receive_server/angle/static/js/" (24751 39510 478120 829000) "my.js" "./" "../")
-
- ("/home/christopher/Documents/Work/Derant/it_security_testing/receive_server/angle/static/" (24751 39489 205862 410000) "favicon-32x32.png" "./" "favicon.ico" "js/" "../")
-
- ("/home/christopher/Documents/Work/Derant/it_security_testing/receive_server/angle/" (24751 26876 255690 8000) "templates/" "views.py" "__init__.py" "./" "static/" "__pycache__/" "../" "resources.py")
-
- ("/home/christopher/Documents/Work/Derant/it_security_testing/receive_server/angle/templates/" (24751 39514 362167 995000) "./" "index.html" "../")
-
- ("/home/christopher/Documents/Work/Derant/it_security_testing/" (24751 29085 601353 150000) "maltest.py" "maltest.exe" "automaltest.py" "automalscript.sh" ".gitignore" "push_dokku.sh" "results.txt" "./" "requirements.txt" "receive_server/" "ip_list.txt" "README.md" "../" ".git/")
-
- ("/home/christopher/Documents/Work/Derant/it_security_testing/receive_server/" (24751 22458 342085 596000) "uploads/" "Procfile" ".flaskenv" ".gitignore" "file-receiver.py" "./" "nginx.conf.sigil" "requirements.txt" "angle/" "README.md" "config.py" "__pycache__/" "../")
-
- ("/home/christopher/Documents/Work/Derant/guides/" (24749 20025 885114 75000) "citus_setup" "README_reportgen.md" "README_datascript.md" "report_guide.md" "./" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/gen_data/" (24749 9242 555791 26000) "gen_data.sh" "dk_zipcodes.csv" "generate_data.py" "venv/" "generate_users.py" "./" "requirements.txt" "gen_iplookup.py" "README.md" "../")
-
- ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose/cron_jobs/data_insert/" (24701 31021 597741 281000) "error_insert.log" "./" "requirements.txt" "README.md" "format_data.py" "check_data.sh" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/angle/templates/" (24626 64281 466072 268000) ".gitkeep" "./" "email_template.html" "index.html" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/cleanup_script/" (24693 30944 586524 360000) "cleanup.py" "cleanup.sh" "venv/" "./" "requirements.txt" "cleanup.log" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/cron_jobs/auto_sendsms/" (24647 30383 211936 351000) "auto_sendsms.sh" "./" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/node_modules/vue-simple-context-menu/docs/" (24685 45283 237725 667000) "./" "build.js" "index.html" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/node_modules/vue-simple-context-menu/dist/" (24685 50667 504981 797000) "vue-simple-context-menu.min.js" "vue-simple-context-menu.umd.js" "vue-simple-context-menu.css" "vue-simple-context-menu.esm.js" "./" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/node_modules/" (24685 45283 285725 847000) "eventsource/" "thunky/" "utils-merge/" "webpack/" "cliui/" "normalize-range/" "collection-visit/" "string.prototype.trimstart/" "node-libs-browser/" "string_decoder/" "array-includes/" "@juggle/" "css-select-base-adapter/" "coa/" "duplexer/" "source-map/" "function-bind/" "babel-plugin-minify-builtins/" "json3/" "babel-plugin-transform-inline-consecutive-adds/" "domain-browser/" "extend/" "levn/" "loader-utils/" "copy-concurrently/" "postcss-calc/" "postcss-reduce-transforms/" "regenerate/" "serve-index/" "buffer/" "worker-farm/" "minipass-flush/" "uuid/" "webpack-merge/" "regex-not/" "faye-websocket/" "websocket-driver/" "mixin-deep/" "vue-router/" "object-is/" "regexp.prototype.flags/" "http-errors/" "ajv/" "postcss-normalize-positions/" "read-cache/" "optionator/" "rechoir/" "icss-utils/" "lodash.memoize/" "postcss-normalize-whitespace/" "vm-browserify/" "regexpp/" "serve-static/" "core-util-is/" "for-in/" "webpack-log/" "postcss-merge-longhand/" "cacache/" "glob-parent/" "minizlib/" "parse-asn1/" "fs.realpath/" "lower-case/" "process/" "randombytes/" "url/" "has-ansi/" "dot-case/" "nice-try/" "ansi-html/" "resolve/" "parse-passwd/" "p-locate/" "setprototypeof/" "depd/" "is-arrayish/" "postcss-normalize-unicode/" "call-bind/" "ms/" "p-finally/" "relateurl/" "esquery/" "create-hmac/" "fast-deep-equal/" "watchpack-chokidar2/" "reusify/" "posix-character-classes/" "md5.js/" "expand-tilde/" "slice-ansi/" "is-regex/" "media-typer/" "normalize-path/" "cssnano-util-get-match/" "node-forge/" "define-property/" "bluebird/" "accepts/" "html-comment-regex/" "css-element-queries/" "fragment-cache/" "postcss-colormin/" "v8-compile-cache/" "babel-plugin-minify-guarded-expressions/" "regenerator-runtime/" "vue-resize-directive/" "babel-template/" "is-path-inside/" "nanomatch/" "electron-to-chromium/" "aggregate-error/" "detect-node/" "tapable/" "cache-base/" "eslint-scope/" "shellwords/" "babel-helper-is-nodes-equiv/" "os-browserify/" "webpack-dev-middleware/" "array.prototype.flat/" "setimmediate/" "promise-inflight/" "escape-string-regexp/" "shallow-clone/" "builtin-status-codes/" "is-number/" "postcss-minify-selectors/" "domutils/" "class-utils/" "debug/" "growly/" "esrecurse/" "camelcase/" "lodash.uniq/" "hash.js/" "regenerate-unicode-properties/" "prelude-ls/" "xxhashjs/" "parse-json/" "stylehacks/" "css-select/" "object.getownpropertydescriptors/" "apexcharts/" "tty-browserify/" "babel-code-frame/" "jsonfile/" "https-browserify/" "is-core-module/" "json-schema-traverse/" "require-from-string/" "css-tree/" "gensync/" "string.prototype.trimend/" ".cache/" "error-stack-parser/" "os-tmpdir/" "require-main-filename/" "cli-spinners/" "eslint-visitor-keys/" "css-color-names/" "dns-txt/" "homedir-polyfill/" "timsort/" "node-notifier/" "vue-cookies/" "unicode-match-property-ecmascript/" "babel-helper-vue-jsx-merge-props/" "readable-stream/" "param-case/" "object.pick/" "eslint-plugin-es/" "postcss-modules-extract-imports/" "babel-helper-mark-eval-scopes/" "babel-plugin-transform-simplify-comparison-operators/" "fill-range/" "connect-history-api-fallback/" "content-type/" "shebang-command/" "fast-levenshtein/" "parseurl/" "color-name/" "finalhandler/" "glob/" "type-is/" "url-parse/" "querystring/" "events/" "eslint-import-resolver-node/" "caniuse-lite/" "copy-descriptor/" "run-parallel/" "json-parse-better-errors/" "figgy-pudding/" "findup-sync/" "raw-body/" "copy-webpack-plugin/" "forwarded/" "spdy/" "babel-core/" "pkg-dir/" "bfj/" "lodash.isplainobject/" "proxy-addr/" "compressible/" "arr-union/" "detect-file/" "loader-runner/" "set-blocking/" "chalk/" "@webassemblyjs/" "pumpify/" "cyclist/" "source-map-resolve/" "fresh/" "destroy/" "pseudomap/" "is-extendable/" "regjsgen/" "uniqs/" "pascal-case/" "babel-plugin-transform-merge-sibling-variables/" "dom-converter/" "is-string/" "http-parser-js/" "functional-red-black-tree/" "hmac-drbg/" "eslint-plugin-vue-libs/" "moment-timezone/" "etag/" "express/" "json5/" "fast-json-stable-stringify/" "pako/" "is-extglob/" "npm-run-path/" "strip-ansi/" "is-date-object/" "buffer-indexof/" "last-call-webpack-plugin/" "postcss-modules-values/" "stackframe/" "postcss-load-config/" "is-path-cwd/" "stream-shift/" "word-wrap/" "dir-glob/" "vue-template-es2015-compiler/" "normalize-url/" "postcss-discard-empty/" "is-fullwidth-code-point/" "concat-stream/" "array-uniq/" "vuetify/" "vendors/" "path-is-inside/" "postcss-minify-font-values/" "normalize-package-data/" "locate-path/" "postcss-discard-comments/" "buffer-from/" "tslib/" "ip/" "component-emitter/" "validate-npm-package-license/" "lodash.debounce/" "url-loader/" "@mdi/" "babel-loader/" "trim-right/" "postcss-import/" "assign-symbols/" "mkdirp/" "vue-tel-input-vuetify/" "sockjs-client/" "html-webpack-plugin/" "de-indent/" "send/" "isarray/" "rgb-regex/" "array-unique/" "is-svg/" "cssnano-util-same-parent/" "babel-plugin-transform-undefined-to-void/" "object-inspect/" "base64-js/" "typedarray/" "is-binary-path/" "minimalistic-crypto-utils/" "indent-string/" "axios/" "caller-path/" "has-flag/" "anymatch/" "csso/" "body-parser/" "cli-cursor/" "regexpu-core/" "tryer/" "kind-of/" "vue-dynamic-marquee/" "webpack-dev-server/" "read-pkg-up/" "is-data-descriptor/" "colorette/" "babel-helper-to-multiple-sequence-expressions/" "vue-i18n/" "util/" "file-entry-cache/" "extend-shallow/" "he/" "browserify-rsa/" "intersection-observer/" "vue-notification/" "upath/" "sass/" "detect-indent/" "deep-is/" "postcss/" "which/" "minipass/" "ipaddr.js/" "color/" "html-minifier-terser/" "mime-db/" "q/" "compression/" "postcss-ordered-values/" "vue2-leaflet/" "isobject/" "enhanced-resolve/" "core-js-compat/" "clean-stack/" "util-deprecate/" "is-interactive/" "des.js/" "browserify-des/" "ini/" "yargs-parser/" "obuf/" "htmlparser2/" "sort-keys/" "nth-check/" "@xtuc/" "is-symbol/" "readdirp/" "mdn-data/" "schema-utils/" "doctrine/" "bytes/" "shelljs/" "killable/" "install/" "babel-helper-is-void-0/" "clean-css/" "arr-diff/" "get-caller-file/" "entities/" "postcss-selector-parser/" "rimraf/" "methods/" "pump/" "signal-exit/" "esprima/" "has/" "flatted/" "unpipe/" "selfsigned/" "semver/" "mimic-fn/" "js-tokens/" "utila/" "eslint-plugin-vue/" "p-limit/" "is-finite/" "snapdragon-node/" "p-map/" "cssesc/" "postcss-discard-duplicates/" "del/" "vary/" "braces/" "require-directory/" "color-string/" "negotiator/" "repeat-string/" "minimalistic-assert/" "vue-hot-reload-api/" "json-stable-stringify-without-jsonify/" "wcwidth/" "gzip-size/" "big.js/" "hsl-regex/" "merge2/" "is-arguments/" "babel-plugin-dynamic-import-node/" "base/" "babel-plugin-syntax-jsx/" "object-copy/" "babel-plugin-transform-regexp-constructors/" "pinkie-promise/" "@types/" "file-loader/" "eslint-module-utils/" "qrcode.vue/" "lodash/" "is-negative-zero/" "contains-path/" "object-visit/" "log-symbols/" "elliptic/" "iferr/" "static-extend/" "minimatch/" "eslint-standard/" "path-type/" "optimize-css-assets-webpack-plugin/" "ajv-errors/" "parallel-transform/" "select-hose/" "sockjs/" "ora/" "slash/" "postcss-merge-rules/" "crypto-browserify/" "eslint-utils/" "bn.js/" "follow-redirects/" "map-cache/" "safer-buffer/" "ip-regex/" "private/" "dns-equal/" "snapdragon-util/" "resolve-url/" "fibers/" "duplexify/" "decamelize/" "postcss-normalize-url/" "restore-cursor/" "babel-plugin-transform-vue-jsx/" "to-arraybuffer/" "indexes-of/" "caller-callsite/" "es-abstract/" "serialize-javascript/" "es-to-primitive/" "renderkid/" "y18n/" "clone-deep/" "babel-plugin-minify-infinity/" "watchpack/" "vue-eslint-parser/" "vue-template-compiler/" "babel-types/" "on-headers/" "sha.js/" "cipher-base/" "mini-css-extract-plugin/" "postcss-minify-gradients/" "move-concurrently/" "is-path-in-cwd/" "jsesc/" "brace-expansion/" "http-deceiver/" "cssnano/" "bonjour/" "no-case/" "emojis-list/" "eslint/" "babel-register/" "babel-eslint/" "globals/" "acorn-walk/" "import-cwd/" "webpack-sources/" "spdy-transport/" "domhandler/" "vue-infinite-scroll/" "ansi-colors/" "ansi-regex/" "fastq/" "sax/" "eslint-plugin-import/" "hosted-git-info/" "argparse/" "split-string/" "diffie-hellman/" "postcss-normalize-timing-functions/" "queue-microtask/" "filesize/" "postcss-modules-scope/" "strip-eof/" "multicast-dns/" "babel-plugin-transform-remove-undefined/" "neo-async/" "commander/" "fs-extra/" "is-windows/" "num2fraction/" "cross-spawn/" "sass-loader/" "svg.draggable.js/" "friendly-errors-webpack-plugin/" "simple-swizzle/" "toidentifier/" "pinkie/" "arr-flatten/" "eslint-formatter-friendly/" "repeating/" "postcss-normalize-display-values/" "@eslint/" "consolidate/" "find-up/" "end-of-stream/" "inflight/" "enquirer/" "regjsparser/" "bl/" "eslint-config-standard/" "babel-plugin-minify-mangle-names/" "object.assign/" "check-types/" "vue-moment/" "interpret/" "ret/" "from2/" "hsla-regex/" "vue/" "type-check/" "deep-equal/" "uri-js/" "object-assign/" "evp_bytestokey/" "cssnano-preset-default/" "shebang-regex/" "write-file-atomic/" "is-color-stop/" "statuses/" "babel-preset-minify/" "punycode/" "hard-source-webpack-plugin/" "ajv-keywords/" "clone/" "babel-helper-flip-expressions/" "micromatch/" "is-plain-obj/" "through2/" "to-object-path/" "has-symbols/" "dot-prop/" "hash-sum/" "public-encrypt/" "binary-extensions/" "ssri/" "get-stream/" "on-finished/" "path-is-absolute/" "babel-plugin-minify-constant-folding/" "lodash.some/" "import-local/" "make-dir/" "vue-libs/" "babel-plugin-transform-remove-console/" "object-hash/" "picomatch/" "unset-value/" "browserify-zlib/" "eslint-loader/" "postcss-svgo/" "loose-envify/" "load-json-file/" "pify/" "hoopy/" "cookie-signature/" "vue-simple-context-menu/" "to-fast-properties/" "to-regex/" "errno/" "vue-apexcharts/" "path-browserify/" "is-directory/" "isexe/" "esutils/" "vue-loader/" "unicode-match-property-value-ecmascript/" "ws/" "is-absolute-url/" "text-table/" "source-map-url/" "flush-write-stream/" "convert-source-map/" "encodeurl/" "color-convert/" "lru-cache/" "path/" "extglob/" "@babel/" "cssnano-util-get-arguments/" "eslint-plugin-node/" "browserify-aes/" "chownr/" "safe-regex/" "chrome-trace-event/" "webpack-bundle-analyzer/" "expand-brackets/" "postcss-reduce-initial/" "vue-axios/" "loglevel/" ".bin/" "atob/" "safe-buffer/" "merge-source-map/" "is-resolvable/" "chokidar/" "imurmurhash/" "async/" "http-proxy-middleware/" "has-values/" "babel-runtime/" "is-obj/" "get-intrinsic/" "pascalcase/" "fs-minipass/" "postcss-normalize-string/" "xtend/" "postcss-minify-params/" "read-pkg/" "pretty-error/" "babel-traverse/" "timers-browserify/" "svg.js/" "minipass-pipeline/" "babel-messages/" "browserify-sign/" "buffer-xor/" "uniq/" "svgo/" "unquote/" "is-stream/" "babel-plugin-minify-flip-comparisons/" "cookie/" "svg.easing.js/" "babel-helper-remove-or-void/" "postcss-value-parser/" "universalify/" "pbkdf2/" "ieee754/" "hash-base/" "autoprefixer/" "yocto-queue/" "ignore/" "css-declaration-sorter/" "escape-html/" "portfinder/" "snapdragon/" "brorand/" "default-gateway/" "ripemd160/" "regenerator-transform/" "browserify-cipher/" "source-list-map/" "opener/" "babel-plugin-minify-numeric-literals/" "unique-filename/" "ejs/" "prr/" "babel-helper-evaluate-path/" "path-key/" "create-hash/" "babel-helpers/" "asn1.js/" "path-parse/" "error-ex/" "object-keys/" "wbuf/" "inherits/" "eslint-plugin-promise/" "console-browserify/" "supports-color/" "path-exists/" "os-homedir/" "array-flatten/" "svg.resize.js/" "eslint-plugin-standard/" "cosmiconfig/" "decode-uri-component/" "repeat-element/" "camel-case/" "html-entities/" "is-callable/" "tsconfig-paths/" "type-fest/" "constants-browserify/" "css-what/" "get-value/" "http-proxy/" "set-value/" "astral-regex/" "mississippi/" "to-regex-range/" "is-glob/" "boolbase/" "is-buffer/" "svg.select.js/" "browserslist/" "path-to-regexp/" "is-accessor-descriptor/" "@nodelib/" "babel-generator/" "postcss-unique-selectors/" "awesome-phonenumber/" "flat-cache/" "has-value/" "unique-slug/" "svg.pathmorphing.js/" "babel-plugin-transform-remove-debugger/" "postcss-modules-local-by-default/" "resolve-dir/" "dns-packet/" "p-retry/" "mime/" "async-limiter/" "caniuse-api/" "vuex/" "resolve-from/" "terser-webpack-plugin/" "resolve-cwd/" "map-visit/" "detect-libc/" "wrappy/" "extract-text-webpack-plugin/" "strip-bom/" "table/" "opn/" "memory-fs/" "sprintf-js/" "whatwg-fetch/" "parent-module/" "clean-webpack-plugin/" "execa/" "natural-compare/" "urix/" "assert/" "ee-first/" "postcss-loader/" "domelementtype/" "vue-style-loader/" "qs/" "cssnano-util-raw-cache/" "moment/" "svg.filter.js/" "babel-plugin-minify-simplify/" "emoji-regex/" "stream-each/" "unicode-property-aliases-ecmascript/" "css-loader/" "cuint/" "p-try/" "write-json-file/" "querystring-es3/" "remove-trailing-separator/" "merge-descriptors/" "v-click-outside/" "@vue/" "dom-serializer/" "core-js/" "fast-glob/" "callsites/" "is-descriptor/" "@npmcli/" "webpack-cli/" "postcss-normalize-charset/" "minimist/" "stable/" "prettier/" "babylon/" "strip-json-comments/" "run-queue/" "deepmerge/" "leaflet/" "progress/" "node-object-hash/" "internal-ip/" "graceful-fs/" "babel-plugin-minify-dead-code-elimination/" "infer-owner/" "tar/" "batch/" "babel-plugin-transform-property-literals/" "once/" "union-value/" "co/" "babel-plugin-transform-runtime/" "babel-plugin-minify-replace/" "string-width/" "use/" "is-docker/" "global-modules/" "iconv-lite/" "source-map-support/" "acorn/" "fs-write-stream-atomic/" "websocket-extensions/" "postcss-url/" "import-from/" "randomfill/" "wrap-ansi/" "mime-types/" "js-yaml/" "stream-browserify/" "process-nextick-args/" "is-wsl/" "is-plain-object/" "babel-minify-webpack-plugin/" "util.promisify/" "babel-plugin-minify-type-constructors/" "balanced-match/" "npm/" "content-disposition/" "invariant/" "miller-rabin/" "create-ecdh/" "postcss-discard-overridden/" "minipass-collect/" "postcss-convert-values/" "yargs/" "espree/" "onetime/" "spdx-license-ids/" "aproba/" "requires-port/" "node-releases/" "import-fresh/" "commondir/" "escalade/" "handle-thing/" "array-union/" "babel-plugin-transform-minify-booleans/" "rgba-regex/" "postcss-normalize-repeat-style/" "spdx-expression-parse/" "querystringify/" "terser/" "home-or-tmp/" "define-properties/" "concat-map/" "vue-marquee-text-component/" "estraverse/" "babel-plugin-transform-member-expression-literals/" "multicast-dns-service-types/" "original/" "ansi-styles/" "eventemitter3/" "alphanum-sort/" "vue-country-flag/" "globby/" "object.values/" "hpack.js/" "spdx-exceptions/" "unicode-canonical-property-names-ecmascript/" "acorn-jsx/" "hex-color-regex/" "defaults/" "retry/" "async-each/" "spdx-correct/" "path-dirname/" "global-prefix/" "find-cache-dir/" ".package-lock.json" "which-module/" "yallist/" "range-parser/" "stream-http/" "../" "./")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/frontend_vue/node_modules/vue-simple-context-menu/" (24685 45283 269725 787000) "build/" "test/" "docs/" "dist/" ".babelrc" "./" ".editorconfig" "package.json" "webpack.config.js" "CHANGELOG.md" "src/" "README.md" "example/" "LICENSE" "../")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/filter_test/" (24498 31840 215135 707000) "filtertest.compositefilters.and.filt" "filtertest.compositefilters.not.filt" "filtertest.compositefilters.or.filt" "filtertest.simplefilters.equal.filt" "./" "filtertest.simplefilters.notequal.filt" "filtertest.compositefilters.subcountmin.filt" "filtertest.specialfilters.onlyfiles.filt" "filtertest.compositefilters.all.filt" "../" "filtertest.specialfilters.notfiles.filt")
-
- ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_tysker/angle/" (24673 31504 348069 356000) "templates/" "views.py" "__init__.py" "gendata.py" "models.py" "./" "report_fun/" "filter.py" "static/" "brologs-to-json.py" "resources/" "__pycache__/" "../" "libpnffilter.py")
-
- ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_tysker/angle/resources/" (24667 11109 200303 0) "get_messages_last_3.py" "delete_autofilter.py" "get_standard_column_data.py" "create_sensor.py" "user_login.py" "get_column_color.py" "get_alarm_count.py" "toggle_autofilter.py" "get_groups.py" "get_log_data.py" "get_all_sensors.py" "image_serve.py" "send_sms.py" "get_user_list.py" "get_alarm_types.py" "validate_2FA.py" "get_2FA_status.py" "edit_sensor.py" "get_roles.py" "check_url_token.py" "set_column_data.py" "generate_keys.py" "get_map_data.py" "generate_report.py" "get_firms.py" "get_admin_alarm_data.py" "get_sensors.py" "get_new_logs.py" "get_alarm_connections.py" "set_login_time.py" "get_alarms.py" "edit_alarm.py" "activate_2FA.py" "get_sub_roles.py" "get_new_alarms.py" "user_registration.py" "get_filter.py" "get_alarm_noti.py" "get_alarm_level.py" "__init__.py" "get_dash_data.py" "get_global_data.py" "user_logout_access.py" "create_regi_key.py" "get_reg_keys.py" "get_logs.py" "user_logout_refresh.py" "smsApi.py" "parse_json_filter.py" "report_settings.py" "user_settings.py" "dbi_creator.py" "get_versions.py" "get_recovery_keys.py" "sys_get_user_list.py" "save_lang_to_db.py" "create_alarm_noti.py" "create_auto_filter.py" "./" "save_filter.py" "key_user_registration.py" "edit_map_grouping.py" "delete_filter.py" "get_messages.py" "get_current_lang.py" "get_new_alarmsOld.py" "send_alarm_mail.py" "get_dash_sensor_data.py" "create_map_grouping.py" "get_auto_filter.py" "get_map_grouping.py" "ip_lookup.py" "firm_settings.py" "check_api_key.py" "forgot_password.py" "get_column_data.py" "get_alarm_data.py" "deactivate_2FA.py" "get_new_suricata.py" "get_possible_dates.py" "create_alarm_level.py" "change_password.py" "receive_data.py" "sys_registration.py" "token_refresh.py" "get_possible_logs.py" "create_alarm.py" "delete_map_grouping.py" "create_group.py" "upload_user_data.py" "get_help.py" "__pycache__/" "../" "edit_data_table.py" "get_trend_data.py")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/alarm_auto/" (24638 2273 552481 636000) "venv/" "./" "requirements.txt" "suricata_check.py" "auto_alarm.log" "sid_autoalert.csv" "sid-autoalert.txt" "../" "find_alarms.sh")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/backend_flask/csv/" (24498 31840 215135 707000) "dk_zipcodes.csv" "./" "helpPage.csv" "../")
-
- ("/home/christopher/Documents/Work/Derant/dokku_git/dokku_deployment_moose/" (24627 32367 795340 84000) "derant_angle.py" "Procfile" ".flaskenv" ".env" ".gitignore" "configd.py" "csv/" "./" "requirements.txt" "angle/" "instance/" "config.py" "../" ".git/" "DOCKER_OPTIONS_BUILD")
-
- ("/home/christopher/Documents/Work/Derant/halfspace/halfspace-pkg/halfspaceod/ip_enrichment/" (24623 33143 446872 231000) "geo_ip.py" "whois.py" "__init__.py" "./" "whois_missing.py" "__pycache__/" "../")
-
- ("/home/christopher/Documents/Work/Derant/halfspace/halfspace-pkg/halfspaceod/scripts/" (24619 62109 0 0) "outlier-detection" "__init__.py" "./" "../")
-
- ("/home/christopher/Documents/Work/Derant/halfspace/halfspace-pkg/halfspaceod/" (24623 31417 876600 870000) "test/" "detection/" "__init__.py" "ip_enrichment/" "./" "common/" "scripts/" "etl/" "__pycache__/" "../")
-
- ("/home/christopher/Documents/Work/Derant/halfspace/halfspace-pkg/" (24623 33383 958363 38000) "halfspaceod/" "environments/" "spark-warehouse/" "Anaconda3-2019.03-Linux-x86_64.sh" "externals/" "derby.log" ".gitignore" "metastore_db/" "setup.py" "update_policies.sh" "config.ini" "./" "halfspaceod_pkg.egg-info/" "install.sh" "example.py" "README.md" "LICENSE" "../" "security/")
-
- ("/home/christopher/Documents/Work/Derant/derant_angle_app/auto_iplookup/" (24614 36357 444592 227000) "auto_iplookup.sh" "./" "requirements.txt" "auto_iplookup.py" "../")
 )
 
 ;; ----- ido-unc-hosts-cache -----

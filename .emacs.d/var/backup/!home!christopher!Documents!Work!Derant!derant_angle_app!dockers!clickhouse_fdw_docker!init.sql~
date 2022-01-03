@@ -1,0 +1,8 @@
+BEGIN;
+CREATE EXTENSION IF NOT EXISTS citus;
+CREATE EXTENSION IF NOT EXISTS pg_partman;
+
+-- Create new partitions when running maintenance
+UPDATE part_config SET infinite_time_partitions = true;
+
+COMMIT;

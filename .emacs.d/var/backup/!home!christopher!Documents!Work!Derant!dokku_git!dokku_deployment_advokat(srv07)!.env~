@@ -1,0 +1,17 @@
+APIKEY=testkey123
+URL=https://srv07.derant.com/apicall/
+WEB_URL=https://srv07.derant.com
+MAIL_PASSWORD='smask12Rosin-boller'
+PARTITION_SIZE=daily
+DBI_AUTH_U='159921282811016427a09e9d7305faa818daa34293b41f8e838318d874c57cc95030c1ba128d5b'
+DBI_AUTH_C='158685149494284a33dfe34d3d0469ee91cd9ec7282d2b0cac2846976a3fbc2cd4b2e8910705a02'
+MAILTO=dokku
+DOKKU_RM_CONTAINER=1
+BACKEND_PROC_LOG_DIR=/app/uploads/backend_proc_logs/
+INMOBILE_API=19a8bd09-f60a-466f-a275-ca41b1c865ab
+LOCKS=/app/uploads/locks/
+DBFOLDER=/app/uploads/backups/
+BACKUP_KEY_ID=6sowq8DgoEQMPdCLjLon
+BACKUP_KEY=A8pRdrl8RuiR1eufD8CcVhv29ff7dwWM
+BACKUP_DOMAIN=srv06.derant.com
+BACKUP_FOLDER=deer

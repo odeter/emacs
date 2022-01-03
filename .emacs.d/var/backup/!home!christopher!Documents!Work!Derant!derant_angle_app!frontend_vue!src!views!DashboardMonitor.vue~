@@ -1,0 +1,390 @@
+<template>
+  <v-container ma-0 pa-5 bg grid-list-md text-xs-center fluid>
+      <!-- <v-tab ripple>
+           Nye Enheder
+           </v-tab> -->
+    <!-- <v-container v-if="AlarmsG.length > 0">
+         <v-layout pt-5 wrap fluid>
+         <v-flex md6>
+         <apexchart
+         type="line"
+         :options="AlarmsOG"
+         :series="AlarmsG"
+         ref="alarmRef"
+         ></apexchart>
+         </v-flex>
+         <v-flex md6>
+         <apexchart
+         type="donut"
+         :options="AlarmsDGO"
+         :series="AlarmsDG"
+         ></apexchart>
+         </v-flex>
+         </v-layout>
+         </v-container>
+         <v-container v-else>
+         <v-layout pt-5 wrap fluid>
+         <h2>{{ $t("Dashboard.noGlobalAlarms") }}</h2>
+         </v-layout>
+         </v-container> -->
+        <!-- <v-container>
+             <v-layout pt-5 wrap fluid>
+             <v-flex md6>
+             <v-card>
+             <v-container v-if="series[0].data.length > 0">
+             <apexchart
+             ref="barDiagram"
+             class="mb-4"
+             type="bar"
+             :options="trends"
+             :series="series"
+             ></apexchart>
+             {{ $t("GroupModDashboard.changeDatesBar") }}
+             </v-container>
+             <v-container v-else>
+             <v-layout pt-5 wrap fluid justify-center>
+             <h2 style="text-align: center">
+             {{ $t("GroupModDashboard.noGlobalAlarms") }}
+             </h2>
+             </v-layout>
+             </v-container>
+             <v-card-actions class="justify-center mt-n5">
+             <v-radio-group row v-model="barDateRange">
+             <v-radio
+             :label="this.$t('GroupModDashboard.day')"
+             value="bar24"
+             ></v-radio>
+             <v-radio
+             :label="this.$t('GroupModDashboard.week')"
+             value="barWeek"
+             ></v-radio>
+             <v-radio
+             :label="this.$t('GroupModDashboard.oneMonth')"
+             value="bar1Month"
+             ></v-radio>
+             <v-radio
+             :label="this.$t('GroupModDashboard.threeMonths')"
+             value="bar3Month"
+             ></v-radio>
+             <v-radio
+             :label="this.$t('GroupModDashboard.year')"
+             value="barYear"
+             ></v-radio>
+             </v-radio-group>
+             </v-card-actions>
+             </v-card>
+             </v-flex>
+             <v-flex md6>
+             <v-card>
+             <v-container v-if="series1.length > 0">
+             <apexchart
+             ref="donutDiagram"
+             type="donut"
+             :options="trendsDonut"
+             :series="series1"
+             ></apexchart>
+             {{ $t("GroupModDashboard.changeDatesDonut") }}
+             </v-container>
+             <v-container v-else>
+             <v-layout pt-5 wrap fluid justify-center>
+             <h2 style="text-align: center">
+             {{ $t("GroupModDashboard.noGlobalAlarms") }}
+             </h2>
+             </v-layout>
+             </v-container>
+             <v-card-actions class="justify-center mt-n5">
+             <v-radio-group row v-model="donutDateRange">
+             <v-radio
+             :label="this.$t('GroupModDashboard.day')"
+             value="donut24"
+             ></v-radio>
+             <v-radio
+             :label="this.$t('GroupModDashboard.week')"
+             value="donutWeek"
+             ></v-radio>
+             <v-radio
+             :label="this.$t('GroupModDashboard.oneMonth')"
+             value="donut1Month"
+             ></v-radio>
+             <v-radio
+             :label="this.$t('GroupModDashboard.threeMonths')"
+             value="donut3Month"
+             ></v-radio>
+             <v-radio
+             :label="this.$t('GroupModDashboard.year')"
+             value="donutYear"
+             ></v-radio>
+             </v-radio-group>
+             </v-card-actions>
+             </v-card>
+             </v-flex>
+             </v-layout>
+             </v-container> -->
+    <LeafletAlarmMap
+      :hide_config="true"
+    >
+    </LeafletAlarmMap>
+
+    <v-card width="600px" outlined style="position:absolute; right:100px; top:100px; opacity: 0.7; z-index: 1001;">
+      <v-card-text>
+
+      <v-row>
+        <v-col>
+          <div style="height:250px">
+
+            <apexchart
+              height="100%"
+              type="line"
+              :options="AlarmsOG"
+              :series="AlarmsG"
+              ref="alarmRef"
+            ></apexchart>
+          </div>
+        </v-col>
+        <v-col>
+
+          <div style="height:250px">
+            <apexchart
+              height="100%"
+              type="donut"
+              :options="AlarmsDGO"
+              :series="AlarmsDG"
+            ></apexchart>
+          </div>
+        </v-col>
+      </v-row>
+      <v-divider class="mx-4"></v-divider>
+      <v-row>
+        <v-col>
+          <div style="height:250px">
+            <apexchart
+              ref="barDiagram"
+              class="mb-4"
+              type="bar"
+              :options="trends"
+              :series="series"
+            ></apexchart>
+          </div>
+        </v-col>
+        <v-col>
+
+          <div style="height:250px">
+            <apexchart
+              ref="donutDiagram"
+              type="donut"
+              :options="trendsDonut"
+              :series="series1"
+            ></apexchart>
+          </div>
+        </v-col>
+      </v-row>
+      </v-card-text>
+    </v-card>
+  </v-container>
+</template>
+
+<script>
+  import VueApexCharts from 'vue-apexcharts'
+  import authservice from '@/services/BackendService.js'
+  import graphs from '@/mixins/graphs'
+  import LeafletAlarmMap from '@/components/DashboardComponents/LeafletMapAlarms'
+  import DataOverview from '@/components/DashboardComponents/DataOverview'
+
+  export default {
+    name: 'Overblik',
+    mixins: [graphs],
+    components: {
+      apexchart: VueApexCharts,
+      LeafletAlarmMap,
+      DataOverview
+    },
+    computed: {
+
+    },
+    data() {
+      return {
+        // signals to other pages that this is the groupmod dashboard
+        groupMod: true,
+        amount: {
+          active: false,
+          name: this.$i18n.t('Dashboard.alarmCritical'),
+          value: this.$i18n.t('Dashboard.alarmCritical')
+        },
+        help_re: '',
+        AlarmsGY: [],
+        AlarmsG: [],
+        AlarmsGRaw: [],
+        AlarmsDH: [
+          this.$t('Dashboard.riskCritical'),
+          this.$t('Dashboard.riskUrgent'),
+          this.$t('Dashboard.riskPotential')
+        ],
+        AlarmsDG: [],
+        AlarmsOG: {},
+        AlarmsDGO: {},
+        trends: {},
+        trendsDonut: {},
+        series: [
+          {
+            name: this.$t('GroupModDashboard.alarmOccurrences'),
+            data: []
+          }
+        ],
+        series1: [],
+        diaColors: [
+          '#E64EFC',
+          '#2132D9',
+          '#30F0E9',
+          '#FF0FD2',
+          '#FCEB26',
+          '#FF1510',
+          '#4F21D9',
+          '#00DB01',
+          '#605DDB',
+          '#FF9C00'
+        ],
+        barDateRange: 'bar1Month',
+        donutDateRange: 'donut1Month',
+        activeTab: parseInt(this.$route.query.tab)
+
+      }
+    },
+    watch: {
+      '$i18n.locale': function() {
+        this.setGraphs()
+      }
+    },
+    methods: {
+      updateDashData: function() {
+        this.updateInterval = setInterval(() => {
+          console.log('getting dash data')
+          this.getDashData()
+          this.getTrendDataBar()
+          this.getTrendDataDonut()
+        }, 10000)
+      },
+      setGraphs: function() {
+        this.trendsDonut = this.donutTrendSetup(this.diaColors)
+        this.trends = this.barSetup(this.diaColors)
+
+        this.AlarmsOG = this.lineSetup('alarmRef')
+        this.AlarmsOG['title']['text'] = this.$t(
+          'Dashboard.numbersOfAlarmsTotal'
+        )
+        this.AlarmsOG['xaxis']['categories'] = this.AlarmsGY
+        this.AlarmsOG['chart']['toolbar']['show'] = false
+        this.AlarmsOG['xaxis']['title']['offsetY'] = -4
+
+        this.AlarmsDGO = this.donutSetup()
+        this.AlarmsDGO['labels'] = this.AlarmsDH
+        this.AlarmsDGO['colors'] = this.AlarmsOG['colors']
+        this.AlarmsDGO['plotOptions']['pie']['donut']['labels']['total'][
+          'label'
+        ] = this.$t('Dashboard.totalAlarms')
+        this.AlarmsDGO['title']['text'] = this.$t('Dashboard.splitOfRisk')
+      },
+      getDashData: function() {
+        authservice
+          .getGlobalData()
+          .then((result) => {
+            this.AlarmsG = result.data.agData ? result.data.agData : []
+            this.AlarmsGY = result.data.agHead ? result.data.agHead : []
+            this.AlarmsDH = result.data.agLog ? result.data.agLog : []
+            this.setGraphs()
+            this.AlarmsDG = this.calcD(this.AlarmsG)
+
+            this.AlarmsGRaw = JSON.parse(JSON.stringify(this.AlarmsG))
+
+            /* for (var i = 0; i < 2000; i++) {
+               const var1 = {...this.AlarmsG[1].data[Object.keys(this.AlarmsG[1].data).length - 1]}
+               var1[0] += 100000000
+               var1[1] = (i % 2)
+               // var1.data[0] += 100000000
+               this.AlarmsG[1].data.push(var1)
+               if (i % 10 == 0) {
+               // this.AlarmsGRaw[1].data.push(var1)
+               }
+               } */
+            // = this.AlarmsG[Object.keys(this.AlarmsG).length - 1]
+          })
+          .catch((error) => {
+            console.log('Error')
+            console.log(error)
+            this.help_re = 'Getting tips failed, status code: ' + error.response
+            this.setGraphs()
+            this.AlarmsDG = this.calcD(this.AlarmsG)
+          })
+      },
+      getTrendDataBar: function() {
+        console.log('getting trend data')
+        authservice.getTrendData(this.barDateRange).then((result) => {
+          this.series[0].data = result.data['alarm_occurences']
+          this.trends.xaxis.categories = result.data['alarm_types']
+          console.log('got trend data')
+        })
+      },
+      /* updateTrendDataBar: function() {
+       *   authservice.getTrendData(this.barDateRange).then((result) => {
+       *     this.series[0].data = result.data['alarm_occurences']
+       *     this.trends.xaxis.categories = result.data['alarm_types']
+       *     this.$refs.barDiagram.updateSeries([
+       *       {
+       *         name: 'Alarm Occurences',
+       *         data: this.series[0].data
+       *       }
+       *     ])
+       *     this.$refs.barDiagram.updateOptions({
+       *       chart: {
+       *         toolbar: {
+       *           show: false
+       *         }
+       *       },
+       *       xaxis: {
+       *         categories: this.trends.xaxis.categories
+       *       }
+       *     })
+       *   })
+       * }, */
+      getTrendDataDonut: function() {
+        authservice.getTrendData(this.donutDateRange).then((result) => {
+          this.series1 = result.data['alarm_occurences']
+          this.trendsDonut.labels = result.data['alarm_types']
+        })
+      },
+      updateTrendDataDonut: function() {
+        authservice.getTrendData(this.donutDateRange).then((result) => {
+          this.series1 = result.data['alarm_occurences']
+          this.trendsDonut.labels = result.data['alarm_types']
+          this.$refs.donutDiagram.updateOptions({
+            labels: this.trendsDonut.labels
+          })
+        })
+      }
+    },
+    destroyed() {
+      clearInterval(this.updateInterval)
+    },
+    mounted() {
+      this.getDashData()
+      this.getTrendDataBar()
+      this.getTrendDataDonut()
+      this.updateDashData()
+    }
+  }
+</script>
+
+<style scoped>
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+.example-custom-control {
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 0.1em;
+  padding: 15px;
+}
+</style>
