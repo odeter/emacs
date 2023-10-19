@@ -1,0 +1,23 @@
+(undo-tree-save-format-version . 1)
+"6123243fa6768fcd83acbe5aa19d427c75643af3"
+[nil nil nil nil (25666 34574 525791 554000) 0 nil]
+([nil nil ((#("/opt/zeek/logs" 0 14 (fontified t)) . 231) (undo-tree-id7 . -14) (undo-tree-id8 . -14) (undo-tree-id9 . -14) (undo-tree-id10 . -14) (t 25654 50870 213400 0)) nil (25666 34574 525789 445000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 251 . 252) (nil fontified nil 231 . 252) (231 . 252)) nil (25666 34574 525783 966000) 0 nil])
+([nil nil ((231 . 232)) nil (25666 34574 525782 513000) 0 nil])
+([nil nil ((231 . 233) (#("\"" 0 1 (fontified nil)) . -231) (231 . 232)) nil (25666 34574 525781 410000) 0 nil])
+([nil nil ((#("\"" 0 1 (fontified t face font-lock-string-face)) . 232)) nil (25666 34574 525779 968000) 0 nil])
+([nil nil ((254 . 255)) nil (25666 34574 525779 54000) 0 nil])
+([nil nil ((#("/opt/zeek/logs/" 0 15 (fontified t face font-lock-string-face)) . 373) (undo-tree-id4 . -15) (undo-tree-id5 . -15) (undo-tree-id6 . -15)) nil (25666 34574 525777 719000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 393 . 394) (nil fontified nil 373 . 394) (373 . 394)) nil (25666 34574 525773 288000) 0 nil])
+([nil nil ((373 . 375) (#("{" 0 1 (fontified nil face font-lock-string-face)) . -373) (373 . 374)) nil (25666 34574 525771 529000) 0 nil])
+([nil nil ((#("}" 0 1 (fontified t face font-lock-string-face)) . 374)) nil (25666 34574 525769 923000) 0 nil])
+([nil nil ((395 . 397)) nil (25666 34574 525768 901000) 0 nil])
+([nil nil ((#("/" 0 1 (fontified t face font-lock-string-face)) . -396) (undo-tree-id3 . -1) 397) nil (25666 34574 525767 316000) 0 nil])
+([nil nil ((373 . 374)) nil (25666 34574 525764 353000) 0 nil])
+([nil nil ((397 . 398)) nil (25666 34574 525887 295000) 0 nil])
+([nil nil ((#("e" 0 1 (fontified t face font-lock-string-face)) . 406) (undo-tree-id18 . -1) (#("t" 0 1 (fontified t face font-lock-string-face)) . 406) (#("a" 0 1 (fontified t face font-lock-string-face)) . 406) (#("d" 0 1 (fontified t face font-lock-string-face)) . 406) (#("$" 0 1 (fontified t face font-lock-string-face)) . 406) (#("/" 0 1 (fontified t face font-lock-string-face)) . 406)) nil (25666 34592 629155 728000) 0 nil] [nil nil ((#("$date" 0 5 (fontified t face font-lock-string-face)) . 407) (undo-tree-id0 . -5) (undo-tree-id1 . -5) (undo-tree-id2 . -5)) ((407 . 412)) (25666 34574 525757 858000) 0 nil])
+([nil nil ((#("    date=$(basename $(dirname $f))" 0 4 (fontified t) 4 8 (fontified t face font-lock-variable-name-face) 8 10 (fontified t) 10 11 (fontified t face (rainbow-delimiters-depth-1-face)) 11 19 (fontified t face sh-quoted-exec) 19 21 (fontified t) 21 22 (fontified t face (rainbow-delimiters-depth-2-face)) 22 29 (fontified t face sh-quoted-exec) 29 31 (fontified t) 31 32 (fontified t face font-lock-variable-name-face) 32 33 (fontified t face (rainbow-delimiters-depth-2-face)) 33 34 (fontified t face (rainbow-delimiters-depth-1-face))) . 326) (undo-tree-id15 . -34) (undo-tree-id16 . -34) (undo-tree-id17 . -34)) nil (25666 34592 629151 86000) 0 nil])
+nil
+([nil current ((#("
+" 0 1 (fontified t)) . -325) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) 326) nil (25666 34592 629142 539000) 0 nil])
+nil

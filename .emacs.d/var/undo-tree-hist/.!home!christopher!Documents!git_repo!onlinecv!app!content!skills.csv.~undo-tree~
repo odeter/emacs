@@ -1,0 +1,245 @@
+(undo-tree-save-format-version . 1)
+"3b32cc547af27268ccd4740bd0193e26f7120075"
+[nil nil nil nil (25351 39909 863838 971000) 0 nil]
+([nil nil ((142 . 143) (t 25351 39798 758193 837000)) nil (25351 39909 863837 315000) 0 nil])
+([nil nil ((143 . 145)) nil (25351 39909 863835 983000) 0 nil])
+([nil nil (("U" . -144) (undo-tree-id22 . -1) (undo-tree-id23 . -1) 145) nil (25351 39909 863834 635000) 0 nil])
+([nil nil ((144 . 147)) nil (25351 39909 863831 312000) 0 nil])
+([nil nil ((" " . -146) (undo-tree-id20 . -1) (undo-tree-id21 . -1) 147) nil (25351 39909 863829 894000) 0 nil])
+([nil nil ((146 . 151)) nil (25351 39909 863826 420000) 0 nil])
+([nil nil ((" " . -150) (undo-tree-id18 . -1) (undo-tree-id19 . -1) 151) nil (25351 39909 863825 63000) 0 nil])
+([nil nil ((150 . 151)) nil (25351 39909 863821 629000) 0 nil])
+([nil nil ((151 . 154)) nil (25351 39909 863820 479000) 0 nil])
+([nil nil ((" " . -153) (undo-tree-id16 . -1) (undo-tree-id17 . -1) 154) nil (25351 39909 863818 917000) 0 nil])
+([nil nil ((153 . 158)) nil (25351 39909 863815 456000) 0 nil])
+([nil nil (("8" . -155) (undo-tree-id10 . -1) (undo-tree-id11 . -1) ("0" . -156) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (" " . -157) (undo-tree-id14 . -1) (undo-tree-id15 . -1) 158) nil (25351 39909 863813 386000) 0 nil])
+([nil nil ((155 . 158)) nil (25351 39909 863804 843000) 0 nil])
+([nil nil ((" " . -157) (undo-tree-id8 . -1) (undo-tree-id9 . -1) 158) nil (25351 39909 863803 134000) 0 nil])
+([nil nil ((157 . 158)) nil (25351 39909 863799 401000) 0 nil])
+([nil nil ((158 . 161)) nil (25351 39909 863798 249000) 0 nil])
+([nil nil (("J" . -158) (undo-tree-id2 . -1) (undo-tree-id3 . -1) ("S" . -159) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (" " . -160) (undo-tree-id6 . -1) (undo-tree-id7 . -1) 161) nil (25351 39909 863796 88000) 0 nil])
+([nil nil ((158 . 162)) nil (25351 39909 863787 614000) 0 nil])
+([nil nil ((162 . 169)) nil (25351 39909 863786 210000) 0 nil])
+([nil nil ((" " . -168) (undo-tree-id0 . -1) (undo-tree-id1 . -1) 169) nil (25351 39909 863783 272000) 0 nil])
+([nil nil ((168 . 169)) nil (25351 39909 863762 948000) 0 nil])
+([nil nil ((169 . 178) (t 25351 39909 867635 372000)) nil (25351 39987 328643 699000) 0 nil])
+([nil nil (("C, 30
+" . 80) (undo-tree-id182 . -5) (undo-tree-id183 . -6) (68 . 80) ("python, 100
+" . 62) (74 . 80) 79 (t 25351 39987 332640 208000)) nil (25351 40580 865460 18000) 0 nil])
+([nil nil (("C, 30
+" . 68) (undo-tree-id180 . -5) (undo-tree-id181 . -6) (59 . 68) ("java, 80
+" . 53) (62 . 68) 67) nil (25351 40580 865454 439000) 0 nil])
+([nil nil (("C, 30
+" . 59) (undo-tree-id178 . -5) (undo-tree-id179 . -6) (48 . 59) ("erlang, 75
+" . 42) (53 . 59) 58) nil (25351 40580 865449 636000) 0 nil])
+([nil nil (("C, 30
+" . 48) (undo-tree-id175 . -5) (undo-tree-id176 . -6) (37 . 48) ("prolog, 75
+" . 31) (undo-tree-id177 . -10) (42 . 48) 47) nil (25351 40580 865444 672000) 0 nil])
+([nil nil (("C, 30
+" . 37) (undo-tree-id173 . -5) (undo-tree-id174 . -6) (25 . 37) ("haskell, 75
+" . 19) (31 . 37) 36) nil (25351 40580 865438 392000) 0 nil])
+([nil nil (("C#, 40
+" . 87) (undo-tree-id171 . -5) (undo-tree-id172 . -7) (75 . 87) ("python, 100
+" . 68) (80 . 87) 85) nil (25351 40580 865433 573000) 0 nil])
+([nil nil (("C#, 40
+" . 75) (undo-tree-id169 . -5) (undo-tree-id170 . -7) (66 . 75) ("java, 80
+" . 59) (68 . 75) 73) nil (25351 40580 865428 684000) 0 nil])
+([nil nil (("C#, 40
+" . 66) (undo-tree-id167 . -5) (undo-tree-id168 . -7) (55 . 66) ("erlang, 75
+" . 48) (59 . 66) 64) nil (25351 40580 865424 32000) 0 nil])
+([nil nil (("C#, 40
+" . 55) (undo-tree-id165 . -5) (undo-tree-id166 . -7) (44 . 55) ("prolog, 75
+" . 37) (48 . 55) 53) nil (25351 40580 865419 506000) 0 nil])
+([nil nil (("C#, 40
+" . 44) (undo-tree-id163 . -5) (undo-tree-id164 . -7) (32 . 44) ("haskell, 75
+" . 25) (37 . 44) 42) nil (25351 40580 865414 737000) 0 nil])
+([nil nil (("C++, 40
+" . 95) (undo-tree-id161 . -5) (undo-tree-id162 . -8) (83 . 95) ("python, 100
+" . 75) (87 . 95) 92) nil (25351 40580 865409 950000) 0 nil])
+([nil nil (("C++, 40
+" . 83) (undo-tree-id159 . -5) (undo-tree-id160 . -8) (74 . 83) ("java, 80
+" . 66) (75 . 83) 80) nil (25351 40580 865405 38000) 0 nil])
+([nil nil (("C++, 40
+" . 74) (undo-tree-id157 . -5) (undo-tree-id158 . -8) (63 . 74) ("erlang, 75
+" . 55) (66 . 74) 71) nil (25351 40580 865399 862000) 0 nil])
+([nil nil (("C++, 40
+" . 63) (undo-tree-id155 . -5) (undo-tree-id156 . -8) (52 . 63) ("prolog, 75
+" . 44) (55 . 63) 60) nil (25351 40580 865395 234000) 0 nil])
+([nil nil (("C++, 40
+" . 52) (undo-tree-id153 . -5) (undo-tree-id154 . -8) (40 . 52) ("haskell, 75
+" . 32) (44 . 52) 49) nil (25351 40580 865389 762000) 0 nil])
+([nil nil (("Docker, 70
+" . 169) (undo-tree-id147 . -5) (undo-tree-id148 . -11) (undo-tree-id149 . -11) (undo-tree-id150 . -10) (undo-tree-id151 . -11) (undo-tree-id152 . -11) (162 . 169) ("JS, 90
+" . 151) (158 . 169) 163) nil (25351 40580 865384 639000) 0 nil])
+([nil nil (("Docker, 70
+" . 162) (undo-tree-id145 . -5) (undo-tree-id146 . -11) (154 . 162) ("Vue, 80
+" . 143) (151 . 162) 156) nil (25351 40580 865375 694000) 0 nil])
+([nil nil (("Docker, 70
+" . 154) (undo-tree-id141 . -5) (undo-tree-id142 . -11) (146 . 154) ("PHP, 80
+" . 135) (undo-tree-id143 . -7) (undo-tree-id144 . -7) (143 . 154) 148) nil (25351 40580 865354 338000) 0 nil])
+([nil nil (("Docker, 70
+" . 146) (undo-tree-id139 . -5) (undo-tree-id140 . -11) (138 . 146) ("SQL, 70
+" . 127) (135 . 146) 140) nil (25351 40580 865347 280000) 0 nil])
+([nil nil (("Docker, 70
+" . 138) (undo-tree-id135 . -5) (undo-tree-id136 . -11) (undo-tree-id137 . -11) (undo-tree-id138 . -11) (131 . 138) ("F#, 40
+" . 120) (127 . 138) 132) nil (25351 40580 865342 407000) 0 nil])
+([nil nil (("Docker, 70
+" . 131) (undo-tree-id133 . -5) (undo-tree-id134 . -11) (123 . 131) ("SML, 80
+" . 112) (120 . 131) 125) nil (25351 40580 865335 477000) 0 nil])
+([nil nil (("Docker, 70
+" . 123) (undo-tree-id131 . -5) (undo-tree-id132 . -11) (112 . 123) ("Hermes, 90
+" . 101) (112 . 123) 117) nil (25351 40580 865330 710000) 0 nil])
+([nil nil (("Docker, 70
+" . 112) (undo-tree-id129 . -5) (undo-tree-id130 . -11) (106 . 112) ("R, 20
+" . 95) (101 . 112) 106) nil (25351 40580 865325 690000) 0 nil])
+([nil nil (("Docker, 70
+" . 106) (undo-tree-id127 . -5) (undo-tree-id128 . -11) (94 . 106) ("python, 100
+" . 83) (95 . 106) 100) nil (25351 40580 865320 942000) 0 nil])
+([nil nil (("Docker, 70
+" . 94) (undo-tree-id125 . -5) (undo-tree-id126 . -11) (85 . 94) ("java, 80
+" . 74) (83 . 94) 88) nil (25351 40580 865316 310000) 0 nil])
+([nil nil (("Docker, 70
+" . 85) (undo-tree-id123 . -5) (undo-tree-id124 . -11) (74 . 85) ("erlang, 75
+" . 63) (74 . 85) 79) nil (25351 40580 865311 306000) 0 nil])
+([nil nil (("Docker, 70
+" . 74) (undo-tree-id121 . -5) (undo-tree-id122 . -11) (63 . 74) ("prolog, 75
+" . 52) (63 . 74) 68) nil (25351 40580 865306 357000) 0 nil])
+([nil nil (("Docker, 70
+" . 63) (undo-tree-id119 . -5) (undo-tree-id120 . -11) (51 . 63) ("haskell, 75
+" . 40) (52 . 63) 57) nil (25351 40580 865301 76000) 0 nil])
+([nil nil ((162 . 172) (", 80" . 169) (undo-tree-id116 . -4) ("Dokku" . -169) (undo-tree-id117 . -2) (undo-tree-id118 . -5) 174) nil (25351 40580 865295 999000) 0 nil])
+([nil nil (("Dokku, 80
+" . 172) (undo-tree-id115 . -10) (164 . 172) ("Vue, 80
+" . 154) (162 . 172)) nil (25351 40580 865290 96000) 0 nil])
+([nil nil (("Dokku, 80
+" . 164) (undo-tree-id113 . -10) (undo-tree-id114 . -10) (156 . 164) ("PHP, 80
+" . 146) (154 . 164)) nil (25351 40580 865286 81000) 0 nil])
+([nil nil (("Dokku, 80
+" . 156) (undo-tree-id112 . -10) (148 . 156) ("SQL, 70
+" . 138) (146 . 156)) nil (25351 40580 865281 529000) 0 nil])
+([nil nil (("Dokku, 80
+" . 148) (undo-tree-id111 . -10) (141 . 148) ("F#, 40
+" . 131) (138 . 148)) nil (25351 40580 865277 773000) 0 nil])
+([nil nil (("Dokku, 80
+" . 141) (undo-tree-id108 . -10) (undo-tree-id109 . -10) (undo-tree-id110 . -10) (133 . 141) ("SML, 80
+" . 123) (131 . 141)) nil (25351 40580 865274 34000) 0 nil])
+([nil nil (("Dokku, 80
+" . 133) (undo-tree-id107 . -10) (122 . 133) ("Hermes, 90
+" . 112) (123 . 133)) nil (25351 40580 865268 276000) 0 nil])
+([nil nil (("Dokku, 80
+" . 122) (undo-tree-id106 . -10) (116 . 122) ("R, 20
+" . 106) (112 . 122)) nil (25351 40580 865264 886000) 0 nil])
+([nil nil (("Dokku, 80
+" . 116) (undo-tree-id105 . -10) (104 . 116) ("python, 100
+" . 94) (106 . 116)) nil (25351 40580 865261 686000) 0 nil])
+([nil nil (("Dokku, 80
+" . 104) (undo-tree-id104 . -10) (95 . 104) ("java, 80
+" . 85) (94 . 104)) nil (25351 40580 865258 394000) 0 nil])
+([nil nil (("Dokku, 80
+" . 95) (undo-tree-id103 . -10) (84 . 95) ("erlang, 75
+" . 74) (85 . 95)) nil (25351 40580 865255 126000) 0 nil])
+([nil nil (("Dokku, 80
+" . 84) (undo-tree-id102 . -10) (73 . 84) ("prolog, 75
+" . 63) (74 . 84)) nil (25351 40580 865251 996000) 0 nil])
+([nil nil (("Dokku, 80
+" . 73) (undo-tree-id101 . -10) (61 . 73) ("haskell, 75
+" . 51) (63 . 73)) nil (25351 40580 865248 854000) 0 nil])
+([nil nil (("Dokku, 80
+" . 61) (undo-tree-id100 . -10) (50 . 61) ("Docker, 70
+" . 40) (51 . 61)) nil (25351 40580 865245 553000) 0 nil])
+([nil nil (("Docker, 70
+" . 61) (51 . 61) ("Dokku, 80
+" . 40) (50 . 61) 40) nil (25351 40580 865242 49000) 0 nil])
+([nil nil (("erlang, 75
+" . 95) (undo-tree-id99 . -11) (84 . 95) ("prolog, 75
+" . 73) (84 . 95)) nil (25351 40580 865239 462000) 0 nil])
+([nil nil (("erlang, 75
+" . 84) (undo-tree-id98 . -11) (72 . 84) ("haskell, 75
+" . 61) (73 . 84)) nil (25351 40580 865235 535000) 0 nil])
+([nil nil (("F#, 40
+" . 148) (undo-tree-id97 . -7) (140 . 148) ("SML, 80
+" . 133) (141 . 148)) nil (25351 40580 865231 425000) 0 nil])
+([nil nil (("F#, 40
+" . 140) (undo-tree-id94 . -7) (undo-tree-id95 . -7) (undo-tree-id96 . -7) (129 . 140) ("Hermes, 90
+" . 122) (133 . 140)) nil (25351 40580 865207 779000) 0 nil])
+([nil nil (("F#, 40
+" . 129) (undo-tree-id93 . -7) (123 . 129) ("R, 20
+" . 116) (122 . 129)) nil (25351 40580 865201 908000) 0 nil])
+([nil nil (("F#, 40
+" . 123) (undo-tree-id92 . -7) (111 . 123) ("python, 100
+" . 104) (116 . 123)) nil (25351 40580 865198 689000) 0 nil])
+([nil nil (("F#, 40
+" . 111) (undo-tree-id91 . -7) (102 . 111) ("java, 80
+" . 95) (104 . 111)) nil (25351 40580 865195 212000) 0 nil])
+([nil nil (("F#, 40
+" . 102) (undo-tree-id90 . -7) (91 . 102) ("prolog, 75
+" . 84) (95 . 102)) nil (25351 40580 865191 662000) 0 nil])
+([nil nil (("F#, 40
+" . 91) (undo-tree-id89 . -7) (79 . 91) ("haskell, 75
+" . 72) (84 . 91)) nil (25351 40580 865187 925000) 0 nil])
+([nil nil (("7" . -88) (undo-tree-id87 . -1) ("5" . -89) (undo-tree-id88 . -1) 90) nil (25351 40580 865184 210000) 0 nil])
+([nil nil ((88 . 90)) nil (25351 40580 865180 379000) 0 nil])
+([nil nil (("Hermes, 90
+" . 140) (undo-tree-id83 . -10) (undo-tree-id84 . -11) (undo-tree-id85 . -11) (undo-tree-id86 . -11) (134 . 140) ("R, 20
+" . 123) (129 . 140) 139) nil (25351 40580 865178 410000) 0 nil])
+([nil nil (("Hermes, 90
+" . 134) (undo-tree-id81 . -10) (undo-tree-id82 . -11) (122 . 134) ("python, 100
+" . 111) (123 . 134) 133) nil (25351 40580 865171 291000) 0 nil])
+([nil nil (("Hermes, 90
+" . 122) (undo-tree-id79 . -10) (undo-tree-id80 . -11) (113 . 122) ("java, 80
+" . 102) (111 . 122) 121) nil (25351 40580 865166 561000) 0 nil])
+([nil nil (("Hermes, 90
+" . 113) (undo-tree-id77 . -10) (undo-tree-id78 . -11) (102 . 113) ("prolog, 75
+" . 91) (102 . 113) 112) nil (25351 40580 865161 209000) 0 nil])
+([nil nil (("java, 80
+" . 122) (undo-tree-id75 . -8) (undo-tree-id76 . -9) (111 . 122) ("prolog, 75
+" . 102) (113 . 122) 121) nil (25351 40580 865155 992000) 0 nil])
+([nil nil (("JS, 90
+" . 179) (undo-tree-id68 . -7) (undo-tree-id69 . -6) (undo-tree-id70 . -7) (undo-tree-id71 . -7) (undo-tree-id72 . -7) (undo-tree-id73 . -7) (undo-tree-id74 . -7) (171 . 179) ("Vue, 80
+" . 164) (172 . 179) 178) nil (25351 40580 865151 67000) 0 nil])
+([nil nil (("JS, 90
+" . 171) (undo-tree-id66 . -6) (undo-tree-id67 . -7) (163 . 171) ("PHP, 80
+" . 156) (164 . 171) 170) nil (25351 40580 865141 60000) 0 nil])
+([nil nil (("JS, 90
+" . 163) (undo-tree-id63 . -6) (undo-tree-id64 . -7) (undo-tree-id65 . -7) (155 . 163) ("SQL, 70
+" . 148) (156 . 163) 162) nil (25351 40580 865136 90000) 0 nil])
+([nil nil (("JS, 90
+" . 155) (undo-tree-id61 . -6) (undo-tree-id62 . -7) (147 . 155) ("SML, 80
+" . 140) (148 . 155) 154) nil (25351 40580 865128 428000) 0 nil])
+([nil nil (("JS, 90
+" . 147) (undo-tree-id59 . -6) (undo-tree-id60 . -7) (141 . 147) ("R, 20
+" . 134) (140 . 147) 146) nil (25351 40580 865123 487000) 0 nil])
+([nil nil (("JS, 90
+" . 141) (undo-tree-id55 . -6) (undo-tree-id56 . -7) (undo-tree-id57 . -7) (undo-tree-id58 . -7) (129 . 141) ("python, 100
+" . 122) (134 . 141) 140) nil (25351 40580 865118 173000) 0 nil])
+([nil nil (("JS, 90
+" . 129) (undo-tree-id53 . -6) (undo-tree-id54 . -7) (118 . 129) ("prolog, 75
+" . 111) (122 . 129) 128) nil (25351 40580 865111 361000) 0 nil])
+([nil nil (("SML, 80
+" . 155) (149 . 155) ("R, 20
+" . 141) (undo-tree-id52 . -5) (147 . 155) 146) nil (25351 40580 865106 220000) 0 nil])
+([nil nil (("R, 20
+" . 155) (undo-tree-id50 . -5) (undo-tree-id51 . -6) (147 . 155) ("SML, 80
+" . 141) (149 . 155) 154) nil (25351 40580 865102 443000) 0 nil])
+([nil nil (("PHP, 80
+" . 171) (undo-tree-id48 . -5) (undo-tree-id49 . -8) (163 . 171) ("SQL, 70
+" . 155) (163 . 171) 168) nil (25351 40580 865082 96000) 0 nil])
+([nil nil (("PHP, 80
+" . 163) (undo-tree-id45 . -5) (undo-tree-id46 . -8) (undo-tree-id47 . -8) (155 . 163) ("SML, 80
+" . 147) (155 . 163) 160) nil (25351 40580 865076 866000) 0 nil])
+([nil nil (("PHP, 80
+" . 155) (undo-tree-id43 . -5) (undo-tree-id44 . -8) (149 . 155) ("R, 20
+" . 141) (147 . 155) 152) nil (25351 40580 865070 848000) 0 nil])
+([nil nil (("PHP, 80
+" . 149) (undo-tree-id41 . -5) (undo-tree-id42 . -8) (137 . 149) ("python, 100
+" . 129) (141 . 149) 146) nil (25351 40580 865065 663000) 0 nil])
+([nil nil (("PHP, 80
+" . 137) (undo-tree-id37 . -5) (undo-tree-id38 . -8) (undo-tree-id39 . -8) (undo-tree-id40 . -8) (126 . 137) ("prolog, 75
+" . 118) (129 . 137) 134) nil (25351 40580 865060 170000) 0 nil])
+([nil nil (("Vue, 80
+" . 179) (undo-tree-id30 . -8) (undo-tree-id31 . -5) (undo-tree-id32 . -8) (undo-tree-id33 . -8) (undo-tree-id34 . -8) (undo-tree-id35 . -8) (undo-tree-id36 . -8) (171 . 179) ("SQL, 70
+" . 163) (171 . 179) 176) nil (25351 40580 865051 446000) 0 nil])
+([nil current (("SQL, 70
+" . 179) (undo-tree-id24 . -8) (undo-tree-id25 . -8) (undo-tree-id26 . -8) (undo-tree-id27 . -8) (undo-tree-id28 . -8) (171 . 179) ("Vue, 80
+" . 163) (undo-tree-id29 . -5) (171 . 179) 168) nil (25351 40580 865036 682000) 0 nil])
+nil

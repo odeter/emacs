@@ -1,0 +1,81 @@
+(undo-tree-save-format-version . 1)
+"0005e0947ffb8fb117228dd23f0f29159c80bb4b"
+[nil nil nil nil (25756 5403 554082 885000) 0 nil]
+([nil nil ((#("    curl \"https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv\" > ianaport.csv" 0 9 (fontified t) 9 101 (fontified t face font-lock-string-face) 101 116 (fontified t)) . 136) (undo-tree-id47 . -116) (undo-tree-id48 . -4) (undo-tree-id49 . -116) (t 25735 2801 408823 0)) nil (25756 5403 554081 7000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -135) (undo-tree-id43 . -1) (undo-tree-id44 . -1) (undo-tree-id45 . -1) (undo-tree-id46 . -1) 136) nil (25756 5403 554075 975000) 0 nil])
+([nil nil ((#("    rm -f ianaport.csv
+" 0 23 (fontified t)) . 203) (undo-tree-id40 . -23) (undo-tree-id41 . -23) (undo-tree-id42 . -23)) nil (25756 5403 554070 599000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -202) (undo-tree-id37 . -1) (undo-tree-id38 . -1) (undo-tree-id39 . -1) 203) nil (25756 5403 554066 134000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 134) (undo-tree-id35 . -1) (undo-tree-id36 . -1)) nil (25756 5403 554061 765000) 0 nil])
+([nil nil ((#("IANA db update" 0 14 (fontified t face font-lock-string-face)) . 119) (undo-tree-id33 . -14) (undo-tree-id34 . -14)) nil (25756 5403 554058 654000) 0 nil])
+([nil nil ((119 . 136)) nil (25756 5403 554055 426000) 0 nil])
+([nil nil ((#("U" 0 1 (fontified t face font-lock-string-face)) . -130) (undo-tree-id27 . -1) (#("p" 0 1 (fontified t face font-lock-string-face)) . -131) (undo-tree-id28 . -1) (#("d" 0 1 (fontified t face font-lock-string-face)) . -132) (undo-tree-id29 . -1) (#("a" 0 1 (fontified t face font-lock-string-face)) . -133) (undo-tree-id30 . -1) (#("t" 0 1 (fontified t face font-lock-string-face)) . -134) (undo-tree-id31 . -1) (#("e" 0 1 (fontified t face font-lock-string-face)) . -135) (undo-tree-id32 . -1) 136) nil (25756 5403 554053 436000) 0 nil])
+([nil nil ((130 . 136)) nil (25756 5403 554043 435000) 0 nil])
+([nil nil ((#("IANA port db update " 0 20 (fontified t face font-lock-string-face)) . 215) (undo-tree-id25 . -20) (undo-tree-id26 . -20)) nil (25756 5403 554042 248000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 231 . 232) (nil fontified nil 215 . 232) (215 . 232)) nil (25756 5403 554039 163000) 0 nil])
+([nil nil ((232 . 233)) nil (25756 5403 554037 780000) 0 nil])
+([nil nil ((#("IANA_db_refresh" 0 15 (fontified t face font-lock-string-face)) . 185) (undo-tree-id23 . -15) (undo-tree-id24 . -15)) nil (25756 5403 554036 531000) 0 nil])
+([nil nil ((185 . 202)) nil (25756 5403 554033 710000) 0 nil])
+([nil nil ((#("IANA_db_refresh" 0 15 (fontified t)) . 154) (undo-tree-id21 . -15) (undo-tree-id22 . -15)) nil (25756 5403 554032 526000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 170 . 171) (nil fontified nil 154 . 171) (154 . 171)) nil (25756 5403 554029 114000) 0 nil])
+([nil nil ((#("iana_db_refresh" 0 15 (fontified t)) . 461) (undo-tree-id19 . -15) (undo-tree-id20 . -15)) nil (25756 5403 554027 524000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 477 . 478) (nil fontified nil 461 . 478) (461 . 478)) nil (25756 5403 554024 399000) 0 nil])
+([nil nil ((#("    # check db version
+    curl \"https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml\" > lstupd.html
+    db_version=$(grep -m 1 -A1 \"Last Update\" lstupd.html | sed -n \"2 p\" | sed 's/<[^>]*>//g' | xargs)
+
+    if [ -f \"${BACKEND_PROC_LOG_DIR}IANA_db_version\" ]; then
+        echo \"${BACKEND_PROC_LOG_DIR}IANA_db_version exists.\"
+        current_db=$(<${BACKEND_PROC_LOG_DIR}IANA_db_version)
+    fi
+
+    if [[ \"$db_version\" != \"$current_db\" ]];
+    then
+        touch \"${BACKEND_PROC_LOG_DIR}IANA_db_version\"
+        echo \"${db_version}\" > \"${BACKEND_PROC_LOG_DIR}IANA_db_version\"
+        curl \"https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv\" > ianaport.csv" 0 4 (fontified t) 4 6 (fontified t face font-lock-comment-delimiter-face) 6 23 (fontified t face font-lock-comment-face) 23 32 (fontified t) 32 81 (fontified t face font-lock-string-face) 81 83 (fontified t face font-lock-string-face) 83 93 (fontified t face font-lock-string-face) 93 117 (fontified t face font-lock-string-face) 117 126 (fontified t face font-lock-string-face) 126 130 (fontified t) 130 141 (fontified t) 141 145 (fontified t) 145 155 (fontified t face font-lock-variable-name-face) 155 157 (fontified t) 157 158 (fontified t face (rainbow-delimiters-depth-1-face)) 158 162 (fontified t face sh-quoted-exec) 162 172 (fontified t) 172 184 (fontified t face font-lock-string-face) 184 185 (fontified t face font-lock-string-face) 185 186 (fontified t) 186 207 (fontified t) 207 212 (fontified t face font-lock-string-face) 212 219 (fontified t) 219 233 (fontified t face font-lock-string-face) 233 241 (fontified t) 241 242 (fontified t face (rainbow-delimiters-depth-1-face)) 242 243 (fontified t) 243 248 (fontified t) 248 250 (fontified t face font-lock-keyword-face) 250 251 (fontified t) 251 252 (fontified t face (rainbow-delimiters-depth-1-face)) 252 256 (fontified t) 256 296 (fontified t face font-lock-string-face) 296 297 (fontified t) 297 298 (fontified t face (rainbow-delimiters-depth-1-face)) 298 300 (fontified t) 300 304 (fontified t face font-lock-keyword-face) 304 313 (fontified t) 313 317 (fontified t face font-lock-builtin-face) 317 318 (fontified t) 318 341 (fontified t face font-lock-string-face) 341 352 (fontified t face font-lock-string-face) 352 366 (fontified t face font-lock-string-face) 366 367 (fontified t) 367 375 (fontified t) 375 385 (fontified t face font-lock-variable-name-face) 385 387 (fontified t) 387 388 (fontified t face (rainbow-delimiters-depth-1-face)) 388 390 (fontified t) 390 391 (fontified t face (rainbow-delimiters-depth-2-face)) 391 411 (fontified t face font-lock-variable-name-face) 411 412 (fontified t face (rainbow-delimiters-depth-2-face)) 412 427 (fontified t) 427 428 (fontified t face (rainbow-delimiters-depth-1-face)) 428 433 (fontified t) 433 435 (fontified t face font-lock-keyword-face) 435 441 (fontified t) 441 443 (fontified t face font-lock-keyword-face) 443 444 (fontified t) 444 445 (fontified t face (rainbow-delimiters-depth-1-face)) 445 446 (fontified t face (rainbow-delimiters-depth-2-face)) 446 447 (fontified t) 447 460 (fontified t face font-lock-string-face) 460 464 (fontified t) 464 469 (fontified t face font-lock-string-face) 469 477 (fontified t face font-lock-string-face) 477 478 (fontified t) 478 479 (fontified t face (rainbow-delimiters-depth-2-face)) 479 480 (fontified t face (rainbow-delimiters-depth-1-face)) 480 482 (fontified t) 482 486 (fontified t) 486 490 (fontified t face font-lock-keyword-face) 490 505 (fontified t) 505 545 (fontified t face font-lock-string-face) 545 554 (fontified t) 554 558 (fontified t face font-lock-builtin-face) 558 559 (fontified t) 559 574 (fontified t face font-lock-string-face) 574 577 (fontified t) 577 593 (fontified t face font-lock-string-face) 593 617 (fontified t face font-lock-string-face) 617 631 (fontified t) 631 641 (fontified t face font-lock-string-face) 641 684 (fontified t face font-lock-string-face) 684 686 (fontified t face font-lock-string-face) 686 723 (fontified t face font-lock-string-face) 723 733 (fontified t) 733 738 (fontified t)) . 525) (undo-tree-id16 . -23) (undo-tree-id17 . -738) (undo-tree-id18 . -738)) nil (25756 5403 554022 642000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -524) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) 525) nil (25756 5403 554017 763000) 0 nil])
+([nil nil ((#("    fi" 0 4 (fontified t) 4 6 (fontified t face font-lock-keyword-face)) . 613) (undo-tree-id11 . -6) (undo-tree-id12 . -6)) nil (25756 5403 554013 234000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -612) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) 613) nil (25756 5403 554009 517000) 0 nil])
+([nil nil ((#("
+        rm -f ianaport.csv" 0 1 (fontified t) 1 27 (fontified t)) . 585) (undo-tree-id4 . -1) (undo-tree-id5 . -27) (undo-tree-id6 . -27) (undo-tree-id7 . -27)) nil (25756 5403 554003 989000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -529) 585) nil (25756 5403 553990 709000) 0 nil])
+([nil nil ((#("IANA_db_refresh" 0 15 (fontified t)) . 563) (undo-tree-id2 . -15) (undo-tree-id3 . -15)) nil (25756 5403 553986 398000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 579 . 580) (nil fontified nil 563 . 580) (563 . 580)) nil (25756 5403 553976 824000) 0 nil])
+([nil nil ((#("IANA_db_refresh" 0 15 (fontified t)) . 547) (undo-tree-id0 . -15) (undo-tree-id1 . -15)) nil (25756 5403 553970 909000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 563 . 564) (nil fontified nil 547 . 564) (547 . 564)) nil (25756 5403 553945 306000) 0 nil])
+([nil nil ((#("
+    current_db=\"\"" 0 5 (fontified t) 5 15 (fontified t face font-lock-variable-name-face) 15 16 (fontified t) 16 18 (fontified t face font-lock-string-face)) . 394) (undo-tree-id50 . -1) (undo-tree-id51 . -18) (undo-tree-id52 . -18) (undo-tree-id53 . -18) (undo-tree-id54 . -18) (undo-tree-id55 . -18) (undo-tree-id56 . -18) (undo-tree-id57 . -18) (undo-tree-id58 . -18) (undo-tree-id59 . -18) (undo-tree-id60 . -18) (undo-tree-id61 . -18) (undo-tree-id62 . -18) (undo-tree-id63 . -18) (undo-tree-id64 . -18) (undo-tree-id65 . -18) (undo-tree-id66 . -18) (undo-tree-id67 . -18) (t 25756 5403 563320 959000)) nil (25756 5406 652963 583000) 0 nil])
+([nil nil ((31 . 33) (t 25762 33016 961797 361000)) nil (25764 5956 968208 898000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 42 . 43) (nil fontified nil 42 . 43) (nil fontified nil 41 . 42) (nil fontified nil 40 . 41) (nil fontified nil 38 . 40) (nil fontified nil 37 . 38) (nil fontified nil 36 . 37) (nil fontified nil 32 . 36) (32 . 43)) nil (25764 5956 968203 210000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 70) (undo-tree-id33 . -1)) nil (25764 5956 968193 859000) 0 nil])
+([nil nil ((70 . 71)) nil (25764 5956 968187 999000) 0 nil])
+([nil nil ((#("ho \"Running serviceNow update\"
+    flock -n -x servicenow_update.py -c \"python3 servicenow_update.py\"
+    echo \"serviceNow update done (check logs)\"" 0 2 (face font-lock-builtin-face fontified t) 2 3 (fontified t) 3 30 (face font-lock-string-face fontified t) 30 71 (fontified t) 71 101 (face font-lock-string-face fontified t) 101 106 (fontified t) 106 110 (face font-lock-builtin-face fontified t) 110 111 (fontified t) 111 148 (face font-lock-string-face fontified t)) . 120) (undo-tree-id25 . -148) (undo-tree-id26 . -148) (undo-tree-id27 . -31) (undo-tree-id28 . -148) (undo-tree-id29 . -79) (undo-tree-id30 . -148) (undo-tree-id31 . -148) (undo-tree-id32 . -148)) nil (25764 5956 968182 766000) 0 nil])
+([nil nil ((#("e" 0 1 (fontified t)) . -118) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (undo-tree-id17 . -1) (#("c" 0 1 (fontified t)) . -119) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) (undo-tree-id22 . -1) (undo-tree-id23 . -1) (undo-tree-id24 . -1) 120) nil (25764 5956 968141 588000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 261 . 262) (nil fontified nil 241 . 262) (nil fontified nil 240 . 241) (nil fontified nil 213 . 240) (nil fontified nil 197 . 213) (nil fontified nil 166 . 197) (nil fontified nil 162 . 166) (nil fontified nil 136 . 162) (nil fontified nil 118 . 136) (118 . 262)) nil (25764 5956 968094 917000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -118) 159) nil (25764 5956 968084 853000) 0 nil])
+([nil nil ((#("n" 0 1 (face font-lock-string-face fontified t)) . -247) (undo-tree-id1 . -1) (#("s" 0 1 (face font-lock-string-face fontified t)) . -248) (undo-tree-id2 . -1) (#("o" 0 1 (face font-lock-string-face fontified t)) . -249) (undo-tree-id3 . -1) (#("r" 0 1 (face font-lock-string-face fontified t)) . -250) (undo-tree-id4 . -1) (#("s" 0 1 (face font-lock-string-face fontified t)) . -251) (undo-tree-id5 . -1) (#("t" 0 1 (face font-lock-string-face fontified defer)) . -252) (undo-tree-id6 . -1) (#("a" 0 1 (face font-lock-string-face fontified defer)) . -253) (undo-tree-id7 . -1) (#("t" 0 1 (face font-lock-string-face fontified defer)) . -254) (undo-tree-id8 . -1) (#("u" 0 1 (face font-lock-string-face fontified t)) . -255) (undo-tree-id9 . -1) (#("s" 0 1 (face font-lock-string-face fontified t)) . -256) (undo-tree-id10 . -1) 257) nil (25764 5956 968074 222000) 0 nil])
+([nil nil ((247 . 262)) nil (25764 5956 968035 326000) 0 nil])
+([nil nil ((#(" " 0 1 (face font-lock-string-face fontified t)) . -261) (undo-tree-id0 . -1) 262) nil (25764 5956 968028 203000) 0 nil])
+([nil nil ((#("python3 cron_jobs/servicenow_update/servicenow_update.py" 0 20 (fontified t) 20 21 (fontified t) 21 52 (fontified t) 52 56 (fontified t)) . 518) (undo-tree-id54 . -56) (undo-tree-id55 . -56) (undo-tree-id56 . -56) (t 25764 5956 972272 875000)) nil (25764 6053 611964 747000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 661 . 662) (nil fontified nil 641 . 662) (nil fontified nil 640 . 641) (nil fontified nil 613 . 640) (nil fontified nil 597 . 613) (nil fontified nil 566 . 597) (nil fontified nil 562 . 566) (nil fontified nil 536 . 562) (nil fontified nil 518 . 536) (518 . 662)) nil (25764 6053 611953 457000) 0 nil])
+([nil nil ((#("sensorstatus" 0 12 (face font-lock-string-face fontified t)) . 649) (undo-tree-id34 . -12) (undo-tree-id35 . -3) (undo-tree-id36 . -2) (undo-tree-id37 . -2) (undo-tree-id38 . -2) (undo-tree-id39 . -1) (undo-tree-id40 . -1) (undo-tree-id41 . -1) (undo-tree-id42 . -1) (undo-tree-id43 . -1) (undo-tree-id44 . -1) (undo-tree-id45 . -1) (undo-tree-id46 . -1) (undo-tree-id47 . -1) (undo-tree-id48 . -1) (undo-tree-id49 . -1) (undo-tree-id50 . -1) (undo-tree-id51 . -1) (undo-tree-id52 . -12) (undo-tree-id53 . -12)) nil (25764 6053 611938 731000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 664 . 665) (nil fontified nil 649 . 665) (649 . 665)) nil (25764 6053 611888 802000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -518) 536 (t 25764 6053 616179 469000)) nil (25765 20374 8454 109000) 0 nil])
+([nil nil ((#("
+    mkdir -p ${BACKEND_PROC_LOG_DIR}" 0 15 (fontified t) 15 16 (fontified t face (rainbow-delimiters-depth-1-face)) 16 36 (fontified t face font-lock-variable-name-face) 36 37 (fontified t face (rainbow-delimiters-depth-1-face))) . 344) (undo-tree-id5 . -37) (undo-tree-id6 . -1) (undo-tree-id7 . -37) (undo-tree-id8 . -37)) nil (25765 20374 8451 370000) 0 nil])
+([nil nil ((#("
+    mkdir -p ${BACKEND_PROC_LOG_DIR}" 0 15 (fontified t) 15 16 (fontified t face (rainbow-delimiters-depth-1-face)) 16 36 (fontified t face font-lock-variable-name-face) 36 37 (fontified t face (rainbow-delimiters-depth-1-face))) . 75) (undo-tree-id1 . -37) (undo-tree-id2 . -1) (undo-tree-id3 . -37) (undo-tree-id4 . -37)) nil (25765 20374 8442 641000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 75) (undo-tree-id0 . -1)) nil (25765 20374 8335 857000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t)) . 229) (undo-tree-id9 . -1) (t 25765 20374 17454 286000)) nil (25765 20376 49806 341000) 0 nil])
+nil

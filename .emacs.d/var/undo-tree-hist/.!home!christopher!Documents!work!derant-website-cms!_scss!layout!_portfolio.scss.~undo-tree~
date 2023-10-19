@@ -1,0 +1,689 @@
+(undo-tree-save-format-version . 1)
+"95869e74b68ddda4d0d9601028d3ed0b6e8aa6dc"
+[nil nil nil nil (25269 30094 34533 111000) 0 nil]
+([nil nil ((#("  // Filter Menu
+  .filter-menu-wrapper {
+    margin: 50px 0;
+
+    .filter-menu {
+      display: block;
+      width: 100%;
+      background-color: $light-blue;
+      border-radius: 3px;
+      letter-spacing: normal;
+      text-align: center;
+
+      ul {
+        display: inline-block;
+        position: relative;
+        margin: 0 auto;
+
+        li {
+          display: inline-block;
+          position: relative;
+          padding: 15px;
+          cursor: pointer;
+          color: $secondary;
+          transition: all $transition-links $transition-links-type;
+
+          &:hover {
+            color: $primary;
+          }
+
+          // Current Menu Item
+          &.current {
+            color: $primary;
+
+            &:before {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: $primary;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  // Portfolio Grid
+  .portfolio-grid {
+    overflow-x: hidden;
+
+    // Portfolio Grid Item
+    .item {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+      transform: scale(0.95);
+      transition: all $transition-links $transition-links-type;
+
+      // Item Image
+      .img-wrap {
+        position: relative;
+
+        img {
+          width: 100%;
+          display: block;
+        }
+
+      }
+
+      // Item Hover
+      &.visible {
+        opacity: 0;
+        transform: scale(1) translateX(12%);
+
+        &:hover {
+          .item-content {
+            transform: translateY(0);
+          }
+        }
+      }
+
+      // Item Scroll Reveal
+      &.is-showing {
+        opacity: 0.3;
+
+        &.visible {
+          opacity: 1;
+          transform: scale(1) translateX(0);
+        }
+      }
+
+      // Item Content
+      .item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 15px;
+        right: 15px;
+        bottom: 0;
+        color: $white;
+        background: transparentize($primary, 0.2);
+
+        // Animation
+        transform: translateY(100%);
+        transition: all $transition-links $transition-links-type;
+
+        h3, h4 {
+          text-transform: uppercase;
+        }
+
+        h3 {
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+
+        // Links
+        .links {
+          margin-top: 20px;
+
+          ul {
+            li {
+              display: inline-block;
+              font-size: 1.9rem;
+
+              a {
+                display: block;
+                padding: 5px;
+                color: $white;
+                background: transparentize($white, 0.8);
+
+                &:hover {
+                  background: transparentize($white, 0.6);
+                }
+
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+
+    // Overlay Lightbox
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $black-transparent;
+      z-index: 99999999999999;
+
+      img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+  }" 0 2 (fontified t) 2 5 (fontified t face font-lock-comment-delimiter-face) 5 17 (fontified t face font-lock-comment-face) 17 19 (fontified t) 19 40 (fontified t face css-selector) 40 41 (fontified t face (rainbow-delimiters-depth-2-face)) 41 46 (fontified t) 46 52 (fontified t face css-property) 52 67 (fontified t) 67 80 (fontified t face css-selector) 80 81 (fontified t face (rainbow-delimiters-depth-3-face)) 81 88 (fontified t) 88 95 (fontified t face css-property) 95 110 (fontified t) 110 115 (fontified t face css-property) 115 129 (fontified t) 129 145 (fontified t face css-property) 145 147 (fontified t) 147 158 (fontified t face font-lock-variable-name-face) 158 166 (fontified t) 166 179 (fontified t face css-property) 179 192 (fontified t) 192 206 (fontified t face css-property) 206 222 (fontified t) 222 232 (fontified t face css-property) 232 249 (fontified t) 249 252 (fontified t face css-selector) 252 253 (fontified t face (rainbow-delimiters-depth-4-face)) 253 262 (fontified t) 262 269 (fontified t face css-property) 269 293 (fontified t) 293 301 (fontified t face css-property) 301 321 (fontified t) 321 327 (fontified t face css-property) 327 346 (fontified t) 346 349 (fontified t face css-selector) 349 350 (fontified t face (rainbow-delimiters-depth-5-face)) 350 361 (fontified t) 361 368 (fontified t face css-property) 368 394 (fontified t) 394 396 (fontified t face css-property) 396 402 (fontified t face css-property) 402 424 (fontified t) 424 431 (fontified t face css-property) 431 449 (fontified t) 449 455 (fontified t face css-property) 455 476 (fontified t) 476 481 (fontified t face css-property) 481 483 (fontified t) 483 493 (fontified t face font-lock-variable-name-face) 493 500 (fontified t) 500 505 (fontified t) 505 515 (fontified t face css-property) 515 521 (fontified t) 521 538 (fontified t face font-lock-variable-name-face) 538 539 (fontified t) 539 561 (fontified t face font-lock-variable-name-face) 561 563 (fontified t) 563 574 (fontified t) 574 582 (fontified t face css-selector) 582 583 (fontified t face (rainbow-delimiters-depth-6-face)) 583 596 (fontified t) 596 601 (fontified t face css-property) 601 603 (fontified t) 603 611 (fontified t face font-lock-variable-name-face) 611 623 (fontified t) 623 624 (fontified t face (rainbow-delimiters-depth-6-face)) 624 636 (fontified t) 636 639 (fontified t face font-lock-comment-delimiter-face) 639 657 (fontified t face font-lock-comment-face) 657 667 (fontified t) 667 677 (fontified t face css-selector) 677 678 (fontified t face (rainbow-delimiters-depth-6-face)) 678 691 (fontified t) 691 696 (fontified t face css-property) 696 698 (fontified t) 698 706 (fontified t face font-lock-variable-name-face) 706 721 (fontified t) 721 730 (fontified t face css-selector) 730 731 (fontified t face (rainbow-delimiters-depth-7-face)) 731 746 (fontified t) 746 753 (fontified t face css-property) 753 755 (fontified t) 755 757 (fontified t face font-lock-string-face) 757 773 (fontified t) 773 781 (fontified t face css-property) 781 807 (fontified t) 807 813 (fontified t face css-property) 813 832 (fontified t) 832 836 (fontified t face css-property) 836 855 (fontified t) 855 860 (fontified t face css-property) 860 882 (fontified t) 882 888 (fontified t face css-property) 888 896 (fontified t) 896 909 (fontified t) 909 919 (fontified t face css-property) 919 921 (fontified t) 921 929 (fontified t face font-lock-variable-name-face) 929 943 (fontified t) 943 944 (fontified t face (rainbow-delimiters-depth-7-face)) 944 955 (fontified t) 955 956 (fontified t face (rainbow-delimiters-depth-6-face)) 956 965 (fontified t) 965 966 (fontified t face (rainbow-delimiters-depth-5-face)) 966 973 (fontified t) 973 974 (fontified t face (rainbow-delimiters-depth-4-face)) 974 979 (fontified t) 979 980 (fontified t face (rainbow-delimiters-depth-3-face)) 980 984 (fontified t) 984 985 (fontified t face (rainbow-delimiters-depth-2-face)) 985 989 (fontified t) 989 992 (fontified t face font-lock-comment-delimiter-face) 992 1007 (fontified t face font-lock-comment-face) 1007 1009 (fontified t) 1009 1025 (fontified t face css-selector) 1025 1026 (fontified t face (rainbow-delimiters-depth-2-face)) 1026 1031 (fontified t) 1031 1041 (fontified t face css-property) 1041 1056 (fontified t) 1056 1059 (fontified t face font-lock-comment-delimiter-face) 1059 1079 (fontified t face font-lock-comment-face) 1079 1083 (fontified t) 1083 1089 (fontified t face css-selector) 1089 1090 (fontified t face (rainbow-delimiters-depth-3-face)) 1090 1097 (fontified t) 1097 1104 (fontified t face css-property) 1104 1119 (fontified t) 1119 1127 (fontified t face css-property) 1127 1145 (fontified t) 1145 1153 (fontified t face css-property) 1153 1157 (fontified t) 1157 1163 (fontified t) 1163 1169 (fontified t) 1169 1182 (fontified t face css-property) 1182 1196 (fontified t) 1196 1205 (fontified t face css-property) 1205 1212 (fontified t) 1212 1213 (fontified t face (rainbow-delimiters-depth-4-face)) 1213 1217 (fontified t) 1217 1218 (fontified t face (rainbow-delimiters-depth-4-face)) 1218 1226 (fontified t) 1226 1236 (fontified t face css-property) 1236 1242 (fontified t) 1242 1259 (fontified t face font-lock-variable-name-face) 1259 1260 (fontified t) 1260 1282 (fontified t face font-lock-variable-name-face) 1282 1291 (fontified t) 1291 1294 (fontified t face font-lock-comment-delimiter-face) 1294 1305 (fontified t face font-lock-comment-face) 1305 1311 (fontified t) 1311 1321 (fontified t face css-selector) 1321 1322 (fontified t face (rainbow-delimiters-depth-4-face)) 1322 1331 (fontified t) 1331 1339 (fontified t face css-property) 1339 1360 (fontified t) 1360 1364 (fontified t face css-selector) 1364 1365 (fontified t face (rainbow-delimiters-depth-5-face)) 1365 1376 (fontified t) 1376 1381 (fontified t face css-property) 1381 1396 (fontified t) 1396 1399 (fontified t) 1399 1406 (fontified t face css-property) 1406 1423 (fontified t) 1423 1424 (fontified t face (rainbow-delimiters-depth-5-face)) 1424 1432 (fontified t) 1432 1433 (fontified t face (rainbow-delimiters-depth-4-face)) 1433 1441 (fontified t) 1441 1444 (fontified t face font-lock-comment-delimiter-face) 1444 1455 (fontified t face font-lock-comment-face) 1455 1461 (fontified t) 1461 1471 (fontified t face css-selector) 1471 1472 (fontified t face (rainbow-delimiters-depth-4-face)) 1472 1481 (fontified t) 1481 1488 (fontified t face css-property) 1488 1501 (fontified t) 1501 1510 (fontified t face css-property) 1510 1517 (fontified t) 1517 1518 (fontified t face (rainbow-delimiters-depth-5-face)) 1518 1519 (fontified t) 1519 1520 (fontified t face (rainbow-delimiters-depth-5-face)) 1520 1531 (fontified t) 1531 1532 (fontified t face (rainbow-delimiters-depth-5-face)) 1532 1535 (fontified t) 1535 1536 (fontified t face (rainbow-delimiters-depth-5-face)) 1536 1547 (fontified t) 1547 1555 (fontified t face css-selector) 1555 1556 (fontified t face (rainbow-delimiters-depth-5-face)) 1556 1567 (fontified t) 1567 1581 (fontified t face css-selector) 1581 1582 (fontified t face (rainbow-delimiters-depth-6-face)) 1582 1595 (fontified t) 1595 1604 (fontified t face css-property) 1604 1616 (fontified t) 1616 1617 (fontified t face (rainbow-delimiters-depth-7-face)) 1617 1618 (fontified t) 1618 1619 (fontified t face (rainbow-delimiters-depth-7-face)) 1619 1631 (fontified t) 1631 1632 (fontified t face (rainbow-delimiters-depth-6-face)) 1632 1641 (fontified t) 1641 1642 (fontified t face (rainbow-delimiters-depth-5-face)) 1642 1649 (fontified t) 1649 1650 (fontified t face (rainbow-delimiters-depth-4-face)) 1650 1658 (fontified t) 1658 1661 (fontified t face font-lock-comment-delimiter-face) 1661 1663 (fontified t face font-lock-comment-face) 1663 1680 (fontified t face font-lock-comment-face) 1680 1686 (fontified t) 1686 1699 (fontified t face css-selector) 1699 1700 (fontified t face (rainbow-delimiters-depth-4-face)) 1700 1709 (fontified t) 1709 1716 (fontified t face css-property) 1716 1732 (fontified t) 1732 1742 (fontified t face css-selector) 1742 1743 (fontified t face (rainbow-delimiters-depth-5-face)) 1743 1754 (fontified t) 1754 1761 (fontified t face css-property) 1761 1776 (fontified t) 1776 1785 (fontified t face css-property) 1785 1792 (fontified t) 1792 1793 (fontified t face (rainbow-delimiters-depth-6-face)) 1793 1794 (fontified t) 1794 1795 (fontified t face (rainbow-delimiters-depth-6-face)) 1795 1806 (fontified t) 1806 1807 (fontified t face (rainbow-delimiters-depth-6-face)) 1807 1808 (fontified t) 1808 1809 (fontified t face (rainbow-delimiters-depth-6-face)) 1809 1819 (fontified t) 1819 1820 (fontified t face (rainbow-delimiters-depth-5-face)) 1820 1827 (fontified t) 1827 1828 (fontified t face (rainbow-delimiters-depth-4-face)) 1828 1836 (fontified t) 1836 1839 (fontified t face font-lock-comment-delimiter-face) 1839 1852 (fontified t face font-lock-comment-face) 1852 1858 (fontified t) 1858 1872 (fontified t face css-selector) 1872 1873 (fontified t face (rainbow-delimiters-depth-4-face)) 1873 1882 (fontified t) 1882 1889 (fontified t face css-property) 1889 1896 (fontified t) 1896 1905 (fontified t) 1905 1919 (fontified t face css-property) 1919 1937 (fontified t) 1937 1948 (fontified t face css-property) 1948 1966 (fontified t) 1966 1981 (fontified t face css-property) 1981 1999 (fontified t) 1999 2007 (fontified t face css-property) 2007 2027 (fontified t) 2027 2030 (fontified t face css-property) 2030 2043 (fontified t) 2043 2047 (fontified t face css-property) 2047 2063 (fontified t) 2063 2068 (fontified t face css-property) 2068 2084 (fontified t) 2084 2090 (fontified t face css-property) 2090 2103 (fontified t) 2103 2108 (fontified t face css-property) 2108 2110 (fontified t) 2110 2116 (fontified t face font-lock-variable-name-face) 2116 2126 (fontified t) 2126 2136 (fontified t face css-property) 2136 2152 (fontified t) 2152 2153 (fontified t face (rainbow-delimiters-depth-5-face)) 2153 2161 (fontified t face font-lock-variable-name-face) 2161 2166 (fontified t) 2166 2167 (fontified t face (rainbow-delimiters-depth-5-face)) 2167 2178 (fontified t) 2178 2180 (fontified t face font-lock-comment-delimiter-face) 2180 2181 (fontified t face font-lock-comment-delimiter-face) 2181 2191 (fontified t face font-lock-comment-face) 2191 2199 (fontified t) 2199 2208 (fontified t face css-property) 2208 2220 (fontified t) 2220 2221 (fontified t face (rainbow-delimiters-depth-5-face)) 2221 2225 (fontified t) 2225 2226 (fontified t face (rainbow-delimiters-depth-5-face)) 2226 2236 (fontified t) 2236 2246 (fontified t face css-property) 2246 2252 (fontified t) 2252 2269 (fontified t face font-lock-variable-name-face) 2269 2270 (fontified t) 2270 2292 (fontified t face font-lock-variable-name-face) 2292 2303 (fontified t) 2303 2310 (fontified t face css-selector) 2310 2311 (fontified t face (rainbow-delimiters-depth-5-face)) 2311 2322 (fontified t) 2322 2336 (fontified t face css-property) 2336 2357 (fontified t) 2357 2358 (fontified t face (rainbow-delimiters-depth-5-face)) 2358 2368 (fontified t) 2368 2371 (fontified t face css-selector) 2371 2372 (fontified t face (rainbow-delimiters-depth-5-face)) 2372 2383 (fontified t) 2383 2392 (fontified t face css-property) 2392 2410 (fontified t) 2410 2423 (fontified t face css-property) 2423 2439 (fontified t) 2439 2440 (fontified t face (rainbow-delimiters-depth-5-face)) 2440 2450 (fontified t) 2450 2453 (fontified t face font-lock-comment-delimiter-face) 2453 2459 (fontified t face font-lock-comment-face) 2459 2467 (fontified t) 2467 2474 (fontified t face css-selector) 2474 2475 (fontified t face (rainbow-delimiters-depth-5-face)) 2475 2486 (fontified t) 2486 2496 (fontified t face css-property) 2496 2515 (fontified t) 2515 2518 (fontified t face css-selector) 2518 2519 (fontified t face (rainbow-delimiters-depth-6-face)) 2519 2532 (fontified t) 2532 2535 (fontified t face css-selector) 2535 2536 (fontified t face (rainbow-delimiters-depth-7-face)) 2536 2551 (fontified t) 2551 2558 (fontified t face css-property) 2558 2588 (fontified t) 2588 2597 (fontified t face css-property) 2597 2622 (fontified t) 2622 2624 (fontified t face css-selector) 2624 2625 (fontified t face (rainbow-delimiters-depth-8-face)) 2625 2642 (fontified t) 2642 2649 (fontified t face css-property) 2649 2674 (fontified t) 2674 2680 (fontified t face css-property) 2680 2681 (fontified t face css-property) 2681 2691 (fontified t) 2691 2704 (fontified t) 2704 2709 (fontified t face css-property) 2709 2711 (fontified t) 2711 2717 (fontified t face font-lock-variable-name-face) 2717 2719 (fontified t) 2719 2735 (fontified t) 2735 2745 (fontified t face css-property) 2745 2761 (fontified t) 2761 2762 (fontified t face (rainbow-delimiters-depth-9-face)) 2762 2768 (fontified t face font-lock-variable-name-face) 2768 2773 (fontified t) 2773 2774 (fontified t face (rainbow-delimiters-depth-9-face)) 2774 2793 (fontified t) 2793 2801 (fontified t face css-selector) 2801 2802 (fontified t face (rainbow-delimiters-depth-9-face)) 2802 2821 (fontified t) 2821 2831 (fontified t face css-property) 2831 2847 (fontified t) 2847 2848 (fontified t face (rainbow-delimiters-depth-1-face)) 2848 2854 (fontified t face font-lock-variable-name-face) 2854 2859 (fontified t) 2859 2860 (fontified t face (rainbow-delimiters-depth-1-face)) 2860 2878 (fontified t) 2878 2879 (fontified t face (rainbow-delimiters-depth-9-face)) 2879 2895 (fontified t) 2895 2896 (fontified t face (rainbow-delimiters-depth-8-face)) 2896 2909 (fontified t) 2909 2910 (fontified t face (rainbow-delimiters-depth-7-face)) 2910 2921 (fontified t) 2921 2922 (fontified t face (rainbow-delimiters-depth-6-face)) 2922 2931 (fontified t) 2931 2932 (fontified t face (rainbow-delimiters-depth-5-face)) 2932 2940 (fontified t) 2940 2941 (fontified t face (rainbow-delimiters-depth-4-face)) 2941 2947 (fontified t) 2947 2948 (fontified t face (rainbow-delimiters-depth-3-face)) 2948 2954 (fontified t) 2954 2957 (fontified t face font-lock-comment-delimiter-face) 2957 2974 (fontified t face font-lock-comment-face) 2974 2978 (fontified t) 2978 2987 (fontified t face css-selector) 2987 2988 (fontified t face (rainbow-delimiters-depth-3-face)) 2988 2995 (fontified t) 2995 3002 (fontified t face css-property) 3002 3016 (fontified t) 3016 3024 (fontified t face css-property) 3024 3039 (fontified t) 3039 3042 (fontified t face css-property) 3042 3053 (fontified t) 3053 3057 (fontified t face css-property) 3057 3068 (fontified t) 3068 3073 (fontified t face css-property) 3073 3084 (fontified t) 3084 3090 (fontified t face css-property) 3090 3101 (fontified t) 3101 3111 (fontified t face css-property) 3111 3113 (fontified t) 3113 3131 (fontified t face font-lock-variable-name-face) 3131 3139 (fontified t) 3139 3146 (fontified t face css-property) 3146 3171 (fontified t) 3171 3175 (fontified t face css-selector) 3175 3176 (fontified t face (rainbow-delimiters-depth-4-face)) 3176 3185 (fontified t) 3185 3192 (fontified t face css-property) 3192 3209 (fontified t) 3209 3217 (fontified t face css-property) 3217 3219 (fontified t) 3219 3229 (fontified t) 3229 3237 (fontified t) 3237 3240 (fontified t face css-property) 3240 3255 (fontified t) 3255 3259 (fontified t face css-property) 3259 3274 (fontified t) 3274 3283 (fontified t face css-property) 3283 3294 (fontified t) 3294 3295 (fontified t face (rainbow-delimiters-depth-5-face)) 3295 3305 (fontified t) 3305 3306 (fontified t face (rainbow-delimiters-depth-5-face)) 3306 3314 (fontified t) 3314 3315 (fontified t face (rainbow-delimiters-depth-4-face)) 3315 3320 (fontified t) 3320 3321 (fontified t face (rainbow-delimiters-depth-3-face)) 3321 3325 (fontified t) 3325 3326 (fontified t face (rainbow-delimiters-depth-2-face))) . 105) (undo-tree-id0 . -2950) (undo-tree-id1 . -3326) (undo-tree-id2 . -624) (undo-tree-id3 . -383) (undo-tree-id4 . -383) (undo-tree-id5 . -624) (undo-tree-id6 . -707) (undo-tree-id7 . -2117) (undo-tree-id8 . -383) (undo-tree-id9 . -2607) (undo-tree-id10 . -3326) (undo-tree-id11 . -17) (undo-tree-id12 . -3326) (undo-tree-id13 . -2117) (undo-tree-id14 . -3326) (t 25264 21851 694847 948000)) nil (25269 30094 34529 958000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 2954 . 2955) (nil fontified nil 105 . 2955) (105 . 2955)) nil (25269 30094 34495 936000) 0 nil])
+([nil nil ((3261 . 3265) (#("    " 0 4 (fontified nil face whitespace-tab)) . -3235) (3235 . 3239) (#("	" 0 1 (fontified nil face whitespace-tab)) . 3235) (3231 . 3235) (#("    " 0 4 (fontified nil face whitespace-tab)) . -3214) (3214 . 3218) (#("	" 0 1 (fontified nil face whitespace-tab)) . 3214) (3210 . 3214) (2932 . 2936) (2925 . 2929) (#("    " 0 4 (fontified nil face whitespace-tab)) . -2920) (2920 . 2924) (#("	" 0 1 (fontified nil face whitespace-tab)) . 2920) (2916 . 2920) (#("	" 0 1 (fontified t face whitespace-tab)) . -2890) (#("	" 0 1 (fontified t face whitespace-tab)) . -2874) (#("    " 0 4 (fontified nil face whitespace-tab)) . -2862) (2862 . 2866) (#("	" 0 1 (fontified nil face whitespace-tab)) . 2862) (2858 . 2862) (#("    " 0 4 (fontified nil)) . -2839) (2839 . 2843) (#("	" 0 1 (fontified nil)) . 2839) (2835 . 2839) (#("    " 0 4 (fontified nil)) . -2811) (2811 . 2815) (#("	" 0 1 (fontified nil)) . 2811) (2807 . 2811) (#("    " 0 4 (fontified nil)) . -2779) (2779 . 2783) (#("	" 0 1 (fontified nil)) . 2779) (2775 . 2779) (#("    " 0 4 (fontified nil)) . -2757) (2757 . 2761) (#("	" 0 1 (fontified nil)) . 2757) (2753 . 2757) (#("    " 0 4 (fontified nil)) . -2717) (2717 . 2721) (#("	" 0 1 (fontified nil)) . 2717) (2713 . 2717) (#("    " 0 4 (fontified nil)) . -2687) (2687 . 2691) (#("	" 0 1 (fontified nil)) . 2687) (2683 . 2687) (#("    " 0 4 (fontified nil)) . -2668) (2668 . 2672) (#("	" 0 1 (fontified nil)) . 2668) (2664 . 2668) (#("    " 0 4 (fontified nil)) . -2643) (2643 . 2647) (#("	" 0 1 (fontified nil)) . 2643) (2639 . 2643) (#("    " 0 4 (fontified nil)) . -2615) (2615 . 2619) (#("	" 0 1 (fontified nil)) . 2615) (2611 . 2615) (#("    " 0 4 (fontified nil)) . -2591) (2591 . 2595) (#("	" 0 1 (fontified nil)) . 2591) (2587 . 2591) (#("	" 0 1 (fontified nil)) . -2570) (#("    " 0 4 (fontified nil)) . -2537) (2537 . 2541) (#("	" 0 1 (fontified nil)) . 2537) (2533 . 2537) (#("    " 0 4 (fontified nil)) . -2531) (2531 . 2535) (#("	" 0 1 (fontified nil)) . 2531) (2527 . 2531) (#("    " 0 4 (fontified nil)) . -2496) (2496 . 2500) (#("	" 0 1 (fontified nil)) . 2496) (2492 . 2496) (2456 . 2468) (#("    " 0 4 (fontified nil)) . 2456) (#("    " 0 4 (fontified nil)) . -2427) (2427 . 2431) (#("	" 0 1 (fontified nil)) . 2427) (2423 . 2427) (#("    " 0 4 (fontified nil)) . -2397) (2397 . 2401) (#("	" 0 1 (fontified nil)) . 2397) (2393 . 2397) (#("    " 0 4 (fontified nil)) . -2373) (2373 . 2377) (#("	" 0 1 (fontified nil)) . 2373) (2369 . 2373) (#("    " 0 4 (fontified nil)) . -2351) (2351 . 2355) (#("	" 0 1 (fontified nil)) . 2351) (2347 . 2351) (#("    " 0 4 (fontified nil)) . -2311) (2311 . 2315) (#("	" 0 1 (fontified nil)) . 2311) (2307 . 2311) (#("    " 0 4 (fontified nil)) . -2288) (2288 . 2292) (#("	" 0 1 (fontified nil)) . 2288) (2284 . 2288) (#("    " 0 4 (fontified nil)) . -2267) (2267 . 2271) (#("	" 0 1 (fontified nil)) . 2267) (2263 . 2267) (#("    " 0 4 (fontified nil)) . -2243) (2243 . 2247) (#("	" 0 1 (fontified nil)) . 2243) (2239 . 2243) (#("    " 0 4 (fontified nil)) . -2216) (2216 . 2220) (#("	" 0 1 (fontified nil)) . 2216) (2212 . 2216) (#("    " 0 4 (fontified nil)) . -2163) (2163 . 2167) (#("	" 0 1 (fontified nil)) . 2163) (2159 . 2163) (2123 . 2135) (#("    " 0 4 (fontified nil)) . 2123) (#("    " 0 4 (fontified nil)) . -2098) (2098 . 2102) (#("	" 0 1 (fontified nil)) . 2098) (2094 . 2098) (#("    " 0 4 (fontified nil)) . -2061) (2061 . 2065) (#("	" 0 1 (fontified nil)) . 2061) (2057 . 2061) (#("    " 0 4 (fontified nil)) . -2037) (2037 . 2041) (#("	" 0 1 (fontified nil)) . 2037) (2033 . 2037) (#("    " 0 4 (fontified nil)) . -2015) (2015 . 2019) (#("	" 0 1 (fontified nil)) . 2015) (2011 . 2015) (#("    " 0 4 (fontified nil)) . -1970) (1970 . 1974) (#("	" 0 1 (fontified nil)) . 1970) (1966 . 1970) (1935 . 1947) (#("    " 0 4 (fontified nil)) . 1935) (#("    " 0 4 (fontified nil)) . -1917) (1917 . 1921) (#("	" 0 1 (fontified nil)) . 1917) (1913 . 1917) (#("    " 0 4 (fontified nil)) . -1890) (1890 . 1894) (#("	" 0 1 (fontified nil)) . 1890) (1886 . 1890) (#("    " 0 4 (fontified nil)) . -1867) (1867 . 1871) (#("	" 0 1 (fontified nil)) . 1867) (1863 . 1867) (#("	" 0 1 (fontified nil)) . -1844) (#("	" 0 1 (fontified nil)) . -1817) (#("    " 0 4 (fontified nil)) . -1784) (1784 . 1788) (#("	" 0 1 (fontified nil)) . 1784) (1780 . 1784) (#("    " 0 4 (fontified nil)) . -1761) (1761 . 1765) (#("	" 0 1 (fontified nil)) . 1761) (1757 . 1761) (#("    " 0 4 (fontified nil)) . -1736) (1736 . 1740) (#("	" 0 1 (fontified nil)) . 1736) (1732 . 1736) (#("    " 0 4 (fontified nil)) . -1702) (1702 . 1706) (#("	" 0 1 (fontified nil)) . 1702) (1698 . 1702) (#("    " 0 4 (fontified nil)) . -1683) (1683 . 1687) (#("	" 0 1 (fontified nil)) . 1683) (1679 . 1683) (#("    " 0 4 (fontified nil)) . -1661) (1661 . 1665) (#("	" 0 1 (fontified nil)) . 1661) (1657 . 1661) (#("    " 0 4 (fontified nil)) . -1644) (1644 . 1648) (#("	" 0 1 (fontified nil)) . 1644) (1640 . 1644) (#("    " 0 4 (fontified nil)) . -1629) (1629 . 1633) (#("	" 0 1 (fontified nil)) . 1629) (1625 . 1629) (#("    " 0 4 (fontified nil)) . -1604) (1604 . 1608) (#("	" 0 1 (fontified nil)) . 1604) (1600 . 1604) (#("    " 0 4 (fontified nil)) . -1551) (1551 . 1555) (#("	" 0 1 (fontified nil)) . 1551) (1547 . 1551) (#("    " 0 4 (fontified nil)) . -1527) (1527 . 1531) (#("	" 0 1 (fontified nil)) . 1527) (1523 . 1527) (#("	" 0 1 (fontified nil)) . -1520) (#("    	" 0 5 (fontified nil)) . -1493) (1493 . 1497) (#("	" 0 1 (fontified nil)) . 1493) (1489 . 1493) (#("	" 0 1 (fontified nil)) . -1456) (#("	" 0 1 (fontified nil)) . -1453) (#("	" 0 1 (fontified nil)) . -1434) (#("	" 0 1 (fontified nil)) . -1344) (#("	" 0 1 (fontified nil)) . -1328) (#("	" 0 1 (fontified nil)) . -1313) (#("	" 0 1 (fontified nil)) . -1298) (#("	" 0 1 (fontified nil)) . -1280) (#("	" 0 1 (fontified nil)) . -1270) (#("	" 0 1 (fontified t face whitespace-tab)) . -1248) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1235) (1235 . 1239) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1235) (1231 . 1235) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1227) (1227 . 1231) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1227) (1223 . 1227) (#("	" 0 1 (fontified t face whitespace-tab)) . -1203) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1170) (1170 . 1174) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1170) (1166 . 1170) (#("    " 0 4 (fontified nil face whitespace-trailing)) . -1164) (1164 . 1168) (#("	" 0 1 (fontified nil face whitespace-trailing)) . 1164) (1160 . 1164) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1141) (1141 . 1145) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1141) (1137 . 1141) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1117) (1117 . 1121) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1117) (1113 . 1117) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1092) (1092 . 1096) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1092) (1088 . 1092) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1069) (1069 . 1073) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1069) (1065 . 1069) (#("	" 0 1 (fontified t face whitespace-tab)) . -1048) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1029) (1029 . 1033) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1029) (1025 . 1029) (#("    " 0 4 (fontified nil face whitespace-tab)) . -1021) (1021 . 1025) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1021) (1017 . 1021) (#("	" 0 1 (fontified t face whitespace-tab)) . -1014) (#("    	" 0 5 (fontified nil face whitespace-tab)) . -1004) (1004 . 1008) (#("	" 0 1 (fontified nil face whitespace-tab)) . 1004) (1000 . 1004) (#("	" 0 1 (fontified t face whitespace-tab)) . -987) (#("    " 0 4 (fontified nil face whitespace-tab)) . -970) (970 . 974) (#("	" 0 1 (fontified nil face whitespace-tab)) . 970) (966 . 970) (#("    " 0 4 (fontified nil face whitespace-tab)) . -962) (962 . 966) (#("	" 0 1 (fontified nil face whitespace-tab)) . 962) (958 . 962) (#("	" 0 1 (fontified t face whitespace-tab)) . -927) (#("    " 0 4 (fontified nil face whitespace-tab)) . -910) (910 . 914) (#("	" 0 1 (fontified nil face whitespace-tab)) . 910) (906 . 910) (#("    " 0 4 (fontified nil face whitespace-tab)) . -902) (902 . 906) (#("	" 0 1 (fontified nil face whitespace-tab)) . 902) (898 . 902) (#("	" 0 1 (fontified t face whitespace-tab)) . -868) (#("	" 0 1 (fontified t face whitespace-tab)) . -856) (#("    " 0 4 (fontified nil face whitespace-tab)) . -837) (837 . 841) (#("	" 0 1 (fontified nil face whitespace-tab)) . 837) (833 . 837) (706 . 710) (699 . 703) (586 . 590) (579 . 583) (445 . 449) (438 . 442) (428 . 436) (#("  " 0 2 (fontified t)) . 428) (395 . 407) (#("    " 0 4 (fontified t)) . 395) (377 . 385) (#("  " 0 2 (fontified t)) . 377) (359 . 367) (#("  " 0 2 (fontified t)) . 359) (348 . 356) (#("  " 0 2 (fontified t)) . 348) (321 . 329) (#("  " 0 2 (fontified t)) . 321) (289 . 297) (#("  " 0 2 (fontified t)) . 289) (278 . 282) (271 . 275) (#("    " 0 4 (fontified nil face whitespace-tab)) . -266) (266 . 270) (#("	" 0 1 (fontified nil face whitespace-tab)) . 266) (262 . 266) (235 . 251) (#("      " 0 6 (fontified t)) . 235) (192 . 204) (#("    " 0 4 (fontified t)) . 192) (160 . 168) (#("  " 0 2 (fontified t)) . 160) (128 . 132) (105 . 109) 76) nil (25269 30094 34459 142000) 0 nil])
+([nil nil ((591 . 596)) nil (25269 30094 34375 217000) 0 nil])
+([nil nil ((#("	" 0 1 (face whitespace-trailing)) . -3187) ("	    " . -2522) (#("	" 0 1 (face whitespace-trailing)) . -1580) (#("	" 0 1 (face whitespace-trailing)) . -1530) (#("		" 0 2 (face whitespace-trailing)) . -1451) (#("	    " 0 1 (face whitespace-trailing) 1 5 (face whitespace-trailing)) . -1164) 596) nil (25269 30715 531267 225000) 0 nil])
+([nil nil ((673 . 676) (635 . 638) (635 . 639) (#("	" 0 1 (fontified nil face whitespace-tab)) . 635) (631 . 635) (609 . 612) (609 . 613) (#("	" 0 1 (fontified nil face whitespace-tab)) . 609) (605 . 609) (584 . 587) (584 . 588) (#("	" 0 1 (fontified nil face whitespace-tab)) . 584) (580 . 584) (552 . 555) (552 . 556) (#("	" 0 1 (fontified nil face whitespace-tab)) . 552) (548 . 552) (516 . 519) (516 . 520) (#("	" 0 1 (fontified nil face whitespace-tab)) . 516) (512 . 516) (490 . 493) (490 . 494) (#("	" 0 1 (fontified nil face whitespace-tab)) . 490) (486 . 490) (476 . 479) (466 . 469) (453 . 456) (417 . 420) (396 . 399) (375 . 378) (361 . 364) (331 . 334) (296 . 299) (282 . 285)) nil (25269 30895 262697 182000) 0 nil] [nil nil ((673 . 676) (635 . 638) (635 . 639) (#("	" 0 1 (fontified nil face whitespace-tab)) . 635) (631 . 635) (609 . 612) (609 . 613) (#("	" 0 1 (fontified nil face whitespace-tab)) . 609) (605 . 609) (584 . 587) (584 . 588) (#("	" 0 1 (fontified nil face whitespace-tab)) . 584) (580 . 584) (552 . 555) (552 . 556) (#("	" 0 1 (fontified nil face whitespace-tab)) . 552) (548 . 552) (516 . 519) (516 . 520) (#("	" 0 1 (fontified nil face whitespace-tab)) . 516) (512 . 516) (490 . 493) (490 . 494) (#("	" 0 1 (fontified nil face whitespace-tab)) . 490) (486 . 490) (476 . 479) (466 . 469) (453 . 456) (417 . 420) (396 . 399) (375 . 378) (361 . 364) (331 . 334) (296 . 299) (282 . 285) (t 25269 30094 37839 781000)) ((#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 282) (undo-tree-id15 . -3) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 296) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 331) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 361) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 375) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 396) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 417) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 453) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 466) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 476) (#("    " 0 4 (fontified nil)) . 486) (490 . 491) (#("    " 0 4 (fontified nil face font-lock-comment-delimiter-face)) . 490) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 490) (#("    " 0 4 (fontified nil)) . 512) (516 . 517) (#("    " 0 4 (fontified nil face font-lock-comment-delimiter-face)) . 516) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 516) (#("    " 0 4 (fontified nil)) . 548) (552 . 553) (#("    " 0 4 (fontified nil face font-lock-comment-delimiter-face)) . 552) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 552) (#("    " 0 4 (fontified nil)) . 580) (584 . 585) (#("    " 0 4 (fontified nil face font-lock-comment-delimiter-face)) . 584) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 584) (#("    " 0 4 (fontified nil)) . 605) (609 . 610) (#("    " 0 4 (fontified nil face font-lock-comment-delimiter-face)) . 609) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 609) (#("    " 0 4 (fontified nil)) . 631) (635 . 636) (#("    " 0 4 (fontified nil face font-lock-comment-delimiter-face)) . 635) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 635) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . 673)) (25269 30715 75208 121000) 0 nil])
+([nil nil ((700 . 709) (t 25269 30895 836645 895000)) nil (25269 31042 847761 343000) 0 nil] [nil nil ((#("3" 0 1 (fontified t)) . -824) (undo-tree-id16 . -1) 825 (t 25269 30842 619929 205000)) ((824 . 825)) (25269 30894 773058 200000) 0 nil])
+([nil nil ((#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -625) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -590) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -567) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -545) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -516) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -483) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -460) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -449) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -442) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -432) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -399) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -381) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -363) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -352) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -325) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -293) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -282) (t 25269 30169 886863 136000)) ((282 . 285) (293 . 296) (325 . 328) (352 . 355) (363 . 366) (381 . 384) (399 . 402) (432 . 435) (442 . 445) (449 . 452) (460 . 463) (483 . 486) (516 . 519) (545 . 548) (567 . 570) (590 . 593) (625 . 628) (t 25269 30676 769695 309000)) (25269 30676 765568 513000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 810 . 811) (nil fontified nil 709 . 811) (709 . 811)) nil (25269 31042 847758 946000) 0 nil])
+([nil nil ((824 . 825)) ((#("4" 0 1 (fontified t)) . 824) (undo-tree-id17 . -1) (t 25269 30883 300477 68000)) (25269 30883 298645 748000) 0 nil])
+nil
+([nil nil ((840 . 848) (#("  " 0 2 (fontified t)) . 840) (807 . 819) (#("    " 0 4 (fontified t)) . 807) (789 . 797) (#("  " 0 2 (fontified t)) . 789) (771 . 779) (#("  " 0 2 (fontified t)) . 771) (760 . 768) (#("  " 0 2 (fontified t)) . 760) (733 . 741) (#("  " 0 2 (fontified t)) . 733) 701) nil (25269 31152 986541 524000) 0 nil])
+nil
+([nil nil ((#("5" 0 1 (fontified t)) . -1138) (undo-tree-id24 . -1) 1139) nil (25269 31158 309583 721000) 0 nil] [nil nil ((#("5" 0 1 (fontified t)) . -1138) (undo-tree-id18 . -1) 1139 (t 25269 31042 851020 511000)) ((1138 . 1139)) (25269 31152 644867 880000) 0 nil])
+([nil nil ((1138 . 1139)) nil (25269 31158 309580 130000) 0 nil])
+([nil nil ((1138 . 1139)) ((#("3" 0 1 (fontified t)) . 1138) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) (undo-tree-id22 . -1) (t 25269 31142 308656 195000)) (25269 31142 307493 715000) 0 nil])
+([nil nil ((#("5" 0 1 (fontified t)) . -1108) (undo-tree-id23 . -1) 1109) nil (25269 31158 309577 266000) 0 nil])
+nil
+([nil nil ((1108 . 1109)) nil (25269 31187 166728 41000) 0 nil])
+([nil nil ((#("    $desktop: 1024px;
+
+    @mixin breakpoint($point) {
+        @if $point == desktop {
+            @media (min-width: $desktop) {
+                @content;
+	    }
+	}
+    }
+
+    // html {
+    //     box-sizing: border-box;
+    //     font-size: 62.5%;
+
+    //     *,
+    //     *:before,
+    //     *:after {
+    //         box-sizing: inherit;
+    //     }
+    // }
+
+    // body {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     width: 100vw;
+    //     height: 100vh;
+    //     background-color: #e6e6e6;
+    // }
+
+    .port-container {
+        box-sizing: border-box;
+        font-size: 62.5%;
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	margin: 20px 0 80px;
+    }
+
+    .card {
+	width: 300px;
+	margin: 10px;
+	background-color: white;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+
+	&:hover {
+	    .card__caption {
+		top: 30%;
+		transform: translateY(-60%);
+	    }
+
+	    .card__image {
+		transform: translateY(-10px);
+	    }
+
+	    .card__thumb {
+		&::after {
+		    top: 0;
+		}
+	    }
+
+	    .card__snippet {
+		margin: 20px 0;
+	    }
+	}
+
+	&__thumb {
+	    position: relative;
+	    max-height: 400px;
+	    overflow: hidden;
+
+	    @include breakpoint(desktop) {
+		max-height: 500px;
+	    }
+
+	    &::after {
+		position: absolute;
+		top: 0;
+		display: block;
+		content: '';
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(0deg, rgba(0, 0, 0, .5) 40%, rgba(255, 255 ,255 , 0) 100%);
+		transition: .3s;
+
+		@include breakpoint(desktop) {
+		    top: calc(100% - 140px);
+		}
+	    }
+	}
+
+	&__image {
+	    transition: .5s ease-in-out;
+	}
+
+	&__caption {
+	    position: absolute;
+	    top: 50%;
+	    z-index: 1;
+	    padding: 0 20px;
+	    color: white;
+	    transform: translateY(-50%);
+	    text-align: center;
+	    transition: .3s;
+
+	    @include breakpoint(desktop) {
+		top: calc(100% - 110px);
+		transform: unset;
+	    }
+	}
+
+	&__title {
+	    display: -webkit-box;
+	    max-height: 85px;
+            overflow: hidden;
+	    font-family: 'Playfair Display', serif;
+	    font-size: 23px;
+	    line-height: 28px;
+	    text-shadow: 0px 1px 5px black;
+	    text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+	    -webkit-box-orient: vertical;
+	}
+
+	&__snippet {
+	    display: -webkit-box;
+	    max-height: 150px;
+	    margin: 20px 0;
+	    overflow: hidden;
+	    font-family: 'Roboto', sans-serif;
+	    font-size: 16px;
+	    line-height: 20px;
+	    text-overflow: ellipsis;
+	    transition: .5s ease-in-out;
+            -webkit-line-clamp: 5;
+	    -webkit-box-orient: vertical;
+
+	    @include breakpoint(desktop) {
+		margin: 60px 0;
+	    }
+	}
+
+	&__button {
+	    display: inline-block;
+	    padding: 10px 20px;
+	    color: white;
+	    border: 1px solid white;
+	    font-family: 'Roboto', sans-serif;
+	    font-size: 12px;
+	    text-transform: uppercase;
+	    text-decoration: none;
+	    transition: .3s;
+
+	    &:hover {
+		color: black;
+		background-color: white;
+	    }
+	}
+    }
+
+    .disclaimer {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	z-index: 2;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px 10px;
+	background-color: white;
+	transform: translateX(-50%);
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	text-align: center;
+
+	&__link {
+	    color: #755D87;
+	    text-decoration: none;
+	}
+    }
+" 0 4 (fontified t) 4 12 (fontified t face font-lock-variable-name-face) 12 22 (fontified t) 22 23 (fontified t) 23 27 (fontified t) 27 33 (fontified t face font-lock-builtin-face) 33 34 (fontified t) 34 44 (fontified t face font-lock-function-name-face) 44 45 (fontified t face (rainbow-delimiters-depth-2-face)) 45 51 (fontified t face font-lock-variable-name-face) 51 52 (fontified t face (rainbow-delimiters-depth-2-face)) 52 53 (fontified t) 53 54 (fontified t face (rainbow-delimiters-depth-2-face)) 54 63 (fontified t) 63 66 (fontified t face font-lock-builtin-face) 66 67 (fontified t) 67 73 (fontified t face font-lock-variable-name-face) 73 85 (fontified t) 85 86 (fontified t face (rainbow-delimiters-depth-3-face)) 86 99 (fontified t) 99 105 (fontified t face font-lock-builtin-face) 105 106 (fontified t) 106 107 (fontified t face (rainbow-delimiters-depth-4-face)) 107 118 (fontified t) 118 126 (fontified t face font-lock-variable-name-face) 126 127 (fontified t face (rainbow-delimiters-depth-4-face)) 127 128 (fontified t) 128 129 (fontified t face (rainbow-delimiters-depth-4-face)) 129 146 (fontified t) 146 154 (fontified t face font-lock-builtin-face) 154 156 (fontified t) 156 157 (fontified t face whitespace-tab) 157 161 (fontified t) 161 162 (fontified t face (rainbow-delimiters-depth-4-face)) 162 163 (fontified t) 163 164 (fontified t face whitespace-tab) 164 165 (fontified t face (rainbow-delimiters-depth-3-face)) 165 166 (fontified t) 166 170 (fontified t) 170 171 (fontified t face (rainbow-delimiters-depth-2-face)) 171 172 (fontified t) 172 173 (fontified t) 173 177 (fontified t) 177 180 (fontified t face font-lock-comment-delimiter-face) 180 185 (fontified t face font-lock-comment-face) 185 186 (fontified t face font-lock-comment-face) 186 187 (fontified t face font-lock-comment-face) 187 191 (fontified t) 191 194 (fontified t face font-lock-comment-delimiter-face) 194 198 (fontified t face font-lock-comment-delimiter-face) 198 208 (fontified t face font-lock-comment-face) 208 222 (fontified t face font-lock-comment-face) 222 226 (fontified t) 226 229 (fontified t face font-lock-comment-delimiter-face) 229 233 (fontified t face font-lock-comment-delimiter-face) 233 242 (fontified t face font-lock-comment-face) 242 251 (fontified t face font-lock-comment-face) 251 252 (fontified t) 252 256 (fontified t) 256 259 (fontified t face font-lock-comment-delimiter-face) 259 263 (fontified t face font-lock-comment-delimiter-face) 263 266 (fontified t face font-lock-comment-face) 266 270 (fontified t) 270 273 (fontified t face font-lock-comment-delimiter-face) 273 277 (fontified t face font-lock-comment-delimiter-face) 277 287 (fontified t face font-lock-comment-face) 287 291 (fontified t) 291 294 (fontified t face font-lock-comment-delimiter-face) 294 298 (fontified t face font-lock-comment-delimiter-face) 298 306 (fontified t face font-lock-comment-face) 306 307 (fontified t face font-lock-comment-face) 307 308 (fontified t face font-lock-comment-face) 308 312 (fontified t) 312 315 (fontified t face font-lock-comment-delimiter-face) 315 323 (fontified t face font-lock-comment-delimiter-face) 323 333 (fontified t face font-lock-comment-face) 333 344 (fontified t face font-lock-comment-face) 344 348 (fontified t) 348 351 (fontified t face font-lock-comment-delimiter-face) 351 355 (fontified t face font-lock-comment-delimiter-face) 355 356 (fontified t face font-lock-comment-face) 356 357 (fontified t face font-lock-comment-face) 357 361 (fontified t) 361 364 (fontified t face font-lock-comment-delimiter-face) 364 365 (fontified t face font-lock-comment-face) 365 366 (fontified t face font-lock-comment-face) 366 367 (fontified t) 367 371 (fontified t) 371 374 (fontified t face font-lock-comment-delimiter-face) 374 379 (fontified t face font-lock-comment-face) 379 380 (fontified t face font-lock-comment-face) 380 381 (fontified t face font-lock-comment-face) 381 385 (fontified t) 385 388 (fontified t face font-lock-comment-delimiter-face) 388 392 (fontified t face font-lock-comment-delimiter-face) 392 399 (fontified t face font-lock-comment-face) 399 407 (fontified t face font-lock-comment-face) 407 411 (fontified t) 411 414 (fontified t face font-lock-comment-delimiter-face) 414 418 (fontified t face font-lock-comment-delimiter-face) 418 433 (fontified t face font-lock-comment-face) 433 443 (fontified t face font-lock-comment-face) 443 447 (fontified t) 447 450 (fontified t face font-lock-comment-delimiter-face) 450 454 (fontified t face font-lock-comment-delimiter-face) 454 465 (fontified t face font-lock-comment-face) 465 475 (fontified t face font-lock-comment-face) 475 479 (fontified t) 479 482 (fontified t face font-lock-comment-delimiter-face) 482 486 (fontified t face font-lock-comment-delimiter-face) 486 491 (fontified t face font-lock-comment-face) 491 500 (fontified t face font-lock-comment-face) 500 504 (fontified t) 504 507 (fontified t face font-lock-comment-delimiter-face) 507 511 (fontified t face font-lock-comment-delimiter-face) 511 517 (fontified t face font-lock-comment-face) 517 526 (fontified t face font-lock-comment-face) 526 530 (fontified t) 530 533 (fontified t face font-lock-comment-delimiter-face) 533 537 (fontified t face font-lock-comment-delimiter-face) 537 553 (fontified t face font-lock-comment-face) 553 555 (fontified t face font-lock-comment-face) 555 562 (fontified t face font-lock-comment-face) 562 564 (fontified t face font-lock-comment-face) 564 568 (fontified t) 568 571 (fontified t face font-lock-comment-delimiter-face) 571 572 (fontified t face font-lock-comment-face) 572 573 (fontified t face font-lock-comment-face) 573 574 (fontified t) 574 578 (fontified t) 578 594 (fontified t face css-selector) 594 595 (fontified t face (rainbow-delimiters-depth-2-face)) 595 596 (fontified t) 596 604 (fontified t) 604 614 (fontified t face css-property) 614 628 (fontified t) 628 636 (fontified t) 636 645 (fontified t face css-property) 645 654 (fontified t) 654 655 (fontified t) 655 663 (fontified t) 663 674 (fontified t) 674 692 (fontified t) 692 700 (fontified t face css-selector) 700 701 (fontified t face (rainbow-delimiters-depth-3-face)) 701 714 (fontified t) 714 724 (fontified t face css-property) 724 743 (fontified t) 743 744 (rear-nonsticky t fontified t face (rainbow-delimiters-depth-3-face)) 744 745 (fontified t) 745 746 (fontified t face whitespace-tab) 746 753 (fontified t face css-property) 753 761 (fontified t) 761 762 (fontified t face whitespace-tab) 762 769 (fontified t face css-property) 769 771 (fontified t face css-property) 771 779 (fontified t) 779 780 (fontified t face whitespace-tab) 780 795 (fontified t face css-property) 795 805 (fontified t) 805 806 (fontified t face whitespace-tab) 806 811 (fontified t face css-property) 811 819 (fontified t) 819 820 (fontified t face whitespace-tab) 820 826 (fontified t face css-property) 826 841 (fontified t) 841 845 (fontified t) 845 846 (fontified t face (rainbow-delimiters-depth-2-face)) 846 847 (fontified t) 847 848 (fontified t) 848 852 (fontified t) 852 858 (fontified t face css-selector) 858 859 (fontified t face (rainbow-delimiters-depth-2-face)) 859 860 (fontified t) 860 861 (fontified t face whitespace-tab) 861 866 (fontified t face css-property) 866 868 (fontified t) 868 869 (fontified t) 869 875 (fontified t) 875 876 (fontified t face whitespace-tab) 876 882 (fontified t face css-property) 882 890 (fontified t) 890 891 (fontified t face whitespace-tab) 891 900 (fontified t face css-property) 900 907 (fontified t face css-property) 907 909 (fontified t) 909 914 (fontified t face (:background "#ffffff" :foreground "black" :box (:line-width -1))) 914 916 (fontified t) 916 917 (fontified t face whitespace-tab) 917 927 (fontified t face css-property) 927 942 (fontified t) 942 946 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 946 947 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 947 959 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 959 960 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 960 962 (fontified t) 962 963 (fontified t) 963 964 (fontified t face whitespace-tab) 964 972 (fontified t face css-selector) 972 973 (fontified t face (rainbow-delimiters-depth-3-face)) 973 974 (fontified t) 974 975 (fontified t face whitespace-tab) 975 979 (fontified t) 979 984 (fontified t face css-selector) 984 994 (fontified t face css-selector) 994 995 (fontified t face (rainbow-delimiters-depth-4-face)) 995 996 (fontified t) 996 998 (fontified t face whitespace-tab) 998 1001 (fontified t face css-property) 1001 1003 (fontified t) 1003 1004 (fontified t) 1004 1008 (fontified t) 1008 1010 (fontified t face whitespace-tab) 1010 1019 (fontified t face css-property) 1019 1031 (fontified t) 1031 1032 (fontified t face (rainbow-delimiters-depth-5-face)) 1032 1034 (fontified t) 1034 1036 (fontified t) 1036 1037 (fontified t face (rainbow-delimiters-depth-5-face)) 1037 1039 (fontified t) 1039 1040 (fontified t face whitespace-tab) 1040 1044 (fontified t) 1044 1045 (fontified t face (rainbow-delimiters-depth-4-face)) 1045 1046 (fontified t) 1046 1047 (fontified t) 1047 1048 (fontified t face whitespace-tab) 1048 1052 (fontified t) 1052 1065 (fontified t face css-selector) 1065 1066 (fontified t face (rainbow-delimiters-depth-4-face)) 1066 1067 (fontified t) 1067 1069 (fontified t face whitespace-tab) 1069 1078 (fontified t face css-property) 1078 1090 (fontified t) 1090 1091 (fontified t face (rainbow-delimiters-depth-5-face)) 1091 1096 (fontified t) 1096 1097 (fontified t face (rainbow-delimiters-depth-5-face)) 1097 1099 (fontified t) 1099 1100 (fontified t face whitespace-tab) 1100 1104 (fontified t) 1104 1105 (fontified t face (rainbow-delimiters-depth-4-face)) 1105 1106 (fontified t) 1106 1107 (fontified t) 1107 1108 (fontified t face whitespace-tab) 1108 1112 (fontified t) 1112 1125 (fontified t face css-selector) 1125 1126 (fontified t face (rainbow-delimiters-depth-4-face)) 1126 1127 (fontified t) 1127 1129 (fontified t face whitespace-tab) 1129 1138 (fontified t face css-selector) 1138 1139 (fontified t face (rainbow-delimiters-depth-5-face)) 1139 1140 (fontified t) 1140 1142 (fontified t face whitespace-tab) 1142 1146 (fontified t) 1146 1149 (fontified t face css-property) 1149 1154 (fontified t) 1154 1156 (fontified t face whitespace-tab) 1156 1157 (fontified t face (rainbow-delimiters-depth-5-face)) 1157 1158 (fontified t) 1158 1159 (fontified t face whitespace-tab) 1159 1163 (fontified t) 1163 1164 (fontified t face (rainbow-delimiters-depth-4-face)) 1164 1165 (fontified t) 1165 1166 (fontified t) 1166 1167 (fontified t face whitespace-tab) 1167 1171 (fontified t) 1171 1186 (fontified t face css-selector) 1186 1187 (fontified t face (rainbow-delimiters-depth-4-face)) 1187 1188 (fontified t) 1188 1190 (fontified t face whitespace-tab) 1190 1196 (fontified t face css-property) 1196 1206 (fontified t) 1206 1207 (fontified t face whitespace-tab) 1207 1211 (fontified t) 1211 1212 (fontified t face (rainbow-delimiters-depth-4-face)) 1212 1213 (fontified t) 1213 1214 (fontified t face whitespace-tab) 1214 1215 (fontified t face (rainbow-delimiters-depth-3-face)) 1215 1217 (fontified t) 1217 1218 (fontified t face whitespace-tab) 1218 1227 (fontified t face css-selector) 1227 1228 (fontified t face (rainbow-delimiters-depth-3-face)) 1228 1229 (fontified t) 1229 1230 (fontified t face whitespace-tab) 1230 1234 (fontified t) 1234 1242 (fontified t face css-property) 1242 1245 (fontified t) 1245 1254 (fontified t) 1254 1255 (fontified t face whitespace-tab) 1255 1259 (fontified t) 1259 1269 (fontified t face css-property) 1269 1278 (fontified t) 1278 1279 (fontified t face whitespace-tab) 1279 1283 (fontified t) 1283 1291 (fontified t face css-property) 1291 1301 (fontified t) 1301 1302 (fontified t) 1302 1303 (fontified t face whitespace-tab) 1303 1307 (fontified t) 1307 1315 (fontified t face font-lock-builtin-face) 1315 1326 (fontified t) 1326 1327 (fontified t face (rainbow-delimiters-depth-4-face)) 1327 1334 (fontified t) 1334 1335 (fontified t face (rainbow-delimiters-depth-4-face)) 1335 1336 (fontified t) 1336 1337 (fontified t face (rainbow-delimiters-depth-4-face)) 1337 1338 (fontified t) 1338 1340 (fontified t face whitespace-tab) 1340 1350 (fontified t face css-property) 1350 1359 (fontified t) 1359 1360 (fontified t face whitespace-tab) 1360 1364 (fontified t) 1364 1365 (fontified t face (rainbow-delimiters-depth-4-face)) 1365 1366 (fontified t) 1366 1367 (fontified t) 1367 1368 (fontified t face whitespace-tab) 1368 1372 (fontified t) 1372 1375 (fontified t face css-selector) 1375 1381 (fontified t face css-selector) 1381 1382 (fontified t face (rainbow-delimiters-depth-4-face)) 1382 1383 (fontified t) 1383 1385 (fontified t face whitespace-tab) 1385 1392 (fontified t face css-property) 1392 1393 (fontified t face css-property) 1393 1394 (fontified t) 1394 1400 (fontified t) 1400 1405 (fontified t) 1405 1407 (fontified t face whitespace-tab) 1407 1410 (fontified t face css-property) 1410 1415 (fontified t) 1415 1416 (fontified t face whitespace-tab) 1416 1417 (fontified t face whitespace-tab) 1417 1424 (fontified t face css-property) 1424 1433 (fontified t) 1433 1435 (fontified t face whitespace-tab) 1435 1442 (fontified t face css-property) 1442 1444 (fontified t) 1444 1446 (fontified t face font-lock-string-face) 1446 1448 (fontified t) 1448 1450 (fontified t face whitespace-tab) 1450 1455 (fontified t face css-property) 1455 1462 (fontified t) 1462 1463 (fontified t) 1463 1465 (fontified t face whitespace-tab) 1465 1471 (fontified t face css-property) 1471 1479 (fontified t) 1479 1481 (fontified t face whitespace-tab) 1481 1484 (fontified t face css-property) 1484 1491 (fontified t face css-property) 1491 1496 (fontified t) 1496 1508 (fontified t) 1508 1509 (fontified t face (rainbow-delimiters-depth-5-face)) 1509 1515 (fontified t) 1515 1519 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1519 1520 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1520 1531 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1531 1532 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1532 1538 (fontified t) 1538 1539 (fontified t face (:background "#ffffff" :foreground "black" :box (:line-width -1))) 1539 1542 (fontified t face (:background "#ffffff" :foreground "black" :box (:line-width -1))) 1542 1543 (fontified t face (:background "#ffffff" :foreground "black" :box (:line-width -1))) 1543 1560 (fontified t face (:background "#ffffff" :foreground "black" :box (:line-width -1))) 1560 1561 (fontified t face (:background "#ffffff" :foreground "black" :box (:line-width -1))) 1561 1566 (fontified t) 1566 1567 (fontified t face (rainbow-delimiters-depth-5-face)) 1567 1569 (fontified t) 1569 1571 (fontified t face whitespace-tab) 1571 1581 (fontified t face css-property) 1581 1588 (fontified t) 1588 1589 (fontified t) 1589 1591 (fontified t face whitespace-tab) 1591 1599 (fontified t face font-lock-builtin-face) 1599 1610 (fontified t) 1610 1611 (fontified t face (rainbow-delimiters-depth-5-face)) 1611 1618 (fontified t) 1618 1619 (fontified t face (rainbow-delimiters-depth-5-face)) 1619 1620 (fontified t) 1620 1621 (fontified t face (rainbow-delimiters-depth-5-face)) 1621 1622 (fontified t) 1622 1624 (fontified t face whitespace-tab) 1624 1628 (fontified t) 1628 1631 (fontified t face css-property) 1631 1637 (fontified t) 1637 1638 (fontified t face (rainbow-delimiters-depth-6-face)) 1638 1650 (fontified t) 1650 1651 (fontified t face (rainbow-delimiters-depth-6-face)) 1651 1653 (fontified t) 1653 1654 (fontified t face whitespace-tab) 1654 1655 (fontified t face whitespace-tab) 1655 1656 (fontified t face (rainbow-delimiters-depth-5-face)) 1656 1657 (fontified t) 1657 1658 (fontified t face whitespace-tab) 1658 1662 (fontified t) 1662 1663 (fontified t face (rainbow-delimiters-depth-4-face)) 1663 1664 (fontified t) 1664 1665 (fontified t face whitespace-tab) 1665 1666 (fontified t face (rainbow-delimiters-depth-3-face)) 1666 1667 (fontified t) 1667 1668 (fontified t) 1668 1669 (fontified t face whitespace-tab) 1669 1678 (fontified t face css-selector) 1678 1679 (fontified t face (rainbow-delimiters-depth-3-face)) 1679 1680 (fontified t) 1680 1681 (fontified t face whitespace-tab) 1681 1685 (fontified t) 1685 1695 (fontified t face css-property) 1695 1714 (fontified t) 1714 1715 (fontified t face whitespace-tab) 1715 1716 (fontified t face (rainbow-delimiters-depth-3-face)) 1716 1717 (fontified t) 1717 1718 (fontified t) 1718 1719 (fontified t face whitespace-tab) 1719 1730 (fontified t face css-selector) 1730 1731 (fontified t face (rainbow-delimiters-depth-3-face)) 1731 1732 (fontified t) 1732 1733 (fontified t face whitespace-tab) 1733 1737 (fontified t) 1737 1745 (fontified t face css-property) 1745 1757 (fontified t) 1757 1758 (fontified t face whitespace-tab) 1758 1762 (fontified t) 1762 1765 (fontified t face css-property) 1765 1772 (fontified t) 1772 1773 (fontified t face whitespace-tab) 1773 1777 (fontified t) 1777 1784 (fontified t face css-property) 1784 1789 (fontified t) 1789 1790 (fontified t face whitespace-tab) 1790 1792 (fontified t) 1792 1794 (fontified t) 1794 1801 (fontified t face css-property) 1801 1811 (fontified t) 1811 1812 (fontified t face whitespace-tab) 1812 1816 (fontified t) 1816 1821 (fontified t face css-property) 1821 1823 (fontified t) 1823 1828 (fontified t face (:background "#ffffff" :foreground "black" :box (:line-width -1))) 1828 1830 (fontified t) 1830 1831 (fontified t face whitespace-tab) 1831 1835 (fontified t) 1835 1844 (fontified t face css-property) 1844 1856 (fontified t) 1856 1857 (fontified t face (rainbow-delimiters-depth-4-face)) 1857 1861 (fontified t) 1861 1862 (fontified t face (rainbow-delimiters-depth-4-face)) 1862 1864 (fontified t) 1864 1865 (fontified t face whitespace-tab) 1865 1869 (fontified t) 1869 1879 (fontified t face css-property) 1879 1883 (fontified t) 1883 1889 (fontified t) 1889 1890 (fontified t face whitespace-tab) 1890 1894 (fontified t) 1894 1904 (fontified t face css-property) 1904 1911 (fontified t) 1911 1912 (fontified t) 1912 1913 (fontified t face whitespace-tab) 1913 1917 (fontified t) 1917 1925 (fontified t face font-lock-builtin-face) 1925 1936 (fontified t) 1936 1937 (fontified t face (rainbow-delimiters-depth-4-face)) 1937 1944 (fontified t) 1944 1945 (fontified t face (rainbow-delimiters-depth-4-face)) 1945 1946 (fontified t) 1946 1947 (fontified t face (rainbow-delimiters-depth-4-face)) 1947 1948 (fontified t) 1948 1950 (fontified t face whitespace-tab) 1950 1953 (fontified t face css-property) 1953 1959 (fontified t) 1959 1960 (fontified t face (rainbow-delimiters-depth-5-face)) 1960 1972 (fontified t) 1972 1973 (fontified t face (rainbow-delimiters-depth-5-face)) 1973 1975 (fontified t) 1975 1977 (fontified t face whitespace-tab) 1977 1986 (fontified t face css-property) 1986 1995 (fontified t) 1995 1996 (fontified t face whitespace-tab) 1996 2000 (fontified t) 2000 2001 (fontified t face (rainbow-delimiters-depth-4-face)) 2001 2002 (fontified t) 2002 2003 (fontified t face whitespace-tab) 2003 2004 (fontified t face (rainbow-delimiters-depth-3-face)) 2004 2006 (fontified t) 2006 2007 (fontified t face whitespace-tab) 2007 2008 (fontified t face css-selector) 2008 2016 (fontified t face css-selector) 2016 2017 (fontified t face (rainbow-delimiters-depth-3-face)) 2017 2018 (fontified t) 2018 2019 (fontified t face whitespace-tab) 2019 2023 (fontified t) 2023 2030 (fontified t face css-property) 2030 2039 (fontified t) 2039 2045 (fontified t) 2045 2046 (fontified t face whitespace-tab) 2046 2050 (fontified t) 2050 2060 (fontified t face css-property) 2060 2069 (fontified t) 2069 2080 (fontified t) 2080 2088 (fontified t face css-property) 2088 2098 (fontified t) 2098 2099 (fontified t face whitespace-tab) 2099 2103 (fontified t) 2103 2114 (fontified t face css-property) 2114 2116 (fontified t) 2116 2134 (fontified t face font-lock-string-face) 2134 2143 (fontified t) 2143 2144 (fontified t face whitespace-tab) 2144 2148 (fontified t) 2148 2157 (fontified t face css-property) 2157 2165 (fontified t) 2165 2166 (fontified t face whitespace-tab) 2166 2170 (fontified t) 2170 2181 (fontified t face css-property) 2181 2189 (fontified t) 2189 2190 (fontified t face whitespace-tab) 2190 2194 (fontified t) 2194 2205 (fontified t face css-property) 2205 2219 (fontified t) 2219 2224 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 2224 2226 (fontified t) 2226 2227 (fontified t face whitespace-tab) 2227 2231 (fontified t) 2231 2244 (fontified t face css-property) 2244 2268 (fontified t) 2268 2286 (fontified t face css-proprietary-property) 2286 2291 (fontified t) 2291 2292 (fontified t face whitespace-tab) 2292 2296 (fontified t) 2296 2314 (fontified t face css-proprietary-property) 2314 2326 (fontified t) 2326 2327 (fontified t face whitespace-tab) 2327 2328 (fontified t face (rainbow-delimiters-depth-3-face)) 2328 2330 (fontified t) 2330 2331 (fontified t face whitespace-tab) 2331 2342 (fontified t face css-selector) 2342 2343 (fontified t face (rainbow-delimiters-depth-3-face)) 2343 2344 (fontified t) 2344 2345 (fontified t face whitespace-tab) 2345 2349 (fontified t) 2349 2356 (fontified t face css-property) 2356 2371 (fontified t) 2371 2372 (fontified t face whitespace-tab) 2372 2376 (fontified t) 2376 2386 (fontified t face css-property) 2386 2389 (fontified t) 2389 2395 (fontified t) 2395 2396 (fontified t face whitespace-tab) 2396 2400 (fontified t) 2400 2406 (fontified t face css-property) 2406 2416 (fontified t) 2416 2417 (fontified t face whitespace-tab) 2417 2421 (fontified t) 2421 2429 (fontified t face css-property) 2429 2439 (fontified t) 2439 2440 (fontified t face whitespace-tab) 2440 2444 (fontified t) 2444 2455 (fontified t face css-property) 2455 2457 (fontified t) 2457 2465 (fontified t face font-lock-string-face) 2465 2479 (fontified t) 2479 2480 (fontified t face whitespace-tab) 2480 2484 (fontified t) 2484 2493 (fontified t face css-property) 2493 2501 (fontified t) 2501 2502 (fontified t face whitespace-tab) 2502 2506 (fontified t) 2506 2517 (fontified t face css-property) 2517 2525 (fontified t) 2525 2526 (fontified t face whitespace-tab) 2526 2530 (fontified t) 2530 2543 (fontified t face css-property) 2543 2555 (fontified t) 2555 2556 (fontified t face whitespace-tab) 2556 2560 (fontified t) 2560 2569 (fontified t face css-property) 2569 2570 (fontified t face css-property) 2570 2598 (fontified t) 2598 2601 (fontified t) 2601 2619 (face css-proprietary-property fontified t) 2619 2624 (fontified t) 2624 2625 (face whitespace-tab fontified nil) 2625 2629 (fontified nil) 2629 2647 (face css-proprietary-property fontified nil) 2647 2659 (fontified nil) 2659 2660 (fontified nil) 2660 2661 (face whitespace-tab fontified nil) 2661 2665 (fontified nil) 2665 2673 (face font-lock-builtin-face fontified nil) 2673 2684 (fontified nil) 2684 2685 (face (rainbow-delimiters-depth-4-face) fontified nil) 2685 2692 (fontified nil) 2692 2693 (face (rainbow-delimiters-depth-4-face) fontified nil) 2693 2694 (fontified nil) 2694 2695 (face (rainbow-delimiters-depth-4-face) fontified nil) 2695 2696 (fontified nil) 2696 2698 (face whitespace-tab fontified nil) 2698 2704 (face css-property fontified nil) 2704 2714 (fontified nil) 2714 2715 (face whitespace-tab fontified nil) 2715 2719 (fontified nil) 2719 2720 (face (rainbow-delimiters-depth-4-face) fontified nil) 2720 2721 (fontified nil) 2721 2722 (face whitespace-tab fontified nil) 2722 2723 (face (rainbow-delimiters-depth-3-face) fontified nil) 2723 2724 (fontified nil) 2724 2725 (fontified nil) 2725 2726 (face whitespace-tab fontified nil) 2726 2736 (face css-selector fontified nil) 2736 2737 (face (rainbow-delimiters-depth-3-face) fontified nil) 2737 2738 (fontified nil) 2738 2739 (face whitespace-tab fontified nil) 2739 2743 (fontified nil) 2743 2750 (face css-property fontified nil) 2750 2766 (fontified nil) 2766 2767 (face whitespace-tab fontified nil) 2767 2771 (fontified nil) 2771 2778 (face css-property fontified nil) 2778 2791 (fontified nil) 2791 2792 (face whitespace-tab fontified nil) 2792 2796 (fontified nil) 2796 2801 (face css-property fontified nil) 2801 2803 (fontified nil) 2803 2808 (face (:background "#ffffff" :foreground "black" :box (:line-width -1)) fontified nil) 2808 2810 (fontified nil) 2810 2811 (face whitespace-tab fontified nil) 2811 2815 (fontified nil) 2815 2821 (face css-property fontified nil) 2821 2833 (fontified nil) 2833 2838 (face (:background "#ffffff" :foreground "black" :box (:line-width -1)) fontified nil) 2838 2840 (fontified nil) 2840 2841 (face whitespace-tab fontified nil) 2841 2845 (fontified nil) 2845 2856 (face css-property fontified nil) 2856 2858 (fontified nil) 2858 2866 (face font-lock-string-face fontified nil) 2866 2880 (fontified nil) 2880 2881 (face whitespace-tab fontified nil) 2881 2885 (fontified nil) 2885 2894 (face css-property fontified nil) 2894 2895 (fontified nil) 2895 2902 (fontified nil) 2902 2934 (fontified nil) 2934 2962 (fontified nil) 2962 2984 (fontified nil) 2984 2985 (fontified nil) 2985 2990 (face whitespace-tab fontified nil) 2990 2998 (face css-selector fontified nil) 2998 2999 (face (rainbow-delimiters-depth-4-face) fontified nil) 2999 3000 (fontified nil) 3000 3002 (face whitespace-tab fontified nil) 3002 3007 (face css-property fontified nil) 3007 3009 (fontified nil) 3009 3014 (face (:background "#000000" :foreground "white" :box (:line-width -1)) fontified nil) 3014 3016 (fontified nil) 3016 3018 (face whitespace-tab fontified nil) 3018 3034 (face css-property fontified nil) 3034 3036 (fontified nil) 3036 3041 (face (:background "#ffffff" :foreground "black" :box (:line-width -1)) fontified nil) 3041 3043 (fontified nil) 3043 3048 (face whitespace-tab fontified nil) 3048 3049 (face (rainbow-delimiters-depth-4-face) fontified nil) 3049 3050 (fontified nil) 3050 3051 (face whitespace-tab fontified nil) 3051 3052 (face (rainbow-delimiters-depth-3-face) fontified nil) 3052 3053 (fontified nil) 3053 3057 (fontified nil) 3057 3058 (face (rainbow-delimiters-depth-2-face) fontified nil) 3058 3059 (fontified nil) 3059 3060 (fontified nil) 3060 3064 (fontified nil) 3064 3076 (face css-selector fontified nil) 3076 3077 (face (rainbow-delimiters-depth-2-face) fontified nil) 3077 3078 (fontified nil) 3078 3079 (face whitespace-tab fontified nil) 3079 3087 (face css-property fontified nil) 3087 3096 (fontified nil) 3096 3097 (face whitespace-tab fontified nil) 3097 3103 (face css-property fontified nil) 3103 3108 (fontified nil) 3108 3109 (fontified t face whitespace-tab) 3109 3113 (fontified t face css-property) 3113 3120 (fontified t) 3120 3121 (fontified t face whitespace-tab) 3121 3124 (fontified t face css-property) 3124 3128 (fontified t face css-property) 3128 3133 (fontified t) 3133 3134 (fontified t face whitespace-tab) 3134 3144 (fontified t face css-property) 3144 3158 (fontified t) 3158 3159 (fontified t face whitespace-tab) 3159 3164 (fontified t face css-property) 3164 3172 (fontified t) 3172 3173 (fontified t face whitespace-tab) 3173 3180 (fontified t face css-property) 3180 3193 (fontified t) 3193 3194 (fontified t face whitespace-tab) 3194 3210 (fontified t face css-property) 3210 3212 (fontified t) 3212 3217 (fontified t face (:background "#ffffff" :foreground "black" :box (:line-width -1))) 3217 3219 (fontified t) 3219 3220 (fontified t face whitespace-tab) 3220 3229 (fontified t face css-property) 3229 3241 (fontified t) 3241 3242 (fontified t face (rainbow-delimiters-depth-3-face)) 3242 3246 (fontified t) 3246 3247 (fontified t face (rainbow-delimiters-depth-3-face)) 3247 3249 (fontified t) 3249 3250 (fontified t face whitespace-tab) 3250 3261 (fontified t face css-property) 3261 3263 (fontified t) 3263 3271 (fontified t face font-lock-string-face) 3271 3285 (fontified t) 3285 3286 (fontified t face whitespace-tab) 3286 3295 (fontified t face css-property) 3295 3303 (fontified t) 3303 3304 (fontified t face whitespace-tab) 3304 3314 (fontified t face css-property) 3314 3324 (fontified t) 3324 3325 (fontified t) 3325 3326 (fontified t face whitespace-tab) 3326 3334 (fontified t face css-selector) 3334 3335 (fontified t face (rainbow-delimiters-depth-3-face)) 3335 3336 (fontified t) 3336 3337 (fontified t face whitespace-tab) 3337 3341 (fontified t) 3341 3346 (fontified t face css-property) 3346 3348 (fontified t) 3348 3355 (fontified t face (:background #("#755D87" 0 7 (fontified t)) :foreground "white" :box (:line-width -1))) 3355 3357 (fontified t) 3357 3358 (fontified t face whitespace-tab) 3358 3362 (fontified t) 3362 3377 (fontified t face css-property) 3377 3385 (fontified t) 3385 3386 (fontified t face whitespace-tab) 3386 3387 (fontified t face (rainbow-delimiters-depth-3-face)) 3387 3388 (fontified t) 3388 3392 (fontified t) 3392 3393 (rear-nonsticky t fontified t face (rainbow-delimiters-depth-2-face)) 3393 3394 (fontified t)) . 105) (undo-tree-id30 . -3394) (undo-tree-id31 . -525) (undo-tree-id32 . -572) (undo-tree-id33 . -173) (undo-tree-id34 . -251) (undo-tree-id35 . -572) (undo-tree-id36 . -572) (undo-tree-id37 . -572) (undo-tree-id38 . -1033) (undo-tree-id39 . -343) (undo-tree-id40 . -572) (undo-tree-id41 . -760) (undo-tree-id42 . -889) (undo-tree-id43 . -593) (undo-tree-id44 . -889) (undo-tree-id45 . -604) (undo-tree-id46 . -804) (undo-tree-id47 . -1033) (undo-tree-id48 . -22) (undo-tree-id49 . -744) (undo-tree-id50 . -3394)) nil (25269 31483 494738 53000) 0 nil] [nil nil ((#("3" 0 1 (fontified t)) . -1108) (undo-tree-id25 . -1) 1109 (t 25269 31158 312915 289000)) ((1108 . 1109)) (25269 31186 799095 855000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 2234 . 2235) (nil fontified nil 105 . 2235) (105 . 2235)) nil (25269 31483 494653 708000) 0 nil])
+([nil nil ((1108 . 1109)) ((#("6" 0 1 (fontified t)) . 1108) (t 25269 31167 789068 207000)) (25269 31167 787435 781000) 0 nil])
+([nil nil ((3047 . 3051) (3037 . 3045) (#("  " 0 2 (fontified t)) . 3037) (3023 . 3035) (#("    " 0 4 (fontified t)) . 3023) (3005 . 3021) (#("      " 0 6 (fontified t)) . 3005) (2964 . 2984) (#("        " 0 8 (fontified t)) . 2964) (2941 . 2957) (#("        " 0 8 (fontified t)) . 2941) (2924 . 2940) (#("      " 0 6 (fontified t face whitespace-trailing)) . 2924) (2854 . 2870) (#("      " 0 6 (fontified t)) . 2854) (2831 . 2843) (#("    " 0 4 (fontified t)) . 2831) (2810 . 2822) (#("    " 0 4 (fontified t)) . 2810) (2797 . 2809) (#("    " 0 4 (fontified t face whitespace-trailing)) . 2797) (2783 . 2795) (#("    " 0 4 (fontified t)) . 2783) (2742 . 2758) (#("      " 0 6 (fontified t)) . 2742) (2707 . 2723) (#("      " 0 6 (fontified t)) . 2707) (2688 . 2700) (#("    " 0 4 (fontified t)) . 2688) (2675 . 2687) (#("    " 0 4 (fontified t face whitespace-trailing)) . 2675) (2646 . 2658) (#("    " 0 4 (fontified t)) . 2646) (2609 . 2621) (#("    " 0 4 (fontified t)) . 2609) (2575 . 2587) (#("    " 0 4 (fontified t)) . 2575) (2549 . 2561) (#("    " 0 4 (fontified t)) . 2549) (2496 . 2508) (#("    " 0 4 (fontified t)) . 2496) (2460 . 2472) (#("    " 0 4 (fontified t)) . 2460) (2428 . 2440) (#("    " 0 4 (fontified t)) . 2428) (2399 . 2411) (#("    " 0 4 (fontified t)) . 2399) (2370 . 2382) (#("    " 0 4 (fontified t)) . 2370) (2345 . 2357) (#("    " 0 4 (fontified t)) . 2345) (2317 . 2329) (#("    " 0 4 (fontified t)) . 2317) (2300 . 2308) (#("  " 0 2 (fontified t)) . 2300) (2291 . 2299) (#("  " 0 2 (fontified t face whitespace-trailing)) . 2291) (2281 . 2289) (#("  " 0 2 (fontified t)) . 2281) (2246 . 2258) (#("    " 0 4 (fontified t)) . 2246) (2202 . 2214) (#("    " 0 4 (fontified t)) . 2202) (2172 . 2184) (#("    " 0 4 (fontified t)) . 2172) (2137 . 2149) (#("    " 0 4 (fontified t)) . 2137) (2106 . 2118) (#("    " 0 4 (fontified t)) . 2106) (2088 . 2096) (#("  " 0 2 (fontified nil)) . 2088) (2079 . 2087) (#("  " 0 2 (fontified nil)) . 2079) (2069 . 2077) (#("  " 0 2 (fontified nil)) . 2069) (2034 . 2046) (#("    " 0 4 (fontified nil)) . 2034) (2000 . 2012) (#("    " 0 4 (fontified nil)) . 2000) (1970 . 1982) (#("    " 0 4 (fontified nil)) . 1970) (1941 . 1953) (#("    " 0 4 (fontified nil)) . 1941) (1921 . 1929) (#("  " 0 2 (fontified nil)) . 1921) (1912 . 1920) (#("  " 0 2 (fontified nil)) . 1912) (1902 . 1910) (#("  " 0 2 (fontified nil)) . 1902) (1870 . 1882) (#("    " 0 4 (fontified nil)) . 1870) (1849 . 1857) (#("  " 0 2 (fontified nil)) . 1849) (1840 . 1848) (#("  " 0 2 (fontified nil)) . 1840) (1830 . 1838) (#("   " 0 3 (fontified nil)) . 1830) (1799 . 1811) (#("    " 0 4 (fontified nil)) . 1799) (1772 . 1784) (#("    " 0 4 (fontified nil)) . 1772) (1747 . 1759) (#("    " 0 4 (fontified nil)) . 1747) (1719 . 1731) (#("    " 0 4 (fontified nil)) . 1719) (1702 . 1710) (#("  " 0 2 (fontified nil)) . 1702) (1690 . 1694) (1683 . 1687) (1673 . 1681) (#("  " 0 2 (fontified nil)) . 1673) (1659 . 1671) (#("    " 0 4 (fontified nil)) . 1659) (1600 . 1616) (#("      " 0 6 (fontified nil)) . 1600) (1555 . 1571) (#("      " 0 6 (fontified nil)) . 1555) (1533 . 1545) (#("    " 0 4 (fontified nil)) . 1533) (1520 . 1532) (#("    " 0 4 (fontified nil)) . 1520) (1483 . 1495) (#("    " 0 4 (fontified nil)) . 1483) (1454 . 1466) (#("    " 0 4 (fontified nil)) . 1454) (1399 . 1411) (#("    " 0 4 (fontified t)) . 1399) (1369 . 1381) (#("    " 0 4 (fontified t)) . 1369) (1335 . 1347) (#("    " 0 4 (fontified t)) . 1335) (1299 . 1311) (#("    " 0 4 (fontified t)) . 1299) (1281 . 1289) (#("  " 0 2 (fontified t)) . 1281) (1272 . 1280) (#("  " 0 2 (fontified t face whitespace-trailing)) . 1272) (1262 . 1270) (#("   " 0 3 (fontified t)) . 1262) (1234 . 1246) (#("      " 0 6 (fontified t)) . 1234) (1202 . 1210) (#("  " 0 2 (fontified t)) . 1202) (1193 . 1201) (#("  " 0 2 (fontified t face whitespace-trailing)) . 1193) (1165 . 1173) (#("  " 0 2 (fontified t)) . 1165) (1154 . 1162) (#("  " 0 2 (fontified t)) . 1154) (1123 . 1135) (#("    " 0 4 (fontified t)) . 1123) (1101 . 1113) (#("    " 0 4 (fontified t)) . 1101) (1062 . 1070) (#("  " 0 2 (fontified t)) . 1062) (1038 . 1046) (#("  " 0 2 (fontified t)) . 1038) (1015 . 1023) (#("  " 0 2 (fontified t)) . 1015) (992 . 1000) (#("  " 0 2 (fontified t)) . 992) (980 . 984) (960 . 964) (953 . 957) (943 . 951) (#("   " 0 3 (fontified t)) . 943) (916 . 928) (#("      " 0 6 (fontified t)) . 916) (884 . 892) (#("  " 0 2 (fontified t)) . 884) (875 . 883) (#("  " 0 2 (fontified t face whitespace-trailing)) . 875) (833 . 841) (#("  " 0 2 (fontified t)) . 833) (798 . 806) (#("  " 0 2 (fontified t)) . 798) (775 . 783) (#("  " 0 2 (fontified t)) . 775) (744 . 752) (#("  " 0 2 (fontified t)) . 744) (711 . 719) (#("  " 0 2 (fontified t)) . 711) (688 . 696) (#("  " 0 2 (fontified t)) . 688) (677 . 681) (670 . 674) (631 . 639) (#("  " 0 2 (fontified t)) . 631) (599 . 607) (#("  " 0 2 (fontified t)) . 599) (588 . 592) (574 . 578) (567 . 571) (538 . 546) (#("  " 0 2 (fontified t)) . 538) (518 . 526) (#("  " 0 2 (fontified t)) . 518) (499 . 507) (#("  " 0 2 (fontified t)) . 499) (484 . 488) (469 . 473) (462 . 466) (449 . 453) (426 . 430) (389 . 393) (359 . 363) (332 . 336) (304 . 308) (287 . 291) (280 . 284) (270 . 278) (#("  " 0 2 (fontified t)) . 270) (256 . 268) (#("    " 0 4 (fontified t)) . 256) (230 . 246) (#("      " 0 6 (fontified t)) . 230) (191 . 203) (#("    " 0 4 (fontified t)) . 191) (156 . 164) (#("  " 0 2 (fontified t)) . 156) (124 . 128) (105 . 109) 76) nil (25269 31483 494568 548000) 0 nil])
+nil
+([nil nil ((1002 . 1005) (989 . 992) (959 . 962) (924 . 927) (870 . 873) (832 . 835) (806 . 809) (772 . 775) (736 . 739) (710 . 713) (696 . 699) (686 . 689) (644 . 647) (609 . 612) (595 . 598) (578 . 581)) nil (25269 31483 494408 271000) 0 nil])
+([nil nil (("                " . -2880) ("            " . -2765) ("            " . -2655) ("        " . -2279) ("        " . -2075) ("        " . -1916) ("        " . -1852) (#("            " 0 12 (fontified t face whitespace-trailing)) . -1544) (#("        " 0 8 (fontified t face whitespace-trailing)) . -1304) (#("        " 0 8 (fontified t face whitespace-trailing)) . -1233) (#("        " 0 8 (fontified t)) . -911) (undo-tree-id26 . -8) (undo-tree-id27 . -8) (undo-tree-id28 . -8) (undo-tree-id29 . -8) 919) nil (25269 31574 223323 869000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -1070) (undo-tree-id51 . -1) (undo-tree-id52 . -1) (#("1" 0 1 (fontified t)) . -1071) (undo-tree-id53 . -1) (undo-tree-id54 . -1) (#("4" 0 1 (fontified t)) . -1072) (undo-tree-id55 . -1) (undo-tree-id56 . -1) 1073) nil (25269 31581 167823 880000) 0 nil] [nil nil ((#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -964) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -954) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -927) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -895) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -852) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -817) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -794) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -763) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -730) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -707) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -696) (t 25269 31483 501992 665000)) ((696 . 699) (707 . 710) (730 . 733) (763 . 766) (794 . 797) (817 . 820) (852 . 855) (895 . 898) (927 . 930) (954 . 957) (964 . 967) (t 25269 31559 631141 919000)) (25269 31559 624824 545000) 0 nil])
+([nil nil ((1070 . 1072)) nil (25269 31581 167798 761000) 0 nil])
+nil
+([nil nil ((#("8" 0 1 (fontified t)) . -1804) (undo-tree-id57 . -1) (undo-tree-id58 . -1) 1805 (t 25269 31581 175465 125000)) nil (25269 31605 792992 261000) 0 nil])
+([nil nil ((1804 . 1805)) nil (25269 31767 403688 597000) 0 nil])
+([nil nil ((#("3" 0 1 (fontified t)) . -1181) (undo-tree-id62 . -1) (undo-tree-id63 . -1) 1182) nil (25269 31818 66871 357000) 0 nil] [nil nil ((#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -964) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -954) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -927) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -895) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -852) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -817) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -794) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -763) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -730) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -707) (#("// " 0 3 (fontified t face font-lock-comment-delimiter-face)) . -696)) ((696 . 699) (707 . 710) (730 . 733) (763 . 766) (794 . 797) (817 . 820) (852 . 855) (895 . 898) (927 . 930) (954 . 957) (964 . 967)) (25269 31767 49839 854000) 0 nil] [nil nil ((#("9" 0 1 (fontified t)) . -1070) (undo-tree-id59 . -1) (undo-tree-id60 . -1) 1071 (t 25269 31605 799833 526000)) ((1070 . 1071)) (25269 31648 660417 37000) 0 nil])
+([nil nil ((1181 . 1182)) nil (25269 31818 66853 857000) 0 nil])
+([nil nil ((#("y" 0 1 (fontified t face css-selector)) . 696) (#("d" 0 1 (fontified t face css-selector)) . 696) (#("o" 0 1 (fontified t face css-selector)) . 696) (#("b" 0 1 (fontified t face css-selector)) . 696)) ((696 . 697) (696 . 697) (696 . 697) (696 . 697)) (25269 31766 558162 825000) 0 nil])
+([nil nil ((1070 . 1071)) ((#("3" 0 1 (fontified t)) . 1070) (undo-tree-id61 . -1) (t 25269 31631 248213 168000)) (25269 31631 242994 317000) 0 nil])
+([nil nil ((#("9" 0 1 (fontified t)) . -1070) (undo-tree-id65 . -1) (undo-tree-id66 . -1) 1071 (t 25269 31818 74971 262000)) nil (25269 31835 546370 239000) 0 nil])
+([nil nil ((696 . 711)) ((#(".post-container" 0 15 (fontified t face css-selector)) . 696) (t 25269 31712 337416 119000)) (25269 31712 331953 112000) 0 nil])
+nil
+([nil nil ((1070 . 1072)) nil (25269 31835 546365 415000) 0 nil])
+nil
+([nil nil ((#("3" 0 1 (fontified t)) . -1071) (undo-tree-id64 . -1) 1072) nil (25269 31835 546363 577000) 0 nil])
+([nil nil ((1071 . 1072)) nil (25269 31835 546352 949000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . 1072)) nil (25269 31835 546350 594000) 0 nil])
+([nil nil ((1072 . 1073)) nil (25269 31835 546343 38000) 0 nil])
+([nil nil ((1771 . 1773) (t 25269 31835 555227 72000)) nil (25269 31880 432578 833000) 0 nil])
+([nil nil ((#("." 0 1 (fontified t)) . -2120) (undo-tree-id67 . -1) (undo-tree-id68 . -1) (#("5" 0 1 (fontified t)) . -2121) (undo-tree-id69 . -1) (undo-tree-id70 . -1) 2122 (t 25269 31880 439882 428000)) nil (25269 31897 337985 825000) 0 nil])
+([nil nil ((#("3" 0 1 (fontified t)) . -1962) (undo-tree-id72 . -1) 1963 (t 25269 31897 344128 715000)) nil (25269 31906 232239 597000) 0 nil])
+([nil nil ((1962 . 1963)) nil (25269 31906 232235 667000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -1962) (undo-tree-id71 . -1) 1963) nil (25269 31906 232232 856000) 0 nil])
+([nil nil ((1962 . 1963)) nil (25269 31906 232217 844000) 0 nil])
+([nil nil ((#("2" 0 1 (fontified t)) . -2402) (undo-tree-id73 . -1) 2403 (t 25269 31906 240258 217000)) nil (25269 31918 594830 814000) 0 nil])
+([nil nil ((2402 . 2403)) nil (25269 31918 594813 943000) 0 nil])
+([nil nil ((#("/" 0 1 (fontified t)) . -1771) (undo-tree-id79 . -1) (undo-tree-id80 . -1) (#("/" 0 1 (fontified t face font-lock-comment-delimiter-face)) . -1772) (undo-tree-id81 . -1) (undo-tree-id82 . -1) 1773 (t 25269 31918 600438 18000)) nil (25269 31934 837934 851000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -1804) (undo-tree-id75 . -1) (undo-tree-id76 . -1) (#("0" 0 1 (fontified t)) . -1805) (undo-tree-id77 . -1) (undo-tree-id78 . -1) 1806) nil (25269 31934 837927 397000) 0 nil])
+([nil nil ((1804 . 1805)) nil (25269 31934 837920 258000) 0 nil])
+([nil nil ((#("4" 0 1 (fontified t)) . -1804) (undo-tree-id74 . -1) 1805) nil (25269 31934 837917 578000) 0 nil])
+([nil nil ((1804 . 1805)) nil (25269 31934 837900 771000) 0 nil])
+([nil nil ((#("3" 0 1 (fontified t)) . -1804) (undo-tree-id83 . -1) 1805 (t 25269 31934 844674 112000)) nil (25269 31940 967250 653000) 0 nil])
+([nil nil ((1804 . 1805)) nil (25269 31940 967235 93000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -1182) (undo-tree-id84 . -1) (undo-tree-id85 . -1) 1183 (t 25269 31940 972763 113000)) nil (25269 31953 29870 267000) 0 nil])
+([nil nil ((1182 . 1183)) nil (25269 31953 29852 743000) 0 nil])
+([nil nil ((#("9" 0 1 (fontified t)) . -1182) (undo-tree-id86 . -1) 1183 (t 25269 31953 36938 233000)) nil (25269 31961 993434 877000) 0 nil])
+([nil nil ((1182 . 1183)) nil (25269 31961 993418 109000) 0 nil])
+([nil nil ((#("4" 0 1 (fontified t)) . -1071) (undo-tree-id87 . -1) (#("1" 0 1 (fontified t)) . -1072) (undo-tree-id88 . -1) 1073 (t 25269 31962 1068 273000)) nil (25269 31975 537789 702000) 0 nil])
+([nil nil ((1071 . 1073)) nil (25269 31975 537769 28000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -1071) (undo-tree-id91 . -1) (#("0" 0 1 (fontified t)) . -1072) (undo-tree-id92 . -1) 1073 (t 25269 31975 541264 566000)) nil (25269 31985 2392 89000) 0 nil])
+([nil nil ((1071 . 1073)) nil (25269 31985 2387 6000) 0 nil])
+([nil nil ((#("4" 0 1 (fontified t)) . -1071) (undo-tree-id89 . -1) (#("0" 0 1 (fontified t)) . -1072) (undo-tree-id90 . -1) 1073) nil (25269 31985 2384 73000) 0 nil])
+([nil nil ((1071 . 1073)) nil (25269 31985 2366 353000) 0 nil])
+([nil nil ((#("    // MEDIA QUERY
+    @mixin media($breakpoint) {
+        @if $breakpoint == small {
+            @media (max-width: 60em) {
+                @content;
+            }
+        }
+    }
+
+    // VARIABLES
+    $color-header: #0d0d0d;
+    $color-text: #404040;
+
+    $color-btn-text: #3363ff;
+    $color-btn-background: #e6ecff;
+
+    $transition: .2s;
+
+    // RESET
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+    }
+
+    // // GLOBAL
+    // html {
+    //     box-sizing: border-box;
+    //     font-size: 62.5%; // 10px/16px
+    // }
+
+    // body {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-content: center;
+    //     padding: 6rem;
+    //     background-color: #f5f5f5;
+    //     font-family: \"Inter\", sans-serif;
+
+    //     @include media(small) {
+    //         padding: 3rem;
+    //     }
+    // }
+
+    // MAIN CONTENT
+    .grid {
+        display: grid;
+        width: 130rem;
+        grid-gap: 6rem;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(30rem, 1fr)
+        );
+        align-items: start;
+
+        @include media(small) {
+            grid-gap: 3rem;
+        }
+
+        &__item {
+            background-color: #fff;
+            border-radius: .4rem;
+            overflow: hidden;
+            box-shadow: 0 3rem 6rem rgba(0, 0, 0, .1);
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                transform: translateY(-.5%);
+                box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
+            }
+        }
+    }
+
+    .card {
+        &__img {
+            display: block;
+            width: 100%;
+            height: 1rem;
+            object-fit: cover;
+        }
+
+        &__content {
+            padding: 3rem 3rem;
+        }
+
+        &__header {
+            font-size: 2rem;
+            font-weight: 500;
+            color: $color-header;
+            margin-bottom: 1.5rem;
+        }
+
+        &__text {
+            font-size: 1rem;
+            letter-spacing: .1rem;
+            line-height: 1.7;
+            color: darken($color-text, 1%);
+            margin-bottom: 2.5rem;
+        }
+
+        &__btn {
+            display: block;
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1rem;
+            text-align: center;
+            color: $color-btn-text;
+            background-color: $color-btn-background;
+            border: none;
+            border-radius: .4rem;
+            transition: $transition;
+            cursor: pointer;
+
+            span {
+                margin-left: 1rem;
+                transition: $transition;
+            }
+
+            &:hover,
+            &:active {
+                background-color: darken( $color-btn-background, 2%);
+
+                span {
+                    margin-left: 1.5rem;
+                }
+            }
+        }
+    }" 0 4 (fontified t) 4 7 (fontified t face font-lock-comment-delimiter-face) 7 19 (fontified t face font-lock-comment-face) 19 23 (fontified t) 23 29 (fontified t face font-lock-builtin-face) 29 30 (fontified t) 30 35 (fontified t face font-lock-function-name-face) 35 36 (fontified t face (rainbow-delimiters-depth-2-face)) 36 47 (fontified t face font-lock-variable-name-face) 47 48 (fontified t face (rainbow-delimiters-depth-2-face)) 48 49 (fontified t) 49 50 (fontified t face (rainbow-delimiters-depth-2-face)) 50 59 (fontified t) 59 62 (fontified t face font-lock-builtin-face) 62 63 (fontified t) 63 74 (fontified t face font-lock-variable-name-face) 74 84 (fontified t) 84 85 (fontified t face (rainbow-delimiters-depth-3-face)) 85 98 (fontified t) 98 104 (fontified t face font-lock-builtin-face) 104 105 (fontified t) 105 106 (fontified t face (rainbow-delimiters-depth-4-face)) 106 121 (fontified t) 121 122 (fontified t face (rainbow-delimiters-depth-4-face)) 122 123 (fontified t) 123 124 (fontified t face (rainbow-delimiters-depth-4-face)) 124 141 (fontified t) 141 149 (fontified t face font-lock-builtin-face) 149 163 (fontified t) 163 164 (fontified t face (rainbow-delimiters-depth-4-face)) 164 173 (fontified t) 173 174 (fontified t face (rainbow-delimiters-depth-3-face)) 174 179 (fontified t) 179 180 (fontified t face (rainbow-delimiters-depth-2-face)) 180 181 (fontified t) 181 182 (fontified t) 182 186 (fontified t) 186 189 (fontified t face font-lock-comment-delimiter-face) 189 199 (fontified t face font-lock-comment-face) 199 203 (fontified t) 203 216 (fontified t face font-lock-variable-name-face) 216 218 (fontified t) 218 225 (fontified t face (:background #("#0d0d0d" 0 7 (fontified t)) :foreground "white" :box (:line-width -1))) 225 231 (fontified t) 231 242 (fontified t face font-lock-variable-name-face) 242 244 (fontified t) 244 251 (fontified t face (:background #("#404040" 0 7 (fontified t)) :foreground "white" :box (:line-width -1))) 251 253 (fontified t) 253 254 (fontified t) 254 258 (fontified t) 258 273 (fontified t face font-lock-variable-name-face) 273 275 (fontified t) 275 282 (fontified t face (:background #("#3363ff" 0 7 (fontified t)) :foreground "white" :box (:line-width -1))) 282 288 (fontified t) 288 309 (fontified t face font-lock-variable-name-face) 309 311 (fontified t) 311 318 (fontified t face (:background #("#e6ecff" 0 7 (fontified t)) :foreground "black" :box (:line-width -1))) 318 320 (fontified t) 320 321 (fontified t) 321 325 (fontified t) 325 336 (fontified t face font-lock-variable-name-face) 336 343 (fontified t) 343 344 (fontified t) 344 348 (fontified t) 348 351 (fontified t face font-lock-comment-delimiter-face) 351 357 (fontified t face font-lock-comment-face) 357 361 (fontified t) 361 368 (fontified t) 368 383 (fontified t) 383 392 (fontified t face css-selector) 392 393 (fontified t face (rainbow-delimiters-depth-2-face)) 393 402 (fontified t) 402 408 (fontified t face css-property) 408 421 (fontified t) 421 428 (fontified t face css-property) 428 441 (fontified t) 441 451 (fontified t face css-property) 451 466 (fontified t) 466 467 (fontified t face (rainbow-delimiters-depth-2-face)) 467 468 (fontified t) 468 469 (fontified t) 469 473 (fontified t) 473 476 (fontified t face font-lock-comment-delimiter-face) 476 479 (fontified t face font-lock-comment-face) 479 486 (fontified t face font-lock-comment-face) 486 490 (fontified t) 490 493 (fontified t face font-lock-comment-delimiter-face) 493 498 (fontified t face font-lock-comment-face) 498 499 (fontified t face font-lock-comment-face) 499 500 (fontified t face font-lock-comment-face) 500 504 (fontified t) 504 507 (fontified t face font-lock-comment-delimiter-face) 507 509 (fontified t face font-lock-comment-delimiter-face) 509 511 (fontified t face font-lock-comment-delimiter-face) 511 521 (fontified t face font-lock-comment-face) 521 535 (fontified t face font-lock-comment-face) 535 539 (fontified t) 539 542 (fontified t face font-lock-comment-delimiter-face) 542 546 (fontified t face font-lock-comment-delimiter-face) 546 555 (fontified t face font-lock-comment-face) 555 564 (fontified t face font-lock-comment-face) 564 567 (fontified t face font-lock-comment-face) 567 577 (fontified t face font-lock-comment-face) 577 581 (fontified t) 581 584 (fontified t face font-lock-comment-delimiter-face) 584 585 (fontified t face font-lock-comment-face) 585 586 (fontified t face font-lock-comment-face) 586 587 (fontified t) 587 591 (fontified t) 591 594 (fontified t face font-lock-comment-delimiter-face) 594 595 (fontified t face font-lock-comment-face) 595 596 (fontified t face font-lock-comment-face) 596 597 (fontified t face font-lock-comment-face) 597 598 (fontified t face font-lock-comment-face) 598 599 (fontified t face font-lock-comment-face) 599 600 (fontified t face font-lock-comment-face) 600 601 (fontified t face font-lock-comment-face) 601 605 (fontified t) 605 608 (fontified t face font-lock-comment-delimiter-face) 608 612 (fontified t face font-lock-comment-delimiter-face) 612 619 (fontified t face font-lock-comment-face) 619 627 (fontified t face font-lock-comment-face) 627 631 (fontified t) 631 634 (fontified t face font-lock-comment-delimiter-face) 634 638 (fontified t face font-lock-comment-delimiter-face) 638 653 (fontified t face font-lock-comment-face) 653 663 (fontified t face font-lock-comment-face) 663 667 (fontified t) 667 670 (fontified t face font-lock-comment-delimiter-face) 670 674 (fontified t face font-lock-comment-delimiter-face) 674 685 (fontified t face font-lock-comment-face) 685 687 (fontified t face font-lock-comment-face) 687 697 (fontified t face font-lock-comment-face) 697 701 (fontified t) 701 704 (fontified t face font-lock-comment-delimiter-face) 704 708 (fontified t face font-lock-comment-delimiter-face) 708 711 (fontified t face font-lock-comment-face) 711 715 (fontified t face font-lock-comment-face) 715 723 (fontified t face font-lock-comment-face) 723 727 (fontified t) 727 730 (fontified t face font-lock-comment-delimiter-face) 730 734 (fontified t face font-lock-comment-delimiter-face) 734 750 (fontified t face font-lock-comment-face) 750 752 (fontified t face font-lock-comment-face) 752 759 (fontified t face font-lock-comment-face) 759 761 (fontified t face font-lock-comment-face) 761 765 (fontified t) 765 768 (fontified t face font-lock-comment-delimiter-face) 768 772 (fontified t face font-lock-comment-delimiter-face) 772 783 (fontified t face font-lock-comment-face) 783 785 (fontified t face font-lock-comment-face) 785 792 (fontified t face font-lock-comment-face) 792 806 (fontified t face font-lock-comment-face) 806 807 (fontified t) 807 811 (fontified t) 811 814 (fontified t face font-lock-comment-delimiter-face) 814 818 (fontified t face font-lock-comment-delimiter-face) 818 826 (fontified t face font-lock-comment-face) 826 832 (fontified t face font-lock-comment-face) 832 833 (fontified t face font-lock-comment-face) 833 838 (fontified t face font-lock-comment-face) 838 839 (fontified t face font-lock-comment-face) 839 840 (fontified t face font-lock-comment-face) 840 841 (fontified t face font-lock-comment-face) 841 842 (fontified t face font-lock-comment-face) 842 846 (fontified t) 846 849 (fontified t face font-lock-comment-delimiter-face) 849 857 (fontified t face font-lock-comment-delimiter-face) 857 864 (fontified t face font-lock-comment-face) 864 872 (fontified t face font-lock-comment-face) 872 876 (fontified t) 876 879 (fontified t face font-lock-comment-delimiter-face) 879 883 (fontified t face font-lock-comment-delimiter-face) 883 884 (fontified t face font-lock-comment-face) 884 885 (fontified t face font-lock-comment-face) 885 889 (fontified t) 889 892 (fontified t face font-lock-comment-delimiter-face) 892 893 (fontified t face font-lock-comment-face) 893 894 (fontified t face font-lock-comment-face) 894 895 (fontified t) 895 899 (fontified t) 899 902 (fontified t face font-lock-comment-delimiter-face) 902 915 (fontified t face font-lock-comment-face) 915 919 (fontified t) 919 925 (fontified t face css-selector) 925 926 (fontified t face (rainbow-delimiters-depth-2-face)) 926 935 (fontified t) 935 942 (fontified t face css-property) 942 950 (fontified t) 950 958 (fontified t) 958 963 (fontified t face css-property) 963 968 (fontified t) 968 973 (fontified t) 973 981 (fontified t) 981 989 (fontified t face css-property) 989 1005 (fontified t) 1005 1026 (fontified t face css-property) 1026 1034 (fontified t) 1034 1035 (fontified t face (rainbow-delimiters-depth-3-face)) 1035 1048 (fontified t) 1048 1058 (fontified t) 1058 1066 (fontified t) 1066 1070 (fontified t) 1070 1076 (fontified t) 1076 1077 (fontified t face (rainbow-delimiters-depth-4-face)) 1077 1078 (fontified t) 1078 1087 (fontified t) 1087 1088 (fontified t face (rainbow-delimiters-depth-4-face)) 1088 1089 (fontified t) 1089 1097 (fontified t) 1097 1098 (fontified t face (rainbow-delimiters-depth-3-face)) 1098 1108 (fontified t) 1108 1119 (fontified t face css-property) 1119 1122 (fontified t) 1122 1128 (fontified t) 1128 1129 (fontified t) 1129 1132 (fontified t) 1132 1137 (fontified t) 1137 1145 (fontified t face font-lock-builtin-face) 1145 1151 (fontified t) 1151 1152 (fontified t face (rainbow-delimiters-depth-3-face)) 1152 1157 (fontified t) 1157 1158 (fontified t face (rainbow-delimiters-depth-3-face)) 1158 1159 (fontified t) 1159 1160 (fontified t face (rainbow-delimiters-depth-3-face)) 1160 1161 (fontified t) 1161 1173 (fontified t) 1173 1181 (fontified t face css-property) 1181 1197 (fontified t) 1197 1198 (fontified t face (rainbow-delimiters-depth-3-face)) 1198 1199 (fontified t) 1199 1200 (fontified t) 1200 1205 (fontified t) 1205 1208 (fontified t) 1208 1216 (fontified t face css-selector) 1216 1217 (fontified t face (rainbow-delimiters-depth-3-face)) 1217 1218 (fontified t) 1218 1230 (fontified t) 1230 1246 (fontified t face css-property) 1246 1248 (fontified t) 1248 1252 (fontified t face (:background #("#fff" 0 4 (fontified t)) :foreground "black" :box (:line-width -1))) 1252 1266 (fontified t) 1266 1279 (fontified t face css-property) 1279 1300 (fontified t) 1300 1306 (fontified t face css-property) 1306 1307 (fontified t face css-property) 1307 1308 (fontified t face css-property) 1308 1318 (fontified t) 1318 1319 (fontified t) 1319 1330 (fontified t) 1330 1340 (fontified t face css-property) 1340 1354 (fontified t) 1354 1358 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1358 1359 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1359 1366 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1366 1370 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1370 1371 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1371 1385 (fontified t) 1385 1391 (fontified t face css-property) 1391 1414 (fontified t) 1414 1424 (fontified t face css-property) 1424 1426 (fontified t) 1426 1437 (fontified t face font-lock-variable-name-face) 1437 1439 (fontified t) 1439 1440 (fontified t) 1440 1450 (fontified t) 1450 1451 (fontified t) 1451 1452 (fontified t) 1452 1460 (fontified t face css-selector) 1460 1461 (fontified t face (rainbow-delimiters-depth-4-face)) 1461 1462 (fontified t) 1462 1473 (fontified t) 1473 1478 (fontified t) 1478 1487 (fontified t face css-property) 1487 1499 (fontified t) 1499 1500 (fontified t face (rainbow-delimiters-depth-5-face)) 1500 1504 (fontified t) 1504 1505 (fontified t face (rainbow-delimiters-depth-5-face)) 1505 1507 (fontified t) 1507 1523 (fontified t) 1523 1533 (fontified t face css-property) 1533 1547 (fontified t) 1547 1550 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1550 1551 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1551 1552 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1552 1561 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1561 1563 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1563 1564 (fontified t face (:background "#000000" :foreground "white" :box (:line-width -1))) 1564 1566 (fontified t) 1566 1578 (fontified t) 1578 1579 (fontified t face (rainbow-delimiters-depth-4-face)) 1579 1588 (fontified t) 1588 1589 (fontified t face (rainbow-delimiters-depth-3-face)) 1589 1590 (fontified t) 1590 1594 (fontified t) 1594 1595 (fontified t face (rainbow-delimiters-depth-2-face)) 1595 1601 (fontified t) 1601 1607 (fontified t face css-selector) 1607 1608 (fontified t face (rainbow-delimiters-depth-2-face)) 1608 1617 (fontified t) 1617 1624 (fontified t face css-selector) 1624 1625 (fontified t face (rainbow-delimiters-depth-3-face)) 1625 1628 (fontified t) 1628 1632 (fontified t) 1632 1638 (fontified t) 1638 1645 (fontified t face css-property) 1645 1654 (fontified t) 1654 1661 (fontified t) 1661 1666 (fontified t) 1666 1671 (fontified t face css-property) 1671 1679 (fontified t) 1679 1691 (fontified t) 1691 1697 (fontified t face css-property) 1697 1705 (fontified t) 1705 1717 (fontified t) 1717 1727 (fontified t face css-property) 1727 1744 (fontified t) 1744 1745 (fontified t face (rainbow-delimiters-depth-3-face)) 1745 1746 (fontified t) 1746 1747 (fontified t) 1747 1755 (fontified t) 1755 1766 (fontified t face css-selector) 1766 1767 (fontified t face (rainbow-delimiters-depth-3-face)) 1767 1768 (fontified t) 1768 1780 (fontified t) 1780 1787 (fontified t face css-property) 1787 1805 (fontified t) 1805 1806 (fontified t) 1806 1808 (fontified t) 1808 1809 (fontified t face (rainbow-delimiters-depth-3-face)) 1809 1810 (fontified t) 1810 1811 (fontified t) 1811 1817 (fontified t) 1817 1819 (fontified t) 1819 1829 (fontified t face css-selector) 1829 1830 (fontified t face (rainbow-delimiters-depth-3-face)) 1830 1831 (fontified t) 1831 1843 (fontified t) 1843 1852 (fontified t face css-property) 1852 1860 (fontified t) 1860 1872 (fontified t) 1872 1883 (fontified t face css-property) 1883 1902 (fontified t) 1902 1907 (fontified t face css-property) 1907 1909 (fontified t) 1909 1922 (fontified t face font-lock-variable-name-face) 1922 1936 (fontified t) 1936 1938 (fontified t face css-property) 1938 1949 (fontified t face css-property) 1949 1959 (fontified t) 1959 1961 (fontified t) 1961 1962 (fontified t) 1962 1967 (fontified t) 1967 1968 (fontified t face (rainbow-delimiters-depth-3-face)) 1968 1969 (fontified t) 1969 1970 (fontified t) 1970 1972 (fontified t) 1972 1973 (fontified t) 1973 1978 (fontified t) 1978 1986 (fontified t face css-selector) 1986 1987 (fontified t face (rainbow-delimiters-depth-3-face)) 1987 1988 (fontified t) 1988 2000 (fontified t) 2000 2006 (fontified t face css-property) 2006 2007 (fontified t face css-property) 2007 2009 (fontified t face css-property) 2009 2017 (fontified t) 2017 2029 (fontified t) 2029 2043 (fontified t face css-property) 2043 2064 (fontified t) 2064 2075 (fontified t face css-property) 2075 2082 (fontified t) 2082 2086 (fontified t) 2086 2087 (fontified t) 2087 2089 (fontified t) 2089 2090 (fontified t) 2090 2094 (fontified t) 2094 2099 (fontified t face css-property) 2099 2107 (fontified t) 2107 2108 (fontified t face (rainbow-delimiters-depth-4-face)) 2108 2119 (fontified t face font-lock-variable-name-face) 2119 2123 (fontified t) 2123 2124 (fontified t face (rainbow-delimiters-depth-4-face)) 2124 2126 (fontified t) 2126 2138 (fontified t) 2138 2151 (fontified t face css-property) 2151 2169 (fontified t) 2169 2170 (fontified t face (rainbow-delimiters-depth-3-face)) 2170 2171 (fontified t) 2171 2172 (fontified t) 2172 2176 (fontified t) 2176 2180 (fontified t) 2180 2187 (fontified t face css-selector) 2187 2188 (fontified t face (rainbow-delimiters-depth-3-face)) 2188 2189 (fontified t) 2189 2201 (fontified t) 2201 2203 (fontified t face css-property) 2203 2205 (fontified t face css-property) 2205 2208 (fontified t face css-property) 2208 2217 (fontified t) 2217 2229 (fontified t) 2229 2234 (fontified t face css-property) 2234 2254 (fontified t) 2254 2261 (fontified t face css-property) 2261 2266 (fontified t) 2266 2271 (fontified t) 2271 2283 (fontified t) 2283 2292 (fontified t face css-property) 2292 2300 (fontified t) 2300 2312 (fontified t) 2312 2322 (fontified t face css-property) 2322 2329 (fontified t) 2329 2331 (fontified t) 2331 2332 (fontified t) 2332 2344 (fontified t) 2344 2349 (fontified t face css-property) 2349 2351 (fontified t) 2351 2360 (fontified t face font-lock-variable-name-face) 2360 2366 (fontified t face font-lock-variable-name-face) 2366 2368 (fontified t) 2368 2380 (fontified t) 2380 2396 (fontified t face css-property) 2396 2398 (fontified t) 2398 2419 (fontified t face font-lock-variable-name-face) 2419 2433 (fontified t) 2433 2439 (fontified t face css-property) 2439 2459 (fontified t) 2459 2469 (fontified t face css-property) 2469 2472 (fontified t face css-property) 2472 2473 (fontified t) 2473 2481 (fontified t) 2481 2493 (fontified t) 2493 2503 (fontified t face css-property) 2503 2505 (fontified t) 2505 2516 (fontified t face font-lock-variable-name-face) 2516 2517 (fontified t) 2517 2518 (fontified t) 2518 2530 (fontified t) 2530 2536 (fontified t face css-property) 2536 2547 (fontified t) 2547 2548 (fontified t) 2548 2560 (fontified t) 2560 2565 (fontified t face css-selector) 2565 2566 (fontified t face (rainbow-delimiters-depth-4-face)) 2566 2583 (fontified t) 2583 2594 (fontified t face css-property) 2594 2618 (fontified t) 2618 2628 (fontified t face css-property) 2628 2630 (fontified t) 2630 2641 (fontified t face font-lock-variable-name-face) 2641 2655 (fontified t) 2655 2656 (fontified t face (rainbow-delimiters-depth-4-face)) 2656 2657 (fontified t) 2657 2658 (fontified t) 2658 2670 (fontified t) 2670 2676 (fontified t) 2676 2689 (fontified t) 2689 2691 (fontified t) 2691 2700 (fontified t face css-selector) 2700 2701 (fontified t face (rainbow-delimiters-depth-4-face)) 2701 2702 (fontified t) 2702 2703 (fontified t) 2703 2705 (fontified t) 2705 2717 (fontified t) 2717 2718 (fontified t) 2718 2734 (fontified t face css-property) 2734 2742 (fontified t) 2742 2743 (fontified t face (rainbow-delimiters-depth-5-face)) 2743 2744 (fontified t) 2744 2765 (fontified t face font-lock-variable-name-face) 2765 2769 (fontified t) 2769 2770 (fontified t face (rainbow-delimiters-depth-5-face)) 2770 2772 (fontified t) 2772 2773 (fontified t) 2773 2789 (fontified t) 2789 2794 (fontified t face css-selector) 2794 2795 (fontified t face (rainbow-delimiters-depth-5-face)) 2795 2800 (fontified t) 2800 2816 (fontified t) 2816 2827 (fontified t face css-property) 2827 2832 (fontified t) 2832 2837 (fontified t) 2837 2853 (fontified t) 2853 2854 (fontified t face (rainbow-delimiters-depth-5-face)) 2854 2860 (fontified t) 2860 2867 (fontified t) 2867 2868 (fontified t face (rainbow-delimiters-depth-4-face)) 2868 2877 (fontified t) 2877 2878 (fontified t face (rainbow-delimiters-depth-3-face)) 2878 2883 (fontified t) 2883 2884 (rear-nonsticky t fontified t face (rainbow-delimiters-depth-2-face))) . 105) (undo-tree-id93 . -2884) (undo-tree-id94 . -587) (undo-tree-id95 . -806) (undo-tree-id96 . -529) (undo-tree-id97 . -893) (undo-tree-id98 . -893) (undo-tree-id99 . -893) (undo-tree-id100 . -1318) (undo-tree-id101 . -718) (undo-tree-id102 . -1699) (undo-tree-id103 . -19) (undo-tree-id104 . -893) (undo-tree-id105 . -2884) (t 25269 31985 13401 795000)) nil (25269 32289 347078 519000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1174 . 1175) (nil fontified nil 105 . 1175) (105 . 1175)) nil (25269 32289 347051 582000) 0 nil])
+([nil nil ((1468 . 1472) (1458 . 1466) (#("  " 0 2 (fontified t)) . 1458) (1422 . 1434) (#("    " 0 4 (fontified t)) . 1422) (1338 . 1350) (#("    " 0 4 (fontified t)) . 1338) (1317 . 1325) (#("  " 0 2 (fontified t)) . 1317) (1277 . 1281) (1270 . 1274) (1248 . 1256) (#("  " 0 2 (fontified t)) . 1248) (1229 . 1233) (1222 . 1226) (1200 . 1208) (#("  " 0 2 (fontified t)) . 1200) (1181 . 1185) (1174 . 1178) (1116 . 1136) (#("    " 0 4 (fontified t)) . 1116) (1059 . 1067) (#("  " 0 2 (fontified t)) . 1059) (1023 . 1031) (#("  " 0 2 (fontified t)) . 1023) (1005 . 1009) (998 . 1002) (976 . 984) (#("  " 0 2 (fontified t)) . 976) (949 . 957) (#("  " 0 2 (fontified t)) . 949) (924 . 932) (#("  " 0 2 (fontified t)) . 924) (897 . 905) (#("  " 0 2 (fontified t)) . 897) (864 . 872) (#("  " 0 2 (fontified t)) . 864) (822 . 830) (#("  " 0 2 (fontified t)) . 822) (794 . 802) (#("  " 0 2 (fontified t)) . 794) (770 . 774) (763 . 767) (736 . 744) (#("  " 0 2 (fontified t)) . 736) (707 . 715) (#("  " 0 2 (fontified t)) . 707) (682 . 690) (#("  " 0 2 (fontified t)) . 682) (658 . 666) (#("  " 0 2 (fontified t)) . 658) (630 . 634) (623 . 627) (594 . 602) (#("  " 0 2 (fontified t)) . 594) (569 . 577) (#("  " 0 2 (fontified t)) . 569) (545 . 553) (#("  " 0 2 (fontified t)) . 545) (521 . 525) (514 . 518) (488 . 496) (#("  " 0 2 (fontified t)) . 488) (463 . 471) (#("  " 0 2 (fontified t)) . 463) (371 . 379) (342 . 350) (#("  " 0 2 (fontified t)) . 342) (319 . 327) (#("  " 0 2 (fontified t)) . 319) (297 . 305) (#("  " 0 2 (fontified t)) . 297) (270 . 278) (#("  " 0 2 (fontified t)) . 270) (258 . 262) (251 . 255) (226 . 234) (#("  " 0 2 (fontified t)) . 226) (187 . 195) (#("  " 0 2 (fontified t)) . 187) (164 . 172) (#("  " 0 2 (fontified t)) . 164) (143 . 151) (#("  " 0 2 (fontified t)) . 143) (123 . 131) (#("  " 0 2 (fontified t)) . 123) (105 . 109) 76) nil (25269 32289 347033 930000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face whitespace-trailing)) . -1114) 593) nil (25269 32746 242782 771000) 0 nil])
+([nil nil ((#("8" 0 1 (fontified t)) . -970) (undo-tree-id109 . -1) (undo-tree-id110 . -1) 971) nil (25269 32874 947906 91000) 0 nil] [nil nil ((#("8" 0 1 (fontified t)) . -970) (undo-tree-id106 . -1) (undo-tree-id107 . -1) 971 (t 25269 32289 353778 760000)) ((970 . 971)) (25269 32745 943176 390000) 0 nil])
+([nil nil ((970 . 972)) nil (25269 32874 947888 194000) 0 nil])
+([nil nil ((970 . 971)) ((#("6" 0 1 (fontified t)) . 970) (undo-tree-id108 . -1) (t 25269 32740 784198 654000)) (25269 32740 775401 207000) 0 nil])
+([nil nil ((#("4" 0 1 (fontified t)) . -730) (undo-tree-id111 . -1) 731 (t 25269 32874 978097 872000)) nil (25269 32916 202322 558000) 0 nil])
+nil
+([nil nil ((730 . 731)) nil (25269 32916 202304 859000) 0 nil])
+([nil nil ((#("3" 0 1 (fontified t)) . -335) (undo-tree-id112 . -1) 336 (t 25269 32916 210680 874000)) nil (25269 32972 434963 365000) 0 nil])
+([nil nil ((335 . 336)) nil (25269 32972 434945 821000) 0 nil])
+([nil nil ((#("2" 0 1 (fontified t)) . -730) (undo-tree-id114 . -1) (undo-tree-id115 . -1) 731 (t 25269 32972 443475 614000)) nil (25269 32994 422579 222000) 0 nil])
+([nil nil ((730 . 731)) nil (25269 32994 422573 595000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -336) (undo-tree-id113 . -1) 337) nil (25269 32994 422570 614000) 0 nil])
+([nil nil ((336 . 337)) nil (25269 32994 422553 181000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -970) (undo-tree-id116 . -1) (#("0" 0 1 (fontified t)) . -971) (undo-tree-id117 . -1) 972 (t 25269 32994 431769 713000)) nil (25269 33065 75534 777000) 0 nil])
+([nil nil ((970 . 971)) nil (25269 33065 75514 657000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -971) (undo-tree-id118 . -1) 972 (t 25269 33065 80697 353000)) nil (25269 33078 449526 764000) 0 nil])
+([nil nil ((971 . 972)) nil (25269 34870 176911 233000) 0 nil])
+([nil nil ((#("i" 0 1 (fontified t)) . -585) (undo-tree-id159 . -1) (#("n" 0 1 (fontified t)) . -586) (undo-tree-id160 . -1) (#("h" 0 1 (fontified t)) . -587) (undo-tree-id161 . -1) (#("e" 0 1 (fontified t)) . -588) (undo-tree-id162 . -1) (#("r" 0 1 (fontified t)) . -589) (undo-tree-id163 . -1) (#("i" 0 1 (fontified t)) . -590) (undo-tree-id164 . -1) (#("t" 0 1 (fontified t)) . -591) (undo-tree-id165 . -1) 592 (t 25269 34874 45560 384000)) nil (25269 34989 668362 894000) 0 nil] [nil nil ((#("inherit" 0 7 (fontified t)) . 698) (undo-tree-id139 . -7) (undo-tree-id140 . -7)) ((698 . 705)) (25269 34869 753222 193000) 0 nil] [nil nil ((585 . 587) (t 25269 33078 456873 864000)) ((#("80" 0 1 (fontified t) 1 2 (fontified t)) . 585) (undo-tree-id135 . -2)) (25269 34838 202246 870000) 0 nil] [nil nil ((593 . 602) (t 25269 33078 456873 864000)) ((#("
+        " 0 1 (fontified t) 1 9 (fontified t)) . 593) (undo-tree-id121 . -9) (undo-tree-id122 . -9) (undo-tree-id123 . -1) (undo-tree-id124 . -1)) (25269 34771 731167 516000) 0 nil])
+([nil nil ((585 . 590)) nil (25269 34989 668352 220000) 0 nil])
+([nil nil ((698 . 703)) ((#("150xp" 0 1 (fontified t) 1 2 (fontified t) 2 3 (fontified t) 3 4 (fontified t) 4 5 (fontified t)) . 698) (undo-tree-id147 . -5)) (25269 34869 421487 24000) 0 nil])
+([nil nil ((587 . 588)) ((#("%" 0 1 (fontified t)) . 587) (undo-tree-id134 . -1)) (25269 34837 821919 614000) 0 nil])
+([nil nil ((602 . 605)) ((#("max" 0 3 (fontified t)) . 602) (undo-tree-id119 . -3) (undo-tree-id120 . -3)) (25269 34771 731067 12000) 0 nil])
+([nil nil ((591 . 600)) nil (25269 34989 668351 164000) 0 nil])
+([nil nil ((#("x" 0 1 (fontified t)) . -701) (undo-tree-id137 . -1) (#("p" 0 1 (fontified t)) . -702) (undo-tree-id138 . -1) 703) ((701 . 703)) (25269 34869 26819 455000) 0 nil])
+([nil nil ((#("t" 0 1 (fontified t)) . 588) (#("i" 0 1 (fontified t)) . 588) (#("r" 0 1 (fontified defer)) . 588) (#("e" 0 1 (fontified defer)) . 588) (#("h" 0 1 (fontified defer)) . 588) (#("n" 0 1 (fontified t)) . 588) (#("i" 0 1 (fontified t)) . 588)) ((588 . 589) (588 . 589) (588 . 589) (588 . 589) (588 . 589) (588 . 589) (588 . 589)) (25269 34837 370890 537000) 0 nil])
+nil
+([nil nil ((600 . 616)) nil (25269 34989 668350 62000) 0 nil])
+([nil nil ((701 . 704)) ((#("px " 0 2 (fontified t) 2 3 (fontified t)) . 701) (undo-tree-id146 . -3)) (25269 34868 656996 81000) 0 nil])
+([nil nil ((#("%" 0 1 (fontified t)) . 585) (#("0" 0 1 (fontified t)) . 585) (#("8" 0 1 (fontified t)) . 585) (t 25269 34782 72279 101000)) ((585 . 586) (585 . 586) (585 . 586)) (25269 34836 978876 995000) 0 nil])
+([nil nil ((#("-" 0 1 (fontified t)) . -608) (undo-tree-id150 . -1) (undo-tree-id151 . -1) (#("h" 0 1 (fontified t)) . -609) (undo-tree-id152 . -1) (#("i" 0 1 (fontified defer)) . -610) (undo-tree-id153 . -1) (#("d" 0 1 (fontified defer)) . -611) (undo-tree-id154 . -1) (#("d" 0 1 (fontified defer)) . -612) (undo-tree-id155 . -1) (#("e" 0 1 (fontified t)) . -613) (undo-tree-id156 . -1) (#("n" 0 1 (fontified t)) . -614) (undo-tree-id157 . -1) (#(" " 0 1 (fontified t)) . -615) (undo-tree-id158 . -1) 616) nil (25269 34989 668346 668000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -703) (undo-tree-id136 . -1) 704) ((703 . 704)) (25269 34868 331160 281000) 0 nil])
+([nil nil ((585 . 587)) ((#("14" 0 1 (fontified t) 1 2 (fontified t)) . 585) (undo-tree-id133 . -2)) (25269 34836 628818 546000) 0 nil])
+([nil nil ((608 . 616)) nil (25269 34989 668332 907000) 0 nil])
+([nil nil ((#("5" 0 1 (fontified t)) . -699) (undo-tree-id141 . -1) 700 (t 25269 34844 709151 654000)) ((699 . 700)) (25269 34867 982979 46000) 0 nil])
+([nil nil ((#("4" 0 1 (fontified t)) . -586) (undo-tree-id126 . -1) 587) ((586 . 587)) (25269 34836 252614 789000) 0 nil])
+([nil nil ((616 . 617)) nil (25269 34989 668331 639000) 0 nil])
+([nil nil ((699 . 700)) ((#("0" 0 1 (fontified t)) . 699) (undo-tree-id145 . -1)) (25269 34867 745274 762000) 0 nil])
+([nil nil ((586 . 591)) ((#("50px " 0 1 (fontified t) 1 4 (fontified t) 4 5 (fontified t)) . 586) (undo-tree-id132 . -5)) (25269 34835 884709 570000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -616) (undo-tree-id149 . -1) 617) nil (25269 34989 668329 777000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -698) (undo-tree-id142 . -1) (#("0" 0 1 (fontified t)) . -699) (undo-tree-id143 . -1) 700 (t 25269 34854 597289 416000)) ((698 . 700)) (25269 34867 474960 847000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -590) (undo-tree-id125 . -1) 591) ((590 . 591)) (25269 34835 456354 156000) 0 nil])
+([nil nil ((616 . 618)) nil (25269 34989 668325 703000) 0 nil])
+([nil nil ((698 . 699)) ((#("1" 0 1 (fontified t)) . 698) (undo-tree-id144 . -1) (t 25269 34863 85407 677000)) (25269 34863 77157 551000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -585) (undo-tree-id128 . -1) (#("5" 0 1 (fontified t)) . -586) (undo-tree-id129 . -1) 587 (t 25269 34811 412687 799000)) ((585 . 587)) (25269 34835 170565 775000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -617) (undo-tree-id148 . -1) 618) nil (25269 34989 668319 964000) 0 nil])
+nil
+([nil nil ((585 . 586)) ((#("2" 0 1 (fontified t)) . 585) (undo-tree-id131 . -1)) (25269 34834 866566 991000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -586) (undo-tree-id166 . -1) 587 (t 25269 34989 675171 755000)) nil (25269 34998 947749 428000) 0 nil])
+([nil nil ((#("2" 0 1 (fontified t)) . -585) (undo-tree-id127 . -1) 586) ((585 . 586)) (25269 34834 584871 35000) 0 nil])
+([nil nil ((586 . 587)) nil (25269 34998 947732 426000) 0 nil])
+([nil nil ((585 . 587)) ((#("10" 0 2 (fontified t)) . 585) (undo-tree-id130 . -2) (t 25269 34825 904889 682000)) (25269 34825 899034 360000) 0 nil])
+([nil nil ((#("95" 0 2 (fontified t)) . 994) (undo-tree-id167 . -2) (undo-tree-id168 . -2) (t 25269 34998 955301 101000)) nil (25269 35019 961663 501000) 0 nil])
+nil
+([nil nil ((994 . 996)) nil (25269 35019 961645 176000) 0 nil])
+([nil nil ((#("-" 0 1 (fontified defer)) . -993) (undo-tree-id170 . -1) (undo-tree-id171 . -1) (#("1" 0 1 (fontified t)) . -994) (undo-tree-id172 . -1) (#("0" 0 1 (fontified t)) . -995) (undo-tree-id173 . -1) 996 (t 25269 35020 803605 634000)) nil (25269 35030 397112 985000) 0 nil])
+([nil nil ((993 . 996)) nil (25269 35030 397096 618000) 0 nil])
+([nil nil ((#("9" 0 1 (fontified t)) . -995) (undo-tree-id169 . -1) 996) nil (25269 35030 397088 176000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -993) (undo-tree-id174 . -1) (#("0" 0 1 (fontified t)) . -994) (undo-tree-id175 . -1) 995 (t 25269 35030 407851 1000)) nil (25269 35050 950487 819000) 0 nil])
+([nil nil ((993 . 994)) nil (25269 35050 950469 240000) 0 nil])
+([nil nil ((269 . 278) (t 25269 35050 956792 263000)) nil (25269 35221 474505 782000) 0 nil])
+([nil nil ((278 . 299)) nil (25269 35221 474503 789000) 0 nil])
+([nil nil ((299 . 301)) nil (25269 35221 474501 895000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -300) (undo-tree-id176 . -1) 301) nil (25269 35270 800237 38000) 0 nil])
+([nil nil ((#("r" 0 1 (fontified t)) . -296) (undo-tree-id186 . -1) (undo-tree-id187 . -1) (#("e" 0 1 (fontified t)) . -297) (undo-tree-id188 . -1) (undo-tree-id189 . -1) (#("d" 0 1 (fontified t face (:background "#ff0000" :foreground "white" :box (:line-width -1)))) . -298) (undo-tree-id190 . -1) (undo-tree-id191 . -1) 299 (t 25269 35271 389621 182000)) nil (25269 35303 76515 794000) 0 nil] [nil nil ((#("i" 0 1 (fontified t)) . -591) (undo-tree-id178 . -1) (#("n" 0 1 (fontified t)) . -592) (undo-tree-id179 . -1) (#("h" 0 1 (fontified defer)) . -593) (undo-tree-id180 . -1) (#("e" 0 1 (fontified defer)) . -594) (undo-tree-id181 . -1) (#("r" 0 1 (fontified defer)) . -595) (undo-tree-id182 . -1) (#("i" 0 1 (fontified t)) . -596) (undo-tree-id183 . -1) (#("t" 0 1 (fontified t)) . -597) (undo-tree-id184 . -1) 598 (t 25269 35221 483801 468000)) ((591 . 598)) (25269 35270 440829 518000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 307 . 308) (nil fontified nil 296 . 308) (296 . 308)) nil (25269 35303 76493 45000) 0 nil])
+([nil nil ((591 . 596)) ((#("100% " 0 4 (fontified t) 4 5 (fontified t)) . 591) (undo-tree-id185 . -5)) (25269 35269 995734 498000) 0 nil])
+([nil nil ((#("$normal-gray" 0 11 (fontified t face font-lock-variable-name-face) 11 12 (fontified t rear-nonsticky t face font-lock-variable-name-face)) . 296) (undo-tree-id192 . -12) (undo-tree-id193 . -12) (undo-tree-id194 . -12) (undo-tree-id195 . -12) (t 25269 35303 86730 920000)) nil (25269 35341 80765 67000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -595) (undo-tree-id177 . -1) 596) ((595 . 596) (t 25269 35264 37358 812000)) (25269 35264 31743 834000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 308 . 309) (nil fontified nil 296 . 309) (296 . 309)) nil (25269 35341 80737 961000) 0 nil])
+nil
+([nil nil ((#("$feature-text" 0 12 (fontified t face font-lock-variable-name-face) 12 13 (fontified t rear-nonsticky t face font-lock-variable-name-face)) . 296) (undo-tree-id196 . -13) (undo-tree-id197 . -13) (undo-tree-id198 . -13) (undo-tree-id199 . -13) (t 25269 35341 92017 911000)) nil (25269 35359 532823 742000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 305 . 306) (nil fontified nil 296 . 306) (296 . 306)) nil (25269 35359 532802 993000) 0 nil])
+([nil nil ((#("$dark-gray" 0 9 (fontified t face font-lock-variable-name-face) 9 10 (fontified t rear-nonsticky t face font-lock-variable-name-face)) . 296) (undo-tree-id200 . -10) (undo-tree-id201 . -10) (undo-tree-id202 . -10) (undo-tree-id203 . -10) (t 25269 35359 540626 454000)) nil (25269 35377 905336 67000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 305 . 306) (nil fontified nil 296 . 306) (296 . 306)) nil (25269 35377 905276 74000) 0 nil])
+([nil nil ((582 . 591) (t 25269 35377 913222 491000)) nil (25269 35406 500535 503000) 0 nil])
+([nil nil ((591 . 603)) nil (25269 35406 500533 971000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -602) (undo-tree-id212 . -1) 603) nil (25269 35406 500532 458000) 0 nil])
+([nil nil ((602 . 610)) nil (25269 35406 500517 91000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -609) (undo-tree-id211 . -1) 610) nil (25269 35406 500515 346000) 0 nil])
+([nil nil ((#("l" 0 1 (fontified t face css-property)) . -598) (undo-tree-id204 . -1) (undo-tree-id205 . -1) (#("e" 0 1 (fontified t face css-property)) . -599) (undo-tree-id206 . -1) (undo-tree-id207 . -1) (#("f" 0 1 (fontified t face css-property)) . -600) (undo-tree-id208 . -1) (undo-tree-id209 . -1) (#("t" 0 1 (fontified t face css-property)) . -601) (undo-tree-id210 . -1) 602) nil (25269 35406 500509 549000) 0 nil])
+([nil nil ((598 . 603)) nil (25269 35406 500484 344000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -606) (undo-tree-id213 . -1) 607 (t 25269 35406 510131 171000)) nil (25269 35414 300632 157000) 0 nil])
+([nil nil ((606 . 607)) nil (25269 35414 300616 818000) 0 nil])
+([nil nil ((#("5" 0 1 (fontified t)) . -606) (undo-tree-id214 . -1) 607 (t 25269 35414 310375 145000)) nil (25269 35442 75196 818000) 0 nil])
+([nil nil ((606 . 608)) nil (25269 35442 75180 618000) 0 nil])
+([nil nil ((#("
+        margin-right: -10px;" 0 1 (fontified t) 1 9 (fontified t) 9 21 (fontified t face css-property) 21 29 (fontified t)) . 582) (undo-tree-id223 . -29) (undo-tree-id224 . -20) (undo-tree-id225 . -1) (undo-tree-id226 . -29) (t 25269 35442 83230 850000)) nil (25269 35457 855903 971000) 0 nil])
+([nil nil ((#("i" 0 1 (fontified t)) . -598) (undo-tree-id216 . -1) (#("n" 0 1 (fontified t)) . -599) (undo-tree-id217 . -1) (#("h" 0 1 (fontified defer)) . -600) (undo-tree-id218 . -1) (#("e" 0 1 (fontified defer)) . -601) (undo-tree-id219 . -1) (#("r" 0 1 (fontified defer)) . -602) (undo-tree-id220 . -1) (#("i" 0 1 (fontified t)) . -603) (undo-tree-id221 . -1) (#("t" 0 1 (fontified t)) . -604) (undo-tree-id222 . -1) 605) nil (25269 35457 855894 801000) 0 nil])
+([nil nil ((598 . 604)) nil (25269 35457 855881 680000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -603) (undo-tree-id215 . -1) 604) nil (25269 35457 855875 731000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -599) (undo-tree-id227 . -1) 600 (t 25269 35457 863708 341000)) nil (25269 35465 377278 424000) 0 nil])
+([nil nil ((599 . 600)) nil (25269 35465 377257 35000) 0 nil])
+([nil nil ((#("5" 0 1 (fontified t)) . -599) (undo-tree-id229 . -1) 600 (t 25269 35465 387933 857000)) nil (25269 35490 440909 13000) 0 nil])
+([nil nil ((599 . 600)) nil (25269 35490 440905 223000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -600) (undo-tree-id228 . -1) 601) nil (25269 35490 440902 319000) 0 nil])
+([nil nil ((600 . 601)) nil (25269 35490 440885 433000) 0 nil])
+([nil nil ((#("$secondary" 0 9 (fontified t face font-lock-variable-name-face) 9 10 (fontified t rear-nonsticky t face font-lock-variable-name-face)) . 296) (undo-tree-id230 . -10) (undo-tree-id231 . -10) (t 25269 35490 448675 274000)) nil (25269 35580 466987 277000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 301 . 302) (nil fontified nil 296 . 302) (296 . 302)) nil (25269 35580 466974 559000) 0 nil])
+([nil nil ((296 . 297)) nil (25269 35580 466966 616000) 0 nil])
+([nil nil ((#("293c7c" 0 5 (fontified t face (:background #("#293c7c" 0 1 (fontified t) 1 6 (fontified t) 6 7 (rear-nonsticky t fontified t)) :foreground "white" :box (:line-width -1))) 5 6 (fontified t rear-nonsticky t face (:background #("#293c7c" 0 1 (fontified t) 1 6 (fontified t) 6 7 (rear-nonsticky t fontified t)) :foreground "white" :box (:line-width -1)))) . 297) (undo-tree-id232 . -6) (undo-tree-id233 . -6) (t 25269 35580 475224 792000)) nil (25269 35605 638381 654000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 302 . 303) (nil fontified nil 297 . 303) (297 . 303)) nil (25269 35605 638364 869000) 0 nil])
+([nil nil ((#("#" 0 1 (fontified t)) . -296) (undo-tree-id235 . -1) (undo-tree-id236 . -1) (undo-tree-id237 . -1) (#("2" 0 1 (fontified t)) . -297) (undo-tree-id238 . -1) (#("4" 0 1 (fontified defer face (:background #("#243" 0 1 (fontified t) 1 4 (fontified t)) :foreground "white" :box (:line-width -1)))) . -298) (undo-tree-id239 . -1) (#("3" 0 1 (fontified t face (:background #("#243" 0 1 (fontified t) 1 4 (fontified t)) :foreground "white" :box (:line-width -1)))) . -299) (undo-tree-id240 . -1) (#("7" 0 1 (fontified t face (:background #("#243" 0 1 (fontified t) 1 4 (fontified t)) :foreground "white" :box (:line-width -1)))) . -300) (undo-tree-id241 . -1) (#("7" 0 1 (fontified t)) . -301) (undo-tree-id242 . -1) (#("5" 0 1 (fontified t rear-nonsticky t face (:background #("#243775" 0 1 (fontified t) 1 6 (fontified t) 6 7 (rear-nonsticky t fontified t)) :foreground "white" :box (:line-width -1)))) . -302) (undo-tree-id243 . -1) 303 (t 25269 35605 647908 584000)) nil (25269 35643 68096 187000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 301 . 302) (nil fontified nil 296 . 302) (296 . 302)) nil (25269 35643 68081 475000) 0 nil])
+([nil nil ((296 . 297)) nil (25269 35643 68079 421000) 0 nil])
+([nil nil ((#("£" 0 1 (fontified t)) . -296) (undo-tree-id234 . -1) 297) nil (25269 35643 68076 121000) 0 nil])
+([nil nil ((296 . 297)) nil (25269 35643 68059 521000) 0 nil])
+([nil nil ((#(" #1f2e6" 0 1 (fontified t) 1 2 (fontified t face (:background #("#1f2e60" 0 1 (fontified t) 1 6 (fontified t) 6 7 (rear-nonsticky t fontified t)) :foreground "white" :box (:line-width -1))) 2 7 (fontified t face (:background #("#1f2e60" 0 1 (fontified t) 1 6 (fontified t) 6 7 (rear-nonsticky t fontified t)) :foreground "white" :box (:line-width -1)))) . 295) (undo-tree-id246 . -7) (undo-tree-id247 . -1) (undo-tree-id248 . -1) (undo-tree-id249 . -1) (undo-tree-id250 . -1) (undo-tree-id251 . -1) (undo-tree-id252 . -1) (undo-tree-id253 . -1) (undo-tree-id254 . -1) (undo-tree-id255 . -1) (undo-tree-id256 . -1) (undo-tree-id257 . -1) (undo-tree-id258 . -1) (undo-tree-id259 . -1) (undo-tree-id260 . -1) (undo-tree-id261 . -1) (undo-tree-id262 . -1) (undo-tree-id263 . -7) (undo-tree-id264 . -7) (undo-tree-id265 . -7) (t 25269 35643 76904 44000)) nil (25269 35676 354110 264000) 0 nil])
+([nil nil ((295 . 296)) nil (25269 35676 354085 337000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t rear-nonsticky t)) . 296) (undo-tree-id244 . -1) (undo-tree-id245 . -1)) nil (25269 35676 354082 728000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 308 . 309) (nil fontified nil 296 . 309) (296 . 309)) nil (25269 35856 326141 810000) 0 nil])
+([nil nil ((#("3" 0 1 (fontified t)) . -601) (undo-tree-id269 . -1) (#("0" 0 1 (fontified t)) . -602) (undo-tree-id270 . -1) (#("1" 0 1 (fontified t)) . -603) (undo-tree-id271 . -1) (#("p" 0 1 (fontified t)) . -604) (undo-tree-id272 . -1) (#("x" 0 1 (fontified t)) . -605) (undo-tree-id273 . -1) (#(";" 0 1 (fontified t)) . -606) (undo-tree-id274 . -1) 607 (t 25269 35676 365769 325000)) nil (25269 35864 962876 144000) 0 nil] [nil nil ((#(";" 0 1 (fontified t)) . -629) (undo-tree-id266 . -1) 630 (t 25269 35676 365769 325000)) ((629 . 630)) (25269 35856 325859 415000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 618 . 619) (nil fontified nil 601 . 619) (601 . 619)) nil (25269 35864 962865 345000) 0 nil])
+nil
+([nil nil ((#(" " 0 1 (fontified t)) . -610) (undo-tree-id267 . -1) (#("-" 0 1 (fontified t)) . -611) (undo-tree-id268 . -1) 612) nil (25269 35864 962862 364000) 0 nil])
+([nil nil ((610 . 612)) nil (25269 35864 962848 898000) 0 nil])
+([nil nil ((#("8" 0 1 (fontified t)) . 614)) nil (25269 35864 962841 67000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -613) (undo-tree-id275 . -1) 614 (t 25269 35864 974369 350000)) nil (25269 35876 412604 323000) 0 nil])
+([nil nil ((613 . 614)) nil (25269 35876 412587 267000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -613) (undo-tree-id276 . -1) 614 (t 25269 35876 422634 350000)) nil (25269 35882 229558 148000) 0 nil])
+([nil nil ((613 . 614)) nil (25269 35882 229531 377000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -354) (undo-tree-id277 . -1) 355 (t 25269 35882 242768 529000)) nil (25269 36578 704540 534000) 0 nil])
+([nil nil ((354 . 355)) nil (25269 36578 704521 54000) 0 nil])
+([nil nil ((#("2" 0 1 (fontified t)) . -354) (undo-tree-id279 . -1) 355 (t 25269 36578 713082 87000)) nil (25269 36597 209497 194000) 0 nil])
+([nil nil ((354 . 355)) nil (25269 36597 209493 233000) 0 nil])
+([nil nil ((#("4" 0 1 (fontified t)) . -354) (undo-tree-id278 . -1) 355) nil (25269 36597 209490 255000) 0 nil])
+([nil current ((354 . 355)) nil (25269 36597 209472 512000) 0 nil])
+nil

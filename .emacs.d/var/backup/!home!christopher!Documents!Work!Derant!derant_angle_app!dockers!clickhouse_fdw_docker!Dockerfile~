@@ -1,7 +1,0 @@
-FROM citusdata/citus:latest
-
-# Install pg_partman
-RUN apt-get update && apt-get install --assume-yes postgresql-13-partman
-
-# run initial db script
-COPY init.sql /docker-entrypoint-initdb.d/init.sql

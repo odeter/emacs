@@ -1,0 +1,43 @@
+from flask_jwt_extended import get_jwt_identity
+from flask_restful import Resource, reqparse
+from angle.models import UserModel
+from flask import current_app as app
+from angle import role_required
+import urlscanio
+import ast
+
+def url_lookup(row, userID):
+
+    # Search row for valid url column
+    src_ip_col_names = ["src_ip", "id_orig_h"]
+    for col_name in src_ip_col_names:
+        try:
+            src_ip = row[col_name]
+            break # Use first found src IP in case there are multiple
+
+
+
+class URLScanLookup(Resource):
+    @role_required(["admin", "mssp_it_sec", "mssp_admin", "it_sec",  "it_man", "op_man", "sys_admin"])
+    def post(self):
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('row', help = 'This field cannot be blank', required = True)
+        data = parser.parse_args()
+
+        # Format string to be read as dictionary
+        try:
+            row = ast.literal_eval(data["row"])
+        except:
+            app.logger.error('user with ID: {0} tried getting whois data, but parsing of data row failed'.format(userID))
+            return {'message': 'User not set'}, 500
+
+        if not current_user:
+            app.logger.error('user with ID: {0} tried getting whois data, without permissions'.format(userID))
+            return {'message': 'User not set'}, 403
+
+        res = url_lookup(row, userID)
+
+        return {'message': 'virustotal not included'}, 500

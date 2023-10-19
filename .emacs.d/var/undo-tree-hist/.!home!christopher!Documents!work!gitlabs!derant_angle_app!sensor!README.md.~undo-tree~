@@ -1,0 +1,10 @@
+(undo-tree-save-format-version . 1)
+"403ae7849c3b14cccd99e81e6cd7128f4945aaba"
+[nil nil nil nil (25681 7574 190479 303000) 0 nil]
+([nil nil ((#("
+## Manual install
+" 0 1 (fontified t) 1 4 (markdown-heading (25 42 nil nil nil nil nil nil 25 28 28 42 42 42 #<buffer README.md>) markdown-heading-2-atx (25 42 nil nil nil nil nil nil 25 28 28 42 42 42 #<buffer README.md>) fontified t face markdown-header-delimiter-face) 4 18 (markdown-heading (25 42 nil nil nil nil nil nil 25 28 28 42 42 42 #<buffer README.md>) markdown-heading-2-atx (25 42 nil nil nil nil nil nil 25 28 28 42 42 42 #<buffer README.md>) fontified t face markdown-header-face-2) 18 19 (fontified t font-lock-multiline t)) . 24) (undo-tree-id6 . -1) (undo-tree-id7 . -19) (undo-tree-id8 . -19) (undo-tree-id9 . -19) (undo-tree-id10 . -19) (undo-tree-id11 . -19) (t 25680 60246 95523 212000)) nil (25681 7601 547280 921000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t font-lock-multiline t)) . -23) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 24) nil (25681 7601 547271 251000) 0 nil])
+([nil current ((23 . 24)) nil (25681 7601 547243 565000) 0 nil])
+nil

@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"2355ee4b7f3e57fff7c75d0d06da0b7a708d703b"
+[nil nil nil nil (25873 32477 178560 22000) 0 nil]
+([nil current ((#("
+
+    partition_type = os.environ.get(\"PARTITION_SIZE\")" 0 6 (fontified t) 6 10 (fontified t face font-lock-variable-name-face) 10 18 (fontified t face font-lock-variable-name-face) 18 20 (fontified t face font-lock-variable-name-face) 20 37 (fontified t) 37 38 (fontified t face (rainbow-delimiters-depth-1-face)) 38 54 (fontified t face font-lock-string-face) 54 55 (fontified t face (rainbow-delimiters-depth-1-face))) . 4441) (undo-tree-id0 . -1) (undo-tree-id1 . -55) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -55) (undo-tree-id6 . -55) (t 25670 23121 697932 23000)) nil (25873 32477 178554 462000) 0 nil])
+nil

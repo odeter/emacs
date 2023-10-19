@@ -1,0 +1,25 @@
+(undo-tree-save-format-version . 1)
+"a136ce3bd4deeed4d1087a591b8dfd90745580f4"
+[nil nil nil nil (25303 59878 173282 818000) 0 nil]
+([nil nil ((239 . 240) (t 25303 56553 36973 230000)) nil (25303 59878 173279 680000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 281 . 282) (nil fontified nil 257 . 282) (nil fontified nil 248 . 257) (nil fontified nil 247 . 248) (nil fontified nil 243 . 247) (nil fontified nil 241 . 243) (nil fontified nil 240 . 241) (240 . 282)) nil (25303 59878 173277 716000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 240) (undo-tree-id24 . -1)) nil (25303 59878 173274 705000) 0 nil])
+([nil nil ((240 . 241)) nil (25303 59878 173272 365000) 0 nil])
+([nil nil ((#("s" 0 1 (fontified t face font-lock-comment-face)) . 243) (#("c" 0 1 (fontified t face font-lock-comment-face)) . 243) (#("o" 0 1 (fontified t face font-lock-comment-face)) . 243) (#("d" 0 1 (fontified t face font-lock-comment-face)) . 243)) nil (25303 59878 173270 722000) 0 nil])
+([nil nil ((243 . 247)) nil (25303 59878 173268 814000) 0 nil])
+([nil nil ((351 . 354)) nil (25303 59878 173267 637000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 461 . 462) (nil fontified nil 408 . 462) (nil fontified nil 367 . 408) (nil fontified nil 366 . 367) (nil fontified nil 365 . 366) (nil fontified nil 363 . 365) (nil fontified nil 353 . 363) (353 . 462)) nil (25303 59878 173265 975000) 0 nil])
+([nil nil ((#("docs && " 0 8 (fontified t face (makefile-shell))) . 370) (undo-tree-id21 . -8) (undo-tree-id22 . -8) (undo-tree-id23 . -8)) nil (25303 59878 173262 792000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face (makefile-shell))) . -369) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) 370) nil (25303 59878 173258 332000) 0 nil])
+([nil nil ((369 . 370)) nil (25303 59878 173253 741000) 0 nil])
+([nil nil ((#("c" 0 1 (fontified t face (makefile-shell))) . -367) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (#("d" 0 1 (fontified t face (makefile-shell))) . -368) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (#(" " 0 1 (fontified t face (makefile-shell))) . -369) (undo-tree-id17 . -1) 370) nil (25303 59878 173251 606000) 0 nil])
+([nil nil ((451 . 453)) nil (25303 59878 173242 79000) 0 nil])
+([nil nil ((nil fontified nil 517 . 518) (nil fontified nil 492 . 517) (nil fontified nil 480 . 492) (nil fontified nil 477 . 480) (nil fontified nil 476 . 477) (nil fontified nil 467 . 476) (nil fontified nil 466 . 467) (nil fontified nil 465 . 466) (nil fontified nil 464 . 465) (nil fontified nil 463 . 464) (nil fontified nil 461 . 463) (nil fontified nil 453 . 461) (453 . 518)) nil (25303 59878 173240 45000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -451) (undo-tree-id9 . -1) (undo-tree-id10 . -1) 452) nil (25303 59878 173235 342000) 0 nil])
+([nil nil ((#("ocs_" 0 4 (fontified t face (makefile-targets))) . 354) (undo-tree-id6 . -4) (undo-tree-id7 . -4) (undo-tree-id8 . -4)) nil (25303 59878 173230 616000) 0 nil])
+([nil nil ((#("d" 0 1 (fontified t face (makefile-targets))) . -353) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 354) nil (25303 59878 173225 156000) 0 nil])
+([nil nil ((#("docs_" 0 5 (fontified t face (makefile-targets))) . 447) (undo-tree-id0 . -5) (undo-tree-id1 . -5) (undo-tree-id2 . -5)) nil (25303 59878 173212 628000) 0 nil])
+([nil current ((#("d" 0 1 (fontified t)) . -260) (undo-tree-id25 . -1) (#("o" 0 1 (fontified t)) . -261) (undo-tree-id26 . -1) (#("c" 0 1 (fontified t)) . -262) (undo-tree-id27 . -1) (#("s" 0 1 (fontified t)) . -263) (undo-tree-id28 . -1) (#("/" 0 1 (fontified t)) . -264) (undo-tree-id29 . -1) 265 (t 25303 59878 180909 913000)) nil (25303 59885 433952 131000) 0 nil])
+nil

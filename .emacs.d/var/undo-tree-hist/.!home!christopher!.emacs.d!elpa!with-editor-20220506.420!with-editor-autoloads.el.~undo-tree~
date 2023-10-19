@@ -1,0 +1,91 @@
+(undo-tree-save-format-version . 1)
+"bc0214ca211a2e9da22e4e9933c16913ff7cbcce"
+[nil nil nil nil (25239 21590 768334 197000) 0 nil]
+([nil nil ((3334 . 3412) (201 . 311) (3001 . 3224) (2943 . 2944) (2747 . 3000) (2689 . 2690) (1927 . 2746) (1907 . 1908) (882 . 1926) (876 . 877) (747 . 881) (741 . 742) (610 . 746) (574 . 575) (201 . 609) (t 25239 21590 645561 133000)) nil (25239 21590 768326 23000) 0 nil])
+([nil current ((3342 . 3412) (#("
+;;;### (autoloads nil nil (\"with-editor-pkg.el\") (0 0 0 0))
+
+;;;***
+" 0 70 (fontified nil)) . -3342) (3334 . 3342) (201 . 311) (3001 . 3224) (2943 . 2944) (2747 . 3000) (2689 . 2690) (1927 . 2746) (1907 . 1908) (882 . 1926) (876 . 877) (747 . 881) (741 . 742) (610 . 746) (574 . 575) (201 . 609) (#("
+;;;### (autoloads nil \"with-editor\" \"with-editor.el\" (0 0 0 0))
+;;; Generated autoloads from with-editor.el
+
+(autoload 'with-editor-export-editor \"with-editor\" \"\\
+Teach subsequent commands to use current Emacs instance as editor.
+
+Set and export the environment variable ENVVAR, by default
+\\\"EDITOR\\\".  The value is automatically generated to teach
+commands to use the current Emacs instance as \\\"the editor\\\".
+
+This works in `shell-mode', `term-mode', `eshell-mode' and
+`vterm'.
+
+\\(fn &optional (ENVVAR \\\"EDITOR\\\"))\" t nil)
+
+(autoload 'with-editor-export-git-editor \"with-editor\" \"\\
+Like `with-editor-export-editor' but always set `$GIT_EDITOR'.
+
+\\(fn)\" t nil)
+
+(autoload 'with-editor-export-hg-editor \"with-editor\" \"\\
+Like `with-editor-export-editor' but always set `$HG_EDITOR'.
+
+\\(fn)\" t nil)
+
+(defvar shell-command-with-editor-mode nil \"\\
+Non-nil if Shell-Command-With-Editor mode is enabled.
+See the `shell-command-with-editor-mode' command
+for a description of this minor mode.\")
+
+(custom-autoload 'shell-command-with-editor-mode \"with-editor\" nil)
+
+(autoload 'shell-command-with-editor-mode \"with-editor\" \"\\
+Teach `shell-command' to use current Emacs instance as editor.
+
+Teach `shell-command', and all commands that ultimately call that
+command, to use the current Emacs instance as editor by executing
+\\\"EDITOR=CLIENT COMMAND&\\\" instead of just \\\"COMMAND&\\\".
+
+CLIENT is automatically generated; EDITOR=CLIENT instructs
+COMMAND to use to the current Emacs instance as \\\"the editor\\\",
+assuming no other variable overrides the effect of \\\"$EDITOR\\\".
+CLIENT may be the path to an appropriate emacsclient executable
+with arguments, or a script which also works over Tramp.
+
+Alternatively you can use the `with-editor-async-shell-command',
+which also allows the use of another variable instead of
+\\\"EDITOR\\\".
+
+\\(fn &optional ARG)\" t nil)
+
+(autoload 'with-editor-async-shell-command \"with-editor\" \"\\
+Like `async-shell-command' but with `$EDITOR' set.
+
+Execute string \\\"ENVVAR=CLIENT COMMAND\\\" in an inferior shell;
+display output, if any.  With a prefix argument prompt for an
+environment variable, otherwise the default \\\"EDITOR\\\" variable
+is used.  With a negative prefix argument additionally insert
+the COMMAND's output at point.
+
+CLIENT is automatically generated; ENVVAR=CLIENT instructs
+COMMAND to use to the current Emacs instance as \\\"the editor\\\",
+assuming it respects ENVVAR as an \\\"EDITOR\\\"-like variable.
+CLIENT may be the path to an appropriate emacsclient executable
+with arguments, or a script which also works over Tramp.
+
+Also see `async-shell-command' and `shell-command'.
+
+\\(fn COMMAND &optional OUTPUT-BUFFER ERROR-BUFFER ENVVAR)\" t nil)
+
+(autoload 'with-editor-shell-command \"with-editor\" \"\\
+Like `shell-command' or `with-editor-async-shell-command'.
+If COMMAND ends with \\\"&\\\" behave like the latter,
+else like the former.
+
+\\(fn COMMAND &optional OUTPUT-BUFFER ERROR-BUFFER ENVVAR)\" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"with-editor\" '(\"with-editor\" \"start-file-process--with-editor-process-filter\" \"server-\" \"shell-command--shell-command-with-editor-mode\")))
+
+;;;***
+" 0 3141 (fontified nil)) . -201) (t 25239 21590 705562 789000)) nil (25239 21619 239611 468000) 0 nil])
+nil

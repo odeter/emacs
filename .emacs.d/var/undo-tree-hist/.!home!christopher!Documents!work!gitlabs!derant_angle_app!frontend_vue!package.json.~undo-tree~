@@ -1,0 +1,8 @@
+(undo-tree-save-format-version . 1)
+"be638dade080666f33c34894f940d1e30f1567d4"
+[nil nil nil nil (25430 34574 50935 402000) 0 nil]
+([nil nil ((#("\"eslint-config-airbnb-base\": \"^15.0.0\"," 0 27 (fontified t face font-lock-string-face) 27 29 (fontified t) 29 38 (fontified t face font-lock-string-face) 38 39 (fontified t)) . 667) (undo-tree-id0 . -39) (undo-tree-id1 . -39) (undo-tree-id2 . -39) (undo-tree-id3 . -39) (t 25430 34445 5677 859000)) nil (25430 34574 50932 810000) 0 nil])
+([nil current ((nil rear-nonsticky nil 700 . 701) (nil fontified nil 667 . 701) (667 . 701)) nil (25430 34574 51036 804000) 0 nil])
+([nil nil ((2448 . 2449)) ((#("
+" 0 1 (fontified t face font-lock-string-face)) . 2448) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1)) (25430 34574 50900 627000) 0 nil])
+nil

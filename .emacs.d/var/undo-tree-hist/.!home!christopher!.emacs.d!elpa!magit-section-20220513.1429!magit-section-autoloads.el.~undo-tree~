@@ -1,0 +1,17 @@
+(undo-tree-save-format-version . 1)
+"99444e6f9334fbeabe2f58ee1b7a511f37eb8bc0"
+[nil nil nil nil (25239 21595 51493 388000) 0 nil]
+([nil nil ((460 . 540) (203 . 319) (203 . 344) (t 25239 21594 945679 887000)) nil (25239 21595 51485 682000) 0 nil])
+([nil current ((468 . 540) (#("
+;;;### (autoloads nil nil (\"magit-section-pkg.el\") (0 0 0 0))
+
+;;;***
+" 0 72 (fontified nil)) . -468) (460 . 468) (203 . 319) (203 . 344) (#("
+;;;### (autoloads nil \"magit-section\" \"magit-section.el\" (0 0 0 0))
+;;; Generated autoloads from magit-section.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"magit-section\" '(\"magit-\" \"isearch-clean-overlays@magit-mode\")))
+
+;;;***
+" 0 265 (fontified nil)) . -203) (t 25239 21594 981680 881000)) nil (25239 21607 298223 948000) 0 nil])
+nil

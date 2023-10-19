@@ -1,5 +1,0 @@
-__pycache__/
-venv/
-bro-docker/
-migrations/
-angle/app.db

@@ -1,0 +1,68 @@
+(undo-tree-save-format-version . 1)
+"d90aa482ee389156691cf5aff00d25f9d371ad4d"
+[nil nil nil nil (25670 64451 887811 872000) 0 nil]
+([nil nil ((#("From the dawn of my time, to the end of my road, i will try to exist, <br/>
+to find my place of being. For though the privilege of youth in this day <br/>
+and age is grand, i find my possibilities many, even sometime without
+limit. Which should inflate me with joy and grit, that my life is open
+in all directions. But though the sky is breached for me and me alone,
+the blood and sweat of my ancestor weighs heavily upon me. For am
+i blessed or cursed with a life without limits, surely i could not say
+no, no in disrespect, in disbelieve. An insult to all that has been done
+before me would it be, to simply pass on a chance so many before has
+lived without, a chance they didn’t get.
+The choice it weights me down from so young an age, í should
+count myself blessed but instead feel myself pressed against the ground.
+For with freedom comes responsibility, to take the correct road, to
+make the right choice. I fear deeply i might spill my chance, i might
+take the wrong door, though all are open and i see through them to
+the end. My life before my eyes, how it would shape, how it would
+tear in each and every direction. I feel myself punched down a road
+splitting unto hundreds. Take a road, make a choice, your life and
+future depends upon it, don’t waste your chance, your golden ticket,
+that so many fought to give you. As i start to walk upon the dusty
+road i feel panic and fear as my heart pumps and pumps away. I don’t
+know which path to choose and soon there will be no more delay. My
+heart jump and my focus i loose as the path must be chosen, for i
+don’t know which road to take, which one to bet my chance on. Some-
+times i wish for no chance at all, no choice or road to take, to throw
+overboard my existential crisis, to just be happy, to just exist." 70 71 (tag-name "br" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 71 73 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-face) 73 74 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-bracket-face) 74 75 (tag-name "br" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face) 149 150 (tag-name "br" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 150 152 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-face) 152 153 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-bracket-face) 153 154 (tag-name "br" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face)) . 68) (undo-tree-id0 . -76) (undo-tree-id1 . -1769) (undo-tree-id2 . -781) (undo-tree-id3 . -1769) (undo-tree-id4 . -781) (undo-tree-id5 . -1769) (t 25670 62269 947786 0)) nil (25670 64451 888029 865000) 0 nil])
+([nil nil ((nil face whitespace-tab 700 . 701) (nil face whitespace-tab 657 . 658) (nil face whitespace-tab 619 . 620) (nil face whitespace-tab 580 . 581) (nil face whitespace-trailing 578 . 579) (nil face whitespace-tab 534 . 535) (nil face whitespace-tab 492 . 493) (nil face whitespace-tab 452 . 453) (nil face whitespace-tab 414 . 415) (nil face whitespace-trailing 412 . 413) (nil face whitespace-tab 367 . 368) (nil face whitespace-tab 323 . 324) (nil face whitespace-tab 280 . 281) (nil face whitespace-tab 240 . 241) (nil face whitespace-trailing 238 . 239) (nil face whitespace-tab 197 . 198) (nil face whitespace-tab 150 . 151) (nil face whitespace-tab 108 . 109) (nil face whitespace-tab 68 . 69) (68 . 735)) nil (25670 64498 362511 150000) 0 nil] [nil nil ((nil face whitespace-tab 700 . 701) (nil face whitespace-tab 657 . 658) (nil face whitespace-tab 619 . 620) (nil face whitespace-tab 580 . 581) (nil face whitespace-trailing 578 . 579) (nil face whitespace-tab 534 . 535) (nil face whitespace-tab 492 . 493) (nil face whitespace-tab 452 . 453) (nil face whitespace-tab 414 . 415) (nil face whitespace-trailing 412 . 413) (nil face whitespace-tab 367 . 368) (nil face whitespace-tab 323 . 324) (nil face whitespace-tab 280 . 281) (nil face whitespace-tab 240 . 241) (nil face whitespace-trailing 238 . 239) (nil face whitespace-tab 197 . 198) (nil face whitespace-tab 150 . 151) (nil face whitespace-tab 108 . 109) (nil face whitespace-tab 68 . 69) (68 . 735)) ((#("	child of sorrow, weeping in the dark\\\\
+	the sobs, the grief, it know no bounds\\\\
+	through the hollow night, it sets it's mark\\\\
+	the horror it brings, an ungodly sound.
+	
+	is it for your mother you weep child\\\\
+	the love she brought but could not give\\\\
+	its nature harsh, unpredictable and wild\\\\
+	leaving horrid pain, scars you cant forgive
+	
+	or do you mourn your absent father\\\\
+	who left a mark on your soul instead\\\\
+	for the fact remain, he did not bother\\\\
+	which hurt you more than the love you fled
+	
+	or is it merely your fate you dread\\\\
+	so harsh and cruel it seem a curse\\\\
+	no love, no warmth and then you're dead\\\\
+	i guess at least it cant get worse" 0 1 (face whitespace-tab) 40 41 (face whitespace-tab) 82 83 (face whitespace-tab) 129 130 (face whitespace-tab) 170 171 (face whitespace-trailing) 172 173 (face whitespace-tab) 212 213 (face whitespace-tab) 255 256 (face whitespace-tab) 299 300 (face whitespace-tab) 344 345 (face whitespace-trailing) 346 347 (face whitespace-tab) 384 385 (face whitespace-tab) 424 425 (face whitespace-tab) 466 467 (face whitespace-tab) 510 511 (face whitespace-trailing) 512 513 (face whitespace-tab) 551 552 (face whitespace-tab) 589 590 (face whitespace-tab) 632 633 (face whitespace-tab)) . 68) (undo-tree-id6 . -667) (undo-tree-id7 . -632)) (25670 64451 887780 981000) 0 nil])
+([nil nil ((#("	" 0 1 (face whitespace-tab)) . 682) (undo-tree-id25 . -1) (#("	" 0 1 (face whitespace-tab)) . 640) (#("	" 0 1 (face whitespace-tab)) . 603) (#("	" 0 1 (face whitespace-tab)) . 565) (#("	" 0 1 (face whitespace-trailing)) . 564) (#("	" 0 1 (face whitespace-tab)) . 521) (#("	" 0 1 (face whitespace-tab)) . 480) (#("	" 0 1 (face whitespace-tab)) . 441) (#("	" 0 1 (face whitespace-tab)) . 404) (#("	" 0 1 (face whitespace-trailing)) . 403) (#("	" 0 1 (face whitespace-tab)) . 359) (#("	" 0 1 (face whitespace-tab)) . 316) (#("	" 0 1 (face whitespace-tab)) . 274) (#("	" 0 1 (face whitespace-tab)) . 235) (#("	" 0 1 (face whitespace-trailing)) . 234) (#("	" 0 1 (face whitespace-tab)) . 194) (#("	" 0 1 (face whitespace-tab)) . 148) (#("	" 0 1 (face whitespace-tab)) . 107) (#("	" 0 1 (face whitespace-tab)) . 68) (apply 0 68 701 cua--rect-undo-handler [68 735 0 7 3 0 t nil] t 68 701)) nil (25670 64498 362504 233000) 0 nil])
+nil
+([nil nil (("expectations" . 24) (undo-tree-id22 . -12) (undo-tree-id23 . -12) (undo-tree-id24 . -12)) nil (25670 64498 362498 78000) 0 nil])
+([nil nil ((24 . 31)) nil (25670 64498 362494 223000) 0 nil])
+([nil nil ((" " . -30) (undo-tree-id21 . -1) 31) nil (25670 64498 362493 30000) 0 nil])
+([nil nil (("sorrow" . 24) (undo-tree-id17 . -5) (undo-tree-id18 . -6) (undo-tree-id19 . -6) (undo-tree-id20 . -6)) nil (25670 64498 362490 309000) 0 nil])
+([nil nil ((24 . 29)) nil (25670 64498 362485 330000) 0 nil])
+([nil nil ((" " . -28) (undo-tree-id16 . -1) 29) nil (25670 64498 362484 190000) 0 nil])
+([nil nil (("2" . -38) (undo-tree-id14 . -1) (undo-tree-id15 . -1) 39) nil (25670 64498 362481 784000) 0 nil])
+([nil nil ((38 . 39)) nil (25670 64498 362478 512000) 0 nil])
+([nil nil (("4" . -38) (undo-tree-id13 . -1) 39) nil (25670 64498 362477 511000) 0 nil])
+([nil nil ((38 . 39)) nil (25670 64498 362474 362000) 0 nil])
+([nil nil (("8" . -41) (undo-tree-id12 . -1) 42) nil (25670 64498 362473 99000) 0 nil])
+([nil nil ((41 . 42)) nil (25670 64498 362470 954000) 0 nil])
+([nil nil (("2" . -43) (undo-tree-id10 . -1) ("7" . -44) (undo-tree-id11 . -1) 45) nil (25670 64498 362469 583000) 0 nil])
+([nil nil ((43 . 45)) nil (25670 64498 362465 162000) 0 nil])
+([nil nil (("8" . -47) (undo-tree-id8 . -1) (undo-tree-id9 . -1) 48) nil (25670 64498 362463 278000) 0 nil])
+([nil nil ((47 . 48)) nil (25670 64498 362412 249000) 0 nil])
+([nil current (("\\\\" . -704) (706 . 711) ("\\\\" . -659) (661 . 666) ("\\\\" . -619) (621 . 626) ("\\\\" . -534) (536 . 541) ("\\\\" . -490) (492 . 497) ("\\\\" . -448) (450 . 455) ("\\\\" . -363) (365 . 370) ("\\\\" . -317) (319 . 324) ("\\\\" . -272) (274 . 279) ("\\\\" . -189) (191 . 196) ("\\\\" . -140) (142 . 147) ("\\\\" . -96) (98 . 103) 54) nil (25670 64498 362394 103000) 0 nil])
+nil

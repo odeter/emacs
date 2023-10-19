@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"666c1072e8027bd54374e358e844315097797d4b"
+[nil nil nil nil (25695 31997 994334 593000) 0 nil]
+([nil nil ((#("| reverse" 0 2 (block-side t) 2 9 (block-side t face web-mode-function-call-face)) . 609) (undo-tree-id4 . -9) (undo-tree-id5 . -9) (undo-tree-id6 . -9) (undo-tree-id7 . -9) (t 25653 34988 906165 652000)) nil (25695 31997 994329 990000) 0 nil])
+([nil current ((#(" " 0 1 (block-side t)) . -608) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 609) nil (25695 31997 994303 752000) 0 nil])
+nil

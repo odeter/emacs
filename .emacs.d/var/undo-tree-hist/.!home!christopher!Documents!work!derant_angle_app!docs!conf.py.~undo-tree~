@@ -1,0 +1,71 @@
+(undo-tree-save-format-version . 1)
+"b3eeda5ffbf39feb0df8fc35431a0599641d5ad7"
+[nil nil nil nil (25303 56647 335448 391000) 0 nil]
+([nil nil ((1488 . 1490) (t 25303 56553 32973 172000)) nil (25303 56647 335446 682000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1498 . 1499) (nil fontified nil 1490 . 1499) (1490 . 1499)) nil (25303 56647 335445 168000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -1489) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (#("," 0 1 (fontified t)) . -1490) (undo-tree-id7 . -1) 1491) nil (25303 56647 335442 760000) 0 nil])
+([nil nil ((#("alabaster" 0 9 (fontified t face font-lock-string-face)) . 1701) (undo-tree-id2 . -9) (undo-tree-id3 . -9) (undo-tree-id4 . -9)) nil (25303 56647 335437 282000) 0 nil])
+([nil nil ((1701 . 1704)) nil (25303 56647 335432 213000) 0 nil])
+([nil nil ((#("n" 0 1 (fontified t face font-lock-string-face)) . -1702) (undo-tree-id0 . -1) (#("e" 0 1 (fontified t face font-lock-string-face)) . -1703) (undo-tree-id1 . -1) 1704) nil (25303 56647 335429 954000) 0 nil])
+([nil nil ((1702 . 1706)) nil (25303 56647 335411 720000) 0 nil])
+([nil nil ((1969 . 1970) 1706) nil (25303 56647 335404 610000) 0 nil])
+([nil nil ((#("." 0 1 (face font-lock-string-face fontified t)) . -1491) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) 1492 (t 25303 56647 354313 927000)) nil (25303 56756 867724 923000) 0 nil])
+([nil nil ((1132 . 1137) (t 25303 56756 879852 65000)) nil (25303 57287 493786 165000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1150 . 1151) (nil fontified nil 1137 . 1151) (1137 . 1151)) nil (25303 57287 493778 39000) 0 nil])
+([nil nil ((#("# Configuration file for the Sphinx documentation builder.
+#" 0 2 (fontified t face font-lock-comment-delimiter-face) 2 59 (fontified t face font-lock-comment-face) 59 60 (fontified t face font-lock-comment-delimiter-face)) . 1) (undo-tree-id64 . -60) (undo-tree-id65 . -59) (undo-tree-id66 . -60) (undo-tree-id67 . -60) (t 25303 57287 511121 287000)) nil (25303 57596 548741 991000) 0 nil])
+([nil nil ((#("
+# -- Path setup --------------------------------------------------------------
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))" 0 1 (fontified t) 1 3 (fontified t face font-lock-comment-delimiter-face) 3 80 (fontified t face font-lock-comment-face) 80 81 (fontified t) 81 83 (fontified t face font-lock-comment-delimiter-face) 83 161 (fontified t face font-lock-comment-face) 161 163 (fontified t face font-lock-comment-delimiter-face) 163 239 (fontified t face font-lock-comment-face) 239 241 (fontified t face font-lock-comment-delimiter-face) 241 268 (fontified t face font-lock-comment-face) 268 319 (fontified t face font-lock-comment-face) 319 320 (fontified t face font-lock-comment-delimiter-face) 320 321 (fontified t face font-lock-comment-face) 321 323 (fontified t face font-lock-comment-delimiter-face) 323 328 (fontified t face font-lock-comment-face) 328 329 (fontified t face font-lock-comment-face) 329 333 (fontified t face font-lock-comment-face) 333 335 (fontified t face font-lock-comment-delimiter-face) 335 346 (fontified t face font-lock-comment-face) 346 348 (fontified t face font-lock-comment-delimiter-face) 348 383 (fontified t face font-lock-comment-face) 383 384 (fontified t syntax-table (15) face font-lock-comment-face) 384 385 (fontified t face font-lock-comment-face) 385 386 (fontified t syntax-table (15) face font-lock-comment-face) 386 388 (fontified t face font-lock-comment-face)) . 173) (undo-tree-id60 . -388) (undo-tree-id61 . -1) (undo-tree-id62 . -24) (undo-tree-id63 . -388)) nil (25303 57596 548734 69000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t face font-lock-comment-face)) . -172) (undo-tree-id56 . -1) (undo-tree-id57 . -1) (undo-tree-id58 . -1) (undo-tree-id59 . -1) 173) nil (25303 57596 548728 425000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t face font-lock-comment-face)) . 172) (undo-tree-id53 . -1) (undo-tree-id54 . -1) (undo-tree-id55 . -1)) nil (25303 57596 548722 663000) 0 nil])
+([nil nil ((#("# -- Project information -----------------------------------------------------" 0 2 (fontified t face font-lock-comment-delimiter-face) 2 45 (fontified t face font-lock-comment-face) 45 78 (fontified t face font-lock-comment-face)) . 174) (undo-tree-id49 . -78) (undo-tree-id50 . -78) (undo-tree-id51 . -78) (undo-tree-id52 . -78)) nil (25303 57596 548717 894000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t face font-lock-comment-face)) . -172) (undo-tree-id39 . -1) (undo-tree-id40 . -1) (undo-tree-id41 . -1) (undo-tree-id42 . -1) (undo-tree-id43 . -1) (#("
+" 0 1 (fontified t)) . -173) (undo-tree-id44 . -1) (undo-tree-id45 . -1) (undo-tree-id46 . -1) (undo-tree-id47 . -1) (undo-tree-id48 . -1) 174) nil (25303 57596 548710 691000) 0 nil])
+([nil nil ((#("# -- General configuration ---------------------------------------------------
+
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones." 0 2 (fontified t face font-lock-comment-delimiter-face) 2 79 (fontified t face font-lock-comment-face) 79 80 (fontified t) 80 82 (fontified t face font-lock-comment-delimiter-face) 82 111 (fontified t face font-lock-comment-face) 111 150 (fontified t face font-lock-comment-face) 150 152 (fontified t face font-lock-comment-delimiter-face) 152 172 (fontified t face font-lock-comment-face) 172 176 (fontified t face font-lock-comment-face) 176 189 (fontified t face font-lock-comment-face) 189 190 (syntax-table (15) fontified t face font-lock-comment-face) 190 202 (fontified t face font-lock-comment-face) 202 203 (syntax-table (15) fontified t face font-lock-comment-face) 203 220 (fontified t face font-lock-comment-face) 220 222 (fontified t face font-lock-comment-delimiter-face) 222 227 (fontified t face font-lock-comment-face)) . 360) (undo-tree-id36 . -227) (undo-tree-id37 . -79) (undo-tree-id38 . -227)) nil (25303 57596 548698 300000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -357) (undo-tree-id25 . -1) (undo-tree-id26 . -1) (undo-tree-id27 . -1) (undo-tree-id28 . -1) (#("
+" 0 1 (fontified t)) . -358) (undo-tree-id29 . -1) (undo-tree-id30 . -1) (undo-tree-id31 . -1) (undo-tree-id32 . -1) (#("
+" 0 1 (fontified t)) . -359) (undo-tree-id33 . -1) (undo-tree-id34 . -1) (undo-tree-id35 . -1) 360) nil (25303 57596 548692 743000) 0 nil])
+([nil nil ((#("
+# Add any paths that contain templates here, relative to this directory." 0 1 (fontified t) 1 3 (fontified t face font-lock-comment-delimiter-face) 3 49 (fontified t face font-lock-comment-face) 49 68 (fontified t face font-lock-comment-face) 68 73 (fontified t face font-lock-comment-face)) . 394) (undo-tree-id22 . -73) (undo-tree-id23 . -1) (undo-tree-id24 . -73)) nil (25303 57596 548677 812000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -393) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) 394) nil (25303 57596 548673 225000) 0 nil])
+([nil nil ((#("
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+# This pattern also affects html_static_path and html_extra_path." 0 1 (fontified t) 1 3 (fontified t face font-lock-comment-delimiter-face) 3 72 (fontified t face font-lock-comment-face) 72 74 (fontified t face font-lock-comment-delimiter-face) 74 127 (fontified t face font-lock-comment-face) 127 129 (fontified t face font-lock-comment-delimiter-face) 129 192 (fontified t face font-lock-comment-face)) . 426) (undo-tree-id16 . -192) (undo-tree-id17 . -1) (undo-tree-id18 . -192)) nil (25303 57596 548668 488000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -425) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) 426) nil (25303 57596 548663 927000) 0 nil])
+([nil nil ((#("
+
+# -- Options for HTML output -------------------------------------------------
+
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+#" 0 2 (fontified t) 2 3 (fontified t face font-lock-comment-delimiter-face) 3 4 (fontified t face font-lock-comment-delimiter-face) 4 81 (fontified t face font-lock-comment-face) 81 82 (fontified t) 82 84 (fontified t face font-lock-comment-delimiter-face) 84 93 (fontified t face font-lock-comment-face) 93 101 (fontified t face font-lock-comment-face) 101 106 (fontified t face font-lock-comment-face) 106 116 (fontified t face font-lock-comment-face) 116 135 (fontified t face font-lock-comment-face) 135 158 (fontified t face font-lock-comment-face) 158 160 (fontified t face font-lock-comment-delimiter-face) 160 186 (fontified t face font-lock-comment-face) 186 187 (fontified t face font-lock-comment-delimiter-face)) . 490) (undo-tree-id10 . -187) (undo-tree-id11 . -1) (undo-tree-id12 . -187)) nil (25303 57596 548659 93000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -489) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) 490) nil (25303 57596 548654 288000) 0 nil])
+([nil nil ((#("
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named \"default.css\" will overwrite the builtin \"default.css\"." 0 1 (fontified t) 1 2 (fontified t face font-lock-comment-delimiter-face) 2 3 (fontified t face font-lock-comment-delimiter-face) 3 79 (fontified t face font-lock-comment-face) 79 81 (fontified t face font-lock-comment-delimiter-face) 81 157 (fontified t face font-lock-comment-face) 157 159 (fontified t face font-lock-comment-delimiter-face) 159 175 (fontified t face font-lock-comment-face) 175 176 (syntax-table (15) fontified t face font-lock-comment-face) 176 187 (fontified t face font-lock-comment-face) 187 188 (syntax-table (15) fontified t face font-lock-comment-face) 188 195 (fontified t face font-lock-comment-face) 195 216 (fontified t face font-lock-comment-face) 216 217 (syntax-table (15) fontified t face font-lock-comment-face) 217 227 (fontified t face font-lock-comment-face) 227 228 (fontified t face font-lock-comment-face) 228 229 (syntax-table (15) fontified t face font-lock-comment-face) 229 230 (fontified t face font-lock-comment-face)) . 511) (undo-tree-id4 . -230) (undo-tree-id5 . -1) (undo-tree-id6 . -230)) nil (25303 57596 548649 57000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -510) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 511) nil (25303 57596 548643 123000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t face whitespace-empty)) . 1) (undo-tree-id0 . -1) 510) nil (25303 57596 548633 285000) 0 nil])
+nil

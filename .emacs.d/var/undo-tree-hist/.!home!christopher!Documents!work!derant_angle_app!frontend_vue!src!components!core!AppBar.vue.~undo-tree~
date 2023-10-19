@@ -1,0 +1,19 @@
+(undo-tree-save-format-version . 1)
+"b7416445c6a01bdc5dda4304c5a3ed0a0640b0eb"
+[nil nil nil nil (25340 55018 316357 135000) 0 nil]
+([nil nil ((4815 . 4822) (t 25166 44074 822675 770000)) nil (25340 55018 316355 583000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 4866 . 4867) (nil part-side javascript 4866 . 4867) (nil face (rainbow-delimiters-depth-4-face) 4866 . 4867) (nil part-side javascript 4862 . 4866) (nil part-side javascript 4853 . 4862) (nil face web-mode-variable-name-face 4853 . 4862) (nil part-side javascript 4851 . 4853) (nil part-side javascript 4850 . 4851) (nil part-token string 4850 . 4851) (nil syntax-table (15) 4850 . 4851) (nil font-lock-face web-mode-javascript-string-face 4850 . 4851) (nil part-side javascript 4836 . 4850) (nil part-token string 4836 . 4850) (nil font-lock-face web-mode-javascript-string-face 4836 . 4850) (nil part-side javascript 4835 . 4836) (nil part-token string 4835 . 4836) (nil syntax-table (15) 4835 . 4836) (nil font-lock-face web-mode-javascript-string-face 4835 . 4836) (nil part-side javascript 4834 . 4835) (nil face (rainbow-delimiters-depth-3-face) 4834 . 4835) (nil part-side javascript 4832 . 4834) (nil part-side javascript 4822 . 4832) (4822 . 4867)) nil (25340 55018 316352 837000) 0 nil])
+([nil nil ((#("user_logged_in" 0 14 (font-lock-face web-mode-javascript-string-face part-token string part-side javascript)) . 4836) (undo-tree-id6 . -14) (undo-tree-id7 . -14) (undo-tree-id8 . -14)) nil (25340 55018 316346 260000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 4852 . 4853) (nil part-side javascript 4836 . 4853) (nil part-token string 4836 . 4853) (nil font-lock-face web-mode-javascript-string-face 4836 . 4853) (4836 . 4853)) nil (25340 55018 316341 654000) 0 nil])
+([nil nil ((4872 . 4880) (#("        " 0 8 (part-side javascript)) . 4871) (undo-tree-id5 . -8) (4870 . 4880)) nil (25340 55018 316339 316000) 0 nil])
+([nil nil ((4879 . 4880) (#("  " 0 2 (part-side javascript)) . -4878) (4880 . 4881)) nil (25340 55018 316336 269000) 0 nil])
+([nil nil ((4880 . 4881)) nil (25340 55018 316334 661000) 0 nil])
+([nil nil ((4871 . 4879)) nil (25340 55018 316333 323000) 0 nil])
+([nil nil ((#("is_logged" 0 9 (face web-mode-variable-name-face part-side javascript)) . 4856) (undo-tree-id3 . -9) (undo-tree-id4 . -9)) nil (25340 55018 316331 904000) 0 nil])
+([nil nil ((4856 . 4865)) nil (25340 55018 316328 181000) 0 nil])
+([nil nil ((#(" " 0 1 (part-side javascript)) . -4864) (undo-tree-id2 . -1) 4865) nil (25340 55018 316326 458000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 4923 . 4924) (nil part-side javascript 4923 . 4924) (nil face (rainbow-delimiters-depth-5-face) 4923 . 4924) (nil part-side javascript 4922 . 4923) (nil face (rainbow-delimiters-depth-5-face) 4922 . 4923) (nil part-side javascript 4909 . 4922) (nil face web-mode-function-call-face 4909 . 4922) (nil part-side javascript 4882 . 4909) (nil part-side javascript 4878 . 4882) (nil face web-mode-constant-face 4878 . 4882) (4878 . 4924)) nil (25340 55018 316322 682000) 0 nil])
+([nil nil ((#("authservice.getLogin_name()" 0 12 (part-side javascript) 12 25 (face web-mode-function-call-face part-side javascript) 25 26 (face (rainbow-delimiters-depth-5-face) part-side javascript) 26 27 (face (rainbow-delimiters-depth-5-face) part-side javascript rear-nonsticky t)) . 4897) (undo-tree-id0 . -27) (undo-tree-id1 . -27)) nil (25340 55018 316316 521000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 4904 . 4905) (nil part-side javascript 4897 . 4905) (4897 . 4905)) nil (25340 55018 316291 780000) 0 nil])
+([nil current ((#("," 0 1 (part-side javascript)) . -4914) (undo-tree-id0 . -1) 4915 (t 25340 55018 321224 774000)) nil (25343 18490 294529 633000) 0 nil])
+nil

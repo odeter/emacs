@@ -1,0 +1,15 @@
+(undo-tree-save-format-version . 1)
+"842a47abfbb0406e410690c3e067b597fe93abcc"
+[nil nil nil nil (25666 34831 594050 379000) 0 nil]
+([nil nil ((430 . 432) (t 25666 34049 583959 783000)) nil (25666 34831 594048 758000) 0 nil])
+([nil nil ((432 . 436)) nil (25666 34831 594047 464000) 0 nil])
+([nil nil (("u" . -434) (undo-tree-id6 . -1) (undo-tree-id7 . -1) ("p" . -435) (undo-tree-id8 . -1) (undo-tree-id9 . -1) 436) nil (25666 34831 594045 914000) 0 nil])
+([nil nil ((434 . 455)) nil (25666 34831 594040 178000) 0 nil])
+([nil nil ((" " . -454) (undo-tree-id5 . -1) 455) nil (25666 34831 594038 954000) 0 nil])
+([nil nil ((454 . 456)) nil (25666 34831 594036 570000) 0 nil])
+([nil nil (("
+" . -455) (undo-tree-id3 . -1) (undo-tree-id4 . -1) 456) nil (25666 34831 594035 211000) 0 nil])
+([nil nil ((455 . 512)) nil (25666 34831 594031 754000) 0 nil])
+([nil nil (("zeek" . 499) (undo-tree-id0 . -4) (undo-tree-id1 . -4) (undo-tree-id2 . -4)) nil (25666 34831 594029 144000) 0 nil])
+([nil current ((499 . 506)) nil (25666 34831 594007 976000) 0 nil])
+nil

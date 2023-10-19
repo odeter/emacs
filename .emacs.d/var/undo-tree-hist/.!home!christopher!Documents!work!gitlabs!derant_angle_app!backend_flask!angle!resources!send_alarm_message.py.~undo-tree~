@@ -1,0 +1,39 @@
+(undo-tree-save-format-version . 1)
+"fe6ba50d12615897185957ce797826dd52baf9e6"
+[nil nil nil nil (25442 31022 580426 771000) 0 nil]
+([nil nil ((907 . 911) (#("    " 0 4 (fontified nil)) . 906) (undo-tree-id32 . -4) (906 . 911) (#("    " 0 4 (fontified nil)) . 905) (undo-tree-id33 . -4) (905 . 910) (#("    " 0 4 (fontified nil)) . 904) (undo-tree-id34 . -4) (903 . 909) (t 25430 15053 139608 745000)) nil (25442 31022 580424 416000) 0 nil])
+([nil nil ((905 . 909)) nil (25442 31022 580419 145000) 0 nil])
+([nil nil ((909 . 912)) nil (25442 31022 580418 306000) 0 nil])
+([nil nil ((#("#" 0 1 (fontified t face font-lock-comment-delimiter-face)) . -910) (undo-tree-id30 . -1) (#(" " 0 1 (fontified t face font-lock-comment-delimiter-face)) . -911) (undo-tree-id31 . -1) 912) nil (25442 31022 580417 92000) 0 nil])
+([nil nil ((910 . 920)) nil (25442 31022 580413 827000) 0 nil])
+([nil nil ((#("t" 0 1 (fontified t face font-lock-comment-face)) . -916) (undo-tree-id26 . -1) (#("o" 0 1 (fontified t face font-lock-comment-face)) . -917) (undo-tree-id27 . -1) (#(" " 0 1 (fontified t face font-lock-comment-face)) . -918) (undo-tree-id28 . -1) (#("a" 0 1 (fontified t face font-lock-comment-face)) . -919) (undo-tree-id29 . -1) 920) nil (25442 31022 580411 774000) 0 nil])
+([nil nil ((916 . 935)) nil (25442 31022 580405 894000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face font-lock-comment-face)) . -934) (undo-tree-id25 . -1) 935) nil (25442 31022 580404 844000) 0 nil])
+([nil nil ((934 . 939)) nil (25442 31022 580402 328000) 0 nil])
+([nil nil ((383 . 384)) nil (25442 31022 580401 442000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 396 . 397) (nil fontified nil 396 . 397) (nil fontified nil 395 . 396) (nil fontified nil 394 . 395) (nil fontified nil 393 . 394) (nil fontified nil 392 . 393) (nil fontified nil 391 . 392) (nil fontified nil 390 . 391) (nil fontified nil 389 . 390) (nil fontified nil 388 . 389) (nil fontified nil 387 . 388) (nil fontified nil 386 . 387) (nil fontified nil 385 . 386) (nil fontified nil 384 . 385) (384 . 397)) nil (25442 31022 580399 835000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 384) (undo-tree-id24 . -1)) nil (25442 31022 580395 983000) 0 nil])
+([nil nil ((396 . 402)) nil (25442 31022 580393 983000) 0 nil])
+([nil nil ((#("." 0 1 (fontified t)) . -401) (undo-tree-id23 . -1) 402) nil (25442 31022 580392 800000) 0 nil])
+([nil nil ((401 . 403)) nil (25442 31022 580390 499000) 0 nil])
+([nil nil ((#("f" 0 1 (fontified t)) . -402) (undo-tree-id22 . -1) 403) nil (25442 31022 580389 344000) 0 nil])
+([nil nil ((402 . 409)) nil (25442 31022 580386 510000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 429 . 430) (nil fontified nil 409 . 430) (409 . 430)) nil (25442 31022 580385 375000) 0 nil])
+([nil nil ((987 . 991)) nil (25442 31022 580383 904000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1031 . 1032) (nil fontified nil 1031 . 1032) (nil fontified nil 1017 . 1031) (nil fontified nil 1013 . 1017) (nil fontified nil 1012 . 1013) (nil fontified nil 991 . 1012) (991 . 1032)) nil (25442 31022 580382 640000) 0 nil])
+([nil nil ((#("title, " 0 7 (fontified t)) . 1019) (undo-tree-id19 . -7) (undo-tree-id20 . -7) (undo-tree-id21 . -7)) nil (25442 31022 580380 209000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 986) (undo-tree-id18 . -1)) nil (25442 31022 580376 124000) 0 nil])
+([nil nil ((#("    # send mail/sms to mssp
+" 0 4 (fontified nil) 4 6 (fontified nil face font-lock-comment-delimiter-face) 6 28 (fontified nil face font-lock-comment-face)) . 1109) (undo-tree-id16 . -4) (undo-tree-id17 . -28) (1095 . 1109) (#("    recp = []
+" 0 4 (fontified t) 4 8 (fontified t face font-lock-variable-name-face) 8 11 (fontified t) 11 12 (fontified t face (rainbow-delimiters-depth-1-face)) 12 13 (fontified t face (rainbow-delimiters-depth-1-face)) 13 14 (fontified t)) . 1067) (1081 . 1109) 1085) nil (25442 31022 580373 567000) 0 nil])
+([nil nil ((#("    # send mail/sms to mssp
+" 0 4 (fontified nil) 4 6 (fontified nil face font-lock-comment-delimiter-face) 6 28 (fontified nil face font-lock-comment-face)) . 1095) (undo-tree-id12 . -4) (undo-tree-id13 . -28) (1077 . 1095) (#("    sms_list = []
+" 0 4 (fontified t) 4 12 (fontified t face font-lock-variable-name-face) 12 15 (fontified t) 15 16 (fontified t face (rainbow-delimiters-depth-1-face)) 16 17 (fontified t face (rainbow-delimiters-depth-1-face)) 17 18 (fontified t)) . 1049) (undo-tree-id14 . -17) (undo-tree-id15 . -17) (1067 . 1095) 1071) nil (25442 31022 580369 21000) 0 nil])
+([nil nil ((#("    # send mail/sms to mssp
+" 0 4 (fontified nil) 4 6 (fontified nil face font-lock-comment-delimiter-face) 6 28 (fontified nil face font-lock-comment-face)) . 1077) (undo-tree-id10 . -4) (undo-tree-id11 . -28) (1058 . 1077) (#("    mail_list = []
+" 0 4 (fontified t) 4 13 (fontified t face font-lock-variable-name-face) 13 16 (fontified t) 16 17 (fontified t face (rainbow-delimiters-depth-1-face)) 17 18 (fontified t face (rainbow-delimiters-depth-1-face)) 18 19 (fontified t)) . 1030) (1049 . 1077) 1053) nil (25442 31022 580343 420000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -986) (undo-tree-id8 . -4) (undo-tree-id9 . -4)) nil (25442 31022 580338 556000) 0 nil])
+([nil current ((#("        " 0 8 (fontified t face whitespace-trailing)) . -2667) (#("    " 0 4 (fontified t face whitespace-trailing)) . -1021) (undo-tree-id0 . -4) (undo-tree-id1 . -4) (undo-tree-id2 . -4) (undo-tree-id3 . -4) (undo-tree-id4 . -4) (undo-tree-id5 . -4) (undo-tree-id6 . -4) (undo-tree-id7 . -4) 986) nil (25442 31022 580331 94000) 0 nil])
+nil

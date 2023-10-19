@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"d1442ebdd412441bf9c5421c60c10059cb0c9c88"
+[nil nil nil nil (25670 60983 689970 803000) 0 nil]
+([nil nil (("love" . 24) (undo-tree-id1 . -4) (undo-tree-id2 . -4) (undo-tree-id3 . -4) (undo-tree-id4 . -4) (t 25653 34988 910165 661000)) nil (25670 60983 689968 657000) 0 nil])
+([nil nil ((24 . 32)) nil (25670 60983 689961 931000) 0 nil])
+([nil current ((" " . -31) (undo-tree-id0 . -1) 32) nil (25670 60983 689956 698000) 0 nil])
+nil

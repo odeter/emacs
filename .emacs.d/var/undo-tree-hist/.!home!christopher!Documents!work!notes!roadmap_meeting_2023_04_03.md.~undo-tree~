@@ -1,0 +1,13 @@
+(undo-tree-save-format-version . 1)
+"bc4aca55641d041572081d8624de4baf66feb6b0"
+[nil nil nil nil (25675 29207 32832 9000) 0 nil]
+([nil nil ((471 . 475) (470 . 472) (#("(" 0 1 (fontified nil markdown-list-item ((445 471 2 4 "- " nil (445 449 445 447 447 448 448 449))))) . -470) (469 . 471) (t 25642 48064 751748 545000)) nil (25675 29207 32829 951000) 0 nil])
+([nil nil ((506 . 508) (505 . 507) (#("(" 0 1 (fontified nil markdown-list-item ((486 506 2 4 "- " nil (486 490 486 488 488 489 489 490))))) . -505) (504 . 506)) nil (25675 29207 32827 771000) 0 nil])
+([nil nil ((#("o" 0 1 (fontified t markdown-list-item ((486 508 2 4 "- " nil (486 490 486 488 488 489 489 490))))) . -506) (undo-tree-id0 . -1) (#("d" 0 1 (fontified defer markdown-list-item ((486 509 2 4 "- " nil (486 490 486 488 488 489 489 490))))) . -507) (undo-tree-id1 . -1) 508) nil (25675 29207 32825 245000) 0 nil])
+([nil nil ((506 . 510)) nil (25675 29207 32798 285000) 0 nil])
+([nil nil ((552 . 556) (551 . 553) (#("(" 0 1 (fontified nil markdown-list-item ((512 552 2 4 "- " nil (512 516 512 514 514 515 515 516))))) . -551) (550 . 552)) nil (25675 29207 33012 297000) 0 nil])
+([nil nil ((556 . 557)) nil (25675 29210 483666 964000) 0 nil] [nil nil ((556 . 560)) ((#("Done" 0 4 (fontified t markdown-list-item ((512 561 2 4 "- " nil (512 516 512 514 514 515 515 516))))) . 556) (undo-tree-id2 . -4)) (25675 29207 32785 897000) 0 nil])
+([nil nil ((#("d" 0 1 (fontified defer markdown-list-item ((512 558 2 4 "- " nil (512 516 512 514 514 515 515 516))))) . -556) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (undo-tree-id17 . -1) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) (undo-tree-id22 . -1) 557) nil (25675 29210 483663 423000) 0 nil])
+nil
+([nil current ((556 . 560)) nil (25675 29210 483624 868000) 0 nil])
+nil

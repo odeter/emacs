@@ -1,0 +1,12 @@
+(undo-tree-save-format-version . 1)
+"2ed24551a3bfe6c82900358495f78bfdfcde2eba"
+[nil nil nil nil (25348 37999 71523 409000) 0 nil]
+([nil nil ((1580 . 1607) (#(" " 0 1 (fontified nil)) . 1579) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (1580 . 1581) (t 25043 18938 540845 867000)) nil (25348 37999 71521 263000) 0 nil])
+([nil nil ((1714 . 1741) (#(" " 0 1 (fontified nil)) . 1713) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (1714 . 1715)) nil (25348 37999 71515 753000) 0 nil])
+([nil nil ((1767 . 1769) (#("\"" 0 1 (fontified nil syntax-table (15))) . -1767) (1765 . 1768)) nil (25348 37999 71510 767000) 0 nil])
+([nil nil ((#("\"" 0 1 (fontified nil syntax-table (15) face font-lock-string-face)) . -1767) (undo-tree-id1 . -1) (#("\"" 0 1 (fontified t syntax-table (15) face font-lock-string-face)) . 1768)) nil (25348 37999 71508 577000) 0 nil])
+([nil nil ((1767 . 1769)) nil (25348 37999 71505 107000) 0 nil])
+([nil nil ((1768 . 1772)) nil (25348 37999 71503 711000) 0 nil])
+([nil nil ((1773 . 1782)) nil (25348 37999 71501 211000) 0 nil])
+([nil current ((#(" " 0 1 (fontified t)) . -1781) (undo-tree-id0 . -1) 1782) nil (25348 37999 71496 89000) 0 nil])
+nil

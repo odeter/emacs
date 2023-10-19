@@ -1,0 +1,13 @@
+(undo-tree-save-format-version . 1)
+"39b9ea1f36ee4cc4a35d0d08d447d64d45c5e87c"
+[nil nil nil nil (25340 44919 919517 573000) 0 nil]
+([nil nil ((1844 . 1851) (t 25340 44817 398097 121000)) nil (25340 44919 919515 848000) 0 nil])
+([nil nil ((#("E" 0 1 (face font-lock-string-face fontified t)) . -1850) (undo-tree-id1 . -1) 1851) nil (25340 44919 919514 99000) 0 nil])
+([nil nil ((1850 . 1852)) nil (25340 44919 919510 712000) 0 nil])
+([nil nil ((#(" " 0 1 (face font-lock-string-face fontified t)) . -1851) (undo-tree-id0 . -1) 1852) nil (25340 44919 919508 371000) 0 nil])
+([nil nil ((2209 . 2210)) nil (25340 44919 919473 985000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 2215 . 2216) (nil fontified nil 2210 . 2216) (2210 . 2216)) nil (25347 17392 489508 128000) 0 nil])
+([nil nil ((#("SENSOR_TIMELAPS" 0 15 (fontified t face font-lock-string-face)) . 888) (undo-tree-id2 . -15) (undo-tree-id3 . -15) (t 25347 14192 386198 650000)) nil (25347 18142 766595 963000) 0 nil] [nil nil ((1207 . 1208) (t 25347 14192 386198 650000)) ((#("3" 0 1 (fontified t)) . 1207) (undo-tree-id0 . -1) (undo-tree-id1 . -1)) (25347 17392 489142 445000) 0 nil])
+([nil current ((nil rear-nonsticky nil 900 . 901) (nil fontified nil 888 . 901) (888 . 901)) nil (25347 18142 766577 867000) 0 nil])
+nil
+nil

@@ -1,0 +1,59 @@
+# Agenda
+
+- Status
+- Other
+
+# Roadmap
+
+## Marts
+
+- Sensor overview overhaul (done)
+- Filter firms by payment/service plan (done)
+- sensor stability (done)
+  - external review (waiting)
+    - log review (waiting)
+
+## April
+
+- fix data insert (test old solution on hare)
+- Integration of log sources take 1 - Netflow (!vestas bruger det, snak med rasmus) or Palo Alto (lego, tysker) traffic logs (rasmus talk)
+- PPA sensorscript server (ongoing)
+  - Upload to ppa server (done)
+  - test
+  - update process (done)
+  - Reload sensor data (PPA function?) (PPA Done)
+  - push custom suricata rules to sensor (vestas)
+
+- Review waterwork data (conclusion in pointer) (Emillie + Henrik)
+- Waterworks baseline (ongoing) (waiting for data)
+- Test backup restore process (use hare)
+- Backup mail server
+- upgrade/deploy new mail server (simon + rasmus)
+
+- angle API for system integration (documentation and possibly oauth2 token implementation) (vestas) (split up)
+- integration of encrichment take 3 - greynoise, abuse.ch, port info (speedguide)
+- Integration of log sources take 2 - Barracuda, Fortinet, extra sensors/probes
+- Integration of exports take 2 ServiceNow (pull information about incident)
+- Integration of exports take 2 - XSoar, (servicenow)
+- OpenLDAP integration for SSO (vestas)
+
+## Maj
+
+- Cloud - marketplace x 3 (sensor software integration)
+- Asset discovery (network overview redesign)
+- Filter Library content
+- Filter Library functionality?
+  - match exisiting filters on new baselining
+- Filter Library ordering
+- group moderator (new time intervals for dashboard)
+
+- new sensor/probes:
+  - active probe, dhcp
+    - sensor configuration (specific for each sensor) (frontend, backend, db)
+  - flight recorder (sensor)
+  - local dns probe
+
+- Validated or community based filter sharing
+- Billing functionality (find scope)
+  - saas system payment (research) stripe.com, recurly.com
+- recall old raspberry pi 10 sensors (replace with new hardware?)

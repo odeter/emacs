@@ -1,0 +1,17 @@
+(undo-tree-save-format-version . 1)
+"b93ee0c2ca9a96319082f4e51e1f805244225d94"
+[nil nil nil nil (25351 49440 283720 852000) 0 nil]
+([nil nil ((1 . 111) (t 25351 49432 597485 614000)) nil (25351 49440 283716 983000) 0 nil])
+([nil nil ((111 . 112)) nil (25351 49440 283706 6000) 0 nil])
+([nil nil (("/PATH_TO_IMAGE" . 92) (undo-tree-id0 . -14) (undo-tree-id1 . -14) (undo-tree-id2 . -14) (undo-tree-id3 . -14) (t 25351 49440 289564 562000)) nil (25351 49612 410960 660000) 0 nil])
+([nil nil ((92 . 109)) nil (25351 49612 410936 341000) 0 nil])
+([nil nil (("
+" . -114) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) 115 (t 25351 49612 415327 886000)) nil (25351 49801 750713 247000) 0 nil])
+([nil nil (("a" . -14) (undo-tree-id4 . -1) ("g" . -15) (undo-tree-id5 . -1) ("e" . -16) (undo-tree-id6 . -1) 17) nil (25351 49801 750701 821000) 0 nil])
+([nil nil ((14 . 16)) nil (25351 49801 750688 664000) 0 nil])
+([nil nil ((16 . 24)) nil (25351 49801 750686 670000) 0 nil])
+([nil nil ((121 . 122) 24) nil (25351 49801 750679 856000) 0 nil])
+([nil nil (("t" . 17) ("u" . 17) ("o" . 17) ("y" . 17) ("a" . 17) ("l" . 17) ("-" . 17) (t 25351 49801 753261 799000)) nil (25351 49823 159904 5000) 0 nil])
+([nil nil (("o" . -14) (undo-tree-id14 . -1) ("s" . -15) (undo-tree-id15 . -1) ("t" . -16) (undo-tree-id16 . -1) 17 (t 25351 49823 165501 199000)) nil (25351 49889 801434 206000) 0 nil])
+([nil current ((14 . 17)) nil (25351 49889 801415 65000) 0 nil])
+nil

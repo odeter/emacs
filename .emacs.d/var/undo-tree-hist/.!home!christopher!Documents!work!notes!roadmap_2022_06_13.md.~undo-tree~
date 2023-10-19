@@ -1,0 +1,79 @@
+(undo-tree-save-format-version . 1)
+"9044bc7b2fc2b126e12972594a429c6887b32572"
+[nil nil nil nil (25312 197 220718 27000) 0 nil]
+([nil nil ((#("Integration of exports take 1 - Azure Sentinel, ServiceNow
+" 0 26 (fontified nil) 26 59 (fontified nil)) . 534) (undo-tree-id30 . -35) (undo-tree-id31 . -59) (undo-tree-id32 . 11) (undo-tree-id33 . -58) (465 . 534) (#("Integration of log sources take 1 - Netflow, Palo Alto traffic logs,
+" 0 69 (fontified nil)) . 406) (475 . 534) 510 (t 25255 10136 419098 952000)) nil (25312 197 220714 196000) 0 nil])
+([nil nil ((#("Integration of exports take 1 - Azure Sentinel, ServiceNow
+" 0 26 (fontified nil) 26 59 (fontified nil)) . 465) (undo-tree-id28 . -35) (undo-tree-id29 . -59) (345 . 465) (#("Integration of enrichment take 1 - whois (free), abuseipdb, virustotal, abuse.ch, MaxMind geoiplookup (free), greynoise
+" 0 120 (fontified nil)) . 286) (406 . 465) 441) nil (25312 197 220702 234000) 0 nil])
+([nil nil ((#("Integration of exports take 1 - Azure Sentinel, ServiceNow
+" 0 26 (fontified nil) 26 59 (fontified nil)) . 345) (undo-tree-id26 . -35) (undo-tree-id27 . -59) (297 . 345) (#("Filter language aggregations (kql, zql, other?)
+" 0 48 (fontified nil)) . 238) (286 . 345) 321) nil (25312 197 220695 891000) 0 nil])
+([nil nil ((#("Integration of exports take 1 - Azure Sentinel, ServiceNow
+" 0 26 (fontified nil) 26 59 (fontified nil)) . 297) (undo-tree-id24 . -35) (undo-tree-id25 . -59) (296 . 297) (#("
+" 0 1 (fontified t)) . 237) (238 . 297) 273) nil (25312 197 220690 384000) 0 nil])
+([nil nil ((236 . 237)) nil (25312 197 220685 594000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified nil)) . 228) (196 . 228) (#("- Documentation / knowledgebase
+" 0 1 (markdown-list-item ((195 226 0 2 "- " nil (195 197 195 195 195 196 196 197))) fontified nil face markdown-list-face) 1 31 (markdown-list-item ((195 226 0 2 "- " nil (195 197 195 195 195 196 196 197))) fontified nil) 31 32 (fontified nil font-lock-multiline t)) . 195) (227 . 228) 195) nil (25312 197 220683 348000) 0 nil])
+([nil nil ((#("# August
+" 0 2 (fontified nil markdown-heading (228 236 nil nil nil nil nil nil 228 230 230 236 236 236 #<buffer roadmap_2022_06_13.md>) markdown-heading-1-atx (228 236 nil nil nil nil nil nil 228 230 230 236 236 236 #<buffer roadmap_2022_06_13.md>) face markdown-header-delimiter-face) 2 8 (fontified nil markdown-heading (228 236 nil nil nil nil nil nil 228 230 230 236 236 236 #<buffer roadmap_2022_06_13.md>) markdown-heading-1-atx (228 236 nil nil nil nil nil nil 228 230 230 236 236 236 #<buffer roadmap_2022_06_13.md>) face markdown-header-face-1) 8 9 (fontified t font-lock-multiline t)) . 237) (205 . 237) (#("- Documentation / knowledgebase
+" 0 1 (fontified nil markdown-list-item ((196 227 0 2 "- " nil (196 198 196 196 196 197 197 198))) face markdown-list-face) 1 31 (fontified nil markdown-list-item ((196 227 0 2 "- " nil (196 198 196 196 196 197 197 198)))) 31 32 (fontified nil font-lock-multiline t)) . 196) (228 . 237) 196) nil (25312 197 220680 45000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified nil)) . 238) (206 . 238) (#("- Documentation / knowledgebase
+" 0 1 (fontified nil markdown-list-item ((205 236 0 2 "- " nil (205 207 205 205 205 206 206 207))) face markdown-list-face) 1 31 (fontified nil markdown-list-item ((205 236 0 2 "- " nil (205 207 205 205 205 206 206 207)))) 31 32 (fontified nil font-lock-multiline t)) . 205) (237 . 238) 205) nil (25312 197 220676 988000) 0 nil])
+([nil nil ((#("- Log tabs
+" 0 1 (markdown-list-item ((137 147 0 2 "- " nil (137 139 137 137 137 138 138 139))) fontified nil face markdown-list-face) 1 10 (markdown-list-item ((137 147 0 2 "- " nil (137 139 137 137 137 138 138 139))) fontified nil) 10 11 (fontified nil font-lock-multiline t)) . 148) (124 . 148) (#("- Pricing communication
+" 0 1 (markdown-list-item ((113 136 0 2 "- " nil (113 115 113 113 113 114 114 115))) fontified nil face markdown-list-face) 1 23 (markdown-list-item ((113 136 0 2 "- " nil (113 115 113 113 113 114 114 115))) fontified nil) 23 24 (fontified nil font-lock-multiline t)) . 113) (undo-tree-id18 . -23) (undo-tree-id19 . -23) (undo-tree-id20 . -23) (undo-tree-id21 . -23) (undo-tree-id22 . -13) (undo-tree-id23 . -23) (137 . 148) 113) nil (25312 197 220673 1000) 0 nil])
+([nil nil ((#("- OT Sensor -> vælg nye standard logs (rasmus)
+" 0 1 (fontified nil markdown-list-item ((148 194 0 2 "- " nil (148 150 148 148 148 149 149 150))) face markdown-list-face) 1 46 (fontified nil markdown-list-item ((148 194 0 2 "- " nil (148 150 148 148 148 149 149 150)))) 46 47 (fontified t font-lock-multiline t)) . 195) (171 . 195) (#("- Pricing communication
+" 0 1 (fontified nil markdown-list-item ((124 147 0 2 "- " nil (124 126 124 124 124 125 125 126))) face markdown-list-face) 1 23 (fontified nil markdown-list-item ((124 147 0 2 "- " nil (124 126 124 124 124 125 125 126)))) 23 24 (fontified nil font-lock-multiline t)) . 124) (148 . 195) 124) nil (25312 197 220660 513000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified nil)) . 196) (undo-tree-id17 . -1) (172 . 196) (#("- Pricing communication
+" 0 1 (fontified nil markdown-list-item ((171 194 0 2 "- " nil (171 173 171 171 171 172 172 173))) face markdown-list-face) 1 23 (fontified nil markdown-list-item ((171 194 0 2 "- " nil (171 173 171 171 171 172 172 173)))) 23 24 (fontified nil font-lock-multiline t)) . 171) (195 . 196) 171) nil (25312 197 220656 676000) 0 nil])
+([nil nil ((#("# August
+" 0 2 (fontified nil markdown-heading (196 204 nil nil nil nil nil nil 196 198 198 204 204 204 #<buffer roadmap_2022_06_13.md>) markdown-heading-1-atx (196 204 nil nil nil nil nil nil 196 198 198 204 204 204 #<buffer roadmap_2022_06_13.md>) face markdown-header-delimiter-face) 2 8 (fontified nil markdown-heading (196 204 nil nil nil nil nil nil 196 198 198 204 204 204 #<buffer roadmap_2022_06_13.md>) markdown-heading-1-atx (196 204 nil nil nil nil nil nil 196 198 198 204 204 204 #<buffer roadmap_2022_06_13.md>) face markdown-header-face-1) 8 9 (fontified t font-lock-multiline t)) . 205) (181 . 205) (#("- Pricing communication
+" 0 1 (fontified nil markdown-list-item ((172 195 0 2 "- " nil (172 174 172 172 172 173 173 174))) face markdown-list-face) 1 23 (fontified nil markdown-list-item ((172 195 0 2 "- " nil (172 174 172 172 172 173 173 174)))) 23 24 (fontified nil font-lock-multiline t)) . 172) (196 . 205) 172) nil (25312 197 220651 319000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified nil)) . 206) (182 . 206) (#("- Pricing communication
+" 0 1 (fontified nil markdown-list-item ((181 204 0 2 "- " nil (181 183 181 181 181 182 182 183))) face markdown-list-face) 1 23 (fontified nil markdown-list-item ((181 204 0 2 "- " nil (181 183 181 181 181 182 182 183)))) 23 24 (fontified nil font-lock-multiline t)) . 181) (205 . 206) 181) nil (25312 197 220647 766000) 0 nil])
+([nil nil ((#("- Log tabs
+" 0 1 (fontified nil markdown-list-item ((113 123 0 2 "- " nil (113 115 113 113 113 114 114 115))) face markdown-list-face) 1 10 (fontified nil markdown-list-item ((113 123 0 2 "- " nil (113 115 113 113 113 114 114 115)))) 10 11 (fontified nil font-lock-multiline t)) . 124) (109 . 124) (#("- Pricing plan
+" 0 1 (fontified nil markdown-list-item ((98 112 0 2 "- " nil (98 100 98 98 98 99 99 100))) face markdown-list-face) 1 14 (fontified nil markdown-list-item ((98 112 0 2 "- " nil (98 100 98 98 98 99 99 100)))) 14 15 (fontified nil font-lock-multiline t)) . 98) (undo-tree-id14 . -3) (undo-tree-id15 . -2) (undo-tree-id16 . -2) (113 . 124) 98) nil (25312 197 220643 942000) 0 nil])
+([nil nil ((#("- OT Sensor -> vælg nye standard logs (rasmus)
+" 0 1 (fontified nil markdown-list-item ((124 170 0 2 "- " nil (124 126 124 124 124 125 125 126))) face markdown-list-face) 1 46 (fontified nil markdown-list-item ((124 170 0 2 "- " nil (124 126 124 124 124 125 125 126)))) 46 47 (fontified t font-lock-multiline t)) . 171) (156 . 171) (#("- Pricing plan
+" 0 1 (fontified nil markdown-list-item ((109 123 0 2 "- " nil (109 111 109 109 109 110 110 111))) face markdown-list-face) 1 14 (fontified nil markdown-list-item ((109 123 0 2 "- " nil (109 111 109 109 109 110 110 111)))) 14 15 (fontified nil font-lock-multiline t)) . 109) (124 . 171) 109) nil (25312 197 220636 518000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified nil)) . 172) (157 . 172) (#("- Pricing plan
+" 0 1 (fontified nil markdown-list-item ((156 170 0 2 "- " nil (156 158 156 156 156 157 157 158))) face markdown-list-face) 1 14 (fontified nil markdown-list-item ((156 170 0 2 "- " nil (156 158 156 156 156 157 157 158)))) 14 15 (fontified nil font-lock-multiline t)) . 156) (171 . 172) 156) nil (25312 197 220632 865000) 0 nil])
+([nil nil ((#("# August
+" 0 2 (fontified nil markdown-heading (172 180 nil nil nil nil nil nil 172 174 174 180 180 180 #<buffer roadmap_2022_06_13.md>) markdown-heading-1-atx (172 180 nil nil nil nil nil nil 172 174 174 180 180 180 #<buffer roadmap_2022_06_13.md>) face markdown-header-delimiter-face) 2 8 (fontified nil markdown-heading (172 180 nil nil nil nil nil nil 172 174 174 180 180 180 #<buffer roadmap_2022_06_13.md>) markdown-heading-1-atx (172 180 nil nil nil nil nil nil 172 174 174 180 180 180 #<buffer roadmap_2022_06_13.md>) face markdown-header-face-1) 8 9 (fontified t font-lock-multiline t)) . 181) (undo-tree-id13 . -9) (166 . 181) (#("- Pricing plan
+" 0 1 (fontified nil markdown-list-item ((157 171 0 2 "- " nil (157 159 157 157 157 158 158 159))) face markdown-list-face) 1 14 (fontified nil markdown-list-item ((157 171 0 2 "- " nil (157 159 157 157 157 158 158 159)))) 14 15 (fontified nil font-lock-multiline t)) . 157) (172 . 181) 157) nil (25312 197 220629 904000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified nil)) . 182) (167 . 182) (#("- Pricing plan
+" 0 1 (fontified nil markdown-list-item ((166 180 0 2 "- " nil (166 168 166 166 166 167 167 168))) face markdown-list-face) 1 14 (fontified nil markdown-list-item ((166 180 0 2 "- " nil (166 168 166 166 166 167 167 168)))) 14 15 (fontified nil font-lock-multiline t)) . 166) (181 . 182) 166) nil (25312 197 220625 852000) 0 nil])
+([nil nil ((541 . 542) (471 . 472) (350 . 351) (301 . 302) (298 . 299) (298 . 299) (238 . 239) (apply 0 238 535 cua--rect-undo-handler [238 556 0 0 2 0 t nil] t 238 535)) nil (25312 197 220622 858000) 0 nil])
+([nil nil ((547 . 548) (476 . 477) (354 . 355) (304 . 305) (300 . 301) (239 . 240) (apply 0 239 542 cua--rect-undo-handler [238 563 1 1 2 0 t nil] t 239 542)) nil (25312 197 220619 487000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-list-item ((299 302 0 3 "-  " nil (299 302 299 299 299 300 300 302))) face whitespace-trailing)) . -300) (undo-tree-id12 . -1) 301) nil (25312 197 220616 493000) 0 nil])
+([nil nil ((301 . 302) (#(" " 0 1 (fontified nil face whitespace-trailing)) . -301) (300 . 301)) nil (25312 197 220613 421000) 0 nil])
+([nil nil ((#("-" 0 1 (fontified t markdown-list-item ((238 300 0 2 "- " nil (238 240 238 238 238 239 239 240))))) . -299) (undo-tree-id7 . -1) (#("
+" 0 1 (fontified t)) . -300) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (#("
+" 0 1 (fontified defer)) . -301) (undo-tree-id10 . -1) (undo-tree-id11 . -1) 302) nil (25312 197 220609 936000) 0 nil])
+([nil nil ((299 . 300)) nil (25312 197 220599 145000) 0 nil])
+([nil nil ((#("- Billing functionality
+" 0 1 (fontified nil markdown-list-item ((544 567 0 2 "- " nil (544 546 544 544 544 545 545 546))) face markdown-list-face) 1 2 (fontified nil markdown-list-item ((544 567 0 2 "- " nil (544 546 544 544 544 545 545 546)))) 2 23 (fontified nil markdown-list-item ((544 567 0 2 "- " nil (544 546 544 544 544 545 545 546)))) 23 24 (fontified t font-lock-multiline t)) . 568) (undo-tree-id4 . -24) (undo-tree-id5 . -12) (undo-tree-id6 . -23) (497 . 568) (#("- Integration of log sources take 1 - Netflow, Palo Alto traffic logs,
+" 0 1 (fontified nil markdown-list-item ((473 543 0 2 "- " nil (473 475 473 473 473 474 474 475))) face markdown-list-face) 1 2 (fontified nil markdown-list-item ((473 543 0 2 "- " nil (473 475 473 473 473 474 474 475)))) 2 70 (fontified nil markdown-list-item ((473 543 0 2 "- " nil (473 475 473 473 473 474 474 475)))) 70 71 (fontified nil font-lock-multiline t)) . 473) (544 . 568)) nil (25312 197 220596 934000) 0 nil])
+([nil nil ((#("- Billing functionality
+" 0 1 (fontified nil markdown-list-item ((473 496 0 2 "- " nil (473 475 473 473 473 474 474 475))) face markdown-list-face) 1 2 (fontified nil markdown-list-item ((473 496 0 2 "- " nil (473 475 473 473 473 474 474 475)))) 2 23 (fontified nil markdown-list-item ((473 496 0 2 "- " nil (473 475 473 473 473 474 474 475)))) 23 24 (fontified nil font-lock-multiline t)) . 497) (undo-tree-id3 . -24) (375 . 497) (#("- Integration of enrichment take 1 - whois (free), abuseipdb, virustotal, abuse.ch, MaxMind geoiplookup (free), greynoise
+" 0 1 (fontified nil markdown-list-item ((351 472 0 2 "- " nil (351 353 351 351 351 352 352 353))) face markdown-list-face) 1 2 (fontified nil markdown-list-item ((351 472 0 2 "- " nil (351 353 351 351 351 352 352 353)))) 2 121 (fontified nil markdown-list-item ((351 472 0 2 "- " nil (351 353 351 351 351 352 352 353)))) 121 122 (fontified nil font-lock-multiline t)) . 351) (473 . 497)) nil (25312 197 220589 438000) 0 nil])
+([nil nil ((#("- Billing functionality
+" 0 1 (fontified nil markdown-list-item ((351 374 0 2 "- " nil (351 353 351 351 351 352 352 353))) face markdown-list-face) 1 2 (fontified nil markdown-list-item ((351 374 0 2 "- " nil (351 353 351 351 351 352 352 353)))) 2 23 (fontified nil markdown-list-item ((351 374 0 2 "- " nil (351 353 351 351 351 352 352 353)))) 23 24 (fontified nil font-lock-multiline t)) . 375) (undo-tree-id2 . -24) (325 . 375) (#("- Filter language aggregations (kql, zql, other?)
+" 0 1 (fontified nil markdown-list-item ((301 350 0 2 "- " nil (301 303 301 301 301 302 302 303))) face markdown-list-face) 1 2 (fontified nil markdown-list-item ((301 350 0 2 "- " nil (301 303 301 301 301 302 302 303)))) 2 49 (fontified nil markdown-list-item ((301 350 0 2 "- " nil (301 303 301 301 301 302 302 303)))) 49 50 (fontified nil font-lock-multiline t)) . 301) (351 . 375)) nil (25312 197 220574 491000) 0 nil])
+([nil nil ((#("- Billing functionality
+" 0 1 (fontified nil markdown-list-item ((301 324 0 2 "- " nil (301 303 301 301 301 302 302 303))) face markdown-list-face) 1 2 (fontified nil markdown-list-item ((301 324 0 2 "- " nil (301 303 301 301 301 302 302 303)))) 2 23 (fontified nil markdown-list-item ((301 324 0 2 "- " nil (301 303 301 301 301 302 302 303)))) 23 24 (fontified nil font-lock-multiline t)) . 325) (undo-tree-id1 . -24) (324 . 325) (#("
+" 0 1 (fontified t)) . 300) (301 . 325)) nil (25312 197 220560 936000) 0 nil])
+([nil current ((#("- Billing functionality
+" 0 1 (fontified nil markdown-list-item ((300 323 0 2 "- " nil (300 302 300 300 300 301 301 302))) face markdown-list-face) 1 2 (fontified nil markdown-list-item ((300 323 0 2 "- " nil (300 302 300 300 300 301 301 302)))) 2 23 (fontified nil markdown-list-item ((300 323 0 2 "- " nil (300 302 300 300 300 301 301 302)))) 23 24 (fontified nil font-lock-multiline t)) . 324) (undo-tree-id0 . -24) (323 . 324) (#("
+" 0 1 (fontified t)) . 299) (300 . 324)) nil (25312 197 220550 85000) 0 nil])
+nil

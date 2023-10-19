@@ -1,0 +1,8 @@
+(undo-tree-save-format-version . 1)
+"a830d65e3d0bd7e3f3a0076a7f3146076ca62fe1"
+[nil nil nil nil (25642 53082 495279 501000) 0 nil]
+([nil nil ((#("JSON.stringify(" 0 5 (part-side javascript) 5 14 (part-side javascript face web-mode-function-call-face) 14 15 (part-side javascript face (rainbow-delimiters-depth-5-face))) . 31572) (undo-tree-id4 . -15) (undo-tree-id5 . -14) (undo-tree-id6 . -14) (undo-tree-id7 . -15) (undo-tree-id8 . -15) (t 25642 38060 366165 411000)) nil (25642 53255 738416 942000) 0 nil] [nil nil ((1 . 2) (t 25642 38060 366165 411000)) ((#("s" 0 1 (part-side javascript)) . 1) (undo-tree-id0 . -1) (undo-tree-id1 . -1)) (25642 53082 493851 307000) 0 nil])
+([nil nil ((#(")" 0 1 (part-side javascript face (rainbow-delimiters-mismatched-face))) . -31578) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 31579) nil (25642 53255 738408 369000) 0 nil])
+nil
+([nil current ((38915 . 38916) 31578) nil (25642 53255 738390 856000) 0 nil])
+nil

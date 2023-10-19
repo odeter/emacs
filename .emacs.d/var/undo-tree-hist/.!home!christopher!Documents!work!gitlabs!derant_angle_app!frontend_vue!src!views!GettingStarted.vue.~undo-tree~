@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"29de0517a1d53021c1e6f5efa478feead3f2b95a"
+[nil nil nil nil (25479 11373 600849 626000) 0 nil]
+([nil nil ((530 . 535) (t 25430 15053 187606 933000)) nil (25479 11373 600842 605000) 0 nil])
+([nil nil ((#("p" 0 1 (tag-attr t tag-name "v-card" tag-type start font-lock-face web-mode-html-attr-value-face)) . -530) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (undo-tree-id17 . -1) 531 (t 25479 11373 615639 952000)) nil (25479 11419 702713 577000) 0 nil])
+([nil current ((530 . 531)) nil (25479 11419 702656 147000) 0 nil])
+nil

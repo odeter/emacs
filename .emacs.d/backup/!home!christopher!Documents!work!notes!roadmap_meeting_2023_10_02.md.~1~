@@ -1,0 +1,149 @@
+# Agenda
+
+- Status
+- New tasks
+- Other
+
+# Roadmap
+
+## August
+
+- Some sensor debugging (ongoing, properly kernel problem?) (new hardware, possible asus)
+  - Hardware test and debug
+  - Get data from all paying customers
+
+- Filter Library functionality
+  - Extend filter popup window  (done)
+    - additional info (creator, toc)
+    - drag and drop filter tree (Possible need to write own module)
+  - match exisiting filters on new base lining  (done)
+    - Write compare functions to filters
+    - match on certain percentage (80-90%?)
+    - Warn user that a matching filter already exists (if saving)
+- Integration of exports take 2: (done)
+  - ServiceNow (Servicenow application first version done, need partner program (5000 $ membership fee))
+
+- testing meeting (processes and svend) (done)
+- ugprade from heroku 18 to 22 (done this week)
+
+## September
+
+### From august
+
+- testing pipeline (fix pytest clickhouse docker problem) (ongoing)
+- clickhouse backup https://github.com/AlexAkulov/clickhouse-backup
+- Cloud - marketplace - support for the big three (sensor software integration) (explain and define subtask?)
+  - Angle sensor software, findout structure (send data to main server, run main server in cloud docker??)
+
+- Alarm emails
+  - emails not received fix (bug)
+  - sysadmin mail subscription to separate firms
+  - email grouping?
+  - trigger reviews (done)
+
+- meeting about angle (core features, direction etc.) (ongoing)
+
+### New tasks
+
+- Integration of log sources take 2:
+  - Barracuda
+  - Fortinet
+  - Windows defender (app required)
+  - Mcafee
+  - norton
+  - others?
+  - extra sensors/probes?
+
+- Move Notify functionality to integration
+  - Make it a table of its own
+  - Move notify functionality to its own integration page
+  - Only show notify functions when integration is active
+
+- Tooltips to log columns like history
+
+## October
+
+- Frontend UI Review
+- Analysetool:
+  - filter input auto complete
+  - filter input color coding
+  - filter number of rows it removed (perhaps written in the chip? or an popup?)
+  - Frontend search (search local data before request)
+  - Icon on datapoints with raised alarms
+
+## November
+
+- Report
+  - Desc module (Add more info to each alarm, desc, signature etc.)
+  - Alarm table sorting
+  - Report service (e.g make table displaying most used services)
+  - Connection Map module
+  - custom client mail server (e.g angle takes some external access information)
+
+## December
+
+- Sensor overview sorting/filtering
+  - Extend sorting functions, based on triggers?
+  - Extend filtering, paymentplan, firms etc.
+- Trigger cronjob optimize performance
+
+
+
+
+# Back log
+
+- XSoar integration
+- network overview redesign (scope finding)
+
+- Dashboards Customizable
+  - Use searchs / filters results as data
+  - graphical representation of data
+  - Data preview to deepdive
+
+- Sysadmin dashboard (with sensor stats, alarm stats (ordered by firm and alarm level), maybe data stats)
+
+- Resend sensor data from server via command from central server (extend local ppa function)
+
+- Angle mobile app
+- Analysetool:
+  - Query splitup
+    - Split given query out to per day and run until max rows is reached (1000 returned to user)
+    - Give feedback to user when query is running
+  - Undo button to filter (save X number of steps)
+  - SW operator (what is it??)
+  - Remove temp filter should give popup or put filter into text field
+  - Save temp filter should apply and remove old chip
+- alarm table
+  - Add suricata signature
+  - Add second id for organization
+  - Alarm see all data point with one click (Make copy of trigger/filter when new alarm is raised, keep in same table)
+  - Split alarm rows by comparison columns (remove raised\_by, firm, alarm\_id, gather all hotlinks under one column)
+  - Move alarm information popup to row extension instead, reevaluate which information is needed
+  - Choose filter from filter library popup should mark correct filter in analysetool and be ready to edit.
+- Alarm Action cards (self hosted)
+- Billing functionality (find scope)
+  - saas system payment (research) stripe.com, recurly.com
+- Connection map
+  - goto data (to analysetool)
+  - Danish language overlay
+- DBI integration
+  - Alarm info in sms
+  - DBI incident api
+- group moderator (new time intervals for dashboard)
+- Halfspace algorithm implementation
+- new sensor/probes:
+  - active probe, dhcp
+    - sensor configuration (specific for each sensor) (frontend, backend, db)
+  - flight recorder (sensor)
+  - local dns probe
+- recall old raspberry pi 10 sensors (replace with new hardware?)
+- Suricata column leftovers (review and integrate)
+- Testing Auto
+  - Backend testing, reimplement pytest (CI/CD flow)
+  - Frontend testing??
+- Validated or community based filter sharing
+
+## Bugs
+
+- Retire alarm (emillie checks)
+- filter topbar mark not setting name

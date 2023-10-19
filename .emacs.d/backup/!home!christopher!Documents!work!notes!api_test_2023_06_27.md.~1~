@@ -1,0 +1,134 @@
+## program
+
+17 - 19
+
+- Velkomst - 10-15 min
+- introduktion 10 min
+- brugertest 1 time
+  - Oprettelse (freeplay 10 min)
+  - Demo data (cobolt strike)
+  - analyse værktøj
+    - find compromised file
+    - create an alarm on said breach
+  - triggers
+    - create trigger on bad ip
+  - Alarms
+    - close raised alarm
+  - create a report
+- rounding  30 min
+
+
+Fysisk tjekliste:
+- 3 bærbarer
+- Pizza
+- Drikkevarer (øl eller bare sodavand?)
+- angle.derant.com
+
+
+## Notes
+
+- første intryk:
+  - tving folk igennem et scenarie, mindre valg kan være positivt
+  - ingen mouse scroll ()
+  - double click laver et filter
+  - mer indikation på hvor lang tid datasættet er kommet
+  - osm på hvert enkelt felt istedet for rækken
+  - truncate value point (hvis data andet sted)
+  - dobule click givet et værdi overblik over selve rækken
+  - click på signature skal vise pakken
+  - sammenlign med wireshark (tag tips og tricks derfra)
+  - raise alarm
+    - alarm type (tilføj nogle start typer? tilføj tooltip), alarm notify (enten fjern eller indiker når der ikke er nogen)
+    - Tilføj farver til create alarm knapper (luk vindue efter alarm er rejst?)
+    - alarm comment tilføj kommentar ved enter knap
+  - aggreating
+  - mere filter forklaring på free text, mere hjælp
+  - mere incident end alarm
+  - alarm overview show data -> gå til walk
+  - flere wildcard alternativer
+  - disable sort i visse datatables
+  - not, and, or alternativ
+  - klar indication på hvilke felter er requiret
+  - tilføj filter shortkeys knapper? (slå til og fra)
+  - klar indication på at rådata vinduet flytter sig
+  - slå flere rådata på manuel alarmen
+  - manuel note (ingen grund til at den er på raise alarm siden?)
+  - manuel note alarm oveview (indiker noten er slået op)
+  - kryds i popup vinduer
+  - mere simpelt interface hvis det skal appelere til simple bruger (ikke super teknisk)
+  - extra hop
+  - filter aktive icon (show current state)
+  - name temp filter some hvad det er
+  - check js cache/usage for alarm overview
+  - error for filter containing empty should be shown
+  - klar indikation på et aktivt filter
+  - delete sensor bør advare om at alarmer også
+  - burp sweep,
+  - pentest på system
+  - mere klart at plus icon tilføjer nye logs (somehow)
+  - demo data bør vise alle logs (conn, dns, http etc.)
+  - hide colums -> show/hide
+  - alarm overview (time raised show minutes, seconds)
+  - slå hotkeys fra når hide popup vises
+  - hide columns no search results bør holde størrelsen på popup
+  - analysetool test on lower resolution than hd 1920x1080
+
+
+## User Test Feedback
+
+### General
+- Add close icon (x) to popup windows
+- Support screen sizes just below hd (1920x1080) like hd-ready (1366x768)
+- Add hover over explanation to fields inside formulas like "Raise Alarm"
+- Disable drop-down fields if they hold no data
+- Alarms = incidents? Incidents are more describing than alarms
+- Data tables should not have ordering in the button columns (like edit alarm col in alarm overview)
+- Mandatory formula fields should be more clear (add '*' for example)
+- JS heavy operations eat the pc resources (Anders pc could not handle the frontend?)
+
+### Getting Started
+- Demo data should show all most used logs (conn, dns, http etc.) instead of just the suricata
+- Fewer choices/scenarios in getting started (makes it easier to startup)
+
+### Analysis tool
+- Move the info points just above the analysis table, col value make the table jump.
+- Make the info points above the analysis table more clear, Anders didn't see them at first
+- Scroll bars (or similar) to the data analysis table, maybe mouse scroll
+- More clear indication that the analysis table is moving (scrolling)
+- Hidden fields confusing (remove col entirely?)
+- Filter free text needs more explaining (log point filter language)
+- Filter free text needs more wildcards synonyms
+- Filter free text should be more forgiving (more text alternatives to the and, not and so on, perhaps add the logical operators)
+- Add filter buttons to the analysis tool (like we used to). They relied more on the gui than the hotkeys (could be enabled or disabled)
+- Filter active icon should be flipped (show current state)
+- It should be more clear when a filter is active, when written in the filter field (maybe add a filter tab to the list like with temp filters?)
+- Temp filters name should include some of the filter instead (easier to differentiate?)
+- Analysis tool should be more forgiving about the empty field
+- Make it more clear that the plus icon in log tabs can add new tabs (somehow?)
+- Hide popup does not disable hotkeys (bug)
+- Double click on row should open popup with additional info (like col value, whois?)
+- Double click should make a filter out of the clicked field
+
+### Alarm Overview
+- Show data should open a new tab with data instead of redirect (easier to go back to alarm overview)
+- Edit Alarm popup says "Edit alarm status" (button and popup headline should say the same)
+- Alarm info should show all data (drop show expert data button?)
+- Alarm notes should not close the immediately popup after a new note is added, instead tell the user that a note has been added.
+- Add new alarm notes by using enter button besides the button
+- Alarm overview timeraised don't show minutes and seconds (bug)
+
+### Raise Alarm
+- Add more data to manual alarm instead of just one data point
+- Alarm types are not clear (add examples, prefill? change to select?)
+- Close tab after an alarm has been manually raised
+- Is the alarm note field needed on the raise alarm page?
+
+### Sensor overview
+- Delete sensor should warn that alarms are also deleted (add documentation)
+
+## Suggestions
+- Use HotJar to track user movement (maybe too invasive)
+- Two different front ends, one for experts another for ordinary users
+- Analysis tool looks a bit like wireshark, should follow the same logic.
+- Extrahop has really nice GUI, maybe book a demo and be "inspired".
+- Pentest your system (felix and friends? open hunt?)

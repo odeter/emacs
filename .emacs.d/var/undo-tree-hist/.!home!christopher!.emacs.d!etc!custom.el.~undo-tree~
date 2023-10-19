@@ -1,0 +1,595 @@
+(undo-tree-save-format-version . 1)
+"3f5569c060ad3419c15101fab0e638c8da49b504"
+[nil nil nil nil (25139 42080 932926 460000) 0 nil]
+([nil nil ((2671 . 3126) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit (quote mode-line))))))" 0 455 (fontified nil)) . -2671) (2610 . 2670) (1947 . 1950) (#("
+" 0 1 (fontified nil)) . -2607) (1946 . 1947) (2606 . 2607) (1945 . 1946) (#(" " 0 1 (fontified nil)) . 1945) (1935 . 2606) (#(" " 0 1 (fontified nil)) . 1935) (1905 . 1936) (1860 . 1863) (1800 . 1803) (1752 . 1755) (#("
+" 0 1 (fontified nil)) . -1896) (1852 . 1854) (1795 . 1797) (1751 . 1752) (1891 . 1892) (1848 . 1849) (#("
+" 0 1 (fontified nil)) . 1848) (1848 . 1849) (#(" " 0 1 (fontified nil)) . -1848) (1793 . 1794) (#("
+" 0 1 (fontified nil)) . 1793) (1793 . 1794) (#(" " 0 1 (fontified nil)) . -1793) (1750 . 1751) (#(" " 0 1 (fontified nil)) . 1750) (1740 . 1891) (#(" " 0 1 (fontified nil)) . 1740) (1461 . 1741) (#(" " 0 1 (fontified nil)) . 1461) (1398 . 1462) (1276 . 1279) (#("
+" 0 1 (fontified nil)) . -1395) (1275 . 1276) (1394 . 1395) (1274 . 1275) (#(" " 0 1 (fontified nil)) . 1274) (1264 . 1394) (#(" " 0 1 (fontified nil)) . 1264) (1230 . 1265) (992 . 995) (#("
+" 0 1 (fontified nil)) . -1227) (991 . 992) (1226 . 1227) (990 . 991) (#(" " 0 1 (fontified nil)) . 990) (980 . 1226) (#(" " 0 1 (fontified nil)) . 980) (781 . 981) (#(" " 0 1 (fontified nil)) . 781) (729 . 782) (515 . 518) (#("
+" 0 1 (fontified nil)) . -726) (514 . 515) (725 . 726) (513 . 514) (#(" " 0 1 (fontified nil)) . 513) (503 . 725) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   (quote
+    (\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default)))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function (quote jdee-ant-build))
+ '(jdee-built-class-path
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-compile-option-classpath
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   (quote
+    ((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\"))))
+ '(package-selected-packages
+   (quote
+    (docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff)))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2658 (fontified nil)) . -1) (t 25117 59201 654304 492000)) nil (25139 42080 932911 241000) 0 nil])
+([nil nil ((2677 . 3132) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit (quote mode-line))))))" 0 455 (fontified nil)) . -2677) (2616 . 2676) (1947 . 1950) (#("
+" 0 1 (fontified nil)) . -2613) (1946 . 1947) (2612 . 2613) (1945 . 1946) (#(" " 0 1 (fontified nil)) . 1945) (1935 . 2612) (#(" " 0 1 (fontified nil)) . 1935) (1905 . 1936) (1860 . 1863) (1800 . 1803) (1752 . 1755) (#("
+" 0 1 (fontified nil)) . -1896) (1852 . 1854) (1795 . 1797) (1751 . 1752) (1891 . 1892) (1848 . 1849) (#("
+" 0 1 (fontified nil)) . 1848) (1848 . 1849) (#(" " 0 1 (fontified nil)) . -1848) (1793 . 1794) (#("
+" 0 1 (fontified nil)) . 1793) (1793 . 1794) (#(" " 0 1 (fontified nil)) . -1793) (1750 . 1751) (#(" " 0 1 (fontified nil)) . 1750) (1740 . 1891) (#(" " 0 1 (fontified nil)) . 1740) (1461 . 1741) (#(" " 0 1 (fontified nil)) . 1461) (1398 . 1462) (1276 . 1279) (#("
+" 0 1 (fontified nil)) . -1395) (1275 . 1276) (1394 . 1395) (1274 . 1275) (#(" " 0 1 (fontified nil)) . 1274) (1264 . 1394) (#(" " 0 1 (fontified nil)) . 1264) (1230 . 1265) (992 . 995) (#("
+" 0 1 (fontified nil)) . -1227) (991 . 992) (1226 . 1227) (990 . 991) (#(" " 0 1 (fontified nil)) . 990) (980 . 1226) (#(" " 0 1 (fontified nil)) . 980) (781 . 981) (#(" " 0 1 (fontified nil)) . 781) (729 . 782) (515 . 518) (#("
+" 0 1 (fontified nil)) . -726) (514 . 515) (725 . 726) (513 . 514) (#(" " 0 1 (fontified nil)) . 513) (503 . 725) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   (quote
+    (\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default)))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function (quote jdee-ant-build))
+ '(jdee-built-class-path
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-compile-option-classpath
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   (quote
+    ((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\"))))
+ '(package-selected-packages
+   (quote
+    (bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff)))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2669 (fontified nil)) . -1) (t 25139 42080 945918 640000)) nil (25195 43162 540844 913000) 0 nil])
+([nil nil ((2691 . 3146) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit (quote mode-line))))))" 0 455 (fontified nil)) . -2691) (2630 . 2690) (1947 . 1950) (#("
+" 0 1 (fontified nil)) . -2627) (1946 . 1947) (2626 . 2627) (1945 . 1946) (#(" " 0 1 (fontified nil)) . 1945) (1935 . 2626) (#(" " 0 1 (fontified nil)) . 1935) (1905 . 1936) (1860 . 1863) (1800 . 1803) (1752 . 1755) (#("
+" 0 1 (fontified nil)) . -1896) (1852 . 1854) (1795 . 1797) (1751 . 1752) (1891 . 1892) (1848 . 1849) (#("
+" 0 1 (fontified nil)) . 1848) (1848 . 1849) (#(" " 0 1 (fontified nil)) . -1848) (1793 . 1794) (#("
+" 0 1 (fontified nil)) . 1793) (1793 . 1794) (#(" " 0 1 (fontified nil)) . -1793) (1750 . 1751) (#(" " 0 1 (fontified nil)) . 1750) (1740 . 1891) (#(" " 0 1 (fontified nil)) . 1740) (1461 . 1741) (#(" " 0 1 (fontified nil)) . 1461) (1398 . 1462) (1276 . 1279) (#("
+" 0 1 (fontified nil)) . -1395) (1275 . 1276) (1394 . 1395) (1274 . 1275) (#(" " 0 1 (fontified nil)) . 1274) (1264 . 1394) (#(" " 0 1 (fontified nil)) . 1264) (1230 . 1265) (992 . 995) (#("
+" 0 1 (fontified nil)) . -1227) (991 . 992) (1226 . 1227) (990 . 991) (#(" " 0 1 (fontified nil)) . 990) (980 . 1226) (#(" " 0 1 (fontified nil)) . 980) (781 . 981) (#(" " 0 1 (fontified nil)) . 781) (729 . 782) (515 . 518) (#("
+" 0 1 (fontified nil)) . -726) (514 . 515) (725 . 726) (513 . 514) (#(" " 0 1 (fontified nil)) . 513) (503 . 725) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   (quote
+    (\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default)))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function (quote jdee-ant-build))
+ '(jdee-built-class-path
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-compile-option-classpath
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   (quote
+    ((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\"))))
+ '(package-selected-packages
+   (quote
+    (popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff)))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2675 (fontified nil)) . -1) (t 25195 43162 576403 199000)) nil (25239 21945 385520 880000) 0 nil])
+([nil nil ((2698 . 3153) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit (quote mode-line))))))" 0 455 (fontified nil)) . -2698) (2637 . 2697) (1947 . 1950) (#("
+" 0 1 (fontified nil)) . -2634) (1946 . 1947) (2633 . 2634) (1945 . 1946) (#(" " 0 1 (fontified nil)) . 1945) (1935 . 2633) (#(" " 0 1 (fontified nil)) . 1935) (1905 . 1936) (1860 . 1863) (1800 . 1803) (1752 . 1755) (#("
+" 0 1 (fontified nil)) . -1896) (1852 . 1854) (1795 . 1797) (1751 . 1752) (1891 . 1892) (1848 . 1849) (#("
+" 0 1 (fontified nil)) . 1848) (1848 . 1849) (#(" " 0 1 (fontified nil)) . -1848) (1793 . 1794) (#("
+" 0 1 (fontified nil)) . 1793) (1793 . 1794) (#(" " 0 1 (fontified nil)) . -1793) (1750 . 1751) (#(" " 0 1 (fontified nil)) . 1750) (1740 . 1891) (#(" " 0 1 (fontified nil)) . 1740) (1461 . 1741) (#(" " 0 1 (fontified nil)) . 1461) (1398 . 1462) (1276 . 1279) (#("
+" 0 1 (fontified nil)) . -1395) (1275 . 1276) (1394 . 1395) (1274 . 1275) (#(" " 0 1 (fontified nil)) . 1274) (1264 . 1394) (#(" " 0 1 (fontified nil)) . 1264) (1230 . 1265) (992 . 995) (#("
+" 0 1 (fontified nil)) . -1227) (991 . 992) (1226 . 1227) (990 . 991) (#(" " 0 1 (fontified nil)) . 990) (980 . 1226) (#(" " 0 1 (fontified nil)) . 980) (781 . 981) (#(" " 0 1 (fontified nil)) . 781) (729 . 782) (515 . 518) (#("
+" 0 1 (fontified nil)) . -726) (514 . 515) (725 . 726) (513 . 514) (#(" " 0 1 (fontified nil)) . 513) (503 . 725) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   (quote
+    (\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default)))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function (quote jdee-ant-build))
+ '(jdee-built-class-path
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-compile-option-classpath
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   (quote
+    ((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\"))))
+ '(package-selected-packages
+   (quote
+    (edit-indirect popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff)))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2689 (fontified nil)) . -1) (t 25239 21945 403357 759000)) nil (25239 21963 140154 602000) 0 nil])
+([nil nil ((2707 . 3162) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit (quote mode-line))))))" 0 455 (fontified nil)) . -2707) (2646 . 2706) (1947 . 1950) (#("
+" 0 1 (fontified nil)) . -2643) (1946 . 1947) (2642 . 2643) (1945 . 1946) (#(" " 0 1 (fontified nil)) . 1945) (1935 . 2642) (#(" " 0 1 (fontified nil)) . 1935) (1905 . 1936) (1860 . 1863) (1800 . 1803) (1752 . 1755) (#("
+" 0 1 (fontified nil)) . -1896) (1852 . 1854) (1795 . 1797) (1751 . 1752) (1891 . 1892) (1848 . 1849) (#("
+" 0 1 (fontified nil)) . 1848) (1848 . 1849) (#(" " 0 1 (fontified nil)) . -1848) (1793 . 1794) (#("
+" 0 1 (fontified nil)) . 1793) (1793 . 1794) (#(" " 0 1 (fontified nil)) . -1793) (1750 . 1751) (#(" " 0 1 (fontified nil)) . 1750) (1740 . 1891) (#(" " 0 1 (fontified nil)) . 1740) (1461 . 1741) (#(" " 0 1 (fontified nil)) . 1461) (1398 . 1462) (1276 . 1279) (#("
+" 0 1 (fontified nil)) . -1395) (1275 . 1276) (1394 . 1395) (1274 . 1275) (#(" " 0 1 (fontified nil)) . 1274) (1264 . 1394) (#(" " 0 1 (fontified nil)) . 1264) (1230 . 1265) (992 . 995) (#("
+" 0 1 (fontified nil)) . -1227) (991 . 992) (1226 . 1227) (990 . 991) (#(" " 0 1 (fontified nil)) . 990) (980 . 1226) (#(" " 0 1 (fontified nil)) . 980) (781 . 981) (#(" " 0 1 (fontified nil)) . 781) (729 . 782) (515 . 518) (#("
+" 0 1 (fontified nil)) . -726) (514 . 515) (725 . 726) (513 . 514) (#(" " 0 1 (fontified nil)) . 513) (503 . 725) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   (quote
+    (\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default)))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function (quote jdee-ant-build))
+ '(jdee-built-class-path
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-compile-option-classpath
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   (quote
+    ((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\"))))
+ '(package-selected-packages
+   (quote
+    (pyvenv edit-indirect popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff)))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2696 (fontified nil)) . -1) (t 25239 21963 171848 405000)) nil (25239 21987 328341 551000) 0 nil])
+([nil nil ((2670 . 3118) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit (quote mode-line))))))" 0 455 (fontified nil)) . -2670) (2609 . 2669) (#("
+" 0 1 (fontified nil)) . -2609) (1884 . 2610) (#(" " 0 1 (fontified nil)) . 1884) (1854 . 1885) (1810 . 1813) (1750 . 1753) (#("
+" 0 1 (fontified nil)) . -1848) (1805 . 1807) (1748 . 1750) (1844 . 1845) (1802 . 1803) (#("
+" 0 1 (fontified nil)) . 1802) (1802 . 1803) (#(" " 0 1 (fontified nil)) . -1802) (1747 . 1748) (#("
+" 0 1 (fontified nil)) . 1747) (1747 . 1748) (#(" " 0 1 (fontified nil)) . -1747) (1700 . 1844) (#(" " 0 1 (fontified nil)) . 1700) (1421 . 1701) (#(" " 0 1 (fontified nil)) . 1421) (1358 . 1422) (#("
+" 0 1 (fontified nil)) . -1358) (1235 . 1359) (#(" " 0 1 (fontified nil)) . 1235) (1201 . 1236) (#("
+" 0 1 (fontified nil)) . -1201) (962 . 1202) (#(" " 0 1 (fontified nil)) . 962) (770 . 963) (#(" " 0 1 (fontified nil)) . 770) (718 . 771) (#("
+" 0 1 (fontified nil)) . -718) (503 . 719) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   (quote
+    (\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default)))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function (quote jdee-ant-build))
+ '(jdee-built-class-path
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-compile-option-classpath
+   (quote
+    (\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\")))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   (quote
+    ((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\"))))
+ '(package-selected-packages
+   (quote
+    (parseedn pyvenv edit-indirect popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff)))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2705 (fontified nil)) . -1) (t 25239 21987 0 0)) nil (25360 45022 880759 269000) 0 nil])
+([nil nil ((2662 . 3110) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit 'mode-line)))))" 0 448 (fontified nil)) . -2662) (2601 . 2661) (#("
+" 0 1 (fontified nil)) . -2601) (1884 . 2602) (#(" " 0 1 (fontified nil)) . 1884) (1854 . 1885) (1810 . 1813) (1750 . 1753) (#("
+" 0 1 (fontified nil)) . -1848) (1805 . 1807) (1748 . 1750) (1844 . 1845) (1802 . 1803) (#("
+" 0 1 (fontified nil)) . 1802) (1802 . 1803) (#(" " 0 1 (fontified nil)) . -1802) (1747 . 1748) (#("
+" 0 1 (fontified nil)) . 1747) (1747 . 1748) (#(" " 0 1 (fontified nil)) . -1747) (1700 . 1844) (#(" " 0 1 (fontified nil)) . 1700) (1421 . 1701) (#(" " 0 1 (fontified nil)) . 1421) (1358 . 1422) (#("
+" 0 1 (fontified nil)) . -1358) (1235 . 1359) (#(" " 0 1 (fontified nil)) . 1235) (1201 . 1236) (#("
+" 0 1 (fontified nil)) . -1201) (962 . 1202) (#(" " 0 1 (fontified nil)) . 962) (770 . 963) (#(" " 0 1 (fontified nil)) . 770) (718 . 771) (#("
+" 0 1 (fontified nil)) . -718) (503 . 719) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   '(\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function 'jdee-ant-build)
+ '(jdee-built-class-path
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-compile-option-classpath
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   '((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\")))
+ '(package-selected-packages
+   '(all-the-icons-completion parseedn pyvenv edit-indirect popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons minimap jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2668 (fontified nil)) . -1) (t 25360 45022 885911 884000)) nil (25360 45112 701318 31000) 0 nil])
+([nil nil ((2686 . 3134) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit 'mode-line)))))" 0 448 (fontified nil)) . -2686) (2625 . 2685) (#("
+" 0 1 (fontified nil)) . -2625) (1884 . 2626) (#(" " 0 1 (fontified nil)) . 1884) (1854 . 1885) (1810 . 1813) (1750 . 1753) (#("
+" 0 1 (fontified nil)) . -1848) (1805 . 1807) (1748 . 1750) (1844 . 1845) (1802 . 1803) (#("
+" 0 1 (fontified nil)) . 1802) (1802 . 1803) (#(" " 0 1 (fontified nil)) . -1802) (1747 . 1748) (#("
+" 0 1 (fontified nil)) . 1747) (1747 . 1748) (#(" " 0 1 (fontified nil)) . -1747) (1700 . 1844) (#(" " 0 1 (fontified nil)) . 1700) (1421 . 1701) (#(" " 0 1 (fontified nil)) . 1421) (1358 . 1422) (#("
+" 0 1 (fontified nil)) . -1358) (1235 . 1359) (#(" " 0 1 (fontified nil)) . 1235) (1201 . 1236) (#("
+" 0 1 (fontified nil)) . -1201) (962 . 1202) (#(" " 0 1 (fontified nil)) . 962) (770 . 963) (#(" " 0 1 (fontified nil)) . 770) (718 . 771) (#("
+" 0 1 (fontified nil)) . -718) (503 . 719) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   '(\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function 'jdee-ant-build)
+ '(jdee-built-class-path
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-compile-option-classpath
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   '((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\")))
+ '(package-selected-packages
+   '(all-the-icons-completion parseedn pyvenv edit-indirect popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2660 (fontified nil)) . -1) (t 25360 45112 705355 714000)) nil (25543 62462 278069 850000) 0 nil])
+([nil nil ((2709 . 3157) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit 'mode-line)))))" 0 448 (fontified nil)) . -2709) (2648 . 2708) (#("
+" 0 1 (fontified nil)) . -2648) (1884 . 2649) (#(" " 0 1 (fontified nil)) . 1884) (1854 . 1885) (1810 . 1813) (1750 . 1753) (#("
+" 0 1 (fontified nil)) . -1848) (1805 . 1807) (1748 . 1750) (1844 . 1845) (1802 . 1803) (#("
+" 0 1 (fontified nil)) . 1802) (1802 . 1803) (#(" " 0 1 (fontified nil)) . -1802) (1747 . 1748) (#("
+" 0 1 (fontified nil)) . 1747) (1747 . 1748) (#(" " 0 1 (fontified nil)) . -1747) (1700 . 1844) (#(" " 0 1 (fontified nil)) . 1700) (1421 . 1701) (#(" " 0 1 (fontified nil)) . 1421) (1358 . 1422) (#("
+" 0 1 (fontified nil)) . -1358) (1235 . 1359) (#(" " 0 1 (fontified nil)) . 1235) (1201 . 1236) (#("
+" 0 1 (fontified nil)) . -1201) (962 . 1202) (#(" " 0 1 (fontified nil)) . 962) (770 . 963) (#(" " 0 1 (fontified nil)) . 770) (718 . 771) (#("
+" 0 1 (fontified nil)) . -718) (503 . 719) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   '(\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function 'jdee-ant-build)
+ '(jdee-built-class-path
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-compile-option-classpath
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   '((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\")))
+ '(package-selected-packages
+   '(highlight-indent-guides all-the-icons-completion parseedn pyvenv edit-indirect popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2684 (fontified nil)) . -1) (t 25543 62462 329506 564000)) nil (25656 1865 517331 586000) 0 nil])
+([nil nil ((2686 . 3134) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit 'mode-line)))))" 0 448 (fontified nil)) . -2686) (2625 . 2685) (#("
+" 0 1 (fontified nil)) . -2625) (1884 . 2626) (#(" " 0 1 (fontified nil)) . 1884) (1854 . 1885) (1810 . 1813) (1750 . 1753) (#("
+" 0 1 (fontified nil)) . -1848) (1805 . 1807) (1748 . 1750) (1844 . 1845) (1802 . 1803) (#("
+" 0 1 (fontified nil)) . 1802) (1802 . 1803) (#(" " 0 1 (fontified nil)) . -1802) (1747 . 1748) (#("
+" 0 1 (fontified nil)) . 1747) (1747 . 1748) (#(" " 0 1 (fontified nil)) . -1747) (1700 . 1844) (#(" " 0 1 (fontified nil)) . 1700) (1421 . 1701) (#(" " 0 1 (fontified nil)) . 1421) (1358 . 1422) (#("
+" 0 1 (fontified nil)) . -1358) (1235 . 1359) (#(" " 0 1 (fontified nil)) . 1235) (1201 . 1236) (#("
+" 0 1 (fontified nil)) . -1201) (962 . 1202) (#(" " 0 1 (fontified nil)) . 962) (770 . 963) (#(" " 0 1 (fontified nil)) . 770) (718 . 771) (#("
+" 0 1 (fontified nil)) . -718) (503 . 719) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   '(\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function 'jdee-ant-build)
+ '(jdee-built-class-path
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-compile-option-classpath
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   '((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\")))
+ '(package-selected-packages
+   '(conventional-changelog highlight-indent-guides all-the-icons-completion parseedn pyvenv edit-indirect popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 2707 (fontified nil)) . -1) (t 25656 1865 549414 781000)) nil (25656 1980 351657 657000) 0 nil])
+([nil current ((2698 . 3146) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview ((t (:foreground \"light steel blue\"))))
+ '(py-variable-name-face ((t (:inherit default))))
+ '(spaceline-highlight-face ((t (:background \"#8be9fd\" :foreground \"#3E3D31\" :inherit 'mode-line)))))" 0 1 (fontified t face (rainbow-delimiters-depth-1-face)) 1 19 (fontified t) 19 22 (fontified t face font-lock-comment-delimiter-face) 22 60 (fontified t face font-lock-comment-face) 60 61 (fontified t) 61 64 (fontified t face font-lock-comment-delimiter-face) 64 125 (fontified t face font-lock-comment-face) 125 126 (fontified t) 126 129 (fontified t face font-lock-comment-delimiter-face) 129 183 (fontified t face font-lock-comment-face) 183 184 (fontified t) 184 187 (fontified t face font-lock-comment-delimiter-face) 187 237 (fontified t face font-lock-comment-face) 237 239 (fontified t) 239 240 (fontified t face (rainbow-delimiters-depth-2-face)) 240 256 (fontified t) 256 257 (fontified t face (rainbow-delimiters-depth-3-face)) 257 258 (fontified t face (rainbow-delimiters-depth-4-face)) 258 260 (fontified t) 260 261 (fontified t face (rainbow-delimiters-depth-5-face)) 261 272 (fontified t face font-lock-builtin-face) 272 273 (fontified t) 273 291 (fontified t face font-lock-string-face) 291 292 (fontified t face (rainbow-delimiters-depth-5-face)) 292 293 (fontified t face (rainbow-delimiters-depth-4-face)) 293 294 (fontified t face (rainbow-delimiters-depth-3-face)) 294 295 (fontified t face (rainbow-delimiters-depth-2-face)) 295 298 (fontified t) 298 299 (fontified t face (rainbow-delimiters-depth-2-face)) 299 315 (fontified t) 315 321 (fontified t) 321 322 (fontified t face (rainbow-delimiters-depth-3-face)) 322 323 (fontified t face (rainbow-delimiters-depth-4-face)) 323 325 (fontified t) 325 326 (fontified t face (rainbow-delimiters-depth-5-face)) 326 334 (fontified t face font-lock-builtin-face) 334 342 (fontified t) 342 343 (fontified t face (rainbow-delimiters-depth-5-face)) 343 344 (fontified t face (rainbow-delimiters-depth-4-face)) 344 345 (fontified t face (rainbow-delimiters-depth-3-face)) 345 346 (fontified t face (rainbow-delimiters-depth-2-face)) 346 349 (fontified t) 349 350 (fontified t face (rainbow-delimiters-depth-2-face)) 350 375 (fontified t) 375 376 (fontified t face (rainbow-delimiters-depth-3-face)) 376 377 (fontified t face (rainbow-delimiters-depth-4-face)) 377 379 (fontified t) 379 380 (fontified t face (rainbow-delimiters-depth-5-face)) 380 391 (fontified t face font-lock-builtin-face) 391 392 (fontified t) 392 401 (fontified t face font-lock-string-face) 401 402 (fontified t) 402 413 (fontified t face font-lock-builtin-face) 413 414 (fontified t) 414 423 (fontified t face font-lock-string-face) 423 424 (fontified t) 424 432 (fontified t face font-lock-builtin-face) 432 441 (fontified t) 441 443 (fontified t) 443 444 (fontified t face (rainbow-delimiters-depth-5-face)) 444 445 (fontified t face (rainbow-delimiters-depth-4-face)) 445 446 (fontified t face (rainbow-delimiters-depth-3-face)) 446 447 (fontified t face (rainbow-delimiters-depth-2-face)) 447 448 (fontified t face (rainbow-delimiters-depth-1-face))) . -2698) (undo-tree-id0 . -348) (undo-tree-id1 . -448) (2637 . 2697) (#("
+" 0 1 (fontified nil)) . -2637) (1884 . 2638) (#(" " 0 1 (fontified nil)) . 1884) (1854 . 1885) (1810 . 1813) (1750 . 1753) (#("
+" 0 1 (fontified nil)) . -1848) (1805 . 1807) (1748 . 1750) (1844 . 1845) (1802 . 1803) (#("
+" 0 1 (fontified nil)) . 1802) (1802 . 1803) (#(" " 0 1 (fontified nil)) . -1802) (1747 . 1748) (#("
+" 0 1 (fontified nil)) . 1747) (1747 . 1748) (#(" " 0 1 (fontified nil)) . -1747) (1700 . 1844) (#(" " 0 1 (fontified nil)) . 1700) (1421 . 1701) (#(" " 0 1 (fontified nil)) . 1421) (1358 . 1422) (#("
+" 0 1 (fontified nil)) . -1358) (1235 . 1359) (#(" " 0 1 (fontified nil)) . 1235) (1201 . 1236) (#("
+" 0 1 (fontified nil)) . -1201) (962 . 1202) (#(" " 0 1 (fontified nil)) . 962) (770 . 963) (#(" " 0 1 (fontified nil)) . 770) (718 . 771) (#("
+" 0 1 (fontified nil)) . -718) (503 . 719) (#(" " 0 1 (fontified nil)) . 503) (453 . 504) (#("
+" 0 1 (fontified nil)) . -453) (368 . 454) (#(" " 0 1 (fontified nil)) . 368) (340 . 369) (#("
+" 0 1 (fontified nil)) . -340) (272 . 341) (#(" " 0 1 (fontified nil)) . 272) (1 . 273) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   [\"#2e3436\" \"#a40000\" \"#4e9a06\" \"#c4a000\" \"#204a87\" \"#5c3566\" \"#729fcf\" \"#eeeeec\"])
+ '(beacon-blink-delay 2.3)
+ '(custom-safe-themes
+   '(\"fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088\" \"bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476\" \"274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e\" default))
+ '(inhibit-startup-screen t)
+ '(jdee-ant-buildfile
+   \"/home/christopher/Documents/Universitet/advanced computer systems/exam/acertainsupermarket/acertainsupermarket/build.xml\")
+ '(jdee-build-function 'jdee-ant-build)
+ '(jdee-built-class-path
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/\" \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-compile-option-classpath
+   '(\"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/lib/*\"))
+ '(jdee-global-classpath nil)
+ '(jdee-junit-working-directory
+   \"/home/christopher/Documents/Universitet/advanced computer systems/Assignment 1/acertainbookstore-assignment1/bin/com/acertainbookstore/client/tests/\")
+ '(jdee-server-dir \"~/myJars\")
+ '(minimap-minimum-width 20)
+ '(minimap-mode t)
+ '(org-agenda-files nil)
+ '(package-archives
+   '((\"gnu\" . \"http://elpa.gnu.org/packages/\")
+     (\"melpa-stable\" . \"http://stable.melpa.org/packages/\")
+     (\"melpa\" . \"http://melpa.org/packages/\")))
+ '(package-selected-packages
+   '(highlight-indent-guides all-the-icons-completion parseedn pyvenv edit-indirect popup bison-mode docker-compose-mode markdown-mode yaml-mode dotenv-mode dashboard move-text org-bullets auto-package-update undo-tree nyan-mode web-mode dockerfile-mode rainbow-delimiters smartparens page-break-lines smart-comment company-box company-quickhelp-terminal company-anaconda anaconda-mode company aggressive-indent vue-mode doom-modeline winum no-littering paradox validate flycheck-package cider minions moody neotree dracula-theme all-the-icons fsharp-mode whitespace-cleanup-mode use-package sml-mode smex pyenv-mode mode-icons jedi jdee jdecomp iasm-mode haskell-mode fountain-mode flyspell-correct-popup flx-ido elpy eclim ecb drag-stuff))
+ '(paradox-github-token t)
+ '(yascroll:delay-to-hide nil))" 0 1 (fontified t face (rainbow-delimiters-depth-1-face)) 1 23 (fontified t) 23 26 (fontified t face font-lock-comment-delimiter-face) 26 68 (fontified t face font-lock-comment-face) 68 69 (fontified t) 69 72 (fontified t face font-lock-comment-delimiter-face) 72 133 (fontified t face font-lock-comment-face) 133 134 (fontified t) 134 137 (fontified t face font-lock-comment-delimiter-face) 137 191 (fontified t face font-lock-comment-face) 191 192 (fontified t) 192 195 (fontified t face font-lock-comment-delimiter-face) 195 245 (fontified t face font-lock-comment-face) 245 247 (fontified t) 247 248 (fontified t face (rainbow-delimiters-depth-2-face)) 248 275 (fontified t) 275 276 (fontified t face (rainbow-delimiters-depth-3-face)) 276 338 (fontified t) 338 339 (fontified t face (rainbow-delimiters-depth-3-face)) 339 340 (fontified t face (rainbow-delimiters-depth-2-face)) 340 343 (fontified t) 343 344 (fontified t face (rainbow-delimiters-depth-2-face)) 344 371 (fontified t) 371 372 (fontified t face (rainbow-delimiters-depth-3-face)) 372 381 (fontified t face font-lock-string-face) 381 382 (fontified t) 382 391 (fontified t face font-lock-string-face) 391 392 (fontified t) 392 401 (fontified t face font-lock-string-face) 401 402 (fontified t) 402 411 (fontified t face font-lock-string-face) 411 412 (fontified t) 412 421 (fontified t face font-lock-string-face) 421 422 (fontified t) 422 431 (fontified t face font-lock-string-face) 431 432 (fontified t) 432 441 (fontified t face font-lock-string-face) 441 442 (fontified t) 442 451 (fontified t face font-lock-string-face) 451 452 (fontified t face (rainbow-delimiters-depth-3-face)) 452 453 (fontified t face (rainbow-delimiters-depth-2-face)) 453 456 (fontified t) 456 457 (fontified t face (rainbow-delimiters-depth-2-face)) 457 479 (fontified t) 479 480 (fontified t face (rainbow-delimiters-depth-2-face)) 480 483 (fontified t) 483 484 (fontified t face (rainbow-delimiters-depth-2-face)) 484 500 (fontified t) 500 503 (fontified t) 503 507 (fontified t) 507 508 (fontified t face (rainbow-delimiters-depth-3-face)) 508 574 (fontified t face font-lock-string-face) 574 575 (fontified t) 575 641 (fontified t face font-lock-string-face) 641 642 (fontified t) 642 653 (fontified t face font-lock-string-face) 653 708 (fontified t face (whitespace-line font-lock-string-face)) 708 716 (fontified t face (whitespace-line)) 716 717 (fontified t face (rainbow-delimiters-depth-3-face whitespace-line)) 717 718 (fontified t face (rainbow-delimiters-depth-2-face whitespace-line)) 718 721 (fontified t) 721 722 (fontified t face (rainbow-delimiters-depth-2-face)) 722 746 (fontified t) 746 747 (fontified t face (rainbow-delimiters-depth-2-face)) 747 750 (fontified t) 750 751 (fontified t face (rainbow-delimiters-depth-2-face)) 751 773 (fontified t) 773 895 (fontified t face font-lock-string-face) 895 896 (fontified t face (rainbow-delimiters-depth-2-face)) 896 899 (fontified t) 899 900 (fontified t face (rainbow-delimiters-depth-2-face)) 900 935 (fontified t) 935 936 (fontified t face (rainbow-delimiters-depth-2-face)) 936 939 (fontified t) 939 940 (fontified t face (rainbow-delimiters-depth-2-face)) 940 966 (fontified t) 966 967 (fontified t face (rainbow-delimiters-depth-3-face)) 967 1000 (fontified t face font-lock-string-face) 1000 1003 (fontified t face font-lock-string-face) 1003 1082 (fontified t face font-lock-string-face) 1082 1083 (fontified t) 1083 1112 (fontified t face font-lock-string-face) 1112 1199 (fontified t face (whitespace-line font-lock-string-face)) 1199 1200 (fontified t face (rainbow-delimiters-depth-3-face whitespace-line)) 1200 1201 (fontified t face (rainbow-delimiters-depth-2-face whitespace-line)) 1201 1202 (fontified t) 1202 1204 (fontified t) 1204 1205 (fontified t face (rainbow-delimiters-depth-2-face)) 1205 1239 (fontified t) 1239 1240 (fontified t face (rainbow-delimiters-depth-3-face)) 1240 1356 (fontified t face font-lock-string-face) 1356 1357 (fontified t face (rainbow-delimiters-depth-3-face)) 1357 1358 (fontified t face (rainbow-delimiters-depth-2-face)) 1358 1361 (fontified t) 1361 1362 (fontified t face (rainbow-delimiters-depth-2-face)) 1362 1387 (fontified t) 1387 1388 (fontified t face (rainbow-delimiters-depth-2-face)) 1388 1391 (fontified t) 1391 1392 (fontified t face (rainbow-delimiters-depth-2-face)) 1392 1424 (fontified t) 1424 1500 (fontified t face font-lock-string-face) 1500 1571 (fontified t face font-lock-string-face) 1571 1574 (fontified t face (whitespace-line font-lock-string-face)) 1574 1575 (fontified t face (rainbow-delimiters-depth-2-face whitespace-line)) 1575 1578 (fontified t) 1578 1579 (fontified t face (rainbow-delimiters-depth-2-face)) 1579 1595 (fontified t) 1595 1605 (fontified t face font-lock-string-face) 1605 1606 (fontified t face (rainbow-delimiters-depth-2-face)) 1606 1609 (fontified t) 1609 1610 (fontified t face (rainbow-delimiters-depth-2-face)) 1610 1634 (fontified t) 1634 1635 (fontified t face (rainbow-delimiters-depth-2-face)) 1635 1638 (fontified t) 1638 1639 (fontified t face (rainbow-delimiters-depth-2-face)) 1639 1653 (fontified t) 1653 1654 (fontified t face (rainbow-delimiters-depth-2-face)) 1654 1657 (fontified t) 1657 1658 (fontified t face (rainbow-delimiters-depth-2-face)) 1658 1678 (fontified t) 1678 1679 (fontified t face (rainbow-delimiters-depth-2-face)) 1679 1682 (fontified t) 1682 1683 (fontified t face (rainbow-delimiters-depth-2-face)) 1683 1702 (fontified t) 1702 1704 (fontified t) 1704 1705 (fontified t face (rainbow-delimiters-depth-3-face)) 1705 1706 (fontified t face (rainbow-delimiters-depth-4-face)) 1706 1711 (fontified t face font-lock-string-face) 1711 1714 (fontified t) 1714 1745 (fontified t face font-lock-string-face) 1745 1746 (fontified t face (rainbow-delimiters-depth-4-face)) 1746 1747 (fontified t) 1747 1752 (fontified t) 1752 1753 (fontified t face (rainbow-delimiters-depth-4-face)) 1753 1767 (fontified t face font-lock-string-face) 1767 1770 (fontified t) 1770 1805 (fontified t face font-lock-string-face) 1805 1806 (fontified t face (rainbow-delimiters-depth-4-face)) 1806 1812 (fontified t) 1812 1813 (fontified t face (rainbow-delimiters-depth-4-face)) 1813 1820 (fontified t face font-lock-string-face) 1820 1823 (fontified t) 1823 1851 (fontified t face font-lock-string-face) 1851 1852 (fontified t face (rainbow-delimiters-depth-4-face)) 1852 1853 (fontified t face (rainbow-delimiters-depth-3-face)) 1853 1854 (fontified t face (rainbow-delimiters-depth-2-face)) 1854 1857 (fontified t) 1857 1858 (fontified t face (rainbow-delimiters-depth-2-face)) 1858 1888 (fontified t) 1888 1889 (fontified t face (rainbow-delimiters-depth-3-face)) 1889 2000 (fontified t) 2000 2034 (fontified t) 2034 2247 (fontified t face (whitespace-line)) 2247 2500 (fontified t face (whitespace-line)) 2500 2623 (fontified t face (whitespace-line)) 2623 2624 (fontified t face (rainbow-delimiters-depth-3-face whitespace-line)) 2624 2625 (fontified t face (rainbow-delimiters-depth-2-face whitespace-line)) 2625 2626 (fontified t) 2626 2628 (fontified t) 2628 2629 (fontified t face (rainbow-delimiters-depth-2-face)) 2629 2651 (fontified t) 2651 2652 (fontified t face (rainbow-delimiters-depth-2-face)) 2652 2655 (fontified t) 2655 2656 (fontified t face (rainbow-delimiters-depth-2-face)) 2656 2682 (fontified t) 2682 2683 (fontified t face (rainbow-delimiters-depth-2-face)) 2683 2684 (fontified t face (rainbow-delimiters-depth-1-face))) . -1) (undo-tree-id2 . -21) (undo-tree-id3 . -21) (undo-tree-id4 . -21) (undo-tree-id5 . -240) (undo-tree-id6 . -240) (undo-tree-id7 . -710) (undo-tree-id8 . -747) (undo-tree-id9 . -747) (undo-tree-id10 . -747)) nil (25656 2405 298320 967000) 0 nil])
+nil

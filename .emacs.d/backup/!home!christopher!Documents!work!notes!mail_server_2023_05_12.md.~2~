@@ -1,0 +1,21 @@
+# Notes
+
+## Setup
+- Ny mail server
+  - ny vm med ubuntu 22.04 (min 4gb mem)
+  - luk gammel mail server
+  - backup
+    - mails
+    - configuration
+  - Configure new mail server
+    - Install mail software
+      - Iredmail (med license)
+    - setup mails (give ssh access)
+    - setup calendar?
+    - dkim nøgler (mail credits)
+
+172.16.1.5 (mail derant)
+
+SFg2fhQFPvCY
+
+xRgTHAAy6dt7

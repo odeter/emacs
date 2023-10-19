@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"f2fe4f1b9d0f772d81ee976ca0b0367c11205c7b"
+[nil nil nil nil (25269 44601 239944 165000) 0 nil]
+([nil nil ((#("Announcement" 0 12 (markdown-yaml-metadata-section (5 324) markdown-list-item ((163 322 0 2 "- " nil (163 165 163 163 163 164 164 165))) fontified t)) . 165) (undo-tree-id0 . -12) (undo-tree-id1 . -12) (undo-tree-id2 . -12) (t 25269 44459 627794 260000)) nil (25269 44601 239940 158000) 0 nil])
+([nil current ((165 . 169)) nil (25269 44601 239064 906000) 0 nil])
+nil

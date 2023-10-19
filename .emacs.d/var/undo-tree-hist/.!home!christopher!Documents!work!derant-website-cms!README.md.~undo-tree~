@@ -1,0 +1,24 @@
+(undo-tree-save-format-version . 1)
+"f3b29a5e6e0d95aabaf97e31357c17c5e8533a7d"
+[nil nil nil nil (25268 27369 586313 738000) 0 nil]
+([nil nil ((1271 . 1273) (t 25264 21851 690847 904000)) nil (25268 27369 586311 789000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1292 . 1293) (nil fontified nil 1273 . 1293) (1273 . 1293)) nil (25268 27369 586309 365000) 0 nil])
+([nil nil ((2333 . 2334) 1162) nil (25268 27369 586301 551000) 0 nil])
+([nil nil ((1374 . 1377) (t 25268 31080 662403 552000)) nil (25269 41739 609838 650000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t markdown-gfm-code (1346 1376) face (markdown-pre-face markdown-code-face) font-lock-multiline t)) . -1374) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (#("
+" 0 1 (fontified t markdown-gfm-code (1346 1377) face (markdown-pre-face markdown-code-face) font-lock-multiline t)) . -1375) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (#("
+" 0 1 (fontified t markdown-gfm-code (1346 1378) face (markdown-pre-face markdown-code-face) font-lock-multiline t)) . -1376) (undo-tree-id9 . -1) (undo-tree-id10 . -1) 1377) nil (25269 41739 609836 401000) 0 nil])
+([nil nil ((1378 . 1380)) nil (25269 41739 609827 892000) 0 nil])
+([nil nil ((1380 . 1401)) nil (25269 41739 609826 951000) 0 nil])
+([nil nil ((1401 . 1407)) nil (25269 41739 609825 961000) 0 nil])
+([nil nil ((#("r" 0 1 (fontified t markdown-heading (1380 1405 nil nil nil nil nil nil 1380 1384 1384 1405 1405 1405 #<buffer README.md>) markdown-heading-3-atx (1380 1405 nil nil nil nil nil nil 1380 1384 1384 1405 1405 1405 #<buffer README.md>) face markdown-header-face-3)) . -1404) (undo-tree-id2 . -1) (#("o" 0 1 (fontified t markdown-heading (1380 1406 nil nil nil nil nil nil 1380 1384 1384 1406 1406 1406 #<buffer README.md>) markdown-heading-3-atx (1380 1406 nil nil nil nil nil nil 1380 1384 1384 1406 1406 1406 #<buffer README.md>) face markdown-header-face-3)) . -1405) (undo-tree-id3 . -1) (#(" " 0 1 (fontified t markdown-heading (1380 1407 nil nil nil nil nil nil 1380 1384 1384 1406 1406 1407 #<buffer README.md>) markdown-heading-3-atx (1380 1407 nil nil nil nil nil nil 1380 1384 1384 1406 1406 1407 #<buffer README.md>) face markdown-header-delimiter-face)) . -1406) (undo-tree-id4 . -1) 1407) nil (25269 41739 609824 89000) 0 nil])
+([nil nil ((1404 . 1417)) nil (25269 41739 609818 478000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-heading (1380 1417 nil nil nil nil nil nil 1380 1384 1384 1416 1416 1417 #<buffer README.md>) markdown-heading-3-atx (1380 1417 nil nil nil nil nil nil 1380 1384 1384 1416 1416 1417 #<buffer README.md>) face markdown-header-delimiter-face)) . -1416) (undo-tree-id1 . -1) 1417) nil (25269 41739 609817 119000) 0 nil])
+([nil nil ((1416 . 1417)) nil (25269 41739 609813 670000) 0 nil])
+([nil nil ((1417 . 1418)) nil (25269 41739 609812 580000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1495 . 1496) (nil fontified nil 1418 . 1496) (1418 . 1496)) nil (25269 41739 609811 351000) 0 nil])
+([nil nil ((1429 . 1443)) nil (25269 41739 609809 286000) 0 nil])
+([nil nil ((#("m" 0 1 (fontified defer)) . 1443) (#("u" 0 1 (fontified t)) . 1443) (#("c" 0 1 (fontified t)) . 1443) (#("o" 0 1 (fontified defer)) . 1443) (#("D" 0 1 (fontified defer)) . 1443) (#(" " 0 1 (fontified defer)) . 1443) (#("\\" 0 1 (fontified defer)) . 1443) (#("s" 0 1 (fontified defer)) . 1443) (#("i" 0 1 (fontified defer)) . 1443) (#("s" 0 1 (fontified defer)) . 1443) (#("y" 0 1 (fontified defer)) . 1443) (#("l" 0 1 (fontified defer)) . 1443) (#("a" 0 1 (fontified defer)) . 1443) (#("n" 0 1 (fontified defer)) . 1443) (#("A" 0 1 (fontified defer)) . 1443) (#(" " 0 1 (fontified defer)) . 1443) (#("\\" 0 1 (fontified defer)) . 1443) (#("a" 0 1 (fontified nil)) . 1443) (#("t" 0 1 (fontified nil)) . 1443) (#("a" 0 1 (fontified t)) . 1443) (#("D" 0 1 (fontified t)) . 1443)) nil (25269 41739 609804 544000) 0 nil])
+([nil current ((#("f" 0 1 (fontified t)) . 1443) (#("d" 0 1 (fontified t)) . 1443) (undo-tree-id0 . 1) (#("p" 0 1 (fontified t)) . 1443) (#("." 0 1 (fontified t)) . 1443) (#("n" 0 1 (fontified t)) . 1443) (#("o" 0 1 (fontified t)) . 1443) (#("i" 0 1 (fontified t)) . 1443) (#("t" 0 1 (fontified defer)) . 1443) (#("a" 0 1 (fontified defer)) . 1443) (#("t" 0 1 (fontified defer)) . 1443) (#("n" 0 1 (fontified defer)) . 1443) (#("e" 0 1 (fontified defer)) . 1443)) nil (25269 41739 609792 421000) 0 nil])
+nil

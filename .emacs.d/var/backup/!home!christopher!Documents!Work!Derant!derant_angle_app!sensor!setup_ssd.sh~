@@ -1,2 +1,0 @@
-#!/bin/bash
-sudo parted -a optimal /dev/sda mkpart primary 0% 100%

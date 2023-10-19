@@ -1,0 +1,14 @@
+(undo-tree-save-format-version . 1)
+"d1b12c96624d938f2ec7ca5bf6e9b499ccd7e595"
+[nil nil nil nil (25310 32090 324742 43000) 0 nil]
+([nil nil ((#("-" 0 1 (markdown-list-item ((8620 8797 2 4 "- " nil (8620 8624 8620 8622 8622 8623 8623 8624))) fontified t face markdown-list-face)) . -8622) (undo-tree-id5 . -1) (undo-tree-id6 . -1) 8623 (t 25310 31526 260853 663000)) nil (25310 32090 324739 730000) 0 nil])
+([nil nil ((8622 . 8624)) nil (25310 32090 324735 199000) 0 nil])
+([nil nil ((#("-" 0 1 (fontified t markdown-list-item ((8799 8850 2 4 "- " nil (8799 8803 8799 8801 8801 8802 8802 8803))) face markdown-list-face)) . -8801) (undo-tree-id4 . -1) 8802) nil (25310 32090 324733 598000) 0 nil])
+([nil nil ((8801 . 8803)) nil (25310 32090 324730 696000) 0 nil])
+([nil nil ((#("-" 0 1 (fontified t markdown-list-item ((8852 8932 2 4 "- " nil (8852 8856 8852 8854 8854 8855 8855 8856))) face markdown-list-face)) . -8854) (undo-tree-id3 . -1) 8855) nil (25310 32090 324729 203000) 0 nil])
+([nil nil ((8854 . 8856)) nil (25310 32090 324726 262000) 0 nil])
+([nil nil ((#("-" 0 1 (fontified t markdown-list-item ((8934 9175 2 4 "- " nil (8934 8938 8934 8936 8936 8937 8937 8938))) face markdown-list-face)) . -8936) (undo-tree-id2 . -1) 8937) nil (25310 32090 324724 416000) 0 nil])
+([nil nil ((8936 . 8939)) nil (25310 32090 324720 975000) 0 nil])
+([nil nil ((#("." 0 1 (fontified t markdown-list-item ((8934 9176 2 5 "4. " nil (8934 8939 8934 8936 8936 8938 8938 8939))) face markdown-list-face)) . -8937) (undo-tree-id0 . -1) (#("-" 0 1 (fontified defer markdown-list-item ((8852 9177 2 5 "3. " nil (8852 8857 8852 8854 8854 8856 8856 8857))))) . -8938) (undo-tree-id1 . -1) 8939) nil (25310 32090 324717 856000) 0 nil])
+([nil current ((8937 . 8938)) nil (25310 32090 324693 862000) 0 nil])
+nil

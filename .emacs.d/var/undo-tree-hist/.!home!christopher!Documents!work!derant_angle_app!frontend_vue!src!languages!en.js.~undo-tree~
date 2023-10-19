@@ -1,0 +1,20 @@
+(undo-tree-save-format-version . 1)
+"0fc44a2fc15c58ff0a96919ea2db3c072bee4f0d"
+[nil nil nil nil (25348 48410 169542 859000) 0 nil]
+([nil nil ((34034 . 34039) (t 25348 32394 382253 297000)) nil (25348 48410 169540 996000) 0 nil])
+([nil nil ((#("
+" 0 1 (part-side javascript)) . -34034) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (#(" " 0 1 (part-side javascript)) . -34035) (undo-tree-id15 . -1) (#(" " 0 1 (part-side javascript)) . -34036) (undo-tree-id16 . -1) (#(" " 0 1 (part-side javascript)) . -34037) (undo-tree-id17 . -1) (#(" " 0 1 (part-side javascript)) . -34038) (undo-tree-id18 . -1) 34039) nil (25348 48410 169538 241000) 0 nil])
+([nil nil ((33623 . 33628)) nil (25348 48410 169529 654000) 0 nil])
+([nil nil ((33628 . 33640)) nil (25348 48410 169528 634000) 0 nil])
+([nil nil ((#(" " 0 1 (part-side javascript)) . -33639) (undo-tree-id12 . -1) 33640) nil (25348 48410 169527 297000) 0 nil])
+([nil nil ((33639 . 33644)) nil (25348 48410 169524 897000) 0 nil])
+([nil nil ((#(" " 0 1 (part-side javascript)) . -33643) (undo-tree-id11 . -1) 33644) nil (25348 48410 169523 539000) 0 nil])
+([nil nil ((33642 . 33643)) nil (25348 48410 169520 818000) 0 nil])
+([nil nil ((#("S" 0 1 (part-side javascript part-token string font-lock-face web-mode-javascript-string-face)) . -33642) (undo-tree-id10 . -1) 33643) nil (25348 48410 169519 363000) 0 nil])
+([nil nil ((33642 . 33645)) nil (25348 48410 169516 424000) 0 nil])
+([nil nil ((#("E" 0 1 (part-side javascript part-token string font-lock-face web-mode-javascript-string-face)) . -33643) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (#("g" 0 1 (part-side javascript part-token string font-lock-face web-mode-javascript-string-face)) . -33644) (undo-tree-id8 . -1) (undo-tree-id9 . -1) 33645) nil (25348 48410 169514 409000) 0 nil])
+([nil nil ((33643 . 33644)) nil (25348 48410 169508 96000) 0 nil])
+([nil nil ((#("R" 0 1 (part-side javascript part-token string font-lock-face web-mode-javascript-string-face)) . -33642) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (#("e" 0 1 (part-side javascript part-token string font-lock-face web-mode-javascript-string-face)) . -33643) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 33644) nil (25348 48410 169505 369000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 33661 . 33662) (nil part-side javascript 33642 . 33662) (nil part-token string 33642 . 33662) (nil font-lock-face web-mode-javascript-string-face 33642 . 33662) (33642 . 33662)) nil (25348 48410 169480 332000) 0 nil])
+([nil current ((33663 . 33664)) nil (25348 48410 169470 773000) 0 nil])
+nil

@@ -1,0 +1,67 @@
+(undo-tree-save-format-version . 1)
+"e5e71a31a4a940261dcbef1c02940a482099afd0"
+[nil nil nil nil (25334 3571 155660 449000) 0 nil]
+([nil nil ((#("4" 0 1 (fontified t)) . 6) (#("." 0 1 (fontified t)) . 6) (#("7" 0 1 (fontified defer)) . 6) (#("1" 0 1 (fontified defer)) . 6) (#("." 0 1 (fontified defer)) . 6) (#("1" 0 1 (fontified defer)) . 6) (#("=" 0 1 (fontified t)) . 6) (#("=" 0 1 (fontified t)) . 6) (t 25103 35945 890178 727000)) nil (25334 3571 155651 907000) 0 nil])
+([nil nil ((#("SQLAlchemy==1.3.24
+" 0 19 (fontified nil)) . 49) (undo-tree-id54 . -18) (undo-tree-id55 . -18) (undo-tree-id56 . -18) (26 . 49) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 7) (undo-tree-id57 . -13) (undo-tree-id58 . -13) (undo-tree-id59 . -13) (30 . 49) 20 (t 25334 3571 159715 845000)) nil (25334 4051 341698 923000) 0 nil])
+([nil nil ((#("clickhouse-sqlalchemy==0.1.7
+" 0 29 (fontified nil)) . 78) (undo-tree-id52 . -24) (55 . 78) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 26) (undo-tree-id53 . -13) (49 . 78) 39) nil (25334 4051 341689 408000) 0 nil])
+([nil nil ((#("pandas==1.0.3
+" 0 14 (fontified nil)) . 92) (undo-tree-id50 . -13) (69 . 92) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 55) (undo-tree-id51 . -13) (78 . 92) 68) nil (25334 4051 341683 541000) 0 nil])
+([nil nil ((#("Faker==4.14.2
+" 0 14 (fontified nil)) . 106) (undo-tree-id47 . -13) (undo-tree-id48 . -13) (83 . 106) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 69) (undo-tree-id49 . -13) (92 . 106) 82) nil (25334 4051 341678 821000) 0 nil])
+([nil nil ((#("tqdm==4.51.0
+" 0 13 (fontified nil)) . 119) (96 . 119) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 83) (undo-tree-id46 . -13) (106 . 119) 96) nil (25334 4051 341673 163000) 0 nil])
+([nil nil ((#("psycopg2-binary==2.8.5
+" 0 23 (fontified nil)) . 119) (undo-tree-id44 . -13) (undo-tree-id45 . -23) (106 . 119) (#("tqdm==4.51.0
+" 0 13 (fontified t)) . 83) (96 . 119) 109) nil (25334 4051 341669 262000) 0 nil])
+([nil nil ((#("psycopg2-binary==2.8.5
+" 0 23 (fontified nil)) . 106) (undo-tree-id40 . -23) (undo-tree-id41 . -23) (undo-tree-id42 . -13) (undo-tree-id43 . -23) (92 . 106) (#("Faker==4.14.2
+" 0 14 (fontified t)) . 69) (83 . 106) 96) nil (25334 4051 341664 415000) 0 nil])
+([nil nil ((#("psycopg2-binary==2.8.5
+" 0 23 (fontified nil)) . 92) (undo-tree-id37 . -23) (undo-tree-id38 . -13) (undo-tree-id39 . -23) (78 . 92) (#("pandas==1.0.3
+" 0 14 (fontified t)) . 55) (69 . 92) 82) nil (25334 4051 341657 396000) 0 nil])
+([nil nil ((#("psycopg2-binary==2.8.5
+" 0 23 (fontified nil)) . 78) (undo-tree-id34 . -23) (undo-tree-id35 . -13) (undo-tree-id36 . -23) (49 . 78) (#("clickhouse-sqlalchemy==0.1.7
+" 0 29 (fontified t)) . 26) (55 . 78) 68) nil (25334 4051 341651 330000) 0 nil])
+([nil nil ((#("psycopg2-binary==2.8.5
+" 0 23 (fontified nil)) . 49) (undo-tree-id29 . -23) (undo-tree-id30 . -13) (undo-tree-id31 . -23) (undo-tree-id32 . -23) (undo-tree-id33 . -23) (30 . 49) (#("SQLAlchemy==1.3.24
+" 0 19 (fontified t)) . 7) (26 . 49) 39) nil (25334 4051 341644 974000) 0 nil])
+([nil nil ((#("SQLAlchemy==1.3.24
+" 0 19 (fontified nil)) . 49) (undo-tree-id25 . -19) (undo-tree-id26 . -19) (undo-tree-id27 . -19) (26 . 49) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 7) (undo-tree-id28 . -13) (30 . 49) 20) nil (25334 4051 341635 825000) 0 nil])
+([nil nil ((#("clickhouse-sqlalchemy==0.1.7
+" 0 29 (fontified nil)) . 78) (undo-tree-id23 . -29) (55 . 78) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 26) (undo-tree-id24 . -13) (49 . 78) 39) nil (25334 4051 341628 675000) 0 nil])
+([nil nil ((#("pandas==1.0.3
+" 0 14 (fontified nil)) . 92) (undo-tree-id21 . -14) (69 . 92) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 55) (undo-tree-id22 . -13) (78 . 92) 68) nil (25334 4051 341623 565000) 0 nil])
+([nil nil ((#("Faker==4.14.2
+" 0 14 (fontified nil)) . 106) (undo-tree-id18 . -14) (undo-tree-id19 . -14) (83 . 106) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 69) (undo-tree-id20 . -13) (92 . 106) 82) nil (25334 4051 341618 297000) 0 nil])
+([nil nil ((#("tqdm==4.51.0
+" 0 13 (fontified nil)) . 119) (96 . 119) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 83) (undo-tree-id17 . -13) (106 . 119) 96) nil (25334 4051 341612 316000) 0 nil])
+([nil nil ((#("requests==2.25.0
+" 0 17 (fontified nil)) . 136) (113 . 136) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 96) (undo-tree-id16 . -13) (119 . 136) 109) nil (25334 4051 341607 876000) 0 nil])
+([nil nil ((#("passlib==1.7.4
+" 0 15 (fontified nil)) . 151) (undo-tree-id12 . 15) (undo-tree-id13 . -7) (undo-tree-id14 . -14) (128 . 151) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 113) (undo-tree-id15 . -13) (136 . 151) 126) nil (25334 4051 341597 692000) 0 nil])
+([nil nil ((#("phonenumbers==8.12.21
+" 0 22 (fontified nil)) . 173) (150 . 173) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 128) (undo-tree-id11 . -13) (151 . 173) 141) nil (25334 4051 341589 335000) 0 nil])
+([nil nil ((#("faker-e164==0.1.0
+" 0 18 (fontified nil)) . 191) (168 . 191) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 150) (undo-tree-id10 . -13) (173 . 191) 163) nil (25334 4051 341584 294000) 0 nil])
+([nil nil ((#("geopy==2.1.0
+" 0 13 (fontified nil)) . 204) (undo-tree-id0 . -13) (undo-tree-id1 . -12) (undo-tree-id2 . -12) (undo-tree-id3 . -13) (undo-tree-id4 . -13) (undo-tree-id5 . 13) (undo-tree-id6 . -5) (undo-tree-id7 . -13) (undo-tree-id8 . -13) (181 . 204) (#("psycopg2-binary==2.8.5
+" 0 23 (fontified t)) . 168) (undo-tree-id9 . -13) (191 . 204) 181) nil (25334 4051 341573 43000) 0 nil])
+([nil nil ((#("==2.8.5" 0 7 (fontified t)) . 196) (undo-tree-id0 . -7) (undo-tree-id1 . -7) (undo-tree-id2 . -7) (undo-tree-id3 . -7) (t 25334 4051 345201 798000)) nil (25338 9393 210918 767000) 0 nil])
+([nil current ((#("==1.0.3" 0 7 (fontified t)) . 61) (undo-tree-id4 . -7) (undo-tree-id5 . -7) (undo-tree-id6 . -7) (t 25338 9393 210796 235000)) nil (25338 9407 770383 90000) 0 nil])
+nil

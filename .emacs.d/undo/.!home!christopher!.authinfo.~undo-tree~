@@ -1,0 +1,13 @@
+(undo-tree-save-format-version . 1)
+"80e89524c37bd754d8afc2ba3f84fd7d12acf3a7"
+[nil nil nil nil (25901 11929 43396 796000) 0 nil]
+([nil nil ((1 . 81) (t . -1)) nil (25901 11929 43395 111000) 0 nil])
+([nil nil (("YOUR_CHATGPT_EMAIL_HERE" . 31) (undo-tree-id5 . -23) (undo-tree-id6 . -2) (undo-tree-id7 . -23) (undo-tree-id8 . -1) (undo-tree-id9 . -23) (undo-tree-id10 . -23) (undo-tree-id11 . -23)) nil (25901 11929 43393 239000) 0 nil])
+([nil nil ((31 . 52)) nil (25901 11929 43384 396000) 0 nil])
+([nil nil (("YOUR_API_KEY_HERE" . 62) (undo-tree-id0 . -17) (undo-tree-id1 . -17) (undo-tree-id2 . -17) (undo-tree-id3 . -17) (undo-tree-id4 . -17)) nil (25901 11929 43381 611000) 0 nil])
+([nil nil ((62 . 113)) nil (25901 11929 43356 479000) 0 nil])
+([nil nil (("chat.openai.com" . 9) (undo-tree-id12 . -15) (undo-tree-id13 . -15) (undo-tree-id14 . -15) (undo-tree-id15 . -15) (undo-tree-id16 . -15) (t 25901 11929 46559 276000)) nil (25901 15117 743853 471000) 0 nil])
+([nil nil ((9 . 23)) nil (25901 15117 743801 307000) 0 nil])
+([nil nil (("l" . -24) (undo-tree-id25 . -1) ("o" . -25) (undo-tree-id26 . -1) ("g" . -26) (undo-tree-id27 . -1) ("i" . -27) (undo-tree-id28 . -1) ("n" . -28) (undo-tree-id29 . -1) 29 (t 25901 15117 749462 526000)) nil (25901 50572 570991 446000) 0 nil])
+([nil current ((" chrismulvad@gmail.com " . 24) (undo-tree-id17 . -23) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) (undo-tree-id22 . -1) (undo-tree-id23 . -22) (undo-tree-id24 . -23)) nil (25901 50572 570978 298000) 0 nil])
+nil

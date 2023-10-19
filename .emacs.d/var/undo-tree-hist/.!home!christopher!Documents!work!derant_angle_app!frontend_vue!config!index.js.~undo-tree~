@@ -1,0 +1,14 @@
+(undo-tree-save-format-version . 1)
+"0cd7481a1fbcbbbbe18d4305142d2c4796d5b7e2"
+[nil current nil nil (25140 37215 744000 937000) 0 nil]
+([nil nil ((166 . 171) (t 24978 23630 0 0)) ((#("
+    " 0 1 (part-side javascript) 1 5 (part-side javascript)) . 166) (undo-tree-id27 . -5) (undo-tree-id28 . -5) (undo-tree-id29 . -1)) (25140 37215 327257 789000) 0 nil])
+([nil nil ((171 . 181)) ((#("fs: empty " 0 2 (part-side javascript face web-mode-variable-name-face) 2 3 (part-side javascript) 3 4 (part-side javascript) 4 5 (part-side javascript) 5 6 (part-side javascript) 6 7 (part-side javascript) 7 8 (part-side javascript) 8 9 (part-side javascript) 9 10 (part-side javascript)) . 171) (undo-tree-id24 . -4) (undo-tree-id25 . -10) (undo-tree-id26 . -9)) (25140 37215 67815 719000) 0 nil])
+([nil nil ((#("e" 0 1 (part-side javascript)) . -175) (undo-tree-id10 . -1) (#("m" 0 1 (part-side javascript)) . -176) (undo-tree-id11 . -1) (#("p" 0 1 (part-side javascript)) . -177) (undo-tree-id12 . -1) (#("t" 0 1 (part-side javascript)) . -178) (undo-tree-id13 . -1) (#("y" 0 1 (part-side javascript)) . -179) (undo-tree-id14 . -1) (#(" " 0 1 (part-side javascript)) . -180) (undo-tree-id15 . -1) 181) ((175 . 181)) (25140 37214 708078 898000) 0 nil])
+([nil nil ((175 . 180)) ((#("None " 0 1 (part-side javascript) 1 2 (part-side javascript) 2 3 (part-side javascript) 3 4 (part-side javascript) 4 5 (part-side javascript)) . 175) (undo-tree-id21 . -3) (undo-tree-id22 . -5) (undo-tree-id23 . -4)) (25140 37214 494437 731000) 0 nil])
+([nil nil ((#("N" 0 1 (part-side javascript)) . -175) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (#("o" 0 1 (part-side javascript)) . -176) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (#("n" 0 1 (part-side javascript)) . -177) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (#("e" 0 1 (part-side javascript)) . -178) (undo-tree-id8 . -1) (#(" " 0 1 (part-side javascript)) . -179) (undo-tree-id9 . -1) 180) ((175 . 180)) (25140 37214 224748 827000) 0 nil])
+([nil nil ((175 . 180)) ((#("null " 0 4 (part-side javascript face web-mode-constant-face) 4 5 (part-side javascript)) . 175) (undo-tree-id18 . -3) (undo-tree-id19 . -5) (undo-tree-id20 . -4)) (25140 37213 957345 715000) 0 nil])
+([nil nil ((#(" " 0 1 (part-side javascript)) . -179) (undo-tree-id1 . -1) 180) ((179 . 180)) (25140 37213 658874 841000) 0 nil])
+([nil nil ((179 . 181)) ((#(", " 0 1 (part-side javascript) 1 2 (part-side javascript)) . 179) (undo-tree-id16 . -2) (undo-tree-id17 . -1)) (25140 37213 309343 444000) 0 nil])
+([nil nil ((#(" " 0 1 (part-side javascript)) . -180) (undo-tree-id0 . -1) 181) ((180 . 181) (t 25140 37205 397348 914000)) (25140 37205 396415 578000) 0 nil])
+nil

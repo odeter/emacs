@@ -1,0 +1,24 @@
+(undo-tree-save-format-version . 1)
+"ecc4df52a0d51c73bb8232e4a1596d809fada096"
+[nil nil nil nil (25522 37760 651094 963000) 0 nil]
+([nil nil ((677 . 754) (200 . 307) (200 . 570) (t 25522 37760 549789 491000)) nil (25522 37760 651087 957000) 0 nil])
+([nil current ((685 . 754) (#("
+;;;### (autoloads nil nil (\"git-commit-pkg.el\") (0 0 0 0))
+
+;;;***
+" 0 69 (fontified nil)) . -685) (677 . 685) (200 . 307) (200 . 570) (#("
+;;;### (autoloads nil \"git-commit\" \"git-commit.el\" (0 0 0 0))
+;;; Generated autoloads from git-commit.el
+(put 'git-commit-major-mode 'safe-local-variable
+    (lambda (val)
+      (memq val '(text-mode
+                  markdown-mode
+                  org-mode
+                  fundamental-mode
+                  git-commit-elisp-text-mode))))
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"git-commit\" '(\"git-commit-\" \"global-git-commit-mode\")))
+
+;;;***
+" 0 485 (fontified nil)) . -200) (t 25522 37760 581791 258000)) nil (25522 37769 228621 236000) 0 nil])
+nil

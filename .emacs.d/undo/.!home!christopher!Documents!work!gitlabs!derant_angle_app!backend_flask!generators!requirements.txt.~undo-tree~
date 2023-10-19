@@ -1,0 +1,29 @@
+(undo-tree-save-format-version . 1)
+"6052a311d778f5d8d1c25b3935fbd287b02ac3b8"
+[nil nil nil nil (25839 18102 48145 484000) 0 nil]
+([nil nil ((#("numpy" 0 5 (fontified t)) . 1) (undo-tree-id12 . -5) (undo-tree-id13 . -5) (undo-tree-id14 . 5) (undo-tree-id15 . -5) (undo-tree-id16 . -5) (undo-tree-id17 . -5) (t 25430 22846 547324 999000)) nil (25839 18102 48143 186000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 13 . 14) (nil fontified nil 1 . 14) (1 . 14)) nil (25839 18102 48135 676000) 0 nil])
+([nil nil ((#("psycopg2-binary==2.8.5" 0 22 (fontified t)) . 15) (undo-tree-id6 . -22) (undo-tree-id7 . -22) (undo-tree-id8 . 22) (undo-tree-id9 . -7) (undo-tree-id10 . -22) (undo-tree-id11 . -22)) nil (25839 18102 48133 615000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 36 . 37) (nil fontified nil 15 . 37) (15 . 37)) nil (25839 18102 48126 229000) 0 nil])
+([nil nil ((#("SQLAlchemy==1.3.24" 0 18 (fontified t)) . 38) (undo-tree-id0 . -18) (undo-tree-id1 . -18) (undo-tree-id2 . 18) (undo-tree-id3 . -10) (undo-tree-id4 . -18) (undo-tree-id5 . -18)) nil (25839 18102 48253 670000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 55 . 56) (nil fontified nil 38 . 56) (38 . 56)) nil (25839 18338 476249 486000) 0 nil] [nil nil ((nil rear-nonsticky nil 59 . 60) (nil fontified nil 38 . 60) (38 . 60)) ((#("psycopg2-binary==2.9.5" 0 21 (fontified nil) 21 22 (fontified nil rear-nonsticky nil)) . 38) (undo-tree-id18 . -22) (nil rear-nonsticky t 59 . 60)) (25839 18102 48095 317000) 0 nil])
+([nil nil ((#("clickhouse-sqlalchemy==0.1.7" 0 28 (fontified t)) . 57) (undo-tree-id48 . -28) (undo-tree-id49 . -28)) nil (25839 18338 476247 789000) 0 nil])
+nil
+([nil nil ((nil rear-nonsticky nil 84 . 85) (nil fontified nil 57 . 85) (57 . 85)) nil (25839 18338 476244 510000) 0 nil])
+([nil nil ((#("pandas" 0 6 (fontified t)) . 86) (undo-tree-id46 . -6) (undo-tree-id47 . -6)) nil (25839 18338 476242 486000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 98 . 99) (nil fontified nil 86 . 99) (86 . 99)) nil (25839 18338 476239 350000) 0 nil])
+([nil nil ((#("Faker==4.14.2" 0 13 (fontified t)) . 100) (undo-tree-id41 . -13) (undo-tree-id42 . -13) (undo-tree-id43 . -13) (undo-tree-id44 . -13) (undo-tree-id45 . -13)) nil (25839 18338 476237 334000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 112 . 113) (nil fontified nil 100 . 113) (100 . 113)) nil (25839 18338 476230 873000) 0 nil])
+([nil nil ((113 . 114)) nil (25839 18338 476229 189000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 130 . 131) (nil fontified nil 114 . 131) (114 . 131)) nil (25839 18338 476228 29000) 0 nil])
+([nil nil ((#("tqdm==4.51.0" 0 12 (fontified t)) . 132) (undo-tree-id37 . -12) (undo-tree-id38 . -12) (undo-tree-id39 . -12) (undo-tree-id40 . -12)) nil (25839 18338 476225 962000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 143 . 144) (nil fontified nil 132 . 144) (132 . 144)) nil (25839 18338 476178 714000) 0 nil])
+([nil nil ((#("requests==2.25.0" 0 16 (fontified t)) . 145) (undo-tree-id34 . -16) (undo-tree-id35 . -16) (undo-tree-id36 . -16)) nil (25839 18338 476176 654000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 160 . 161) (nil fontified nil 145 . 161) (145 . 161)) nil (25839 18338 476172 481000) 0 nil])
+([nil nil ((#("phonenumbers==8.12.21" 0 21 (fontified t)) . 177) (undo-tree-id29 . -21) (undo-tree-id30 . -21) (undo-tree-id31 . 21) (undo-tree-id32 . -12) (undo-tree-id33 . -21)) nil (25839 18338 476170 408000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 196 . 197) (nil fontified nil 177 . 197) (177 . 197)) nil (25839 18338 476163 976000) 0 nil])
+([nil nil ((#("
+faker-e164==0.1.0" 0 1 (fontified t) 1 18 (fontified t)) . 197) (undo-tree-id25 . -18) (undo-tree-id26 . -18) (undo-tree-id27 . -1) (undo-tree-id28 . -18)) nil (25839 18338 476161 936000) 0 nil])
+([nil nil ((#("geopy==2.1.0" 0 12 (fontified t)) . 198) (undo-tree-id19 . -12) (undo-tree-id20 . -12) (undo-tree-id21 . 12) (undo-tree-id22 . -5) (undo-tree-id23 . -12) (undo-tree-id24 . -12)) nil (25839 18338 476155 285000) 0 nil])
+([nil current ((nil rear-nonsticky nil 209 . 210) (nil fontified nil 198 . 210) (198 . 210)) nil (25839 18338 476133 665000) 0 nil])
+nil

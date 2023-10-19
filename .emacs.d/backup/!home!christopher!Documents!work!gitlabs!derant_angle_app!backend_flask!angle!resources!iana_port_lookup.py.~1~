@@ -1,0 +1,147 @@
+from flask_jwt_extended import get_jwt_identity
+from flask_restful import Resource, reqparse
+from angle.models import UserModel
+from flask import current_app as app
+from angle import role_required
+from ipwhois import IPWhois
+from ipwhois.exceptions import IPDefinedError
+import ast
+
+def extract_ip_info(query_result, query_ip):
+    info = {}
+    try:
+        # Ip looked up
+        info["Query"] = query_result["query"]
+        info[" "] = "newline hack"
+
+        # Nets
+        for i, net in enumerate(query_result["nets"]):
+            suffix = "" if i == 0 else " (" + str(i) + ")"
+            info["Net Range"+suffix] = net["range"]
+            info["CIDR"+suffix] = net["cidr"]
+            info["Net Name"+suffix] = net["name"]
+            info["Net Handle"+suffix] = net["handle"]
+            info["Organization"+suffix] = net["description"]
+            info["Country"+suffix] = net["country"]
+            info["State"+suffix] = net["state"]
+            info["City"+suffix] = net["city"]
+            info["Address"+suffix] = net["address"]
+            info["Postal Code"+suffix] = net["postal_code"]
+            info["Created"+suffix] = net["created"]
+            info["Updated"+suffix] = net["updated"]
+            info[" "*(i+2)] = "newline hack"
+
+        # Asn
+        info["Asn Registry"] = query_result["asn_registry"]
+        info["Asn"] = query_result["asn"]
+        info["Asn Description"] = query_result["asn_description"]
+        info["Asn Country Code"] = query_result["asn_country_code"]
+        info["Asn CIDR"] = query_result["asn_cidr"]
+        info["Asn Date"] = query_result["asn_date"]
+
+    except TypeError:
+        # If expected values are not in dictionary, return result string
+        info["Query"] = query_ip
+        info[" "] = "newline hack"
+        info["Answer"] = query_result
+    except KeyError:
+        # Unexpected error - return unformatted result
+        info = {}
+        info["Query"] = query_ip
+        info[" "] = "newline hack"
+        info["Error"] = "Couldn't format result"
+        info["Answer"] = query_result
+
+    return info
+
+def whois_lookup(row, userID):
+    """
+    Function should not be able to fail, and always returns result dict with
+    either whois info or error message
+    """
+
+    no_ips_found = True
+
+    # Search row for valid src ip address column
+    src_ip_col_names = ["src_ip", "id_orig_h"]
+    for col_name in src_ip_col_names:
+        try:
+            src_ip = row[col_name]
+            no_ips_found = False
+            break # Use first found src IP in case there are multiple
+        except KeyError:
+            # Keep looking for for next col name in row
+            continue
+
+    # Search row for valid dest ip address column
+    dest_ip_col_names = ["dest_ip", "id_resp_h"]
+    for col_name in dest_ip_col_names:
+        try:
+            dest_ip = row[col_name]
+            no_ips_found = False
+            break # Use first found src IP in case there are multiple
+        except KeyError:
+            # Keep looking for for next col name in row
+            continue
+
+    if no_ips_found:
+        app.logger.error('user with ID: {0} tried getting whois, but could not find IP addresses for log type'.format(userID))
+        return {'Error': 'Something went wrong when locating IP addresses in row', 'Status Code': 500}
+
+    # Lookup Source IP
+    try:
+        src_ip_res = IPWhois(src_ip).lookup_whois()
+    except IPDefinedError:
+        src_ip_res = "IPv4 address {} is defined as Private-Use Networks via RFC 1918".format(src_ip)
+    except UnboundLocalError:
+        src_ip_res = "Could not locate source IP in row"
+        src_ip = "No IP found"
+    except:
+        src_ip_res = "Error in whois lookup"
+
+    # Lookup Destination IP
+    try:
+        dest_ip_res = IPWhois(dest_ip).lookup_whois()
+    except IPDefinedError:
+        dest_ip_res = "IPv4 address {} is defined as Private-Use Networks via RFC 1918".format(dest_ip)
+    except UnboundLocalError:
+        dest_ip_res = "Could not locate destination IP in row"
+        dest_ip = "No IP found"
+    except:
+        dest_ip_res = "Error in whois lookup"
+
+    # Extract wanted info from src and dest IP result
+    source_IP = extract_ip_info(src_ip_res, src_ip)
+    destination_IP = extract_ip_info(dest_ip_res, dest_ip)
+
+    return {"Source IP": source_IP, "Destination IP": destination_IP}
+
+
+class WhoisLookup(Resource):
+    @role_required(["admin", "mssp_it_sec", "mssp_admin", "it_sec",  "it_man", "op_man", "sys_admin"])
+    def post(self):
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('row', help = 'This field cannot be blank', required = True)
+        data = parser.parse_args()
+
+        # Format string to be read as dictionary
+        try:
+            row = ast.literal_eval(data["row"])
+        except:
+            app.logger.error('user with ID: {0} tried getting whois data, but parsing of data row failed'.format(userID))
+            return {'message': 'User not set'}, 500
+
+        if not current_user:
+            app.logger.error('user with ID: {0} tried getting whois data, without permissions'.format(userID))
+            return {'message': 'User not set'}, 403
+
+        res = whois_lookup(row, userID)
+
+        # If whois lookup returned dictionary with error in it, throw this error
+        if "Error" in res:
+            return {'message': res['Error']}, res['Status Code']
+
+        return {'message': 'whois info found', 'whois': res}, 200

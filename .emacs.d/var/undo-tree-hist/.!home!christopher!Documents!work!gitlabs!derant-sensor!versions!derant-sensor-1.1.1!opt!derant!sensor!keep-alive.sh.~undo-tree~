@@ -1,0 +1,5 @@
+(undo-tree-save-format-version . 1)
+"1652d9b5759d89d436bbcfd0201a9165deb348d4"
+[nil nil nil nil (25654 50881 449550 993000) 0 nil]
+([nil current ((#("derant/sensor/" 0 14 (fontified t)) . 95) (undo-tree-id0 . -14) (undo-tree-id1 . -14) (undo-tree-id2 . -14) (undo-tree-id3 . -14) (t 25654 38704 502934 767000)) nil (25654 50881 449546 195000) 0 nil])
+nil

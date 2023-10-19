@@ -1,0 +1,33 @@
+(undo-tree-save-format-version . 1)
+"88c5a5431f1b048f956d6b72d884afcc820b4a00"
+[nil nil nil nil (25655 62482 623352 888000) 0 nil]
+([nil nil ((#("#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# see ENVIRONMENT in dpkg-buildflags(1)
+# package maintainers to append CFLAGS
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+# package maintainers to append LDFLAGS
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+" 0 1 (fontified t face font-lock-comment-delimiter-face) 1 19 (fontified t face font-lock-comment-face) 19 21 (fontified t face font-lock-comment-delimiter-face) 21 60 (fontified t face font-lock-comment-face) 60 62 (fontified t face font-lock-comment-delimiter-face) 62 124 (fontified t face font-lock-comment-face) 124 125 (fontified t face font-lock-comment-delimiter-face) 125 147 (fontified t face font-lock-comment-face) 147 149 (fontified t) 149 151 (fontified t face font-lock-comment-delimiter-face) 151 191 (fontified t face font-lock-comment-face) 191 192 (fontified t face font-lock-comment-delimiter-face) 192 240 (fontified t face font-lock-comment-face) 240 241 (fontified t) 241 243 (fontified t face font-lock-comment-delimiter-face) 243 281 (fontified t face font-lock-comment-face) 281 283 (fontified t face font-lock-comment-delimiter-face) 283 320 (fontified t face font-lock-comment-face) 320 321 (fontified t face font-lock-comment-delimiter-face) 321 371 (fontified t face font-lock-comment-face) 371 373 (fontified t face font-lock-comment-delimiter-face) 373 411 (fontified t face font-lock-comment-face) 411 412 (fontified t face font-lock-comment-delimiter-face) 412 462 (fontified t face font-lock-comment-face) 462 463 (fontified t)) . 1) (undo-tree-id39 . -19) (undo-tree-id40 . -463) (undo-tree-id41 . -463) (undo-tree-id42 . -463) (undo-tree-id43 . -463) (t 25645 10885 461391 0)) nil (25655 62482 623350 771000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 1) (undo-tree-id38 . -1)) nil (25655 62482 623343 902000) 0 nil])
+([nil nil ((#("
+
+# dh_make generated override targets
+# This is example for Cmake (See https://bugs.debian.org/641051 )
+#override_dh_auto_configure:
+#	dh_auto_configure -- \\
+#	-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH)" 0 2 (fontified t) 2 4 (fontified t face font-lock-comment-delimiter-face) 4 26 (fontified t face font-lock-comment-face) 26 39 (fontified t face font-lock-comment-face) 39 41 (fontified t face font-lock-comment-delimiter-face) 41 105 (fontified t face font-lock-comment-face) 105 106 (fontified t face font-lock-comment-delimiter-face) 106 134 (fontified t face font-lock-comment-face) 134 135 (fontified t face font-lock-comment-delimiter-face) 135 136 (fontified t face whitespace-tab) 136 157 (fontified t face font-lock-comment-face) 157 159 (syntax-table (1) fontified t face font-lock-comment-face) 159 160 (fontified t face font-lock-comment-face) 160 161 (fontified t face whitespace-tab) 161 184 (fontified t face font-lock-comment-face) 184 202 (fontified t face (font-lock-variable-name-face font-lock-comment-face)) 202 203 (fontified t face font-lock-comment-face)) . 11) (undo-tree-id34 . -1) (undo-tree-id35 . -203) (undo-tree-id36 . -203) (undo-tree-id37 . -203)) nil (25655 62482 623340 852000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -10) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (undo-tree-id17 . -1) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) (undo-tree-id22 . -1) (undo-tree-id23 . -1) (undo-tree-id24 . -1) (undo-tree-id25 . -1) (undo-tree-id26 . -1) (undo-tree-id27 . -1) (undo-tree-id28 . -1) (undo-tree-id29 . -1) (undo-tree-id30 . -1) (undo-tree-id31 . -1) (undo-tree-id32 . -1) (undo-tree-id33 . -1) 11) nil (25655 62482 623329 200000) 0 nil])
+([nil nil ((1 . 2) (t 25655 62482 627495 724000)) nil (25655 63271 48253 345000) 0 nil])
+([nil current ((nil rear-nonsticky nil 18 . 19) (nil fontified nil 1 . 19) (1 . 19)) nil (25655 63271 48244 573000) 0 nil])
+nil

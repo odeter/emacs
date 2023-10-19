@@ -1,0 +1,113 @@
+(undo-tree-save-format-version . 1)
+"540b48298c5cb830bcc9f7f0146ae2fe89158a76"
+[nil nil nil nil (25303 64836 365999 821000) 0 nil]
+([nil nil (("testdata/
+test_data/test_data/
+
+# private_key
+backup/private_key_gpg.key
+
+# test scripts
+getComp.py
+
+# production build
+production_build/
+
+# fix_partition
+dockers/fix_partition/venv/
+
+# diagram
+database_diagram/venv/
+
+# fix_default
+dockers/fix_default/venv/
+dockers/fix_default/logs/
+
+# fix_inet
+dockers/fix_inet/venv/
+dockers/fix_inet/logs/
+
+# migrate clickhouse
+dockers/fix_clickhouse_migrate/csv_dumps/
+dockers/fix_clickhouse_migrate/package_done/
+dockers/fix_clickhouse_migrate/package_probs/
+dockers/fix_clickhouse_migrate/dto.csv
+dockers/fix_clickhouse_migrate/venv/
+
+# venv
+cron_jobs/backup/venv/
+cron_jobs/alarm_auto/venv/
+cron_jobs/auto_report/venv/
+cron_jobs/pg_maintenance/venv/
+cron_jobs/auto_iplookup/venv/
+cron_jobs/network_conn/venv/
+cron_jobs/update_geo_ip/venv/
+
+# logs
+cron_jobs/auto_iplookup/logs/
+cron_jobs/data_insert/logs/
+cron_jobs/dash_update/logs/
+cron_jobs/cleanup_script/logs/
+cron_jobs/auto_report/logs/
+cron_jobs/alarm_auto/logs/
+cron_jobs/pg_maintenance/logs/
+cron_jobs/backup/logs/
+cron_jobs/network_conn/logs/
+cron_jobs/update_geo_ip/logs/
+cron_jobs/geoip_db_refresh/logs/
+
+# data_insert
+cron_jobs/data_insert/package_probs/
+cron_jobs/data_insert/package_done/
+
+# test data
+test_data/testdata
+test_data/pcap
+
+# frontend ignores
+frontend_vue/node_modules/
+frontend_vue/dist/
+frontend_vue/package-lock.json*
+frontend_vue/package.json*
+frontend_vue/npm-debug.log*
+
+# builds ignore, gitlabrunner
+builds/
+
+# backend ignores
+backend_flask/venv/
+backend_flask/bro-docker/
+backend_flask/migrations/
+backend_flask/angle/app.db
+backend_flask/uploads/
+backend_flask/.env
+
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+**/__pycache__
+
+# gen_data
+backend_flask/generators/venv/
+
+cron_jobs/cleanup_script/venv/
+cron_jobs/dash_update/venv/
+
+# Modules
+node_modules/
+
+# sensor
+sensor/gpg/
+sensor/versions/
+
+backend_flask/tests/venv/" . 1) (undo-tree-id1 . -10) (undo-tree-id2 . -1877) (undo-tree-id3 . -1851) (undo-tree-id4 . -1851) (undo-tree-id5 . -1877) (undo-tree-id6 . -1877) (undo-tree-id7 . -1851) (undo-tree-id8 . -1877) (t 25145 56570 728314 0)) nil (25303 64836 365997 586000) 0 nil])
+([nil nil ((1 . 6)) nil (25303 64836 365985 340000) 0 nil])
+([nil nil ((1 . 2)) nil (25303 64836 365984 13000) 0 nil])
+([nil nil ((1 . 8)) nil (25303 64836 365982 19000) 0 nil])
+([nil current ((" " . -7) (undo-tree-id0 . -1) 8) nil (25303 64836 365976 802000) 0 nil])
+nil

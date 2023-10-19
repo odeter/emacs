@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"3c2d379fd8c24128afeb26b8116904afe5a05280"
+[nil nil nil nil (25331 47145 362481 297000) 0 nil]
+([nil nil ((2243 . 2244) (t 25232 37438 635103 862000)) nil (25331 47145 362478 998000) 0 nil])
+([nil current ((nil rear-nonsticky nil 2255 . 2256) (nil tag-attr t 2244 . 2256) (nil tag-name "v-data-table" 2244 . 2256) (nil tag-type start 2244 . 2256) (nil font-lock-face web-mode-html-attr-value-face 2244 . 2256) (2244 . 2256)) nil (25331 47145 362471 315000) 0 nil])
+nil

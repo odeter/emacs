@@ -1,0 +1,24 @@
+(undo-tree-save-format-version . 1)
+"f233bb5178d4f29bd626eb8bcbcaad3d1d311c04"
+[nil nil nil nil (25745 28015 863822 174000) 0 nil]
+([nil nil ((1478 . 1480) (t 25744 8784 584270 170000)) nil (25745 28015 863820 589000) 0 nil])
+([nil nil ((1479 . 1499)) nil (25745 28015 863819 316000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-heading (1479 1499 nil nil nil nil nil nil 1479 1483 1483 1498 1498 1499 #<buffer README.md>) markdown-heading-3-atx (1479 1499 nil nil nil nil nil nil 1479 1483 1483 1498 1498 1499 #<buffer README.md>) face markdown-header-delimiter-face)) . -1498) (undo-tree-id17 . -1) 1499) nil (25745 28015 863818 204000) 0 nil])
+([nil nil ((1498 . 1500)) nil (25745 28015 863815 949000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 1477) (undo-tree-id15 . -1) (undo-tree-id16 . -1)) nil (25745 28015 863814 735000) 0 nil])
+([nil nil ((1499 . 1507)) nil (25745 28015 863811 517000) 0 nil])
+([nil nil ((#("o" 0 1 (fontified t)) . -1505) (undo-tree-id13 . -1) (#("c" 0 1 (fontified defer)) . -1506) (undo-tree-id14 . -1) 1507) nil (25745 28015 863810 189000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -1504) (undo-tree-id12 . -1) 1505) nil (25745 28015 863806 614000) 0 nil])
+([nil nil ((1504 . 1516)) nil (25745 28015 863804 270000) 0 nil])
+([nil nil ((#("s" 0 1 (fontified defer)) . -1515) (undo-tree-id11 . -1) 1516) nil (25745 28015 863803 65000) 0 nil])
+([nil nil ((1515 . 1530)) nil (25745 28015 863800 803000) 0 nil])
+([nil nil ((#("t" 0 1 (fontified t)) . -1526) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (#("h" 0 1 (fontified t)) . -1527) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (#("e" 0 1 (fontified t)) . -1528) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (#(" " 0 1 (fontified t)) . -1529) (undo-tree-id9 . -1) (undo-tree-id10 . -1) 1530) nil (25745 28015 863798 834000) 0 nil])
+([nil nil ((1526 . 1528)) nil (25745 28015 863788 300000) 0 nil])
+([nil nil ((1527 . 1540)) nil (25745 28015 863787 311000) 0 nil])
+([nil nil ((1540 . 1556)) nil (25745 28015 863786 318000) 0 nil])
+([nil nil ((#("'" 0 1 (fontified t)) . -1526) (undo-tree-id1 . -1) (#("_" 0 1 (fontified t invisible markdown-markup face (markdown-markup-face))) . -1527) (undo-tree-id2 . -1) 1528) nil (25745 28015 863784 702000) 0 nil])
+([nil nil ((1526 . 1527)) nil (25745 28015 863779 940000) 0 nil])
+([nil nil ((#("'" 0 1 (fontified t)) . -1555) (undo-tree-id0 . -1) 1556) nil (25745 28015 863777 374000) 0 nil])
+([nil current ((1555 . 1556)) nil (25745 28015 863750 60000) 0 nil])
+nil

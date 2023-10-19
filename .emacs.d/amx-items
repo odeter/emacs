@@ -1,0 +1,168 @@
+
+;; ----- amx-history -----
+(
+ ido-mode
+ amx-mode
+ amx-initialize
+ gptel-send
+ gptel-menu
+ gptel
+ find-file
+ customize-group
+ comment-region
+ replace-string
+ uncomment-region
+ package-install
+ linum-mode
+ python-indent-shift-left
+ python-indent-shift-right
+ highlight-indentation-mode
+ package-refresh-contents
+ web-mode
+ profiler-report
+ flycheck-mode
+ package-delete
+ highlight-indent-guides-mode
+ profiler-start
+ prettier-js-mode
+ auto-package-update-now
+ package-list-packages
+ grep
+ nlinum-mode
+ centaur-tabs-mode
+ comment-box
+ web-mode-disable
+ grep-find
+ company-mode
+ aggressive-indent-mode
+ jinja2-mode
+ hl-line-mode
+ dockerfile-mode
+ package-menu-mode
+ nlinum-relative-off
+ org-mode
+ customize
+ lisp-mode
+ minions-mode
+ emacs-version
+ fountain-mode
+ font-lock-mode
+ common-lisp-mode
+ package-reinstall
+ display-line-numbers-mode
+ all-the-icons-install-fonts
+)
+
+;; ----- amx-data -----
+(
+ (find-tag . 1)
+ (find-file . 7378)
+ (package-install . 74)
+ (comment-box . 6)
+ (package-delete . 11)
+ (uncomment-region . 287)
+ (highlight-indentation-mode . 27)
+ (highlight-indent-guides-mode . 11)
+ (fountain-mode . 3)
+ (jinja2-mode . 4)
+ (web-mode-set-engine . 2)
+ (package-refresh-contents . 23)
+ (comment-region . 1140)
+ (package-list-packages . 8)
+ (prettier-js-mode . 9)
+ (prettier-js . 2)
+ (web-mode . 22)
+ (replace-string . 169)
+ (eww-mode . 1)
+ (eww-open-file . 1)
+ (python-mode . 2)
+ (ftp . 1)
+ (comment-set-column . 1)
+ (profiler-start . 9)
+ (profiler-report . 14)
+ (linum-mode . 37)
+ (font-lock-mode . 3)
+ (package-menu-mode . 4)
+ (emacs-version . 3)
+ (nlinum-mode . 7)
+ (nlinum-relative-off . 4)
+ (hl-line-mode . 4)
+ (vlf . 1)
+ (flycheck-mode . 12)
+ (all-the-icons-install-fonts . 3)
+ (minions-mode . 3)
+ (column-number-mode . 1)
+ (spaceline-install . 1)
+ (moody-replace-vc-mode . 2)
+ (flycheck-verify-setup . 1)
+ (untabify . 1)
+ (company-elisp . 1)
+ (centaur-tabs-mode . 7)
+ (tool-bar-mode . 1)
+ (compile . 1)
+ (fountain-export-buffer-to-fountain . 1)
+ (fountain-export-buffer . 1)
+ (fountain-mode-menu . 1)
+ (fountain-export-default . 1)
+ (web-mode-disable . 6)
+ (Info-index . 1)
+ (flx-ido-mode . 1)
+ (vue-mode . 1)
+ (aggressive-indent-mode . 5)
+ (web-mode-buffer-indent . 1)
+ (indent-sexp . 1)
+ (electric-indent-mode . 1)
+ (company-mode . 5)
+ (mode-icons-mode . 2)
+ (rainbow-delimiters-mode . 1)
+ (yascroll:show-scroll-bar . 1)
+ (customize . 3)
+ (dockerfile-mode . 4)
+ (comment-or-uncomment-region . 2)
+ (ediff-files . 1)
+ (magit-next-line . 1)
+ (shell-command-with-editor-mode . 1)
+ (jdee-package-update . 1)
+ (list-packages . 1)
+ (indent-relative . 2)
+ (web-mode-buffer-fontify . 1)
+ (drag-stuff-mode . 1)
+ (nyan-mode . 1)
+ (web-mode-debug . 1)
+ (jit-lock-debug-mode . 1)
+ (display-line-numbers-mode . 3)
+ (package-show-package-list . 1)
+ (lisp-mode . 3)
+ (org-mode . 3)
+ (ido-mode . 5)
+ (next-buffer . 2)
+ (comint-delchar-or-maybe-eof . 2)
+ (indent-region . 1)
+ (python-indent-shift-left . 37)
+ (python-indent-shift-right . 31)
+ (grep-find . 5)
+ (grep . 7)
+ (find-name-dired . 1)
+ (kill-line . 1)
+ (common-lisp-mode . 3)
+ (markdown-mode . 1)
+ (org-increase-number-at-point . 1)
+ (org-do-promote . 1)
+ (auto-package-update-now . 9)
+ (bison-mode . 1)
+ (package-initialize . 2)
+ (byte-recompile-directory . 2)
+ (package-reinstall . 3)
+ (highlight-uses-mode . 1)
+ (change-log-mode . 1)
+ (conventional-changelog-transform . 1)
+ (debian-changelog-mode . 1)
+ (customize-group . 2)
+ (chatgpt-arcana-chat-mode . 2)
+ (chatgpt-arcana-hydra/chatgpt-arcana-start-chat-and-exit . 1)
+ (gptel . 6)
+ (gptel-menu . 13)
+ (gptel-send . 7)
+ (amx-initialize . 1)
+ (amx-mode . 1)
+)

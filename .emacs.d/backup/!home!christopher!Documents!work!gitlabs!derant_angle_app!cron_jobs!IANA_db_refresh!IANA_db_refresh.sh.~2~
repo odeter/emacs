@@ -1,0 +1,61 @@
+#!/bin/bash
+# A simple script
+
+if [ "$1" == "--local" ];
+then
+    mkdir -p ${BACKEND_PROC_LOG_DIR}
+
+    echo "Running IANA db update"
+
+    # check db version
+    curl "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml" > lstupd.html
+    db_version=$(grep -m 1 -A1 "Last Update" lstupd.html | sed -n "2 p" | sed 's/<[^>]*>//g' | xargs)
+
+    if [ -f "${BACKEND_PROC_LOG_DIR}IANA_db_version" ]; then
+        echo "${BACKEND_PROC_LOG_DIR}IANA_db_version exists."
+        current_db=$(<${BACKEND_PROC_LOG_DIR}geoip_db_version)
+    fi
+
+    if [[ "$db_version" != "$current_db" ]];
+    then
+        touch "${BACKEND_PROC_LOG_DIR}geoip_db_version"
+        echo "${db_version}" > "${BACKEND_PROC_LOG_DIR}geoip_db_version"
+        curl "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv" > ianaport.csv
+        flock -n -x IANA_db_refresh.py -c "python3 IANA_db_refresh.py"
+
+        rm -f ianaport.csv
+        echo "IANA port db update done (check logs)"
+    else
+        echo "No new db update was found"
+    fi
+else
+
+    ## import env
+    set -o allexport; source /app/.env; set +o allexport
+
+    mkdir -p ${BACKEND_PROC_LOG_DIR}
+    mkdir -p $LOCKS
+    current_db=""
+
+    # get lock
+    exec 100>/app/uploads/locks/iana_db_refresh.lock || exit 1
+    flock -n -x 100 || exit 1
+
+    # check db version
+    curl "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml" > lstupd.html
+    db_version=$(grep -m 1 -A1 "Last Update" lstupd.html | sed -n "2 p" | sed 's/<[^>]*>//g' | xargs)
+
+    if [ -f "${BACKEND_PROC_LOG_DIR}IANA_db_version" ]; then
+        echo "${BACKEND_PROC_LOG_DIR}IANA_db_version exists."
+        current_db=$(<${BACKEND_PROC_LOG_DIR}geoip_db_version)
+    fi
+
+    if [[ "$db_version" != "$current_db" ]];
+    then
+        touch "${BACKEND_PROC_LOG_DIR}IANA_db_version"
+        echo "${db_version}" > "${BACKEND_PROC_LOG_DIR}geoip_db_version"
+        curl "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv" > ianaport.csv
+        python3 cron_jobs/IANA_db_refresh/IANA_db_refresh.py
+        rm -f ianaport.csv
+    fi
+fi

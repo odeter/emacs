@@ -1,0 +1,16 @@
+(undo-tree-save-format-version . 1)
+"fb9d553de94336197bea14b656cd201ef254bc4a"
+[nil nil nil nil (25227 55504 820304 581000) 0 nil]
+([nil nil ((#("MAIL_SERVER = 'musk.derant.com'
+    MAIL_PORT = 587" 0 11 (fontified t face font-lock-variable-name-face) 11 14 (fontified t) 14 15 (fontified t syntax-table (15) face font-lock-string-face) 15 30 (fontified t face font-lock-string-face) 30 31 (fontified t syntax-table (15) face font-lock-string-face) 31 36 (fontified t) 36 45 (fontified t face font-lock-variable-name-face) 45 51 (fontified t)) . 5674) (undo-tree-id5 . -32) (undo-tree-id6 . -51) (undo-tree-id7 . -51) (undo-tree-id8 . -51) (undo-tree-id9 . -51) (t 25116 47649 733810 0)) nil (25227 55504 820228 277000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 5726 . 5727) (nil fontified nil 5674 . 5727) (5674 . 5727)) nil (25227 55504 820206 864000) 0 nil])
+([nil nil ((6588 . 6592) (#("    " 0 4 (fontified nil)) . 6587) (undo-tree-id4 . -4) (6586 . 6592)) nil (25227 55504 820203 335000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 6675 . 6676) (nil fontified nil 6592 . 6676) (6592 . 6676)) nil (25227 55504 820197 458000) 0 nil])
+([nil nil ((7095 . 7100)) nil (25227 55504 820194 80000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 7137 . 7138) (nil fontified nil 7100 . 7138) (7100 . 7138)) nil (25227 55504 820191 578000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 7100) (undo-tree-id3 . -1)) nil (25227 55504 820186 890000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -7100)) nil (25227 55504 820180 973000) 0 nil])
+([nil nil ((#("seconds=3600" 0 12 (fontified t)) . 6916) (undo-tree-id0 . -12) (undo-tree-id1 . -12) (undo-tree-id2 . -12)) nil (25227 55504 820175 424000) 0 nil])
+([nil current ((nil rear-nonsticky nil 6922 . 6923) (nil fontified nil 6916 . 6923) (6916 . 6923)) nil (25227 55504 820069 763000) 0 nil])
+nil

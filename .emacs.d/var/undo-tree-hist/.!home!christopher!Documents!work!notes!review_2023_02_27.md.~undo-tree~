@@ -1,0 +1,39 @@
+(undo-tree-save-format-version . 1)
+"ef1932bf6c86f4ac52edcc7b58014ceb375a9fba"
+[nil nil nil nil (25596 39908 855794 506000) 0 nil]
+([nil nil ((#("
+- update docs retire alarms" 0 1 (fontified t font-lock-multiline t) 1 2 (markdown-list-item ((301 328 0 2 "- " nil (301 303 301 301 301 302 302 303))) fontified t face markdown-list-face) 2 28 (markdown-list-item ((301 328 0 2 "- " nil (301 303 301 301 301 302 302 303))) fontified t)) . 300) (undo-tree-id41 . -1) (undo-tree-id42 . -28) (undo-tree-id43 . -28) (undo-tree-id44 . -28) (undo-tree-id45 . -28) (undo-tree-id46 . -28) (undo-tree-id47 . -28) (t 25587 27199 622050 0)) nil (25596 39908 855789 20000) 0 nil])
+([nil nil ((#("
+- retire alarm -> weird error message \"Successfully closed undefined\"
+- retire alarm -> concat success message
+- 'prefined filters' catagory to right click menu
+- show sensor last received packages information for each log type" 0 1 (fontified t) 1 2 (fontified t markdown-list-item ((27 96 0 2 "- " nil (27 29 27 27 27 28 28 29))) face markdown-list-face) 2 70 (fontified t markdown-list-item ((27 96 0 2 "- " nil (27 29 27 27 27 28 28 29)))) 70 71 (fontified t font-lock-multiline t) 71 72 (fontified t markdown-list-item ((97 137 0 2 "- " nil (97 99 97 97 97 98 98 99))) face markdown-list-face) 72 111 (fontified t markdown-list-item ((97 137 0 2 "- " nil (97 99 97 97 97 98 98 99)))) 111 112 (fontified t font-lock-multiline t) 112 113 (fontified t markdown-list-item ((138 187 0 2 "- " nil (138 140 138 138 138 139 139 140))) face markdown-list-face) 113 161 (fontified t markdown-list-item ((138 187 0 2 "- " nil (138 140 138 138 138 139 139 140)))) 161 162 (fontified t font-lock-multiline t) 162 163 (fontified t markdown-list-item ((188 254 0 2 "- " nil (188 190 188 188 188 189 189 190))) face markdown-list-face) 163 228 (fontified t markdown-list-item ((188 254 0 2 "- " nil (188 190 188 188 188 189 189 190))))) . 26) (undo-tree-id31 . -1) (undo-tree-id32 . -228) (undo-tree-id33 . -220) (undo-tree-id34 . -220) (undo-tree-id35 . 95) (undo-tree-id36 . -141) (undo-tree-id37 . 113) (undo-tree-id38 . -123) (undo-tree-id39 . -161) (undo-tree-id40 . -228)) nil (25596 39908 855765 530000) 0 nil])
+([nil nil ((#("
+## features
+
+- sensor overview overhaul
+- user access to system logs for their own firm" 0 1 (fontified t) 1 4 (markdown-heading (74 85 nil nil nil nil nil nil 74 77 77 85 85 85 #<buffer review_2023_02_27.md>) markdown-heading-2-atx (74 85 nil nil nil nil nil nil 74 77 77 85 85 85 #<buffer review_2023_02_27.md>) fontified t face markdown-header-delimiter-face) 4 12 (markdown-heading (74 85 nil nil nil nil nil nil 74 77 77 85 85 85 #<buffer review_2023_02_27.md>) markdown-heading-2-atx (74 85 nil nil nil nil nil nil 74 77 77 85 85 85 #<buffer review_2023_02_27.md>) fontified t face markdown-header-face-2) 12 13 (fontified t font-lock-multiline t) 13 14 (fontified t) 14 15 (markdown-list-item ((87 113 0 2 "- " nil (87 89 87 87 87 88 88 89))) fontified t face markdown-list-face) 15 40 (markdown-list-item ((87 113 0 2 "- " nil (87 89 87 87 87 88 88 89))) fontified t) 40 41 (fontified t font-lock-multiline t) 41 42 (markdown-list-item ((114 161 0 2 "- " nil (114 116 114 114 114 115 115 116))) fontified t face markdown-list-face) 42 88 (markdown-list-item ((114 161 0 2 "- " nil (114 116 114 114 114 115 115 116))) fontified t)) . 73) (undo-tree-id23 . -1) (undo-tree-id24 . -88) (undo-tree-id25 . -88) (undo-tree-id26 . -88) (undo-tree-id27 . -88) (undo-tree-id28 . -88) (undo-tree-id29 . -88) (undo-tree-id30 . -88)) nil (25596 39908 855734 198000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t font-lock-multiline t)) . -72) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (undo-tree-id17 . -1) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) (undo-tree-id22 . -1) 73) nil (25596 39908 855709 676000) 0 nil])
+([nil nil ((16 . 18)) nil (25596 39908 855684 249000) 0 nil])
+([nil nil ((18 . 24)) nil (25596 39908 855681 570000) 0 nil])
+([nil nil ((#("e" 0 1 (fontified t markdown-list-item ((18 22 0 2 "- " nil (18 20 18 18 18 19 19 20))))) . -21) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (#("e" 0 1 (fontified t markdown-list-item ((18 23 0 2 "- " nil (18 20 18 18 18 19 19 20))))) . -22) (undo-tree-id12 . -1) (#(" " 0 1 (fontified t markdown-list-item ((18 24 0 2 "- " nil (18 20 18 18 18 19 19 20))))) . -23) (undo-tree-id13 . -1) 24) nil (25596 39908 855676 739000) 0 nil])
+([nil nil ((#("S" 0 1 (fontified defer markdown-list-item ((18 21 0 2 "- " nil (18 20 18 18 18 19 19 20))))) . -20) (undo-tree-id8 . -1) (undo-tree-id9 . -1) 21) nil (25596 39908 855660 955000) 0 nil])
+([nil nil ((20 . 41)) nil (25596 39908 855652 593000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-list-item ((18 41 0 2 "- " nil (18 20 18 18 18 19 19 20))))) . -40) (undo-tree-id7 . -1) 41) nil (25596 39908 855649 142000) 0 nil])
+([nil nil ((40 . 41)) nil (25596 39908 855642 361000) 0 nil])
+([nil nil ((41 . 53)) nil (25596 39908 855639 878000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-list-item ((41 53 0 2 "- " nil (41 43 41 41 41 42 42 43))))) . -52) (undo-tree-id6 . -1) 53) nil (25596 39908 855636 45000) 0 nil])
+([nil nil ((52 . 53)) nil (25596 39908 855629 366000) 0 nil])
+([nil nil ((53 . 55)) nil (25596 39908 855626 418000) 0 nil])
+([nil nil ((55 . 61)) nil (25596 39908 855622 834000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-list-item ((53 61 0 2 "- " nil (53 55 53 53 53 54 54 55))))) . -60) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 61) nil (25596 39908 855612 862000) 0 nil])
+([nil nil ((40 . 41) (t 25596 39908 895894 696000)) nil (25596 53106 928089 834000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t font-lock-multiline t)) . -40) (undo-tree-id51 . -1) (undo-tree-id52 . -1) 41) nil (25596 53106 928086 159000) 0 nil])
+([nil nil ((40 . 41)) nil (25596 53106 928077 908000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t font-lock-multiline t)) . -40) (undo-tree-id49 . -1) (undo-tree-id50 . -1) 41) nil (25596 53106 928073 837000) 0 nil])
+([nil nil ((#("n" 0 1 (fontified t markdown-list-item ((41 52 0 2 "- " nil (41 43 41 41 41 42 42 43))))) . -43) (undo-tree-id48 . -1) 44) nil (25596 53106 928061 944000) 0 nil])
+([nil current ((43 . 44)) nil (25596 53106 927997 913000) 0 nil])
+nil

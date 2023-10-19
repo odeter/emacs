@@ -1,0 +1,17 @@
+(undo-tree-save-format-version . 1)
+"65c18f5500595726b342950a35fa908d81d9d6c7"
+[nil nil nil nil (25227 54671 355849 513000) 0 nil]
+([nil nil ((apply smerge-mode 1) (#("<<<<<<< HEAD
+" 0 1 (face smerge-markers smerge-refine-part (1 . 2) fontified t) 1 13 (face smerge-markers fontified t)) . 5513) (undo-tree-id0 . 13) (undo-tree-id1 . -13) (#("=======
+" 0 7 (face smerge-markers fontified t) 7 8 (face nil fontified t)) . 5581) (#(">>>>>>> origin/master
+" 0 22 (face smerge-markers fontified t)) . 5625) (undo-tree-id2 . -22) (undo-tree-id3 . -22) 5513 (t 25227 54639 896059 188000)) nil (25227 54671 355842 35000) 0 nil])
+([nil nil ((5603 . 5604) (t 25232 37438 615103 732000)) nil (25249 50659 418146 94000) 0 nil])
+([nil nil ((5604 . 5625)) nil (25249 50659 418144 678000) 0 nil])
+([nil nil ((5625 . 5630)) nil (25249 50659 418143 405000) 0 nil])
+([nil nil ((#("å" 0 1 (fontified t)) . -5625) (undo-tree-id2 . -1) (#("o" 0 1 (fontified t)) . -5626) (undo-tree-id3 . -1) (#("r" 0 1 (fontified t)) . -5627) (undo-tree-id4 . -1) (#("t" 0 1 (fontified defer)) . -5628) (undo-tree-id5 . -1) (#(" " 0 1 (fontified t)) . -5629) (undo-tree-id6 . -1) 5630) nil (25249 50659 418139 947000) 0 nil])
+([nil nil ((5625 . 5629)) nil (25249 50659 418129 833000) 0 nil])
+([nil nil ((5629 . 5637)) nil (25249 50659 418128 372000) 0 nil])
+([nil nil ((#("u" 0 1 (fontified t)) . -5636) (undo-tree-id1 . -1) 5637) nil (25249 50659 418126 280000) 0 nil])
+([nil nil ((5636 . 5640)) nil (25249 50659 418121 572000) 0 nil])
+([nil current ((#(" " 0 1 (fontified t)) . -5639) (undo-tree-id0 . -1) 5640) nil (25249 50659 418114 617000) 0 nil])
+nil

@@ -1,0 +1,11 @@
+(undo-tree-save-format-version . 1)
+"875f5a266e6a324f3973ebb1148ffb0771983909"
+[nil nil nil nil (25140 39806 588530 225000) 0 nil]
+([nil nil ((nil rear-nonsticky nil 28 . 29) (nil part-side javascript 15 . 29) (nil part-side javascript 8 . 15) (nil face web-mode-keyword-face 8 . 15) (nil part-side javascript 7 . 8) (nil part-side javascript 1 . 7) (nil face web-mode-keyword-face 1 . 7) (1 . 29) (t 25140 39788 373311 931000)) nil (25140 39806 588527 372000) 0 nil])
+([nil nil ((#("<parserName>" 0 12 (part-side javascript)) . 16) (undo-tree-id0 . -12) (undo-tree-id1 . -12) (undo-tree-id2 . -12)) nil (25140 39806 588522 707000) 0 nil])
+([nil nil ((16 . 22)) nil (25140 39806 588501 732000) 0 nil])
+([nil nil ((23 . 24) 22) nil (25140 39806 588493 651000) 0 nil])
+([nil nil ((22 . 23) (t 25140 39806 593552 474000)) nil (25140 40015 907209 481000) 0 nil])
+([nil nil ((16 . 17)) nil (25140 40015 907206 915000) 0 nil])
+([nil current ((23 . 26)) nil (25140 40015 907199 809000) 0 nil])
+nil

@@ -1,0 +1,11 @@
+(undo-tree-save-format-version . 1)
+"c1e7371596996ef09aac6d6e86d05463a989455b"
+[nil nil nil nil (25430 22810 774988 934000) 0 nil]
+([nil nil ((#("
+<<<<<<< HEAD
+=======" 0 21 (fontified t)) . 6) (undo-tree-id4 . -1) (undo-tree-id5 . -21) (undo-tree-id6 . -21) (undo-tree-id7 . -21) (t 25430 15053 155608 141000)) nil (25430 22810 774984 114000) 0 nil])
+([nil nil ((#("
+>>>>>>> a738e45c57374874d3d3d41f0fb90fc7b22311dd" 0 49 (fontified t)) . 29) (undo-tree-id0 . -1) (undo-tree-id1 . -49) (undo-tree-id2 . -49) (undo-tree-id3 . -49)) nil (25430 22810 774964 778000) 0 nil])
+([nil current ((#("
+psycopg2-binary" 0 16 (fontified t)) . 196) (undo-tree-id8 . -1) (undo-tree-id9 . -16) (undo-tree-id10 . -16) (undo-tree-id11 . -16) (t 25430 22810 794891 915000)) nil (25430 22846 527827 52000) 0 nil])
+nil

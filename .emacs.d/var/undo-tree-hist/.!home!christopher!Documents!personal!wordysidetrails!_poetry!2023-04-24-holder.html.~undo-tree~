@@ -1,0 +1,30 @@
+(undo-tree-save-format-version . 1)
+"241290be8438f24363b20e733e2ab5730ffb6b99"
+[nil nil nil nil (25670 62269 881823 970000) 0 nil]
+([nil nil ((#("Fretful, dreadful, she looks at him with vacant eyes. Try he did and trying still, to hold her gaze with pretty lies. Alas he did so unconvincing, he had to rely on mere instinct. With a smile too wide and a shirt too tight, his time only spent on exercise.<br/>
+<hr/>
+No time was left for reading, though he tried to sell it somewhat intriguing. That a beast while dumb would be a ravishing sight and that she wouldn't get much sleep that night.<br/>
+<hr/>
+She scoffed, she puffed, he wasn't the first who wanted her stuffed. But persistence was key, so his pa told him ever since he was three. With no end to his babble she'd make him a deal, a single condition before the ordeal.<br/>
+<hr/>
+She'd give him the night, long but rough, if he'd swear to wear some fluffy handcuffs. He swore on his car, his mother, his life, while giving his bro a backhanded lowfive. So she took him by the hand to a romantic setting where in handcuffs he would learn all about pegging." 150 257 (face (whitespace-line)) 257 258 (tag-name "br" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 258 260 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-face face (whitespace-line web-mode-html-tag-face)) 260 261 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 261 262 (tag-name "br" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 263 264 (tag-name "hr" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 264 266 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-face) 266 267 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-bracket-face) 267 268 (tag-name "hr" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face) 419 446 (face (whitespace-line)) 446 447 (tag-name "br" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 447 449 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-face face (whitespace-line web-mode-html-tag-face)) 449 450 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 450 451 (tag-name "br" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 452 453 (tag-name "hr" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 453 455 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-face) 455 456 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-bracket-face) 456 457 (tag-name "hr" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face) 608 682 (face (whitespace-line)) 682 683 (tag-name "br" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 683 685 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-face face (whitespace-line web-mode-html-tag-face)) 685 686 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 686 687 (tag-name "br" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face face (whitespace-line web-mode-html-tag-bracket-face)) 688 689 (tag-name "hr" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 689 691 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-face) 691 692 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-bracket-face) 692 693 (tag-name "hr" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face) 844 969 (face (whitespace-line))) . 60) (undo-tree-id26 . -263) (undo-tree-id27 . -969) (undo-tree-id28 . -969) (undo-tree-id29 . -969) (undo-tree-id30 . -969) (t 25670 61496 107207 0)) nil (25670 62269 881821 840000) 0 nil])
+([nil nil ((59 . 60)) nil (25670 62269 881815 728000) 0 nil])
+([nil nil ((60 . 1836)) nil (25670 62269 881814 809000) 0 nil])
+([nil nil (("love" . 24) (undo-tree-id18 . -4) (undo-tree-id19 . -4) (undo-tree-id20 . -4) (undo-tree-id21 . -4) (undo-tree-id22 . -4) (undo-tree-id23 . -4) (undo-tree-id24 . -4) (undo-tree-id25 . -4)) nil (25670 62269 881813 410000) 0 nil])
+([nil nil ((24 . 42)) nil (25670 62269 881804 338000) 0 nil])
+([nil nil (("Too Young To Exist" . 24) (undo-tree-id16 . -18) (undo-tree-id17 . -18)) nil (25670 62269 881803 175000) 0 nil])
+([nil nil ((24 . 37)) nil (25670 62269 881799 300000) 0 nil])
+([nil nil ((" " . -36) (undo-tree-id15 . -1) 37) nil (25670 62269 881798 95000) 0 nil])
+([nil nil (("
+Too Young To Exist" . 67) (undo-tree-id7 . -19) (undo-tree-id8 . -19) (undo-tree-id9 . -1) (undo-tree-id10 . -19) (undo-tree-id11 . -1) (undo-tree-id12 . -19) (undo-tree-id13 . -19) (undo-tree-id14 . -19)) nil (25670 62269 881795 390000) 0 nil])
+([nil nil ((" " . 137) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (138 . 139)) nil (25670 62269 881785 832000) 0 nil])
+([nil nil (("
+" . 140) (undo-tree-id2 . -1)) nil (25670 62269 881780 93000) 0 nil])
+([nil nil ((140 . 141)) nil (25670 62269 881777 881000) 0 nil])
+([nil nil ((137 . 140)) nil (25670 62269 881776 877000) 0 nil])
+([nil nil (("\\" . -138) (undo-tree-id0 . -1) ("b" . -139) (undo-tree-id1 . -1) 140) nil (25670 62269 881774 974000) 0 nil])
+([nil nil ((141 . 142) (138 . 142)) nil (25670 62269 881737 102000) 0 nil])
+([nil nil ((220 . 221) (216 . 221)) nil (25670 62269 881735 179000) 0 nil])
+([nil current ((#("
+" 0 1 (face whitespace-empty)) . -1838) 222) nil (25670 62269 881727 530000) 0 nil])
+nil

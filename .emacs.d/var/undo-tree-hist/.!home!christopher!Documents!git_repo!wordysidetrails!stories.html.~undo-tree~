@@ -1,0 +1,25 @@
+(undo-tree-save-format-version . 1)
+"fe0dfdd5808197435805af1799d32a5ecc096e24"
+[nil nil nil nil (25354 26038 131904 722000) 0 nil]
+([nil nil ((nil block-side t 162 . 163) (t 25353 16388 8405 406000) (nil face web-mode-variable-name-face 162 . 163) (t 25353 16388 8405 406000) (nil block-side t 161 . 162) (t 25353 16388 8405 406000) (nil face web-mode-variable-name-face 161 . 162) (t 25353 16388 8405 406000) (nil block-side t 160 . 161) (t 25353 16388 8405 406000) (nil face web-mode-variable-name-face 160 . 161) (t 25353 16388 8405 406000) (nil block-side t 159 . 160) (t 25353 16388 8405 406000) (nil face web-mode-variable-name-face 159 . 160) (t 25353 16388 8405 406000) (#("books" 0 1 (block-side t face web-mode-variable-name-face) 1 2 (block-side t face web-mode-variable-name-face) 2 3 (block-side t face web-mode-variable-name-face) 3 4 (block-side t face web-mode-variable-name-face) 4 5 (block-side t face web-mode-variable-name-face)) . -156) (t 25353 16388 8405 406000) (161 . 168) 47 (t 25353 16388 8405 406000)) nil (25354 26067 685508 374000) 0 nil] [nil nil ((#("o" 0 1 (block-side t face web-mode-variable-name-face)) . -157) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (#("o" 0 1 (block-side t face web-mode-variable-name-face)) . -158) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (#("k" 0 1 (block-side t face web-mode-variable-name-face)) . -159) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (#("s" 0 1 (block-side t face web-mode-variable-name-face)) . -160) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) 161 (t 25353 16388 8405 406000)) ((157 . 161)) (25354 26038 129956 258000) 0 nil])
+([nil nil (("Posts" . 881) (undo-tree-id17 . -5) (undo-tree-id18 . -5) (undo-tree-id19 . -5)) nil (25354 26067 685502 5000) 0 nil])
+nil
+([nil nil ((881 . 889)) nil (25354 26067 685497 187000) 0 nil])
+([nil nil ((" " . -888) (undo-tree-id16 . -1) 889) nil (25354 26067 685495 464000) 0 nil])
+([nil nil ((#("Posts" 0 5 (face (whitespace-line))) . 1109) (undo-tree-id13 . -5) (undo-tree-id14 . -5) (undo-tree-id15 . -5)) nil (25354 26067 685490 960000) 0 nil])
+([nil nil ((1109 . 1117)) nil (25354 26067 685482 778000) 0 nil])
+([nil nil ((" " . -1116) (undo-tree-id12 . -1) 1117) nil (25354 26067 685473 853000) 0 nil])
+([nil nil (("b" . -42) (undo-tree-id35 . -1) (undo-tree-id36 . -1) (undo-tree-id37 . -1) (undo-tree-id38 . -1) (undo-tree-id39 . -1) ("o" . -43) (undo-tree-id40 . -1) (undo-tree-id41 . -1) (undo-tree-id42 . -1) (undo-tree-id43 . -1) (undo-tree-id44 . -1) ("o" . -44) (undo-tree-id45 . -1) (undo-tree-id46 . -1) (undo-tree-id47 . -1) (undo-tree-id48 . -1) (undo-tree-id49 . -1) ("k" . -45) (undo-tree-id50 . -1) (undo-tree-id51 . -1) (undo-tree-id52 . -1) (undo-tree-id53 . -1) (undo-tree-id54 . -1) ("s" . -46) (undo-tree-id55 . -1) (undo-tree-id56 . -1) (undo-tree-id57 . -1) (undo-tree-id58 . -1) (undo-tree-id59 . -1) 47 (t 25354 26067 689768 116000)) nil (25354 26175 971021 536000) 0 nil])
+([nil nil ((42 . 50)) nil (25354 26175 970990 15000) 0 nil])
+([nil nil (("s" . -42) (undo-tree-id21 . -1) (undo-tree-id22 . -1) ("t" . -43) (undo-tree-id23 . -1) (undo-tree-id24 . -1) ("o" . -44) (undo-tree-id25 . -1) (undo-tree-id26 . -1) ("r" . -45) (undo-tree-id27 . -1) (undo-tree-id28 . -1) ("i" . -46) (undo-tree-id29 . -1) (undo-tree-id30 . -1) ("e" . -47) (undo-tree-id31 . -1) (undo-tree-id32 . -1) ("s" . -48) (undo-tree-id33 . -1) (" " . -49) (undo-tree-id34 . -1) 50) nil (25354 26175 970986 68000) 0 nil])
+([nil nil ((42 . 50)) nil (25354 26175 970965 320000) 0 nil])
+([nil nil ((" " . -49) (undo-tree-id20 . -1) 50) nil (25354 26175 970960 190000) 0 nil])
+([nil nil (("  " . -28) (49 . 50) (t 25354 26175 974985 977000)) nil (25354 30284 380539 818000) 0 nil])
+([nil nil ((28 . 33)) nil (25354 30284 380537 648000) 0 nil])
+([nil nil ((53 . 67)) nil (25354 30284 380536 219000) 0 nil])
+([nil nil ((53 . 58)) nil (25354 30284 380534 519000) 0 nil])
+([nil nil ((58 . 59)) nil (25354 30284 380532 255000) 0 nil])
+([nil nil ((" " . -58) (undo-tree-id0 . -1) 59) nil (25354 30284 380526 337000) 0 nil])
+([nil nil ((#("content" 0 7 (block-side t face web-mode-variable-name-face)) . 430) (undo-tree-id0 . -7) (undo-tree-id1 . -7) (undo-tree-id2 . -7) (t 25354 30284 384454 210000)) nil (25354 31139 361671 831000) 0 nil])
+([nil current ((nil rear-nonsticky nil 440 . 441) (nil block-side t 430 . 441) (nil face web-mode-variable-name-face 430 . 441) (430 . 441)) nil (25354 31139 361648 681000) 0 nil])
+nil

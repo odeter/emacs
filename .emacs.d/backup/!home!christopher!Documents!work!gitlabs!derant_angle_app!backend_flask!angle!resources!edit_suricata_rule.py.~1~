@@ -1,0 +1,39 @@
+from angle.models import UserModel, SuricataRulesModel, FirmModel
+from flask_jwt_extended import get_jwt_identity
+from flask_restful import Resource, reqparse
+from flask import current_app as app
+from angle import role_required
+
+class DeleteSuricataRule(Resource):
+    @role_required(["admin", "mssp_it_sec", "mssp_admin", "op_man", "it_man", "it_sec", "sys_admin"])
+    def post(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('ruleID', help = 'This field cannot be blank', required=True)
+        parser.add_argument('firmID')
+        data = parser.parse_args()
+
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+        if current_user.check_role('sys_admin'):
+            firm = FirmModel.find_by_id(data['firmID'])
+        elif current_user.check_roles(["mssp_admin","mssp_it_sec"]) and data['firmID']:
+            firm = current_user.firm.mssp_get_firm(data['firmID'])
+        else:
+            if current_user:
+                firm = current_user.firm
+
+
+        rule = firm.get_suricata_rule(data['ruleID'])
+        if not rule:
+            app.logger.error('{0} - {1} tried deleting a suricata rule but the given rule was not found'.format(current_user.name, current_user.id))
+            return {'message': 'Rule not found'}, 403
+
+        # Delete suricata rule
+        try:
+            rule.delete()
+            app.logger.info('{0} - {1} deleted a suricata rule'.format(current_user.name, current_user.id))
+            return {'message': 'Suricata was deleted'}, 200
+        except:
+            app.logger.error('{0} - {1} tried deleting a suricata rule, but could not save to db'.format(current_user.name, current_user.id))
+            return {'message': 'Something went wrong internally'}, 500

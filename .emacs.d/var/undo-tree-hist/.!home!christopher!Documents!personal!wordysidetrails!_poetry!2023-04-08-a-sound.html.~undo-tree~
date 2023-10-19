@@ -1,0 +1,23 @@
+(undo-tree-save-format-version . 1)
+"1bfaf8d4928380c9025a8087ed50c32d6dae2c61"
+[nil nil nil nil (25672 16436 230479 85000) 0 nil]
+([nil nil (("7" . -47) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) 48 (t 25671 1405 982990 0)) nil (25672 16436 230476 792000) 0 nil])
+([nil nil ((47 . 48)) nil (25672 16436 230472 341000) 0 nil])
+([nil nil ((#("It was a quarter to eleven a nice Thursday night, he sat at a bar enclosed by friends and strangers alike. The bar was filled with smoke and talk of merry folks, the music flew above them carrying old and familiar tunes, bringing memories, bringing joy. He sat and listened to the conversation flying between his friends and friends to be, talking about all, talking about none, ever so often laughter would erupt and he felt himself letting go, just laughing and nothing more. The beers where plenty and the bar was filled with people near his own age, young people, dreaming people, living people, all talking about their lives and how they could fix the world. So many ideas were shared, so many would be forgotten tomorrow replaced by the pain repressed the night before. Though they knew the pain, from Fridays passed and gone, they always took another beer as they kept the dawn at bay. He felt ecstatic in this moment as he looked around his table, filled with friends and newcomers who joined the conversation, joined their little temporary unity, all laughing, all being. He felt empowered by the cold, gold beer, giving him confidence and reassurance that he could take on any challenge life would throw at him, today or tomorrow, no task seemed too big and no worry too overwhelming. The moment came over him with the laughter, the beer and the music, as he just sat there quietly with a beer in hand, he felt a sensational relaxation with no strings attached as the music played up and the laughter suddenly faded.
+<hr/>
+was it... it could almost be... happiness, true and pure happiness.
+<hr/>
+He came back to his senses, felt the weight of his empty beer bottle, he had to get up tomorrow to do his job and citizen duty, to meet his colleagues at eight he would have to get up at seven. He looked up at the clock watching bare and cold over the crowd, and to his dreadful realization, he saw the clock was already a quarter to eleven." 150 1526 (face (whitespace-line)) 1527 1528 (tag-name "hr" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 1528 1530 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-face) 1530 1531 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-bracket-face) 1531 1532 (tag-name "hr" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face) 1601 1602 (tag-name "hr" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 1602 1604 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-face) 1604 1605 (tag-name "hr" tag-type void font-lock-face web-mode-html-tag-bracket-face) 1605 1606 (tag-name "hr" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face) 1757 1948 (face (whitespace-line))) . 63) (undo-tree-id8 . -1527) (undo-tree-id9 . -1948) (undo-tree-id10 . -1948) (undo-tree-id11 . -1948)) nil (25672 16436 230471 25000) 0 nil])
+([nil nil ((63 . 1198)) nil (25672 16436 230465 697000) 0 nil])
+([nil nil ((327 . 328) (" " . 326) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (327 . 328)) nil (25672 16436 230464 454000) 0 nil])
+([nil nil (("
+" . 337) (undo-tree-id5 . -1)) nil (25672 16436 230460 709000) 0 nil])
+([nil nil ((337 . 338)) nil (25672 16436 230458 289000) 0 nil])
+([nil nil ((330 . 331) (327 . 331)) nil (25672 16436 230456 934000) 0 nil])
+([nil nil ((786 . 787) (" " . 785) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (786 . 787)) nil (25672 16436 230455 331000) 0 nil])
+([nil nil ((789 . 790) (786 . 790)) nil (25672 16436 230451 187000) 0 nil])
+([nil nil (("
+" . 832) (undo-tree-id2 . -1)) nil (25672 16436 230449 429000) 0 nil])
+([nil nil ((832 . 833)) nil (25672 16436 230446 326000) 0 nil])
+([nil current ((" " . 849) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (850 . 851)) nil (25672 16436 230441 301000) 0 nil])
+nil

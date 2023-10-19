@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"25da1f9e2cd7348a37b7b7fa2916386fe69bf1cf"
+[nil nil nil nil (25156 26020 598331 119000) 0 nil]
+([nil nil ((#("\"it_sec\"" 0 1 (syntax-table (15) fontified t face font-lock-string-face) 1 7 (fontified t face font-lock-string-face) 7 8 (syntax-table (15) fontified t face font-lock-string-face)) . 315) (undo-tree-id6 . -8) (undo-tree-id7 . -8) (undo-tree-id8 . -8) (t 25120 40071 942466 327000)) nil (25156 26020 598328 576000) 0 nil])
+([nil current ((#("," 0 1 (fontified t)) . -313) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (#(" " 0 1 (fontified t)) . -314) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 315) nil (25156 26020 598319 559000) 0 nil])
+nil

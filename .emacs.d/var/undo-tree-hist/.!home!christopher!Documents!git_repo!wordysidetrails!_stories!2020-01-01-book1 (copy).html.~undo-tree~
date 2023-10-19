@@ -1,0 +1,24 @@
+(undo-tree-save-format-version . 1)
+"1a54698987198440e91ea139b046e00059e9c3db"
+[nil nil nil nil (25354 30558 255998 919000) 0 nil]
+([nil nil ((#("Passage its ten led hearted removal cordial. Preference any astonished unreserved mrs. Prosperous understood middletons in conviction an uncommonly do. Supposing so be resolving breakfast am or perfectly. Is drew am hill from mr. Valley by oh twenty direct me so. Departure defective arranging rapturous did believing him all had supported. Family months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners talking how. Suspicion neglected he resolving agreement perceived at an." 150 516 (face (whitespace-line))) . 128) (undo-tree-id14 . -516) (undo-tree-id15 . -516) (undo-tree-id16 . -516) (t 25354 23489 625406 692000)) nil (25354 30558 255996 668000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 3935 . 3936) (nil face whitespace-trailing 3934 . 3936) (nil face whitespace-trailing 3861 . 3862) (nil face (whitespace-line) 2587 . 3860) (nil face (whitespace-line) 886 . 2435) (nil face (whitespace-line whitespace-trailing) 732 . 734) (nil face (whitespace-line) 278 . 732) (128 . 3936)) nil (25354 30558 255991 0) 0 nil])
+([nil nil (("\\\\" . -3907) (3909 . 3913) (#("\\\\" 0 2 (face (whitespace-line))) . -3858) (3860 . 3864) 128) nil (25354 30558 255987 290000) 0 nil])
+([nil nil ((738 . 739) (735 . 739)) nil (25354 30558 255984 809000) 0 nil])
+([nil nil ((2444 . 2445) (2441 . 2445)) nil (25354 30558 255983 7000) 0 nil])
+([nil nil ((3877 . 3878) (3874 . 3878)) nil (25354 30558 255981 370000) 0 nil])
+([nil nil (("demo poetry 1" . 24) (undo-tree-id11 . -13) (undo-tree-id12 . -13) (undo-tree-id13 . -13)) nil (25354 30558 255979 517000) 0 nil])
+([nil nil ((24 . 25)) nil (25354 30558 255974 321000) 0 nil])
+([nil nil ((25 . 35)) nil (25354 30558 255973 83000) 0 nil])
+([nil nil ((35 . 38)) nil (25354 30558 255971 812000) 0 nil])
+([nil nil (("a" . -37) (undo-tree-id10 . -1) 38) nil (25354 30558 255970 356000) 0 nil])
+([nil nil ((37 . 41)) nil (25354 30558 255967 433000) 0 nil])
+([nil nil ((" " . -40) (undo-tree-id9 . -1) 41) nil (25354 30558 255965 887000) 0 nil])
+([nil nil (("1" . -64) (undo-tree-id7 . -1) (undo-tree-id8 . -1) 65) nil (25354 30558 255962 760000) 0 nil])
+([nil nil ((64 . 65)) nil (25354 30558 255958 636000) 0 nil])
+([nil nil (("0" . -66) (undo-tree-id5 . -1) ("1" . -67) (undo-tree-id6 . -1) 68) nil (25354 30558 255956 650000) 0 nil])
+([nil nil ((66 . 68)) nil (25354 30558 255951 812000) 0 nil])
+([nil nil (("
+wattpad_link: dd" . 108) (undo-tree-id2 . -1) (undo-tree-id3 . -17) (undo-tree-id4 . -17)) nil (25354 30558 255949 324000) 0 nil])
+([nil current ((#("  " 0 1 (face whitespace-trailing) 1 2 (rear-nonsticky t face whitespace-trailing)) . -3937) (undo-tree-id0 . -2) (undo-tree-id1 . -2) (#("  " 0 2 (face (whitespace-line whitespace-trailing))) . -718) 108) nil (25354 30558 255940 288000) 0 nil])
+nil

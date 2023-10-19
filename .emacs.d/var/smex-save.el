@@ -1,35 +1,35 @@
 
 ;; ----- smex-history -----
 (
- find-file
- comment-box
- replace-string
- uncomment-region
- comment-region
  linum-mode
- python-mode
+ chatgpt-shell
+ chatgpt-shell-prompt
+ comment-region
+ package-delete
+ ivy-mode
+ find-file
 )
 
 ;; ----- smex-data -----
 (
  (find-tag . 1)
- (find-file . 4461)
- (package-install . 56)
- (comment-box . 7)
- (package-delete . 9)
- (uncomment-region . 243)
+ (find-file . 7384)
+ (package-install . 74)
+ (comment-box . 6)
+ (package-delete . 12)
+ (uncomment-region . 287)
  (highlight-indentation-mode . 27)
- (highlight-indent-guides-mode . 10)
+ (highlight-indent-guides-mode . 11)
  (fountain-mode . 3)
  (jinja2-mode . 4)
  (web-mode-set-engine . 2)
- (package-refresh-contents . 19)
- (comment-region . 850)
- (package-list-packages . 7)
+ (package-refresh-contents . 23)
+ (comment-region . 1141)
+ (package-list-packages . 8)
  (prettier-js-mode . 9)
  (prettier-js . 2)
- (web-mode . 21)
- (replace-string . 98)
+ (web-mode . 22)
+ (replace-string . 169)
  (eww-mode . 1)
  (eww-open-file . 1)
  (python-mode . 2)
@@ -37,7 +37,7 @@
  (comment-set-column . 1)
  (profiler-start . 9)
  (profiler-report . 14)
- (linum-mode . 25)
+ (linum-mode . 40)
  (font-lock-mode . 3)
  (package-menu-mode . 4)
  (emacs-version . 3)
@@ -46,7 +46,7 @@
  (hl-line-mode . 4)
  (vlf . 1)
  (flycheck-mode . 12)
- (all-the-icons-install-fonts . 1)
+ (all-the-icons-install-fonts . 3)
  (minions-mode . 3)
  (column-number-mode . 1)
  (spaceline-install . 1)
@@ -95,11 +95,36 @@
  (next-buffer . 2)
  (comint-delchar-or-maybe-eof . 2)
  (indent-region . 1)
- (python-indent-shift-left . 7)
- (python-indent-shift-right . 6)
+ (python-indent-shift-left . 37)
+ (python-indent-shift-right . 32)
  (grep-find . 5)
  (grep . 7)
  (find-name-dired . 1)
  (kill-line . 1)
- (common-lisp-mode . 1)
+ (common-lisp-mode . 3)
+ (markdown-mode . 1)
+ (org-increase-number-at-point . 1)
+ (org-do-promote . 1)
+ (auto-package-update-now . 9)
+ (bison-mode . 1)
+ (package-initialize . 2)
+ (byte-recompile-directory . 2)
+ (package-reinstall . 3)
+ (highlight-uses-mode . 1)
+ (change-log-mode . 1)
+ (conventional-changelog-transform . 1)
+ (debian-changelog-mode . 1)
+ (customize-group . 2)
+ (chatgpt-arcana-chat-mode . 2)
+ (chatgpt-arcana-hydra/chatgpt-arcana-start-chat-and-exit . 1)
+ (gptel . 7)
+ (gptel-menu . 13)
+ (gptel-send . 8)
+ (ivy-mode . 4)
+ (smex . 2)
+ (ivy-rich-mode . 2)
+ (counsel-find-file . 2)
+ (which-key-mode . 2)
+ (chatgpt-shell . 4)
+ (chatgpt-shell-prompt . 1)
 )

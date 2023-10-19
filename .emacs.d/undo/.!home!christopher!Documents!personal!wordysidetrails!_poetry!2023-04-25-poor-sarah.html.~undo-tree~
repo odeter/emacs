@@ -1,0 +1,10 @@
+(undo-tree-save-format-version . 1)
+"3e71cfa9fe378a65e0b19ae139ee89ff1b67222a"
+[nil nil nil nil (25821 15084 70782 417000) 0 nil]
+([nil nil ((#("i" 0 1 (tag-name "i" tag-type start font-lock-face web-mode-html-tag-face)) . -1089) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) 1090 (t 25672 16809 246388 98000)) nil (25821 15084 70780 25000) 0 nil])
+([nil nil ((1089 . 1090)) nil (25821 15084 70760 616000) 0 nil])
+([nil nil ((#("i" 0 1 (tag-name "i" tag-type end font-lock-face web-mode-html-tag-face)) . 1097)) nil (25821 15084 70758 301000) 0 nil])
+([nil nil ((1097 . 1098)) nil (25821 15084 70750 938000) 0 nil])
+([nil nil ((1104 . 1105) (t 25821 15084 79053 811000)) nil (25821 15090 204789 313000) 0 nil])
+([nil current ((1108 . 1109) (1105 . 1109)) nil (25821 15090 204781 911000) 0 nil])
+nil

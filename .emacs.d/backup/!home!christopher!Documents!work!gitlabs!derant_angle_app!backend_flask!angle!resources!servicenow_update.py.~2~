@@ -1,0 +1,40 @@
+from angle import check_api
+from angle.models import FirmModel
+from flask_restful import Resource
+from flask import current_app as app
+from flask_mail import Message, Mail
+from flask import render_template
+import datetime
+from datetime import datetime as dt
+import os
+from .servicenow import create_serviceclient
+
+class ServicenowUpdate(Resource):
+    @check_api("APIKEY")
+    def post(self):
+        all_firms = FirmModel.get_all_firms()
+
+        for [firm, servicenowLink] in all_firms:
+
+            try:
+                serviceAPI = create_serviceclient(servicenowLink.instance_name, servicenowLink.username, servicenowLink.password)
+            except:
+                app.logger.error('Angle tried updating servicenow for the firm with ID - {0}, but couldn\'t establish a connection'.format(firm.id))
+                continue
+
+            sensor_update = []
+            active_sensors = firm.get_active_sensors()
+            for sensor in active_sensors:
+                status = sensor.sent_sms == None
+                error_msg = sensor.get_last_err_log() if status else ""
+                sensor_json.append({{"id": i.sensor_id, "name": i.name, "desc": i.description,
+                                     "toc": i.toc, "last_entry": i.last_entry, "status" : status,
+                                     "error": error_msg}})
+
+            try:
+                serviceAPI.update_sensor_data(sensor_update)
+            except:
+                app.logger.error('Angle tried updating servicenow for the firm with ID - {0}, but update failed'.format(firm.id))
+                continue
+
+        return {'message': 'Sensors status updated'}, 200

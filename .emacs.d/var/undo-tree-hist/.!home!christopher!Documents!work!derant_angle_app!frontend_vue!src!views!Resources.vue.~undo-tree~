@@ -1,0 +1,14 @@
+(undo-tree-save-format-version . 1)
+"3a5a60e7c71154a0e96b5520312c60a2ed774f1a"
+[nil nil nil nil (25331 46230 145657 475000) 0 nil]
+([nil nil ((#("tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}" 0 8 (part-side css face web-mode-css-selector-face) 8 20 (part-side css face web-mode-css-pseudo-class-face) 20 21 (part-side css face (rainbow-delimiters-depth-1-face web-mode-css-pseudo-class-face)) 21 24 (part-side css face web-mode-css-pseudo-class-face) 24 25 (part-side css face (rainbow-delimiters-depth-1-face web-mode-css-pseudo-class-face)) 25 26 (part-side css face web-mode-css-pseudo-class-face) 26 27 (part-side css face (rainbow-delimiters-depth-1-face)) 27 30 (part-side css) 30 47 (part-side css face web-mode-css-property-name-face) 47 48 (part-side css) 48 52 (part-side css face web-mode-css-function-face) 52 53 (part-side css face (rainbow-delimiters-depth-2-face)) 53 66 (part-side css) 66 67 (part-side css face (rainbow-delimiters-depth-2-face)) 67 68 (part-side css) 68 78 (part-side css face web-mode-css-priority-face) 78 80 (part-side css) 80 81 (part-side css face (rainbow-delimiters-depth-1-face))) . 6866) (undo-tree-id15 . -81) (undo-tree-id16 . -81) (undo-tree-id17 . -81) (undo-tree-id18 . -81) (undo-tree-id19 . -81) (undo-tree-id20 . -39) (undo-tree-id21 . -81) (undo-tree-id22 . -81) (undo-tree-id23 . -81) (undo-tree-id24 . -28) (undo-tree-id25 . -81) (undo-tree-id26 . -81) (undo-tree-id27 . -81) (t 25232 37438 635103 862000)) nil (25331 46230 145654 505000) 0 nil])
+([nil nil ((#("
+" 0 1 (part-side css)) . -6865) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) 6866) nil (25331 46230 145633 879000) 0 nil])
+([nil nil ((#("
+" 0 1 (part-side css)) . 6865) (undo-tree-id0 . -1) (undo-tree-id1 . -1)) nil (25331 46230 145612 12000) 0 nil])
+([nil nil ((697 . 700) (#("\"" 0 1 (tag-attr t tag-attr-end 5 tag-name "v-data-table" tag-type start font-lock-face web-mode-html-attr-value-face)) . 697) (696 . 698) (#("\"" 0 1 (tag-name "v-data-table" tag-type start)) . -696) (690 . 697) (t 25331 46230 146901 72000)) nil (25331 46461 932794 939000) 0 nil])
+([nil nil ((#(" " 0 1 (tag-attr t tag-name "v-data-table" tag-type start font-lock-face web-mode-html-attr-value-face)) . -697) (undo-tree-id28 . -1) 698) nil (25331 46461 932791 249000) 0 nil])
+([nil current ((nil rear-nonsticky nil 708 . 709) (nil tag-attr t 697 . 709) (nil tag-name "v-data-table" 697 . 709) (nil tag-type start 697 . 709) (nil font-lock-face web-mode-html-attr-value-face 697 . 709) (697 . 709)) nil (25331 46461 932773 486000) 0 nil])
+nil

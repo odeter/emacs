@@ -1,0 +1,19 @@
+(undo-tree-save-format-version . 1)
+"539cd2ceda4b73b21665c20003bc54afb7664ba4"
+[nil nil nil nil (25522 64345 835427 380000) 0 nil]
+([nil nil ((340 . 344) (#("    " 0 4 (fontified nil)) . 339) (undo-tree-id18 . -4) (338 . 344) (t 25430 15053 135608 896000)) nil (25522 64345 835425 532000) 0 nil])
+([nil nil ((339 . 344)) nil (25522 64345 835422 956000) 0 nil])
+([nil nil ((350 . 354) (349 . 351) (#("(" 0 1 (face font-lock-keyword-face fontified nil)) . -349) (344 . 350)) nil (25522 64345 835421 774000) 0 nil])
+([nil nil ((#("d" 0 1 (fontified t)) . -350) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (#("a" 0 1 (fontified t)) . -351) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (#("t" 0 1 (fontified t)) . -352) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (#("e" 0 1 (fontified t)) . -353) (undo-tree-id16 . -1) (undo-tree-id17 . -1) 354) nil (25522 64345 835419 81000) 0 nil])
+([nil nil ((351 . 356) (350 . 352) (#("\"" 0 1 (face (rainbow-delimiters-depth-1-face) fontified nil)) . -350) (350 . 351)) nil (25522 64345 835404 851000) 0 nil])
+([nil nil ((357 . 363)) nil (25522 64345 835403 86000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -362) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) 363) nil (25522 64345 835400 678000) 0 nil])
+([nil nil ((#("    " 0 4 (face whitespace-trailing fontified t)) . -364) 362) nil (25522 64345 835369 360000) 0 nil])
+([nil nil ((357 . 359) (t 25522 64345 836951 234000)) nil (25522 64357 335222 52000) 0 nil])
+([nil nil ((#("x" 0 1 (fontified t)) . -358) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) 359) nil (25522 64357 335216 523000) 0 nil])
+([nil nil ((#("
+    print(\"date:\", date)
+" 0 5 (fontified t) 5 10 (fontified t face font-lock-keyword-face) 10 11 (fontified t face (rainbow-delimiters-depth-1-face)) 11 18 (fontified t face font-lock-string-face) 18 24 (fontified t) 24 25 (fontified t face (rainbow-delimiters-depth-1-face)) 25 26 (fontified t)) . 339) (undo-tree-id0 . -1) (undo-tree-id1 . -26) (undo-tree-id2 . -26) (undo-tree-id3 . -26) (undo-tree-id4 . -26) (t 25522 64357 344985 23000)) nil (25524 1080 174985 762000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t)) . 339) (undo-tree-id5 . -1) (t 25524 1080 181376 160000)) nil (25524 1111 37413 913000) 0 nil])
+nil

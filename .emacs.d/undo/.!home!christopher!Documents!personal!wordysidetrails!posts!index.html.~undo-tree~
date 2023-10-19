@@ -1,0 +1,9 @@
+(undo-tree-save-format-version . 1)
+"f17de99e65bbba27df9f24ba38822ce0ff563911"
+[nil nil nil nil (25695 31937 556849 2000) 0 nil]
+([nil nil ((nil rear-nonsticky nil 104 . 105) (nil block-side t 103 . 105) (nil face web-mode-variable-name-face 103 . 105) (nil block-side t 101 . 103) (nil block-side t 96 . 101) (nil face web-mode-variable-name-face 96 . 101) (96 . 105) (t 25653 34988 974165 798000)) nil (25695 31937 556846 423000) 0 nil])
+([nil nil ((105 . 106)) nil (25695 31937 556838 369000) 0 nil])
+([nil current (("
+paginate:
+    reversed: true" . 30) (undo-tree-id0 . -29) (undo-tree-id1 . -29) (undo-tree-id2 . -1) (undo-tree-id3 . -29) (undo-tree-id4 . -29) (undo-tree-id5 . -29) (undo-tree-id6 . -29) (undo-tree-id7 . -29) (t 25695 31937 560996 974000)) nil (25695 31953 638195 60000) 0 nil])
+nil

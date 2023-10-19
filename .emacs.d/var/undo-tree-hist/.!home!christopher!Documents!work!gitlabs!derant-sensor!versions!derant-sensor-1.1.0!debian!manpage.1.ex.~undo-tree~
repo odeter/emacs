@@ -1,0 +1,12 @@
+(undo-tree-save-format-version . 1)
+"942e6ef1c011d77a8c409de09fb1a5ed0eccb565"
+[nil nil nil nil (25654 45407 930203 701000) 0 nil]
+([nil nil ((#("sensor" 0 6 (fontified t)) . 300) (undo-tree-id8 . -6) (undo-tree-id9 . -6) (undo-tree-id10 . -6) (t 25645 10885 461391 0)) nil (25654 45407 930200 937000) 0 nil])
+([nil nil ((#("D" 0 1 (fontified t)) . -299) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) 300) nil (25654 45407 930195 796000) 0 nil])
+([nil nil ((299 . 306)) nil (25654 45407 930191 121000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -305) (undo-tree-id4 . -1) 306) nil (25654 45407 930189 805000) 0 nil])
+([nil nil ((305 . 314)) nil (25654 45407 930187 61000) 0 nil])
+([nil nil ((#("p" 0 1 (fontified defer)) . -311) (undo-tree-id1 . -1) (#("r" 0 1 (fontified defer)) . -312) (undo-tree-id2 . -1) (#(" " 0 1 (fontified t)) . -313) (undo-tree-id3 . -1) 314) nil (25654 45407 930184 810000) 0 nil])
+([nil nil ((311 . 313)) nil (25654 45407 930177 532000) 0 nil])
+([nil current ((#(" " 0 1 (fontified t)) . -312) (undo-tree-id0 . -1) 313) nil (25654 45407 930172 313000) 0 nil])
+nil

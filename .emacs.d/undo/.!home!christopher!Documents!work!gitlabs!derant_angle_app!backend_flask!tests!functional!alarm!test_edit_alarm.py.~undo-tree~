@@ -1,0 +1,16 @@
+(undo-tree-save-format-version . 1)
+"f18152c8667e128da8e2d2709de84534ee1b5687"
+[nil nil nil nil (25869 41613 241039 483000) 0 nil]
+([nil nil ((1801 . 1803) (#("[" 0 1 (fontified nil)) . -1801) (1801 . 1802) (t 25869 36010 939171 211000)) nil (25869 41613 241037 273000) 0 nil])
+([nil nil ((#("]" 0 1 (fontified t face (rainbow-delimiters-depth-2-face))) . 1802)) nil (25869 41613 241034 957000) 0 nil])
+([nil nil ((1803 . 1804)) nil (25869 41613 241033 334000) 0 nil])
+([nil nil ((833 . 835) (#("[" 0 1 (fontified nil)) . -833) (833 . 834)) nil (25869 41613 241031 783000) 0 nil])
+([nil nil ((#("]" 0 1 (fontified t face (rainbow-delimiters-depth-2-face))) . 834)) nil (25869 41613 241029 241000) 0 nil])
+([nil nil ((849 . 850)) nil (25869 41613 241027 276000) 0 nil])
+([nil nil ((2074 . 2075) 849) nil (25869 41613 241019 669000) 0 nil])
+([nil nil ((843 . 845) (#("(" 0 1 (fontified nil)) . -843) (833 . 844) (t 25869 41613 243059 207000)) nil (25869 44358 880597 476000) 0 nil])
+([nil nil ((#(")" 0 1 (fontified t face (rainbow-delimiters-depth-2-face))) . 844)) nil (25869 44358 880594 727000) 0 nil])
+([nil nil ((861 . 862)) nil (25869 44358 880593 594000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1825 . 1826) (nil fontified nil 1825 . 1826) (nil fontified nil 1815 . 1825) (1815 . 1826)) nil (25869 44358 880591 395000) 0 nil])
+([nil current ((1829 . 1830)) nil (25869 44358 880583 155000) 0 nil])
+nil

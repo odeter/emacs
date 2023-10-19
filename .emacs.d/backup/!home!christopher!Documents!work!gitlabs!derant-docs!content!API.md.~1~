@@ -1,0 +1,602 @@
+# Data Integrations
+
+Angle is able to connect to the following services:
+
+ - [Azure](#link-to-azure)
+
+Data from Angle can also be accessed via an [external API](#api).
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Link to Azure
+
+It is possible to link angle up to your azure account for Angle to automatically create the alarms it raises as incidents in azure as well. To link your account first you have to add our Microsoft azure app to your account. Go to the `Enterprise``` applications` page and click on the `New application` button. Then search for `Derant Angle` and our application should turn up, which you then can create.
+
+Then to add sentinel contribution permission to our app, e.g the ability to create and manage incidents. Then go to your resource group that has your azure subscription (find it on the `resource groups` page), and click on the `Access control (IAM)` menu item. You can click `Add` -> `Add Role Assignment` which then shows the popup. From here find the role called `Microsoft Sentinel Contributor` and click `next` at the bottom of the page. Then for `assign access to` leave it checked at the `User, group, or service principal`, click `Select members` and then search for our app `Derant Angle`. Do note that the applications will not be shown in the select members popup per default and that you have to search for them. Then finally review and assign it.
+
+
+Then to bind your Angle account go to the [data integration page](https://angle.derant.com/azure_setup), found under `Integration` -> `Azure integration`.
+Then fill out the formula with the required account information, you can find the account information on your azure account:
+
+1. **Tenant ID**, this id can be found on the 'Azure Active Directory' page. You can follow [this guide](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant) to find it.
+1. **Subscription ID**, this id can be found on the 'subscription' page in azure. You can follow [this guide](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id) to find it.
+1. **Resource Group**, this is the name of the resource group that your chosen sentinel subscription exists under. Simply go the the 'Resource groups' page on your azure account to get an overview.
+1. **Workspace**, by clicking on your given resource group in the azure tool, you can then see which workspaces are connected to it. Choose the one with your sentinel subscription.
+
+------------------------------------------------------------------------------------------------------------------------
+
+## API
+To access data from Angle via an API, an API id and key pair must first be created. This is done from the [API keys page](https://angle.derant.com/api_keys), found under `Integration` -> `API keys`. Then put in a name for the API key and potentially a description (for example the machine or service which is using the API key). On clicking 'Create' the API key and its ID will be viewable in the overview.
+
+### JSON filter objects
+A filter in its simplest form has 4 elements; field, operator, value and type. The field is the field being compared for the filter, operator is the mathematical operator (can also be >, <, != e.g.), value is the comparison value, and type is "Compexpression" for all simple comparison filters. An example here:
+
+`{"field":"id_resp_h","operator":"=","value":"192.168.0.1","type":"Compexpression"}`
+
+To make an and filter, simple objects are wrapped to act as parameters. The outer level of the filter has the parameters condition, type and rules. Condition is "and", type is "OrExpression" and rules is a list of filter objects to be in the and filter.
+
+`{"condition":"and","type":"OrExpression","rules":[{FILTER OBJECT},{FILTER OBJECT}]}`
+
+To make an or filter, all the same values from an and filter should be present, but condition should be set to "or" instead of "and".
+
+`{"condition":"or","type":"OrExpression","rules":[{FILTER OBJECT,"rulepos":0},{FILTER OBJECT,"rulepos":1}]}`
+
+To make a not filter, the values type, rule, and condition should be set. Type is "NotExpression", condition is "not" and rule should be set to a filter object.
+
+`{"type":"NotExpression","condition":"not","rule":{FILTER OBJECT}}`
+
+### Token generation
+API access is managed using access tokens. These are created by a POST request to https://angle.derant.com/api/token, where the key of the API is included. To utilize the API an access token must first be generated, this can be done using curl:
+```
+$ curl -X POST 'https://angle.derant.com/api/token?key={YOUR KEY}'
+```
+Upon entering the correct credentials, an access token will be returned. This lasts for 2 hours and must be forwarded in the header with every call to access data via the API. As an example, to access alarm data via curl:
+```
+curl -H "Authorization: Bearer {YOUR ACCESS TOKEN}" {GET API URL}
+```
+To access a POST API use following command:
+```
+curl -X POST -H "Authorization: Bearer {YOUR ACCESS TOKEN}" {POST API URL}?{PARAM_NAME}={PARAM_VALUE}
+```
+
+### Return format
+Some of the entrances have the option to return in csv format. A CSV file can be downloaded using curl by adding '--output {YOUR FILENAME}' to the command.
+
+### Logs
+#### Get logs
+Retrieves logs for a given logtype. Output is limited to 1000 rows.
+| API name | Type | URL |
+| - | - | - |
+| get_logs | `GET` | https://angle.derant.com/api/get_logs |
+
+Parameters:
+  * logType` - Log type to retrieve logs for.
+  * `dates` - JSON list of start and end date in the format YYYY-MM-DD.
+  * `sensorID` - ID of the sensor to retrieve logs from.
+<br/><br/>
+  * `filter` (Optional) - Filter as a JSON object to run on log.
+  * `hideCols` (Optional) - JSON list of column names to hide from returned result.
+  * `format` (Optional) - Can be CSV to download CSV file of result.
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"filter":"[{\"field\":\"id_resp_h\",\"operator\":\"=\",\"value\":\"192.168.0.2\",\"type\":\"Compexpression\"}]","logType":"conn","dates":"[\"2023-05-01\", \"2023-05-02\"]","hideCols":"[\"insert_ts\"]","sensorID":"1"}' http://angle.derant.com/api/get_logs
+```
+
+Returns a JSON list containing the following on a success:
+  * `JSON object` containing:
+    * `logs` - The JSON list of returned log rows, the first element being a descriptor for the values in the list.
+    * `message` - The status message of the operation.
+  * A status code.
+
+#### Log stats
+Returns stats for a given log type.\
+Can have a specified time interval <= start date and > end date.
+| API name | Type | URL |
+| - | - | - |
+|log_stats|`GET`|https://angle.derant.com/api/get_log_stats||
+
+Parameters:
+  * `logType` - log_type to be checked as a string.
+<br/><br/>
+  * `start` (Optional) - date in the format YYYY-MM-DD or YYYY-MM-DD.HH:MM:SS.
+  * `end` (Optional) - date in the format YYYY-MM-DD or YYYY-MM-DD.HH:MM:SS.
+  * `format` (Optional) - Can be csv. Empty for json.
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"logType": "{YOUR LOGTYPE}"}' http://angle.derant.com/api/get_log_stats
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - The return message of the call.
+  * `log_stats` - A list of the stat entries.
+
+------------------------------------------------------------------------------------------------------------------------
+
+### Sensors
+#### Get sensors
+Retrieves a list of all sensors for the firm.
+| API name | Type | URL |
+| - | - | - |
+| get_sensors | `GET` | https://angle.derant.com/api/get_sensors |
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" http://angle.derant.com/api/get_sensors
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - The status message of the operation
+  * `sensors` - A JSON list of info for sensors of the firm, the first element being a descriptor for the values in the list.
+
+#### Create sensor
+Creates a new sensor.
+| API name | Type | URL |
+| - | - | - |
+| create_sensor | `POST` | https://angle.derant.com/api/create_sensor |
+
+Parameters:
+  * `name` - Name of the new sensor.
+  <br/><br/>
+  * `desc` (Optional) - Description of the new sensor
+
+Curl example:
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"name": "{NAME}"}' http://angle.derant.com/api/create_sensor
+```
+
+#### Delete sensor
+Deletes an existing sensor.
+| API name | Type | URL |
+| - | - | - |
+| delete_sensor | `DELETE` | https://angle.derant.com/api/delete_sensor |
+
+Parameters:
+  * `id` - ID of sensor to be deleted
+
+Curl example:
+```bash
+curl -X DELETE -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"id": {ID}}' http://angle.derant.com/api/delete_sensor
+```
+
+#### Edit sensor
+Edits an existing sensor.
+| API name | Type | URL |
+| - | - | - |
+| edit_sensor | `PATCH` | https://angle.derant.com/api/edit_sensor |
+
+Parameters:
+  * `id` - ID of sensor to be edited
+<br/><br/>
+  * `name` (Optional) - New name of the sensor
+  * `desc` (Optional) - New description of the sensor
+
+Curl example:
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"id": {ID}, "name": "{NEW NAME}"}' http://angle.derant.com/api/edit_sensor
+```
+------------------------------------------------------------------------------------------------------------------------
+
+### Triggers
+#### Get triggers
+Retrieves a list of triggers.
+| API name | Type | URL |
+| - | - | - |
+| get_triggers | `GET` | https://angle.derant.com/api/get_triggers |
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" http://angle.derant.com/api/get_triggers
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - The status message of the operation
+  * `triggers` - A JSON list of info for triggers of the firm, the first element being a descriptor for the values in the list.
+
+#### Create trigger
+Creates a new trigger.
+| API name | Type | URL |
+| - | - | - |
+| create_trigger | `POST` | https://angle.derant.com/api/create_trigger |
+
+Parameters:
+  * `name` - Name of new trigger.
+  * `logType` - Log type for trigger.
+  * `probeID` - ID of sensor.
+  * `interval` - Interval in hours for the trigger to be run and check for alarms. Must be minimum 1.
+  * `aLevel` - Alarm level to set for alarms raised by trigger.
+  * `columns` - JSON list of columns to discern alarms on.
+  * `filterID` OR `selectionID` - ID of filter/selection to be used for alarm. Only one of these must be selected.\
+<br/><br/>
+  * `alarmType` (Optional) - Type of alarm raised.
+  * `notifierID` (Optional) - ID of notifier to be used for alarms raised by trigger.
+  * `desc` (Optional) - Description for trigger.
+
+Curl example:
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"name": "{NAME}", "logType": "{LOGTYPE}", "probeID": {ID}, "interval": 1, "aLevel": 1, "columns": "ts", "filterID": {ID}}' http://angle.derant.com/api/create_trigger
+```
+
+#### Delete trigger
+Deletes an existing trigger. Does not delete alarms raised by trigger.
+| API name | Type | URL |
+| - | - | - |
+| delete_trigger | `DELETE` | https://angle.derant.com/api/delete_trigger |
+
+Parameters:
+  * `id` - ID of trigger to be deleted.
+
+Curl example:
+```bash
+curl -X DELETE -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"id": {ID}}' http://angle.derant.com/api/delete_trigger
+```
+
+#### Edit trigger
+Edits an existing trigger.
+| API name | Type | URL |
+| - | - | - |
+| edit_trigger | `PATCH` | https://angle.derant.com/api/edit_trigger |
+
+Parameters:
+  * `id` - ID of trigger to be edited
+<br/><br/>
+  * `name` (Optional) - string
+  * `desc` (Optional) - string description for trigger
+  * `probe` (Optional) - Sensor ID
+  * `filterID` OR `selectionID` (Optional) - ID of filter/selection to be used for alarm. Only one of these must be selected.
+  * `interval` (Optional) - Int interval of trigger must be minimum 1.
+  * `level` (Optional) - Alarm level for trigger.
+  * `cols` (Optional) - Columns to destinguish alarms by.
+  * `type` (Optional) - Alarm type raised by trigger.
+  * `notifier` (Optional) - ID of notifier for alarm.
+
+Curl example:
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"name": "{NAME}", "id": {ID}}' http://angle.derant.com/api/edit_trigger
+```
+
+#### Retire alarms
+Closes all alarms where the conditions of the trigger have been updated, and the alarm should no longer be active.
+| API name | Type | URL |
+| - | - | - |
+| retire_alarms | `GET` | https://angle.derant.com/api/retire_alarms |
+
+Parameters:
+  * `id` - ID of trigger.
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"id": {ID}}' http://angle.derant.com/api/retire_alarms
+```
+------------------------------------------------------------------------------------------------------------------------
+
+### Filters
+#### Get filters
+Retrieves a list of filters for a specific logtype.
+| API name | Type | URL |
+| - | - | - |
+| get_filters | `GET` | https://angle.derant.com/api/get_filters |
+
+Parameters:
+  * `logType` - The logtype to retrieve filters for
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"logType": "{LOGTYPE}"}' http://angle.derant.com/api/get_filters
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - The status message of the operation
+  * `filters` - A JSON list of info for filters of the firm, the first element being a descriptor for the values in the list.
+
+#### Create filter
+Creates a new filter.
+| API name | Type | URL |
+| - | - | - |
+| create_filter | `POST` | https://angle.derant.com/api/create_filter |
+
+Parameters:
+  * `name` - String name of filter.
+  * `logType` - Logtype of filter.
+  * `filter` - Filter as a JSON object.
+  * `shareLevel` - Can be either `group` or `firm`.
+
+Curl example:
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"name": "{NAME}", "logType": "{LOGTYPE}", "filter": "{\"field\":\"proto\",\"operator\":\"=\",\"value\":\"udp\",\"active\":\"true\",\"type\":\"Compexpression\"}", "shareLevel": "firm"}' http://angle.derant.com/api/create_filter
+```
+
+#### Delete filter
+Deletes an existing filter.
+| API name | Type | URL |
+| - | - | - |
+| delete_filter | `DELETE` | https://angle.derant.com/api/delete_filter |
+
+Parameters:
+  * `id` - ID of filter to be deleted.
+  <br/><br/>
+  * `confirmDelete` (Optional) - Used to force deletion of a filter that is used in a trigger. Trigger is not deleted.
+
+Curl example:
+```bash
+curl -X DELETE -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"id": {ID}}' http://angle.derant.com/api/delete_filter
+```
+
+#### Edit filter
+Edits an existing filter.
+| API name | Type | URL |
+| - | - | - |
+| edit_filter | `PATCH` | https://angle.derant.com/api/edit_filter |
+
+Parameters:
+  * `id` - ID of filter to be edited.
+  * `name` (Optional) - name of filter.
+  * `logType` (Optional) - Logtype of filter.
+  * `filter` (Optional) - Filter as a JSON object.
+  * `shareLevel` (Optional) - Can be either `group` or `firm`.
+
+Curl example:
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"name": "{NAME}", "id": {ID}}' http://angle.derant.com/api/edit_filter
+```
+------------------------------------------------------------------------------------------------------------------------
+
+### Filter selections
+#### Get filter selections
+Retrieves a list of filter selections.
+| API name | Type | URL |
+| - | - | - |
+| get_filter_selections | `GET` | https://angle.derant.com/api/get_filter_selections |
+
+Parameters:
+  * `logType` - Log type to retrieve selections for.
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"logType": "{LOGTYPE}"}' http://angle.derant.com/api/get_filter_selections
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - The status message of the operation
+  * `selections` - A JSON list of info for filter selections of the firm, the first element being a descriptor for the values in the list.
+
+#### Create filter selection
+Creates a new filter selection.
+| API name | Type | URL |
+| - | - | - |
+| create_filter_selection | `POST` | https://angle.derant.com/api/create_filter_selection |
+
+Parameters:
+  * `selection` - JSON list of filter IDs to be included in selection.
+  * `name` - string name of selection.
+  * `log` - Logtype of the filter selection and filters therein.
+
+Curl example:
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"name": "{NAME}", "selection": "[2,3,4,5]", "log":"{LOGTYPE}"}' http://angle.derant.com/api/create_filter_selection
+```
+
+#### Delete filter selection
+Deletes an existing filter selection.
+| API name | Type | URL |
+| - | - | - |
+| delete_filter_selection | `DELETE` | https://angle.derant.com/api/delete_filter_selection |
+
+Parameters:
+  * `id` - ID of filter selection to be deleted.
+
+Curl example:
+```bash
+curl -X DELETE -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"id": {ID}}' http://angle.derant.com/api/delete_filter_selection
+```
+
+#### Edit filter selection
+Edits an existing filter selection.
+| API name | Type | URL |
+| - | - | - |
+| edit_filter_selection | `PATCH` | https://angle.derant.com/api/edit_filter_selection |
+
+Parameters:
+  * `id` - ID of filter selection to be edited.
+  </br></br>
+  * `addSelection` (Optional) - JSON list of filter IDs to be added to selection.
+  * `selection` (Optional) - JSON list of filter IDs to overwrite selection.
+  * `name` (Optional) - string name of selection.
+  * `log` (Optional) - The logtype of the selection and filters therein. Must match given filter IDs.
+
+Curl example:
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"name": "{NAME}", "id": {ID}}' http://angle.derant.com/api/edit_filter_selection
+```
+------------------------------------------------------------------------------------------------------------------------
+
+### Reports
+#### Get report settings
+Retrieves a list of report settings.
+| API name | Type | URL |
+| - | - | - |
+| get_report_settings | `GET` | https://angle.derant.com/api/get_report_settings |
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" http://angle.derant.com/api/get_report_settings
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - The status message of the operation
+  * `settings` - A JSON list of info for report settings of the firm, the first element being a descriptor for the values in the list.
+
+#### Create report settings
+Creates new settings for reports.
+| API name | Type | URL |
+| - | - | - |
+| create_report_settings | `POST` | https://angle.derant.com/api/create_report_settings |
+
+Parameters:
+  * `users` - List of user IDs to create reports for.
+  * `startdate` - Starting date in the format YYYY-MM-DD.
+  * `repeat` - Interval at which to create report - `1` for daily, `2` for weekly, `3` for every month, `4` for every 3 months, `5` for every 6 months or `6` for yearly.
+  * `lang` - Language of the report either `DK` or `GB`.
+
+Curl example:
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"users": "[{USER ID}]", "startdate": "2023-06-01", "repeat": 1, "lang": "DK"}' http://angle.derant.com/api/create_report_settings
+```
+
+#### Delete report settings
+Deletes report settings for a given user.
+| API name | Type | URL |
+| - | - | - |
+| delete_report_settings | `DELETE` | https://angle.derant.com/api/delete_report_settings |
+
+Parameters:
+  * `user` - ID of user whose settings should be deleted.
+
+Curl example:
+```bash
+curl -X DELETE -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"userID": {USERID}}' http://angle.derant.com/api/delete_report_settings
+```
+
+#### Generate report
+Generate a PDF report.
+| API name | Type | URL |
+| - | - | - |
+| generate_report | `GET` | https://angle.derant.com/api/generate_report |
+
+Parameters:
+  * `dates` - JSON list of start and end period to be covered by report formatted as strings YYYY-MM-DD.
+  * `lang` - Language of the report either `DK` or `GB`.
+  * `selModules` - JSON list of report modules as strings. Available options are `dashboard`, `risks-connections`, `secStatus`, `newUnits`, `messages` or `yearActivity`.
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"dates": "[\"2023-01-01\", \"2023-06-01\"]", "lang": "DK", "selModules": "[\"dashboard\"]"}' http://angle.derant.com/api/generate_report > {PDF_FILENAME}
+```
+------------------------------------------------------------------------------------------------------------------------
+
+### User
+#### Get users
+Retrieves a list of all users for the firm.
+| API name | Type | URL |
+| - | - | - |
+| get_users | `GET` | https://angle.derant.com/api/get_users |
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" http://angle.derant.com/api/get_users
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - The status message of the operation
+  * `users` - A JSON list of info for users of the firm, the first element being a descriptor for the values in the list.
+
+#### Create user
+Creates a new user for your firm.
+| API name | Type | URL |
+| - | - | - |
+| create_user | `POST` | https://angle.derant.com/api/create_user |
+
+Parameters:
+  * `email` - Mail of user.
+  * `name` - String name of user.
+  * `password` - Password for user.
+  * `roles` - JSON list of roles for user. Can be `7` for Operations Manager, `8` for IT manager, `9` for IT security and `10` for Management.
+  * `mobile` - Mobile number of user.
+  * `countryCode` - For user. E.g. "DK" for Denmark.
+
+Curl example:
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"email": "{EMAIL}", "name": "{NAME}", "password": "{PASS}", "roles": "[7]", "mobile": "{PHONENR}", "countryCode": "DK"}' http://angle.derant.com/api/create_user
+```
+
+#### Edit user
+Edits an existing user. Only possible for roles below admin.
+| API name | Type | URL |
+| - | - | - |
+| edit_user | `PATCH` | https://angle.derant.com/api/edit_user |
+
+Parameters:
+  * `id` - ID of user.
+  </br><br/>
+  * `roles` (Optional) - JSON list of roles for user. Can be `7` for Operations Manager, `8` for IT manager, `9` for IT security and `10` for Management.
+  * `active` (Optional) - Wether user is active. Either `true` or `false`.
+  * `notifyUser` (Optional) - Wether user should receive e-mail notifications. Either `true` or `false`.
+
+Curl example:
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"userID": {USERID}, "active": "false"}' http://angle.derant.com/api/edit_user
+```
+------------------------------------------------------------------------------------------------------------------------
+
+### Alarms
+#### Get alarm levels
+Retrieves a list of possible alarm levels
+| API name | Type | URL |
+| - | - | - |
+| get_alarm_levels | `GET` | https://angle.derant.com/api/get_alarm_levels |
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" http://angle.derant.com/api/get_alarm_levels
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - The status message of the operation
+  * `alarm_levels` - A JSON list of info for alarm levels of the firm, the first element being a descriptor for the values in the list.
+
+#### Get alarms
+Retrieves a list of alarms.
+| API name | Type | URL |
+| - | - | - |
+| get_alarms | `GET` | https://angle.derant.com/api/get_alarms |
+
+Parameters:
+  * `aStatus` - The alarm statuses to retrieve. 0 for unhandles alarms, 1 for being handled, 2 for closed and 3 for ignored.
+
+Curl example:
+```bash
+curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"aStatus": 0}' http://angle.derant.com/api/get_alarms
+```
+
+Returns a JSON object containing the following on success:
+  * `message` - A status message for the operation
+  * `alarms` - A list of alarm objects, the first element being a descriptor for the values in the list.
+
+#### Create alarm
+Manually raise an alarm.
+| API name | Type | URL |
+| - | - | - |
+| create_alarm | `POST` | https://angle.derant.com/api/create_alarm |
+
+Parameters:
+  * `aName` - string
+  * `aDesc` - string
+  * `aSensor` - ID of sensor
+  * `aTable` - ID of table containing data point.
+  * `aDTS` - Timestamp for alarm being raised (the time of using this call).
+  * `aLevel` - Level of new alarm. 1 for Potential, 2 or Pressing and 3 for Critical.
+  * `aDataID` - ID of datapoint from logs which alarm should be raised on.
+  * `aType` (Optional) - string. Default value is "filler_type".
+
+Curl example:
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"aName": "{NAME}", "aDesc": "{DESC}", "aSensor": {ID}, "aTable": {TABLEID}, "aLevel": {LEVEL}, "aDataID": "\"{DATAID}\"", "aType": "{ALARMTYPE}"}' http://angle.derant.com/api/create_alarm
+```
+
+#### Edit alarm
+Edits an existing alarm.
+| API name | Type | URL |
+| - | - | - |
+| edit_alarm | `PATCH` | https://angle.derant.com/api/edit_alarm |
+
+Parameters:
+  * `id` - ID of alarm to be edited.
+  </br><br/>
+  * `status` (Optional) - The new status of the alarm
+  * `note` (Optional) - string of note to be added
+
+Curl example:
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {YOUR TOKEN}" -d '{"id": {ID}, "status": 0}' http://angle.derant.com/api/edit_alarm
+```

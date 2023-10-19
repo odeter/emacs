@@ -1,7 +1,0 @@
-import os
-
-PROPAGATE_EXCEPTIONS = True
-SECRET_KEY = 'dfgjksdæj23po80åbvcdfg'
-CORS_HEADERS = 'Content-Type'
-CORS_ENABLED = True
-FILE_KEY = 'ez6457ErEcNpT97CCgv'

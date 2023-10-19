@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"c3be7f472b629209c430d1696ad01779adf6a559"
+[nil nil nil nil (25331 46887 904592 701000) 0 nil]
+([nil nil ((2602 . 2613) (t 25232 37438 631103 836000)) nil (25331 46887 904590 810000) 0 nil])
+([nil nil ((2613 . 2621)) nil (25331 46887 904588 490000) 0 nil])
+([nil current ((nil rear-nonsticky nil 2631 . 2632) (nil tag-attr t 2620 . 2632) (nil tag-name "v-data-table" 2620 . 2632) (nil tag-type start 2620 . 2632) (nil font-lock-face web-mode-html-attr-value-face 2620 . 2632) (2620 . 2632)) nil (25331 46887 904580 535000) 0 nil])
+nil

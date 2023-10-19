@@ -1,0 +1,270 @@
+<template>
+  <v-container ma-0 pa-0 bg grid-list-xs text-xs-center fluid>
+    <v-card outlined flat>
+      <v-card-title>
+        {{$t('Integration.Azure.header')}}
+      </v-card-title>
+      <v-form ref="iform" @submit.prevent="changeUserInfo">
+        <v-card-text>
+          <v-row>
+            <v-col>
+              <v-text-field
+                class="required"
+                v-model="tenant_id"
+                v-bind:label="$t('Integration.Azure.tenantid')"
+                v-bind:placeholder="$t('Integration.Azure.tenantidDesc')"
+                persistent-placeholder
+                :counter="120"
+                :disabled="loading"
+                prepend-icon="mdi-microsoft-azure"
+                :success-messages="i_form_sucT"
+                :error-messages="i_error"
+                outlined
+                required
+              ></v-text-field>
+            </v-col>
+            <v-col>
+              <v-text-field
+                class="required"
+                v-model="sub_id"
+                :disabled="loading"
+                v-bind:label="$t('Integration.Azure.subid')"
+                v-bind:placeholder="$t('Integration.Azure.subidDesc')"
+                persistent-placeholder
+                :counter="120"
+                prepend-icon="mdi-microsoft-azure"
+                :success-messages="i_form_sucT"
+                :error-messages="i_error"
+                outlined
+                required
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-text-field
+                class="required"
+                v-model="resource_group"
+                :disabled="loading"
+                v-bind:label="$t('Integration.Azure.group')"
+                v-bind:placeholder="$t('Integration.Azure.groupDesc')"
+                persistent-placeholder
+                :counter="120"
+                prepend-icon="mdi-microsoft-azure"
+                :success-messages="i_form_sucT"
+                :error-messages="i_error"
+                outlined
+                required
+              ></v-text-field>
+            </v-col>
+            <v-col>
+              <v-text-field
+                class="required"
+                v-model="workspace"
+                :disabled="loading"
+                v-bind:label="$t('Integration.Azure.workspace')"
+                v-bind:placeholder="$t('Integration.Azure.workspaceDesc')"
+                persistent-placeholder
+                :counter="120"
+                prepend-icon="mdi-microsoft-azure"
+                :success-messages="i_form_sucT"
+                :error-messages="i_error"
+                outlined
+                required
+              ></v-text-field>
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-actions>
+          <v-row>
+            <v-col>
+              <v-btn
+                block
+                :loading="loading"
+                color="primary"
+                @click="saveAzureLink()"
+              >
+                {{$t('Integration.Azure.save_set')}}
+              </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn
+                block
+                :loading="loading"
+                color="green"
+                @click="testAzureLink()"
+              >
+                {{$t('Integration.Azure.test_set')}}
+              </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn
+                block
+                color="white"
+                :loading="loading"
+                @click="clear()"
+              >{{ $t("General.clear") }}
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-card-actions>
+      </v-form>
+    </v-card>
+    <v-snackbars bottom left :objects.sync="msg_objects">
+      <template v-slot:default="{message}">
+        <v-icon
+          dark
+          left
+        >
+          {{ message[1]  }}
+        </v-icon>
+        {{ message[0] }}
+      </template>
+    </v-snackbars>
+  </v-container>
+</template>
+
+<script>
+  import authservice from '@/services/BackendService.js'
+  import bugReport from '@/mixins/bugReportMixin'
+
+  export default {
+    name: 'AzureSetup',
+    mixins: [bugReport],
+    props: {
+      multiple: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data() {
+      return {
+        tenant_id: null,
+        resource_group: null,
+        workspace: null,
+        sub_id: null,
+        i_error: null,
+        i_form_sucT: null,
+        i_form_succ: null,
+        loading: false,
+        msg_objects: []
+      }
+    },
+    methods: {
+      saveAzureLink() {
+        this.i_error = null
+        this.i_form_sucT = null
+        this.loading = true
+        authservice
+          .setAzureLink(this.tenant_id, this.resource_group, this.workspace, this.sub_id)
+          .then((result) => {
+            this.i_form_sucT = this.$t('Integration.Azure.succ')
+            this.loading = false
+          })
+          .catch((error) => {
+            console.log('Error')
+            console.log(error)
+            this.i_error = error.response.data['message']
+            this.loading = false
+          })
+      },
+      testAzureLink(tenant_id, resource_group, workspace, sub_id, ctype) {
+        this.i_error = null
+        this.i_form_sucT = null
+        this.loading = true
+        authservice
+          .testAzureLink(this.tenant_id, this.resource_group, this.workspace, this.sub_id, 1)
+          .then((result) => {
+            this.msg_objects.push({
+              message: [this.$t('Integration.Azure.test_create'), 'mdi-checkbox-marked-circle'],
+              color: 'green',
+              timeout: 5000
+            })
+
+            authservice
+              .testAzureLink(this.tenant_id, this.resource_group, this.workspace, this.sub_id, 2)
+              .then((result) => {
+                this.msg_objects.push({
+                  message: [this.$t('Integration.Azure.test_edit'), 'mdi-checkbox-marked-circle'],
+                  color: 'green',
+                  timeout: 5000
+                })
+                authservice
+                  .testAzureLink(this.tenant_id, this.resource_group, this.workspace, this.sub_id, 3)
+                  .then((result) => {
+                    this.loading = false
+                    this.msg_objects.push({
+                      message: [this.$t('Integration.Azure.test_delete'), 'mdi-checkbox-marked-circle'],
+                      color: 'green',
+                      timeout: 5000
+                    })
+                  })
+                  .catch((error) => {
+                    this.loading = false
+                    console.log(error)
+                    this.msg_objects.push({
+                      message: [error.response.data['message'], 'mdi-close-circle-outline'],
+                      color: 'red',
+                      timeout: 5000
+                    })
+                  })
+              })
+              .catch((error) => {
+                this.loading = false
+                console.log(error)
+                this.msg_objects.push({
+                  message: [error.response.data['message'], 'mdi-close-circle-outline'],
+                  color: 'red',
+                  timeout: 5000
+                })
+              })
+          })
+          .catch((error) => {
+            this.loading = false
+            console.log(error)
+            this.msg_objects.push({
+              message: [error.response.data['message'], 'mdi-close-circle-outline'],
+              color: 'red',
+              timeout: 5000
+            })
+          })
+      },
+      getAzureLink() {
+        this.i_error = null
+        this.i_form_sucT = null
+        this.loading = true
+        authservice
+          .getAzureLink()
+          .then((result) => {
+            this.tenant_id = result.data['ten_id']
+            this.workspace = result.data['workspace']
+            this.sub_id = result.data['sub_id']
+            this.resource_group = result.data['group']
+
+            this.loading = false
+          })
+          .catch((error) => {
+            console.log('Error')
+            console.log(error)
+            this.i_error = error.response.data['message']
+            this.loading = false
+          })
+      },
+      clear() {
+        this.tenant_id = null
+        this.workspace = null
+        this.sub_id = null
+        this.resource_group = null
+        this.i_error = null
+        this.i_form_sucT = null
+        this.i_form_succ = null
+      }
+    },
+    mounted() {
+      this.getAzureLink()
+    }
+  }
+</script>
+
+<style>
+</style>

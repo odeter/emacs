@@ -1,0 +1,80 @@
+(undo-tree-save-format-version . 1)
+"03e92d76a8a4cbbf69e13a74797961db6f20dd07"
+[nil nil nil nil (25670 65366 986180 878000) 0 nil]
+([nil nil (("2" . -46) (undo-tree-id39 . -1) (undo-tree-id40 . -1) (undo-tree-id41 . -1) 47 (t 25670 62269 947786 0)) nil (25670 65366 986179 17000) 0 nil])
+([nil nil ((46 . 47)) nil (25670 65366 986174 675000) 0 nil])
+([nil nil (("8" . -49) (undo-tree-id38 . -1) 50) nil (25670 65366 986173 649000) 0 nil])
+([nil nil ((49 . 50)) nil (25670 65366 986171 352000) 0 nil])
+([nil nil (("2" . -51) (undo-tree-id34 . -1) (undo-tree-id35 . -1) ("7" . -52) (undo-tree-id36 . -1) (undo-tree-id37 . -1) 53) nil (25670 65366 986169 968000) 0 nil])
+([nil nil ((51 . 53)) nil (25670 65366 986164 543000) 0 nil])
+([nil nil (("expectations" . 24) (undo-tree-id31 . -12) (undo-tree-id32 . -12) (undo-tree-id33 . -12)) nil (25670 65366 986163 358000) 0 nil])
+([nil nil ((24 . 33)) nil (25670 65366 986159 402000) 0 nil])
+([nil nil ((" " . -32) (undo-tree-id30 . -1) 33) nil (25670 65366 986158 238000) 0 nil])
+([nil nil ((#("From the dawn of my time, to the end of my road, i will try to exist, <br/>
+to find my place of being. For though the privilege of youth in this day <br/>
+and age is grand, i find my possibilities many, even sometime without
+limit. Which should inflate me with joy and grit, that my life is open
+in all directions. But though the sky is breached for me and me alone,
+the blood and sweat of my ancestor weighs heavily upon me. For am
+i blessed or cursed with a life without limits, surely i could not say
+no, no in disrespect, in disbelieve. An insult to all that has been done
+before me would it be, to simply pass on a chance so many before has
+lived without, a chance they didn’t get.
+The choice it weights me down from so young an age, í should
+count myself blessed but instead feel myself pressed against the ground.
+For with freedom comes responsibility, to take the correct road, to
+make the right choice. I fear deeply i might spill my chance, i might
+take the wrong door, though all are open and i see through them to
+the end. My life before my eyes, how it would shape, how it would
+tear in each and every direction. I feel myself punched down a road
+splitting unto hundreds. Take a road, make a choice, your life and
+future depends upon it, don’t waste your chance, your golden ticket,
+that so many fought to give you. As i start to walk upon the dusty
+road i feel panic and fear as my heart pumps and pumps away. I don’t
+know which path to choose and soon there will be no more delay. My
+heart jump and my focus i loose as the path must be chosen, for i
+don’t know which road to take, which one to bet my chance on. Some-
+times i wish for no chance at all, no choice or road to take, to throw
+overboard my existential crisis, to just be happy, to just exist." 70 71 (tag-name "br" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 71 73 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-face) 73 74 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-bracket-face) 74 75 (tag-name "br" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face) 149 150 (tag-name "br" tag-type void tag-beg 24 font-lock-face web-mode-html-tag-bracket-face) 150 152 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-face) 152 153 (tag-name "br" tag-type void font-lock-face web-mode-html-tag-bracket-face) 153 154 (tag-name "br" tag-type void tag-end t font-lock-face web-mode-html-tag-bracket-face)) . 64) (undo-tree-id27 . -76) (undo-tree-id28 . -1769) (undo-tree-id29 . -1769)) nil (25670 65366 986155 849000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 979 . 980) (nil face (whitespace-line) 876 . 980) (nil face whitespace-tab 733 . 734) (nil face whitespace-trailing 731 . 732) (nil face (whitespace-line) 645 . 730) (nil face (whitespace-line whitespace-tab) 644 . 645) (nil face (whitespace-line) 569 . 644) (nil face (whitespace-line whitespace-tab) 568 . 569) (nil face (whitespace-line) 545 . 568) (nil face whitespace-tab 402 . 403) (nil face whitespace-trailing 400 . 401) (nil face (whitespace-line) 223 . 399) (nil face (whitespace-line whitespace-tab) 222 . 223) (nil face (whitespace-line) 203 . 222) (nil face whitespace-tab 140 . 141) (nil face whitespace-tab 64 . 65) (64 . 980)) nil (25670 65366 986150 876000) 0 nil])
+([nil nil ((#("	" 0 1 (face whitespace-tab)) . 64)) nil (25670 65366 986146 564000) 0 nil])
+([nil nil ((#("	" 0 1 (face whitespace-tab)) . 401)) nil (25670 65366 986145 608000) 0 nil])
+([nil nil ((#("	" 0 1 (face whitespace-tab)) . 731)) nil (25670 65366 986144 596000) 0 nil])
+([nil nil ((#("	" 0 1 (face (whitespace-line whitespace-tab))) . 642)) nil (25670 65366 986143 624000) 0 nil])
+([nil nil ((#("	" 0 1 (face whitespace-tab)) . -140) (139 . 140)) nil (25670 65366 986142 536000) 0 nil])
+([nil nil ((#("	" 0 1 (face whitespace-tab)) . -222) (221 . 222)) nil (25670 65366 986141 282000) 0 nil])
+([nil nil ((" " . 308) (undo-tree-id26 . -1) (309 . 310)) nil (25670 65366 986139 927000) 0 nil])
+([nil nil ((" " . 478) (undo-tree-id25 . -1) (479 . 480)) nil (25670 65366 986137 482000) 0 nil])
+([nil nil ((#("	" 0 1 (face whitespace-tab)) . 566) (undo-tree-id23 . -1) (undo-tree-id24 . -1) (567 . 568)) nil (25670 65366 986134 998000) 0 nil])
+([nil nil ((642 . 643)) nil (25670 65366 986131 756000) 0 nil])
+([nil nil (("." . -641) (undo-tree-id22 . -1) 642) nil (25670 65366 986130 708000) 0 nil])
+([nil nil (("." . -565) (undo-tree-id20 . -1) (undo-tree-id21 . -1) 566) nil (25670 65366 986128 143000) 0 nil])
+([nil nil (("." . -477) (undo-tree-id19 . -1) 478) nil (25670 65366 986124 647000) 0 nil])
+([nil nil (("." . -307) (undo-tree-id18 . -1) 308) nil (25670 65366 986122 132000) 0 nil])
+([nil nil (("." . -138) (undo-tree-id17 . -1) 139) nil (25670 65366 986119 774000) 0 nil])
+([nil nil (("." . -219) (undo-tree-id16 . -1) 220) nil (25670 65366 986117 233000) 0 nil])
+([nil nil (("." . -392) (undo-tree-id15 . -1) 393) nil (25670 65366 986114 830000) 0 nil])
+([nil nil (("." . -718) (undo-tree-id14 . -1) 719) nil (25670 65366 986112 657000) 0 nil])
+([nil nil ((" " . 780) (undo-tree-id13 . -1) (781 . 782)) nil (25670 65366 986110 358000) 0 nil])
+([nil nil ((" " . 832) (undo-tree-id12 . -1) (833 . 834)) nil (25670 65366 986107 582000) 0 nil])
+([nil nil ((" " . 897) (undo-tree-id11 . -1) (898 . 899)) nil (25670 65366 986104 916000) 0 nil])
+([nil nil ((#("." 0 1 (rear-nonsticky t)) . -968) (undo-tree-id10 . -1) 969) nil (25670 65366 986102 663000) 0 nil])
+([nil nil (("." . -896) (undo-tree-id9 . -1) 897) nil (25670 65366 986100 203000) 0 nil])
+([nil nil (("." . -779) (undo-tree-id8 . -1) 780) nil (25670 65366 986098 0) 0 nil])
+([nil nil (("." . -830) (undo-tree-id7 . -1) 831) nil (25670 65366 986095 765000) 0 nil])
+([nil nil (("\\" . -718) (undo-tree-id5 . -1) ("\\" . -719) (undo-tree-id6 . -1) 720) nil (25670 65366 986093 328000) 0 nil])
+([nil nil (("\\" . -392) (undo-tree-id3 . -1) ("\\" . -393) (undo-tree-id4 . -1) 394) nil (25670 65366 986089 442000) 0 nil])
+([nil nil ((138 . 141)) nil (25670 65366 986085 847000) 0 nil])
+([nil nil (("\\" . -138) (undo-tree-id0 . -1) ("b" . -139) (undo-tree-id1 . -1) ("r" . -140) (undo-tree-id2 . -1) 141) nil (25670 65366 986084 138000) 0 nil])
+([nil nil ((138 . 139)) nil (25670 65366 986065 77000) 0 nil])
+([nil nil ((141 . 142) (139 . 142)) nil (25670 65366 986064 68000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 228 . 229) (nil tag-name "br" 228 . 229) (nil tag-type void 228 . 229) (nil tag-end t 228 . 229) (nil font-lock-face web-mode-html-tag-bracket-face 228 . 229) (nil tag-name "br" 227 . 228) (nil tag-type void 227 . 228) (nil font-lock-face web-mode-html-tag-bracket-face 227 . 228) (nil tag-name "br" 225 . 227) (nil tag-type void 225 . 227) (nil font-lock-face web-mode-html-tag-face 225 . 227) (nil tag-name "br" 224 . 225) (nil tag-type void 224 . 225) (nil tag-beg 24 224 . 225) (nil font-lock-face web-mode-html-tag-bracket-face 224 . 225) (224 . 229)) nil (25670 65366 986062 214000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 319 . 320) (nil tag-name "br" 319 . 320) (nil tag-type void 319 . 320) (nil tag-end t 319 . 320) (nil font-lock-face web-mode-html-tag-bracket-face 319 . 320) (nil tag-name "br" 318 . 319) (nil tag-type void 318 . 319) (nil font-lock-face web-mode-html-tag-bracket-face 318 . 319) (nil tag-name "br" 316 . 318) (nil tag-type void 316 . 318) (nil font-lock-face web-mode-html-tag-face 316 . 318) (nil tag-name "br" 315 . 316) (nil tag-type void 315 . 316) (nil tag-beg 24 315 . 316) (nil font-lock-face web-mode-html-tag-bracket-face 315 . 316) (315 . 320)) nil (25670 65366 986057 774000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 490 . 491) (nil tag-name "br" 490 . 491) (nil tag-type void 490 . 491) (nil tag-end t 490 . 491) (nil font-lock-face web-mode-html-tag-bracket-face 490 . 491) (nil tag-name "br" 489 . 490) (nil tag-type void 489 . 490) (nil font-lock-face web-mode-html-tag-bracket-face 489 . 490) (nil tag-name "br" 487 . 489) (nil tag-type void 487 . 489) (nil font-lock-face web-mode-html-tag-face 487 . 489) (nil tag-name "br" 486 . 487) (nil tag-type void 486 . 487) (nil tag-beg 24 486 . 487) (nil font-lock-face web-mode-html-tag-bracket-face 486 . 487) (486 . 491)) nil (25670 65366 986053 153000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 582 . 583) (nil tag-name "br" 582 . 583) (nil tag-type void 582 . 583) (nil tag-end t 582 . 583) (nil font-lock-face web-mode-html-tag-bracket-face 582 . 583) (nil tag-name "br" 581 . 582) (nil tag-type void 581 . 582) (nil font-lock-face web-mode-html-tag-bracket-face 581 . 582) (nil tag-name "br" 579 . 581) (nil tag-type void 579 . 581) (nil font-lock-face web-mode-html-tag-face 579 . 581) (nil tag-name "br" 578 . 579) (nil tag-type void 578 . 579) (nil tag-beg 24 578 . 579) (nil font-lock-face web-mode-html-tag-bracket-face 578 . 579) (578 . 583)) nil (25670 65366 986047 955000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 662 . 663) (nil tag-name "br" 662 . 663) (nil tag-type void 662 . 663) (nil tag-end t 662 . 663) (nil font-lock-face web-mode-html-tag-bracket-face 662 . 663) (nil tag-name "br" 661 . 662) (nil tag-type void 661 . 662) (nil font-lock-face web-mode-html-tag-bracket-face 661 . 662) (nil tag-name "br" 659 . 661) (nil tag-type void 659 . 661) (nil font-lock-face web-mode-html-tag-face 659 . 661) (nil tag-name "br" 658 . 659) (nil tag-type void 658 . 659) (nil tag-beg 24 658 . 659) (nil font-lock-face web-mode-html-tag-bracket-face 658 . 659) (658 . 663)) nil (25670 65366 986043 284000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 809 . 810) (nil tag-name "br" 809 . 810) (nil tag-type void 809 . 810) (nil tag-end t 809 . 810) (nil font-lock-face web-mode-html-tag-bracket-face 809 . 810) (nil tag-name "br" 808 . 809) (nil tag-type void 808 . 809) (nil font-lock-face web-mode-html-tag-bracket-face 808 . 809) (nil tag-name "br" 806 . 808) (nil tag-type void 806 . 808) (nil font-lock-face web-mode-html-tag-face 806 . 808) (nil tag-name "br" 805 . 806) (nil tag-type void 805 . 806) (nil tag-beg 24 805 . 806) (nil font-lock-face web-mode-html-tag-bracket-face 805 . 806) (805 . 810)) nil (25670 65366 986038 627000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 865 . 866) (nil tag-name "br" 865 . 866) (nil tag-type void 865 . 866) (nil tag-end t 865 . 866) (nil font-lock-face web-mode-html-tag-bracket-face 865 . 866) (nil tag-name "br" 864 . 865) (nil tag-type void 864 . 865) (nil font-lock-face web-mode-html-tag-bracket-face 864 . 865) (nil tag-name "br" 862 . 864) (nil tag-type void 862 . 864) (nil font-lock-face web-mode-html-tag-face 862 . 864) (nil tag-name "br" 861 . 862) (nil tag-type void 861 . 862) (nil tag-beg 24 861 . 862) (nil font-lock-face web-mode-html-tag-bracket-face 861 . 862) (861 . 866)) nil (25670 65366 986033 943000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 934 . 935) (nil tag-name "br" 934 . 935) (nil tag-type void 934 . 935) (nil tag-end t 934 . 935) (nil font-lock-face web-mode-html-tag-bracket-face 934 . 935) (nil tag-name "br" 933 . 934) (nil tag-type void 933 . 934) (nil font-lock-face web-mode-html-tag-bracket-face 933 . 934) (nil tag-name "br" 931 . 933) (nil tag-type void 931 . 933) (nil font-lock-face web-mode-html-tag-face 931 . 933) (nil tag-name "br" 930 . 931) (nil tag-type void 930 . 931) (nil tag-beg 24 930 . 931) (nil font-lock-face web-mode-html-tag-bracket-face 930 . 931) (930 . 935)) nil (25670 65366 986028 164000) 0 nil])
+([nil current ((#("	" 0 1 (face whitespace-trailing)) . -746) (#("	" 0 1 (face whitespace-trailing)) . -408) 935) nil (25670 65366 986017 588000) 0 nil])
+nil

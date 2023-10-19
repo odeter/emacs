@@ -1,0 +1,20 @@
+from flask_jwt_extended import get_jwt_identity
+from flask_restful import Resource, reqparse
+from angle.models import UserModel
+from flask import current_app as app
+from angle import role_required
+import virustotal_python
+
+## NOT CURRENTLY USED (must upgrade to premium)
+
+class VirusTotalLookup(Resource):
+    @role_required(["admin", "mssp_it_sec", "mssp_admin", "it_sec",  "it_man", "op_man", "sys_admin"])
+    def post(self):
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('row', help = 'This field cannot be blank', required = True)
+        data = parser.parse_args()
+
+        return {'message': 'virustotal not included'}, 500

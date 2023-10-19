@@ -1,0 +1,23 @@
+(undo-tree-save-format-version . 1)
+"ce0665e85af18ddcb7c26bb0520d28eda1ecac0b"
+[nil nil nil nil (25669 46736 749794 325000) 0 nil]
+([nil nil ((51 . 64) (t 25653 34988 910165 661000)) nil (25669 46736 749792 555000) 0 nil])
+([nil nil ((" " . -63) (undo-tree-id3 . -1) 64) nil (25669 46736 749791 35000) 0 nil])
+([nil nil ((63 . 65)) nil (25669 46736 749788 135000) 0 nil])
+([nil nil (("," . -63) (undo-tree-id1 . -1) (" " . -64) (undo-tree-id2 . -1) 65) nil (25669 46736 749785 531000) 0 nil])
+([nil nil (("," . -51) (undo-tree-id0 . -1) 52) nil (25669 46736 749776 421000) 0 nil])
+([nil nil (("love " . 47) (undo-tree-id0 . -5) (undo-tree-id1 . -5) (undo-tree-id2 . -5) (undo-tree-id3 . -5) (t 25669 46736 755426 820000)) nil (25670 61806 335016 891000) 0 nil])
+([nil nil ((57 . 69) (t 25670 61806 342236 49000)) nil (25670 61822 267869 304000) 0 nil])
+([nil nil ((58 . 59)) nil (25670 61835 903842 139000) 0 nil])
+([nil nil (("'" . -58) (undo-tree-id22 . -1) 59) nil (25670 61840 15777 670000) 0 nil] [nil nil (("'" . -58) (undo-tree-id4 . -1) 59 (t 25670 61822 273351 508000)) ((58 . 59)) (25670 61835 531938 306000) 0 nil])
+([nil nil ((65 . 66)) nil (25670 61840 15768 733000) 0 nil])
+([nil nil ((58 . 60) ("\"" . -58) (58 . 59)) (("\"" . 58) (58 . 59) ("\"\"" . 58) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1)) (25670 61835 132973 482000) 0 nil])
+([nil nil ((" " . 66)) nil (25670 61840 15766 858000) 0 nil])
+([nil nil (("\"" . 59)) ((59 . 60)) (25670 61834 896406 104000) 0 nil])
+([nil nil (("'" . 68)) nil (25670 61840 15760 9000) 0 nil])
+([nil nil (("'" . 69)) ((69 . 70)) (25670 61834 612808 241000) 0 nil])
+([nil nil (("Growing_up" . 58) (undo-tree-id26 . -10) (undo-tree-id27 . -10) (undo-tree-id28 . -10) (t 25670 61840 16437 518000)) nil (25670 61845 241268 926000) 0 nil])
+([nil nil ((69 . 70)) (("\"" . 69) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (undo-tree-id17 . -1) (t 25670 61831 856848 835000)) (25670 61831 856281 929000) 0 nil])
+([nil current ((" " . -57) (undo-tree-id23 . -1) (undo-tree-id24 . -1) (undo-tree-id25 . -1) 58) nil (25670 61845 241260 578000) 0 nil])
+nil
+nil

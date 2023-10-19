@@ -1,0 +1,17 @@
+(undo-tree-save-format-version . 1)
+"43d2b9851cdcf4dcea2c4d7f4ce300913d8a65c2"
+[nil nil nil nil (25320 59519 242452 746000) 0 nil]
+([nil nil ((981 . 994) (t 25190 28594 501352 487000)) nil (25320 59519 242451 137000) 0 nil])
+([nil nil ((#("\"" 0 1 (fontified nil face font-lock-string-face)) . 1002) (1001 . 1002) (1000 . 1002) (#("\"" 0 1 (fontified nil face (rainbow-delimiters-depth-1-face) syntax-table (15))) . -1000) (1000 . 1001) (999 . 1001) (#("(" 0 1 (fontified nil face font-lock-keyword-face)) . -999) (994 . 1000)) nil (25320 59519 242448 965000) 0 nil])
+([nil nil ((1001 . 1008)) nil (25320 59519 242446 237000) 0 nil])
+([nil nil ((1009 . 1014)) nil (25320 59519 242445 87000) 0 nil])
+([nil nil ((#("t" 0 1 (fontified t)) . -1011) (undo-tree-id2 . -1) (#("h" 0 1 (fontified t)) . -1012) (undo-tree-id3 . -1) (#("i" 0 1 (fontified t)) . -1013) (undo-tree-id4 . -1) 1014) nil (25320 59519 242442 931000) 0 nil])
+([nil nil ((1011 . 1019)) nil (25320 59519 242436 752000) 0 nil])
+([nil nil ((#("r" 0 1 (fontified t)) . -1018) (undo-tree-id1 . -1) 1019) nil (25320 59519 242435 45000) 0 nil])
+([nil nil ((1018 . 1022)) nil (25320 59519 242430 293000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -1021) (undo-tree-id0 . -1) 1022) nil (25320 59519 242424 561000) 0 nil])
+([nil nil ((#("            print('LOG DATA', logData)
+            print(\"DEFAULT\", dataReturn)" 0 12 (fontified t) 12 17 (fontified t face font-lock-keyword-face) 17 18 (fontified t face (rainbow-delimiters-depth-1-face)) 18 19 (fontified t syntax-table (15) face font-lock-string-face) 19 27 (fontified t face font-lock-string-face) 27 28 (fontified t syntax-table (15) face font-lock-string-face) 28 37 (fontified t) 37 38 (fontified t face (rainbow-delimiters-depth-1-face)) 38 39 (fontified t) 39 51 (fontified t) 51 56 (fontified t face font-lock-keyword-face) 56 57 (fontified t face (rainbow-delimiters-depth-1-face)) 57 58 (fontified t syntax-table (15) face font-lock-string-face) 58 65 (fontified t face font-lock-string-face) 65 66 (fontified t syntax-table (15) face font-lock-string-face) 66 78 (fontified t) 78 79 (fontified t face (rainbow-delimiters-depth-1-face))) . 943) (undo-tree-id14 . -79) (undo-tree-id15 . -78) (undo-tree-id16 . -78) (undo-tree-id17 . -78) (undo-tree-id18 . -78) (undo-tree-id19 . -79) (undo-tree-id20 . -39) (undo-tree-id21 . -79) (undo-tree-id22 . -79) (t 25320 59519 244344 404000)) nil (25320 60212 145943 965000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t)) . -942) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) 943) nil (25320 60212 145918 586000) 0 nil])
+nil

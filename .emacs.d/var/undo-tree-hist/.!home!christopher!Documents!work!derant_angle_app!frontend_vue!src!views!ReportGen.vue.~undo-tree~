@@ -1,0 +1,8 @@
+(undo-tree-save-format-version . 1)
+"72bfe773f54438c1ce99385172885b5b121cd8df"
+[nil nil nil nil (25153 39940 234553 29000) 0 nil]
+([nil nil ((#("5" 0 1 (tag-attr t tag-attr-end 0 tag-name "v-container" tag-type start font-lock-face web-mode-html-attr-name-face)) . -35) (undo-tree-id0 . -1) 36 (t 25103 35926 389909 592000)) nil (25153 39940 234549 423000) 0 nil])
+([nil nil ((35 . 36)) nil (25153 39940 234523 630000) 0 nil])
+([nil nil ((#("0" 0 1 (tag-attr t tag-attr-end 0 tag-name "v-container" tag-type start font-lock-face web-mode-html-attr-name-face)) . -35) (undo-tree-id1 . -1) 36 (t 25153 39940 235333 193000)) nil (25153 39946 738283 957000) 0 nil])
+([nil current ((35 . 36)) nil (25153 39946 738265 295000) 0 nil])
+nil

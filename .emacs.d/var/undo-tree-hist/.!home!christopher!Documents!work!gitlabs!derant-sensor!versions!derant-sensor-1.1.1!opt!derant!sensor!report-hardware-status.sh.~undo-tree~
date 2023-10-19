@@ -1,0 +1,5 @@
+(undo-tree-save-format-version . 1)
+"3929ce243098bb440431da601695dd9068ec4c3f"
+[nil nil nil nil (25654 51086 629193 720000) 0 nil]
+([nil current ((#("/" 0 1 (fontified t)) . 78) (#("r" 0 1 (fontified defer)) . 78) (#("o" 0 1 (fontified t)) . 78) (#("s" 0 1 (fontified t)) . 78) (#("n" 0 1 (fontified defer)) . 78) (#("e" 0 1 (fontified defer)) . 78) (#("s" 0 1 (fontified defer)) . 78) (#("/" 0 1 (fontified defer)) . 78) (#("t" 0 1 (fontified defer)) . 78) (#("n" 0 1 (fontified defer)) . 78) (#("a" 0 1 (fontified defer)) . 78) (#("r" 0 1 (fontified defer)) . 78) (#("e" 0 1 (fontified t)) . 78) (#("d" 0 1 (fontified t)) . 78) (t 25654 38872 866585 842000)) nil (25654 51086 629184 920000) 0 nil])
+nil

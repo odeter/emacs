@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"93420a4fa6d4106cc49304625cf5b689f7ee9960"
+[nil nil nil nil (25690 12837 905963 963000) 0 nil]
+([nil nil ((2103 . 2104) (t 25690 12756 208 475000)) nil (25690 12837 905961 675000) 0 nil])
+([nil current ((2104 . 2303)) nil (25690 12837 905954 988000) 0 nil])
+nil

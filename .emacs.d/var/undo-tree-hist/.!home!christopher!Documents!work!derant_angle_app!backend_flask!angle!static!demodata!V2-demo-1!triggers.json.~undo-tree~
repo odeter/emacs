@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"da39a3ee5e6b4b0d3255bfef95601890afd80709"
+[nil nil nil nil (25200 55712 910158 533000) 0 nil]
+([nil nil ((#("{\"Cobalt Strike Activity\": [\"DemoFilters/CobaltStrikeActivity\", \"riskCritical\", \"Creates Alarms when Cobalt Strike is detected by Suricata\", \"Malware detected\", \"src_ip,dest_ip\"]}" 0 1 (fontified t face (rainbow-delimiters-depth-1-face)) 1 25 (fontified t face font-lock-string-face) 25 27 (fontified t) 27 28 (fontified t face (rainbow-delimiters-depth-2-face)) 28 62 (fontified t face font-lock-string-face) 62 64 (fontified t) 64 78 (fontified t face font-lock-string-face) 78 80 (fontified t) 80 139 (fontified t face font-lock-string-face) 139 141 (fontified t) 141 150 (fontified t face font-lock-string-face) 150 159 (fontified t face (whitespace-line font-lock-string-face)) 159 161 (fontified t face (whitespace-line)) 161 177 (fontified t face (whitespace-line font-lock-string-face)) 177 178 (fontified t face (rainbow-delimiters-depth-2-face whitespace-line)) 178 179 (fontified t face (rainbow-delimiters-depth-1-face whitespace-line))) . 1) (undo-tree-id1 . -179) (undo-tree-id2 . -179) (undo-tree-id3 . -179) (undo-tree-id4 . -179) (t 25193 1161 555242 0)) nil (25200 55712 910155 573000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t face whitespace-empty)) . 1) (undo-tree-id0 . -1)) nil (25200 55712 910143 949000) 0 nil])
+nil

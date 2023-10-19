@@ -1,0 +1,122 @@
+(undo-tree-save-format-version . 1)
+"11a50e0dee29021ed09b4607cc1e113e7c141c33"
+[nil nil nil nil (25578 2385 258516 961000) 0 nil]
+([nil nil ((#("from flask_jwt_extended import get_jwt_identity
+from angle.models import db, UserModel, AutoFilterModel, FirmModel, AlarmNotifyModel, FilterModel, FilterSelectionModel, AlarmLevelModel
+from flask_restful import Resource, reqparse
+from flask import current_app as app
+from angle import role_required
+import json
+
+class EditTrigger(Resource):
+    @role_required([\"admin\", \"mssp_it_sec\", \"mssp_admin\", \"it_man\", \"op_man\", \"sys_admin\"])
+    def post(self):
+        ''' Edits a trigger
+
+        Keyword Arguments: Trigger parameters to be set.
+        '''
+        parser = reqparse.RequestParser()
+        parser.add_argument('ID', help = 'This field cannot be blank', required = True)
+        parser.add_argument('firmID')
+        parser.add_argument('name')
+        parser.add_argument('desc')
+        parser.add_argument('probe')
+        parser.add_argument('log_type')
+        parser.add_argument('filter')
+        parser.add_argument('interval')
+        parser.add_argument('level')
+        parser.add_argument('cols')
+        parser.add_argument('type')
+        parser.add_argument('notifier')
+        parser.add_argument('selection')
+
+        data = parser.parse_args()
+        print(\"I came through!\")
+
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+        print(data)
+        # {'ID': '4', 'firmID': None, 'name': 'tt', 'desc': '', 'probe': '1', 'logtype': 'conn', 'filter': '1',
+        # 'interval': '1', 'level': '1', 'cols': \"{'header': 'Recommended'}\", 'type': 'filler_type', 'notifier': ''}
+        if current_user.check_role('sys_admin'):
+            firm = FirmModel.find_by_id(data['firmID'])
+        elif current_user.check_roles([\"mssp_admin\",\"mssp_it_sec\"]) and data['firmID']:
+            firm = current_user.firm.mssp_get_firm(data['firmID'])
+        else:
+            if current_user:
+                firm = current_user.firm
+            else:
+                app.logger.error('user with ID: {0} tried editing a trigger, without permissions'.format(userID))
+                return {'message': 'User not set properly'}, 403
+
+        if firm:
+            if not data['cols']:
+                app.logger.error('user with ID: {0} tried creating an auto.filter without setting group columns '.format(userID))
+                return {'message': 'Group columns not selected', 'errtag': 'error_30'}, 400
+
+            try:
+                if int(data['interval']) < 1:
+                    return {'message': 'Specified interval is below 1', 'errtag': 'error_29'}, 400
+            except:
+                app.logger.error('user with ID: {0} tried creating an auto.filter, with invalid interval'.format(userID))
+                return {'message': 'Specified interval is not an integer', 'errtag': 'error_29'}, 400
+
+            if data[\"filter\"] and not data[\"selection\"]:
+                filter_id = data[\"filter\"]
+                selection_id = None
+            elif data[\"selection\"] and not data[\"filter\"]:
+                filter_id = None
+                selection_id = data[\"selection\"]
+            else:
+                app.logger.error('user with ID: {0} tried editing an autofilter, with neither filter nor selection'.format(userID))
+                return {'message': 'Specified neither filter nor selection', 'errtag': 'error_23'}, 400
+
+            trigger_type = FilterModel.find_by_id(filter_id) if filter_id else FilterSelectionModel.find_by_id(selection_id)
+            if not trigger_type.check_logtype(data['log_type']):
+                app.logger.error('user with ID: {0} tried creating an auto.filter, with a wrong filter logtype'.format(userID))
+                return {'message': 'Wrong Filter or Selection logtype', 'errtag': 'error_23'}, 400
+
+            # Check that trigger name doesnt exist for the current user
+            afilters = AutoFilterModel.get_auto_filters_by_firm(current_user.firm_id)
+            filterNames = [af.name if af.name != trigger.name else '' for af in afilters]
+
+            if data[\"name\"] in filterNames:
+                app.logger.error('user with ID: {0} tried creating a trigger that already exists'.format(userID))
+                return {'message': 'Trigger name already exists', 'errtag': 'error_27'}, 400
+
+            # get levels
+            a_level = AlarmLevelModel.get_Level(data['level'])
+            if not a_level:
+                return {'message': 'Alarm level could not be found', 'errtag': 'error_28'}, 500
+
+            trigger = AutoFilterModel.find_by_id(data['ID'])
+            if trigger:
+                trigger.name = data['name']
+                trigger.description = data['desc']
+                trigger.sensor_id = int(data['probe'])
+                trigger.filter_id = filter_id
+                trigger.selection_id = selection_id
+                trigger.interval = int(data['interval'])
+                trigger.al_id = int(data['level'])
+                trigger.group_cols = data['cols']
+                trigger.alarm_type = data['type']
+                if data['notifier'] != '':
+                    trigger.notifier = AlarmNotifyModel.find_by_id(int(data['notifier']))
+                #trigger_type = FilterModel.find_by_id(filter_id) if filter_id else FilterSelectionModel.find_by_id(selection_id)
+
+                try:
+                    trigger.save_to_db()
+                    app.logger.info('{0} - {1} edited a trigger'.format(current_user.name, current_user.id))
+                    print(\"\\n\\nSUCCESS\\n\\n\")
+                    return {'message': 'Trigger was edited'}
+                except:
+                    app.logger.error('{0} - {1} tried editing a trigger, but could not save to db'.format(current_user.name, current_user.id))
+                    return {'message': 'Something went wrong internally'}, 500
+            else:
+                app.logger.error('{0} - {1} tried editing a trigger but the given sensor was not found'.format(current_user.name, current_user.id))
+                return {'message': 'Could not find the given trigger'}, 403
+        else:
+            return {'message': 'Could not find the given firm'}, 403" 0 4 (fontified t face font-lock-keyword-face) 4 24 (fontified t) 24 30 (fontified t face font-lock-keyword-face) 30 48 (fontified t) 48 52 (fontified t face font-lock-keyword-face) 52 66 (fontified t) 66 72 (fontified t face font-lock-keyword-face) 72 185 (fontified t) 185 189 (fontified t face font-lock-keyword-face) 189 204 (fontified t) 204 210 (fontified t face font-lock-keyword-face) 210 230 (fontified t) 230 234 (fontified t face font-lock-keyword-face) 234 241 (fontified t) 241 247 (fontified t face font-lock-keyword-face) 247 260 (fontified t) 260 262 (fontified t face font-lock-keyword-face) 262 267 (fontified t) 267 271 (fontified t face font-lock-keyword-face) 271 278 (fontified t) 278 284 (fontified t face font-lock-keyword-face) 284 299 (fontified t) 299 305 (fontified t face font-lock-keyword-face) 305 312 (fontified t) 312 317 (fontified t face font-lock-keyword-face) 317 318 (fontified t) 318 329 (fontified t face font-lock-type-face) 329 330 (fontified t face (rainbow-delimiters-depth-1-face)) 330 338 (fontified t) 338 339 (fontified t face (rainbow-delimiters-depth-1-face)) 339 345 (fontified t) 345 359 (fontified t face font-lock-type-face) 359 360 (fontified t face (rainbow-delimiters-depth-1-face)) 360 361 (fontified t face (rainbow-delimiters-depth-2-face)) 361 368 (fontified t face font-lock-string-face) 368 370 (fontified t) 370 383 (fontified t face font-lock-string-face) 383 385 (fontified t) 385 397 (fontified t face font-lock-string-face) 397 399 (fontified t) 399 407 (fontified t face font-lock-string-face) 407 409 (fontified t) 409 417 (fontified t face font-lock-string-face) 417 419 (fontified t) 419 430 (fontified t face font-lock-string-face) 430 431 (fontified t face (rainbow-delimiters-depth-2-face)) 431 432 (fontified t face (rainbow-delimiters-depth-1-face)) 432 437 (fontified t) 437 440 (fontified t face font-lock-keyword-face) 440 441 (fontified t) 441 445 (fontified t face font-lock-function-name-face) 445 446 (fontified t face (rainbow-delimiters-depth-1-face)) 446 450 (fontified t face font-lock-keyword-face) 450 451 (fontified t face (rainbow-delimiters-depth-1-face)) 451 461 (fontified t) 461 462 (syntax-table (15) fontified t face font-lock-doc-face) 462 500 (fontified t face font-lock-doc-face) 500 539 (fontified t face font-lock-doc-face) 539 549 (fontified t face font-lock-doc-face) 549 550 (fontified t syntax-table (15) face font-lock-doc-face) 550 559 (fontified t) 559 565 (fontified t face font-lock-variable-name-face) 565 590 (fontified t) 590 591 (fontified t face (rainbow-delimiters-depth-1-face)) 591 592 (fontified t face (rainbow-delimiters-depth-1-face)) 592 620 (fontified t) 620 621 (fontified t face (rainbow-delimiters-depth-1-face)) 621 625 (fontified t face font-lock-string-face) 625 627 (fontified t) 627 631 (fontified t face font-lock-builtin-face) 631 634 (fontified t) 634 662 (fontified t face font-lock-string-face) 662 675 (fontified t) 675 679 (fontified t face font-lock-constant-face) 679 680 (fontified t face (rainbow-delimiters-depth-1-face)) 680 708 (fontified t) 708 709 (fontified t face (rainbow-delimiters-depth-1-face)) 709 717 (fontified t face font-lock-string-face) 717 718 (fontified t face (rainbow-delimiters-depth-1-face)) 718 746 (fontified t) 746 747 (fontified t face (rainbow-delimiters-depth-1-face)) 747 753 (fontified t face font-lock-string-face) 753 754 (fontified t face (rainbow-delimiters-depth-1-face)) 754 782 (fontified t) 782 783 (fontified t face (rainbow-delimiters-depth-1-face)) 783 789 (fontified t face font-lock-string-face) 789 790 (fontified t face (rainbow-delimiters-depth-1-face)) 790 818 (fontified t) 818 819 (fontified t face (rainbow-delimiters-depth-1-face)) 819 826 (fontified t face font-lock-string-face) 826 827 (fontified t face (rainbow-delimiters-depth-1-face)) 827 855 (fontified t) 855 856 (fontified t face (rainbow-delimiters-depth-1-face)) 856 866 (fontified t face font-lock-string-face) 866 867 (fontified t face (rainbow-delimiters-depth-1-face)) 867 895 (fontified t) 895 896 (fontified t face (rainbow-delimiters-depth-1-face)) 896 904 (fontified t face font-lock-string-face) 904 905 (fontified t face (rainbow-delimiters-depth-1-face)) 905 933 (fontified t) 933 934 (fontified t face (rainbow-delimiters-depth-1-face)) 934 944 (fontified t face font-lock-string-face) 944 945 (fontified t face (rainbow-delimiters-depth-1-face)) 945 973 (fontified t) 973 974 (fontified t face (rainbow-delimiters-depth-1-face)) 974 981 (fontified t face font-lock-string-face) 981 982 (fontified t face (rainbow-delimiters-depth-1-face)) 982 1000 (fontified t) 1000 1010 (fontified t) 1010 1011 (fontified t face (rainbow-delimiters-depth-1-face)) 1011 1017 (fontified t face font-lock-string-face) 1017 1018 (fontified t face (rainbow-delimiters-depth-1-face)) 1018 1039 (fontified t) 1039 1046 (fontified t) 1046 1047 (fontified t face (rainbow-delimiters-depth-1-face)) 1047 1053 (fontified t face font-lock-string-face) 1053 1054 (fontified t face (rainbow-delimiters-depth-1-face)) 1054 1055 (fontified t) 1055 1082 (fontified t) 1082 1083 (fontified t face (rainbow-delimiters-depth-1-face)) 1083 1093 (fontified t face font-lock-string-face) 1093 1094 (fontified t face (rainbow-delimiters-depth-1-face)) 1094 1122 (fontified t) 1122 1123 (fontified t face (rainbow-delimiters-depth-1-face)) 1123 1134 (fontified t face font-lock-string-face) 1134 1135 (fontified t face (rainbow-delimiters-depth-1-face)) 1135 1145 (fontified t) 1145 1149 (fontified t face font-lock-variable-name-face) 1149 1169 (fontified t) 1169 1170 (fontified t face (rainbow-delimiters-depth-1-face)) 1170 1171 (fontified t face (rainbow-delimiters-depth-1-face)) 1171 1180 (fontified t) 1180 1185 (fontified t face font-lock-keyword-face) 1185 1186 (fontified t face (rainbow-delimiters-depth-1-face)) 1186 1203 (fontified t face font-lock-string-face) 1203 1204 (fontified t face (rainbow-delimiters-depth-1-face)) 1204 1214 (fontified t) 1214 1220 (fontified t face font-lock-variable-name-face) 1220 1239 (fontified t) 1239 1240 (fontified t face (rainbow-delimiters-depth-1-face)) 1240 1241 (fontified t face (rainbow-delimiters-depth-1-face)) 1241 1250 (fontified t) 1250 1262 (fontified t face font-lock-variable-name-face) 1262 1285 (fontified t) 1285 1286 (fontified t face (rainbow-delimiters-depth-1-face)) 1286 1292 (fontified t) 1292 1293 (fontified t face (rainbow-delimiters-depth-1-face)) 1293 1303 (fontified t) 1303 1308 (fontified t face font-lock-keyword-face) 1308 1309 (fontified t face (rainbow-delimiters-depth-1-face)) 1309 1313 (fontified t) 1313 1314 (fontified t face (rainbow-delimiters-depth-1-face)) 1314 1323 (fontified t) 1323 1325 (fontified t face font-lock-comment-delimiter-face) 1325 1427 (fontified t face font-lock-comment-face) 1427 1435 (fontified t) 1435 1437 (fontified t face font-lock-comment-delimiter-face) 1437 1500 (fontified t face font-lock-comment-face) 1500 1544 (fontified t face font-lock-comment-face) 1544 1552 (fontified t) 1552 1554 (fontified t face font-lock-keyword-face) 1554 1555 (fontified t) 1555 1578 (fontified t) 1578 1579 (fontified t face (rainbow-delimiters-depth-1-face)) 1579 1590 (fontified t face font-lock-string-face) 1590 1591 (fontified t face (rainbow-delimiters-depth-1-face)) 1591 1593 (fontified t) 1593 1605 (fontified t) 1605 1609 (fontified t face font-lock-variable-name-face) 1609 1632 (fontified t) 1632 1633 (fontified t face (rainbow-delimiters-depth-1-face)) 1633 1637 (fontified t) 1637 1638 (fontified t face (rainbow-delimiters-depth-2-face)) 1638 1646 (fontified t face font-lock-string-face) 1646 1647 (fontified t face (rainbow-delimiters-depth-2-face)) 1647 1648 (fontified t face (rainbow-delimiters-depth-1-face)) 1648 1657 (fontified t) 1657 1661 (fontified t face font-lock-keyword-face) 1661 1686 (fontified t) 1686 1687 (fontified t face (rainbow-delimiters-depth-1-face)) 1687 1688 (fontified t face (rainbow-delimiters-depth-2-face)) 1688 1700 (fontified t face font-lock-string-face) 1700 1701 (fontified t) 1701 1714 (fontified t face font-lock-string-face) 1714 1715 (fontified t face (rainbow-delimiters-depth-2-face)) 1715 1716 (fontified t face (rainbow-delimiters-depth-1-face)) 1716 1717 (fontified t) 1717 1720 (fontified t face font-lock-keyword-face) 1720 1725 (fontified t) 1725 1726 (fontified t face (rainbow-delimiters-depth-1-face)) 1726 1734 (fontified t face font-lock-string-face) 1734 1735 (fontified t face (rainbow-delimiters-depth-1-face)) 1735 1749 (fontified t) 1749 1753 (fontified t face font-lock-variable-name-face) 1753 1787 (fontified t) 1787 1788 (fontified t face (rainbow-delimiters-depth-1-face)) 1788 1792 (fontified t) 1792 1793 (fontified t face (rainbow-delimiters-depth-2-face)) 1793 1801 (fontified t face font-lock-string-face) 1801 1802 (fontified t face (rainbow-delimiters-depth-2-face)) 1802 1803 (fontified t face (rainbow-delimiters-depth-1-face)) 1803 1812 (fontified t) 1812 1816 (fontified t face font-lock-keyword-face) 1816 1830 (fontified t) 1830 1832 (fontified t face font-lock-keyword-face) 1832 1863 (fontified t) 1863 1867 (fontified t face font-lock-variable-name-face) 1867 1900 (fontified t) 1900 1904 (fontified t face font-lock-keyword-face) 1904 1938 (fontified t) 1938 1939 (fontified t face (rainbow-delimiters-depth-1-face)) 1939 2000 (fontified t face font-lock-string-face) 2000 2003 (fontified t face font-lock-string-face) 2003 2004 (fontified t) 2004 2010 (fontified t face font-lock-builtin-face) 2010 2011 (fontified t face (rainbow-delimiters-depth-2-face)) 2011 2017 (fontified t) 2017 2018 (fontified t face (rainbow-delimiters-depth-2-face)) 2018 2019 (fontified t face (rainbow-delimiters-depth-1-face)) 2019 2036 (fontified t) 2036 2042 (fontified t face font-lock-keyword-face) 2042 2043 (fontified t) 2043 2044 (fontified t face (rainbow-delimiters-depth-1-face)) 2044 2053 (fontified t face font-lock-string-face) 2053 2055 (fontified t) 2055 2078 (fontified t face font-lock-string-face) 2078 2079 (fontified t face (rainbow-delimiters-depth-1-face)) 2079 2093 (fontified t) 2093 2094 (fontified t) 2094 2096 (fontified t face font-lock-keyword-face) 2096 2103 (fontified t) 2103 2115 (fontified t) 2115 2117 (fontified t face font-lock-keyword-face) 2117 2118 (fontified t) 2118 2121 (fontified t face font-lock-keyword-face) 2121 2126 (fontified t) 2126 2127 (fontified t face (rainbow-delimiters-depth-1-face)) 2127 2133 (fontified t face font-lock-string-face) 2133 2134 (fontified t face (rainbow-delimiters-depth-1-face)) 2134 2168 (fontified t) 2168 2169 (fontified t face (rainbow-delimiters-depth-1-face)) 2169 2249 (fontified t face font-lock-string-face) 2249 2250 (fontified t) 2250 2256 (fontified t face font-lock-builtin-face) 2256 2257 (fontified t face (rainbow-delimiters-depth-2-face)) 2257 2263 (fontified t) 2263 2264 (fontified t face (rainbow-delimiters-depth-2-face)) 2264 2265 (fontified t face (rainbow-delimiters-depth-1-face)) 2265 2282 (fontified t) 2282 2288 (fontified t face font-lock-keyword-face) 2288 2289 (fontified t) 2289 2290 (fontified t face (rainbow-delimiters-depth-1-face)) 2290 2299 (fontified t face font-lock-string-face) 2299 2301 (fontified t) 2301 2329 (fontified t face font-lock-string-face) 2329 2331 (fontified t) 2331 2339 (fontified t face font-lock-string-face) 2339 2341 (fontified t) 2341 2351 (fontified t face font-lock-string-face) 2351 2352 (fontified t face (rainbow-delimiters-depth-1-face)) 2352 2371 (fontified t) 2371 2374 (fontified t face font-lock-keyword-face) 2374 2392 (fontified t) 2392 2394 (fontified t face font-lock-keyword-face) 2394 2395 (fontified t) 2395 2398 (fontified t face font-lock-builtin-face) 2398 2399 (fontified t face (rainbow-delimiters-depth-1-face)) 2399 2403 (fontified t) 2403 2404 (fontified t face (rainbow-delimiters-depth-2-face)) 2404 2414 (fontified t face font-lock-string-face) 2414 2415 (fontified t face (rainbow-delimiters-depth-2-face)) 2415 2416 (fontified t face (rainbow-delimiters-depth-1-face)) 2416 2442 (fontified t) 2442 2448 (fontified t face font-lock-keyword-face) 2448 2449 (fontified t) 2449 2450 (fontified t face (rainbow-delimiters-depth-1-face)) 2450 2459 (fontified t face font-lock-string-face) 2459 2461 (fontified t) 2461 2492 (fontified t face font-lock-string-face) 2492 2494 (fontified t) 2494 2500 (fontified t face font-lock-string-face) 2500 2502 (fontified t face font-lock-string-face) 2502 2504 (fontified t) 2504 2514 (fontified t face font-lock-string-face) 2514 2515 (fontified t face (rainbow-delimiters-depth-1-face)) 2515 2533 (fontified t) 2533 2539 (fontified t face font-lock-keyword-face) 2539 2573 (fontified t) 2573 2574 (fontified t face (rainbow-delimiters-depth-1-face)) 2574 2603 (fontified t face font-lock-string-face) 2603 2646 (fontified t face font-lock-string-face) 2646 2647 (fontified t) 2647 2653 (fontified t face font-lock-builtin-face) 2653 2654 (fontified t face (rainbow-delimiters-depth-2-face)) 2654 2660 (fontified t) 2660 2661 (fontified t face (rainbow-delimiters-depth-2-face)) 2661 2662 (fontified t face (rainbow-delimiters-depth-1-face)) 2662 2663 (fontified t) 2663 6082 (fontified nil)) . 1) (undo-tree-id0 . -6082) (undo-tree-id1 . -48) (undo-tree-id2 . -6082) (undo-tree-id3 . -592) (undo-tree-id4 . -592) (undo-tree-id5 . -592) (undo-tree-id6 . -6082) (t 25578 2245 728576 273000)) nil (25578 2385 258513 242000) 0 nil])
+([nil current ((nil rear-nonsticky nil 5779 . 5780) (nil fontified nil 1 . 5780) (1 . 5780)) nil (25578 2385 258375 364000) 0 nil])
+nil

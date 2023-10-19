@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"24b3e367eb8d43843311d1ba1dea914dc81b89ee"
+[nil nil nil nil (25265 57384 937024 805000) 0 nil]
+([nil nil ((#("images/blog/" 0 12 (tag-attr t tag-name "img" tag-type void font-lock-face web-mode-html-attr-value-face)) . 286) (undo-tree-id4 . -12) (undo-tree-id5 . -12) (undo-tree-id6 . -12) (undo-tree-id7 . -12) (t 25264 21851 694847 948000)) nil (25265 57384 937021 922000) 0 nil])
+([nil current ((#("/" 0 1 (tag-attr t tag-name "img" tag-type void font-lock-face web-mode-html-attr-value-face)) . -285) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 286) nil (25265 57384 937010 552000) 0 nil])
+nil

@@ -1,3 +1,0 @@
-INFO - 2020-11-06 17:03:30,364 - Data Checked and inserted
-ERROR - 2020-11-06 17:15:24,560 - SQL error at insert: invalid input syntax for integer: "sdfds" LINE 1: ...ats (sensor_id, dto_id, count, date) VALUES (306, 'sdfds', 4...                                                              ^ 
-INFO - 2020-11-06 17:33:31,389 - <Command '/usr/bin/tail -f dash.log', pid 21651>: process started

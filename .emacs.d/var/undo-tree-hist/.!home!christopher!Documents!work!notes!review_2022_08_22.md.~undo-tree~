@@ -1,0 +1,10 @@
+(undo-tree-save-format-version . 1)
+"77fdf8cbcbec57214fe861491a66832170fd8c6e"
+[nil nil nil nil (25356 43437 618817 333000) 0 nil]
+([nil nil ((791 . 795) (790 . 792) (#("(" 0 1 (fontified nil face markdown-header-delimiter-face markdown-heading (770 791 nil nil nil nil nil nil 770 774 774 791 791 791 #<buffer review_2022_08_22.md>) markdown-heading-3-atx (770 791 nil nil nil nil nil nil 770 774 774 791 791 791 #<buffer review_2022_08_22.md>))) . -790) (789 . 791) (t 25347 29136 326045 234000)) nil (25356 43437 618813 414000) 0 nil])
+([nil nil ((#("o" 0 1 (fontified t markdown-heading (770 795 nil nil nil nil nil nil 770 774 774 795 795 795 #<buffer review_2022_08_22.md>) markdown-heading-3-atx (770 795 nil nil nil nil nil nil 770 774 774 795 795 795 #<buffer review_2022_08_22.md>) face markdown-header-face-3)) . -793) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (#("m" 0 1 (fontified defer face markdown-header-face-3 markdown-heading (770 796 nil nil nil nil nil nil 770 774 774 796 796 796 #<buffer review_2022_08_22.md>) markdown-heading-3-atx (770 796 nil nil nil nil nil nil 770 774 774 796 796 796 #<buffer review_2022_08_22.md>))) . -794) (undo-tree-id5 . -1) 795) nil (25356 43437 618807 124000) 0 nil])
+([nil nil ((793 . 803)) nil (25356 43437 618795 160000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-heading (770 804 nil nil nil nil nil nil 770 774 774 804 804 804 #<buffer review_2022_08_22.md>) markdown-heading-3-atx (770 804 nil nil nil nil nil nil 770 774 774 804 804 804 #<buffer review_2022_08_22.md>) face markdown-header-face-3)) . -802) (undo-tree-id2 . -1) 803) nil (25356 43437 618790 582000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t)) . -768) (undo-tree-id0 . -1) (undo-tree-id1 . -1) 769) nil (25356 43437 618779 210000) 0 nil])
+nil

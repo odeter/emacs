@@ -1,0 +1,78 @@
+(undo-tree-save-format-version . 1)
+"e46085401db7f4f577f421c5c75d98d68a5ef926"
+[nil nil nil nil (25758 35897 324773 62000) 0 nil]
+([nil nil ((1580 . 1589) (t 25757 33335 715650 26000)) nil (25758 35897 324771 247000) 0 nil])
+([nil nil ((1589 . 1606)) nil (25758 35897 324770 27000) 0 nil])
+([nil nil ((#(")" 0 1 (fontified nil)) . 1619) (1618 . 1619) (1617 . 1619) (#("(" 0 1 (fontified nil)) . -1617) (1606 . 1618)) nil (25758 35897 324768 493000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1626 . 1627) (nil fontified nil 1618 . 1627) (1618 . 1627)) nil (25758 35897 324766 285000) 0 nil])
+([nil nil ((#("
+        rules = SuricataRulesModel.find_by_sensor_id(sensor_id)" 0 1 (fontified t) 1 9 (fontified t) 9 14 (fontified t face font-lock-variable-name-face) 14 53 (fontified t) 53 54 (fontified t face (rainbow-delimiters-depth-1-face)) 54 63 (fontified t) 63 64 (fontified t face (rainbow-delimiters-depth-1-face))) . 1628) (undo-tree-id22 . -64) (undo-tree-id23 . -64) (undo-tree-id24 . -1) (undo-tree-id25 . -63) (undo-tree-id26 . -63) (undo-tree-id27 . -64)) nil (25758 35897 324764 184000) 0 nil])
+([nil nil ((1628 . 1637)) nil (25758 35897 324757 66000) 0 nil])
+([nil nil ((1637 . 1640)) nil (25758 35897 324756 121000) 0 nil])
+([nil nil ((1640 . 1647)) nil (25758 35897 324755 222000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -1646) (undo-tree-id21 . -1) 1647) nil (25758 35897 324753 960000) 0 nil])
+([nil nil ((1646 . 1648)) nil (25758 35897 324751 349000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -1647) (undo-tree-id20 . -1) 1648) nil (25758 35897 324750 165000) 0 nil])
+([nil nil ((#("            " 0 12 (fontified nil)) . -2261) (2245 . 2261) (#("            " 0 12 (fontified nil)) . -2109) (2093 . 2109) (#("        " 0 5 (fontified nil) 5 8 (fontified nil)) . -2087) (2075 . 2087) (#("            " 0 12 (fontified nil)) . -1988) (1972 . 1988) (#("            " 0 12 (fontified nil)) . -1875) (1859 . 1875) (#("            " 0 12 (fontified nil)) . -1765) (1749 . 1765) (#("            " 0 12 (fontified nil)) . -1695) (1679 . 1695) (#("        " 0 8 (fontified nil)) . -1660) (1648 . 1660)) nil (25758 35897 324746 571000) 0 nil])
+([nil nil ((2306 . 2319)) nil (25758 35897 324741 999000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t face whitespace-empty)) . -2315) (undo-tree-id19 . -4) 2319) nil (25758 35897 324740 634000) 0 nil])
+([nil nil ((2315 . 2320)) nil (25758 35897 324738 339000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -2319) (undo-tree-id18 . -1) 2320) nil (25758 35897 324736 865000) 0 nil])
+([nil nil ((2319 . 2320)) nil (25758 35897 324734 624000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -2319) (undo-tree-id17 . -1) 2320) nil (25758 35897 324733 264000) 0 nil])
+([nil nil ((2319 . 2321)) nil (25758 35897 324730 937000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -2320) (undo-tree-id16 . -1) 2321) nil (25758 35897 324729 736000) 0 nil])
+([nil nil ((2320 . 2333)) nil (25758 35897 324727 474000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 2529 . 2530) (nil fontified nil 2525 . 2530) (nil fontified nil 2524 . 2525) (nil fontified nil 2504 . 2524) (nil fontified nil 2502 . 2504) (nil fontified nil 2493 . 2502) (nil fontified nil 2492 . 2493) (nil fontified nil 2491 . 2492) (nil fontified nil 2485 . 2491) (nil fontified nil 2469 . 2485) (nil fontified nil 2468 . 2469) (nil fontified nil 2467 . 2468) (nil fontified nil 2466 . 2467) (nil fontified nil 2464 . 2466) (nil fontified nil 2432 . 2464) (nil fontified nil 2431 . 2432) (nil fontified nil 2425 . 2431) (nil fontified nil 2424 . 2425) (nil fontified nil 2400 . 2424) (nil fontified nil 2390 . 2400) (nil fontified nil 2389 . 2390) (nil fontified nil 2388 . 2389) (nil fontified nil 2372 . 2388) (nil fontified nil 2350 . 2372) (nil fontified nil 2349 . 2350) (nil fontified nil 2343 . 2349) (nil fontified nil 2336 . 2343) (nil fontified nil 2334 . 2336) (nil fontified nil 2333 . 2334) (2333 . 2530)) nil (25758 35897 324724 949000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -2481) (undo-tree-id15 . -2) 2483) nil (25758 35897 324717 741000) 0 nil])
+([nil nil ((#("api key is set" 0 14 (fontified t face font-lock-string-face)) . 2504) (undo-tree-id13 . -14) (undo-tree-id14 . -14)) nil (25758 35897 324714 990000) 0 nil])
+([nil nil ((2504 . 2509)) nil (25758 35897 324711 763000) 0 nil])
+([nil nil ((#("r" 0 1 (fontified t face font-lock-string-face)) . -2508) (undo-tree-id12 . -1) 2509) nil (25758 35897 324710 500000) 0 nil])
+([nil nil ((2508 . 2520)) nil (25758 35897 324708 149000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face font-lock-string-face)) . -2519) (undo-tree-id11 . -1) 2520) nil (25758 35897 324706 853000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face font-lock-string-face)) . 2519)) nil (25758 35897 324704 513000) 0 nil])
+([nil nil ((#(" sensors could be found" 0 23 (fontified t face font-lock-string-face)) . 2176) (undo-tree-id9 . -23) (undo-tree-id10 . -23)) nil (25758 35897 324703 230000) 0 nil])
+([nil nil ((2176 . 2189)) nil (25758 35897 324700 204000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face font-lock-string-face)) . -2188) (undo-tree-id8 . -1) 2189) nil (25758 35897 324699 37000) 0 nil])
+([nil nil ((#("No api key is set" 0 17 (fontified t face font-lock-string-face)) . 2270) (undo-tree-id6 . -17) (undo-tree-id7 . -17)) nil (25758 35897 324696 491000) 0 nil])
+([nil nil ((2270 . 2291)) nil (25758 35897 324693 486000) 0 nil])
+([nil nil ((2291 . 2294)) nil (25758 35897 324692 642000) 0 nil])
+([nil nil ((2294 . 2298)) nil (25758 35897 324691 608000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face font-lock-string-face)) . -2297) (undo-tree-id5 . -1) 2298) nil (25758 35897 324690 223000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face font-lock-string-face)) . 2297)) nil (25758 35897 324687 794000) 0 nil])
+([nil nil ((1647 . 1660)) nil (25758 35897 324686 766000) 0 nil])
+([nil nil ((1660 . 1664)) nil (25758 35897 324685 621000) 0 nil])
+([nil nil ((#("k" 0 1 (fontified t)) . -1662) (undo-tree-id3 . -1) (#("e" 0 1 (fontified t)) . -1663) (undo-tree-id4 . -1) 1664) nil (25758 35897 324683 991000) 0 nil])
+([nil nil ((1662 . 1676)) nil (25758 35897 324680 134000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -1675) (undo-tree-id2 . -1) 1676) nil (25758 35897 325155 646000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1688 . 1689) (nil fontified nil 1684 . 1689) (nil fontified nil 1675 . 1684) (1675 . 1689)) nil (25758 36069 87072 606000) 0 nil] [nil nil ((#("            return {'message': 'No admin user was found'}, 204
+" 0 12 (fontified nil) 12 18 (fontified nil face font-lock-keyword-face) 18 19 (fontified nil) 19 20 (fontified nil face (rainbow-delimiters-depth-1-face)) 20 29 (fontified nil face font-lock-string-face) 29 31 (fontified nil) 31 43 (fontified nil face font-lock-string-face) 43 56 (fontified nil face font-lock-string-face) 56 57 (fontified nil face (rainbow-delimiters-depth-1-face)) 57 63 (fontified nil)) . 1579) (1437 . 1579) (#("            app.logger.error('{0} - {1} tried retrieving suricata rules, but could not find firm'.format(current_user.name, current_user.id))
+" 0 28 (fontified t) 28 29 (fontified t face (rainbow-delimiters-depth-1-face)) 29 97 (fontified t face font-lock-string-face) 97 98 (fontified t) 98 104 (fontified t face font-lock-builtin-face) 104 105 (fontified t face (rainbow-delimiters-depth-2-face)) 105 127 (fontified t) 127 137 (fontified t) 137 139 (fontified t face font-lock-builtin-face) 139 140 (fontified t face (rainbow-delimiters-depth-2-face)) 140 141 (fontified t face (rainbow-delimiters-depth-1-face)) 141 142 (fontified t)) . 1374) (undo-tree-id0 . -42) (undo-tree-id1 . -42) (1516 . 1579) 1416) ((#("            return {'message': 'No admin user was found'}, 204
+" 0 12 (fontified nil) 12 18 (fontified nil face font-lock-keyword-face) 18 19 (fontified nil) 19 20 (fontified nil face (rainbow-delimiters-depth-1-face)) 20 29 (fontified nil face font-lock-string-face) 29 31 (fontified nil) 31 43 (fontified nil face font-lock-string-face) 43 56 (fontified nil face font-lock-string-face) 56 57 (fontified nil face (rainbow-delimiters-depth-1-face)) 57 63 (fontified nil)) . 1516) (undo-tree-id28 . -63) (undo-tree-id29 . -63) (undo-tree-id30 . -63) (undo-tree-id31 . -63) (undo-tree-id32 . -63) (undo-tree-id33 . -63) (1374 . 1516) (#("            app.logger.error('{0} - {1} tried retrieving suricata rules, but could not find firm'.format(current_user.name, current_user.id))
+" 0 28 (fontified t) 28 29 (fontified t face (rainbow-delimiters-depth-1-face)) 29 97 (fontified t face font-lock-string-face) 97 98 (fontified t) 98 104 (fontified t face font-lock-builtin-face) 104 105 (fontified t face (rainbow-delimiters-depth-2-face)) 105 127 (fontified t) 127 137 (fontified t) 137 139 (fontified t face font-lock-builtin-face) 139 140 (fontified t face (rainbow-delimiters-depth-2-face)) 140 141 (fontified t face (rainbow-delimiters-depth-1-face)) 141 142 (fontified t)) . 1437) (undo-tree-id34 . -42) (undo-tree-id35 . -42) (undo-tree-id36 . -42) (undo-tree-id37 . -142) (1579 . 1642)) (25758 35897 324670 915000) 0 nil])
+([nil nil ((#("len(rules)" 0 3 (fontified t face font-lock-builtin-face) 3 4 (fontified t face (rainbow-delimiters-depth-1-face)) 4 9 (fontified t) 9 10 (fontified t face (rainbow-delimiters-depth-1-face))) . 1705) (undo-tree-id38 . -10) (undo-tree-id39 . -10) (t 25758 36069 89970 928000)) nil (25758 39069 49067 671000) 0 nil])
+nil
+([nil nil ((nil rear-nonsticky nil 1709 . 1710) (nil fontified nil 1705 . 1710) (1705 . 1710)) nil (25758 39069 49054 506000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . 1710) (#(" " 0 1 (fontified t)) . 1710) (#(">" 0 1 (fontified t)) . 1710) (#(" " 0 1 (fontified t)) . 1710)) nil (25758 39069 49045 124000) 0 nil])
+([nil nil ((1689 . 1702) (t 25758 39069 53449 382000)) nil (25758 39096 858782 231000) 0 nil])
+([nil nil ((1709 . 1714) (1708 . 1710) (#("\"" 0 1 (fontified nil face (rainbow-delimiters-depth-1-face))) . -1708) (undo-tree-id55 . -1) (undo-tree-id56 . -1) (1708 . 1709) (1707 . 1709) (#("(" 0 1 (fontified nil face font-lock-keyword-face)) . -1707) (undo-tree-id57 . -1) (undo-tree-id58 . -1) (1702 . 1708)) nil (25758 39096 858780 14000) 0 nil])
+([nil nil ((1715 . 1723)) nil (25758 39096 858771 568000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -1722) (undo-tree-id40 . -1) (undo-tree-id41 . -1) (undo-tree-id42 . -1) (undo-tree-id43 . -1) (undo-tree-id44 . -1) (undo-tree-id45 . -1) (undo-tree-id46 . -1) (undo-tree-id47 . -1) (undo-tree-id48 . -1) (undo-tree-id49 . -1) (undo-tree-id50 . -1) (undo-tree-id51 . -1) (undo-tree-id52 . -1) (undo-tree-id53 . -1) (undo-tree-id54 . -1) 1723) nil (25758 39096 858765 33000) 0 nil])
+([nil nil ((#("        if not current_user:
+            app.logger.error('user with ID: {0} tried retrieving suricata rules, without permissions'.format(userID))
+            return {'message': 'User not set properly'}, 403" 0 8 (fontified t) 8 10 (fontified t face font-lock-keyword-face) 10 11 (fontified t) 11 14 (fontified t face font-lock-keyword-face) 14 57 (fontified t) 57 58 (fontified t face (rainbow-delimiters-depth-1-face)) 58 130 (fontified t face font-lock-string-face) 130 131 (fontified t) 131 137 (fontified t face font-lock-builtin-face) 137 138 (fontified t face (rainbow-delimiters-depth-2-face)) 138 144 (fontified t) 144 145 (fontified t face (rainbow-delimiters-depth-2-face)) 145 146 (fontified t face (rainbow-delimiters-depth-1-face)) 146 159 (fontified t) 159 165 (fontified t face font-lock-keyword-face) 165 166 (fontified t) 166 167 (fontified t face (rainbow-delimiters-depth-1-face)) 167 176 (fontified t face font-lock-string-face) 176 178 (fontified t) 178 201 (fontified t face font-lock-string-face) 201 202 (fontified t face (rainbow-delimiters-depth-1-face)) 202 207 (fontified t)) . 1144) (undo-tree-id94 . -207) (undo-tree-id95 . -28) (undo-tree-id96 . -28) (undo-tree-id97 . -29) (undo-tree-id98 . -207) (undo-tree-id99 . -207) (t 25758 39096 869448 17000)) nil (25758 39253 498671 817000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -1142) (undo-tree-id82 . -1) (undo-tree-id83 . -1) (undo-tree-id84 . -1) (undo-tree-id85 . -1) (undo-tree-id86 . -1) (undo-tree-id87 . -1) (#("
+" 0 1 (fontified t)) . -1143) (undo-tree-id88 . -1) (undo-tree-id89 . -1) (undo-tree-id90 . -1) (undo-tree-id91 . -1) (undo-tree-id92 . -1) (undo-tree-id93 . -1) 1144) nil (25758 39253 498663 379000) 0 nil])
+([nil nil ((#("       if not firm:
+            app.logger.error('{0} - {1} tried retrieving suricata rules, but could not find firm'.format(current_user.name, current_user.id))
+            return {'message': 'No admin user was found'}, 204" 0 7 (fontified t) 7 9 (fontified t face font-lock-keyword-face) 9 10 (fontified t) 10 13 (fontified t face font-lock-keyword-face) 13 20 (fontified t) 20 48 (fontified t) 48 49 (fontified t face (rainbow-delimiters-depth-1-face)) 49 117 (fontified t face font-lock-string-face) 117 118 (fontified t) 118 124 (fontified t face font-lock-builtin-face) 124 125 (fontified t face (rainbow-delimiters-depth-2-face)) 125 147 (fontified t) 147 157 (fontified t) 157 159 (fontified t face font-lock-builtin-face) 159 160 (fontified t face (rainbow-delimiters-depth-2-face)) 160 161 (fontified t face (rainbow-delimiters-depth-1-face)) 161 162 (fontified t) 162 174 (fontified t) 174 180 (fontified t face font-lock-keyword-face) 180 181 (fontified t) 181 182 (fontified t face (rainbow-delimiters-depth-1-face)) 182 191 (fontified t face font-lock-string-face) 191 193 (fontified t) 193 205 (fontified t face font-lock-string-face) 205 218 (fontified t face font-lock-string-face) 218 219 (fontified t face (rainbow-delimiters-depth-1-face)) 219 224 (fontified t)) . 1145) (undo-tree-id78 . -224) (undo-tree-id79 . -20) (undo-tree-id80 . -224) (undo-tree-id81 . -224)) nil (25758 39253 498645 851000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -1144) (undo-tree-id75 . -1) (undo-tree-id76 . -1) (undo-tree-id77 . -1) 1145) nil (25758 39253 498639 601000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -1142) (undo-tree-id60 . -1) (undo-tree-id61 . -1) (undo-tree-id62 . -1) (undo-tree-id63 . -1) (undo-tree-id64 . -1) (undo-tree-id65 . -1) (undo-tree-id66 . -1) (undo-tree-id67 . -1) (undo-tree-id68 . -1) (undo-tree-id69 . -1) (undo-tree-id70 . -1) (#("
+" 0 1 (fontified t)) . -1143) (undo-tree-id71 . -1) (undo-tree-id72 . -1) (undo-tree-id73 . -1) (undo-tree-id74 . -1) 1144) nil (25758 39253 498633 24000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 1142) (undo-tree-id59 . -1)) nil (25758 39253 498611 324000) 0 nil])
+([nil current ((#("
+            print(\"Rules\", rules)" 0 1 (fontified t) 1 13 (fontified t) 13 18 (fontified t face font-lock-keyword-face) 18 19 (fontified t face (rainbow-delimiters-depth-1-face)) 19 25 (fontified t face font-lock-string-face) 25 26 (fontified t face font-lock-string-face) 26 33 (fontified t) 33 34 (fontified t face (rainbow-delimiters-depth-1-face))) . 1252) (undo-tree-id100 . -34) (undo-tree-id101 . -1) (undo-tree-id102 . -34) (undo-tree-id103 . -34) (t 25758 39253 501412 918000)) nil (25758 48202 700751 19000) 0 nil])
+nil

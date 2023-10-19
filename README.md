@@ -4,47 +4,73 @@ Just my *.emacs* lisp file and the *.emacs.d* folder.
 
 # Packages used
 
-Uses the following packages:
+The following packages are used, sorted into following categories:
 
-- flycheck-package
-- company
-- company-anaconda
-- page-break-lines
-- smart-comment
-- smartparens
-- all-the-icons
-- cider
-- minions
-- moody
+## UI
+
 - neotree
-- dracula-theme
+- smartparens
+- rainbow-delimiters
 - all-the-icons
-- fsharp-mode
-- whitespace-cleanup-mode
-- use-package
-- sml-mode
-- smex
-- pyenv-mode
 - mode-icons
-- minimap
-- jedi
-- jdee
-- jdecomp
+- doom-themes
+- doom-modeline
+- ivy
+- ivy-prescient
+- all-the-icons-ivy-rich
+- ivy-rich
+- counsel
+- counsel-ag-projectile
+- hl-line
+- nyan-mode
+- dashboard
+- page-break-lines
+
+## Programming language modes
+
+- sml-mode
+- fsharp-mode
+- pyenv-mode
 - iasm-mode
 - haskell-mode
 - fountain-mode
-- flyspell-correct-popup
-- flx-ido
-- elpy
-- eclim
-- ecb
-- drag-stuff
-- c-mode
 - web-mode
-- beacon
-- whitespace
-- undo-tree
+- c-mode
 - prolog-mode
-- nyan-mode
-- linum
-- Markdown-mode
+- docker-compose-mode
+
+## Performance & background
+
+- use-package
+- no-littering
+- auto-package-update
+
+## Code helpers
+
+- whitespace
+- whitespace-cleanup-mode
+- flycheck-package
+- undo-tree
+- cua-base
+- flycheck
+- flyspell
+- move-text
+- smart-comment
+- which-key
+- company
+- company-box
+- company-anaconda
+
+## Others
+
+- magit
+- winum
+- chatgpt-shell
+
+# Authinfo
+
+To properly use the `chatgpt-shell` package you must create an authinfo file besides your `.emacs` file. This should contain the following:
+
+```bash
+machine api.openai.com password <chatgpt api-key>
+```

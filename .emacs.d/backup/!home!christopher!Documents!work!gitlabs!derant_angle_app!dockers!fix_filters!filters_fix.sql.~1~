@@ -1,0 +1,5 @@
+ALTER TABLE filters ADD toc timestamp;
+
+ALTER TABLE filters ALTER COLUMN toc SET DEFAULT now();
+
+ALTER TABLE filters ADD user_id integer REFERENCES users(id);

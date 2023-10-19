@@ -1,0 +1,69 @@
+#!/bin/bash
+# A simple script
+
+if [ "$1" == "--local" ];
+then
+    mkdir -p ${BACKEND_PROC_LOG_DIR}
+
+    echo "Running dash update"
+
+    # check db version
+    db_version=$(curl -I "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country-CSV&license_key=${GEOIP_KEY}&suffix=zip" | sed -r '/filename=/!d;s/.*filename=(.*)$/\1/')
+
+    if [ -f "${BACKEND_PROC_LOG_DIR}geoip_db_version" ]; then
+        echo "${BACKEND_PROC_LOG_DIR}geoip_db_version exists."
+        current_db=$(<${BACKEND_PROC_LOG_DIR}geoip_db_version)
+    fi
+
+    if [[ "$db_version" != "$current_db" ]];
+    then
+        touch "${BACKEND_PROC_LOG_DIR}geoip_db_version"
+        echo "${db_version}" > "${BACKEND_PROC_LOG_DIR}geoip_db_version"
+        curl "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country-CSV&license_key=${GEOIP_KEY}&suffix=zip" > geoipdb.zip
+        unzip -o geoipdb.zip -d "geoipdb"
+        find geoipdb/ -type f -print0 | xargs -0 mv -f -t geoipdb
+        rm -f geoipdb.zip
+        flock -n -x geoip_db_refresh.py -c "python3 geoip_db_refresh.py"
+
+        rm -drf geoipdb
+        echo "geoip db update done (check logs)"
+    else
+        echo "No new db update was found"
+    fi
+else
+
+    ## import env
+    set -o allexport; source /app/.env; set +o allexport
+
+    mkdir -p ${BACKEND_PROC_LOG_DIR}
+    mkdir -p $LOCKS
+    current_db=""
+
+    # get lock
+    exec 100>/app/uploads/locks/geoip_db_refresh.lock || exit 1
+    flock -n -x 100 || exit 1
+
+
+    # check db version
+    db_version=$(curl -I "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country-CSV&license_key=${GEOIP_KEY}&suffix=zip" | sed -r '/filename=/!d;s/.*filename=(.*)$/\1/')
+    echo "db version: ${db_version}"
+    echo "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country-CSV&license_key=${GEOIP_KEY}&suffix=zip"
+
+    if [ -f "${BACKEND_PROC_LOG_DIR}geoip_db_version" ]; then
+        echo "${BACKEND_PROC_LOG_DIR}geoip_db_version exists."
+        current_db=$(<${BACKEND_PROC_LOG_DIR}geoip_db_version)
+    fi
+
+    if [[ "$db_version" != "$current_db" ]];
+    then
+        touch "${BACKEND_PROC_LOG_DIR}geoip_db_version"
+        echo "${db_version}" > "${BACKEND_PROC_LOG_DIR}geoip_db_version"
+        curl "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country-CSV&license_key=${GEOIP_KEY}&suffix=zip" > geoipdb.zip
+        unzip -o geoipdb.zip -d "geoipdb"
+        find geoipdb/ -type f -print0 | xargs -0 mv -f -t geoipdb
+        rm -f geoipdb.zip
+        python3 cron_jobs/geoip_db_refresh/geoip_db_refresh.py
+
+        rm -drf geoipdb
+    fi
+fi

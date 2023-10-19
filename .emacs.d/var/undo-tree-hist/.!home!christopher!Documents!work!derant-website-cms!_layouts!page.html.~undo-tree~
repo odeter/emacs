@@ -1,0 +1,5 @@
+(undo-tree-save-format-version . 1)
+"548b31d121094d30f1b28e578b4e64c6d0ba8be7"
+[nil current nil nil (25266 53105 699017 941000) 0 nil]
+([nil nil ((#("-blog" 0 1 (block-side t) 1 5 (face web-mode-variable-name-face block-side t)) . 94) (undo-tree-id0 . -5) (undo-tree-id1 . -5) (undo-tree-id2 . -5) (undo-tree-id3 . -5) (t 25264 21851 694847 948000)) ((94 . 99) (t 25266 53008 591328 778000)) (25266 53008 585872 546000) 0 nil])
+nil

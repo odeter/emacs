@@ -1,0 +1,182 @@
+(undo-tree-save-format-version . 1)
+"16435b70be749a8fe4c57d7b4220c424798b17e2"
+[nil nil nil nil (25182 38795 161158 616000) 0 nil]
+([nil nil ((#("
+
+    NEXPORT=`dokku postgres:info angle_db_new --exposed-ports | sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+    export DATABASE_URL=`dokku postgres:info angle_db_new --dsn | sed \"s/@[a-z -]*:['0-9']*/@localhost:$NEXPORT/g\"`" 0 1 (fontified t) 1 6 (fontified t) 6 13 (fontified t face font-lock-variable-name-face) 13 14 (fontified t) 14 111 (fontified t face sh-quoted-exec) 111 116 (fontified t) 116 122 (fontified t face font-lock-builtin-face) 122 123 (fontified t) 123 135 (fontified t face font-lock-variable-name-face) 135 136 (fontified t) 136 227 (fontified t face sh-quoted-exec)) . 2186) (undo-tree-id42 . -1) (undo-tree-id43 . -227) (undo-tree-id44 . -227) (undo-tree-id45 . -227) (undo-tree-id46 . -227) (t 25103 35945 918179 0)) nil (25182 38795 161156 423000) 0 nil])
+([nil nil ((#("
+
+    CEXPORT=`dokku clickhouse:info clickhouse_db --exposed-ports | awk -F ' ' '{print $2}'| sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+    export CLICKHOUSE_URL=`dokku clickhouse:info clickhouse_db --dsn | sed \"s/@[a-z -]*:['0-9']*\\/\\([_ a-z]\\+\\)/@localhost:$CEXPORT/g\"`" 0 1 (fontified t) 1 6 (fontified t) 6 13 (fontified t face font-lock-variable-name-face) 13 14 (fontified t) 14 139 (fontified t face sh-quoted-exec) 139 144 (fontified t) 144 150 (fontified t face font-lock-builtin-face) 150 151 (fontified t) 151 165 (fontified t face font-lock-variable-name-face) 165 166 (fontified t) 166 221 (fontified t face sh-quoted-exec) 221 274 (fontified t face sh-quoted-exec) 274 275 (fontified t face sh-quoted-exec)) . 2186) (undo-tree-id38 . -1) (undo-tree-id39 . -275) (undo-tree-id40 . -275) (undo-tree-id41 . -275)) nil (25182 38795 161147 316000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 2186) (undo-tree-id36 . -1) (#("
+" 0 1 (fontified t)) . 2186) (undo-tree-id37 . -1)) nil (25182 38795 161141 390000) 0 nil])
+([nil nil ((2186 . 2191)) nil (25182 38795 161137 830000) 0 nil])
+([nil nil ((#("    echo \"taking pg_dump\"
+    docker exec -it dokku.postgres.angle_db pg_dump -U postgres -n public -d angle_db --exclude-table-data='geoip2_network' --exclude-table-data='simple_geo_ip' --exclude-table-data='app_logs_model' --exclude-table-data='network_stats' --exclude-table='template*' --exclude-table='data*' > db_dump.sql
+
+    echo \"puttin into new db\"
+    docker exec -i dokku.postgres.angle_db_new psql -U postgres -d angle_db_new < db_dump.sql" 0 4 (fontified t) 4 8 (fontified t face font-lock-builtin-face) 8 9 (fontified t) 9 25 (fontified t face font-lock-string-face) 25 133 (fontified t) 133 149 (fontified t face font-lock-string-face) 149 171 (fontified t) 171 176 (fontified t face font-lock-string-face) 176 186 (fontified t face (whitespace-line font-lock-string-face)) 186 208 (fontified t face (whitespace-line)) 208 223 (fontified t face (whitespace-line font-lock-string-face)) 223 224 (fontified t face (whitespace-line font-lock-string-face)) 224 246 (fontified t face (whitespace-line)) 246 261 (fontified t face (whitespace-line font-lock-string-face)) 261 278 (fontified t face (whitespace-line)) 278 289 (fontified t face (whitespace-line font-lock-string-face)) 289 306 (fontified t face (whitespace-line)) 306 313 (fontified t face (whitespace-line font-lock-string-face)) 313 327 (fontified t face (whitespace-line)) 327 328 (fontified t) 328 333 (fontified t) 333 337 (fontified t face font-lock-builtin-face) 337 338 (fontified t) 338 358 (fontified t face font-lock-string-face) 358 379 (fontified t) 379 383 (fontified t) 383 443 (fontified t) 443 452 (fontified t)) . 2192) (undo-tree-id32 . -26) (undo-tree-id33 . -452) (undo-tree-id34 . -452) (undo-tree-id35 . -452)) nil (25182 38795 161136 235000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -2186) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -1) (#(" " 0 1 (fontified t)) . -2187) (undo-tree-id16 . -1) (undo-tree-id17 . -1) (undo-tree-id18 . -1) (#(" " 0 1 (fontified t)) . -2188) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (undo-tree-id21 . -1) (#(" " 0 1 (fontified t)) . -2189) (undo-tree-id22 . -1) (undo-tree-id23 . -1) (undo-tree-id24 . -1) (#(" " 0 1 (fontified t)) . -2190) (undo-tree-id25 . -1) (undo-tree-id26 . -1) (undo-tree-id27 . -1) (#("
+" 0 1 (fontified t)) . -2191) (undo-tree-id28 . -1) (undo-tree-id29 . -1) (undo-tree-id30 . -1) (undo-tree-id31 . -1) 2192) nil (25182 38795 161126 804000) 0 nil])
+([nil nil ((2338 . 2344)) nil (25182 38795 161103 313000) 0 nil])
+([nil nil ((2361 . 2367)) nil (25182 38795 161102 225000) 0 nil])
+([nil nil ((2553 . 2559)) nil (25182 38795 161101 76000) 0 nil])
+([nil nil ((2568 . 2574)) nil (25182 38795 652029 64000) 0 nil])
+([nil nil ((#("s" 0 1 (fontified t)) . -1895) (undo-tree-id100 . -1) (#("e" 0 1 (fontified t face font-lock-keyword-face)) . -1896) (undo-tree-id101 . -1) 1897) nil (25182 39036 719518 183000) 0 nil] [nil nil ((#("    echo \"inserting data\"
+    find \"csv_dumps\" -type f | xargs -n 1 -P 8 -I {} bash -c 'migrate_fun \"$@\"' _ {}" 0 4 (fontified t) 4 8 (fontified t face font-lock-builtin-face) 8 9 (fontified t) 9 25 (fontified t face font-lock-string-face) 25 26 (fontified t) 26 35 (fontified t) 35 46 (fontified t face font-lock-string-face) 46 76 (fontified t) 76 77 (fontified t face (rainbow-delimiters-depth-1-face)) 77 78 (fontified t face (rainbow-delimiters-depth-1-face)) 78 87 (fontified t) 87 102 (fontified t face font-lock-string-face) 102 103 (syntax-table (3) fontified t face font-lock-string-face) 103 105 (fontified t face font-lock-string-face) 105 108 (fontified t) 108 109 (fontified t face (rainbow-delimiters-depth-1-face)) 109 110 (fontified t face (rainbow-delimiters-depth-1-face))) . 2582) (undo-tree-id8 . -26) (undo-tree-id9 . -110) (undo-tree-id10 . -110) (undo-tree-id11 . -110)) ((2582 . 2692)) (25182 38795 161394 601000) 0 nil])
+([nil nil ((1895 . 1897)) nil (25182 39036 719513 682000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -2580) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (#("
+" 0 1 (fontified t)) . -2581) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) 2582) ((2580 . 2582)) (25182 38795 161086 937000) 0 nil])
+([nil nil ((#("i" 0 1 (fontified t)) . -1895) (undo-tree-id98 . -1) (#("f" 0 1 (fontified defer)) . -1896) (undo-tree-id99 . -1) 1897) nil (25182 39036 719511 936000) 0 nil])
+nil
+([nil nil ((1895 . 1899)) nil (25182 39036 719507 551000) 0 nil])
+([nil nil ((#("i" 0 1 (fontified t)) . -1897) (undo-tree-id96 . -1) (#("f" 0 1 (fontified t)) . -1898) (undo-tree-id97 . -1) 1899) nil (25182 39036 719505 824000) 0 nil])
+([nil nil ((1897 . 1898)) nil (25182 39036 719501 201000) 0 nil])
+([nil nil ((#("i" 0 1 (fontified t)) . -1897) (undo-tree-id95 . -1) 1898) nil (25182 39036 719499 713000) 0 nil])
+([nil nil ((1897 . 1901)) nil (25182 39036 719496 780000) 0 nil])
+([nil nil ((#("s" 0 1 (fontified t)) . -1895) (undo-tree-id89 . -1) (#("e" 0 1 (fontified t face font-lock-keyword-face)) . -1896) (undo-tree-id90 . -1) (#(" " 0 1 (fontified t)) . -1897) (undo-tree-id91 . -1) (#("i" 0 1 (fontified t)) . -1898) (undo-tree-id92 . -1) (#("f" 0 1 (fontified t face font-lock-keyword-face)) . -1899) (undo-tree-id93 . -1) (#(" " 0 1 (fontified t)) . -1900) (undo-tree-id94 . -1) 1901) nil (25182 39036 719492 412000) 0 nil])
+([nil nil ((1895 . 1897)) nil (25182 39036 719478 26000) 0 nil])
+([nil nil ((#("u" 0 1 (fontified t)) . -1895) (undo-tree-id87 . -1) (#("f" 0 1 (fontified t)) . -1896) (undo-tree-id88 . -1) 1897) nil (25182 39036 719476 435000) 0 nil])
+([nil nil ((1895 . 1899)) nil (25182 39036 719471 26000) 0 nil])
+([nil nil ((#("8" 0 1 (fontified t)) . -1898) (undo-tree-id86 . -1) 1899) nil (25182 39036 719469 672000) 0 nil])
+([nil nil ((1898 . 1900) (#("[" 0 1 (fontified nil)) . -1898) (1898 . 1899)) nil (25182 39036 719466 927000) 0 nil])
+([nil nil ((1900 . 1901)) nil (25182 39036 719465 98000) 0 nil])
+([nil nil ((1901 . 1907)) nil (25182 39036 719463 969000) 0 nil])
+([nil nil ((1907 . 1911)) nil (25182 39036 719462 711000) 0 nil])
+([nil nil ((#("     " 0 5 (fontified defer)) . -1902) 1911) nil (25182 39036 719461 389000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1917 . 1918) (nil fontified nil 1917 . 1918) (nil fontified nil 1908 . 1917) (nil fontified nil 1904 . 1908) (nil fontified nil 1900 . 1904) (nil fontified nil 1899 . 1900) (1899 . 1918)) nil (25182 39036 719459 560000) 0 nil])
+([nil nil ((#("o" 0 1 (fontified t face font-lock-string-face)) . -1912) (undo-tree-id82 . -1) (#("c" 0 1 (fontified t face font-lock-string-face)) . -1913) (undo-tree-id83 . -1) (#("a" 0 1 (fontified t face font-lock-string-face)) . -1914) (undo-tree-id84 . -1) (#("l" 0 1 (fontified t face font-lock-string-face)) . -1915) (undo-tree-id85 . -1) 1916) nil (25182 39036 719455 623000) 0 nil])
+([nil nil ((1912 . 1913)) nil (25182 39036 719448 613000) 0 nil])
+([nil nil ((#("l" 0 1 (fontified t face font-lock-string-face)) . -1911) (undo-tree-id80 . -1) (#("d" 0 1 (fontified t face font-lock-string-face)) . -1912) (undo-tree-id81 . -1) 1913) nil (25182 39036 719447 32000) 0 nil])
+([nil nil ((1911 . 1915)) nil (25182 39036 719443 133000) 0 nil])
+([nil nil ((#("local" 0 5 (fontified t face font-lock-string-face)) . 1106) (undo-tree-id78 . -5) (undo-tree-id79 . -5)) nil (25182 39036 719441 791000) 0 nil])
+([nil nil ((1106 . 1112)) nil (25182 39036 719438 322000) 0 nil])
+([nil nil ((#("
+function test_fun_local {
+    d=2021-01-01
+    while [ \"$d\" != 2022-02-01 ]; do
+        d=$(date -I -d \"$d + 1 month\")
+        DATE=$(date -d \"$d\" '+%Y_%m')
+        TABLE_NAME=\"${1}_p${DATE}\"
+        echo \"Getting table - ${TABLE_NAME}, Date - ${d}\"
+        docker exec -u postgres \"$2\" psql -d \"$3\" -c \"COPY ${TABLE_NAME} TO STDOUT WITH CSV DELIMITER '|' HEADER\" > \"${FILE_DIR}${TABLE_NAME}\" || rm \"${FILE_DIR}${TABLE_NAME}\"
+    done
+}" 0 1 (fontified t) 1 9 (fontified t face font-lock-keyword-face) 9 10 (fontified t) 10 24 (fontified t face font-lock-function-name-face) 24 25 (fontified t) 25 26 (fontified t face (rainbow-delimiters-depth-1-face)) 26 31 (fontified t) 31 32 (fontified t face font-lock-variable-name-face) 32 48 (fontified t) 48 53 (fontified t face font-lock-keyword-face) 53 54 (fontified t) 54 55 (fontified t face (rainbow-delimiters-depth-2-face)) 55 56 (fontified t) 56 60 (fontified t face font-lock-string-face) 60 75 (fontified t) 75 76 (fontified t face (rainbow-delimiters-depth-2-face)) 76 78 (fontified t) 78 80 (fontified t face font-lock-keyword-face) 80 81 (fontified t) 81 89 (fontified t) 89 90 (fontified t face font-lock-variable-name-face) 90 92 (fontified t) 92 93 (fontified t face (rainbow-delimiters-depth-2-face)) 93 97 (fontified t face sh-quoted-exec) 97 104 (fontified t) 104 118 (fontified t face font-lock-string-face) 118 119 (fontified t face (rainbow-delimiters-depth-2-face)) 119 128 (fontified t) 128 132 (fontified t face font-lock-variable-name-face) 132 134 (fontified t) 134 135 (fontified t face (rainbow-delimiters-depth-2-face)) 135 139 (fontified t face sh-quoted-exec) 139 143 (fontified t) 143 147 (fontified t face font-lock-string-face) 147 148 (fontified t) 148 156 (fontified t face font-lock-string-face) 156 157 (fontified t face (rainbow-delimiters-depth-2-face)) 157 166 (fontified t) 166 176 (fontified t face font-lock-variable-name-face) 176 177 (fontified t) 177 192 (fontified t face font-lock-string-face) 192 201 (fontified t) 201 205 (fontified t face font-lock-builtin-face) 205 206 (fontified t) 206 250 (fontified t face font-lock-string-face) 250 283 (fontified t) 283 287 (fontified t face font-lock-string-face) 287 296 (fontified t) 296 300 (fontified t face font-lock-string-face) 300 304 (fontified t) 304 364 (fontified t face font-lock-string-face) 364 367 (fontified t) 367 393 (fontified t face font-lock-string-face) 393 400 (fontified t) 400 401 (fontified t face font-lock-string-face) 401 426 (fontified t face (whitespace-line font-lock-string-face)) 426 431 (fontified t) 431 435 (fontified t face font-lock-keyword-face) 435 436 (fontified t) 436 437 (fontified t face (rainbow-delimiters-depth-1-face))) . 446) (undo-tree-id75 . -1) (undo-tree-id76 . -437) (undo-tree-id77 . -437)) nil (25182 39036 719436 766000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -445) (undo-tree-id72 . -1) (undo-tree-id73 . -1) (undo-tree-id74 . -1) 446) nil (25182 39036 719429 829000) 0 nil])
+([nil nil ((#("    export FILE_DIR='csv_dumps/'
+    export PDIR=\"package_probs/\"
+    export OLD_DATABASE_URL=postgresql://postgres:123test@localhost:5123/postgres
+    export CLICKHOUSE_URL=clickhouse://default:@localhost/default
+    export DATABASE_URL=postgresql://postgres:123test@localhost:5124/postgres
+
+    mkdir -p ${FILE_DIR}
+    mkdir -p $PDIR
+
+    export -f test_fun_local
+    export -f migrate_fun
+
+    docker exec -it -u postgres angle_db_old psql -d postgres -c \"COPY dto TO STDOUT WITH CSV DELIMITER '|'\" > dto.csv
+
+    echo \"copy data\"
+    awk -F \"\\\"*\\|\\\"*\" '{print $2}' dto.csv | xargs -n 1 -P 8 -I {} bash -c 'test_fun_local \"$@\" angle_db_old postgres' _ {}
+
+    echo \"inserting data\"
+    find \"csv_dumps\" -type f | xargs -n 1 -P 8 -I {} bash -c 'migrate_fun \"$@\"' _ {}" 0 4 (fontified t) 4 10 (fontified t face font-lock-builtin-face) 10 11 (fontified t) 11 19 (fontified t face font-lock-variable-name-face) 19 20 (fontified t) 20 32 (fontified t face font-lock-string-face) 32 37 (fontified t) 37 43 (fontified t face font-lock-builtin-face) 43 44 (fontified t) 44 48 (fontified t face font-lock-variable-name-face) 48 49 (fontified t) 49 65 (fontified t face font-lock-string-face) 65 70 (fontified t) 70 76 (fontified t face font-lock-builtin-face) 76 77 (fontified t) 77 93 (fontified t face font-lock-variable-name-face) 93 152 (fontified t) 152 158 (fontified t face font-lock-builtin-face) 158 159 (fontified t) 159 173 (fontified t face font-lock-variable-name-face) 173 218 (fontified t) 218 224 (fontified t face font-lock-builtin-face) 224 225 (fontified t) 225 237 (fontified t face font-lock-variable-name-face) 237 260 (fontified t) 260 262 (fontified t) 262 292 (fontified t) 292 307 (fontified t) 307 308 (fontified t face (rainbow-delimiters-depth-1-face)) 308 316 (fontified t face font-lock-variable-name-face) 316 317 (fontified t face (rainbow-delimiters-depth-1-face)) 317 332 (fontified t) 332 336 (fontified t face font-lock-variable-name-face) 336 342 (fontified t) 342 348 (fontified t face font-lock-builtin-face) 348 371 (fontified t) 371 377 (fontified t face font-lock-builtin-face) 377 380 (fontified t) 380 440 (fontified t) 440 459 (fontified t) 459 495 (fontified t face font-lock-string-face) 495 502 (fontified t face font-lock-string-face) 502 513 (fontified t) 513 518 (fontified t) 518 522 (fontified t face font-lock-builtin-face) 522 523 (fontified t) 523 534 (fontified t face font-lock-string-face) 534 546 (fontified t) 546 556 (fontified t face font-lock-string-face) 556 557 (fontified t) 557 569 (fontified t face font-lock-string-face) 569 599 (fontified t) 599 600 (fontified t face (rainbow-delimiters-depth-1-face)) 600 601 (fontified t face (rainbow-delimiters-depth-1-face)) 601 610 (fontified t) 610 628 (fontified t face font-lock-string-face) 628 629 (fontified t syntax-table (3) face font-lock-string-face) 629 653 (fontified t face font-lock-string-face) 653 656 (fontified t) 656 657 (fontified t face (rainbow-delimiters-depth-1-face)) 657 658 (fontified t face (rainbow-delimiters-depth-1-face)) 658 664 (fontified t) 664 668 (fontified t face font-lock-builtin-face) 668 669 (fontified t) 669 685 (fontified t face font-lock-string-face) 685 695 (fontified t) 695 706 (fontified t face font-lock-string-face) 706 736 (fontified t) 736 737 (fontified t face (rainbow-delimiters-depth-1-face)) 737 738 (fontified t face (rainbow-delimiters-depth-1-face)) 738 747 (fontified t) 747 762 (fontified t face font-lock-string-face) 762 763 (fontified t syntax-table (3) face font-lock-string-face) 763 765 (fontified t face font-lock-string-face) 765 768 (fontified t) 768 769 (fontified t face (rainbow-delimiters-depth-1-face)) 769 770 (fontified t face (rainbow-delimiters-depth-1-face))) . 684) (undo-tree-id69 . -33) (undo-tree-id70 . -770) (undo-tree-id71 . -770)) nil (25182 39036 719424 588000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 793 . 794) (nil fontified nil 793 . 794) (nil fontified nil 792 . 793) (nil fontified nil 789 . 792) (nil fontified nil 787 . 789) (nil fontified nil 786 . 787) (nil fontified nil 771 . 786) (nil fontified nil 762 . 771) (nil fontified nil 761 . 762) (nil fontified nil 760 . 761) (nil fontified nil 730 . 760) (nil fontified nil 719 . 730) (nil fontified nil 710 . 719) (nil fontified nil 709 . 710) (nil fontified nil 693 . 709) (nil fontified nil 692 . 693) (nil fontified nil 691 . 692) (nil fontified nil 688 . 691) (nil fontified nil 684 . 688) (684 . 794)) nil (25182 39036 719418 654000) 0 nil])
+([nil nil ((683 . 688)) nil (25182 39036 719412 773000) 0 nil])
+([nil nil ((#("    echo \"inserting data\"
+    find \"csv_dumps\" -type f | xargs -n 1 -P 8 -I {} bash -c 'migrate_fun \"$@\"' _ {}" 0 4 (fontified t) 4 7 (fontified t face font-lock-builtin-face) 7 8 (fontified t face font-lock-builtin-face) 8 9 (fontified t) 9 25 (fontified t face font-lock-string-face) 25 26 (fontified t) 26 35 (fontified t) 35 46 (fontified t face font-lock-string-face) 46 76 (fontified t) 76 77 (fontified t face (rainbow-delimiters-depth-1-face)) 77 78 (fontified t face (rainbow-delimiters-depth-1-face)) 78 87 (fontified t) 87 102 (fontified t face font-lock-string-face) 102 103 (fontified t syntax-table (3) face font-lock-string-face) 103 105 (fontified t face font-lock-string-face) 105 108 (fontified t) 108 109 (fontified t face (rainbow-delimiters-depth-1-face)) 109 110 (fontified t face (rainbow-delimiters-depth-1-face))) . 1517) (undo-tree-id64 . -26) (undo-tree-id65 . -110) (undo-tree-id66 . -110) (undo-tree-id67 . -110) (undo-tree-id68 . -110)) nil (25182 39036 719411 113000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -1515) (undo-tree-id54 . -1) (undo-tree-id55 . -1) (undo-tree-id56 . -1) (undo-tree-id57 . -1) (undo-tree-id58 . -1) (#("
+" 0 1 (fontified t)) . -1516) (undo-tree-id59 . -1) (undo-tree-id60 . -1) (undo-tree-id61 . -1) (undo-tree-id62 . -1) (undo-tree-id63 . -1) 1517) nil (25182 39036 719403 134000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -46) (undo-tree-id52 . -1) (undo-tree-id53 . -1) 47) nil (25182 39036 719389 130000) 0 nil])
+([nil nil ((46 . 47)) nil (25182 39036 719385 154000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -48) (undo-tree-id51 . -1) 49) nil (25182 39036 719383 643000) 0 nil])
+([nil nil ((48 . 49)) nil (25182 39036 719380 778000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -49) (undo-tree-id50 . -1) 50) nil (25182 39036 719379 295000) 0 nil])
+([nil nil ((49 . 50)) nil (25182 39036 719376 334000) 0 nil])
+([nil nil ((#("2" 0 1 (fontified t)) . -77) (undo-tree-id49 . -1) 78) nil (25182 39036 719374 784000) 0 nil])
+([nil nil ((77 . 78)) nil (25182 39036 719371 745000) 0 nil])
+([nil nil ((#("0" 0 1 (fontified t)) . -79) (undo-tree-id48 . -1) 80) nil (25182 39036 719370 89000) 0 nil])
+([nil nil ((#("1" 0 1 (fontified t)) . -79) (undo-tree-id47 . -1) 80) nil (25182 39036 719366 181000) 0 nil])
+([nil nil ((79 . 80)) nil (25182 39036 719356 67000) 0 nil])
+([nil nil ((80 . 81)) nil (25182 39181 116890 196000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t face whitespace-trailing)) . -684) 81) nil (25182 39183 223192 638000) 0 nil] [nil nil ((#("    " 0 4 (face whitespace-trailing fontified defer)) . -684) 81) ((684 . 688) (t 25182 39036 726239 779000)) (25182 39180 269644 179000) 0 nil])
+([nil nil ((1308 . 1310) (#("(" 0 1 (fontified nil face font-lock-string-face)) . -1308) (1308 . 1309) (t 25182 39183 226792 376000)) nil (25182 39572 612499 867000) 0 nil])
+([nil nil ((318 . 320) (#("(" 0 1 (fontified nil face font-lock-string-face)) . -318) (318 . 319) (t 25182 39036 726239 779000)) ((#("(" 0 1 (fontified nil face font-lock-string-face)) . 318) (318 . 319) (#("()" 0 1 (fontified t face font-lock-string-face) 1 2 (fontified t face font-lock-string-face)) . 318) (undo-tree-id131 . -1)) (25182 39179 850174 796000) 0 nil])
+([nil nil ((#(")" 0 1 (fontified t face font-lock-string-face)) . 1309)) nil (25182 39572 612497 756000) 0 nil])
+([nil nil ((#(")" 0 1 (fontified t face font-lock-string-face)) . 319)) ((319 . 320)) (25182 39179 388256 114000) 0 nil])
+([nil nil ((1312 . 1313)) nil (25182 39572 612496 656000) 0 nil])
+([nil nil ((332 . 333)) ((#(")" 0 1 (fontified t face font-lock-string-face)) . 332)) (25182 39179 100539 17000) 0 nil])
+([nil nil ((#("=" 0 1 (fontified t face font-lock-string-face)) . -1312) (undo-tree-id133 . -1) 1313) nil (25182 39572 612495 259000) 0 nil])
+([nil nil ((319 . 329)) ((#("select * f" 0 10 (fontified t face font-lock-string-face)) . 319) (undo-tree-id130 . -10)) (25182 39178 708357 175000) 0 nil])
+([nil nil ((1312 . 1313)) nil (25182 39572 612492 6000) 0 nil])
+([nil nil ((329 . 334)) ((#("rom  " 0 4 (fontified t face font-lock-string-face) 4 5 (fontified t face font-lock-string-face)) . 329) (undo-tree-id129 . -5)) (25182 39178 340747 561000) 0 nil])
+([nil nil ((1309 . 1316)) nil (25182 39572 612491 17000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face font-lock-string-face)) . -333) (undo-tree-id112 . -1) 334) ((333 . 334)) (25182 39177 988411 458000) 0 nil])
+([nil nil ((#("*" 0 1 (fontified t face font-lock-string-face)) . -1315) (undo-tree-id132 . -1) 1316) nil (25182 39572 612489 349000) 0 nil])
+([nil nil ((346 . 349)) ((#(" hw" 0 1 (fontified t face font-lock-string-face) 1 2 (fontified t face font-lock-string-face) 2 3 (fontified t face font-lock-string-face)) . 346) (undo-tree-id128 . -3)) (25182 39177 604522 831000) 0 nil])
+([nil nil ((1315 . 1321)) nil (25182 39572 612479 319000) 0 nil])
+([nil nil ((#("h" 0 1 (fontified t face font-lock-string-face)) . -347) (undo-tree-id110 . -1) (#("w" 0 1 (fontified t face font-lock-string-face)) . -348) (undo-tree-id111 . -1) 349) ((347 . 349)) (25182 39177 246974 7000) 0 nil])
+([nil nil ((1321 . 1323)) nil (25182 39572 612478 304000) 0 nil])
+([nil nil ((347 . 350)) ((#("wgh" 0 1 (fontified t face font-lock-string-face) 1 2 (fontified t face font-lock-string-face) 2 3 (fontified t face font-lock-string-face)) . 347) (undo-tree-id127 . -3)) (25182 39176 880449 874000) 0 nil])
+([nil nil ((1345 . 1347) (#("(" 0 1 (fontified nil face font-lock-string-face)) . -1345) (1326 . 1346)) nil (25182 39572 612476 602000) 0 nil])
+([nil nil ((#("g" 0 1 (fontified t face font-lock-string-face)) . -348) (undo-tree-id108 . -1) (#("h" 0 1 (fontified t face font-lock-string-face)) . -349) (undo-tree-id109 . -1) 350) ((348 . 350)) (25182 39176 524524 572000) 0 nil])
+([nil nil ((1346 . 1348)) nil (25182 39572 612474 861000) 0 nil])
+([nil nil ((348 . 357)) ((#("here  sen" 0 5 (fontified t face font-lock-string-face) 5 6 (fontified t face font-lock-string-face) 6 7 (fontified t face font-lock-string-face) 7 8 (fontified t face font-lock-string-face) 8 9 (fontified t face font-lock-string-face)) . 348) (undo-tree-id126 . -9)) (25182 39176 164771 171000) 0 nil])
+([nil nil ((1347 . 1351)) nil (25182 39572 612473 769000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t face font-lock-string-face)) . -353) (undo-tree-id104 . -1) (#("s" 0 1 (fontified t face font-lock-string-face)) . -354) (undo-tree-id105 . -1) (#("e" 0 1 (fontified t face font-lock-string-face)) . -355) (undo-tree-id106 . -1) (#("n" 0 1 (fontified t face font-lock-string-face)) . -356) (undo-tree-id107 . -1) 357) ((353 . 357)) (25182 39175 860117 69000) 0 nil])
+([nil nil ((1352 . 1355)) nil (25182 39572 612472 691000) 0 nil])
+([nil nil ((353 . 355)) ((#("sn" 0 1 (fontified t face font-lock-string-face) 1 2 (fontified t face font-lock-string-face)) . 353) (undo-tree-id125 . -2)) (25182 39175 596280 492000) 0 nil])
+([nil nil ((1354 . 1358)) nil (25182 39572 612471 614000) 0 nil])
+([nil nil ((#("n" 0 1 (fontified t face font-lock-string-face)) . -354) (undo-tree-id103 . -1) 355) ((354 . 355)) (25182 39175 388469 748000) 0 nil])
+([nil nil ((1359 . 1362)) nil (25182 39572 612470 477000) 0 nil])
+([nil nil ((354 . 362)) ((#("ensor_id" 0 8 (fontified t face font-lock-string-face)) . 354) (undo-tree-id124 . -8)) (25182 39175 169738 121000) 0 nil])
+([nil nil ((1361 . 1364)) nil (25182 39572 612469 297000) 0 nil])
+([nil nil ((362 . 363)) ((#("=" 0 1 (fontified t face font-lock-string-face)) . 362) (undo-tree-id123 . -1)) (25182 39174 908553 34000) 0 nil])
+([nil nil ((1365 . 1368)) nil (25182 39572 612468 177000) 0 nil])
+([nil nil ((364 . 366) (#("[" 0 1 (fontified nil face font-lock-string-face)) . -364) (363 . 365)) ((#("$[" 0 1 (fontified nil face font-lock-string-face) 1 2 (fontified nil face font-lock-string-face)) . 363) (undo-tree-id121 . -1) (364 . 365) (#("[]" 0 1 (fontified t face font-lock-string-face) 1 2 (fontified t face font-lock-string-face)) . 364) (undo-tree-id122 . -1)) (25182 39174 564701 569000) 0 nil])
+([nil nil ((1367 . 1370)) nil (25182 39572 612466 773000) 0 nil])
+([nil nil ((#("[" 0 1 (fontified nil face font-lock-string-face)) . -364) (undo-tree-id102 . -1) (#("]" 0 1 (fontified t face font-lock-string-face)) . 365)) ((364 . 366)) (25182 39174 308766 393000) 0 nil])
+([nil nil ((1371 . 1374)) nil (25182 39572 612464 742000) 0 nil])
+([nil nil ((365 . 368) (364 . 366) (#("{" 0 1 (fontified nil face font-lock-string-face)) . -364) (364 . 365)) ((#("{" 0 1 (fontified nil face font-lock-string-face)) . 364) (364 . 365) (#("{}" 0 1 (fontified nil face font-lock-string-face) 1 2 (fontified nil face font-lock-string-face)) . 364) (undo-tree-id119 . -1) (#("SEN" 0 3 (fontified t face font-lock-string-face)) . 365) (undo-tree-id120 . -3)) (25182 39173 116494 136000) 0 nil])
+([nil nil ((1373 . 1381)) nil (25182 39572 612458 138000) 0 nil])
+([nil nil ((368 . 374)) ((#("SOR_ID" 0 6 (fontified t face font-lock-string-face)) . 368)) (25182 39172 916815 543000) 0 nil])
+([nil nil ((#("
+source venv/bin/activate
+" 0 1 (fontified t) 1 7 (fontified t face font-lock-builtin-face) 7 26 (fontified t)) . 625) (undo-tree-id149 . -26) (undo-tree-id150 . -1) (undo-tree-id151 . -26) (t 25182 39572 616814 736000)) nil (25182 40536 68326 779000) 0 nil])
+([nil nil ((1257 . 1269) (#("
+
+    docker" 0 2 (fontified t) 2 12 (fontified t)) . 1257)) ((1257 . 1269) (#("
+
+    Docker" 0 2 (fontified t) 2 12 (fontified t)) . 1257) (undo-tree-id117 . -12) (undo-tree-id118 . -2)) (25182 39172 729570 607000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -624) (undo-tree-id146 . -1) (undo-tree-id147 . -1) (undo-tree-id148 . -1) 625) nil (25182 40536 68321 695000) 0 nil])
+([nil nil ((1269 . 1274) (#(" exec" 0 5 (fontified t)) . 1269)) ((1269 . 1274) (#(" Exec" 0 5 (fontified t)) . 1269) (undo-tree-id116 . -5)) (25182 39172 556554 27000) 0 nil])
+([nil nil ((624 . 625)) nil (25182 40536 68317 113000) 0 nil])
+([nil nil ((1274 . 1278) (#(" -it" 0 4 (fontified t)) . 1274)) ((1274 . 1278) (#(" -It" 0 4 (fontified t)) . 1274) (undo-tree-id115 . -4)) (25182 39172 332698 232000) 0 nil])
+([nil nil ((#("
+    OEXPORT=`dokku postgres:info angle_db --exposed-ports | sed 's/[0-9]*->//g' | sed 's/[[:space:]]//g'`
+    export OLD_DATABASE_URL=`dokku postgres:info angle_db --dsn | sed \"s/@[a-z -]*:['0-9']*/@localhost:$OEXPORT/g\"`
+" 0 5 (fontified t) 5 12 (fontified t face font-lock-variable-name-face) 12 13 (fontified t) 13 36 (fontified t face sh-quoted-exec) 36 40 (fontified t face sh-quoted-exec) 40 106 (fontified t face sh-quoted-exec) 106 107 (fontified t) 107 111 (fontified t) 111 117 (fontified t face font-lock-builtin-face) 117 118 (fontified t) 118 125 (fontified t face font-lock-variable-name-face) 125 134 (fontified t face font-lock-variable-name-face) 134 135 (fontified t) 135 143 (fontified t face sh-quoted-exec) 143 152 (fontified t face sh-quoted-exec) 152 170 (fontified t face sh-quoted-exec) 170 189 (fontified t face sh-quoted-exec) 189 222 (fontified t face sh-quoted-exec) 222 223 (fontified t)) . 869) (undo-tree-id141 . -223) (undo-tree-id142 . -222) (undo-tree-id143 . -222) (undo-tree-id144 . -1) (undo-tree-id145 . -223)) nil (25182 40536 68315 430000) 0 nil])
+([nil nil ((1278 . 1281) (#(" -u" 0 2 (fontified t) 2 3 (fontified t)) . 1278)) ((1278 . 1281) (#(" -U" 0 2 (fontified t) 2 3 (fontified t)) . 1278) (undo-tree-id114 . -3)) (25182 39171 929295 139000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -868) (undo-tree-id136 . -1) (undo-tree-id137 . -1) (undo-tree-id138 . -1) (undo-tree-id139 . -1) (undo-tree-id140 . -1) 869) nil (25182 40536 68307 951000) 0 nil])
+([nil nil ((1281 . 1290) (#(" postgres" 0 9 (fontified t)) . 1281)) ((1281 . 1290) (#(" Postgres" 0 9 (fontified t)) . 1281) (undo-tree-id113 . -9)) (25182 39171 929059 538000) 0 nil])
+([nil nil ((868 . 873)) nil (25182 40536 68299 903000) 0 nil])
+nil
+([nil nil ((#(":" 0 1 (fontified t)) . -796) (undo-tree-id134 . -1) (undo-tree-id135 . -1) 797) nil (25182 40536 68295 713000) 0 nil])
+([nil nil ((796 . 797)) nil (25182 40536 68271 316000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t face whitespace-trailing)) . -869) 797) nil (25182 40536 68263 613000) 0 nil])
+([nil nil ((#("    export FILE_DIR='csv_dumps/'
+" 0 4 (fontified nil) 4 10 (fontified nil face font-lock-builtin-face) 10 11 (fontified nil) 11 19 (fontified nil face font-lock-variable-name-face) 19 20 (fontified nil) 20 32 (fontified nil face font-lock-string-face) 32 33 (fontified nil)) . 836) (undo-tree-id156 . -33) (undo-tree-id157 . -33) (undo-tree-id158 . -32) (undo-tree-id159 . -33) (undo-tree-id160 . -32) (831 . 836) (#("then
+" 0 4 (fontified t face font-lock-keyword-face) 4 5 (fontified t)) . 798) (803 . 836) 835 (t 25182 40536 79408 557000)) nil (25182 49508 982892 760000) 0 nil])
+([nil current ((#("then
+" 0 4 (fontified nil face font-lock-keyword-face) 4 5 (fontified nil)) . 836) (undo-tree-id152 . -5) (undo-tree-id153 . -5) (undo-tree-id154 . -5) (803 . 836) (#("    export FILE_DIR='csv_dumps/'
+" 0 4 (fontified t) 4 10 (fontified t face font-lock-builtin-face) 10 11 (fontified t) 11 19 (fontified t face font-lock-variable-name-face) 19 20 (fontified t) 20 32 (fontified t face font-lock-string-face) 32 33 (fontified t)) . 798) (undo-tree-id155 . -32) (831 . 836) 830) nil (25182 49508 982765 679000) 0 nil])
+nil

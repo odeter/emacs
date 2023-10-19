@@ -1,0 +1,31 @@
+#!/bin/bash
+# A simple script
+
+if [ "$1" == "--local" ];
+then
+    mkdir -p ${BACKEND_PROC_LOG_DIR}
+
+    echo "Running abusech db update"
+
+    curl "https://urlhaus.abuse.ch/downloads/csv/" > abusechurl.csv.zip
+    flock -n -x abusech_db_refresh.py -c "python3 abusech_db_refresh.py"
+    rm -f abusechurl.csv.zip
+
+    echo "abusech db update done (check logs)"
+else
+
+    ## import env
+    set -o allexport; source /app/.env; set +o allexport
+
+    mkdir -p ${BACKEND_PROC_LOG_DIR}
+    mkdir -p $LOCKS
+    current_db=""
+
+    # get lock
+    exec 100>/app/uploads/locks/abusech_db_refresh.lock || exit 1
+    flock -n -x 100 || exit 1
+
+    curl "https://urlhaus.abuse.ch/downloads/csv/" > abusechurl.csv.zip
+    python3 cron_jobs/abusech_db_refresh/abusech_db_refresh.py
+    rm -f abusechurl.csv.zip
+fi

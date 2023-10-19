@@ -1,0 +1,10 @@
+(undo-tree-save-format-version . 1)
+"6855765a9dae3a6c99698dd28e8bafcde105b181"
+[nil nil nil nil (25265 55894 614336 452000) 0 nil]
+([nil nil ((224 . 225) (t 25265 34325 582025 459000)) nil (25265 55894 614333 758000) 0 nil])
+([nil nil ((2678 . 2679) 225) nil (25265 55894 614326 111000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 258 . 259) (nil fontified nil 234 . 259) (nil fontified nil 232 . 234) (nil fontified nil 225 . 232) (225 . 259) (t 25265 55894 615072 522000)) nil (25265 55897 126309 651000) 0 nil])
+([nil nil ((#("This is an excerpt text" 0 23 (markdown-yaml-metadata-section (5 261) markdown-metadata-value (225 259 225 232 232 234 234 259 #<buffer 2022-06-07-targeted-phishing-past-defender.md>) markdown-list-item ((163 259 0 2 "- " nil (163 165 163 163 163 164 164 165))) fontified t face markdown-metadata-value-face)) . 235) (undo-tree-id0 . -23) (undo-tree-id1 . -23) (undo-tree-id2 . -23) (undo-tree-id3 . -23) (t 25265 55897 131126 158000)) nil (25268 22047 766340 269000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 344 . 345) (nil fontified nil 235 . 345) (235 . 345)) nil (25268 22047 766308 866000) 0 nil])
+([nil current ((#(" the attack and" 0 15 (fontified t markdown-yaml-metadata-section (5 348) markdown-metadata-value (225 346 225 232 232 234 234 346 #<buffer 2022-06-07-targeted-phishing-past-defender.md>) markdown-list-item ((163 346 0 2 "- " nil (163 165 163 163 163 164 164 165))) face markdown-metadata-value-face)) . 251) (undo-tree-id4 . -15) (undo-tree-id5 . -15) (undo-tree-id6 . -15) (t 25268 22047 770108 880000)) nil (25268 22082 614539 679000) 0 nil])
+nil

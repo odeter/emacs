@@ -1,4 +1,0 @@
-for t in conn http ssl; do for i in {1..52}; do impala-shell -B --output_delimiter=, -q "select $i as week,count() from ${t}_log_parq where dt in ($(./generate-weekstart.py 2019 $i));" >> ${t}_weeks.txt; done; done
-for t in conn http ssl; do for i in {1..1}; do impala-shell -B --output_delimiter=, -q "select $i as week,count() from ${t}_log_parq where dt in ($(./generate-weekstart.py 2020 $i));" >> ${t}_weeks.txt; done; done
-for i in {1..52}; do impala-shell -B --output_delimiter=, -q "select $i as week,count() from dns_log_parq where resp_p!=137 and dt in ($(./generate-weekstart.py 2019 $i));" >> dns_weeks.txt; done
-for i in {1..1}; do impala-shell -B --output_delimiter=, -q "select $i as week,count() from dns_log_parq where resp_p!=137 and dt in ($(./generate-weekstart.py 2020 $i));" >> dns_weeks.txt; done

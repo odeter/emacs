@@ -1,0 +1,71 @@
+(undo-tree-save-format-version . 1)
+"dcea18d238a812c19b43197c7dc872085920d978"
+[nil nil nil nil (25354 24352 451388 355000) 0 nil]
+([nil nil (("Come walk with me, through ice and sand,
+through pain and sheer of wonder.
+And tell me tales, of love and hate,
+of life with sun and thunder.
+
+Keep up the pace, by will and might,
+by hope and signs of glee.
+and though you struggle, with doubt and sorrow,
+with grit you will be free.
+
+The path is long, it is so hard,
+it is forever changing.
+The pace is fast, so unforgiving,
+so grim with no one waiting.
+
+Go on my child, come closer still,
+come forth and forth forever.
+And near the end, you’ll lose the pace,
+you’ll lose it altogether.
+
+Then once you fall, too hard and far,
+too low to keep on walking.
+I’ll take your hand, to guide you on,
+to see another morning.
+
+It may be sad, as tears will fall,
+as child of children weep.
+But don’t despair, my grip is tight,
+my word I always keep.
+
+My touch is cold, my person scary,
+my name brings grief and fear.
+But as we walk, from path astray,
+from pain and joy severe.
+
+We’ll stand by the lake, the tower or mountain,
+a marvelous and breathtaking sight.
+There bliss will fill you, as fear take flight,
+as we walk into the night." . 80) (undo-tree-id0 . -41) (undo-tree-id1 . -1075) (undo-tree-id2 . -1075) (undo-tree-id3 . -1075) (undo-tree-id4 . -1075) (t 25354 24199 29152 64000)) nil (25354 24352 451383 419000) 0 nil])
+([nil nil ((nil face whitespace-trailing 906 . 907) (nil face whitespace-trailing 776 . 777) (80 . 1206)) nil (25354 24352 451363 627000) 0 nil])
+([nil nil (("\\\\" . -1223) (1225 . 1229) ("\\\\" . -1171) (1173 . 1177) ("\\\\" . -1131) (1133 . 1137) ("\\\\" . -1052) (1054 . 1058) ("\\\\" . -1014) (1016 . 1020) ("\\\\" . -979) (981 . 985) ("\\\\" . -915) (917 . 921) ("\\\\" . -874) (876 . 880) ("\\\\" . -843) (845 . 849) ("\\\\" . -778) (780 . 784) ("\\\\" . -736) (738 . 742) ("\\\\" . -704) (706 . 710) ("\\\\" . -634) (636 . 640) ("\\\\" . -590) (592 . 596) ("\\\\" . -556) (558 . 562) ("\\\\" . -487) (489 . 493) ("\\\\" . -449) (451 . 455) ("\\\\" . -421) (423 . 427) ("\\\\" . -355) (357 . 361) ("\\\\" . -303) (305 . 309) ("\\\\" . -272) (274 . 278) ("\\\\" . -200) (202 . 206) ("\\\\" . -159) (161 . 165) ("\\\\" . -121) (123 . 127) 80) nil (25354 24352 451355 720000) 0 nil])
+([nil nil ((#(" " 0 1 (face whitespace-trailing)) . -941) (#(" " 0 1 (face whitespace-trailing)) . -806) 1227) nil (25354 24352 451336 49000) 0 nil])
+([nil nil ((234 . 236) (t 25354 24352 478872 405000)) nil (25354 24375 847091 532000) 0 nil])
+([nil nil ((241 . 242) (239 . 240) (236 . 240)) nil (25354 24375 847089 96000) 0 nil])
+([nil nil ((" " . -241) (undo-tree-id5 . -1) 242) nil (25354 24375 847083 415000) 0 nil])
+([nil nil ((395 . 396) (t 25354 24375 855135 208000)) nil (25354 24392 230196 17000) 0 nil])
+([nil nil ((395 . 396)) nil (25354 24392 230194 697000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 400 . 401) (nil tag-name "hr" 400 . 401) (nil tag-type void 400 . 401) (nil tag-end t 400 . 401) (nil font-lock-face web-mode-html-tag-bracket-face 400 . 401) (nil tag-name "hr" 399 . 400) (nil tag-type void 399 . 400) (nil font-lock-face web-mode-html-tag-bracket-face 399 . 400) (nil tag-name "hr" 397 . 399) (nil tag-type void 397 . 399) (nil font-lock-face web-mode-html-tag-face 397 . 399) (nil tag-name "hr" 396 . 397) (nil tag-type void 396 . 397) (nil tag-beg 24 396 . 397) (nil font-lock-face web-mode-html-tag-bracket-face 396 . 397) (396 . 401)) nil (25354 24392 230192 629000) 0 nil])
+([nil nil ((535 . 537)) nil (25354 24392 230187 973000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 540 . 541) (nil tag-name "hr" 540 . 541) (nil tag-type void 540 . 541) (nil tag-end t 540 . 541) (nil font-lock-face web-mode-html-tag-bracket-face 540 . 541) (nil tag-name "hr" 539 . 540) (nil tag-type void 539 . 540) (nil font-lock-face web-mode-html-tag-bracket-face 539 . 540) (nil tag-name "hr" 537 . 539) (nil tag-type void 537 . 539) (nil font-lock-face web-mode-html-tag-face 537 . 539) (nil tag-name "hr" 536 . 537) (nil tag-type void 536 . 537) (nil tag-beg 24 536 . 537) (nil font-lock-face web-mode-html-tag-bracket-face 536 . 537) (536 . 541)) nil (25354 24392 230185 937000) 0 nil])
+([nil nil ((687 . 689)) nil (25354 24392 230181 212000) 0 nil])
+([nil nil (("
+" . 690) (undo-tree-id6 . -1) (689 . 690) ("
+" . 688) (689 . 690)) nil (25354 24392 230179 243000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 692 . 693) (nil tag-name "hr" 692 . 693) (nil tag-type void 692 . 693) (nil tag-end t 692 . 693) (nil font-lock-face web-mode-html-tag-bracket-face 692 . 693) (nil tag-name "hr" 691 . 692) (nil tag-type void 691 . 692) (nil font-lock-face web-mode-html-tag-bracket-face 691 . 692) (nil tag-name "hr" 689 . 691) (nil tag-type void 689 . 691) (nil font-lock-face web-mode-html-tag-face 689 . 691) (nil tag-name "hr" 688 . 689) (nil tag-type void 688 . 689) (nil tag-beg 24 688 . 689) (nil font-lock-face web-mode-html-tag-bracket-face 688 . 689) (688 . 693)) nil (25354 24392 230168 220000) 0 nil])
+([nil nil ((835 . 837)) nil (25354 24392 230163 726000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 840 . 841) (nil tag-name "hr" 840 . 841) (nil tag-type void 840 . 841) (nil tag-end t 840 . 841) (nil font-lock-face web-mode-html-tag-bracket-face 840 . 841) (nil tag-name "hr" 839 . 840) (nil tag-type void 839 . 840) (nil font-lock-face web-mode-html-tag-bracket-face 839 . 840) (nil tag-name "hr" 837 . 839) (nil tag-type void 837 . 839) (nil font-lock-face web-mode-html-tag-face 837 . 839) (nil tag-name "hr" 836 . 837) (nil tag-type void 836 . 837) (nil tag-beg 24 836 . 837) (nil font-lock-face web-mode-html-tag-bracket-face 836 . 837) (836 . 841)) nil (25354 24392 230161 678000) 0 nil])
+([nil nil ((977 . 979)) nil (25354 24392 230157 99000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 982 . 983) (nil tag-name "hr" 982 . 983) (nil tag-type void 982 . 983) (nil tag-end t 982 . 983) (nil font-lock-face web-mode-html-tag-bracket-face 982 . 983) (nil tag-name "hr" 981 . 982) (nil tag-type void 981 . 982) (nil font-lock-face web-mode-html-tag-bracket-face 981 . 982) (nil tag-name "hr" 979 . 981) (nil tag-type void 979 . 981) (nil font-lock-face web-mode-html-tag-face 979 . 981) (nil tag-name "hr" 978 . 979) (nil tag-type void 978 . 979) (nil tag-beg 24 978 . 979) (nil font-lock-face web-mode-html-tag-bracket-face 978 . 979) (978 . 983)) nil (25354 24392 230154 842000) 0 nil])
+([nil nil ((1123 . 1125)) nil (25354 24392 230148 974000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1128 . 1129) (nil tag-name "hr" 1128 . 1129) (nil tag-type void 1128 . 1129) (nil tag-end t 1128 . 1129) (nil font-lock-face web-mode-html-tag-bracket-face 1128 . 1129) (nil tag-name "hr" 1127 . 1128) (nil tag-type void 1127 . 1128) (nil font-lock-face web-mode-html-tag-bracket-face 1127 . 1128) (nil tag-name "hr" 1125 . 1127) (nil tag-type void 1125 . 1127) (nil font-lock-face web-mode-html-tag-face 1125 . 1127) (nil tag-name "hr" 1124 . 1125) (nil tag-type void 1124 . 1125) (nil tag-beg 24 1124 . 1125) (nil font-lock-face web-mode-html-tag-bracket-face 1124 . 1125) (1124 . 1129)) nil (25354 24392 230140 883000) 0 nil])
+([nil nil (("1" . -61) (undo-tree-id9 . -1) (undo-tree-id10 . -1) 62 (t 25354 24392 239319 507000)) nil (25354 24456 375490 877000) 0 nil])
+([nil nil ((61 . 62)) nil (25354 24456 375486 81000) 0 nil])
+([nil nil (("0" . -63) (undo-tree-id7 . -1) ("1" . -64) (undo-tree-id8 . -1) 65) nil (25354 24456 375482 850000) 0 nil])
+([nil nil ((63 . 65)) nil (25354 24456 375465 625000) 0 nil])
+([nil current (("
+name: demo poetry 1" . 17) (undo-tree-id0 . -1) (undo-tree-id1 . -20) (undo-tree-id2 . -20) (undo-tree-id3 . -20) (undo-tree-id4 . -20) (t 25354 24456 380041 728000)) nil (25354 29173 285646 731000) 0 nil])
+nil

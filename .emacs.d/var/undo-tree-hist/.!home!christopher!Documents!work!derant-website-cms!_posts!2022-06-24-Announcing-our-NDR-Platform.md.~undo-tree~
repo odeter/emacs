@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"e52bb584080ef8007f206fe82624cde9fdb47324"
+[nil nil nil nil (25269 48785 48179 507000) 0 nil]
+([nil nil ((#("Click here to begin" 0 19 (fontified t)) . 1550) (undo-tree-id0 . -19) (undo-tree-id1 . -19) (undo-tree-id2 . -19) (t 25269 45212 218864 228000)) nil (25269 48785 48176 402000) 0 nil])
+([nil current ((nil rear-nonsticky nil 1583 . 1584) (nil fontified nil 1550 . 1584) (1550 . 1584)) nil (25269 48785 48152 577000) 0 nil])
+nil

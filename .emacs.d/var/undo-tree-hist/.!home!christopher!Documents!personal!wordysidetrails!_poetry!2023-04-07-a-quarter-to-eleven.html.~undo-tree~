@@ -1,0 +1,8 @@
+(undo-tree-save-format-version . 1)
+"4a879734c76728b741068750d6a029c439df44a1"
+[nil nil nil nil (25671 1388 21307 606000) 0 nil]
+([nil nil ((nil rear-nonsticky nil 1594 . 1595) (nil tag-name "hr" 1594 . 1595) (nil tag-type void 1594 . 1595) (nil tag-end t 1594 . 1595) (nil font-lock-face web-mode-html-tag-bracket-face 1594 . 1595) (nil tag-name "hr" 1593 . 1594) (nil tag-type void 1593 . 1594) (nil font-lock-face web-mode-html-tag-bracket-face 1593 . 1594) (nil tag-name "hr" 1591 . 1593) (nil tag-type void 1591 . 1593) (nil font-lock-face web-mode-html-tag-face 1591 . 1593) (nil tag-name "hr" 1590 . 1591) (nil tag-type void 1590 . 1591) (nil tag-beg 24 1590 . 1591) (nil font-lock-face web-mode-html-tag-bracket-face 1590 . 1591) (1590 . 1595) (t 25670 64410 227856 505000)) nil (25671 1388 21304 733000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1668 . 1669) (nil tag-name "hr" 1668 . 1669) (nil tag-type void 1668 . 1669) (nil tag-end t 1668 . 1669) (nil font-lock-face web-mode-html-tag-bracket-face 1668 . 1669) (nil tag-name "hr" 1667 . 1668) (nil tag-type void 1667 . 1668) (nil font-lock-face web-mode-html-tag-bracket-face 1667 . 1668) (nil tag-name "hr" 1665 . 1667) (nil tag-type void 1665 . 1667) (nil font-lock-face web-mode-html-tag-face 1665 . 1667) (nil tag-name "hr" 1664 . 1665) (nil tag-type void 1664 . 1665) (nil tag-beg 24 1664 . 1665) (nil font-lock-face web-mode-html-tag-bracket-face 1664 . 1665) (1664 . 1669)) nil (25671 1388 21294 379000) 0 nil])
+([nil nil (("2" . -41) (undo-tree-id0 . -1) 42 (t 25671 1388 27099 71000)) nil (25671 1405 978730 631000) 0 nil])
+([nil current ((41 . 42)) nil (25671 1405 978709 381000) 0 nil])
+nil

@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"7d98fe7190aa885cb14be26e7c38d65a2c85a5c1"
+[nil nil nil nil (25841 42062 704386 817000) 0 nil]
+([nil nil ((#("and firm.ldap" 0 3 (fontified t face font-lock-keyword-face) 3 13 (fontified t)) . 665) (undo-tree-id6 . -13) (undo-tree-id7 . -13) (undo-tree-id8 . -13) (undo-tree-id9 . -13) (t 25841 41787 752424 613000)) nil (25841 42062 704384 604000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . -664) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 665) nil (25841 42062 704378 114000) 0 nil])
+([nil current ((#(" " 0 1 (fontified t)) . 687) (#("d" 0 1 (fontified t)) . 687) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (#("n" 0 1 (fontified t)) . 687) (#("a" 0 1 (fontified t face font-lock-keyword-face)) . 687) (#(" " 0 1 (fontified t)) . 687) (#("m" 0 1 (fontified t)) . 687) (#("r" 0 1 (fontified t)) . 687) (#("i" 0 1 (fontified t)) . 687) (#("f" 0 1 (fontified t)) . 687)) nil (25841 42062 704367 879000) 0 nil])
+nil

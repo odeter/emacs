@@ -1,0 +1,18 @@
+(undo-tree-save-format-version . 1)
+"77598c07cd8e16f6a131701fe41f5f64bff7df9e"
+[nil nil nil nil (25654 49607 872335 261000) 0 nil]
+([nil nil ((#("derant-sensor (1.1.1) jammy; urgency=medium
+
+  * BUG FIX:
+    - Signing key was not correctly configured
+
+ -- Christopher Mulvad Groot <cmg@derant.com>  Wed, 12 Apr 2023 16:30:00 +0100" 0 49 (fontified t) 49 52 (fontified t face change-log-file) 52 105 (fontified t) 105 184 (fontified t)) . 396) (undo-tree-id12 . -44) (undo-tree-id13 . -184) (undo-tree-id14 . -184) (undo-tree-id15 . 184) (undo-tree-id16 . -6) (undo-tree-id17 . -184) (undo-tree-id18 . -184) (t 25654 49288 967954 703000)) nil (25654 49607 872332 733000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -394) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (#("
+" 0 1 (fontified t)) . -395) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) 396) nil (25654 49607 872321 881000) 0 nil])
+([nil nil ((2 . 3) (#("	" 0 1 (fontified nil)) . 1) (1 . 2) (1 . 2)) nil (25654 49607 872263 652000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 184 . 185) (nil fontified nil 106 . 185) (nil fontified nil 53 . 106) (nil fontified nil 50 . 53) (nil fontified nil 1 . 50) (1 . 185)) nil (25654 49607 872261 101000) 0 nil])
+([nil nil ((#("	" 0 1 (fontified t face whitespace-tab)) . 186)) nil (25654 49607 872252 496000) 0 nil])
+([nil nil ((187 . 188) (#("	" 0 1 (fontified nil)) . 186) (186 . 187) (186 . 187) (t 25654 49607 887643 313000)) nil (25654 49611 51279 550000) 0 nil])
+([nil current ((#("	" 0 1 (fontified t face whitespace-tab)) . -187) (undo-tree-id19 . -1) (undo-tree-id20 . -1) 188) nil (25654 49611 51272 923000) 0 nil])
+nil

@@ -1,0 +1,14 @@
+(undo-tree-save-format-version . 1)
+"eee13f3c94f502398739914835673ee631b059f3"
+[nil nil nil nil (25303 61512 547055 658000) 0 nil]
+([nil nil ((#("
+" 0 1 (fontified t)) . -502) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 503 (t 25303 59885 437026 359000)) nil (25303 61512 547050 797000) 0 nil])
+([nil nil ((#("&& cd docs" 0 10 (face (makefile-shell) fontified t)) . 462) (undo-tree-id4 . -10) (undo-tree-id5 . -10) (undo-tree-id6 . -10) (undo-tree-id7 . -10) (t 25303 61512 548878 246000)) nil (25303 61538 298968 412000) 0 nil])
+([nil nil ((#(" " 0 1 (face (makefile-shell) fontified t)) . -461) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 462) nil (25303 61538 298958 504000) 0 nil])
+([nil nil ((471 . 472) (t 25303 61538 317242 760000)) nil (25303 61578 585504 86000) 0 nil])
+([nil nil ((#("4" 0 1 (fontified t face (makefile-shell))) . -471) (undo-tree-id0 . -1) 472) nil (25303 61578 585501 228000) 0 nil])
+([nil nil ((471 . 472)) nil (25303 61578 585455 730000) 0 nil])
+([nil nil ((#("ource venv/bin/activate" 0 23 (fontified t face (makefile-shell))) . 382) (undo-tree-id4 . -23) (undo-tree-id5 . -23) (undo-tree-id6 . -23) (t 25303 61578 605812 491000)) nil (25303 61751 113897 850000) 0 nil])
+([nil nil ((#("s" 0 1 (fontified defer face (makefile-shell))) . -381) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 382) nil (25303 61751 113890 497000) 0 nil])
+([nil current ((nil rear-nonsticky nil 392 . 393) (nil fontified nil 392 . 393) (nil fontified nil 383 . 392) (nil fontified nil 382 . 383) (nil fontified nil 381 . 382) (381 . 393)) nil (25303 61751 113870 395000) 0 nil])
+nil

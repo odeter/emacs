@@ -1,0 +1,79 @@
+from flask_jwt_extended import get_jwt_identity
+from flask_restful import Resource, reqparse
+from angle.models import UserModel, IANAPortsModel
+from flask import current_app as app
+from angle import role_required
+import ast
+
+def repack_port(port):
+    port_raw = IANAPortsModel.find_specific_port(port)
+    print(port_raw)
+    port_info = {}
+    if port_raw:
+        port_info['Service Name'] = port_raw.service_name
+        port_info['Port Number'] = port
+        port_info['Port Range'] = str(port_raw.port_range)
+        port_info['transport Protocol'] = port_raw.transport_protocol
+        port_info['Description'] = port_raw.description
+    print(port_info)
+    return port_info
+
+class PortLookup(Resource):
+    @role_required(["admin", "mssp_it_sec", "mssp_admin", "it_sec",  "it_man", "op_man", "sys_admin"])
+    def post(self):
+        userID = get_jwt_identity()
+        current_user = UserModel.find_by_id(userID)
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('row', help = 'This field cannot be blank', required = True)
+        data = parser.parse_args()
+
+        # Format string to be read as dictionary
+        try:
+            row = ast.literal_eval(data["row"])
+        except:
+            app.logger.error('user with ID: {0} tried getting port data, but parsing of data row failed'.format(userID))
+            return {'message': 'User not set'}, 500
+
+        if not current_user:
+            app.logger.error('user with ID: {0} tried getting port data, without permissions'.format(userID))
+            return {'message': 'User not set'}, 403
+
+        no_port_found = True
+
+        # Search row for valid src ip address column
+        src_ip_col_names = ["src_port", "id_orig_p"]
+        for col_name in src_ip_col_names:
+            try:
+                src_port = row[col_name]
+                no_port_found = False
+                break # Use first found src IP in case there are multiple
+            except KeyError:
+                # Keep looking for for next col name in row
+                continue
+
+        # Search row for valid dest ip address column
+        dest_ip_col_names = ["dest_port", "id_resp_p"]
+        for col_name in dest_ip_col_names:
+            try:
+                dest_port = row[col_name]
+                no_port_found = False
+                break # Use first found src IP in case there are multiple
+            except KeyError:
+                # Keep looking for for next col name in row
+                continue
+
+        if no_port_found:
+            app.logger.error('user with ID: {0} tried looking up IANA port information, but could not find port numbers for log type'.format(userID))
+            return {'message': 'Something went wrong when locating port number in row'}, 500
+
+        info = {}
+        if dest_port:
+            info['dest_port'] = repack_port(dest_port)
+        if src_port:
+            info['src_port'] = repack_port(src_port)
+
+        if info:
+            return {'message': 'port info found', 'port_info': info}, 200
+        else:
+            return {'message': 'no port information found'}, 500

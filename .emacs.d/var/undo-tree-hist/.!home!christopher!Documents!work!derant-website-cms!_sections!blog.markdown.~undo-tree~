@@ -1,0 +1,9 @@
+(undo-tree-save-format-version . 1)
+"a4724dfc124e4944c4547e4f96bdfff849755f43"
+[nil nil nil nil (25268 22142 613842 448000) 0 nil]
+([nil nil ((#(" " 0 1 (fontified t)) . -1293) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (#("c" 0 1 (fontified t)) . -1294) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 1295 (t 25267 18307 453077 781000)) nil (25268 22142 613836 197000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 566 . 567) (nil fontified nil 549 . 567) (549 . 567) (t 25268 22142 618936 376000)) nil (25268 25955 342772 998000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1445 . 1446) (nil fontified nil 1428 . 1446) (1428 . 1446)) nil (25268 25971 104535 933000) 0 nil] [nil nil ((nil rear-nonsticky nil 1252 . 1253) (nil fontified nil 1235 . 1253) (1235 . 1253)) ((#("{{ site.baseurl }}" 0 17 (fontified nil face markdown-html-attr-value-face) 17 18 (fontified nil face markdown-html-attr-value-face rear-nonsticky nil)) . 1235) (undo-tree-id0 . -18) (undo-tree-id1 . 10) (undo-tree-id2 . -15) (nil rear-nonsticky nil 1252 . 1253)) (25268 25955 342434 664000) 0 nil])
+([nil current ((1446 . 1447)) nil (25268 25971 104528 461000) 0 nil])
+nil
+nil

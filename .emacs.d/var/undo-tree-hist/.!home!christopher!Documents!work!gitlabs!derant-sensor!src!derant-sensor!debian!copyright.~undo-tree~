@@ -1,0 +1,42 @@
+(undo-tree-save-format-version . 1)
+"4e531556885efba6fd4758aa8daba0b9a47f6dc2"
+[nil nil nil nil (25655 63651 194217 714000) 0 nil]
+([nil nil ((151 . 152) (t 25654 40041 350473 214000)) nil (25655 63651 194215 575000) 0 nil])
+([nil nil ((152 . 160)) nil (25655 63651 194208 710000) 0 nil])
+([nil nil (("debian/" . 304) (undo-tree-id6 . -7) (undo-tree-id7 . -7) (undo-tree-id8 . -7) (t 25655 63651 197580 194000)) nil (25655 63837 786829 512000) 0 nil])
+([nil nil (("
+files: *" . 151) (undo-tree-id89 . -9) (undo-tree-id90 . -9) (undo-tree-id91 . -9) (undo-tree-id92 . -9) (undo-tree-id93 . -1) (undo-tree-id94 . -9) (undo-tree-id95 . -9)) nil (25655 63842 20008 74000) 0 nil] [nil nil (("
+files: *" . 151) (undo-tree-id0 . -1) (undo-tree-id1 . -9) (undo-tree-id2 . -9) (undo-tree-id3 . -9) (undo-tree-id4 . -9) (undo-tree-id5 . -9)) ((151 . 160)) (25655 63837 28875 575000) 0 nil])
+([nil nil (("# Please also look if there are files or directories which have a
+# different copyright/license attached and list them here.
+# Please avoid picking licenses with terms that are more restrictive than the
+# packaged work, as it may make Debian's contributions unacceptable upstream.
+#
+# If you need, there are some extra license texts available in two places:
+#   /usr/share/debhelper/dh_make/licenses/
+#   /usr/share/common-licenses/" . 1118) (undo-tree-id120 . -432) (undo-tree-id121 . -432) (undo-tree-id122 . -66) (undo-tree-id123 . -432) (undo-tree-id124 . -432) (t 25655 63842 21192 462000)) nil (25655 63858 139890 657000) 0 nil])
+([nil nil (("
+# If you want to use GPL v2 or later for the /debian/* files use
+# the following clauses, or change it to suit. Delete these two lines" . 152) (undo-tree-id85 . -1) (undo-tree-id86 . -135) (undo-tree-id87 . -135) (undo-tree-id88 . -135) (t 25655 63706 93469 460000)) ((152 . 287)) (25655 63836 564699 597000) 0 nil])
+([nil nil (("
+
+" . -1117) (undo-tree-id96 . -1) (undo-tree-id97 . -1) (undo-tree-id98 . -1) (undo-tree-id99 . -1) (undo-tree-id100 . -2) (undo-tree-id101 . -1) (undo-tree-id102 . -1) (undo-tree-id103 . -1) (undo-tree-id104 . -1) (undo-tree-id105 . -1) (undo-tree-id106 . -1) (undo-tree-id107 . -1) (undo-tree-id108 . -1) (undo-tree-id109 . -1) (undo-tree-id110 . -1) (undo-tree-id111 . -1) (undo-tree-id112 . -1) (undo-tree-id113 . -1) (undo-tree-id114 . -1) (undo-tree-id115 . -1) (undo-tree-id116 . -1) (undo-tree-id117 . -1) (undo-tree-id118 . -1) (undo-tree-id119 . -1) 1118) nil (25655 63858 139879 103000) 0 nil])
+([nil nil (("
+" . -151) (undo-tree-id81 . -1) (undo-tree-id82 . -1) (undo-tree-id83 . -1) (undo-tree-id84 . -1) 152) ((151 . 152)) (25655 63835 801401 514000) 0 nil])
+([nil nil (("# If you want to use GPL v2 or later for the /debian/* files use
+# the following clauses, or change it to suit. Delete these two lines" . 153) (undo-tree-id178 . -134) (undo-tree-id179 . -134) (undo-tree-id180 . -65) (undo-tree-id181 . -1) (undo-tree-id182 . -134) (undo-tree-id183 . -134) (t 25655 63858 141159 380000)) nil (25655 63873 640677 978000) 0 nil])
+([nil nil (("# Please also look if there are files or directories which have a
+# different copyright/license attached and list them here.
+# Please avoid picking licenses with terms that are more restrictive than the
+# packaged work, as it may make Debian's contributions unacceptable upstream.
+#
+# If you need, there are some extra license texts available in two places:
+#   /usr/share/debhelper/dh_make/licenses/
+#   /usr/share/common-licenses/" . 982) (undo-tree-id77 . -66) (undo-tree-id78 . -432) (undo-tree-id79 . -432) (undo-tree-id80 . -432)) ((982 . 1414)) (25655 63835 376710 782000) 0 nil])
+([nil current (("
+" . -152) (undo-tree-id125 . -1) (undo-tree-id126 . -1) (undo-tree-id127 . -1) (undo-tree-id128 . -1) (undo-tree-id129 . -1) (undo-tree-id130 . -1) (undo-tree-id131 . -1) (undo-tree-id132 . -1) (undo-tree-id133 . -1) (undo-tree-id134 . -1) (undo-tree-id135 . -1) (undo-tree-id136 . -1) (undo-tree-id137 . -1) (undo-tree-id138 . -1) (undo-tree-id139 . -1) (undo-tree-id140 . -1) (undo-tree-id141 . -1) (undo-tree-id142 . -1) (undo-tree-id143 . -1) (undo-tree-id144 . -1) (undo-tree-id145 . -1) (undo-tree-id146 . -1) (undo-tree-id147 . -1) (undo-tree-id148 . -1) (undo-tree-id149 . -1) (undo-tree-id150 . -1) (undo-tree-id151 . -1) (undo-tree-id152 . -1) (undo-tree-id153 . -1) (undo-tree-id154 . -1) (undo-tree-id155 . -1) (undo-tree-id156 . -1) (undo-tree-id157 . -1) (undo-tree-id158 . -1) (undo-tree-id159 . -1) (undo-tree-id160 . -1) (undo-tree-id161 . -1) (undo-tree-id162 . -1) (undo-tree-id163 . -1) (undo-tree-id164 . -1) (undo-tree-id165 . -1) (undo-tree-id166 . -1) (undo-tree-id167 . -1) (undo-tree-id168 . -1) (undo-tree-id169 . -1) (undo-tree-id170 . -1) (undo-tree-id171 . -1) (undo-tree-id172 . -1) (undo-tree-id173 . -1) (undo-tree-id174 . -1) (undo-tree-id175 . -1) (undo-tree-id176 . -1) (undo-tree-id177 . -1) 153) nil (25655 63873 640663 279000) 0 nil])
+([nil nil (("
+" . -980) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id13 . -1) (undo-tree-id15 . -1) (undo-tree-id17 . -1) (undo-tree-id19 . -1) (undo-tree-id21 . -1) (undo-tree-id23 . -1) (undo-tree-id25 . -1) (undo-tree-id27 . -1) (undo-tree-id29 . -1) (undo-tree-id31 . -1) (undo-tree-id33 . -1) (undo-tree-id35 . -1) (undo-tree-id37 . -1) (undo-tree-id39 . -1) (undo-tree-id41 . -1) (undo-tree-id43 . -1) (undo-tree-id45 . -1) ("
+" . -981) (undo-tree-id46 . -1) (undo-tree-id47 . -1) (undo-tree-id48 . -1) (undo-tree-id50 . -1) (undo-tree-id52 . -1) (undo-tree-id54 . -1) (undo-tree-id56 . -1) (undo-tree-id58 . -1) (undo-tree-id60 . -1) (undo-tree-id62 . -1) (undo-tree-id64 . -1) (undo-tree-id66 . -1) (undo-tree-id68 . -1) (undo-tree-id70 . -1) (undo-tree-id72 . -1) (undo-tree-id74 . -1) (undo-tree-id76 . -1) 982) ((980 . 982) (t 25655 63783 725311 709000)) (25655 63783 724363 694000) 0 nil])
+nil
+nil

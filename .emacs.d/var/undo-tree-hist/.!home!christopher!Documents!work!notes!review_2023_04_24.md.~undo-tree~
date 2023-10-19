@@ -1,0 +1,28 @@
+(undo-tree-save-format-version . 1)
+"23f2172cdc8936368f6997731217703e3b8b7769"
+[nil nil nil nil (25670 25618 814143 788000) 0 nil]
+([nil nil ((259 . 260) (t 25661 11006 795952 0)) nil (25670 25618 814141 791000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 260) (undo-tree-id25 . -1)) nil (25670 25618 814140 120000) 0 nil])
+([nil nil ((260 . 261)) nil (25670 25618 814137 785000) 0 nil])
+([nil nil ((#("?" 0 1 (markdown-list-item ((18 29 0 2 "- " nil (18 20 18 18 18 19 19 20))) fontified t)) . -28) (undo-tree-id21 . -1) (undo-tree-id22 . -1) (undo-tree-id23 . -1) (undo-tree-id24 . -1) 29) nil (25670 25618 814136 239000) 0 nil])
+([nil nil ((28 . 29)) nil (25670 25618 814129 681000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-list-item ((18 29 0 2 "- " nil (18 20 18 18 18 19 19 20))))) . -28) (undo-tree-id20 . -1) 29) nil (25670 25618 814128 216000) 0 nil])
+([nil nil ((28 . 29)) nil (25670 25618 814125 760000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t font-lock-multiline t)) . -28) (undo-tree-id18 . -1) (undo-tree-id19 . -1) 29) nil (25670 25618 814124 431000) 0 nil])
+([nil nil ((28 . 29)) nil (25670 25618 814121 169000) 0 nil])
+([nil nil ((29 . 40)) nil (25670 25618 814119 988000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-list-item ((29 39 0 2 "- " nil (29 31 29 29 29 30 30 31))))) . -38) (undo-tree-id16 . -1) (#("s" 0 1 (fontified defer markdown-list-item ((29 40 0 2 "- " nil (29 31 29 29 29 30 30 31))))) . -39) (undo-tree-id17 . -1) 40) nil (25670 25618 814118 312000) 0 nil])
+([nil nil ((38 . 40)) nil (25670 25618 814114 358000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t markdown-list-item ((29 40 0 2 "- " nil (29 31 29 29 29 30 30 31))))) . -39) (undo-tree-id15 . -1) 40) nil (25670 25618 814112 557000) 0 nil])
+([nil nil ((#("- elgigant sorting (multi group system, ordering/sort by group) (setup meeting) (filtering by sensor stats)
+- hotkey go-to link to analysetool from sensor overview (filled out sensor and firm select)
+" 0 1 (markdown-list-item ((61 168 0 2 "- " nil (61 63 61 61 61 62 62 63))) fontified t face markdown-list-face) 1 107 (markdown-list-item ((61 168 0 2 "- " nil (61 63 61 61 61 62 62 63))) fontified t) 107 108 (fontified t font-lock-multiline t) 108 109 (markdown-list-item ((169 260 0 2 "- " nil (169 171 169 169 169 170 170 171))) fontified t face markdown-list-face) 109 199 (markdown-list-item ((169 260 0 2 "- " nil (169 171 169 169 169 170 170 171))) fontified t) 199 200 (fontified t font-lock-multiline t)) . 61) (undo-tree-id7 . -108) (undo-tree-id8 . -200) (undo-tree-id9 . 69) (undo-tree-id10 . -142) (undo-tree-id11 . 198) (undo-tree-id12 . -10) (undo-tree-id13 . -200) (undo-tree-id14 . -200)) nil (25670 25618 814109 300000) 0 nil])
+([nil nil ((#("- setup local sensor with launchpad sensor software for testing" 0 1 (markdown-list-item ((81 144 0 2 "- " nil (81 83 81 81 81 82 82 83))) fontified t face markdown-list-face) 1 63 (markdown-list-item ((81 144 0 2 "- " nil (81 83 81 81 81 82 82 83))) fontified t)) . 81) (undo-tree-id5 . -63) (undo-tree-id6 . -63)) nil (25670 25618 814088 482000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t font-lock-multiline t)) . -69) (undo-tree-id3 . -1) (undo-tree-id4 . -1) 70) nil (25670 25618 814084 122000) 0 nil])
+([nil nil ((#("New " 0 4 (fontified t markdown-list-item ((18 28 0 2 "- " nil (18 20 18 18 18 19 19 20))))) . 20) (undo-tree-id0 . -4) (undo-tree-id1 . -4) (undo-tree-id2 . -4)) nil (25670 25618 814078 809000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t font-lock-multiline t face whitespace-empty)) . -76) 20) nil (25670 25618 814051 460000) 0 nil])
+nil

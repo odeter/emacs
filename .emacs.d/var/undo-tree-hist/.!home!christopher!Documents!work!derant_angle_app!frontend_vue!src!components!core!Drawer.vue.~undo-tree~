@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"2206bafcc6f32430308c8d9e4132054b1b77fd65"
+[nil nil nil nil (25319 47007 946243 893000) 0 nil]
+([nil nil ((3527 . 3531) (t 25319 46945 717471 562000)) nil (25319 47024 231285 41000) 0 nil] [nil nil ((505 . 510) (t 25319 46945 717471 562000)) ((#("Sdocs" 0 1 (tag-attr-beg 0 tag-attr t tag-name "v-list-item" tag-type start font-lock-face web-mode-html-attr-name-face) 1 2 (tag-attr t tag-name "v-list-item" tag-type start font-lock-face web-mode-html-attr-name-face) 2 3 (tag-attr t tag-name "v-list-item" tag-type start font-lock-face web-mode-html-attr-name-face) 3 4 (tag-attr t tag-name "v-list-item" tag-type start font-lock-face web-mode-html-attr-name-face) 4 5 (tag-attr t tag-attr-end 0 tag-name "v-list-item" tag-type start font-lock-face web-mode-html-attr-name-face)) . 505) (undo-tree-id0 . -5)) (25319 47007 944043 406000) 0 nil])
+([nil current ((3531 . 3532)) nil (25319 47024 231276 917000) 0 nil])
+nil
+nil

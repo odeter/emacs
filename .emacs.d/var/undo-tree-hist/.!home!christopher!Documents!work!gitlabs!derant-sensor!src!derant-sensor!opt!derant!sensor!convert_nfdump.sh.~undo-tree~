@@ -1,0 +1,15 @@
+(undo-tree-save-format-version . 1)
+"9f74b235b77f2e471f67e25a6114b4305629c6ba"
+[nil nil nil nil (25665 6413 179737 829000) 0 nil]
+([nil nil ((13 . 15) (t 25665 4267 119821 615000)) nil (25665 6413 179736 127000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 38 . 39) (nil fontified nil 20 . 39) (nil fontified nil 14 . 20) (14 . 39)) nil (25665 6413 179734 551000) 0 nil])
+([nil nil ((39 . 40)) nil (25665 6413 179732 637000) 0 nil])
+([nil nil ((nil fontified t 1517 . 1527) (nil face font-lock-variable-name-face 1517 . 1527) (#("SRC_FOLDER" 0 10 (fontified t face font-lock-variable-name-face)) . -1513) (1523 . 1537) (nil fontified t 1022 . 1032) (nil face font-lock-variable-name-face 1022 . 1032) (#("SRC_FOLDER" 0 10 (fontified t face font-lock-variable-name-face)) . -1018) (1028 . 1042) (nil fontified t 45 . 55) (nil face font-lock-variable-name-face 45 . 55) (#("SRC_FOLDER" 0 10 (fontified t face font-lock-variable-name-face)) . -41) (51 . 65) 40) nil (25665 6413 179730 837000) 0 nil])
+([nil nil ((nil fontified t 1159 . 1169) (nil face font-lock-variable-name-face 1159 . 1169) (#("DST_FOLDER" 0 10 (fontified t face font-lock-variable-name-face)) . -1148) (1158 . 1179) (nil fontified t 76 . 86) (nil face font-lock-variable-name-face 76 . 86) (#("DST_FOLDER" 0 10 (fontified t face font-lock-variable-name-face)) . -65) (75 . 96) 40) nil (25665 6413 179726 773000) 0 nil])
+([nil nil ((#("NETFLOW_FOLDER=~/nflogs
+NETFLOW_UPLOAD_FOLDER=~/angle/backend_flask/uploads/datastream/done/1/1/" 0 14 (fontified t face font-lock-variable-name-face) 14 24 (fontified t) 24 45 (fontified t face font-lock-variable-name-face) 45 96 (fontified t)) . 41) (undo-tree-id12 . -24) (undo-tree-id13 . -96) (undo-tree-id14 . -96) (undo-tree-id15 . -96)) nil (25665 6413 179723 538000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -39) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (#("
+" 0 1 (fontified t)) . -40) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) 41) nil (25665 6413 179716 381000) 0 nil])
+([nil current ((1849 . 1850) 39) nil (25665 6413 179680 928000) 0 nil])
+nil

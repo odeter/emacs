@@ -29,11 +29,9 @@ Try to update every day at the specified TIME.
 (autoload 'auto-package-update-maybe "auto-package-update" "\
 Update installed Emacs packages if at least
 `auto-package-update-interval' days have passed since the last
-update.
+update." nil nil)
 
-\(fn)" nil nil)
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "auto-package-update" '("auto-package-" "apu--")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "auto-package-update" '("apu--" "auto-package-")))
 
 ;;;***
 

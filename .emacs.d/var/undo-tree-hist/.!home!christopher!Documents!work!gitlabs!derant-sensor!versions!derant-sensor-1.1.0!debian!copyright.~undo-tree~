@@ -1,0 +1,36 @@
+(undo-tree-save-format-version . 1)
+"f46cbe0ceabf0d58c93f89b3ce72682d5a87e598"
+[nil nil nil nil (25654 39955 794488 87000) 0 nil]
+([nil nil (("<preferred name and address to reach the upstream project>" . 117) (undo-tree-id21 . -58) (undo-tree-id22 . -58) (undo-tree-id23 . -58) (t 25645 10885 465391 0)) nil (25654 39955 794486 128000) 0 nil])
+([nil nil ((117 . 131)) nil (25654 39955 794481 820000) 0 nil])
+([nil nil (("m" . -130) (undo-tree-id19 . -1) (undo-tree-id20 . -1) 131) nil (25654 39955 794480 306000) 0 nil])
+([nil nil ((130 . 131)) nil (25654 39956 72868 318000) 0 nil])
+([nil nil (("<url://example.com>" . 140) (undo-tree-id68 . -19) (undo-tree-id69 . -19) (undo-tree-id70 . -19)) nil (25654 40041 340159 415000) 0 nil] [nil nil (("<" . -140) (undo-tree-id0 . -1) ("u" . -141) (undo-tree-id1 . -1) ("r" . -142) (undo-tree-id2 . -1) ("l" . -143) (undo-tree-id3 . -1) (":" . -144) (undo-tree-id4 . -1) ("/" . -145) (undo-tree-id5 . -1) ("/" . -146) (undo-tree-id6 . -1) ("e" . -147) (undo-tree-id7 . -1) ("x" . -148) (undo-tree-id8 . -1) ("a" . -149) (undo-tree-id9 . -1) ("m" . -150) (undo-tree-id10 . -1) ("p" . -151) (undo-tree-id11 . -1) ("l" . -152) (undo-tree-id12 . -1) ("e" . -153) (undo-tree-id13 . -1) ("." . -154) (undo-tree-id14 . -1) ("c" . -155) (undo-tree-id15 . -1) ("o" . -156) (undo-tree-id16 . -1) ("m" . -157) (undo-tree-id17 . -1) (">" . -158) (undo-tree-id18 . -1) 159) ((140 . 159)) (25654 39955 794533 955000) 0 nil])
+([nil nil ((140 . 150)) nil (25654 40041 340124 536000) 0 nil])
+([nil nil ((140 . 150)) (("derant.com" . 140) (undo-tree-id24 . -10)) (25654 39955 794427 766000) 0 nil])
+([nil nil (("
+           <years> <likewise for another author>" . 214) (undo-tree-id63 . -1) (undo-tree-id64 . -49) (undo-tree-id65 . -49) (undo-tree-id66 . -49) (undo-tree-id67 . -49)) nil (25654 40041 340121 439000) 0 nil])
+nil
+([nil nil (("Files: *
+Copyright: <years> <put author's name and email here>
+License: <special license>
+ <Put the license of the package here indented by 1 space>
+ <This follows the format of Description: lines in control file>
+ .
+ <Including paragraphs>" . 152) (undo-tree-id53 . -9) (undo-tree-id54 . -240) (undo-tree-id55 . -58) (undo-tree-id56 . -62) (undo-tree-id57 . -62) (undo-tree-id58 . -62) (undo-tree-id59 . -62) (undo-tree-id60 . -62) (undo-tree-id61 . -240) (undo-tree-id62 . -240)) nil (25654 40041 340104 24000) 0 nil])
+([nil nil (("
+" . -150) (undo-tree-id31 . -1) (undo-tree-id32 . -1) (undo-tree-id33 . -1) (undo-tree-id34 . -1) (undo-tree-id35 . -1) (undo-tree-id36 . -1) (undo-tree-id37 . -1) (undo-tree-id38 . -1) (undo-tree-id39 . -1) (undo-tree-id40 . -1) (undo-tree-id41 . -1) (undo-tree-id42 . -1) ("
+" . -151) (undo-tree-id43 . -1) (undo-tree-id44 . -1) (undo-tree-id45 . -1) (undo-tree-id46 . -1) (undo-tree-id47 . -1) (undo-tree-id48 . -1) (undo-tree-id49 . -1) (undo-tree-id50 . -1) (undo-tree-id51 . -1) (undo-tree-id52 . -1) 152) nil (25654 40041 340086 497000) 0 nil])
+([nil nil (("
+" . 150) (undo-tree-id30 . -1)) nil (25654 40041 340061 871000) 0 nil])
+([nil nil ((150 . 151)) nil (25654 40041 340059 759000) 0 nil])
+([nil nil (("Christopher" . 319) (undo-tree-id28 . -11) (undo-tree-id29 . -11)) nil (25654 40041 340058 586000) 0 nil])
+([nil nil ((319 . 325)) nil (25654 40041 340054 963000) 0 nil])
+([nil nil (("r" . 327) ("e" . 327) ("h" . 327) ("p" . 327) ("o" . 327) ("t" . 327) ("s" . 327) ("i" . 327) ("r" . 327) ("h" . 327) ("c" . 327)) nil (25654 40041 340052 800000) 0 nil])
+([nil nil ((327 . 329)) nil (25654 40041 340049 695000) 0 nil])
+([nil nil ((329 . 331)) nil (25654 40041 340048 564000) 0 nil])
+([nil nil (("n" . 332) ("w" . 332) ("o" . 332) ("n" . 332) ("k" . 332) ("n" . 332) ("u" . 332)) nil (25654 40041 340046 802000) 0 nil])
+([nil nil ((332 . 342)) nil (25654 40041 340044 245000) 0 nil])
+([nil nil (("c" . -117) (undo-tree-id25 . -1) ("m" . -118) (undo-tree-id26 . -1) ("g" . -119) (undo-tree-id27 . -1) 120) nil (25654 40041 340041 360000) 0 nil])
+([nil current ((117 . 121)) nil (25654 40041 340024 53000) 0 nil])
+nil

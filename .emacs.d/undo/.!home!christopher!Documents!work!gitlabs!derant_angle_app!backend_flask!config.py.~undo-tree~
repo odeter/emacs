@@ -1,0 +1,25 @@
+(undo-tree-save-format-version . 1)
+"d1eef661b818406a8c60f8ddc250ee5cd96e697b"
+[nil nil nil nil (25837 64943 250603 704000) 0 nil]
+([nil nil ((apply smerge-mode 1) (#("<<<<<<< HEAD
+" 0 1 (face smerge-markers smerge-refine-part (1 . 2) fontified t) 1 13 (face smerge-markers fontified t)) . 6986) (undo-tree-id37 . -13) (#("=======
+" 0 7 (face smerge-markers fontified t) 7 8 (face nil fontified t)) . 7070) (#(">>>>>>> origin/feat-filter_library
+" 0 35 (face smerge-markers fontified t)) . 7139) 6986 (t 25837 64763 935260 222000)) nil (25837 64943 250601 369000) 0 nil])
+([nil nil ((7056 . 7061)) nil (25837 64943 250597 580000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -7057) (undo-tree-id0 . -4) (undo-tree-id1 . -4) (undo-tree-id2 . -4) (undo-tree-id3 . -4) (undo-tree-id4 . -4) (undo-tree-id5 . -4) (undo-tree-id6 . -4) (undo-tree-id7 . -4) (undo-tree-id8 . -4) (undo-tree-id9 . -4) (undo-tree-id10 . -4) (undo-tree-id11 . -4) (undo-tree-id12 . -4) (undo-tree-id13 . -4) (undo-tree-id14 . -4) (undo-tree-id15 . -4) (undo-tree-id16 . -4) (undo-tree-id17 . -4) (undo-tree-id18 . -4) (undo-tree-id19 . -4) (undo-tree-id20 . -4) (undo-tree-id21 . -4) (undo-tree-id22 . -4) (undo-tree-id23 . -4) (undo-tree-id24 . -4) (undo-tree-id25 . -4) (undo-tree-id26 . -4) (undo-tree-id27 . -4) (undo-tree-id28 . -4) (undo-tree-id29 . -4) (undo-tree-id30 . -4) (undo-tree-id31 . -4) (undo-tree-id32 . -4) (undo-tree-id33 . -4) (undo-tree-id34 . -4) (undo-tree-id35 . -4) (undo-tree-id36 . -4) 7061) nil (25837 64943 250591 8000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 7118) (undo-tree-id38 . -1) (t 25837 64943 253978 577000)) nil (25837 64946 192142 21000) 0 nil])
+([nil nil ((#("    ## Foldername for valid LDAP users
+    LDAP_FOLDER = \"angle_users\"" 0 4 (fontified t) 4 7 (fontified t face font-lock-comment-delimiter-face) 7 15 (fontified t face font-lock-comment-face) 15 39 (fontified t face font-lock-comment-face) 39 43 (fontified t) 43 54 (fontified t face font-lock-variable-name-face) 54 57 (fontified t) 57 70 (fontified t face font-lock-string-face)) . 6986) (undo-tree-id14 . -39) (undo-tree-id15 . -70) (undo-tree-id16 . -70) (undo-tree-id17 . -70) (undo-tree-id18 . -70) (t 25837 64946 194023 281000)) nil (25841 42672 283232 438000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -6984) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (#("
+" 0 1 (fontified t)) . -6985) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) 6986) nil (25841 42672 283225 375000) 0 nil])
+([nil nil ((7528 . 7533)) nil (25841 42672 283213 427000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 7602 . 7603) (nil fontified nil 7590 . 7603) (nil fontified nil 7587 . 7590) (nil fontified nil 7576 . 7587) (nil fontified nil 7572 . 7576) (nil fontified nil 7548 . 7572) (nil fontified nil 7540 . 7548) (nil fontified nil 7537 . 7540) (nil fontified nil 7533 . 7537) (7533 . 7603)) nil (25841 42672 283211 939000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -7533) 7560) nil (25841 42672 283208 613000) 0 nil])
+([nil nil ((8029 . 8034)) nil (25841 42672 283207 244000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 8103 . 8104) (nil fontified nil 8091 . 8104) (nil fontified nil 8088 . 8091) (nil fontified nil 8077 . 8088) (nil fontified nil 8073 . 8077) (nil fontified nil 8049 . 8073) (nil fontified nil 8041 . 8049) (nil fontified nil 8038 . 8041) (nil fontified nil 8034 . 8038) (8034 . 8104)) nil (25841 42672 283205 808000) 0 nil])
+([nil nil ((#("    " 0 4 (fontified t)) . -8034) 8061) nil (25841 42672 283202 427000) 0 nil])
+([nil nil ((#("angle_users" 0 11 (fontified t face font-lock-string-face)) . 8088) (undo-tree-id0 . -11) (undo-tree-id1 . -11) (undo-tree-id2 . -11) (undo-tree-id3 . -11)) nil (25841 42672 283199 741000) 0 nil])
+([nil current ((nil rear-nonsticky nil 8101 . 8102) (nil fontified nil 8088 . 8102) (8088 . 8102)) nil (25841 42672 283176 94000) 0 nil])
+nil

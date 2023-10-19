@@ -1,0 +1,11 @@
+(undo-tree-save-format-version . 1)
+"5f792705fcd5370f68bc8916663afa60ccc73305"
+[nil nil nil nil (25597 52867 915303 766000) 0 nil]
+([nil nil ((nil rear-nonsticky nil 1025 . 1026) (nil fontified nil 1025 . 1026) (nil fontified nil 1010 . 1025) (nil fontified nil 1009 . 1010) (nil fontified nil 999 . 1009) (999 . 1026) (t 25430 15053 139608 745000)) nil (25597 52867 915302 23000) 0 nil])
+([nil nil ((1026 . 1027)) nil (25597 52867 915299 630000) 0 nil])
+([nil nil ((#("SENSOR_STATUS" 0 13 (fontified t face font-lock-string-face)) . 1011) (undo-tree-id11 . -13) (undo-tree-id12 . -13) (undo-tree-id13 . -13) (undo-tree-id14 . -13)) nil (25597 52867 915298 182000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1021 . 1022) (nil fontified nil 1011 . 1022) (1011 . 1022)) nil (25597 52867 915292 913000) 0 nil])
+([nil nil ((#("SENSOR_LOGS" 0 10 (fontified t face font-lock-string-face) 10 11 (fontified t rear-nonsticky t face font-lock-string-face)) . 1011) (undo-tree-id6 . -11) (undo-tree-id7 . -11) (undo-tree-id8 . -11) (undo-tree-id9 . -11) (undo-tree-id10 . -11)) nil (25597 52867 915290 427000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1027 . 1028) (nil fontified nil 1011 . 1028) (1011 . 1028)) nil (25597 52867 915283 164000) 0 nil])
+([nil current ((#(" ['conn', 'dns', 'suricata', 'http', 'ssl']" 0 1 (fontified t) 1 2 (fontified t face (rainbow-delimiters-depth-1-face)) 2 3 (fontified t face font-lock-string-face) 3 8 (fontified t face font-lock-string-face) 8 10 (fontified t) 10 15 (fontified t face font-lock-string-face) 15 17 (fontified t) 17 27 (fontified t face font-lock-string-face) 27 29 (fontified t) 29 35 (fontified t face font-lock-string-face) 35 37 (fontified t) 37 42 (fontified t face font-lock-string-face) 42 43 (fontified t face (rainbow-delimiters-depth-1-face))) . 1030) (undo-tree-id0 . -43) (undo-tree-id1 . -43) (undo-tree-id2 . -43) (undo-tree-id3 . -43) (undo-tree-id4 . -43) (undo-tree-id5 . -43)) nil (25597 52867 915277 101000) 0 nil])
+nil

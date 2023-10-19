@@ -1,12 +1,18 @@
 ;;; -- setup custom config -- ;;
+
 ;; disable top tool-bar
 (tool-bar-mode -1)
 ;; disable menu bar
 (menu-bar-mode -1)
 
+;; ESC cancels all
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
 ;; setup buffer change keybind
 (global-set-key [M-right] 'next-buffer)
+(global-set-key [C-right] 'next-buffer)
 (global-set-key [M-left] 'previous-buffer)
+(global-set-key [C-left] 'next-buffer)
 
 ;; text zoom
 (global-set-key [C-mouse-4] 'text-scale-increase)
@@ -28,7 +34,6 @@
                                   (garbage-collect))))
               (add-hook 'focus-out-hook 'garbage-collect))))
 
-
 (load "~/.emacs.d/etc/custom.el")
 (package-initialize)
 
@@ -44,12 +49,12 @@
 (add-hook 'lisp-mode-hook 'display-line-numbers-mode)
 (add-hook 'eldoc-mode-hook 'display-line-numbers-mode)
 
-;; aggresive indent
-;; (global-aggressive-indent-mode)
-
 ;; kill scratch buffer form
 ;; Makes *scratch* empty.
 (setq initial-scratch-message "")
+
+;; Thanks, but no thanks
+(setq inhibit-startup-message t)
 
 ;; Removes *scratch* from buffer after the mode has been set.
 (defun remove-scratch-buffer ()
@@ -76,6 +81,15 @@
 
 ;; No more typing the whole yes or no. Just y or n will do.
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;; Backup files settings
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+  backup-by-copying t    ; Don't delink hardlinks
+  version-control t      ; Use version numbers on backups
+  delete-old-versions t  ; Automatically delete excess backups
+  kept-new-versions 20   ; how many of the newest versions to keep
+  kept-old-versions 5    ; and how many of the old
+  )
 
 
 ;; Remove Sounds from Emacs
@@ -111,10 +125,24 @@
   (add-to-list 'recentf-exclude no-littering-var-directory)
   (add-to-list 'recentf-exclude no-littering-etc-directory))
 
-(use-package dracula-theme
+;; Theme package and setup
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'dracula t)
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-outrun-electric t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; or for treemacs users
+  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  (doom-themes-treemacs-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config)
   (let ((line (face-attribute 'mode-line :underline)))
     (set-face-attribute 'mode-line          nil :overline   line)
     (set-face-attribute 'mode-line-inactive nil :overline   line)
@@ -123,33 +151,124 @@
     (set-face-attribute 'mode-line-inactive nil :box        nil)
     (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
 
-;; hightlight mode setup
-;; (use-package highlight-indent-guides
-;;   :config
-;;   (setq highlight-indent-guides-method 'column)
-;;   (setq highlight-indent-guides-responsive 'stack)
-;;   ;;(setq highlight-indent-guides-character ?\|)
-;;   ;; Indent character samples: | ┆ ┊
-;;   :init (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+;; modeline package
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :config
+  (setq column-number-mode t)
+  (setq doom-modeline-icon t)
+  (setq doom-modeline-major-mode-icon t)
+  (setq doom-modeline-position-column-line-format '("(%l:%c)"))
+  (setq doom-modeline-total-line-number t)
+  (setq doom-modeline-hud t)
+  (setq doom-modeline-buffer-state-icon t)
+  (setq doom-modeline-highlight-modified-buffer-name t))
 
 ;; C-mode when editing hermes files
 (use-package c-mode
   :mode (("\\.hms\\'" . c-mode)))
 
-;; smex M-x autocomplete
-(use-package smex
+;; Setup ivy + counsel for nice M-X command overview
+(use-package ivy :ensure t
+  :diminish ivy-mode
+  :init (setq projectile-completion-system 'ivy)
+  :bind
+  (:map ivy-mode-map ("C-'" . ivy-avy))
   :config
-  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-  (global-set-key (kbd "M-x") 'smex))
+  (ivy-mode 1)
+  (define-key ivy-minibuffer-map (kbd "TAB") 'ivy-alt-done)
+  (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
+  (setq ivy-extra-directories nil) ; default value: ("../" "./")
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-height 13)
+  (setq ivy-initial-inputs-alist nil)
+  (setq ivy-count-format "%d/%d ")
+  (setq ivy-virtual-abbreviate 'full) ; Show the full virtual file paths
+  (setq ivy-wrap t)
+  (setq ivy-re-builders-alist '((swiper . ivy--regex-plus)
+                (counsel-ag . ivy--regex-plus)
+                (counsel-grep-or-swiper . ivy--regex-plus)
+                (t . ivy--regex-fuzzy))))
 
-;; flx-ido
-(use-package flx-ido
+(use-package counsel :ensure t
+  :bind*
+  (("M-x" . counsel-M-x)
+   ("C-c d d" . counsel-descbinds)
+   ("C-c s s" . counsel-ag)
+   ("C-c s d" . counsel-ag-projectile)
+   ("C-x C-f" . counsel-find-file)
+   ("C-x r f" . counsel-recentf)
+   ("C-c g g" . counsel-git)
+   ("C-c g G" . counsel-git-grep)
+   ("C-x l" . counsel-locate)
+   ("C-c g s" . counsel-grep-or-swiper)
+   ("C-M-y" . counsel-yank-pop)
+   ("C-c C-r" . ivy-resume)
+   ("C-c i m" . counsel-imenu)
+   ("C-c i M" . ivy-imenu-anywhere)
+   ("C-c d s" . describe-symbol)
+   :map ivy-minibuffer-map
+   ("M-y" . ivy-next-line-and-call))
+
   :config
-  (ido-mode 1)
-  (ido-everywhere 1)
-  (flx-ido-mode 1)
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-faces nil))
+  (defun reloading (cmd)
+    (lambda (x)
+      (funcall cmd x)
+      (ivy--reset-state ivy-last)))
+  (defun given-file (cmd prompt) ; needs lexical-binding
+    (lambda (source)
+      (let ((target
+         (let ((enable-recursive-minibuffers t))
+           (read-file-name
+        (format "%s %s to:" prompt source)))))
+    (funcall cmd source target 1))))
+  (defun confirm-delete-file (x)
+    (dired-delete-file x 'confirm-each-subdirectory))
+
+  (ivy-add-actions
+   'counsel-find-file
+   `(("c" ,(given-file #'copy-file "Copy") "copy")
+     ("d" ,(reloading #'confirm-delete-file) "delete")
+     ("m" ,(reloading (given-file #'rename-file "Move")) "move")))
+  (ivy-add-actions
+   'counsel-projectile-find-file
+   `(("c" ,(given-file #'copy-file "Copy") "copy")
+     ("d" ,(reloading #'confirm-delete-file) "delete")
+     ("m" ,(reloading (given-file #'rename-file "Move")) "move")
+     ("b" counsel-find-file-cd-bookmark-action "cd bookmark")))
+
+  ;; to make counsel-ag search the root projectile directory.
+  (defun counsel-ag-projectile ()
+    (interactive)
+    (counsel-ag nil (projectile-project-root)))
+
+  (setq counsel-find-file-at-point t)
+  ;; ignore . files or temporary files
+  (setq counsel-find-file-ignore-regexp
+    (concat
+     ;; File names beginning with # or .
+     "\\(?:\\`[#.]\\)"
+     ;; File names ending with # or ~
+     "\\|\\(?:\\`.+?[#~]\\'\\)")))
+
+(use-package ivy-prescient :ensure t
+  :custom
+  (ivy-prescient-enable-filtering nil)
+  :config
+  ;; Uncomment the following line to have sorting remembered across sessions!
+  (prescient-persist-mode 1)
+  (ivy-prescient-mode 1))
+
+(use-package all-the-icons-ivy-rich :ensure t
+  :init (all-the-icons-ivy-rich-mode +1)
+  :config
+  (setq all-the-icons-ivy-rich-icon-size 0.8))
+
+(use-package ivy-rich :ensure t
+  :after all-the-icons-ivy-rich
+  :init
+  (ivy-rich-mode 1))
 
 ;; whitespace mode
 (use-package whitespace
@@ -182,6 +301,19 @@
                 (flycheck-select-checker 'javascript-eslint))))
   )
 
+;; flyspell
+(use-package flyspell
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (add-hook 'text-mode-hook 'flyspell-mode)
+    )
+  :config
+  ;; Sets flyspell correction to use two-finger mouse click
+  (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
+  )
+
 ;; highlight current line
 (use-package hl-line
   :config
@@ -194,7 +326,7 @@
   :config
   (global-set-key (kbd "C-<") 'neotree-toggle)
   ;; Use icons
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  ;;(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   )
 
 (use-package magit
@@ -243,6 +375,7 @@
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-enable-html-entities-fontification t
         web-mode-auto-close-style 2)
+  (setq web-mode-enable-css-colorization t)
   (setq web-mode-engines-alist
 	'(("jinja"    . "\\.html\\.flask\\'")
 	  ("jinja"    . "\\.html?\\'")
@@ -250,6 +383,8 @@
 	  ("js"       . "\\.js\\'")
 	  ("php"      . "\\.phtml\\'"))
 	)
+  (setq web-mode-enable-css-colorization nil) ;; to remove css error for the time being
+  (setq web-mode-enable-auto-indentation nil) ;; disable autoindent, it fucks up too much
   :interpreter "web-mode")
 
 ;; package auto-update
@@ -257,7 +392,14 @@
    :ensure t
    :config
    (setq auto-package-update-delete-old-versions t
-         auto-package-update-interval 4)
+         auto-package-update-interval 4
+         auto-package-update-prompt-before-update t)
+   (auto-package-update-maybe))
+
+(use-package auto-package-update
+   :ensure t
+   :config
+   (setq auto-package-update-prompt-before-update t)
    (auto-package-update-maybe))
 
 
@@ -266,13 +408,15 @@
   ;;:load-path "~/.emacs.d/undo-tree/"
   :config
   (global-undo-tree-mode 1)
+  ;; Prevent undo tree files from polluting your git repo
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   (progn
     (define-key undo-tree-map (kbd "C-/") nil)
     (define-key undo-tree-map (kbd "C-_") nil)
     (define-key undo-tree-map (kbd "C-?") nil)
     (define-key undo-tree-map (kbd "M-_") nil)
     (define-key undo-tree-map (kbd "C-z") 'undo-tree-undo)
-    (define-key undo-tree-map (kbd "C-S-z") 'undo-tree-redo)))
+    (define-key undo-tree-map (kbd "M-z") 'undo-tree-redo)))
 
 ;; prolog mode
 (use-package prolog-mode
@@ -288,8 +432,11 @@
 ;; move-text package setup
 (use-package move-text
   :ensure t
-  :config
-  (move-text-default-bindings))
+  :bind
+  (("C-<up>"   . move-text-up)
+   ("M-<up>"   . move-text-up)
+   ("C-<down>" . move-text-down)
+   ("M-<down>" . move-text-down)))
 
 ;; setup dashboard
 (use-package dashboard
@@ -312,16 +459,16 @@
 
 ;; smartparens setup
 (use-package smartparens
-  :init
-  (bind-key "C-M-f" #'sp-forward-sexp smartparens-mode-map)
-  (bind-key "C-M-b" #'sp-backward-sexp smartparens-mode-map)
-  (bind-key "C-)" #'sp-forward-slurp-sexp smartparens-mode-map)
-  (bind-key "C-(" #'sp-backward-slurp-sexp smartparens-mode-map)
-  (bind-key "M-)" #'sp-forward-barf-sexp smartparens-mode-map)
-  (bind-key "M-(" #'sp-backward-barf-sexp smartparens-mode-map)
-  (bind-key "C-S-s" #'sp-splice-sexp)
-  (bind-key "C-M-<backspace>" #'backward-kill-sexp)
-  (bind-key "C-M-S-<SPC>" (lambda () (interactive) (mark-sexp -1)))
+  ;; :init
+  ;; (bind-key "C-M-f" #'sp-forward-sexp smartparens-mode-map)
+  ;; (bind-key "C-M-b" #'sp-backward-sexp smartparens-mode-map)
+  ;; (bind-key "C-)" #'sp-forward-slurp-sexp smartparens-mode-map)
+  ;; (bind-key "C-(" #'sp-backward-slurp-sexp smartparens-mode-map)
+  ;; (bind-key "M-)" #'sp-forward-barf-sexp smartparens-mode-map)
+  ;; (bind-key "M-(" #'sp-backward-barf-sexp smartparens-mode-map)
+  ;; (bind-key "C-S-s" #'sp-splice-sexp)
+  ;; (bind-key "C-M-<backspace>" #'backward-kill-sexp)
+  ;; (bind-key "C-M-S-<SPC>" (lambda () (interactive) (mark-sexp -1)))
 
   :config
   (smartparens-global-mode t)
@@ -330,83 +477,27 @@
   (sp-pair "`" nil :actions :rem)
   (setq sp-highlight-pair-overlay nil))
 
-;; Org setup
-(use-package org
-  :ensure t
-  :mode ("\\.org\\'" . org-mode)
-  :bind (("C-c l" . org-store-link)
-         ("C-c c" . org-capture)
-         ("C-c a" . org-agenda)
-         ("C-c b" . org-iswitchb)
-         ("C-c C-w" . org-refile)
-         ("C-c j" . org-clock-goto)
-         ("C-c C-x C-o" . org-clock-out)
-         ([M-left] . previous-buffer)
-         ([M-right] . next-buffer))
-  :config
-  (progn
-    ;; The GTD part of this config is heavily inspired by
-    ;; https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
-    (setq org-directory "~/org")
-    (setq org-agenda-files
-          (mapcar (lambda (path) (concat org-directory path))
-                  '("/org.org"
-                    "/gtd/gtd.org"
-                    "/gtd/inbox.org"
-                    "/gtd/tickler.org")))
-    (setq org-log-done 'time)
-    (setq org-src-fontify-natively t)
-    (setq org-use-speed-commands t)
-    (setq org-capture-templates
-          '(("t" "Todo [inbox]" entry
-             (file+headline "~/org/gtd/inbox.org" "Tasks")
-             "* TODO %i%?")
-            ("T" "Tickler" entry
-             (file+headline "~/org/gtd/tickler.org" "Tickler")
-             "* %i%? \n %^t")))
-    (setq org-refile-targets
-          '(("~/org/gtd/gtd.org" :maxlevel . 3)
-            ("~/org/gtd/someday.org" :level . 1)
-            ("~/org/gtd/tickler.org" :maxlevel . 2)))
-    (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
-    (setq org-agenda-custom-commands
-          '(("@" "Contexts"
-             ((tags-todo "@email"
-                         ((org-agenda-overriding-header "Emails")))
-              (tags-todo "@phone"
-                         ((org-agenda-overriding-header "Phone")))))))
-    (setq org-clock-persist t)
-    (org-clock-persistence-insinuate)
-    (setq org-time-clocksum-format '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))))
-(use-package org-inlinetask
-  :bind (:map org-mode-map
-              ("C-c C-x t" . org-inlinetask-insert-task))
-  :after (org)
-  :commands (org-inlinetask-insert-task))
-(use-package org-bullets
-  :ensure t
-  :commands (org-bullets-mode)
-  :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-
-
 ;; mode-line setup
-(use-package minions
-  :ensure t
-  :init (minions-mode 1)
-  :config
-  (setq
-   minions-mode-line-lighter "#"
-   minions-direct '(flycheck-mode
-                    cider-mode)))
+;; (use-package minions
+;;   :ensure t
+;;   :init (minions-mode 1)
+;;   :config
+;;   (setq
+;;    minions-mode-line-lighter "#"
+;;    minions-direct '(flycheck-mode
+;;                     cider-mode)))
 
-(use-package moody
-  :ensure t
-  :config
-  (setq-default x-underline-at-descent-line t
-                column-number-mode t
-		winum-mode t)
-  (moody-replace-mode-line-buffer-identification)
-  (moody-replace-vc-mode))
+;; (use-package moody
+;;   :ensure t
+;;   :config
+;;   (setq-default x-underline-at-descent-line t
+;;                 column-number-mode t
+;; 		winum-mode t)
+;;   (moody-replace-mode-line-buffer-identification)
+;;   (moody-replace-vc-mode))
+
+;; docker-compose
+(use-package docker-compose-mode)
 
 ;;mode-icon
 (use-package mode-icons
@@ -438,3 +529,19 @@
   :after (anaconda-mode company)
   :config (add-to-list 'company-backends 'company-anaconda)
   )
+
+;; Chatgpt setup
+(use-package chatgpt-shell
+  :ensure t
+  :config
+  (setq chatgpt-shell-openai-key
+        (auth-source-pick-first-password :host "api.openai.com")
+        )
+  )
+
+;; Pacakge for showing keybindings
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 0.3))

@@ -1,4 +1,0 @@
-psycopg2-binary==2.8.5
-SQLAlchemy==1.2.15
-file_read_backwards==2.0.0
-pandas==1.0.3
