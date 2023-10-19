@@ -2,6 +2,8 @@
 
 Just my *.emacs* lisp file and the *.emacs.d* folder.
 
+![Setup Example](imgs/show_image.png?raw=true "Setup Example")
+
 # Packages used
 
 The following packages are used, sorted into following categories:
