@@ -4,6 +4,8 @@
 (tool-bar-mode -1)
 ;; disable menu bar
 (menu-bar-mode -1)
+;; disable scroll-bar
+(scroll-bar-mode -1)
 
 ;; ESC cancels all
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
