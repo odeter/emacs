@@ -51,7 +51,7 @@
 
 ;; kill scratch buffer form
 ;; Makes *scratch* empty.
-(setq initial-scratch-message "")
+;; (setq initial-scratch-message "")
 
 ;; Thanks, but no thanks
 (setq inhibit-startup-message t)
@@ -391,17 +391,9 @@
 (use-package auto-package-update
    :ensure t
    :config
-   (setq auto-package-update-delete-old-versions t
-         auto-package-update-interval 4
-         auto-package-update-prompt-before-update t)
-   (auto-package-update-maybe))
-
-(use-package auto-package-update
-   :ensure t
-   :config
-   (setq auto-package-update-prompt-before-update t)
-   (auto-package-update-maybe))
-
+   (setq auto-package-update-interval 4
+         auto-package-update-prompt-before-update t))
+   ;; (auto-package-update-maybe))
 
 ;; undo-tree
 (use-package undo-tree
@@ -476,25 +468,6 @@
   (sp-pair "'" nil :actions :rem)
   (sp-pair "`" nil :actions :rem)
   (setq sp-highlight-pair-overlay nil))
-
-;; mode-line setup
-;; (use-package minions
-;;   :ensure t
-;;   :init (minions-mode 1)
-;;   :config
-;;   (setq
-;;    minions-mode-line-lighter "#"
-;;    minions-direct '(flycheck-mode
-;;                     cider-mode)))
-
-;; (use-package moody
-;;   :ensure t
-;;   :config
-;;   (setq-default x-underline-at-descent-line t
-;;                 column-number-mode t
-;; 		winum-mode t)
-;;   (moody-replace-mode-line-buffer-identification)
-;;   (moody-replace-vc-mode))
 
 ;; docker-compose
 (use-package docker-compose-mode)

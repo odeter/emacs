@@ -1,5 +1,0 @@
-(undo-tree-save-format-version . 1)
-"646234e6031b0dd366113158071a08330cfea071"
-[nil nil nil nil (25745 30134 97275 119000) 0 nil]
-([nil current ((#(" style=\"background-color: #21c2f8; color: white;\"" 0 1 (tag-name "header" tag-type start) 1 2 (tag-attr-beg 0 tag-attr t tag-name "header" tag-type start font-lock-face web-mode-html-attr-name-face) 2 6 (tag-attr t tag-name "header" tag-type start font-lock-face web-mode-html-attr-name-face) 6 7 (tag-attr t tag-name "header" tag-type start font-lock-face web-mode-html-attr-equal-face) 7 48 (tag-attr t tag-name "header" tag-type start font-lock-face web-mode-html-attr-value-face) 48 49 (tag-attr t tag-attr-end 5 tag-name "header" tag-type start font-lock-face web-mode-html-attr-value-face)) . 124) (undo-tree-id0 . -49) (undo-tree-id1 . -49) (undo-tree-id2 . -4) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -49) (undo-tree-id8 . -49) (t 25744 8784 584270 170000)) nil (25745 30134 97270 370000) 0 nil])
-nil

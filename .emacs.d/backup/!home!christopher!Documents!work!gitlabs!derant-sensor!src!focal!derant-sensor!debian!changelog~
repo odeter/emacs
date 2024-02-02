@@ -1,6 +1,0 @@
-derant-sensor (1.1.6) focal; urgency=medium
-
-  * Feature:
-    - Fixed typo in upload zeek path
-
- -- Christopher Mulvad Groot <cmg@derant.com>  Wed, 24 May 2023 13:00:00 +0100

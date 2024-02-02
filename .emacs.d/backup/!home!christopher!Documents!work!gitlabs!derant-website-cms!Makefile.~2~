@@ -1,6 +1,0 @@
-setup:
-	@sudo apt-get install ruby-full && gem install jekyll bundler && bundle install
-build:
-	@JEKYLL_ENV=production bundle exec jekyll build
-run:
-	@bundle exec jekyll serve --livereload

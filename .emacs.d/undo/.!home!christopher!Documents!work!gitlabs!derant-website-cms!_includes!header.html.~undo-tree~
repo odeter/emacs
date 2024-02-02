@@ -1,8 +1,0 @@
-(undo-tree-save-format-version . 1)
-"32a25c7f481ad68159443c8e2a309ebb04655d55"
-[nil nil nil nil (25745 29033 610561 315000) 0 nil]
-([nil current ((#("
-  <!-- <div style=\"margin-left: 2vw;\" class=\"content-to-hide\">
-       <button onclick=\"window.open('https://angle.derant.com/login','_blank')\" style=\"position: fixed; width: 12vw; height: 14vh; margin-top: 84vh; font-size: 28px;\"> TRY ANGLE </button>
-       </div> -->" 3 4 (tag-type comment tag-beg 0 font-lock-face web-mode-comment-face) 4 214 (tag-type comment font-lock-face web-mode-comment-face) 214 251 (tag-type comment font-lock-face web-mode-comment-face face (whitespace-line web-mode-comment-face)) 251 268 (tag-type comment font-lock-face web-mode-comment-face) 268 269 (tag-type comment tag-end t font-lock-face web-mode-comment-face)) . 351) (undo-tree-id0 . -1) (undo-tree-id1 . -269) (undo-tree-id2 . -269) (undo-tree-id3 . -269) (t 25744 8784 584270 170000)) nil (25745 29033 610556 550000) 0 nil])
-nil

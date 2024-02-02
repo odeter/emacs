@@ -35,6 +35,10 @@ update." nil nil)
 
 ;;;***
 
+;;;### (autoloads nil nil ("auto-package-update-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

@@ -1,9 +1,0 @@
-(undo-tree-save-format-version . 1)
-"2c2c3d85072037a0de0f394aafa1e50812c69788"
-[nil nil nil nil (25745 38695 542081 241000) 0 nil]
-([nil nil ((297 . 298) (t 25494 60531 222032 703000)) nil (25745 38695 542079 359000) 0 nil])
-([nil nil ((298 . 305)) nil (25745 38695 542077 910000) 0 nil])
-([nil nil ((305 . 309)) nil (25745 38695 542076 557000) 0 nil])
-([nil nil ((#("A" 0 1 (fontified t markdown-gfm-code (174 487) face (markdown-pre-face markdown-code-face) font-lock-multiline t)) . -306) (undo-tree-id0 . -1) (#("P" 0 1 (fontified t markdown-gfm-code (174 488) face (markdown-pre-face markdown-code-face) font-lock-multiline t)) . -307) (undo-tree-id1 . -1) (#("I" 0 1 (fontified defer face (markdown-pre-face markdown-code-face) font-lock-multiline t markdown-gfm-code (174 489))) . -308) (undo-tree-id2 . -1) 309) nil (25745 38695 542073 346000) 0 nil])
-([nil current ((306 . 309)) nil (25745 38695 542048 30000) 0 nil])
-nil

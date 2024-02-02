@@ -1,8 +1,0 @@
-(undo-tree-save-format-version . 1)
-"2a1b5d18fcdbd82df5086824737e9a03c18d0732"
-[nil nil nil nil (25837 64923 326206 173000) 0 nil]
-([nil current ((apply smerge-mode 1) (#("<<<<<<< HEAD
-" 0 1 (fontified defer face smerge-markers smerge-refine-part (1 . 2)) 1 13 (fontified defer face smerge-markers)) . 6929) (undo-tree-id0 . -12) (undo-tree-id1 . -13) (#("=======
-" 0 7 (fontified defer face smerge-markers) 7 8 (fontified defer face nil)) . 7048) (#(">>>>>>> origin/feat-filter_library
-" 0 35 (fontified defer face smerge-markers)) . 7161) (undo-tree-id2 . -35) 6929 (t 25837 64763 931260 162000)) nil (25837 64923 326200 713000) 0 nil])
-nil

@@ -1,12 +1,12 @@
 
 ;; ----- smex-history -----
 (
- linum-mode
- chatgpt-shell
- chatgpt-shell-prompt
+ comment-box
  comment-region
+ replace-string
+ uncomment-region
  package-delete
- ivy-mode
+ package-install
  find-file
 )
 
@@ -14,22 +14,22 @@
 (
  (find-tag . 1)
  (find-file . 7384)
- (package-install . 74)
- (comment-box . 6)
- (package-delete . 12)
- (uncomment-region . 287)
+ (package-install . 77)
+ (comment-box . 140)
+ (package-delete . 14)
+ (uncomment-region . 308)
  (highlight-indentation-mode . 27)
  (highlight-indent-guides-mode . 11)
  (fountain-mode . 3)
  (jinja2-mode . 4)
  (web-mode-set-engine . 2)
- (package-refresh-contents . 23)
- (comment-region . 1141)
- (package-list-packages . 8)
+ (package-refresh-contents . 25)
+ (comment-region . 1158)
+ (package-list-packages . 9)
  (prettier-js-mode . 9)
  (prettier-js . 2)
  (web-mode . 22)
- (replace-string . 169)
+ (replace-string . 182)
  (eww-mode . 1)
  (eww-open-file . 1)
  (python-mode . 2)
@@ -96,7 +96,7 @@
  (comint-delchar-or-maybe-eof . 2)
  (indent-region . 1)
  (python-indent-shift-left . 37)
- (python-indent-shift-right . 32)
+ (python-indent-shift-right . 33)
  (grep-find . 5)
  (grep . 7)
  (find-name-dired . 1)
@@ -105,7 +105,7 @@
  (markdown-mode . 1)
  (org-increase-number-at-point . 1)
  (org-do-promote . 1)
- (auto-package-update-now . 9)
+ (auto-package-update-now . 12)
  (bison-mode . 1)
  (package-initialize . 2)
  (byte-recompile-directory . 2)
