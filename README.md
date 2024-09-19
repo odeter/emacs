@@ -11,7 +11,7 @@ The following packages are used, sorted into following categories:
 ## UI
 
 - neotree
-- smartparens
+- smartparens (not activated, has bugs)
 - rainbow-delimiters
 - all-the-icons
 - mode-icons
@@ -67,7 +67,7 @@ The following packages are used, sorted into following categories:
 
 - magit
 - winum
-- chatgpt-shell
+- chatgpt-shell (not active by default)
 
 # Authinfo
 
@@ -76,3 +76,5 @@ To properly use the `chatgpt-shell` package you must create an authinfo file bes
 ```bash
 machine api.openai.com password <chatgpt api-key>
 ```
+
+The chapgpt-shell package is commented by default, thus to enable it you have to remove the uncomment it in the `.emacs` file
