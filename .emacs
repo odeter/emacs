@@ -452,24 +452,15 @@
   :bind ("M-;" . smart-comment))
 
 ;; smartparens setup
-(use-package smartparens
-  ;; :init
-  ;; (bind-key "C-M-f" #'sp-forward-sexp smartparens-mode-map)
-  ;; (bind-key "C-M-b" #'sp-backward-sexp smartparens-mode-map)
-  ;; (bind-key "C-)" #'sp-forward-slurp-sexp smartparens-mode-map)
-  ;; (bind-key "C-(" #'sp-backward-slurp-sexp smartparens-mode-map)
-  ;; (bind-key "M-)" #'sp-forward-barf-sexp smartparens-mode-map)
-  ;; (bind-key "M-(" #'sp-backward-barf-sexp smartparens-mode-map)
-  ;; (bind-key "C-S-s" #'sp-splice-sexp)
-  ;; (bind-key "C-M-<backspace>" #'backward-kill-sexp)
-  ;; (bind-key "C-M-S-<SPC>" (lambda () (interactive) (mark-sexp -1)))
+;; Currently bugged with warnings, enable when fixed
+;; (use-package smartparens
+;;   :ensure smartparens  ;; install the package
+;;   :config
+;;   (smartparens-global-mode t)
 
-  :config
-  (smartparens-global-mode t)
-
-  (sp-pair "'" nil :actions :rem)
-  (sp-pair "`" nil :actions :rem)
-  (setq sp-highlight-pair-overlay nil))
+;;   (sp-pair "'" nil :actions :rem)
+;;   (sp-pair "`" nil :actions :rem)
+;;   (setq sp-highlight-pair-overlay nil))
 
 ;; docker-compose
 (use-package docker-compose-mode)
@@ -506,13 +497,13 @@
   )
 
 ;; Chatgpt setup
-(use-package chatgpt-shell
-  :ensure t
-  :config
-  (setq chatgpt-shell-openai-key
-        (auth-source-pick-first-password :host "api.openai.com")
-        )
-  )
+;; (use-package chatgpt-shell
+;;   :ensure t
+;;   :config
+;;   (setq chatgpt-shell-openai-key
+;;         (auth-source-pick-first-password :host "api.openai.com")
+;;         )
+;;   )
 
 ;; Pacakge for showing keybindings
 (use-package which-key

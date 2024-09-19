@@ -1,21 +1,21 @@
 
 ;; ----- smex-history -----
 (
- comment-box
- comment-region
- replace-string
- uncomment-region
- package-delete
- package-install
  find-file
+ comment-region
+ package-upgrade
+ package-install
+ find-tag
+ package-upgrade-all
+ comment-box
 )
 
 ;; ----- smex-data -----
 (
- (find-tag . 1)
- (find-file . 7384)
- (package-install . 77)
- (comment-box . 140)
+ (find-tag . 2)
+ (find-file . 7389)
+ (package-install . 78)
+ (comment-box . 141)
  (package-delete . 14)
  (uncomment-region . 308)
  (highlight-indentation-mode . 27)
@@ -24,7 +24,7 @@
  (jinja2-mode . 4)
  (web-mode-set-engine . 2)
  (package-refresh-contents . 25)
- (comment-region . 1158)
+ (comment-region . 1160)
  (package-list-packages . 9)
  (prettier-js-mode . 9)
  (prettier-js . 2)
@@ -127,4 +127,6 @@
  (which-key-mode . 2)
  (chatgpt-shell . 4)
  (chatgpt-shell-prompt . 1)
+ (package-upgrade-all . 5)
+ (package-upgrade . 1)
 )
